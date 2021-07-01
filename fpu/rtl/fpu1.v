@@ -34,6 +34,12 @@
 
 `timescale 1ns / 100ps
 
+`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/except.v"
+`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/pre_norm.v"
+`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/pre_norm_fmul.v"
+`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/post_norm.v"
+`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/primitives.v"
+
 /*
 
 FPU Operations (fpu_op):
