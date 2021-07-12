@@ -239,7 +239,28 @@
 
 `include "eth_defines.v"
 `include "timescale.v"
-
+`include "eth_miim.v"
+`include "eth_clockgen.v"
+`include "eth_shiftreg.v"
+`include "eth_outputcontrol.v"
+`include "eth_registers.v"
+`include "eth_register.v"
+`include "eth_maccontrol.v"
+`include "eth_receivecontrol.v"
+`include "eth_transmitcontrol.v"
+`include "eth_txethmac.v"
+`include "eth_txcounters.v"
+`include "eth_txstatem.v"
+`include "eth_crc.v"
+`include "eth_random.v"
+`include "eth_rxaddrcheck.v"
+`include "eth_rxethmac.v"
+`include "eth_rxstatem.v"
+`include "eth_rxcounters.v"
+`include "eth_wishbone.v"
+`include "eth_spram_256x32.v"
+`include "eth_fifo.v"
+`include "eth_macstatus.v"
 
 module eth_top
 (

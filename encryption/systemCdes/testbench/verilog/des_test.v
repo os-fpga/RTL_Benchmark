@@ -65,7 +65,7 @@ integer		ZZZ;
 integer     select;
 
 
-des d1(clk,reset,load_i,decrypt_i,data_i,key_i,data_o,ready_o);
+des_top d1(clk,reset,load_i,decrypt_i,data_i,key_i,data_o,ready_o);
 
    initial
 

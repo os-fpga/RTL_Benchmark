@@ -138,7 +138,7 @@ module vga_csm_pb (clk_i, req0_i, ack0_o, adr0_i, dat0_i, dat0_o, we0_i, req1_i,
 		.oe(1'b1),        // always output data
 		.addr(mem_adr),
 		.di(mem_d),
-		.do(mem_q)
+		.dout(mem_q)
 	);
 
 	// assign DAT_O outputs

@@ -118,9 +118,9 @@ IMPORTANT ! writing while the FIFO is full or reading while the FIFO is
 empty will place the FIFO in an undefined state.
 
 */
+`include "generic_dpram.v"
 
-
-module generic_fifo_dc_gray(	rd_clk, wr_clk, rst, clr, din, we,
+module generic_fifo_dc_gray_top(	rd_clk, wr_clk, rst, clr, din, we,
 		dout, re, full, empty, wr_level, rd_level );
 
 parameter dw=16;
@@ -209,7 +209,7 @@ generic_dpram  #(aw,dw) u0(
 	.rce(		1'b1		),
 	.oe(		1'b1		),
 	.raddr(		rp_bin[aw-1:0]	),
-	.do(		dout		),
+	.dout(		dout		),
 	.wclk(		wr_clk		),
 	.wrst(		!wr_rst		),
 	.wce(		1'b1		),

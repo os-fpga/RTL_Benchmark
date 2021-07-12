@@ -298,7 +298,7 @@ always #50 wr_clk = ~wr_clk;
 // Module Instantiations
 //
 
-generic_fifo_sc_b #(8,8,9) u0(
+generic_fifo_sc_b_top #(8,8,9) u0(
 		.clk(		clk		),
 		.rst(		rst		),
 		.clr(		clr		),
@@ -317,7 +317,7 @@ generic_fifo_sc_b #(8,8,9) u0(
 		.level(		level		)
 		);
 
-generic_fifo_dc #(8,8,9) u1(
+generic_fifo_dc_top #(8,8,9) u1(
 		.rd_clk(	rd_clk		),
 		.wr_clk(	wr_clk		),
 		.rst(		rst		),

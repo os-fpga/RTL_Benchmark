@@ -1,4 +1,4 @@
- module diffeq_paj_convert (Xinport, Yinport, Uinport, Aport, DXport, Xoutport, Youtport, Uoutport, clk, reset);
+ module diffeq_paj_convert_top (Xinport, Yinport, Uinport, Aport, DXport, Xoutport, Youtport, Uoutport, clk, reset);
     input[31:0] Xinport; 
     input[31:0] Yinport; 
     input[31:0] Uinport; 

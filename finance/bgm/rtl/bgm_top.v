@@ -2,7 +2,7 @@
 `define BITS 32         // Bit width of the operands
 `define NumPath 34     
  
-module 	bgm(clock, 
+module 	bgm_top(clock, 
 		reset,
 		sigma_a, 
 		sigma_b, 

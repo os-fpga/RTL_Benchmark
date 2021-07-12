@@ -561,7 +561,7 @@ assign WB_DAT_O = ram_do;
 
 // Generic synchronous single-port RAM interface
 eth_spram_256x32 bd_ram (
-	.clk(WB_CLK_I), .rst(Reset), .ce(ram_ce), .we(ram_we), .oe(ram_oe), .addr(ram_addr), .di(ram_di), .do(ram_do)
+	.clk(WB_CLK_I), .rst(Reset), .ce(ram_ce), .we(ram_we), .oe(ram_oe), .addr(ram_addr), .di(ram_di), .dout(ram_do)
 `ifdef ETH_BIST
   ,
   .mbist_si_i       (mbist_si_i),

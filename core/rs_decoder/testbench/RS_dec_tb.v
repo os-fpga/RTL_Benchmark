@@ -15,7 +15,7 @@ wire [7:0] Out_byte;
 wire CEO;
 wire Valid_out;
 
-RS_dec  DUT 
+RS_dec_top  DUT 
 (
   .clk(clk), // input clock 
   .reset(reset), // active high asynchronous reset

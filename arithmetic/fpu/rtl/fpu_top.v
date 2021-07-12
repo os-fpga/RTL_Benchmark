@@ -34,11 +34,11 @@
 
 `timescale 1ns / 100ps
 
-`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/except.v"
-`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/pre_norm.v"
-`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/pre_norm_fmul.v"
-`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/post_norm.v"
-`include "/home/komal.javed@lmlhr.com/rapidsilicon/openfpga_new/RTL_Benchmark/fpu/rtl/primitives.v"
+`include "except.v"
+`include "pre_norm.v"
+`include "pre_norm_fmul.v"
+`include "post_norm.v"
+`include "primitives.v"
 
 /*
 
@@ -65,7 +65,7 @@ Rounding Modes (rmode):
 */
 
 
-module fpu( clk, rmode, fpu_op, opa, opb, out, inf, snan, qnan, ine, overflow, underflow, zero, div_by_zero);
+module fpu_top( clk, rmode, fpu_op, opa, opb, out, inf, snan, qnan, ine, overflow, underflow, zero, div_by_zero);
 input		clk;
 input	[1:0]	rmode;
 input	[2:0]	fpu_op;
@@ -480,8 +480,11 @@ always @(posedge clk)
 
 always @(posedge clk)
 	snan <= #1 snan_d;
-
 // synopsys translate_off
+
+`ifdef Debugging
+
+
 wire		mul_uf_del;
 wire		uf2_del, ufb2_del, ufc2_del,  underflow_d_del;
 wire		co_del;
@@ -516,7 +519,9 @@ always @(test.error_event)
 			ov_fasu_del, ov_fmul_del, fop );
 	$display("ldza: %h, quo: %b",
 			ldza_del, quo_del);
+
    end
+`endif
 // synopsys translate_on
 
 

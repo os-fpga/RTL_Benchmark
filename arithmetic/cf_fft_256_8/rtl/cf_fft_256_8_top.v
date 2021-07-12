@@ -65,7 +65,7 @@
 //  
 //  
 
-module cf_fft_256_8 (clock_c, enable_i, reset_i, sync_i, data_0_i, data_1_i, sync_o, data_0_o, data_1_o);
+module cf_fft_256_8_top (clock_c, enable_i, reset_i, sync_i, data_0_i, data_1_i, sync_o, data_0_o, data_1_o);
 input  clock_c;
 input  enable_i;
 input  reset_i;

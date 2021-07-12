@@ -80,7 +80,7 @@ end
 
 always #5 clk = ~clk;
 
-sha1 sha_core(
+sha1_top sha_core(
 	.clk_i(clk),
 	.rst_i(rst),
 	.text_i(text_i),

@@ -48,7 +48,15 @@
 // Revision 1.1.1.1  2004/07/05 17:31:17  jcastillo
 // First import
 //
-
+`include "desround.v"
+`include "s1.v"
+`include "s2.v"
+`include "s3.v"
+`include "s4.v"
+`include "s5.v"
+`include "s6.v"
+`include "s7.v"
+`include "s8.v"
 
 module des(clk,reset,load_i,decrypt_i,data_i,key_i,data_o,ready_o);
 input clk;
