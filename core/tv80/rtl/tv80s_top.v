@@ -22,9 +22,14 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-module tv80s (/*AUTOARG*/
+`include "tv80.v"
+`include "tv80_mcode.v"
+`include "tv80_alu.v"
+`include "tv80_reg.v"
+
+module tv80s_top (/*AUTOARG*/
   // Outputs
-  m1_n, mreq_n, iorq_n, rd_n, wr_n, rfsh_n, halt_n, busak_n, A, do, 
+  m1_n, mreq_n, iorq_n, rd_n, wr_n, rfsh_n, halt_n, busak_n, A, dout, 
   // Inputs
   reset_n, clk, wait_n, int_n, nmi_n, busrq_n, di
   );
@@ -50,7 +55,7 @@ module tv80s (/*AUTOARG*/
   output        busak_n; 
   output [15:0] A;
   input [7:0]   di;
-  output [7:0]  do;
+  output [7:0]  dout;
 
   reg           mreq_n; 
   reg           iorq_n; 
@@ -89,7 +94,7 @@ module tv80s (/*AUTOARG*/
      .A (A),
      .dinst (di),
      .di (di_reg),
-     .do (do),
+     .dout (dout),
      .mc (mcycle),
      .ts (tstate),
      .intcycle_n (intcycle_n)

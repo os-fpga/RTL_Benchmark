@@ -163,7 +163,7 @@ sdModel sdModelTB0
 
 //Instaciate SD-Card controller
 
-sdc_controller sd_controller_top_0
+sdc_controller_top sd_controller_top_0
 	(
 	 .wb_clk_i(wb_clk),
 	 .wb_rst_i(wb_rst),

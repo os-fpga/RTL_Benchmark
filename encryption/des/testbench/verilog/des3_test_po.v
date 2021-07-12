@@ -143,7 +143,7 @@ assign #1 des_in = decrypt[0] ? tmp[63:0]   : tmp[127:64];
 assign exp_out_d = decrypt[0] ? tmp[127:64] : tmp[63:0];
 
 // The DES instance
-des3 u0(.clk(		clk		),
+des3_top u0(.clk(		clk		),
 	.desOut(	desOut		),
 	.desIn(		des_in		),
 	.key1(		key1		),

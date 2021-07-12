@@ -139,9 +139,9 @@ empty will place the FIFO in an undefined state.
 
 `define SC_FIFO_ASYNC_RESET				// Uncomment for Syncr. reset
 //`define SC_FIFO_ASYNC_RESET	or negedge rst		// Uncomment for Async. reset
+`include "generic_dpram.v"
 
-
-module generic_fifo_sc_a(clk, rst, clr, din, we, dout, re,
+module generic_fifo_sc_a_top(clk, rst, clr, din, we, dout, re,
 			full, empty, full_r, empty_r,
 			full_n, empty_n, full_n_r, empty_n_r,
 			level);
@@ -191,7 +191,7 @@ generic_dpram  #(aw,dw) u0(
 	.rce(		1'b1		),
 	.oe(		1'b1		),
 	.raddr(		rp		),
-	.do(		dout		),
+	.dout(		dout		),
 	.wclk(		clk		),
 	.wrst(		!rst		),
 	.wce(		1'b1		),

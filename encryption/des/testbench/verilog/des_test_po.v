@@ -455,7 +455,7 @@ assign #1 des_in = (decrypt[0]^reverse) ? tmp[63:0]   : tmp[127:64];
 assign exp_out_d = (decrypt[0]^reverse) ? tmp[127:64] : tmp[63:0];
 
 // The DES instance
-des u0(	.clk(		clk		),
+des_top u0(	.clk(		clk		),
 	.desOut(	desOut		),
 	.desIn(		des_in		),
 	.key(		key		),

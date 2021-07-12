@@ -47,7 +47,7 @@
 `define SHA1_K2 32'h8f1bbcdc
 `define SHA1_K3 32'hca62c1d6
 
-module sha1 (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
+module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 
 	input		clk_i; 	// global clock input
 	input		rst_i; 	// global reset input , active high

@@ -29,7 +29,7 @@
 --
 --------------------------------------------------------------------------
 -------------------------------------------------------------------------*/
-module diffeq_f_systemC(aport, dxport, xport, yport, uport, clk, reset);
+module diffeq_f_systemC_top(aport, dxport, xport, yport, uport, clk, reset);
 
 input clk;
 input reset;

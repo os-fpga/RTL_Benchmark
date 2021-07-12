@@ -52,10 +52,19 @@
 //																     
 // Change History:												     
 //               $Log: not supported by cvs2svn $											 
-																
+
 `include "timescale.v"
 
-module oc54_cpu (
+`include "timescale.v"
+`include "oc54_mac.v"
+`include "oc54_alu.v"
+`include "oc54_bshft.v"
+`include "oc54_cssu.v"
+`include "oc54_exp.v"
+`include "oc54_treg.v"
+`include "oc54_acc.v"
+
+module oc54_cpu_top (
 	clk_i, 
 	ena_mac_i, ena_alu_i, ena_bs_i, ena_exp_i,
 	ena_treg_i, ena_acca_i, ena_accb_i,

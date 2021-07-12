@@ -56,8 +56,8 @@
 // FIFOs. Setting FIFO_ALL_ENTRIES creates additional logic that ensures that
 // all FIFO entries are used at the expense of some additional logic.
 `define FIFO_ALL_ENTRIES
-
-module generic_fifo_lfsr (
+`include "generic_dpram.v"
+module generic_fifo_lfsr_top (
 	clk,
 	nReset,
 	rst,
@@ -185,7 +185,7 @@ module generic_fifo_lfsr (
 		.rce(1'b1),
 		.oe(1'b1),
 		.raddr(rp),
-		.do(q)
+		.dout(q)
 	);
 
 	// generate full/empty signals

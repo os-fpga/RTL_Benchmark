@@ -135,7 +135,7 @@ assign #1 key3 =	{tmp[191:185],tmp[183:177],tmp[175:169],tmp[167:161],
 assign #1 des_in = decrypt[0] ? tmp[63:0]   : tmp[127:64];
 assign   exp_out = decrypt[0] ? tmp[127:64] : tmp[63:0];
 
-des3 u0( .clk(		clk		),
+des3_top u0( .clk(		clk		),
 	.desOut(	desOut		),
 	.desIn(		des_in		),
 	.key1(		key1		),

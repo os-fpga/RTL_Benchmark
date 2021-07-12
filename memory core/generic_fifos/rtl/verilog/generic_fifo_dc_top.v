@@ -38,9 +38,9 @@
 
 //  CVS Log
 //
-//  $Id: generic_fifo_sc_b.v,v 1.1.1.1 2002-09-25 05:42:04 rudi Exp $
+//  $Id: generic_fifo_dc.v,v 1.1.1.1 2002-09-25 05:42:02 rudi Exp $
 //
-//  $Date: 2002-09-25 05:42:04 $
+//  $Date: 2002-09-25 05:42:02 $
 //  $Revision: 1.1.1.1 $
 //  $Author: rudi $
 //  $Locker:  $
@@ -68,6 +68,8 @@ Description
 
 I/Os
 ----
+rd_clk	Read Port Clock
+wr_clk	Write Port Clock
 rst	low active, either sync. or async. master reset (see below how to select)
 clr	synchronous clear (just like reset but always synchronous), high active
 re	read enable, synchronous, high active
@@ -75,15 +77,11 @@ we	read enable, synchronous, high active
 din	Data Input
 dout	Data Output
 
-full	Indicates the FIFO is full (combinatorial output)
-full_r	same as above, but registered output (see note below)
-empty	Indicates the FIFO is empty
-empty_r	same as above, but registered output (see note below)
+full	Indicates the FIFO is full (driven at the rising edge of wr_clk)
+empty	Indicates the FIFO is empty (driven at the rising edge of rd_clk)
 
-full_n		Indicates if the FIFO has space for N entries (combinatorial output)
-full_n_r	same as above, but registered output (see note below)
-empty_n		Indicates the FIFO has at least N entries (combinatorial output)
-empty_n_r	same as above, but registered output (see note below)
+full_n	Indicates if the FIFO has space for N entries (driven of wr_clk)
+empty_n	Indicates the FIFO has at least N entries (driven of rd_clk)
 
 level		indicates the FIFO level:
 		2'b00	0-25%	 full
@@ -91,20 +89,12 @@ level		indicates the FIFO level:
 		2'b10	50-75%	 full
 		2'b11	%75-100% full
 
-combinatorial vs. registered status outputs
--------------------------------------------
-Both the combinatorial and registered status outputs have the same
-basic functionality. The registered outputs are de-asserted with a
-1 cycle delay for full_r and empty_r, and a 2 cycle delay for full_n_r
-and empty_n_r.
-The combinatorial outputs however, pass through several levels of
-logic before they are output. The registered status outputs are
-direct outputs of a flip-flop. The reason both are provided, is
-that the registered outputs require additional logic inside the
-FIFO. If you can meet timing of your device with the combinatorial
-outputs, use them ! The FIFO will be smaller. If the status signals
-are in the critical pass, use the registered outputs, they have a
-much smaller output delay (actually only Tcq).
+Status Timing
+-------------
+All status outputs are registered. They are asserted immediately
+as the full/empty condition occurs, however, there is a 2 cycle
+delay before they are de-asserted once the condition is not true
+anymore.
 
 Parameters
 ----------
@@ -123,7 +113,6 @@ at about 116 MHz (IO insertion disabled). The registered status outputs
 are valid after 2.1NS, the combinatorial once take out to 6.5 NS to be
 available.
 
-
 Misc
 ----
 This design assumes you will do appropriate status checking externally.
@@ -139,29 +128,27 @@ empty will place the FIFO in an undefined state.
 // Uncomment one of the two lines below. The first line for
 // synchronous reset, the second for asynchronous reset
 
-`define SC_FIFO_ASYNC_RESET				// Uncomment for Syncr. reset
-//`define SC_FIFO_ASYNC_RESET	or negedge rst		// Uncomment for Async. reset
+`define DC_FIFO_ASYNC_RESET				// Uncomment for Syncr. reset
+//`define DC_FIFO_ASYNC_RESET	or negedge rst		// Uncomment for Async. reset
 
-
-module generic_fifo_sc_b(clk, rst, clr, din, we, dout, re,
-			full, empty, full_r, empty_r,
-			full_n, empty_n, full_n_r, empty_n_r,
-			level);
+`include "generic_dpram.v"
+module generic_fifo_dc_top(rd_clk, wr_clk, rst, clr, din, we, dout, re,
+			full, empty, full_n, empty_n, level );
 
 parameter dw=8;
 parameter aw=8;
 parameter n=32;
 parameter max_size = 1<<aw;
 
-input			clk, rst, clr;
+input			rd_clk, wr_clk, rst, clr;
 input	[dw-1:0]	din;
 input			we;
 output	[dw-1:0]	dout;
 input			re;
-output			full, full_r;
-output			empty, empty_r;
-output			full_n, full_n_r;
-output			empty_n, empty_n_r;
+output			full; 
+output			empty;
+output			full_n;
+output			empty_n;
 output	[1:0]		level;
 
 ////////////////////////////////////////////////////////////////////
@@ -169,18 +156,16 @@ output	[1:0]		level;
 // Local Wires
 //
 
-reg	[aw:0]	wp;
-wire	[aw:0]	wp_pl1;
-reg	[aw:0]	rp;
-wire	[aw:0]	rp_pl1;
-reg		full_r;
-reg		empty_r;
-wire	[aw:0]	diff;
-reg	[aw:0]	diff_r;
-reg		re_r, we_r;
-wire		full_n, empty_n;
-reg		full_n_r, empty_n_r;
-reg	[1:0]	level;
+reg	[aw:0]		wp;
+wire	[aw:0]		wp_pl1;
+reg	[aw:0]		rp;
+wire	[aw:0]		rp_pl1;
+reg	[aw:0]		wp_s, rp_s;
+wire	[aw:0]		diff;
+reg	[aw:0]		diff_r1, diff_r2;
+reg			re_r, we_r;
+reg			full, empty, full_n, empty_n;
+reg	[1:0]		level;
 
 ////////////////////////////////////////////////////////////////////
 //
@@ -188,13 +173,13 @@ reg	[1:0]	level;
 //
 
 generic_dpram  #(aw,dw) u0(
-	.rclk(		clk		),
+	.rclk(		rd_clk		),
 	.rrst(		!rst		),
 	.rce(		1'b1		),
 	.oe(		1'b1		),
 	.raddr(		rp[aw-1:0]	),
-	.do(		dout		),
-	.wclk(		clk		),
+	.dout(		dout		),
+	.wclk(		wr_clk		),
 	.wrst(		!rst		),
 	.wce(		1'b1		),
 	.we(		we		),
@@ -204,10 +189,10 @@ generic_dpram  #(aw,dw) u0(
 
 ////////////////////////////////////////////////////////////////////
 //
-// Misc Logic
+// Read/Write Pointers Logic
 //
 
-always @(posedge clk `SC_FIFO_ASYNC_RESET)
+always @(posedge wr_clk `DC_FIFO_ASYNC_RESET)
 	if(!rst)	wp <= #1 {aw+1{1'b0}};
 	else
 	if(clr)		wp <= #1 {aw+1{1'b0}};
@@ -216,7 +201,7 @@ always @(posedge clk `SC_FIFO_ASYNC_RESET)
 
 assign wp_pl1 = wp + { {aw{1'b0}}, 1'b1};
 
-always @(posedge clk `SC_FIFO_ASYNC_RESET)
+always @(posedge rd_clk `DC_FIFO_ASYNC_RESET)
 	if(!rst)	rp <= #1 {aw+1{1'b0}};
 	else
 	if(clr)		rp <= #1 {aw+1{1'b0}};
@@ -227,55 +212,55 @@ assign rp_pl1 = rp + { {aw{1'b0}}, 1'b1};
 
 ////////////////////////////////////////////////////////////////////
 //
-// Combinatorial Full & Empty Flags
+// Synchronization Logic
 //
 
-assign empty = (wp == rp);
-assign full  = (wp[aw-1:0] == rp[aw-1:0]) & (wp[aw] != rp[aw]);
+// write pointer
+always @(posedge rd_clk)	wp_s <= #1 wp;
+
+// read pointer
+always @(posedge wr_clk)	rp_s <= #1 rp;
 
 ////////////////////////////////////////////////////////////////////
 //
 // Registered Full & Empty Flags
 //
 
-always @(posedge clk)
-	empty_r <= #1 (wp == rp) | (re & (wp == rp_pl1));
+always @(posedge rd_clk)
+	empty <= #1 (wp_s == rp) | (re & (wp_s == rp_pl1));
 
-always @(posedge clk)
-	full_r <= #1 ((wp[aw-1:0] == rp[aw-1:0]) & (wp[aw] != rp[aw])) |
-	(we & (wp_pl1[aw-1:0] == rp[aw-1:0]) & (wp_pl1[aw] != rp[aw]));
-
-////////////////////////////////////////////////////////////////////
-//
-// Combinatorial Full_n & Empty_n Flags
-//
-
-assign diff = wp-rp;
-assign empty_n = diff < n;
-assign full_n  = !(diff < (max_size-n+1));
-
-always @(posedge clk)
-	level <= #1 {2{diff[aw]}} | diff[aw-1:aw-2];
+always @(posedge wr_clk)
+	full <= #1 ((wp[aw-1:0] == rp_s[aw-1:0]) & (wp[aw] != rp_s[aw])) |
+	(we & (wp_pl1[aw-1:0] == rp_s[aw-1:0]) & (wp_pl1[aw] != rp_s[aw]));
 
 ////////////////////////////////////////////////////////////////////
 //
 // Registered Full_n & Empty_n Flags
 //
 
-always @(posedge clk)
+assign diff = wp-rp;
+
+always @(posedge rd_clk)
 	re_r <= #1 re;
 
-always @(posedge clk)
-	diff_r <= #1 diff;
+always @(posedge rd_clk)
+	diff_r1 <= #1 diff;
 
-always @(posedge clk)
-	empty_n_r <= #1 (diff_r < n) | ((diff_r==n) & (re | re_r));
+always @(posedge rd_clk)
+	empty_n <= #1 (diff_r1 < n) | ((diff_r1==n) & (re | re_r));
 
-always @(posedge clk)
+always @(posedge wr_clk)
 	we_r <= #1 we;
 
-always @(posedge clk)
-	full_n_r <= #1 (diff_r > max_size-n) | ((diff_r==max_size-n) & (we | we_r));
+always @(posedge wr_clk)
+	diff_r2 <= #1 diff;
+
+always @(posedge wr_clk)
+	full_n <= #1 (diff_r2 > max_size-n) | ((diff_r2==max_size-n) & (we | we_r));
+
+always @(posedge wr_clk)
+	level <= #1 {2{diff[aw]}} | diff[aw-1:aw-2];
+
 
 ////////////////////////////////////////////////////////////////////
 //
@@ -283,11 +268,11 @@ always @(posedge clk)
 //
 
 // synopsys translate_off
-always @(posedge clk)
+always @(posedge wr_clk)
 	if(we & full)
 		$display("%m WARNING: Writing while fifo is FULL (%t)",$time);
 
-always @(posedge clk)
+always @(posedge rd_clk)
 	if(re & empty)
 		$display("%m WARNING: Reading while fifo is EMPTY (%t)",$time);
 // synopsys translate_on

@@ -3,7 +3,7 @@
 // this circuit receives the rgbvideo  signal
 // from video input and send it to chip #2
 // for buffring and processing.
-module sv_chip3_hierarchy_no_mem (tm3_clk_v0, tm3_clk_v2, tm3_vidin_llc, tm3_vidin_vs, tm3_vidin_href, tm3_vidin_cref, tm3_vidin_rts0, tm3_vidin_vpo, tm3_vidin_sda, tm3_vidin_scl, vidin_new_data, vidin_rgb_reg, vidin_addr_reg);
+module sv_chip3_hierarchy_no_mem_top (tm3_clk_v0, tm3_clk_v2, tm3_vidin_llc, tm3_vidin_vs, tm3_vidin_href, tm3_vidin_cref, tm3_vidin_rts0, tm3_vidin_vpo, tm3_vidin_sda, tm3_vidin_scl, vidin_new_data, vidin_rgb_reg, vidin_addr_reg);
 
    input tm3_clk_v0; 
    input tm3_clk_v2; 
