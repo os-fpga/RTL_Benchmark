@@ -16,12 +16,12 @@ Synthesized on Artix-7 device using vivado.
 
 # Directory structure
 
-├── doc                    # Documentation
-├── rtl                    # RTL Sources
-│   ├── fcmp                 # FPU Compare unit
-│   │   ├── testbench        # FPU Compare Testbench
-│   │   └── verilog          # FPU Compare Verilog Sources
-│   └── verilog            # Verilog Sources
-└── testbench              # Testbench
-    └── test vectors       # Test vectors
+    ├── doc                    # Documentation
+    ├── rtl                    # RTL Sources
+    │   ├── fcmp                 # FPU Compare unit
+    │   │   ├── testbench        # FPU Compare Testbench
+    │   │   └── verilog          # FPU Compare Verilog Sources
+    │   └── verilog            # Verilog Sources
+    └── testbench              # Testbench
+        └── test vectors       # Test vectors
 
