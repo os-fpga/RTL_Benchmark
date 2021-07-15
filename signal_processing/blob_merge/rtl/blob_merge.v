@@ -92,7 +92,7 @@
 
 
 
-module RLE_BlobMerging_top(clk,
+module RLE_BlobMerging(clk,
 //iCOMclock,
     iReset,
     iReadFifoEmpty,
