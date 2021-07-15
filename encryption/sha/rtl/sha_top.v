@@ -47,7 +47,7 @@
 `define SHA1_K2 32'h8f1bbcdc
 `define SHA1_K3 32'hca62c1d6
 
-module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
+module sha_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 
 	input		clk_i; 	// global clock input
 	input		rst_i; 	// global reset input , active high
@@ -106,7 +106,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
     	always @ (posedge clk_i)
     	begin
     		if (rst_i)
-    			cmd <= 'b0;
+    			cmd <= 4'b0000;
     		else
     		if (cmd_w_i)
     			cmd[2:0] <= cmd_i[2:0];		// busy bit can't write
@@ -128,9 +128,11 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 	assign SHA1_f2_BCD = B ^ C ^ D;
 	assign SHA1_f3_BCD = (B & C) ^ (C & D) ^ (B & D);
 	
-	assign SHA1_ft_BCD = (round < 'd21) ? SHA1_f1_BCD : (round < 'd41) ? SHA1_f2_BCD : (round < 'd61) ? SHA1_f3_BCD : SHA1_f2_BCD;
+	assign SHA1_ft_BCD = (round < 7'b0100101) ? SHA1_f1_BCD : (round < 7'b101001) ? SHA1_f2_BCD : (round < 7'b1111101) ? SHA1_f3_BCD : SHA1_f2_BCD;
 	
-    	assign SHA1_Wt_1 = {W13 ^ W8 ^ W2 ^ W0};
+	// Odin II doesn't support binary operations inside concatenations presently. 
+	//assign SHA1_Wt_1 = {W13 ^ W8 ^ W2 ^ W0};
+	assign SHA1_Wt_1 = W13 ^ W8 ^ W2 ^ W0;
 
 	assign next_Wt = {SHA1_Wt_1[30:0],SHA1_Wt_1[31]};	// NSA fix added
 	assign next_A = {A[26:0],A[31:27]} + SHA1_ft_BCD + E + Kt + Wt;
@@ -147,50 +149,50 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 	begin
 		if (rst_i)
 		begin
-			round <= 'd0;
-			busy <= 'b0;
+			round <= 7'b0000000;
+			busy <= 1'b0;
 
-			W0  <= 'b0;
-			W1  <= 'b0;
-			W2  <= 'b0;
-			W3  <= 'b0;
-			W4  <= 'b0;
-			W5  <= 'b0;
-			W6  <= 'b0;
-			W7  <= 'b0;
-			W8  <= 'b0;
-			W9  <= 'b0;
-			W10 <= 'b0;
-			W11 <= 'b0;
-			W12 <= 'b0;
-			W13 <= 'b0;
-			W14 <= 'b0;
-			Wt  <= 'b0;
+			W0  <= 32'b00000000000000000000000000000000;
+			W1  <= 32'b00000000000000000000000000000000;
+			W2  <= 32'b00000000000000000000000000000000;
+			W3  <= 32'b00000000000000000000000000000000;
+			W4  <= 32'b00000000000000000000000000000000;
+			W5  <= 32'b00000000000000000000000000000000;
+			W6  <= 32'b00000000000000000000000000000000;
+			W7  <= 32'b00000000000000000000000000000000;
+			W8  <= 32'b00000000000000000000000000000000;
+			W9  <= 32'b00000000000000000000000000000000;
+			W10 <= 32'b00000000000000000000000000000000;
+			W11 <= 32'b00000000000000000000000000000000;
+			W12 <= 32'b00000000000000000000000000000000;
+			W13 <= 32'b00000000000000000000000000000000;
+			W14 <= 32'b00000000000000000000000000000000;
+			Wt  <= 32'b00000000000000000000000000000000;
 			
-			A <= 'b0;
-			B <= 'b0;
-			C <= 'b0;
-			D <= 'b0;
-			E <= 'b0;
+			A <= 32'b00000000000000000000000000000000;
+			B <= 32'b00000000000000000000000000000000;
+			C <= 32'b00000000000000000000000000000000;
+			D <= 32'b00000000000000000000000000000000;
+			E <= 32'b00000000000000000000000000000000;
 			
-			H0 <= 'b0;
-			H1 <= 'b0;
-			H2 <= 'b0;
-			H3 <= 'b0;
-			H4 <= 'b0;
+			H0 <= 32'b00000000000000000000000000000000;
+			H1 <= 32'b00000000000000000000000000000000;
+			H2 <= 32'b00000000000000000000000000000000;
+			H3 <= 32'b00000000000000000000000000000000;
+			H4 <= 32'b00000000000000000000000000000000;
 
 		end
 		else
 		begin
 			case (round)
 			
-			'd0:
+			7'b0000000:
 				begin
 					if (cmd[1])
 					begin
 						W0 <= text_i;
 						Wt <= text_i;
-						busy <= 'b1;
+						busy <= 1'b1;
 						round <= round_plus_1;
                                                	
 						case (cmd[2])
@@ -220,10 +222,10 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 					end
 					else
 					begin	// IDLE
-						round <= 'd0;
+						round <= 7'b0000000;
 					end
 				end
-			'd1:
+			7'b0000001:
 				begin
 					W1 <= text_i;
 					Wt <= text_i;
@@ -236,7 +238,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd2:
+			7'b0000010:
 				begin
 					W2 <= text_i;
 					Wt <= text_i;
@@ -249,7 +251,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd3:
+			7'b0000011:
 				begin
 					W3 <= text_i;
 					Wt <= text_i;
@@ -262,7 +264,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd4:
+			7'b0000100:
 				begin
 					W4 <= text_i;
 					Wt <= text_i;
@@ -275,7 +277,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd5:
+			7'b0000101:
 				begin
 					W5 <= text_i;
 					Wt <= text_i;
@@ -288,7 +290,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd6:
+			7'b0000110:
 				begin
 					W6 <= text_i;
 					Wt <= text_i;
@@ -301,7 +303,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd7:
+			7'b0000111:
 				begin
 					W7 <= text_i;
 					Wt <= text_i;
@@ -314,7 +316,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd8:
+			7'b0001000:
 				begin
 					W8 <= text_i;
 					Wt <= text_i;
@@ -327,7 +329,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd9:
+			7'b0001001:
 				begin
 					W9 <= text_i;
 					Wt <= text_i;
@@ -340,7 +342,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd10:
+			7'b0001010:
 				begin
 					W10 <= text_i;
 					Wt <= text_i;
@@ -353,7 +355,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd11:
+			7'b0001011:
 				begin
 					W11 <= text_i;
 					Wt <= text_i;
@@ -366,7 +368,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd12:
+			7'b0001100:
 				begin
 					W12 <= text_i;
 					Wt <= text_i;
@@ -379,7 +381,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd13:
+			7'b0001101:
 				begin
 					W13 <= text_i;
 					Wt <= text_i;
@@ -392,7 +394,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd14:
+			7'b0001110:
 				begin
 					W14 <= text_i;
 					Wt <= text_i;
@@ -405,7 +407,7 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd15:
+			7'b0001111:
 				begin
 					Wt <= text_i;
 					
@@ -417,70 +419,1645 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd16,
-			'd17,
-			'd18,
-			'd19,
-			'd20,
-			'd21,
-			'd22,
-			'd23,
-			'd24,
-			'd25,
-			'd26,
-			'd27,
-			'd28,
-			'd29,
-			'd30,
-			'd31,
-			'd32,
-			'd33,
-			'd34,
-			'd35,
-			'd36,
-			'd37,
-			'd38,
-			'd39,
-			'd40,
-			'd41,
-			'd42,
-			'd43,
-			'd44,
-			'd45,
-			'd46,
-			'd47,
-			'd48,
-			'd49,
-			'd50,
-			'd51,
-			'd52,
-			'd53,
-			'd54,
-			'd55,
-			'd56,
-			'd57,
-			'd58,
-			'd59,
-			'd60,
-			'd61,
-			'd62,
-			'd63,
-			'd64,
-			'd65,
-			'd66,
-			'd67,
-			'd68,
-			'd69,
-			'd70,
-			'd71,
-			'd72,
-			'd73,
-			'd74,
-			'd75,
-			'd76,
-			'd77,
-			'd78,
-			'd79:
+			7'b0010000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0010111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0011111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0100111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0101111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0110111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b0111111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1000111:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001000:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001001:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001010:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001011:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001100:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001101:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001110:begin
+					W0  <= W1;
+					W1  <= W2;
+					W2  <= W3;
+					W3  <= W4;
+					W4  <= W5;
+					W5  <= W6;
+					W6  <= W7;
+					W7  <= W8;
+					W8  <= W9;
+					W9  <= W10;
+					W10 <= W11;
+					W11 <= W12;
+					W12 <= W13;
+					W13 <= W14;
+					W14 <= Wt;
+					Wt  <= next_Wt;
+					
+					E <= D;
+					D <= C;
+					C <= next_C;
+					B <= A;
+					A <= next_A;
+						
+					round <= round_plus_1;
+				end
+			7'b1001111:
 				begin
 					W0  <= W1;
 					W1  <= W2;
@@ -507,20 +2084,20 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 						
 					round <= round_plus_1;
 				end
-			'd80:
+			7'b1010000:
 				begin
 					A <= next_A + H0;
 					B <= A + H1;
 					C <= next_C + H2;
 					D <= C + H3;
 					E <= D + H4;
-					round <= 'd0;
-					busy <= 'b0;
+					round <= 7'b0000000;
+					busy <= 1'b0;
 				end
 			default:
 				begin
-					round <= 'd0;
-					busy <= 'b0;
+					round <= 7'b0000000;
+					busy <= 1'b0;
 				end
 			endcase
 		end	
@@ -534,17 +2111,17 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 	begin
 		if (rst_i)
 		begin
-			Kt <= 'b0;
+			Kt <= 32'b00000000000000000000000000000000;
 		end
 		else
 		begin
-			if (round < 'd20)
+			if (round < 7'b0100000)
 				Kt <= `SHA1_K0;
 			else
-			if (round < 'd40)
+			if (round < 7'b1010000)
 				Kt <= `SHA1_K1;
 			else
-			if (round < 'd60)
+			if (round < 7'b1111100)
 				Kt <= `SHA1_K2;
 			else
 				Kt <= `SHA1_K3;
@@ -558,33 +2135,33 @@ module sha1_top (clk_i, rst_i, text_i, text_o, cmd_i, cmd_w_i, cmd_o);
 	begin
 		if (rst_i)
 		begin
-			text_o <= 'b0;
-			read_counter <= 'b0;
+			text_o <= 32'b00000000000000000000000000000000;
+			read_counter <= 3'b000;
 		end
 		else
 		begin
 			if (cmd[0])
 			begin
-				read_counter <= 'd4;	// sha-1 	160/32=5
+				read_counter <= 3'b100;	// sha-1 	160/32=5
 			end
 			else
 			begin
 			if (~busy)
 			begin
 				case (read_counter)
-					'd4:	text_o <= SHA1_result[5*32-1:4*32];
-					'd3:	text_o <= SHA1_result[4*32-1:3*32];
-					'd2:	text_o <= SHA1_result[3*32-1:2*32];
-					'd1:	text_o <= SHA1_result[2*32-1:1*32];
-					'd0:	text_o <= SHA1_result[1*32-1:0*32];
-					default:text_o <= 'b0;
+					3'b100:	text_o <= SHA1_result[5*32-1:4*32];
+					3'b011:	text_o <= SHA1_result[4*32-1:3*32];
+					3'b010:	text_o <= SHA1_result[3*32-1:2*32];
+					3'b001:	text_o <= SHA1_result[2*32-1:1*32];
+					3'b000:	text_o <= SHA1_result[1*32-1:0*32];
+					default:text_o <= 3'b000;
 				endcase
 				if (|read_counter)
-					read_counter <= read_counter - 'd1;
+					read_counter <= read_counter - 7'b0000001;
 			end
 			else
 			begin
-				text_o <= 'b0;
+				text_o <= 32'b00000000000000000000000000000000;
 			end
 			end
 		end
