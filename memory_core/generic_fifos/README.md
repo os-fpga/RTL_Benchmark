@@ -12,6 +12,16 @@ Generic, multi-purpose FIFOs. Available as single clock and dual clock version, 
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
+### generic_fifo_sc_a
+
+|Resource| No.|
+|:---:|:---:|
+|LUT|63|
+|FF|34|
+|DSP|0|
+|BRAM|0.5|
+|IO|31|
+
 ### generic_fifo_sc_b
 
 |Resource| No.|
@@ -21,6 +31,26 @@ Synthesized on Artix-7 device using vivado.
 |DSP|0|
 |BRAM|0.5|
 |IO|31|
+
+### generic_fifo_dc
+
+|Resource| No.|
+|:---:|:---:|
+|LUT|46|
+|FF|62|
+|DSP|0|
+|BRAM|0.5|
+|IO|28|
+
+### generic_fifo_dc_gray
+
+|Resource| No.|
+|:---:|:---:|
+|LUT|87|
+|FF|90|
+|DSP|0|
+|BRAM|0.5|
+|IO|44|
 
 # Directory structure 
 
