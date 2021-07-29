@@ -68,7 +68,7 @@
 
 `include "timescale.v"
 
-module tst_bench_top();
+module tst_bench_top ();
 
 	//
 	// wires && regs
@@ -133,7 +133,7 @@ module tst_bench_top();
 	assign dat_i = ({{8'd8}{stb0}} & dat0_i) | ({{8'd8}{stb1}} & dat1_i);
 
 	// hookup wishbone_i2c_master core
-	i2c_master_top i2c_top (
+	i2c_master i2c_top (
 
 		// wishbone interface
 		.wb_clk_i(clk),

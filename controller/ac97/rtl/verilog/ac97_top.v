@@ -74,7 +74,7 @@
 
 `include "ac97_defines.v"
 
-module ac97_top(clk_i, rst_i,
+module ac97_top (clk_i, rst_i,
 
 	wb_data_i, wb_data_o, wb_addr_i, wb_sel_i, wb_we_i, wb_cyc_i,
 	wb_stb_i, wb_ack_o, wb_err_o, 

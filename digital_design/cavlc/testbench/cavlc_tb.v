@@ -127,7 +127,7 @@ wire    [4:0]   len_comb;
 wire    idle;
 wire    valid;
 
-cavlc_top dut(
+cavlc dut(
     clk,
     rst_n,
     ena,

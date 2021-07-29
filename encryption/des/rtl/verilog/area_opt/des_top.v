@@ -34,7 +34,7 @@
 `include "crp.v"
 `include "key_sel.v"
 
-module des_top(desOut, desIn, key, decrypt, roundSel, clk);
+module des_top (desOut, desIn, key, decrypt, roundSel, clk);
 output	[63:0]	desOut;
 input	[63:0]	desIn;
 input	[55:0]	key;
