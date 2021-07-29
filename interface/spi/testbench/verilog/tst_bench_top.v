@@ -49,7 +49,7 @@
 
 `include "timescale.v"
 
-module tst_bench_top();
+module tst_bench_top ();
 
 	//
 	// wires && regs

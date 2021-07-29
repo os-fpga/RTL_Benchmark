@@ -128,7 +128,7 @@ updated.
 `include "ethmac_defines.v"
 `include "timescale.v"
 
-module tb_eth_top();
+module tb_eth_top ();
 
 
 parameter Tp = 1;
@@ -197,7 +197,7 @@ reg [5:0] g_last_txbd;
 
 // Connecting Ethernet top module
 
-ethmac ethtop
+eth_top ethtop
 (
   // WISHBONE common
   .wb_clk_i(WB_CLK_I), .wb_rst_i(WB_RST_I), .wb_dat_i(WB_DAT_I), .wb_dat_o(WB_DAT_O), 

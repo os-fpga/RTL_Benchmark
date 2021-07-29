@@ -786,7 +786,7 @@ pullup p8(mc_rp_);
 //
 // WISHBONE Memory Controller IP Core
 //
-mc_top	u0(
+mc	u0(
 		.clk_i(		clk		),
 		.rst_i(		rst		),
 		.wb_data_i(	wb_data_i	),

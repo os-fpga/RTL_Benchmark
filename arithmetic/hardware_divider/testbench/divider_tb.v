@@ -119,7 +119,7 @@ always@(posedge clk)
 
 
 ///DUT
-divider_dshift_top	divider_0(
+divider_dshift	divider_0(
 clk,
 rst,
 dividend,

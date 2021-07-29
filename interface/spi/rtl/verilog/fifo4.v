@@ -56,7 +56,7 @@
 
 
 // 4 entry deep fast fifo
-module fifo4(clk, rst, clr,  din, we, dout, re, full, empty);
+module fifo4 (clk, rst, clr,  din, we, dout, re, full, empty);
 
 parameter dw = 8;
 

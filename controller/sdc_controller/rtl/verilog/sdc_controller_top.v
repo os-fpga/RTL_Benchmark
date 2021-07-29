@@ -75,7 +75,7 @@
 
 
 
-module sdc_controller_top(
+module sdc_controller_top (
            // WISHBONE common
            wb_clk_i, 
            wb_rst_i, 

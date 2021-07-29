@@ -58,7 +58,7 @@
 
 `include "ac97_defines.v"
 
-module ac97_codec_top(clk, rst,
+module ac97_codec_top (clk, rst,
 	sync,
 	sdata_out,
 	sdata_in

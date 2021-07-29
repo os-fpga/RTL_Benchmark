@@ -12,7 +12,7 @@ module tb_bin2bcd;
     reg [8:0] i;
 
     // Instantiate the Unit Under Test (UUT)
-    bin2bcd_top uut (
+    bin2bcd uut (
         .bin(bin), 
         .bcd(bcd)
     );

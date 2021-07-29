@@ -206,7 +206,7 @@ assign ata_din  = ata_data;
 assign ata_data = ata_doe ? ata_dout : 16'hzzzz;
 
 // DUT: ATA Host
-atahost_top u0(	//-- WISHBONE SYSCON signals
+atahost u0(	//-- WISHBONE SYSCON signals
 		.wb_clk_i(		clk		),
 		.arst_i(		rst		),
 		.wb_rst_i(		~rst		),
