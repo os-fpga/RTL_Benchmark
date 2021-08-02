@@ -58,7 +58,7 @@ module tv80_alu (/*AUTOARG*/
     input Sub;
     input Carry_In;
     begin
-      AddSub4 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + Carry_In;
+      AddSub4 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + {4'h0,Carry_In};
     end
   endfunction // AddSub4
   
@@ -68,7 +68,7 @@ module tv80_alu (/*AUTOARG*/
     input Sub;
     input Carry_In;
     begin
-      AddSub3 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + Carry_In;
+      AddSub3 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + {3'h0,Carry_In};
     end
   endfunction // AddSub4
 
@@ -78,7 +78,7 @@ module tv80_alu (/*AUTOARG*/
     input Sub;
     input Carry_In;
     begin
-      AddSub1 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + Carry_In;
+      AddSub1 = { 1'b0, A } + { 1'b0, (Sub)?~B:B } + {1'h0,Carry_In};
     end
   endfunction // AddSub4
 

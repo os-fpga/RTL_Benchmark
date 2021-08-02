@@ -14,8 +14,8 @@ Synthesized on Artix-7 device using vivado.
 
 |Resource| No.|
 |:---:|:---:|
-|LUT|1151|
-|FF|231|
+|LUT|1147|
+|FF|230|
 |DSP|0|
 |BRAM|0|
 |IO|46|
@@ -25,5 +25,5 @@ Berkeley Software Distribution
 
 # Directory structure
 
-    ├── doc     # Documentation
-    └── rtl     # RTL Sources
+    ├── doc                # Documentation
+    └── rtl                # RTL Sources
