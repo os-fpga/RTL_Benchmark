@@ -60,6 +60,7 @@
 //
 
 `include "timescale.v"
+`include "atahost_pio_tctrl.v"
 
 module atahost_controller (clk, nReset, rst, irq, IDEctrl_rst, IDEctrl_IDEen, 
 			PIO_cmdport_T1, PIO_cmdport_T2, PIO_cmdport_T4, PIO_cmdport_Teoc, PIO_cmdport_IORDYen, 

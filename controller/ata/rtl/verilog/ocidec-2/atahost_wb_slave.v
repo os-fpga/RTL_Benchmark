@@ -290,22 +290,22 @@ module atahost_wb_slave (
 
 
 	// generate status register clearable bits
-	reg dirq, int;
+	reg dirq, inti;
 	
 	always@(posedge clk_i or negedge arst_i)
 		if (~arst_i)
 			begin
-				int  <= #1 1'b0;
+				inti  <= #1 1'b0;
 				dirq <= #1 1'b0;
 			end
 		else if (rst_i)
 			begin
-				int  <= #1 1'b0;
+				inti <= #1 1'b0;
 				dirq <= #1 1'b0;
 			end
 		else
 			begin
-				int  <= #1 (int | (irq & !dirq)) & !(sel_stat & !dat_i[0]);
+				inti  <= #1 (inti | (irq & !dirq)) & !(sel_stat & !dat_i[0]);
 				dirq <= #1 irq;
 			end
 
@@ -321,7 +321,7 @@ module atahost_wb_slave (
 	assign StatReg[7]     = PIOtip;
 	assign StatReg[6]     = PIOpp_full;
 	assign StatReg[5:1]   = 0;          // reserved
-	assign StatReg[0]     = int;
+	assign StatReg[0]     = inti;
 
 
 	// generate PIO compatible / command-port timing register

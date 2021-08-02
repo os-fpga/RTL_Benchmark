@@ -55,6 +55,7 @@
 //
 
 `include "timescale.v"
+`include "atahost_pio_actrl.v"
 
 module atahost_controller (
 		clk, nReset, rst, irq, IDEctrl_rst, IDEctrl_IDEen, IDEctrl_FATR0, IDEctrl_FATR1,
@@ -158,7 +159,9 @@ module atahost_controller (
 
 	// synchronize incoming signals
 	reg cIORDY;                               // capture IORDY
-	reg cINTRQ;                               // capture INTRQ
+	reg cINTRQ; // capture INTRQ
+	reg PIOgo;   // start PIO timing controller 
+	reg dPIOreq;                             
 
 	always @(posedge clk)
 	begin : synch_incoming

@@ -7,7 +7,7 @@
 `define MEMORY_CONTROLLER_DATA_SIZE 32
 
 
-module memory_controller_top 
+module memory_controller_top
 (
 	clk,
 	memory_controller_address,
@@ -305,11 +305,11 @@ module single_port_ram (
 	assign out = internal;
 
 	always @(posedge clk) begin
-		if(wen) begin
+		if(we) begin
 			ram[addr] <= data;
 		end
 
-		if(ren) begin
+		if(~we) begin
 			internal <= ram[addr];
 		end
 	end
