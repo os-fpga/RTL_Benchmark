@@ -22,12 +22,13 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-`include "tv80.v"
-`include "tv80_mcode.v"
 `include "tv80_alu.v"
+`include "tv80_core.v"
+`include "tv80_mcode.v"
 `include "tv80_reg.v"
 
-module tv80s (/*AUTOARG*/
+
+module tv80s_top (/*AUTOARG*/
   // Outputs
   m1_n, mreq_n, iorq_n, rd_n, wr_n, rfsh_n, halt_n, busak_n, A, dout, 
   // Inputs
@@ -35,7 +36,7 @@ module tv80s (/*AUTOARG*/
   );
 
   parameter Mode = 0;    // 0 => Z80, 1 => Fast Z80, 2 => 8080, 3 => GB
-  parameter T2Write = 0; // 0 => wr_n active in T3, /=0 => wr_n active in T2
+  parameter T2Write = 1; // 0 => wr_n active in T3, /=0 => wr_n active in T2
   parameter IOWait  = 1; // 0 => Single cycle I/O, 1 => Std I/O cycle
 
 
@@ -68,12 +69,12 @@ module tv80s (/*AUTOARG*/
   wire          write;
   wire          iorq;
   reg [7:0]     di_reg;
-  wire [2:0]    mcycle;
-  wire [2:0]    tstate;
+  wire [6:0]    mcycle;
+  wire [6:0]    tstate;
 
   assign    cen = 1;
 
-  tv80_core i_tv80_core
+  tv80_core #(Mode, IOWait) i_tv80_core
     (
      .cen (cen),
      .m1_n (m1_n),
@@ -100,65 +101,67 @@ module tv80s (/*AUTOARG*/
      .intcycle_n (intcycle_n)
      );  
 
-  always @(posedge clk)
+  always @(posedge clk or negedge reset_n)
     begin
       if (!reset_n)
         begin
-	  rd_n   <= #1 1'b1;
-	  wr_n   <= #1 1'b1;
-	  iorq_n <= #1 1'b1;
-	  mreq_n <= #1 1'b1;
-	  di_reg <= #1 0;
+          rd_n   <= #1 1'b1;
+          wr_n   <= #1 1'b1;
+          iorq_n <= #1 1'b1;
+          mreq_n <= #1 1'b1;
+          di_reg <= #1 0;
         end
       else
         begin
-	  rd_n <= #1 1'b1;
-	  wr_n <= #1 1'b1;
-	  iorq_n <= #1 1'b1;
-	  mreq_n <= #1 1'b1;
-	  if (mcycle == 3'b001)
+          rd_n <= #1 1'b1;
+          wr_n <= #1 1'b1;
+          iorq_n <= #1 1'b1;
+          mreq_n <= #1 1'b1;
+          if (mcycle[0])
             begin
-	      if (tstate == 3'b001 || (tstate == 3'b010 && wait_n == 1'b0))
+              if (tstate[1] || (tstate[2] && wait_n == 1'b0))
                 begin
-		  rd_n <= #1 ~ intcycle_n;
-		  mreq_n <= #1 ~ intcycle_n;
-		  iorq_n <= #1 intcycle_n;
-	        end
-	      if (tstate == 3'b011)
-		mreq_n <= #1 1'b0;
-            end // if (mcycle == 3'b001)          
-	  else
+                  rd_n <= #1 ~ intcycle_n;
+                  mreq_n <= #1 ~ intcycle_n;
+                  iorq_n <= #1 intcycle_n;
+                end
+            `ifdef TV80_REFRESH
+              if (tstate[3])
+            mreq_n <= #1 1'b0;
+            `endif
+            end // if (mcycle[0])          
+          else
             begin
-	      if ((tstate == 3'b001 || (tstate == 3'b010 && wait_n == 1'b0)) && no_read == 1'b0 && write == 1'b0)
+              if ((tstate[1] || (tstate[2] && wait_n == 1'b0)) && no_read == 1'b0 && write == 1'b0)
                 begin
-		  rd_n <= #1 1'b0;
-		  iorq_n <= #1 ~ iorq;
-		  mreq_n <= #1 iorq;
-		end
-	      if (T2Write == 0)
+                  rd_n <= #1 1'b0;
+                  iorq_n <= #1 ~ iorq;
+                  mreq_n <= #1 iorq;
+                end
+              if (T2Write == 0)
                 begin                          
-		  if (tstate == 3'b010 && write == 1'b1)
+                  if (tstate[2] && write == 1'b1)
                     begin
-		      wr_n <= #1 1'b0;
-		      iorq_n <= #1 ~ iorq;
-		      mreq_n <= #1 iorq;
+                      wr_n <= #1 1'b0;
+                      iorq_n <= #1 ~ iorq;
+                      mreq_n <= #1 iorq;
                     end
                 end
-	      else
+              else
                 begin
-		  if ((tstate == 3'b001 || (tstate == 3'b010 && wait_n == 1'b0)) && write == 1'b1)
+                  if ((tstate[1] || (tstate[2] && wait_n == 1'b0)) && write == 1'b1)
                     begin
-		      wr_n <= #1 1'b0;
-		      iorq_n <= #1 ~ iorq;
-		      mreq_n <= #1 iorq;
-		  end
-	        end // else: !if(T2write == 0)
+                      wr_n <= #1 1'b0;
+                      iorq_n <= #1 ~ iorq;
+                      mreq_n <= #1 iorq;
+                  end
+                end // else: !if(T2write == 0)
               
-	    end // else: !if(mcycle == 3'b001)
+            end // else: !if(mcycle[0])
           
-	  if (tstate == 3'b010 && wait_n == 1'b1)
-	    di_reg <= #1 di;
-	end // else: !if(!reset_n)
+          if (tstate[2] && wait_n == 1'b1)
+            di_reg <= #1 di;
+        end // else: !if(!reset_n)
     end // always @ (posedge clk or negedge reset_n)
   
 endmodule // t80s

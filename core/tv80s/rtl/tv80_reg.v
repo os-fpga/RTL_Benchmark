@@ -61,11 +61,17 @@ module tv80_reg (/*AUTOARG*/
   assign DOCL = RegsL[AddrC];
 
   // break out ram bits for waveform debug
+// synopsys translate_off
+  wire [7:0] B = RegsH[0];
+  wire [7:0] C = RegsL[0];
+  wire [7:0] D = RegsH[1];
+  wire [7:0] E = RegsL[1];
   wire [7:0] H = RegsH[2];
   wire [7:0] L = RegsL[2];
+
+  wire [15:0] IX = { RegsH[3], RegsL[3] };
+  wire [15:0] IY = { RegsH[7], RegsL[7] };
+// synopsys translate_on
   
-// synopsys dc_script_begin
-// set_attribute current_design "revision" "$Id: tv80_reg.v,v 1.1 2004/05/16 17:39:57 ghutchis Exp $" -type string -quiet
-// synopsys dc_script_end
 endmodule
 
