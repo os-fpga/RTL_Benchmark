@@ -23,7 +23,7 @@ Synthesized on Artix-7 device using vivado.
 |LUT|659|
 |FF|550|
 |DSP|4|
-|BRAM|98|
+|BRAM|0|
 |IO|25|
 
 # License
