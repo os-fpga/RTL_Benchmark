@@ -70,6 +70,10 @@ This repository contains the benchmarks, catagorized on the bases of their domai
         ├── stereovision3
         └── stereovission1
 
+
+# RTL_Benchmark
+This repository contains the benchmarks, catagorized on the bases of their domain.
+
 ## Synthesis report of each catagory on different tools:
 ### 1. Arithmetic
  - #### Vivado
@@ -111,3 +115,127 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Min|40 (unsign_mult)|0 (unsign_mult)|0 (cordic_core)|0 (unsign_mult)|25 (DCT)|
 |Max|21484 (LU8PEEng)|4680 (LU8PEEng)|30 (cf_fft)|56 (LU8PEEng)|258 (diffeq1)|
 |Avg|3239.4|1325.3|6|6.7|123.2|
+
+
+### 3. Core
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|570 (rs_dec)|230 (tv80s)|0 (tv80s)|0|20 (rs_dec)|
+|Max|2338 (oc54x)|432 (oc54x)|1 (oc54x)|0|140 (oc54x)|
+|Avg|1351.6|352.3|0.33|0|68.6|
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|350 (rs_dec)|426 (tv80s)|0 (tv80s)|0|20 (rs_dec)|
+|Max|1915 (oc54x)|592 (rs_dec)|13 (rs_dec)|0|140 (oc54x)|
+|Avg|1212|491.3|4.7|0|68.6|
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|883 (rs_dec)|362 (tv80s)|0 (tv80s)|0 (rs_dec)|20 (rs_dec)|
+|Max|3044 (oc54x)|517 (rs_dec)|13 (rs_dec)|3 (tv80s)|140 (oc54x)|
+|Avg|2059.7|436|4.7|1|68.6|
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|414 (rs_dec)|266 (tv80s)|0 (tv80s)|0|20 (rs_dec)|
+|Max|2038 (oc54x)|535 (rs_dec)|13 (rs_dec)|0|140 (oc54x)|
+|Avg|1142.7|413.3|4.7|0|68.6|
+
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|678 (rs_dec)|230 (tv80s)|0 (tv80s)|0|20 (rs_dec)|
+|Max|3039 (oc54x)|517 (rs_dec)|13 (rs_dec)|0|140 (oc54x)|
+|Avg|1739|390.3|4.7|0|68.6|
+
+### 4. Digital Design
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|1 (counter)|0 (bin2dec)|0 |0|3 (shift_reg)|
+|Max|702 (cavlc)|605 (counter120bitx5)|0|0|187 (cavlc)|
+|Avg|145.7|150.6|0|0|45.7|
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|9 (counter)|0 (bin2dec)|0 |0 (counter)|3 (shift_reg)|
+|Max|811 (cavlc)|605 (counter120bitx5)|0|2 (sb_serial)|187 (cavlc)|
+|Avg|224.6|178|0|0.28|45.7|
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|0 (counter)|0 (bin2dec)|0 |0 (counter)|3 (shift_reg)|
+|Max|1590 (cavlc)|605 (counter120bitx5)|0|1 (shift_reg)|187 (cavlc)|
+|Avg|362.1|156|0|0.14|45.7|
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|0 (counter_16bit)|0 (bin2dec)|0 |0|3 (shift_reg)|
+|Max|949 (cavlc)|8192 (shift_reg)|0|0|187 (cavlc)|
+|Avg|228.7|1395.3|0|0|45.7|
+
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|7 (counter_16bit)|0 (bin2dec)|0 |0 (counter)|3 (shift_reg)|
+|Max|1086 (cavlc)|605 (counter120bitx5)|0|1 (shift_reg)|187 (cavlc)|
+|Avg|279.1|156|0|0.14|45.7|
+
+### 5. Encryption
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|309 (systemCdes)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
+|Max|5512 (des_prf)|6008 (des_prf)|0|0.5 (sha256)|298 (des_prf)|
+|Avg||||||
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|248 (systemCdes)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
+|Max|5410 (des_prf)|6604 (des_prf)|0|4 (des_prf)|298 (des_prf)|
+|Avg||||||
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|544 (systemCdes)|64 (des_area)|0|0 (des_area)|30 (sha256)|
+|Max|10326 (des_prf)|7022 (des_prf)|0|1 (sha256)|298 (des_prf)|
+|Avg||||||
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|328 (systemCdes)|64 (des_area)|0|0|30 (sha256)|
+|Max|3828 (des_prf)|8808 (des_prf)|0|0|298 (des_prf)|
+|Avg||||||
+
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|748 (des_area)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
+|Max|1456 (sha256)|893 (sha)|0|1 (sha256)|298 (des_prf)|
+|Avg||||||
