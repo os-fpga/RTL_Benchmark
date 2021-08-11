@@ -239,3 +239,70 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Min|748 (des_area)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
 |Max|1456 (sha256)|893 (sha)|0|1 (sha256)|298 (des_prf)|
 |Avg||||||
+
+### 6. Finance
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|bgm|10243|5404|22|0|289|
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|bgm|14679|4297|4|11|290|
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|bgm|20630|3990|44|0|289|
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|bgm|11956|5811|22|0|290|
+
+
+### 8. Memory core
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|19 (generic_fifo_lfsr)|16 (generic_fifo_lfsr)|0 |0 (ssram)|25 (generic_fifo_lfsr)|
+|Max|87 (generic_fifo_dc_gray)|109 (ssram)|0|0.5 (generic_fifo_dc)|148 (ssram)|
+|Avg|49.3|58.2|0|0.33|51.2|
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|14 (generic_fifo_lfsr)|8 (generic_fifo_lfsr)|0 |0|25 (generic_fifo_lfsr)|
+|Max|112 (generic_fifo_dc_gray)|115 (ssram)|0|0|148 (ssram)|
+|Avg|57.2|44.3|0|0|51.2|
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|42 (ssram)|57 (generic_fifo_sc_a)|0 |0 (ssram)|28 (generic_fifo_dc)|
+|Max|180 (generic_fifo_dc_gray)|130 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
+|Avg|114.4|86.4|0|0.8|56.4|
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|26 (generic_fifo_lfsr)|18 (generic_fifo_lfsr)|0|0|25 (generic_fifo_lfsr)|
+|Max|146 (generic_fifo_dc_gray)|173 (ssram)|0|0|148 (ssram)|
+|Avg|84.8|71.8|0|0|51.2|
+
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|58 (generic_fifo_sc_b)|31 (generic_fifo_sc_b)|0 |0 (ssram)|28 (generic_fifo_dc)|
+|Max|119 (generic_fifo_dc_gray)|88 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
+|Avg|91|55.4|0|0.8|56.4|
