@@ -3,3 +3,4 @@ set ::env(DESIGN_TOP) sdc_controller_top
 set ::env(DESIGN_DIR) RTL_Benchmark/controller/sdc_controller/rtl/verilog
 set ::env(TOP_VERILOG) RTL_Benchmark/controller/sdc_controller/rtl/verilog/sdc_controller_top.v
 set ::env(CLOCK_PORT) wb_clk_i
+set ::env(DOMAIN) controller
