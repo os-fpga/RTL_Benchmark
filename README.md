@@ -306,3 +306,44 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Min|58 (generic_fifo_sc_b)|31 (generic_fifo_sc_b)|0 |0 (ssram)|28 (generic_fifo_dc)|
 |Max|119 (generic_fifo_dc_gray)|88 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
 |Avg|91|55.4|0|0.8|56.4|
+
+### 9. Signal processing
+ - #### Vivado
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|65 (stereovision3)|99 (stereovision3)|0 (blob_merge)|0|38 (iir)|
+|Max|13828 (stereovision1)|11512 (stereovision1)|5 (iir)|0|278 (stereovision1)|
+|Avg|3905|2600.6|1|0|107|
+
+- #### Quartus prime lite
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|92 (stereovision3)|120 (stereovision3)|0 (blob_merge)|0|38 (iir)|
+|Max|5436 (blob_merge)|8832 (stereovision1)|76 (stereovision1)|0|278 (stereovision1)|
+|Avg|1727.4|2046.8|16|0|128.6|
+
+- #### Lattice diamond
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|123 (stereovision3)|99 (stereovision3)|0 (blob_merge)|0|38 (iir)|
+|Max|7798 (blob_merge)|9218 (stereovision1)|152 (stereovision1)|0|278 (stereovision1)|
+|Avg|2175|2094.8|34|0|107|
+
+- #### Anlogic
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|79 (stereovision3)|118 (stereovision3)|0 (blob_merge)|0|38 (iir)|
+|Max|6125 (blob_merge)|3004 (stereovision1)|152 (stereovision1)|0|278 (stereovision1)|
+|Avg|1681|922.6|31.4|0|128.6|
+
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|99 (stereovision3)|118 (stereovision3)|0 (blob_merge)|0|38 (iir)|
+|Max|6740 (blob_merge)|552 (blob_merge)|4 (iir)|0|232 (blob_merge)|
+|Avg|1873|352.2|1|0|91.2|
