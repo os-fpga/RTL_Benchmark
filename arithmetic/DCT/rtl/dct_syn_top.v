@@ -59,7 +59,6 @@
 // synopsys translate_off
 //`include "timescale.v"
 `include "dct.v"
-`include "dct_cos_table.v"
 `include "dct_mac.v"
 `include "dctu.v"
 `include "dctub.v"
