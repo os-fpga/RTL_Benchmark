@@ -34,7 +34,7 @@
 
 |_Fast Fourier Transform_|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Vivado|2656|2656|0|1|69|
+|Vivado|2656|2556|0|1|69|
 |Quartus prime|1161|2448|32|0|69|
 |Lattice diamond|1376|2568|30|3|69|
 |Anlogic|1524|2404|28|0|69|
