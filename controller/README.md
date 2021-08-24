@@ -131,10 +131,10 @@
 |**_mem_ctl_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|1120|992|0|1|267|
 |Quartus prime|1324|1168|0|0|267|
-|Lattice diamond||||||
+|Lattice diamond|1644|1059|0|0|267|
 |Anlogic|1097|1095|0|0|267|
 |Gowin|2041|1051|0|0|267|
-|OSFPGA||||||
+|OSFPGA|2435|1069|0|0|267|
 |**_sasc_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|56|52|0|0|28|
 |Quartus prime|74|130|0|0|28|
