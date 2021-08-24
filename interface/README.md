@@ -58,7 +58,7 @@
 |Lattice diamond|952|229|0|0|90|
 |Anlogic|588|239|0|0|92|
 |Gowin|691|229|0|0|92|
-|OSFPGA|731|229|0|0|92|
+|OSFPGA|731|229|0|0|90|
 |**_ss_pcm_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|31|79|0|0|28|
 |Quartus prime|24|90|0|0|28|
@@ -66,7 +66,14 @@
 |Anlogic|41|88|0|0|28|
 |Gowin|40|87|0|0|28|
 |OSFPGA|96|87|0|0|28|
-|**_wm_conmax (wrapper)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
+|**_wb_conmax (wrapper)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
+|Vivado|7643|770|0|0|221|
+|Quartus prime|6490|1233|0|0|221|
+|Lattice diamond||||||
+|Anlogic|7479|778|0|0|221|
+|Gowin|7774|770|0|0|221|
+|OSFPGA|8714|770|0|0|2546|
+|**_wb_dma (wrapper)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|519|527|0|0|221|
 |Quartus prime|608|582|0|0|222|
 |Lattice diamond|-|-|-|-|-|
