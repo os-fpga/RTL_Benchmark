@@ -39,7 +39,7 @@
 |Lattice diamond|1376|2568|30|3|69|
 |Anlogic|1524|2404|28|0|69|
 |Gowin|1594|1967|30|2|69|
-|OSFPGA|3522|2653|30|0|69|
+|OSFPGA|3520|2653|30|0|69|
 |**_CORDIC (polar2rect)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|705|689|0|0|50|
 |Quartus prime|339|669|0|0|50|
