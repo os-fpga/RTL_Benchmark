@@ -6,13 +6,6 @@
     │   │       └── perf_opt
     │   └── testbench
     │       └── verilog
-    ├── des3
-    │   ├── rtl
-    │   │   └── verilog
-    │   │       ├── area_opt
-    │   │       └── perf_opt
-    │   └── testbench
-    │       └── verilog
     ├── sha1
     │   ├── doc
     │   ├── rtl
