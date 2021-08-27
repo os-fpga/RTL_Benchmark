@@ -41,8 +41,6 @@ This repository contains the benchmarks, catagorized on the bases of their domai
     │   └── simon_bit_serial
     ├── encryption
     │   ├── des
-    │   ├── des3
-    │   ├── sha
     │   ├── sha1
     │   ├── sha256
     │   └── systemCdes
