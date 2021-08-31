@@ -114,6 +114,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Max|21484 (LU8PEEng)|4680 (LU8PEEng)|30 (cf_fft)|56 (LU8PEEng)|258 (diffeq1)|
 |Avg|3239.4|1325.3|6|6.7|123.2|
 
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|195 (unsign_mult)|0 (unsign_mult)|0 (hardware_divider)|0 (unsign_mult)|24 (DCT)|
+|Max|28730 (LU8PEEng)|12239 (LU8PEEng)|64 (DCT)|132 (LU8PEEng)|258 (diffeq1)|
+|Avg|5429.2|2533.1|14.6|16.5|136.8|
+
 
 ### 3. Core
  - #### Vivado
@@ -156,6 +164,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Max|3039 (oc54x)|517 (rs_dec)|13 (rs_dec)|0|140 (oc54x)|
 |Avg|1739|390.3|4.7|0|68.6|
 
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
+
 ### 4. Digital Design
  - #### Vivado
 
@@ -196,6 +212,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Min|7 (counter_16bit)|0 (bin2dec)|0 |0 (counter)|3 (shift_reg)|
 |Max|1086 (cavlc)|605 (counter120bitx5)|0|1 (shift_reg)|187 (cavlc)|
 |Avg|279.1|156|0|0.14|45.7|
+
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
 
 ### 5. Encryption
  - #### Vivado
@@ -238,6 +262,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Max|1456 (sha256)|893 (sha)|0|1 (sha256)|298 (des_prf)|
 |Avg||||||
 
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
+
 ### 6. Finance
  - #### Vivado
 
@@ -262,6 +294,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |bgm|11956|5811|22|0|290|
+
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
 
 
 ### 8. Memory core
@@ -305,6 +345,14 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Max|119 (generic_fifo_dc_gray)|88 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
 |Avg|91|55.4|0|0.8|56.4|
 
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
+
 ### 9. Signal processing
  - #### Vivado
 
@@ -345,3 +393,11 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Min|99 (stereovision3)|118 (stereovision3)|0 (blob_merge)|0|38 (iir)|
 |Max|6740 (blob_merge)|552 (blob_merge)|4 (iir)|0|232 (blob_merge)|
 |Avg|1873|352.2|1|0|91.2|
+
+- #### OSFPGA
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min||||||
+|Max||||||
+|Avg||||||
