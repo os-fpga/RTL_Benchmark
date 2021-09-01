@@ -68,10 +68,6 @@ This repository contains the benchmarks, catagorized on the bases of their domai
         ├── stereovision3
         └── stereovission1
 
-
-# RTL_Benchmark
-This repository contains the benchmarks, catagorized on the bases of their domain.
-
 ## Synthesis report of each catagory on different tools:
 ### 1. Arithmetic
  - #### Vivado
