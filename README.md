@@ -168,9 +168,9 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|Min|962 (rs_dec)|361 (tv80s)|0 (tv80s)|0|20 (rs_dec)|
+|Max|2530 (oc54x)|517 (rs_dec)|13 (rs_dec)|0|140 (oc54x)|
+|Avg|1734|434.7|4.7|0|68.7|
 
 ### 4. Digital Design
  - #### Vivado
@@ -217,9 +217,9 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|Min|0 (shift_reg)|0 (bin2dec)|0|0|3 (shift_reg)|
+|Max|1445 (cavlc)|8192 (shift_reg)|0|0|187 (cavlc)|
+|Avg|387.3|1355.7|0|0|45.7|
 
 ### 5. Encryption
  - #### Vivado
@@ -295,13 +295,17 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |bgm|11956|5811|22|0|290|
 
+- #### Gowin
+
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|bgm|-|-|-|-|-|
+
 - #### OSFPGA
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|bgm|25769|5132|11|0|289|
 
 
 ### 8. Memory core
@@ -398,6 +402,6 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|Min|760 (jpeg_qnr)|468 (jpeg_qnr)|0 (jpeg_qnr)|0|42 (jpeg_qnr)|
+|Max|10706 (stereovision1)|11775 (stereovision1)|152 (stereovision1)|0|278 (stereovision1)|
+|Avg|5875.7|4326|50.7|0|152|
