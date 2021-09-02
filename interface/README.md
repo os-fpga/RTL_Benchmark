@@ -72,7 +72,7 @@
 |Lattice diamond||||||
 |Anlogic|7479|778|0|0|221|
 |Gowin|7774|770|0|0|221|
-|OSFPGA|8714|770|0|0|2546|
+|OSFPGA|8714|770|0|0|221|
 |**_wb_dma (wrapper)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|519|527|0|0|221|
 |Quartus prime|608|582|0|0|222|
