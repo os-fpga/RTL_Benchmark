@@ -224,15 +224,15 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|309 (systemCdes)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
 |Max|5512 (des_prf)|6008 (des_prf)|0|0.5 (sha256)|298 (des_prf)|
-|Avg||||||
+|Avg|1588.4|1568|0|0.1|134|
 
 - #### Quartus prime lite
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min|248 (systemCdes)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
+|Min|248 (systemCdes)|64 (des_area)|0|0 (des_area)|30 (sha256)|
 |Max|5410 (des_prf)|6604 (des_prf)|0|4 (des_prf)|298 (des_prf)|
-|Avg||||||
+|Avg|2550|1729.6|0|0.8|134.8|
 
 - #### Lattice diamond
 
@@ -240,7 +240,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|544 (systemCdes)|64 (des_area)|0|0 (des_area)|30 (sha256)|
 |Max|10326 (des_prf)|7022 (des_prf)|0|1 (sha256)|298 (des_prf)|
-|Avg||||||
+|Avg|2821|1727.8|0|0.2|156.2|
 
 - #### Anlogic
 
@@ -248,23 +248,23 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|328 (systemCdes)|64 (des_area)|0|0|30 (sha256)|
 |Max|3828 (des_prf)|8808 (des_prf)|0|0|298 (des_prf)|
-|Avg||||||
+|Avg|1466.4|2103.4|0|0|157.8|
 
 - #### Gowin
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|748 (des_area)|64 (des_area)|0 |0 (des_area)|30 (sha256)|
-|Max|1456 (sha256)|893 (sha)|0|1 (sha256)|298 (des_prf)|
-|Avg||||||
+|Max|1456 (sha256)|893 (sha1)|0|1 (sha256)|298 (des_prf)|
+|Avg|1095|456.8|0|0.25|94|
 
 - #### OSFPGA
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|Min|418 (systemCdes)|64 (des_area)|0|0|30 (sha256)|
+|Max|5743 (des_prf)|7637 (des_prf)|0|0|298 (des_prf)|
+|Avg|1937.2|1859.4|0|0|156.2|
 
 ### 6. Finance
  - #### Vivado
