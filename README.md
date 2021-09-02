@@ -69,7 +69,9 @@ This repository contains the benchmarks, catagorized on the bases of their domai
         └── stereovission1
 
 ## Synthesis report of each catagory on different tools:
+
 ### 1. Arithmetic
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -120,6 +122,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 
 
 ### 3. Core
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -169,6 +172,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Avg|1734|434.7|4.7|0|68.7|
 
 ### 4. Digital Design
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -218,6 +222,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Avg|387.3|1355.7|0|0|45.7|
 
 ### 5. Encryption
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -267,6 +272,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Avg|1937.2|1859.4|0|0|156.2|
 
 ### 6. Finance
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -304,7 +310,59 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |bgm|25769|5132|11|0|289|
 
 
+### 7. Interface 
+
+ - #### Vivado
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|5 (wbif_68k)|31 (wbif_68k)|0|0|28 (ss_pcm)|
+|Max|7643 (wb_conmax_wrapper)|770 (wb_conmax_wrapper)|0|0|221 (wb_dma_wrapper)|
+|Avg|1265.9|249.3|0|0|100.3|
+
+ - #### Quartus prime
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|9 (wbif_68k)|32 (wbif_68k)|0|0|28 (ss_pcm)|
+|Max|7490 (wb_conmax_wrapper)|1233 (wb_conmax_wrapper)|0|0|221 (wb_dma_wrapper)|
+|Avg|1127|341.4|0|0|100.7|
+
+ - #### Lattice diamond
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|7 (wbif_68k)|30 (wbif_68k)|0|0|28 (ss_pcm)|
+|Max|952 (spi)|229 (spi)|0|0|90 (spi)|
+|Avg|232.6|90.8|0|0|52|
+
+ - #### Anlogic
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|7 (wbif_68k)|42 (simple_gpio)|0|0|28 (ss_pcm)|
+|Max|7479 (wb_conmax_wrapper)|778 (wb_conmax_wrapper)|0|0|222 (wb_dma_wrapper)|
+|Avg|1273.1|255.6|0|0|100.7|
+
+ - #### Gowin
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|6 (wbif_68k)|30 (wbif_68k)|0|0|28 (ss_pcm)|
+|Max|7774 (wb_conmax_wrapper)|770 (wb_conmax_wrapper)|0|0|222 (wb_dma_wrapper)|
+|Avg|1348.1|247.1|0|0|100.7|
+
+ - #### OSFPGA
+ 
+|Benchmark|LUT|FF|DSP|BRAM|IO|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Min|96 (ss_pcm)|87 (ss_pcm)|0|0|28 (ss_pcm)|
+|Max|8714 (wb_conmax_wrapper)|770 (wb_conmax_wrapper)|0|0|221 (wb_dma_wrapper)|
+|Avg|2130|350|0|0|117.6|
+
+
 ### 8. Memory core
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
@@ -354,6 +412,7 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |Avg||||||
 
 ### 9. Signal processing
+
  - #### Vivado
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
