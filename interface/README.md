@@ -69,7 +69,7 @@
 |**_wb_conmax (wrapper)_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|7643|770|0|0|221|
 |Quartus prime|6490|1233|0|0|221|
-|Lattice diamond||||||
+|Lattice diamond|-|-|-|-|-|
 |Anlogic|7479|778|0|0|221|
 |Gowin|7774|770|0|0|221|
 |OSFPGA|8714|770|0|0|221|
