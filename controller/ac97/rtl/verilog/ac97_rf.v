@@ -73,7 +73,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_rf(clk, rst,
 

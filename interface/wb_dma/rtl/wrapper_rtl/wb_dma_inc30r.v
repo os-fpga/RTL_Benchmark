@@ -69,7 +69,6 @@
 //
 //
 
-`include "wb_dma_defines.v"
 
 module wb_dma_inc30r(clk, in, out);
 input		clk;

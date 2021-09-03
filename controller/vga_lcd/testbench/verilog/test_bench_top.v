@@ -675,6 +675,5 @@ wb_slv #(24) s0(.clk(		clk		),
 		.rty(				)
 		);
 
-`include "tests.v"
 
 endmodule

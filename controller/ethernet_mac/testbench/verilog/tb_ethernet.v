@@ -136,7 +136,6 @@
 // Clock mrx_clk set to 2.5 MHz.
 //
 // Revision 1.1  2002/07/19 13:57:53  mohor
-// Testing environment also includes traffic cop, memory interface and host
 // interface.
 //
 //
@@ -145,11 +144,6 @@
 //
 
 
-`include "eth_phy_defines.v"
-`include "wb_model_defines.v"
-`include "tb_eth_defines.v"
-`include "ethmac_defines.v"
-`include "timescale.v"
 
 module tb_ethernet();
 
@@ -23750,7 +23744,6 @@ begin
   word_cnt = 24; // 27; // start of the frame - nibble granularity (MSbit first)
   crc = 32'hFFFF_FFFF; // INITIAL value
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of nibbles from Byte length (2^1 = 2)
   if (plus_dribble_nibble)
     nibble_cnt = ((len + 4) << 1) + 1'b1; // one nibble longer
@@ -23874,7 +23867,6 @@ begin
   word_cnt = 24; // 27; // start of the frame - nibble granularity (MSbit first)
   crc = 32'hFFFF_FFFF; // INITIAL value
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of nibbles from Byte length (2^1 = 2)
   if (plus_dribble_nibble)
     nibble_cnt = ((len + 4) << 1) + 1'b1; // one nibble longer
@@ -24008,7 +24000,6 @@ begin
     word_cnt = 24; // start of the frame for Big ENDIAN Bytes (Litle ENDIAN bits)
   crc = 32'hFFFF_FFFF; // INITIAL value
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of nibbles from Byte length (2^1 = 2)
   if (plus_dribble_nibble)
     nibble_cnt = ((len + 4) << 1) + 1'b1; // one nibble longer
@@ -24116,7 +24107,6 @@ begin
   word_cnt = 24; // 27; // start of the frame - nibble granularity (MSbit first)
   crc_store_reg = 32'hFFFF_FFFF; // INITIAL value
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of bits from Byte length (2^3 = 8)
   if (plus_dribble_nibble)
     bit_cnt = ((len + 4) << 3) + 3'h4; // one nibble longer
@@ -24275,7 +24265,6 @@ begin
   word_cnt = 24; // start of the frame
   crc_shift_reg = 0;
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of bits from Byte length (2^3 = 8)
   if (plus_dribble_nibble)
     bit_cnt = ((len + 4) << 3) + 3'h4; // one nibble longer
@@ -24396,7 +24385,6 @@ begin
 
   crc_shift_reg = 0;
   delta_t = 0;
-  // length must include 4 bytes of ZEROs, to generate CRC
   // get number of bits from Byte length (2^3 = 8)
   if (plus_dribble_nibble)
     bit_cnt = ((len + 4) << 3) + 3'h4; // one nibble longer

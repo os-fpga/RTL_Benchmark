@@ -63,7 +63,6 @@
 //
 //
 
-`include "timescale.v"
 
 /*
 	Baud rate Generator

@@ -93,7 +93,6 @@
 //
 
 
-`include "usbf_defines.v"
 
 module usbf_utmi_ls( clk, rst,
 

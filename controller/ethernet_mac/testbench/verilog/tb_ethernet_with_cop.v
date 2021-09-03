@@ -51,7 +51,6 @@
 // Bist signals added.
 //
 // Revision 1.1  2002/09/18 16:40:40  mohor
-// Simple testbench that includes eth_cop, eth_host and eth_memory modules.
 // This testbench is used for testing the whole environment. Use tb_ethernet
 // testbench for testing just the ethernet MAC core (many tests).
 //
@@ -61,9 +60,6 @@
 
 
 
-`include "tb_eth_defines.v"
-`include "ethmac_defines.v"
-`include "timescale.v"
 
 module tb_ethernet_with_cop();
 

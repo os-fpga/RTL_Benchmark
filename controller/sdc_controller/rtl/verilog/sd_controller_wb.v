@@ -45,7 +45,6 @@
 //// from http://www.opencores.org/lgpl.shtml                     ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
-`include "sd_defines.h"
 
 module sd_controller_wb(
            // WISHBONE slave

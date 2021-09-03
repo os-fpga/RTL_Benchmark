@@ -55,7 +55,6 @@
 //               $Log: not supported by cvs2svn $
 //
 
-`include "timescale.v"
 
 `define SDRAM_ROWA_HI 12 // row address hi-bit
 `define SDRAM_COLA_HI 8  // column address hi-bit
@@ -447,12 +446,7 @@ module bench_top();
 
 
 	/////////////////////////
-	// include memory tests
 	//
-	`include "tst_sdram.v"
-	`include "tst_asram.v"
-	`include "tst_ssram.v"
-	`include "tst_multi_mem.v"
 
 endmodule
 

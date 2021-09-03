@@ -49,7 +49,6 @@
 //               $Log: not supported by cvs2svn $
 //
 
-`include "timescale.v"
 
 //////////////////////////////
 // external bus-master model

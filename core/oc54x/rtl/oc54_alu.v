@@ -49,8 +49,6 @@
 // Change History:												     
 //               $Log: not supported by cvs2svn $											 
 																
-`include "timescale.v"
-`include "oc54_alu_defines.v"
 
 module oc54_alu (
 	clk, ena, inst,

@@ -91,7 +91,6 @@
 //
 //                        
 
-`include "mc_defines.v"
 
 module test;
 
@@ -1101,8 +1100,6 @@ idt71t67802s133 sram0b(
 
 `endif
 
-`include "tests.v"
-`include "test_lib.v"
 
 endmodule
 

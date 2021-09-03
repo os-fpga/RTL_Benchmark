@@ -39,7 +39,6 @@
 //2011-8-9  optimize output mux
 
 
-`include "defines.v"
 
 module cavlc_read_total_coeffs
 (

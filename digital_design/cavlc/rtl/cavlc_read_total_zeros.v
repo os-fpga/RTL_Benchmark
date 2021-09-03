@@ -37,7 +37,6 @@
 
 //2011-8-14 initial version
 
-`include "defines.v"
 
 module cavlc_read_total_zeros
 (

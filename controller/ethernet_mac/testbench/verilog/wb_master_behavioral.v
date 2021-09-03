@@ -51,8 +51,6 @@
 // Initial testbench import. Still under development
 //
 
-`include "wb_model_defines.v"
-`include "timescale.v"
 module WB_MASTER_BEHAVIORAL
 (
     CLK_I,

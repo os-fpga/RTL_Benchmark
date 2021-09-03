@@ -43,7 +43,6 @@
 //
 
 `timescale 10ns/1ns
-`include "des.v"
 module des_top (clk,reset,wb_stb_i,wb_dat_o,wb_dat_i,wb_ack_o,
                wb_adr_i,wb_we_i,wb_cyc_i,wb_sel_i);
 

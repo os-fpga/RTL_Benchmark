@@ -104,7 +104,6 @@
 //
 //
 
-`include "mc_defines.v"
 
 module mc_cs_rf(clk, rst, wb_we_i, din, rf_we, addr, csc, tms, poc, csc_mask, cs,
 		wp_err, lmr_req, lmr_ack, init_req, init_ack );

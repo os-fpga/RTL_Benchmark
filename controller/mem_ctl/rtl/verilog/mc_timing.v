@@ -119,7 +119,6 @@
 //
 //
 
-`include "mc_defines.v"
 
 module mc_timing(clk, rst,
 

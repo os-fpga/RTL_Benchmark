@@ -86,7 +86,6 @@
 //
 
 
-`include "timescale.v"
 
 
 module eth_rxstatem (MRxClk, Reset, MRxDV, ByteCntEq0, ByteCntGreat2, Transmitting, MRxDEq5, MRxDEqD, 

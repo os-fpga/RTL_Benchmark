@@ -239,7 +239,6 @@ assign f2i_max = (!opas & (exp_in>f2i_emax)) | (opas & (exp_in<f2i_emin) & !frac
 assign {shft_co,shftr_mul} = (!exp_ovf[1] & exp_in_00) ? {1'b0, exp_out} : exp_in_mi1 ;
 assign {div_shft1_co, div_shft1} = exp_in_00 ? {1'b0, div_opa_ldz} : div_scht1a;
 
-assign div_scht1a = exp_in-div_opa_ldz; // 9 bits - includes carry out
 assign div_shft2  = exp_in+2;
 assign div_shft3  = div_opa_ldz+exp_in;
 assign div_shft4  = div_opa_ldz-exp_in;
@@ -296,11 +295,8 @@ assign fi_ldz_mi1    = fi_ldz - 1;
 assign fi_ldz_mi22   = fi_ldz - 22;
 assign exp_out_pl1   = exp_out + 1;
 assign exp_out_mi1   = exp_out - 1;
-assign exp_in_pl1    = exp_in  + 1;	// 9 bits - includes carry out
-assign exp_in_mi1    = exp_in  - 1;	// 9 bits - includes carry out
 assign exp_out1_mi1  = exp_out1 - 1;
 
-assign exp_next_mi  = exp_in_pl1 - fi_ldz_mi1;	// 9 bits - includes carry out
 
 assign exp_fix_diva = exp_in - fi_ldz_mi22;
 assign exp_fix_divb = exp_in - fi_ldz_mi1;
@@ -323,7 +319,6 @@ assign ldz_dif   = fi_ldz_2 - div_opa_ldz;
 assign fi_ldz_2a = 6'd23 - fi_ldz;
 assign fi_ldz_2  = {fi_ldz_2a[6], fi_ldz_2a[6:0]};
 
-assign div_exp1  = exp_in_mi1 + fi_ldz_2;	// 9 bits - includes carry out
 
 assign div_exp2  = exp_in_pl1 - ldz_all;
 assign div_exp3  = exp_in + ldz_dif;

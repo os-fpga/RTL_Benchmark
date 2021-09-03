@@ -75,7 +75,6 @@
 //
 //
 
-`include "mc_defines.v"
 
 module mc_rd_fifo(clk, rst, clr, din, we, dout, re);
 

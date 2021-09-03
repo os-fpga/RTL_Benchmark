@@ -62,10 +62,8 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
-`include "vga_defines.v"
 
 module vga_clkgen (
 	pclk_i, rst_i, pclk_o, dvi_pclk_p_o, dvi_pclk_m_o, pclk_ena_o

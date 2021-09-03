@@ -77,7 +77,6 @@
 //
 
 
-`include "timescale.v"
 
 
 module eth_receivecontrol (MTxClk, MRxClk, TxReset, RxReset, RxData, RxValid, RxStartFrm, 

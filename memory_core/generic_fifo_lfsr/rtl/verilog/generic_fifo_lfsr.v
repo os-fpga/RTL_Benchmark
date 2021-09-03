@@ -46,7 +46,6 @@
 // Change History:
 //               $Log: not supported by cvs2svn $
 
-`include "timescale.v"
 
 // set FIFO_RW_CHECK to prevent writing to a full and reading from an empty FIFO
 //`define FIFO_RW_CHECK
@@ -56,7 +55,6 @@
 // FIFOs. Setting FIFO_ALL_ENTRIES creates additional logic that ensures that
 // all FIFO entries are used at the expense of some additional logic.
 `define FIFO_ALL_ENTRIES
-`include "generic_dpram.v"
 module generic_fifo_lfsr (
 	clk,
 	nReset,

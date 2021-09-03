@@ -77,7 +77,6 @@
 //
 
 
-`include "timescale.v"
 
 module eth_crc (Clk, Reset, Data, Enable, Initialize, Crc, CrcError);
 

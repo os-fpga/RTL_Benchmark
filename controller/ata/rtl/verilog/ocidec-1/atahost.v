@@ -79,13 +79,7 @@
 // CS0-		select command block registers
 // CS1-		select control block registers
 
-`include "timescale.v"
 
-`include "atahost_controller.v"
-`include "atahost_pio_tctrl.v"
-`include "atahost_wb_slave.v"
-`include "ro_cnt.v"
-`include "ud_cnt.v"
 
 module atahost (wb_clk_i, arst_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_ack_o, wb_err_o,
 		wb_adr_i, wb_dat_i, wb_dat_o, wb_sel_i, wb_we_i, wb_inta_o,

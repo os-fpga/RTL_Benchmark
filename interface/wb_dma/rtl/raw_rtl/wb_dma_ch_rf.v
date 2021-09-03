@@ -86,7 +86,6 @@
 //
 //
 
-`include "wb_dma_defines.v"
 
 module wb_dma_ch_rf(	clk, rst,
 			pointer, pointer_s, ch_csr, ch_txsz, ch_adr0, ch_adr1,

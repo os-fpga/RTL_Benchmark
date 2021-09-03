@@ -66,7 +66,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_fifo_ctrl(	clk, 
 			valid, ch_en, srs, full_empty, req, crdy,

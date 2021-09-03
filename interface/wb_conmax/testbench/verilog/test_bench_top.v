@@ -58,7 +58,6 @@
 //
 
 
-`include "wb_conmax_defines.v"
 
 module test;
 
@@ -1052,7 +1051,6 @@ wb_slv  s15(	.clk(		clk		),
 		.rty(		s15_rty_i	)
 		);
 
-`include "tests.v"
 
 endmodule
 

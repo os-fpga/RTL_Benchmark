@@ -43,7 +43,6 @@
 *                                                 - Fix R/W with Concurrent Auto Precharge
 *
 * 0.0a  Son Huynh       208-368-3825  09/16/1998  - First Release
-*       Micron Technology Inc.                    - Simple testbench included
 ****************************************************************************************/
 
 `timescale 1ns / 100ps

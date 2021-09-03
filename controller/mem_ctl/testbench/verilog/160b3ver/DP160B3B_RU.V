@@ -22,7 +22,6 @@
 `define AddrSize        20          //number of address pins
 `define MaxAddr         `AddrSize'hFFFFF    // device ending address
 `define MainArraySize   0:`MaxAddr  //array definition in bytes
-                                    //include A-1 for 8 bit mode
 `define MaxOutputs      16          //number of output pins
 `define NumberOfBlocks  39          //number of blocks in the array
 

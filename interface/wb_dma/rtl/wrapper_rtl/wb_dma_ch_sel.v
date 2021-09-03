@@ -89,7 +89,6 @@
 //
 //
 
-`include "wb_dma_defines.v"
 
 module wb_dma_ch_sel(clk, rst,
 

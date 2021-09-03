@@ -65,7 +65,6 @@
 //
 //
 
-`include "mc_defines.v"
 
 //
 // USAGE: incN_r #(<WIDTH>) uN(clk, input, output);

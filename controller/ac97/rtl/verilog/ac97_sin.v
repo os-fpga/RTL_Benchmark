@@ -61,7 +61,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_sin(clk, rst,
 

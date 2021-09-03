@@ -65,7 +65,6 @@
 //
 //                        
 
-`include "ac97_defines.v"
 
 module test;
 
@@ -1019,7 +1018,6 @@ ac97_codec_top	u1(
 //
 
 
-`include "tests.v"
 
 endmodule
 

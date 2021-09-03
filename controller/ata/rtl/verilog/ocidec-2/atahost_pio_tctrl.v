@@ -87,8 +87,6 @@
 // 6)	wait end_of_cycle_time. This is T2i or T9 or (T0-T1-T2) whichever takes the longest
 // 7)	start new cycle
 
-`include "timescale.v"
-`include "ro_cnt.v"
 
 module atahost_pio_tctrl(clk, nReset, rst, IORDY_en, T1, T2, T4, Teoc, go, we, oe, done, dstrb, DIOR, DIOW, IORDY);
 	// parameter declarations

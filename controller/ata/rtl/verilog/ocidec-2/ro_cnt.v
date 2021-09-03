@@ -58,8 +58,6 @@
 
 // counts D+1 cycles before generating 'DONE'
 
-`include "timescale.v"
-`include "ud_cnt.v"
 
 module ro_cnt (clk, nReset, rst, cnt_en, go, done, d, q);
 

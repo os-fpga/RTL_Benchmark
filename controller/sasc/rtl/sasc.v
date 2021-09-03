@@ -59,9 +59,6 @@
 //
 //
 
-`include "sasc_brg.v"
-`include "sasc_fifo4.v"
-`include "timescale.v"
 
 /*
 Serial IO Interface

@@ -86,7 +86,6 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
 module vga_wb_master (clk_i, rst_i, nrst_i,

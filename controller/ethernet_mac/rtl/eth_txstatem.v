@@ -87,7 +87,6 @@
 //
 
 
-`include "timescale.v"
 
 
 module eth_txstatem  (MTxClk, Reset, ExcessiveDefer, CarrierSense, NibCnt, IPGT, IPGR1, 

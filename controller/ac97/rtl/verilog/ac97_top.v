@@ -72,7 +72,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_top (clk_i, rst_i,
 

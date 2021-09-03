@@ -90,7 +90,6 @@
 //
 //
  
-//`include "timescale.v"
  
 //`define VENDOR_FPGA
 //`define VENDOR_XILINX

@@ -88,18 +88,6 @@
 //
 //
 
-`include "wb_dma_ch_arb.v"
-`include "wb_dma_ch_pri_enc.v"
-`include "wb_dma_ch_rf.v"
-`include "wb_dma_ch_sel.v"
-`include "wb_dma_de.v"
-`include "wb_dma_defines.v"
-`include "wb_dma_inc30r.v"
-`include "wb_dma_pri_enc_sub.v"
-`include "wb_dma_rf.v"
-`include "wb_dma_wb_if.v"
-`include "wb_dma_wb_mast.v"
-`include "wb_dma_wb_slv.v"
 
 module wb_dma_top(clk_i, rst_i,
 

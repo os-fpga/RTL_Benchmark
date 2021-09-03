@@ -112,7 +112,6 @@
 //
 //
 
-`include "timescale.v"
 
 
 module eth_macstatus(

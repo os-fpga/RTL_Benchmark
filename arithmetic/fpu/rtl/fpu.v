@@ -34,11 +34,6 @@
 
 `timescale 1ns / 100ps
 
-`include "except.v"
-`include "pre_norm.v"
-`include "pre_norm_fmul.v"
-`include "post_norm.v"
-`include "primitives.v"
 
 /*
 

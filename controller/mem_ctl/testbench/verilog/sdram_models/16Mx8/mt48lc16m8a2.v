@@ -35,7 +35,6 @@
 *       Micron Technology Inc.                      access with auto precharge enable
 *
 * 0.0a  Son Huynh       208-368-3825  04/29/1999  - First Release (from 64Mb rev 0.0e)
-*       Micron Technology Inc.                    - Simple testbench included
 *
 ****************************************************************************************/
 

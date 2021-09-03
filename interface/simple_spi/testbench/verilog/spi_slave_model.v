@@ -51,7 +51,6 @@
 
 // Requires: Verilog2001
 
-`include "timescale.v"
 
 module spi_slave_model (
 	input  wire csn;

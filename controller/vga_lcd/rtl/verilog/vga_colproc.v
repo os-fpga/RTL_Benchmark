@@ -58,7 +58,6 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
 module vga_colproc(clk, srst, vdat_buffer_di, ColorDepth, PseudoColor, 

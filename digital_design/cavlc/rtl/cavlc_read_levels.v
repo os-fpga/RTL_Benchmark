@@ -39,9 +39,7 @@
 //2011-8-6  initiial revision
 //2011-8-19 reverse the order of level
 
-//  include TrailingOnes
 
-`include "defines.v"
 
 module cavlc_read_levels (
     clk,

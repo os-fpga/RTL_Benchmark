@@ -53,7 +53,6 @@
 //
 //
 
-`include "wb_model_defines.h"
 module WB_MASTER32
 (
     CLK_I,

@@ -51,7 +51,6 @@
 // general purpose counter //
 /////////////////////////////
 
-`include "timescale.v"
 
 module ud_cnt (clk, nReset, rst, cnt_en, ud, nld, d, q, rci, rco);
 	// parameter declaration

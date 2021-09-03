@@ -52,7 +52,6 @@
 //
 
 //synopsys translate_off
-//`include "timescale.v"
 //synopsys translate_on
 
 module div_uu(clk, ena, z, d, q, s, div0, ovf);

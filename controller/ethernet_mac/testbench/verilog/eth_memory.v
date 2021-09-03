@@ -46,8 +46,6 @@
 //
 //
 
-`include "tb_eth_defines.v"
-`include "timescale.v"
 
 module eth_memory
 (

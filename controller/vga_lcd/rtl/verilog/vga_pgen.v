@@ -62,10 +62,8 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
-`include "vga_defines.v"
 
 module vga_pgen (
 	clk_i, ctrl_ven, ctrl_HSyncL, Thsync, Thgdel, Thgate, Thlen,

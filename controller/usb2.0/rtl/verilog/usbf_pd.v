@@ -89,7 +89,6 @@
 //
 //
 
-`include "usbf_defines.v"
 
 module usbf_pd(	clk, rst,
 

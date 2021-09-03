@@ -46,7 +46,6 @@
 //// from http://www.opencores.org/lgpl.shtml                     ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
-`include "sd_defines.h"
 
 module sd_data_serial_host(
            input sd_clk,
