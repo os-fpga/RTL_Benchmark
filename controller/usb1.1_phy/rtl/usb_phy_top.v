@@ -72,9 +72,6 @@
 //
 //
 
-`include "timescale.v"
-`include "usb_rx_phy.v"
-`include "usb_tx_phy.v"
 
 
 module usb_phy_top (clk, rst, phy_tx_mode, usb_rst,

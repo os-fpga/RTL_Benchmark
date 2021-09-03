@@ -1,5 +1,3 @@
-`include "CLA_fixed.v"
-`include "shifter.v"
 
 module	divider_dshift (
 input	i_clk,

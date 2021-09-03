@@ -83,7 +83,6 @@
 //
 
 
-`include "timescale.v"
 
 
 module eth_rxcounters (MRxClk, Reset, MRxDV, StateIdle, StateSFD, StateData, StateDrop, StatePreamble, 

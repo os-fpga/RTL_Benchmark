@@ -70,7 +70,6 @@ It can be accesset by:
 
 */
 
-`include "wb_model_defines.v"
 
 module wb_slv(clk, rst, adr, din, dout, cyc, stb, sel, we, ack, err, rty);
 

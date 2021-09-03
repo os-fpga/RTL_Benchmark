@@ -47,7 +47,6 @@
 
 
 
-`include "timescale.v"
 
 module tb_cop();
 

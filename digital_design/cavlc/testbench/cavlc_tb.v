@@ -1,6 +1,5 @@
 //2011-8-12  initial version
 
-`include "defines.v"
 
 module cavlc_tb;
 

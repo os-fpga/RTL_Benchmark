@@ -96,7 +96,6 @@
 //
 //
 
-`include "usbf_defines.v"
 
 // Endpoint register File
 module usbf_rf(	clk, wclk, rst,

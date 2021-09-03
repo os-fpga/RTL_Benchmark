@@ -4274,7 +4274,6 @@ module special (a, b, special, specialsign,
  
   assign specialcase	= zero | aisnan | bisnan | infinity; 
  
-  assign invalid	= infandzero; //*** need to include something about signaling NaNs here 
  
   // dont need to check if b is NaN, if it defaults to that point, and b isnt NAN 
   // then it wont be used anyway 

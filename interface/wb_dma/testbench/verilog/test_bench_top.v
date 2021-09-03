@@ -74,7 +74,6 @@
 //
 //                        
 
-`include "wb_dma_defines.v"
 
 `define	CH_COUNT 4
 
@@ -445,7 +444,6 @@ wb_mast	m1(
 		.rty(		wb1_rty_o	)
 		);
 
-`include "tests.v"
 
 endmodule
 

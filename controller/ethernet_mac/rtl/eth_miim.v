@@ -83,7 +83,6 @@
 //
 //
 
-`include "timescale.v"
 
 
 module eth_miim

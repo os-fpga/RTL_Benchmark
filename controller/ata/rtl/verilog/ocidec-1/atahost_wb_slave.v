@@ -48,7 +48,6 @@
 //               $Log: not supported by cvs2svn $
 //
 
-`include "timescale.v"
 
 module atahost_wb_slave (
 		clk_i, arst_i, rst_i, cyc_i, stb_i, ack_o, rty_o, err_o, adr_i,	dat_i, dat_o, sel_i, we_i, inta_o,

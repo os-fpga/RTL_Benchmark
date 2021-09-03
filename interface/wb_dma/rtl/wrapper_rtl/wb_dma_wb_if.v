@@ -73,7 +73,6 @@
 //
 //
 
-`include "wb_dma_defines.v"
 
 module wb_dma_wb_if(clk, rst,
 

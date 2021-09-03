@@ -37,7 +37,6 @@
 
 //2011-8-7 18:57    initial revision
 
-`include "defines.v"
 
 module cavlc_fsm
 (

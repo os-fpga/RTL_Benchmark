@@ -108,19 +108,6 @@
 //
 //
 
-`include "mc_defines.v"
-`include "mc_rf.v"
-`include "mc_cs_rf.v"
-`include "mc_adr_sel.v"
-`include "mc_incn_r.v"
-`include "mc_obct_top.v"
-`include "mc_obct.v"
-`include "mc_dp.v"
-`include "mc_rd_fifo.v"
-`include "mc_refresh.v"
-`include "mc_timing.v"
-`include "mc_wb_if.v"
-`include "mc_mem_if.v"
 
 
 module mc (clk_i, rst_i,

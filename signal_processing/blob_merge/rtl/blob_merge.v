@@ -15,7 +15,6 @@
 //			runs into BLOB containers
 //
 //			15.05.2010
-//			included BLOB_RANGE and CONT_RANGE for adjacency check
 //			eliminates multiple detection of BLOBs
 //
 //			26.05.2010
@@ -26,11 +25,9 @@
 //			threshold adjustment
 //
 //			29.05.2010
-//			include collecting data for center of mass method in RLE merging process
 //			change module name to RLE_BlobMerging
 //
 //			31.05.2010
-//			include computation for center of mass
 //**************************************************************************
 
 `define LSB_X 1'b0	

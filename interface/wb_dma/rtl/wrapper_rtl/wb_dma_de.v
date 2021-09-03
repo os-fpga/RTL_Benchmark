@@ -80,7 +80,6 @@
 //
 //
 
-`include "wb_dma_defines.v"
 
 module wb_dma_de(clk, rst,
 

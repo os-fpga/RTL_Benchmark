@@ -2,7 +2,6 @@
 ////                                                             ////
 ////  OpenCores Memory Controller Testbench                      ////
 ////  SDRAM memory devices tests                                 ////
-////  This file is being included by the main testbench          ////
 ////                                                             ////
 ////  Author: Richard Herveille                                  ////
 ////          richard@asics.ws                                   ////

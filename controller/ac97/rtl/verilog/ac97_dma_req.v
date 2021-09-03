@@ -66,7 +66,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_dma_req(clk, rst, cfg, status, full_empty, dma_req, dma_ack);
 input		clk, rst;

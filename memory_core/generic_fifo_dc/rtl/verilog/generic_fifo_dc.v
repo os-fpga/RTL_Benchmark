@@ -59,7 +59,6 @@
 //
 //
 
-`include "timescale.v"
 
 /*
 
@@ -131,7 +130,6 @@ empty will place the FIFO in an undefined state.
 `define DC_FIFO_ASYNC_RESET				// Uncomment for Syncr. reset
 //`define DC_FIFO_ASYNC_RESET	or negedge rst		// Uncomment for Async. reset
 
-`include "generic_dpram.v"
 module generic_fifo_dc (rd_clk, wr_clk, rst, clr, din, we, dout, re,
 			full, empty, full_n, empty_n, level );
 

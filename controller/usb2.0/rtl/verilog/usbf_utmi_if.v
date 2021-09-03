@@ -95,7 +95,6 @@
 //
 //
 
-`include "usbf_defines.v"
 
 module usbf_utmi_if( // UTMI Interface (EXTERNAL)
 		phy_clk, rst,

@@ -53,8 +53,6 @@
 //
 //
 
-`include "wb_model_defines.v"
-`include "timescale.v"
 module WB_MASTER32
 (
     CLK_I,

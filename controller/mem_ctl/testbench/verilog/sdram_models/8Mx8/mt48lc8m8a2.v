@@ -52,7 +52,6 @@
 *       Micron Technology Inc.                    - Add more timing check
 *
 * 0.0a  Son Huynh       208-368-3825  05/13/1998  - First Release
-*       Micron Technology Inc.                    - Simple testbench included
 ****************************************************************************************/
 
 `timescale 1ns / 100ps

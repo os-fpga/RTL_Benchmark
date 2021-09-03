@@ -57,7 +57,6 @@
 //
 //
 
-`include "timescale.v"
 
 // 4 entry deep fast fifo
 module sasc_fifo4(clk, rst, clr,  din, we, dout, re, full, empty);

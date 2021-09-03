@@ -37,7 +37,6 @@
 
 //2011-8-16 initiial revision
 
-`include "defines.v"
 
 module cavlc_read_run_befores
 (

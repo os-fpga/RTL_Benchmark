@@ -263,7 +263,6 @@ wb_mast	m0(	.clk(		clk		),
 		.rty(		1'b0		) );
 
 // External Tests
-`include "tests.v"
 
 endmodule
 

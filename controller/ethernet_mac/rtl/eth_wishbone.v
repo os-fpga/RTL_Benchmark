@@ -250,8 +250,6 @@
 //
 //
 
-`include "eth_defines.v"
-`include "timescale.v"
 
 
 module eth_wishbone

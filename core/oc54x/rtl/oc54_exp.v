@@ -49,7 +49,6 @@
 // Change History:												     
 //               $Log: not supported by cvs2svn $											 
 																
-`include "timescale.v"
 
 module oc54_exp (
 	clk, ena,

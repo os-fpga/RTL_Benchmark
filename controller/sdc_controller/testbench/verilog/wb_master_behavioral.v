@@ -51,7 +51,6 @@
 // Initial testbench import. Still under development
 //
 
-`include "wb_model_defines.h"
 module WB_MASTER_BEHAVIORAL
 (
     CLK_I,

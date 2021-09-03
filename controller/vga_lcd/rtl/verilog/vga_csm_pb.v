@@ -55,7 +55,6 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
 module vga_csm_pb (clk_i, req0_i, ack0_o, adr0_i, dat0_i, dat0_o, we0_i, req1_i, ack1_o, adr1_i, dat1_i, dat1_o, we1_i);

@@ -46,7 +46,6 @@
 //// from http://www.opencores.org/lgpl.shtml                     ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
-`include "sd_defines.h"
 
 module sd_cmd_master(
            input sd_clk,

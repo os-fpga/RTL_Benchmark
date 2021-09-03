@@ -11,7 +11,6 @@
 // standard       : Verilog 2001
 // -----------------------------------------------------------------------------
 // description: The Sensor Manger Statemachine is responsible for controlling the
-//              operations of the Sensor Manager. These include performing
 //              transfers between Sensor Memory and various registers.
 // -----------------------------------------------------------------------------
 // copyright (c) 2013

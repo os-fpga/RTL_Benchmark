@@ -58,7 +58,6 @@
 // New testbench. Thanks to Tadej M - "The Spammer".
 //
 // Revision 1.3  2002/07/19 13:57:53  mohor
-// Testing environment also includes traffic cop, memory interface and host
 // interface.
 //
 // Revision 1.2  2002/05/03 10:22:17  mohor

@@ -47,7 +47,6 @@
 // Delayed CRC fixed.
 //
 // Revision 1.5  2002/04/22 14:54:14  mohor
-// FCS should not be included in NibbleMinFl.
 //
 // Revision 1.4  2002/01/23 10:28:16  mohor
 // Link in the header changed.
@@ -85,7 +84,6 @@
 //
 
 
-`include "timescale.v"
 
 
 module eth_txcounters (StatePreamble, StateIPG, StateData, StatePAD, StateFCS, StateJam, 
@@ -170,7 +168,6 @@ end
 assign NibCntEq7   = &NibCnt[2:0];
 assign NibCntEq15  = &NibCnt[3:0];
 
-assign NibbleMinFl = NibCnt >= (((MinFL-3'h4)<<1) -1);  // FCS should not be included in NibbleMinFl
 
 assign ExcessiveDeferCnt = NibCnt[13:0] == 16'h17b7;
 

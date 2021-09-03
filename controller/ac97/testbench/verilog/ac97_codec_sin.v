@@ -57,7 +57,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_codec_sin(clk, rst,
 

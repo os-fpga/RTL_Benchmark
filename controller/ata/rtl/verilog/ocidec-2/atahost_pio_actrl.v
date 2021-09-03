@@ -47,8 +47,6 @@
 // Change History:
 //               $Log: not supported by cvs2svn $
 
-`include "timescale.v"
-`include "atahost_pio_tctrl.v"
 
 module atahost_pio_actrl (
 		clk, nReset, rst, IDEctrl_FATR0, IDEctrl_FATR1,

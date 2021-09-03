@@ -58,7 +58,6 @@
 //
 //                        
 
-`include "wb_conmax_defines.v"
 
 module wb_conmax_arb(clk, rst, req, gnt, next);
 

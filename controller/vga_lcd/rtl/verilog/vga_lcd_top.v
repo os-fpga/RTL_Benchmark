@@ -69,23 +69,7 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
-`include "vga_defines.v"
-`include "vga_wb_slave.v"
-`include "vga_cur_cregs.v"
-`include "vga_wb_master.v"
-`include "vga_fifo.v"
-`include "vga_csm_pb.v"
-`include "generic_spram.v"
-`include "vga_pgen.v"
-`include "vga_clkgen.v"
-`include "vga_tgen.v"
-`include "vga_vtim.v"
-`include "vga_colproc.v"
-`include "vga_curproc.v"
-`include "vga_fifo_dc.v"
-`include "generic_dpram.v"
 
 module vga_enh_top (
 	wb_clk_i, wb_rst_i, rst_i, wb_inta_o,

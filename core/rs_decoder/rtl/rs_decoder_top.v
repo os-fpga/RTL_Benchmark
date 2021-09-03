@@ -15,17 +15,6 @@
    Tel   : 1-732-447-8611
    
 */
-`include "input_syndromes.v"
-`include "transport_in2out.v"
-`include "BM_lamda.v"
-`include "lamda_roots.v"
-`include "Omega_Phy.v"
-`include "error_correction.v"
-`include "out_stage.v"
-`include "DP_RAM.v"
-`include "GF_matrix_ascending_binary.v"
-`include "GF_matrix_dec.v"
-`include "GF_mult_add_syndromes.v"
 
 
 module RS_dec_top 

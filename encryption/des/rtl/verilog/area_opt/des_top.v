@@ -31,8 +31,6 @@
 //// POSSIBILITY OF SUCH DAMAGE.                                 ////
 ////                                                             ////
 /////////////////////////////////////////////////////////////////////
-`include "crp.v"
-`include "key_sel.v"
 
 module des_top (desOut, desIn, key, decrypt, roundSel, clk);
 output	[63:0]	desOut;

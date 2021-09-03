@@ -67,7 +67,6 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
 module vga_curproc (clk, rst_i, Thgate, Tvgate, idat, idat_wreq, 

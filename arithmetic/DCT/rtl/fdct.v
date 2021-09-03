@@ -53,7 +53,6 @@
 
 
 //synopsys translate_off
-//`include "timescale.v"
 //synopsys translate_on
 
 module fdct(clk, ena, rst, dstrb, din, dout, douten);

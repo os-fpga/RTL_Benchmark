@@ -1347,7 +1347,6 @@ module post_norm( fpu_op, opas, sign, rmode, fract_in, exp_in, exp_ovf,
 
 	assign {shft_co,shftr_mul} = (!exp_ovf[1] & exp_in_00) ? {1'b0, exp_out} : exp_in_mi1 ;
 	assign {div_shft1_co, div_shft1} = exp_in_00 ? {1'b0, div_opa_ldz} : div_scht1a;
-	assign div_scht1a = {1'b0, exp_in}-{4'b0, div_opa_ldz}; // 9 bits - includes carry out
 	assign div_shft2  = exp_in+8'h02;
 	assign div_shft3  = {3'b0, div_opa_ldz}+exp_in;
 	assign div_shft4  = {3'b0, div_opa_ldz}-exp_in;
@@ -1421,11 +1420,8 @@ module post_norm( fpu_op, opas, sign, rmode, fract_in, exp_in, exp_ovf,
 	assign fi_ldz_mi22   = fi_ldz - 6'd22;
 	assign exp_out_pl1   = exp_out + 8'h01;
 	assign exp_out_mi1   = exp_out - 8'h01;
-	assign exp_in_pl1    = {1'b0, exp_in}  + 9'd1;	// 9 bits - includes carry out
-	assign exp_in_mi1    = {1'b0, exp_in}  - 9'd1;	// 9 bits - includes carry out
 	assign exp_out1_mi1  = exp_out1 - 8'h01;
 
-	assign exp_next_mi  = exp_in_pl1 - {3'b0, fi_ldz_mi1};	// 9 bits - includes carry out
 
 	assign exp_fix_diva = exp_in - {2'b0, fi_ldz_mi22};
 	assign exp_fix_divb = exp_in - {2'b0, fi_ldz_mi1};
@@ -1457,7 +1453,6 @@ module post_norm( fpu_op, opas, sign, rmode, fract_in, exp_in, exp_ovf,
 	assign fi_ldz_2a = 7'd23 - {1'b0,fi_ldz};
 	assign fi_ldz_2  = {fi_ldz_2a[6], fi_ldz_2a[6:0]};
 
-	assign div_exp1  = exp_in_mi1 + {1'b0, fi_ldz_2};	// 9 bits - includes carry out
 
 	assign div_exp2  = exp_in_pl1[7:0] - {1'b0, ldz_all};
 	assign div_exp3  = exp_in + ldz_dif;

@@ -57,13 +57,6 @@
 //
 
 // synopsys translate_off
-//`include "timescale.v"
-`include "dct.v"
-`include "dct_mac.v"
-`include "dctu.v"
-`include "dctub.v"
-`include "fdct.v"
-`include "zigzag.v"
 
 // synopsys translate_on
 

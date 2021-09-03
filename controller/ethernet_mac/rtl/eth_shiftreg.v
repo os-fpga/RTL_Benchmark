@@ -75,7 +75,6 @@
 //
 //
 
-`include "timescale.v"
 
 
 module eth_shiftreg(Clk, Reset, MdcEn_n, Mdi, Fiad, Rgad, CtrlData, WriteOp, ByteSelect, 

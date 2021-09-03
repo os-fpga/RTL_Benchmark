@@ -18,8 +18,6 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-`include "Simon_bit_serial_datapath_FPGA.v"
-`include "Simon_bit_serial_key_expansion_FPGA.v"
 
 module top_module(clk,data_in,data_rdy,cipher_out);
 

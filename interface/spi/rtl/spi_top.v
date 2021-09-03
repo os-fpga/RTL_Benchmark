@@ -39,10 +39,6 @@
 //////////////////////////////////////////////////////////////////////
 
 
-`include "spi_defines.v"
-`include "timescale.v"
-`include "spi_clgen.v"
-`include "spi_shift.v"
 
 module spi_top
 (

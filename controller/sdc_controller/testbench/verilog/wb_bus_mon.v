@@ -61,7 +61,6 @@
 //
 //
 
-`include "wb_model_defines.h"
 // WISHBONE bus monitor module - it connects to WISHBONE master signals and
 // monitors for any illegal combinations appearing on the bus.
 module WB_BUS_MON(

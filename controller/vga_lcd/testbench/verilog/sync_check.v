@@ -63,7 +63,6 @@
 //
 
 `timescale 1ns / 10ps
-`include "vga_defines.v"
 
 module sync_check(	pclk, rst, enable, hsync, vsync, csync, blanc,
 			hpol, vpol, cpol, bpol,

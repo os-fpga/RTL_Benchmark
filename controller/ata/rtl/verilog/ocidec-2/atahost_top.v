@@ -65,9 +65,6 @@
 // CS1-		select control block registers
 //
 
-`include "timescale.v"
-`include "atahost_wb_slave.v"
-`include "atahost_controller.v"
 
 module atahost_top (wb_clk_i, arst_i, wb_rst_i, wb_cyc_i, wb_stb_i, wb_ack_o, wb_err_o,
 		wb_adr_i, wb_dat_i, wb_dat_o, wb_sel_i, wb_we_i, wb_inta_o,

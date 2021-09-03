@@ -54,7 +54,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 module ac97_rst(clk, rst, rst_force, ps_ce, ac97_rst_);
 input		clk, rst;

@@ -74,7 +74,6 @@
 //
 //
 
-`include "timescale.v"
 
 module usb_rx_phy(	clk, rst, fs_ce,
 	

@@ -56,14 +56,6 @@
 //
 //
 
-`include "wb_conmax_arb.v"
-`include "wb_conmax_defines.v"
-`include "wb_conmax_master_if.v"
-`include "wb_conmax_msel.v"
-`include "wb_conmax_pri_dec.v"
-`include "wb_conmax_pri_enc.v"
-`include "wb_conmax_rf.v"
-`include "wb_conmax_slave_if.v"
 
 module wb_conmax_top(
 	clk_i, rst_i,

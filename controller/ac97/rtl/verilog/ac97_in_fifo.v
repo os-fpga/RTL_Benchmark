@@ -74,7 +74,6 @@
 //
 //
 
-`include "ac97_defines.v"
 
 `ifdef AC97_IN_FIFO_DEPTH_4
 

@@ -54,23 +54,7 @@
 //// from http://www.opencores.org/lgpl.shtml                     ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
-`include "sd_defines.h"
 
-`include "sd_clock_divider.v"
-`include "sd_cmd_master.v"
-`include "sd_cmd_serial_host.v"
-`include "sd_crc_7.v"
-`include "sd_data_master.v"
-`include "sd_data_serial_host.v"
-`include "sd_crc_16.v"
-`include "sd_fifo_filler.v"
-`include "generic_fifo_dc_gray.v"
-`include "generic_dpram.v"
-`include "sd_data_xfer_trig.v"
-`include "sd_controller_wb.v"
-`include "edge_detect.v"
-`include "monostable_domain_cross.v"
-`include "bistable_domain_cross.v"
 
 
 

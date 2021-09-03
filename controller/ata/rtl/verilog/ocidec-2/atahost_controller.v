@@ -54,8 +54,6 @@
 // -No DMA support
 //
 
-`include "timescale.v"
-`include "atahost_pio_actrl.v"
 
 module atahost_controller (
 		clk, nReset, rst, irq, IDEctrl_rst, IDEctrl_IDEen, IDEctrl_FATR0, IDEctrl_FATR1,

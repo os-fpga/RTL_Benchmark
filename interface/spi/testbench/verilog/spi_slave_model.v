@@ -38,7 +38,6 @@
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
 
-`include "timescale.v"
 
 module spi_slave_model (rst, ss, sclk, mosi, miso);
 

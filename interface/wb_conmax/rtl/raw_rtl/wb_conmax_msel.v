@@ -56,7 +56,6 @@
 //
 //
 
-`include "wb_conmax_defines.v"
 
 module wb_conmax_msel(
 		clk_i, rst_i,

@@ -37,13 +37,6 @@
 
 //2011-8-7 initial version
 
-`include "defines.v"
-`include "cavlc_fsm.v"
-`include "cavlc_len_gen.v"
-`include "cavlc_read_levels.v"
-`include "cavlc_read_run_befores.v"
-`include "cavlc_read_total_coeffs.v"
-`include "cavlc_read_total_zeros.v"
 
 module cavlc
 (

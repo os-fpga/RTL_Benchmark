@@ -42,7 +42,6 @@
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
 
-`include "timescale.v"
 
 module wb_master_model(clk, rst, adr, din, dout, cyc, stb, we, sel, ack, err, rty);
 

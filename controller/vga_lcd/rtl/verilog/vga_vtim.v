@@ -62,7 +62,6 @@
 //
 
 //synopsys translate_off
-`include "timescale.v"
 //synopsys translate_on
 
 module vga_vtim(clk, ena, rst, Tsync, Tgdel, Tgate, Tlen, Sync, Gate, Done);

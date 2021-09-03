@@ -37,7 +37,6 @@
 
 //2011-8-7 20:19    initial revision
 
-`include "defines.v"
 
 module cavlc_len_gen
 (

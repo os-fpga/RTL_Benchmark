@@ -105,7 +105,6 @@
 //
 //
 
-`include "mc_defines.v"
 
 module mc_mem_if(clk, rst, mc_clk, mc_br, mc_bg, 
 		mc_addr, mc_data_o, mc_dp_o, mc_data_oe,

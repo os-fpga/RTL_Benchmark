@@ -64,7 +64,6 @@
 //
 //
 
-`include "wb_model_defines.v"
 
 module wb_mast(clk, rst, adr, din, dout, cyc, stb, sel, we, ack, err, rty);
 

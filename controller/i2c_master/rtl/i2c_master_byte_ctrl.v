@@ -79,7 +79,6 @@
 // synopsys translate_on
 `timescale 1ns / 10ps
 
-`include "i2c_master_defines.v"
 
 module i2c_master_byte_ctrl (
 	clk, rst, Reset, ena, clk_cnt, start, stop, read, write, ack_in, din,
