@@ -377,15 +377,15 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|14 (generic_fifo_lfsr)|8 (generic_fifo_lfsr)|0 |0|25 (generic_fifo_lfsr)|
 |Max|112 (generic_fifo_dc_gray)|115 (ssram)|0|0|148 (ssram)|
-|Avg|57.2|44.3|0|0|51.2|
+|Avg|57.2|61|0|0|51.2|
 
 - #### Lattice diamond
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min|42 (ssram)|57 (generic_fifo_sc_a)|0 |0 (ssram)|28 (generic_fifo_dc)|
+|Min|42 (ssram)|43 (generic_fifo_sc_b)|0 |0 (ssram)|28 (generic_fifo_dc)|
 |Max|180 (generic_fifo_dc_gray)|130 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
-|Avg|114.4|86.4|0|0.8|56.4|
+|Avg|112.6|83|0|0.6|56.4|
 
 - #### Anlogic
 
@@ -393,13 +393,13 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Min|26 (generic_fifo_lfsr)|18 (generic_fifo_lfsr)|0|0|25 (generic_fifo_lfsr)|
 |Max|146 (generic_fifo_dc_gray)|173 (ssram)|0|0|148 (ssram)|
-|Avg|84.8|71.8|0|0|51.2|
+|Avg|87.5|74.7|0|0|51.2|
 
 - #### Gowin
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min|58 (generic_fifo_sc_b)|31 (generic_fifo_sc_b)|0 |0 (ssram)|28 (generic_fifo_dc)|
+|Min|58 (generic_fifo_sc_b)|31 (generic_fifo_sc_a)|0 |0 (ssram)|28 (generic_fifo_dc)|
 |Max|119 (generic_fifo_dc_gray)|88 (generic_fifo_dc_gray)|0|1 (generic_fifo_dc)|148 (ssram)|
 |Avg|91|55.4|0|0.8|56.4|
 
@@ -407,9 +407,9 @@ This repository contains the benchmarks, catagorized on the bases of their domai
 
 |Benchmark|LUT|FF|DSP|BRAM|IO|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|Min||||||
-|Max||||||
-|Avg||||||
+|Min|86 (generic_fifo_sc_b)|48 (generic_fifo_sc_a)|0 (generic_fifo_dc)|0 (generic_fifo_dc)|28 (generic_fifo_dc)|
+|Max|5888 (generic_fifo_dc_gray)|4210 (generic_fifo_dc_gray)|1 (generic_fifo_sc_a)|1 (generic_fifo_sc_a)|44 (generic_fifo_dc_gray)|
+|Avg|2292.5|1609|0.25|0.25|33.5|
 
 ### 9. Signal processing
 
