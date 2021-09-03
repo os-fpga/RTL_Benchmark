@@ -48,10 +48,10 @@
 |**_generic_fifo_lfsr_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|19|16|0|0|25|
 |Quartus prime|14|8|0|0|25|
-|Lattice diamond||||||
+|Lattice diamond|-|-|-|-|-|
 |Anlogic|26|18|0|0|25|
 |Gowin|-|-|-|-|-|
-|OSFPGA||||||
+|OSFPGA|-|-|-|-|-|
 |**_generic_fifo_sc_a_**|**LUT**|**FF**|**DSP**|**BRAM**|**IO**|
 |Vivado|63|34|0|0.5|31|
 |Quartus prime|77|31|0|0|31|
