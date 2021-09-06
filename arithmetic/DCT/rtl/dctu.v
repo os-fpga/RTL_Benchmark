@@ -53,6 +53,7 @@
 
 
 //synopsys translate_off
+//`include "timescale.v"
 //synopsys translate_on
 
 module dctu(clk, ena, ddgo, x, y, ddin, dout);
@@ -80,6 +81,7 @@ module dctu(clk, ena, ddgo, x, y, ddin, dout);
 	reg [      31:0] coef;
 
 	wire [coef_width +10:0] result;
+	`include "dct_cos_table.v"
 	//
 	// module body
 	//
