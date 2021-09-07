@@ -9,6 +9,10 @@ Simple General Purpose IO port. It supports up to 8 GPIO pins. Each pin is indiv
 - Static synchronous design
 - Fully synthesisable
 
+# Directory structure
+
+    └── rtl                # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -20,6 +24,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|31|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl                # RTL Sources
+# Documentation
+Unavailable
