@@ -1,3 +1,7 @@
+# Directory structure
+
+    └── rtl     # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -9,9 +13,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|162|
 
+# Testbench
+Unavailable
+
+# Documentation
+Unavailable
+
 # License
 The MIT License
-
-# Directory structure
-
-    └── rtl     # RTL Sources
