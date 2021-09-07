@@ -10,6 +10,15 @@ The Wishbone SD Card Controller IP Core is MMC/SD communication controller desig
 - Support for any command code (including multiple data block tranfser),
 - Support for R1, R1b, R2(136-bit), R3, R6 and R7 responses.
 
+# Directory structure
+
+    ├── doc           # Documentation
+    ├── rtl           # RTL Sources
+    │   ├── verilog   # Verilog Sources
+    │   └── VHDL      # Vhdl Sources
+    └── testbench     # Testbench
+        └── verilog   # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -21,14 +30,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|203|
 
+# Testbench
+Available
+
+# Documentation
+Available
+
 # License
 GNU Lesser General Public License
-
-# Directory structure
-
-    ├── doc           # Documentation
-    ├── rtl           # RTL Sources
-    │   ├── verilog   # Verilog Sources
-    │   └── VHDL      # Vhdl Sources
-    └── testbench     # Testbench
-        └── verilog   # Verilog Sources
