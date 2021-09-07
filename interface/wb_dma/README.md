@@ -13,6 +13,16 @@ This is a simple DMA/Bridge IP core. It has two WISHBONE interface. It can perfo
 - Automatic Channel Registers Reload support
 - Fully configurable
 
+
+# Directory structure
+
+    ├── doc               # Documentation
+    ├── rtl               # RTL Resources
+    │   ├── raw_rtl       # Raw RTL
+    │   └── wrapper_rtl   # RTL with Wrapper
+    └── testbench         # Testbench
+        └── verilog       # Verilog Resources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -34,11 +44,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|221|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── doc               # Documentation
-    ├── rtl               # RTL Resources
-    │   ├── raw_rtl       # Raw RTL
-    │   └── wrapper_rtl   # RTL with Wrapper
-    └── testbench         # Testbench
-        └── verilog       # Verilog Resources
+# Documentation
+Available
