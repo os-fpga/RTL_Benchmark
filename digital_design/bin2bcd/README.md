@@ -4,6 +4,10 @@
 
 To convert a binary number to BCD format, an algorithm called Double Dabble, can be use. Written a Verilog code is for converting a 8 bit binary number into BCD format. The maximum value of a 8 bit binary number is 255 in decimal. This means output need 3 BCD digits. So, the size of the output is as 3 digits*4 bits = 12 bits.
 
+# Directory structure
+
+    ├── rtl                # RTL Sources
+    └── testbench          # Testbench
 
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
@@ -16,7 +20,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|20|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── rtl                # RTL Sources
-    └── testbench          # Testbench
+# Documentation
+Unavailable
