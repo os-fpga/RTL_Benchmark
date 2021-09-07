@@ -13,6 +13,15 @@ The simple Serial Peripheral Interface core is an enhanced version of the Serial
 - Operates from a wide range of input clock frequencies
 - Static synchronous design
 
+
+# Directory structure
+
+    ├── doc             # Documentation
+    ├── rtl             # RTL Sources
+    │   └── verilog     # Verilog Sources
+    └── testbench       # Testbench
+        └── verilog     # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -24,10 +33,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|28|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── doc             # Documentation
-    ├── rtl             # RTL Sources
-    │   └── verilog     # Verilog Sources
-    └── testbench       # Testbench
-        └── verilog     # Verilog Sources
+# Documentation
+Available
