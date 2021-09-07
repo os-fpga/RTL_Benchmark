@@ -11,6 +11,10 @@ Simple asynchronous serial controller (aka UART). Includes 4 byte receive and a 
 - 4 byte transmit FIFO
 - Fully Synthesisable
 
+# Directory structure
+
+    └── rtl                # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -22,6 +26,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|28|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl                # RTL Sources
+# Documentation
+Unavailable
