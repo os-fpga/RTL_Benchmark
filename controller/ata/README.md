@@ -38,6 +38,20 @@ Currently three cores are available:
 - High speed ATA devices (Hard disks, CDROMs)
 - Designs requiring full featured ATA capabilities.
 
+# Directory structure
+
+    ├── doc                 # Documentation
+    ├── rtl                 # RTL Sources
+    │   ├── verilog         # Verilog Sources
+    │   │   ├── ocidec-1
+    │   │   └── ocidec-2
+    │   └── vhdl            # Vhdl Sources
+    │       ├── ocidec1
+    │       ├── ocidec2
+    │       └── ocidec3
+    └── testbench           # Testbench
+        └── verilog         # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -68,16 +82,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|24|
 |IO|130|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── doc                 # Documentation
-    ├── rtl                 # RTL Sources
-    │   ├── verilog         # Verilog Sources
-    │   │   ├── ocidec-1
-    │   │   └── ocidec-2
-    │   └── vhdl            # Vhdl Sources
-    │       ├── ocidec1
-    │       ├── ocidec2
-    │       └── ocidec3
-    └── testbench           # Testbench
-        └── verilog         # Verilog Sources
+# Documentation
+Available
