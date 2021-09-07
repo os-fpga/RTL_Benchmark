@@ -1,3 +1,8 @@
+
+# Directory structure
+
+    └── rtl                # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -9,6 +14,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|3|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl                # RTL Sources
+# Documentation
+Unavailable
