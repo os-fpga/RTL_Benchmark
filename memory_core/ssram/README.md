@@ -7,6 +7,10 @@ The 'SSRAM interface core' is a collection of designs for easy integration of sy
 - Sandard interface for pipelined ZBTs
 - Dual ported memory using cycle shared ssram
 
+# Directory structure
+
+    └── rtl                # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -18,6 +22,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|148|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl                # RTL Sources
+# Documentation
+Unavailable
