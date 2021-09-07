@@ -15,6 +15,12 @@ DCT soft core is the unit to perform the Discrete Cosine Transform (DCT). It per
 - structure optimized for Xilinx Virtex, Spartan FPGA devices
 
 
+# Directory structure
+
+    ├── doc                # Documentation
+    ├── rtl                # RTL Sources
+    └── testbench          # Testbench
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -26,11 +32,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|25|
 
+# Testbench
+Available
+
+# Documentation
+Available
+
 # License
 GNU Lesser General Public License
-
-# Directory structure
-
-    ├── doc                # Documentation
-    ├── rtl                # RTL Sources
-    └── testbench          # Testbench
