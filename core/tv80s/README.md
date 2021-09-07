@@ -9,6 +9,11 @@ The TV80 is an 8-bit Z80-compatible microprocessor core, written in Verilog. It 
 - small die area
 - sample peripheral with GMII interface
 
+# Directory structure
+
+    ├── doc                # Documentation
+    └── rtl                # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -20,10 +25,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|46|
 
+# Testbench
+Unavailable
+
+# Documentation
+Available
+
 # License
 Berkeley Software Distribution
-
-# Directory structure
-
-    ├── doc                # Documentation
-    └── rtl                # RTL Sources
