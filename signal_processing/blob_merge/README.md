@@ -2,6 +2,11 @@
 
 It reads RLE encoded pixel data from input fifo, merge Runs based on bounding box criteria and write Blobs attributes to output fifo.
 
+
+# Directory structure
+
+    └── rtl     # RTL Sources
+    
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -13,9 +18,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|136|
 
+# Testbench
+Unavailable
+
+# Documentation
+Unavailable
+
 # License
 The MIT License
-
-# Directory structure
-
-    └── rtl     # RTL Sources
