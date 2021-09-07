@@ -10,6 +10,12 @@ This is a Motorola DragonBall/68K to Wishbone bridge. The core translates the 16
 - static synchronous design
 - fully synthesisable
 
+
+# Directory structure 
+
+    └── rtl            # RTL Sources
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -21,8 +27,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|83|
 
-# Directory structure 
+# Testbench
+Unavailable
 
-    └── rtl            # RTL Sources
-        └── verilog    # Verilog Sources
-
+# Documentation
+Unavailable
