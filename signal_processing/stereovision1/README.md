@@ -3,6 +3,10 @@
 This is the design for chip #1 of stereo vision system. This chip mainly performs the normalization and correlation in two orienations and 3 scales.
 
 
+# Directory structure
+
+    └── rtl            # RTL Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -14,9 +18,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|278|
 
+# Testbench
+Unavailable
+
+# Documentation
+Unavailable
+
 # License
 The MIT License
-
-# Directory structure
-
-    └── rtl            # RTL Sources
