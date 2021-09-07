@@ -22,6 +22,13 @@ The Ethernet IP Core is a MAC (Media Access Controller). It connects to the Ethe
 - Internal RAM for holding 128 TX/RX buffer descriptors
 - Interrupt generation an all events
 
+# Directory structure 
+
+    ├── doc            # Documentation
+    ├── rtl            # RTL Sources
+    └── testbench      # Testbench
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -33,12 +40,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|2|
 |IO|211|
 
+# Testbench
+Available
+
+# Documentation
+Available
+
 # License
 GNU Lesser General Public License
-
-# Directory structure 
-
-    ├── doc            # Documentation
-    ├── rtl            # RTL Sources
-    └── testbench      # Testbench
-        └── verilog    # Verilog Sources
