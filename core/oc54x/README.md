@@ -10,6 +10,10 @@ The OpenCores54x (OC54x) DSP core is a cleanroom implementation of a popular fam
 - Up to 5 operations per cycle
 - structural & opcode compatible with TI's C54x family of DSPs
 
+# Directory structure
+
+    └── rtl     # RTL Sources
+    
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -21,6 +25,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|140|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl     # RTL Sources
+# Documentation
+Unavailable
