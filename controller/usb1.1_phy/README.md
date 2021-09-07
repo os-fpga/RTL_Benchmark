@@ -5,7 +5,7 @@ USB 1.1 PHY. includes all the goodies: serial/parallel conversion, bit stuffing/
 'phy_mode' selects between single ended and differential tx_phy output. See Philips ISP 1105 transceiver data sheet for an explanation of it's MODE
 select pin (see Note below). Currently this PHY only operates in Full-Speed mode. Required clock frequency is 48MHz, from which the 12MHz USB transmit and receive clocks are derived.
 
-# Features 
+## Features 
 - FPGA or ASIC implementation possible
 - 8 bit wide unidirectional UTMI interface
 - serial parallel conversion
@@ -14,6 +14,10 @@ select pin (see Note below). Currently this PHY only operates in Full-Speed mode
 - DPLL
 - Implemented in Verilog
 - Fully synthesizable 
+
+# Directory structure
+
+    └── rtl           # RTL Sources
 
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
@@ -26,6 +30,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|33|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl           # RTL Sources
+# Documentation
+Unavailable
