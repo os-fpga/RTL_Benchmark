@@ -9,6 +9,15 @@ This is a WISHBONE Interconnect Matrix IP core.It can interconnect up to 8 Maste
 - 1, 2 or 4 priority levels
 - Fully configurable 
 
+# Directory structure
+
+    ├── doc               # Documentation
+    ├── rtl               # RTL Resources
+    │   ├── raw_rtl       # Raw RTL
+    │   └── wrapper_rtl   # RTL with Wrapper
+    └── testbench         # Testbench
+        └── verilog       # Verilog Resources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -30,11 +39,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|221|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── doc               # Documentation
-    ├── rtl               # RTL Resources
-    │   ├── raw_rtl       # Raw RTL
-    │   └── wrapper_rtl   # RTL with Wrapper
-    └── testbench         # Testbench
-        └── verilog       # Verilog Resources
+# Documentation
+Available
