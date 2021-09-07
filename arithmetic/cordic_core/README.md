@@ -31,6 +31,14 @@ Now it is clear how we can simply implement this algorithm, it only uses shifts 
 
 Where 'n' represents the number of iterations. 
 
+# Directory structure
+
+    ├── doc               # Documentation
+    └── rtl               # RTL Sources
+        ├── polar2rect
+        └── rect2polar
+
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -52,9 +60,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|74|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    ├── doc               # Documentation
-    └── rtl               # RTL Sources
-        ├── polar2rect
-        └── rect2polar
+# Documentation
+Available
