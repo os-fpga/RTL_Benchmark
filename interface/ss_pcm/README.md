@@ -12,6 +12,11 @@ Simple PCM Interface. Allows to interface to such popular devices like TI DSPs (
 - Fully Synthesisable
 - Can handle PCM streams at any rate, 128KHz to 100MHz.
 
+# Directory structure
+
+    └── rtl            # RTL Sources 
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -23,7 +28,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|28|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    └── rtl            # RTL Sources 
-        └── verilog    # Verilog Sources
+# Documentation
+Unavailable
