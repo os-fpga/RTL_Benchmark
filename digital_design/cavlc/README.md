@@ -10,6 +10,13 @@ This IP implements the CAVLC parsing process in ITU-T H.264.
 - 9 cycles per cavlc block on average(including P frames)
 - Fully synchronous design, Fully synthesisable
 
+# Directory structure
+
+    ├── rtl             # RTL Sources
+    └── testbench       # Testbench
+        ├── input_gen
+        └── tests
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -21,12 +28,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|187|
 
+# Testbench
+Available
+
+# Documentation
+Unavailable
+
 # License
 GNU Lesser General Public License
-
-# Directory structure
-
-    ├── rtl             # RTL Sources
-    └── testbench       # Testbench
-        ├── input_gen
-        └── tests
