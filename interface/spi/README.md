@@ -13,6 +13,13 @@ SPI (Serial Peripheral Interface) is serial, synchronous, full duplex communicat
 - Technology independent Verilog
 - Fully synthesizable 
 
+# Directory structure
+
+    ├── doc             # Documentation
+    ├── rtl             # RTL Sources
+    └── testbench       # Testbench
+        └── verilog     # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -24,9 +31,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|90|
 
-# Directory structure
+# Testbench
+Available
 
-    ├── doc             # Documentation
-    ├── rtl             # RTL Sources
-    └── testbench       # Testbench
-        └── verilog     # Verilog Sources
+# Documentation
+Available
