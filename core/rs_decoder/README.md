@@ -6,6 +6,12 @@
 - Code generator polynomial: (x + λ) (x + λ^2) (x + λ^3) ... (x + λ^16).
 - Field generator polynomial: x^8+ x^4+ x^3+ x^2+1.
 
+# Directory structure
+
+    ├── doc           # Documnetation
+    ├── rtl           # RTL Sources
+    └── testbench     # Testbench
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -17,11 +23,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|20|
 
+# Testbench
+Available
+
+# Documentation
+Available
+
 # License
 GNU General Public License
-
-# Directory structure
-
-    ├── doc           # Documnetation
-    ├── rtl           # RTL Sources
-    └── testbench     # Testbench
