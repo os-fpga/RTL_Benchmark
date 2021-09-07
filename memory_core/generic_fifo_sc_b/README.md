@@ -9,6 +9,15 @@ Generic, multi-purpose single clock FIFO. It is parameterizable and uses generic
 - Parameterized
 - Single and Dual Clock
 
+
+
+# Directory structure 
+
+    ├── rtl            # RTL Sources
+    │   └── verilog    # Verilog Sources
+    └── testbench      # Testbench
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -22,10 +31,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0.5|
 |IO|31|
 
+# Testbench
+Available
 
-# Directory structure 
-
-    ├── rtl            # RTL Sources
-    │   └── verilog    # Verilog Sources
-    └── testbench      # Testbench
-        └── verilog    # Verilog Sources
+# Documentation
+Unavailable
