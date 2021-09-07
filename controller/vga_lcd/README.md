@@ -4,6 +4,15 @@ The OpenCores VGA/LCD Controller core is a WISHBONE revB.3 compliant embedded VG
 
 The core supports a number of color modes, including 32bpp, 24bpp, 16bpp, 8bpp gray-scale, and 8bpp-pseudo color. The video memory is located outside the primary core, thus providing the most flexible memory solution. It can be located on-chip or off-chip, shared with the system’s main memory (VGA on demand) or be dedicated to the VGA system. The color lookup table is, as of core version 2.0, incorporated into the color-processor block.
 
+# Directory structure
+
+    ├── doc            # Documentation 
+    ├── rtl            # RTL Sources
+    │   ├── verilog    # Verilog Sources    
+    │   └── vhdl       # Vhdl Sources
+    └── testbench      # Testbench
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -15,14 +24,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|1|
 |IO|196|
 
+# Testbench
+Available
+
+# Documentation
+Available
+
 # License
 GNU General Public License
-
-# Directory structure
-
-    ├── doc            # Documentation 
-    ├── rtl            # RTL Sources
-    │   ├── verilog    # Verilog Sources    
-    │   └── vhdl       # Vhdl Sources
-    └── testbench      # Testbench
-        └── verilog    # Verilog Sources
