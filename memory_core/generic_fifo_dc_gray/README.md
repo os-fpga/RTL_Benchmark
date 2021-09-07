@@ -9,6 +9,13 @@ Generic, multi-purpose dual clock gray encoded FIFO. It is parameterizable and u
 - Parameterized
 - Single and Dual Clock
 
+# Directory structure 
+
+    ├── rtl            # RTL Sources
+    │   └── verilog    # Verilog Sources
+    └── testbench      # Testbench
+        └── verilog    # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -22,9 +29,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0.5|
 |IO|44|
 
-# Directory structure 
+# Testbench
+Available
 
-    ├── rtl            # RTL Sources
-    │   └── verilog    # Verilog Sources
-    └── testbench      # Testbench
-        └── verilog    # Verilog Sources
+# Documentation
+Unavailable
