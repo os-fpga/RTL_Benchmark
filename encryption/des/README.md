@@ -9,6 +9,17 @@ This is a DES core implementation in verilog. It takes a standard 56 bit key and
 ### Performance Optimized (EBC Mode)
    This is a pipelined implementation that has a 16 cycle pipeline (plus 1 input and 1 output register). It can perform a complete encryption/decryption every cycle.
 
+
+# Directory structure
+
+
+    ├── rtl                 # RTL Sources
+    │   └── verilog         # Verilog Sources
+    │       ├── area_opt    # area optimized
+    │       └── perf_opt    # performance optimized
+    └── testbench           # Testbench
+           └── verilog         # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -32,15 +43,11 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|298|
 
+# Testbench
+Available
+
+# Documentation
+Unavailable
+
 # License
 GNU General Public License
-
-# Directory structure
-
-
-    ├── rtl                 # RTL Sources
-    │   └── verilog         # Verilog Sources
-    │       ├── area_opt    # area optimized
-    │       └── perf_opt    # performance optimized
-    └── testbench           # Testbench
-           └── verilog         # Verilog Sources
