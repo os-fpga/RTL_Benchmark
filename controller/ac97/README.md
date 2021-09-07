@@ -12,6 +12,15 @@ This is a AC 97 Controller Core. It provides a an interface to an external AC 97
 - External DMA Engine Support
 - WISHBONE SoC host Interface 
 
+
+# Directory structure
+
+    ├── doc                # Documentation
+    ├── rtl                # RTL Sources
+    │   └── verilog        # Verilog Sources
+    └── testbench          # Testbench
+        └── verilog        # Verilog Sources
+
 # Utilization Report
 Synthesized on Artix-7 device using vivado.
 
@@ -23,10 +32,8 @@ Synthesized on Artix-7 device using vivado.
 |BRAM|0|
 |IO|104|
 
-# Directory structure
+# Testbench
+Unavailable
 
-    ├── doc                # Documentation
-    ├── rtl                # RTL Sources
-    │   └── verilog        # Verilog Sources
-    └── testbench          # Testbench
-        └── verilog        # Verilog Sources
+# Documentation
+Available
