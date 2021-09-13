@@ -21,13 +21,6 @@ jobs:
         run: |
           echo "Added+Modified:"
           echo "${{ steps.abc.outputs.added_modified }}"
-          
-  build:
-    needs: list_new_files
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
 
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
