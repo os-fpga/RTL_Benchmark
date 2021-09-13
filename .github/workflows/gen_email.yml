@@ -8,6 +8,20 @@ on:
   workflow_dispatch:
 
 jobs:
+  list_new_files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: jitterbit/get-changed-files@v1
+        id: abc
+        with:
+          format: space-delimited
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Printing
+        run: |
+          echo "Added+Modified:"
+          echo "${{ steps.abc.outputs.added_modified }}"
+          
   send_email:
     runs-on: ubuntu-latest
 
@@ -23,6 +37,6 @@ jobs:
           token: ${{ secrets.RTL_REPO_UPDATE }}
           repository: RapidSilicon/Gap-Analysis
           event-type: build-project
-          client-payload: '{"hello": "${{ steps.abc.outputs.added_modified }}"}'
+          client-payload: '{"Changes_detected": "${{ steps.abc.outputs.added_modified }}"}'
             
           
