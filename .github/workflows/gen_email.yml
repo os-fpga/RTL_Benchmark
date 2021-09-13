@@ -8,30 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  list_new_files:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Printing
-        run: |
-          echo "Added+Modified:"
-          echo "${{ steps.abc.outputs.added_modified }}"
-          
-  send_email: 
-    needs: list_new_files
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
       - uses: jitterbit/get-changed-files@v1
+      - uses: peter-evans/repository-dispatch@v1
         id: abc
         with:
           format: space-delimited
@@ -39,5 +22,5 @@ jobs:
           repository: RapidSilicon/Gap-Analysis
           event-type: build-project
           client-payload: '{"Changes_detected": "${{ steps.abc.outputs.added_modified }}"}'
-            
-          
+	  
+        
