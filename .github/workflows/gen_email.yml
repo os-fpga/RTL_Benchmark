@@ -17,7 +17,7 @@ jobs:
       - uses: peter-evans/repository-dispatch@v1
         id: abc
         with:
-          format: space-delimited
+          format: client-payload
           token: ${{ secrets.RTL_REPO_UPDATE }}
           repository: RapidSilicon/Gap-Analysis
           event-type: build-project
