@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  WISHBONE AC 97 Controller Top Level                        ////
-////                                                             ////
+////  changed                                                           ////
 ////                                                             ////
 ////  Author: Rudolf Usselmann                                   ////
 ////          rudi@asics.ws                                      ////
