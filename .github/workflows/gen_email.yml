@@ -22,7 +22,8 @@ jobs:
           echo "Added+Modified:"
           echo "${{ steps.abc.outputs.added_modified }}"
           
-  send_email:
+  send_email: 
+    needs: list_new_files
     runs-on: ubuntu-latest
 
     steps:
