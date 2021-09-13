@@ -35,4 +35,4 @@ jobs:
           token: ${{ secrets.RTL_REPO_UPDATE }}
           repository: RapidSilicon/Gap-Analysis
           event-type: build-project
-          client-payload: '{{ "modified_files": "${{ steps.abc.outputs.added_modified }}" }}'
+          client-payload: '{"modified_files": "${{ steps.abc.outputs.added_modified }}"}'
