@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  OCIDEC-1 ATA/ATAPI-5 Controller                            ////
-////  Top Level                                                 ////
+////  Top Level 1                                                ////
 ////                                                             ////
 ////  Author: Richard Herveille                                  ////
 ////          richard@asics.ws                                   ////
