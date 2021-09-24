@@ -1,3 +1,5 @@
+//8-bit counter
+
 module counter (clk_counter, q_counter, rst_counter);
 
     input clk_counter;
