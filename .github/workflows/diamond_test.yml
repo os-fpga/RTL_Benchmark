@@ -1,0 +1,38 @@
+ 
+name: Diamond_Test
+
+on:
+  push:
+    branches:
+      - cga_test
+    paths:
+      - '**/*.*v*'
+  pull_request:
+   
+  workflow_dispatch:
+
+jobs:
+  Diamond_Test:
+    runs-on: Diamond_runner
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: jitterbit/get-changed-files@v1
+        id: abc
+        with:
+          format: space-delimited
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Look for added and modified files
+        run: |
+          echo "Added/Modified:"
+          echo "${{ steps.abc.outputs.added_modified }}"
+          
+      - name: Generate run designs file
+        run: |
+            export CGA_ROOT=$(pwd)
+            python3 $CGA_ROOT/.github/gen_filelist.py ${{ steps.abc.outputs.added_modified }}
+      
+      - name: Compiling benchmarks on Lattice Diamond
+        run: |
+         export PATH="$PATH:/opt/diamond_tool/installdir/diamond/3.12/bin/lin64"
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T lattice -f $CGA_ROOT/run_designs 
