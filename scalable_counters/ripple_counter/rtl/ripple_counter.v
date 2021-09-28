@@ -17,7 +17,7 @@ dut_ff dut_ff0(q[0], ~clk, reset);
 genvar i;	
 	// Generate for loop to instantiate N times
 	generate 
-		for (i = 1; i < `size; i = i + 1) begin
+		for (i = 1; i < `size; i = i + 1) begin : for_loop
           dut_ff dut_n (.q(q[i]),.clk(~q[i-1]),.reset(reset));
 		end
 	endgenerate
