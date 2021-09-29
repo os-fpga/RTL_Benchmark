@@ -71,6 +71,10 @@ def set_quartus_variables():
   #PATH FOR FINAL LOG
   globals()['QUARTUS_FINAL_LOG_PATH']= CGA_ROOT+"/logs/quartus/"
   globals()['QUARTUS_STATUS_LOG1']= QUARTUS_FINAL_LOG_PATH+"status_log.csv"
+
+####################################################################
+##################  LATTICE VARIABLES  #############################
+####################################################################
   
 def set_lattice_variables():
   # TOOL RUN PATH
@@ -89,3 +93,26 @@ def set_lattice_variables():
   #PATH FOR FINAL LOG
   globals()['LATTICE_FINAL_LOG_PATH']= CGA_ROOT+"/logs/lattice/"
   globals()['LATTICE_STATUS_LOG1']= LATTICE_FINAL_LOG_PATH+"status_log.csv"
+
+####################################################################
+##################  GOWIN VARIABLES  ###############################
+####################################################################
+  
+  
+def set_gowin_variables():
+  # TOOL RUN PATH
+  globals()['GOWIN_MISC_DIR']= CGA_ROOT+"/misc/gowin/"
+
+  #PATH OF SCRIPT TEMPLATE AND PATH TO GENERATE SCRIPT FOR RUN
+  globals()['GOWIN_SCRIPT_PATH']= CGA_ROOT+"/.github/scripts/tools_auto_scripts/gowin"
+  globals()['GOWIN_SCRIPT']= GOWIN_SCRIPT_PATH+"/gowin_script.tcl"
+
+  #PATH OF GENERATED LOGS
+  globals()['GOWIN_GEN_LOG_PATH']= GOWIN_MISC_DIR+"/impl/gwsynthesis"
+  globals()['GOWIN_ERROR_LOG']= GOWIN_GEN_LOG_PATH+"/"+PROJECT_NAME+".log"
+  #globals()['GOWIN_GEN_UTIL_LOG']= GOWIN_GEN_LOG_PATH+"/"+PROJECT_NAME+"_impl_"+PROJECT_NAME+".mrp"
+  #globals()['GOWIN_GEN_TIME_LOG']= GOWIN_GEN_LOG_PATH+"/"+PROJECT_NAME+"_impl_"+PROJECT_NAME+".par" 
+
+  #PATH FOR FINAL LOG
+  globals()['GOWIN_FINAL_LOG_PATH']= CGA_ROOT+"/logs/gowin/"
+  globals()['GOWIN_STATUS_LOG1']= GOWIN_FINAL_LOG_PATH+"status_log.csv"
