@@ -1,0 +1,41 @@
+ 
+name: Gowin_Test
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**/*.*v*'
+  pull_request:
+   
+  workflow_dispatch:
+
+jobs:        
+  Gowin_Test:
+    runs-on: gowin_runner
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: jitterbit/get-changed-files@v1
+        id: abc
+        with:
+          format: space-delimited
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Look for added and modified files
+        run: |
+          echo "Added/Modified:"
+          echo "${{ steps.abc.outputs.added_modified }}"
+          
+      - name: Generate run designs file
+        run: |
+            export CGA_ROOT=$(pwd)
+            python3 $CGA_ROOT/.github/gen_filelist.py ${{ steps.abc.outputs.added_modified }}
+      
+      - name: Synthesizing benchmarks on Gowin
+        run: |
+         export PATH=$PATH:/opt/GowinLicenseServerForLinux/IDE/bin
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T gowin -f $CGA_ROOT/run_designs     
+ 
+ 
+ 

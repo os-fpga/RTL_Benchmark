@@ -26,14 +26,10 @@ foreach src_file [glob -nocomplain -directory $run_dir "*.*v"] {
 foreach design $file_list {
   prj_src add $design
 }
-#prj_src add $::env(LATTICE_SDC_GEN)
 prj_project save
 
 prj_strgy set_value -strategy Strategy1 lse_opt_goal=Balanced
 prj_strgy set "Strategy1"
 
-#synthesis -f 
 prj_run Synthesis -impl $proj_name;
-#prj_run PAR -impl $proj_name;
-#pwc_command new
-#pwc_parameters set -process Worst
+
