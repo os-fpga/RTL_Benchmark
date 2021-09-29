@@ -1,5 +1,5 @@
  
-name: Quartus_Test
+name: Gowin_Test
 
 on:
   push:
@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 jobs:        
-  Quartus_Test:
-    runs-on: quartus_runner
+  Gowin_Test:
+    runs-on: gowin_runner
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: jitterbit/get-changed-files@v1
@@ -31,9 +31,10 @@ jobs:
             export CGA_ROOT=$(pwd)
             python3 $CGA_ROOT/.github/gen_filelist.py ${{ steps.abc.outputs.added_modified }}
       
-      - name: Compiling benchmarks on Quartus
+      - name: Synthesizing benchmarks on Gowin
         run: |
-         export QUARTUS_ROOTDIR=/opt/intelFPGA_lite/18.1/quartus/
-         export PATH=$PATH:/opt/intelFPGA_lite/18.1/quartus/bin
-         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T quartus -f $CGA_ROOT/run_designs     
+         export PATH=$PATH:/opt/GowinLicenseServerForLinux/IDE/bin
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T gowin -f $CGA_ROOT/run_designs     
+ 
+ 
  

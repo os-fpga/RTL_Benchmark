@@ -36,5 +36,4 @@ jobs:
          source /opt/Xilinx/SDK/2018.2/settings64.sh
          export XILINX_VIVADO
          export XILINXD_LICENSE_FILE=/opt/Xilinx/vivado2018+IPs.lic
-         export CGA_ROOT=$(pwd)
          python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T vivado -f $CGA_ROOT/run_designs

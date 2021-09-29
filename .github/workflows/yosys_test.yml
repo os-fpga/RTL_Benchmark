@@ -33,7 +33,6 @@ jobs:
       
       - name: Synthesizing benchmarks on Yosys
         run: |
-         export CGA_ROOT=$(pwd)
          python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T yosys -f $CGA_ROOT/run_designs     
  
  
