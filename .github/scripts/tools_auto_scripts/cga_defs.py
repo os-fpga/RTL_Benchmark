@@ -76,6 +76,14 @@ def get_yosys_error_msg(error_log:str):
     msg = "Error occured in run"
   return msg
 
+def get_gowin_error_msg(error_log:str):
+  print(error_log)
+  if os.path.isfile(Path(error_log)):
+    msg = find_string_in_file(error_log, "ERROR ", "ERROR: ")
+  else:
+    msg = "Error occured in run"
+  return msg
+
 def set_params(DESIGN_CONF, GEN_CONF):
   global PROJECT_NAME, DESIGN_TOP, DESIGN_DIR, DOMAIN, CLOCK_PORT
   PROJECT_NAME = find_string_in_file(DESIGN_CONF, "set ::env(PROJECT_NAME) ", "")
@@ -122,6 +130,8 @@ def run_tool(TOOL, DESIGN_CONF, GEN_CONF):
     run_lattice(DESIGN_CONF, GEN_CONF)
   elif (TOOL == "yosys"):
     run_yosys(DESIGN_CONF, GEN_CONF)
+  elif (TOOL == "gowin"):
+    run_gowin(DESIGN_CONF, GEN_CONF)
   else:
     print_red("No valid tool selected")
 
@@ -292,3 +302,45 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
 
   except OSError as os_error:
     print (str(os_error))
+    
+    
+def run_gowin(DESIGN_CONF, GEN_CONF):
+        
+  source_configs(DESIGN_CONF, GEN_CONF)
+  
+  set_gowin_variables()
+  os.environ['GOWIN_GEN_LOG_PATH'] = GOWIN_GEN_LOG_PATH
+    
+  start_time=timer("start")
+  
+  check_dir(GOWIN_MISC_DIR, GOWIN_FINAL_LOG_PATH)
+   
+  try:
+      try:
+        os.chdir(GOWIN_MISC_DIR)
+        process = subprocess.Popen(["gw_sh", GOWIN_SCRIPT], preexec_fn=os.setsid)
+        pgrp=os.getpgid(process.pid)
+        os.chdir(CGA_ROOT)
+        process.communicate(timeout=1800)
+        if (process.returncode):
+          error_msg = get_gowin_error_msg(GOWIN_ERROR_LOG)
+          update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, error_msg)
+          print("Return code", process.returncode)
+          print_red(error_msg)
+          sys.exit(process.returncode)
+        runtime = timer("stop", start_time)
+        update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+           
+      except subprocess.TimeoutExpired as timeout_msg:
+        print_red(str(timeout_msg))
+        os.killpg(pgrp, signal.SIGHUP)
+        runtime = timer("stop", start_time)
+        update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+
+      except Exception as exception:
+        print_red(str(exception))
+        update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, str(exception))
+
+        
+  except OSError as os_error:
+      print (str(os_error))  
