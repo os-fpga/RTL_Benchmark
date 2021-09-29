@@ -12,7 +12,7 @@ group = parser.add_mutually_exclusive_group(required=True)
 
 parser.add_argument("-T", "--tool",
 		   type=str,
-		   choices=["vivado", "quartus", "lattice", "yosys"],
+		   choices=["vivado", "quartus", "lattice", "yosys", "gowin"],
 		   help="Specify which tool to run",
 		   required=True)
 
@@ -35,8 +35,9 @@ elif (args.tool == "lattice"):
   subprocess.Popen(["diamondc", "-version"])
 elif (args.tool == "yosys"):
   subprocess.Popen(["yosys", "-version"])
+elif (args.tool == "gowin"):
+  subprocess.Popen(["gw_sh", "-version"])
   
-
 BENCHMARK_FILE = False
 if (args.file): 
   BENCHMARK_FILE = args.file

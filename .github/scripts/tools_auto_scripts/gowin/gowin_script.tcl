@@ -1,14 +1,21 @@
+set project_dir $::env(GOWIN_GEN_LOG_PATH)
+set_device GW2A-LV55PG484C7/I6 -name GW2A-55
+set_option -synthesis_tool gowinsynthesis
+set_option -output_base_name $::env(PROJECT_NAME)
+set_option -top_module $::env(DESIGN_TOP)
+
 foreach verilog_header_file [glob -nocomplain -directory "$::env(CGA_ROOT)/../$::env(DESIGN_DIR)" "*.vh"] {
-yosys read_verilog $verilog_header_file
+add_file -type verilog $verilog_header_file
 }
 foreach sverilog_header_file [glob -nocomplain -directory "$::env(CGA_ROOT)/../$::env(DESIGN_DIR)" "*.svh"] {
-yosys read_verilog $sverilog_header_file
+add_file -type systemverilog $sverilog_header_file
 }
 foreach verilog_file [glob -nocomplain -directory "$::env(CGA_ROOT)/../$::env(DESIGN_DIR)" "*.v"] {
-yosys read_verilog $verilog_file
+add_file -type verilog $verilog_file
 }
 foreach sverilog_file [glob -nocomplain -directory "$::env(CGA_ROOT)/../$::env(DESIGN_DIR)" "*.sv"] {
-yosys read_verilog $sverilog_file
+add_file -type systemverilog $sverilog_file
 }
 
-yosys synth_quicklogic -top $::env(DESIGN_TOP) -family pp3
+run syn
+
