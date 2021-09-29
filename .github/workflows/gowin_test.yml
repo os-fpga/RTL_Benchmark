@@ -34,6 +34,7 @@ jobs:
       - name: Synthesizing benchmarks on Gowin
         run: |
          export PATH=$PATH:/opt/GowinLicenseServerForLinux/IDE/bin
+         export CGA_ROOT=$(pwd)
          python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T gowin -f $CGA_ROOT/run_designs     
  
  

@@ -35,5 +35,6 @@ jobs:
         run: |
          export QUARTUS_ROOTDIR=/opt/intelFPGA_lite/18.1/quartus/
          export PATH=$PATH:/opt/intelFPGA_lite/18.1/quartus/bin
+         export CGA_ROOT=$(pwd)
          python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T quartus -f $CGA_ROOT/run_designs     
  

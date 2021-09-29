@@ -34,4 +34,5 @@ jobs:
       - name: Compiling benchmarks on Lattice Diamond
         run: |
          export PATH="$PATH:/opt/diamond_tool/installdir/diamond/3.12/bin/lin64"
+         export CGA_ROOT=$(pwd)
          python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T lattice -f $CGA_ROOT/run_designs 
