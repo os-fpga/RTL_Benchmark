@@ -1,0 +1,46 @@
+ 
+name: Run all benchmarks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Synthesize_all_benchmarks:
+    runs-on: rtl_runner
+    steps:
+      - uses: actions/checkout@v2.1.0
+          
+      - name: Synthesize benchmarks on Vivado
+        run: |
+         source /opt/Xilinx/SDK/2018.2/settings64.sh
+         export XILINX_VIVADO
+         export XILINXD_LICENSE_FILE=/opt/Xilinx/vivado2018+IPs.lic
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T vivado --all
+      
+      - name: Synthesize benchmarks on Quartus
+        run: |
+         export QUARTUS_ROOTDIR=/opt/intelFPGA_lite/18.1/quartus/
+         export PATH=$PATH:/opt/intelFPGA_lite/18.1/quartus/bin
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T quartus --all
+      
+      - name: Synthesize benchmarks on Lattice Diamond
+        run: |
+         export PATH="$PATH:/opt/diamond_tool/installdir/diamond/3.12/bin/lin64"
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T lattice --all  
+      
+      - name: Synthesize benchmarks on Gowin
+        run: |
+         export PATH=$PATH:/opt/GowinLicenseServerForLinux/IDE/bin
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T gowin --all
+      
+      - name: Synthesizing benchmarks on Yosys
+        run: |
+         export CGA_ROOT=$(pwd)
+         python3 $CGA_ROOT/.github/scripts/tools_auto_scripts/run_cga.py -T yosys --all
+         
+         
+ 
