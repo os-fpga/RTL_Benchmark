@@ -122,10 +122,7 @@ def run(TOOL, BENCHMARK_FILE):
           else:
             run_tool(TOOL, DESIGN_CONF, GEN_CONF)
   else:
-    if (glob.glob(CGA_ROOT+"/RTL_Benchmark/*") == []):
-      print_cyan("RTL Benchmarks directory is empty")
-    else:
-      for benchmarks in glob.glob(CGA_ROOT+"/RTL_Benchmark/*"):
+      for benchmarks in glob.glob(CGA_ROOT):
         confs = find('config.tcl', benchmarks)
         for conf in confs:
           DESIGN_CONF = conf+"/config.tcl"
