@@ -154,7 +154,7 @@ def run_yosys(DESIGN_CONF, GEN_CONF):
   start_time=timer("start")
     
   try:
-      process = subprocess.Popen(["yosys", YOSYS_SCRIPT, "-l", YOSYS_GEN_LOG_PATH+"/"+PROJECT_NAME+".log"])
+      process = subprocess.Popen(["yosys", YOSYS_SCRIPT, "-l", YOSYS_GEN_LOG_PATH+"/"+PROJECT_NAME+".log"], stdout=DEVNULL, stderr=STDOUT)
       
       try:
         process.communicate(timeout=1800)
@@ -196,7 +196,7 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
   try:
       try:
         os.chdir(VIVADO_MISC_DIR)
-        process = subprocess.Popen(["vivado", "-mode", "batch", "-source", VIVADO_SCRIPT, "-tempDir", VIVADO_MISC_DIR], preexec_fn=os.setsid)
+        process = subprocess.Popen(["vivado", "-mode", "batch", "-source", VIVADO_SCRIPT, "-tempDir", VIVADO_MISC_DIR], stdout=DEVNULL, stderr=STDOUT, preexec_fn=os.setsid)
         pgrp=os.getpgid(process.pid)
         os.chdir(CGA_ROOT)
         process.communicate(timeout=1800)
@@ -237,7 +237,7 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
   try:
       os.chdir(QUARTUS_MISC_DIR)
       process1 = subprocess.Popen(["quartus_sh", "-t", QUARTUS_SCRIPT])
-      process = subprocess.Popen(["quartus_map", PROJECT_NAME], preexec_fn=os.setsid)
+      process = subprocess.Popen(["quartus_map", PROJECT_NAME], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
       pgrp=os.getpgid(process.pid)
       os.chdir(CGA_ROOT)
 
@@ -281,7 +281,7 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
   try:
 
       os.chdir(LATTICE_MISC_DIR)
-      process = subprocess.Popen(["diamondc", LATTICE_SCRIPT], preexec_fn=os.setsid)
+      process = subprocess.Popen(["diamondc", LATTICE_SCRIPT], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
       pgrp=os.getpgid(process.pid)
       os.chdir(CGA_ROOT)
 
@@ -326,7 +326,7 @@ def run_gowin(DESIGN_CONF, GEN_CONF):
   try:
       try:
         os.chdir(GOWIN_MISC_DIR)
-        process = subprocess.Popen(["gw_sh", GOWIN_SCRIPT], preexec_fn=os.setsid)
+        process = subprocess.Popen(["gw_sh", GOWIN_SCRIPT], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
         pgrp=os.getpgid(process.pid)
         os.chdir(CGA_ROOT)
         process.communicate(timeout=1800)
