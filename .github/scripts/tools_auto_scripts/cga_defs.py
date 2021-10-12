@@ -165,19 +165,23 @@ def run_yosys(DESIGN_CONF, GEN_CONF):
           update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         runtime = timer("stop", start_time)
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime), "-", str(iters))
+        print_red("%s Timed-out" %PROJECT_NAME)
         
 
       except Exception as exception:
         print_red(str(exception))
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, str(exception)) 
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
       print (str(os_error))
@@ -209,19 +213,23 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
           update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
 
         
   except OSError as os_error:
@@ -242,7 +250,7 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
   
   try:
       os.chdir(QUARTUS_MISC_DIR)
-      process1 = subprocess.Popen(["quartus_sh", "-t", QUARTUS_SCRIPT])
+      process1 = subprocess.Popen(["quartus_sh", "-t", QUARTUS_SCRIPT], stdout=DEVNULL, stderr=STDOUT)
       process = subprocess.Popen(["quartus_map", PROJECT_NAME], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
       pgrp=os.getpgid(process.pid)
       os.chdir(CGA_ROOT)
@@ -254,19 +262,23 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
           update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
-        update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))  
+        update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime)) 
+        print_green("%s successfully run" %PROJECT_NAME) 
           
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
     print (str(os_error))
@@ -300,10 +312,12 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
           update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
 
         runtime = timer("stop", start_time)
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
 
            
       except subprocess.TimeoutExpired as timeout_msg:
@@ -311,10 +325,12 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
 
   except OSError as os_error:
     print (str(os_error))
