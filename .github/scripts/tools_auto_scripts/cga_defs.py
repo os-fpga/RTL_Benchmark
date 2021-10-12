@@ -5,6 +5,7 @@ import os
 import re
 import tkinter
 import subprocess
+from subprocess import DEVNULL, STDOUT
 import shutil
 import glob
 import fnmatch
@@ -40,8 +41,8 @@ def check_dir(*args):
   for directory in args:
     if not (os.path.isdir(Path(directory))):
       os.makedirs(directory)
-    else:
-      print ("%s already exists" %directory)
+    #else:
+    #  print ("%s already exists" %directory)
 	
 def update_status(STATUS_LOG:str, name="Name", status="Status", runtime="-"):
   log_file = Path(STATUS_LOG)
@@ -126,7 +127,6 @@ def run(TOOL, BENCHMARK_FILE):
         confs = find('config.tcl', benchmarks)
         for conf in confs:
           DESIGN_CONF = conf+"/config.tcl"
-          print_green("\nConfig file found, running %s" %TOOL)
           run_tool(TOOL, DESIGN_CONF, GEN_CONF)
           
 def run_tool(TOOL, DESIGN_CONF, GEN_CONF):
@@ -146,6 +146,8 @@ def run_tool(TOOL, DESIGN_CONF, GEN_CONF):
 def run_yosys(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_yosys_variables()
   
@@ -185,6 +187,8 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
   vivado_banner(BLUE)
   
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_vivado_variables()
   os.environ['VIVADO_GEN_LOG_PATH'] = VIVADO_GEN_LOG_PATH
@@ -226,6 +230,8 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
 def run_quartus(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_quartus_variables()
   os.environ['QUARTUS_GEN_LOG_PATH'] = QUARTUS_GEN_LOG_PATH
@@ -269,6 +275,8 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
 def run_lattice(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_lattice_variables()
   
@@ -316,6 +324,8 @@ def run_gowin(DESIGN_CONF, GEN_CONF):
         
   source_configs(DESIGN_CONF, GEN_CONF)
   
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
+  
   set_gowin_variables()
   os.environ['GOWIN_GEN_LOG_PATH'] = GOWIN_GEN_LOG_PATH
     
@@ -335,20 +345,23 @@ def run_gowin(DESIGN_CONF, GEN_CONF):
           update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
-
+        print_red("%s Timed-out" %PROJECT_NAME)
+        
       except Exception as exception:
         print_red(str(exception))
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, str(exception))
-
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
       print (str(os_error))  
