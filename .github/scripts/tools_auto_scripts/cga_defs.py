@@ -5,6 +5,7 @@ import os
 import re
 import tkinter
 import subprocess
+from subprocess import DEVNULL, STDOUT
 import shutil
 import glob
 import fnmatch
@@ -40,8 +41,8 @@ def check_dir(*args):
   for directory in args:
     if not (os.path.isdir(Path(directory))):
       os.makedirs(directory)
-    else:
-      print ("%s already exists" %directory)
+    #else:
+    #  print ("%s already exists" %directory)
 	
 def update_status(STATUS_LOG:str, name="Name", status="Status", runtime="-"):
   log_file = Path(STATUS_LOG)
@@ -102,6 +103,7 @@ def source_configs(config:str, gen_config):
  
 
 def run(TOOL, BENCHMARK_FILE):  
+  if (BENCHMARK_FILE):
     if not(os.path.exists(BENCHMARK_FILE)):
       print_red("File does not exist")
     elif ((os.path.getsize(BENCHMARK_FILE) == 0)):
@@ -120,6 +122,12 @@ def run(TOOL, BENCHMARK_FILE):
             print_red (DESIGN_CONF)
           else:
             run_tool(TOOL, DESIGN_CONF, GEN_CONF)
+  else:
+      for benchmarks in glob.glob(CGA_ROOT):
+        confs = find('config.tcl', benchmarks)
+        for conf in confs:
+          DESIGN_CONF = conf+"/config.tcl"
+          run_tool(TOOL, DESIGN_CONF, GEN_CONF)
           
 def run_tool(TOOL, DESIGN_CONF, GEN_CONF):
   if (TOOL == "vivado"):
@@ -139,6 +147,8 @@ def run_yosys(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
   
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
+  
   set_yosys_variables()
   
   check_dir(YOSYS_MISC_DIR, YOSYS_FINAL_LOG_PATH, YOSYS_GEN_LOG_PATH)
@@ -146,7 +156,7 @@ def run_yosys(DESIGN_CONF, GEN_CONF):
   start_time=timer("start")
     
   try:
-      process = subprocess.Popen(["yosys", YOSYS_SCRIPT, "-l", YOSYS_GEN_LOG_PATH+"/"+PROJECT_NAME+".log"])
+      process = subprocess.Popen(["yosys", YOSYS_SCRIPT, "-l", YOSYS_GEN_LOG_PATH+"/"+PROJECT_NAME+".log"], stdout=DEVNULL, stderr=STDOUT)
       
       try:
         process.communicate(timeout=1800)
@@ -155,19 +165,23 @@ def run_yosys(DESIGN_CONF, GEN_CONF):
           update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         runtime = timer("stop", start_time)
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime), "-", str(iters))
+        print_red("%s Timed-out" %PROJECT_NAME)
         
 
       except Exception as exception:
         print_red(str(exception))
         update_status(YOSYS_STATUS_LOG1, PROJECT_NAME, str(exception)) 
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
       print (str(os_error))
@@ -177,6 +191,8 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
   vivado_banner(BLUE)
   
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_vivado_variables()
   os.environ['VIVADO_GEN_LOG_PATH'] = VIVADO_GEN_LOG_PATH
@@ -188,7 +204,7 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
   try:
       try:
         os.chdir(VIVADO_MISC_DIR)
-        process = subprocess.Popen(["vivado", "-mode", "batch", "-source", VIVADO_SCRIPT, "-tempDir", VIVADO_MISC_DIR], preexec_fn=os.setsid)
+        process = subprocess.Popen(["vivado", "-mode", "batch", "-source", VIVADO_SCRIPT, "-tempDir", VIVADO_MISC_DIR], stdout=DEVNULL, stderr=STDOUT, preexec_fn=os.setsid)
         pgrp=os.getpgid(process.pid)
         os.chdir(CGA_ROOT)
         process.communicate(timeout=1800)
@@ -197,19 +213,23 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
           update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(VIVADO_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
 
         
   except OSError as os_error:
@@ -218,6 +238,8 @@ def run_vivado(DESIGN_CONF, GEN_CONF):
 def run_quartus(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_quartus_variables()
   os.environ['QUARTUS_GEN_LOG_PATH'] = QUARTUS_GEN_LOG_PATH
@@ -228,8 +250,8 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
   
   try:
       os.chdir(QUARTUS_MISC_DIR)
-      process1 = subprocess.Popen(["quartus_sh", "-t", QUARTUS_SCRIPT])
-      process = subprocess.Popen(["quartus_map", PROJECT_NAME], preexec_fn=os.setsid)
+      process1 = subprocess.Popen(["quartus_sh", "-t", QUARTUS_SCRIPT], stdout=DEVNULL, stderr=STDOUT)
+      process = subprocess.Popen(["quartus_map", PROJECT_NAME], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
       pgrp=os.getpgid(process.pid)
       os.chdir(CGA_ROOT)
 
@@ -240,19 +262,23 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
           update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
-        update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))  
+        update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime)) 
+        print_green("%s successfully run" %PROJECT_NAME) 
           
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(QUARTUS_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
     print (str(os_error))
@@ -261,6 +287,8 @@ def run_quartus(DESIGN_CONF, GEN_CONF):
 def run_lattice(DESIGN_CONF, GEN_CONF):
       
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_lattice_variables()
   
@@ -273,7 +301,7 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
   try:
 
       os.chdir(LATTICE_MISC_DIR)
-      process = subprocess.Popen(["diamondc", LATTICE_SCRIPT], preexec_fn=os.setsid)
+      process = subprocess.Popen(["diamondc", LATTICE_SCRIPT], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
       pgrp=os.getpgid(process.pid)
       os.chdir(CGA_ROOT)
 
@@ -284,10 +312,12 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
           update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
 
         runtime = timer("stop", start_time)
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
 
            
       except subprocess.TimeoutExpired as timeout_msg:
@@ -295,10 +325,12 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
+        print_red("%s Timed-out" %PROJECT_NAME)
 
       except Exception as exception:
         print_red(str(exception))
         update_status(LATTICE_STATUS_LOG1, PROJECT_NAME, str(exception))
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
 
   except OSError as os_error:
     print (str(os_error))
@@ -307,6 +339,8 @@ def run_lattice(DESIGN_CONF, GEN_CONF):
 def run_gowin(DESIGN_CONF, GEN_CONF):
         
   source_configs(DESIGN_CONF, GEN_CONF)
+  
+  print_cyan("\nSynthesizing %s" %PROJECT_NAME)
   
   set_gowin_variables()
   os.environ['GOWIN_GEN_LOG_PATH'] = GOWIN_GEN_LOG_PATH
@@ -318,7 +352,7 @@ def run_gowin(DESIGN_CONF, GEN_CONF):
   try:
       try:
         os.chdir(GOWIN_MISC_DIR)
-        process = subprocess.Popen(["gw_sh", GOWIN_SCRIPT], preexec_fn=os.setsid)
+        process = subprocess.Popen(["gw_sh", GOWIN_SCRIPT], preexec_fn=os.setsid, stdout=DEVNULL, stderr=STDOUT)
         pgrp=os.getpgid(process.pid)
         os.chdir(CGA_ROOT)
         process.communicate(timeout=1800)
@@ -327,20 +361,23 @@ def run_gowin(DESIGN_CONF, GEN_CONF):
           update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, error_msg)
           print("Return code", process.returncode)
           print_red(error_msg)
+          print_red("Synthesis Failed for %s" %PROJECT_NAME)
           sys.exit(process.returncode)
         runtime = timer("stop", start_time)
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Successfully run", timer_string(runtime))
+        print_green("%s successfully run" %PROJECT_NAME)
            
       except subprocess.TimeoutExpired as timeout_msg:
         print_red(str(timeout_msg))
         os.killpg(pgrp, signal.SIGHUP)
         runtime = timer("stop", start_time)
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, "Timed-out", timer_string(runtime))
-
+        print_red("%s Timed-out" %PROJECT_NAME)
+        
       except Exception as exception:
         print_red(str(exception))
         update_status(GOWIN_STATUS_LOG1, PROJECT_NAME, str(exception))
-
+        print_red("Synthesis Failed for %s" %PROJECT_NAME)
         
   except OSError as os_error:
       print (str(os_error))  
