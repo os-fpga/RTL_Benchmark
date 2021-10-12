@@ -120,6 +120,16 @@ def run(TOOL, BENCHMARK_FILE):
             print_red (DESIGN_CONF)
           else:
             run_tool(TOOL, DESIGN_CONF, GEN_CONF)
+    else:
+      if (glob.glob(CGA_ROOT+"/RTL_Benchmark/*") == []):
+        print_cyan("RTL Benchmarks directory is empty")
+      else:
+        for benchmarks in glob.glob(CGA_ROOT+"/RTL_Benchmark/*"):
+          confs = find('config.tcl', benchmarks)
+          for conf in confs:
+            DESIGN_CONF = conf+"/config.tcl"
+            print_green("\nConfig file found, running %s" %TOOL)
+            run_tool(TOOL, DESIGN_CONF, GEN_CONF)
           
 def run_tool(TOOL, DESIGN_CONF, GEN_CONF):
   if (TOOL == "vivado"):
