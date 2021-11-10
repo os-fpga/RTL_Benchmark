@@ -15,7 +15,7 @@ module gray_counter
 	reg [`size-1:0] q; 	 	
   
 	always @ (posedge clk) begin
-		if (!rstn) begin
+		if (rstn) begin
     	q <= 0;
     		out <= 0;
       end else begin
