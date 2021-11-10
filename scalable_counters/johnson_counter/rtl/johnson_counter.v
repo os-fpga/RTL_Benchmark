@@ -9,13 +9,13 @@
 module johnson_counter
   (  
 	input clk,                
-	input rstn,
+	input rst,
   	output reg [`size-1:0] out
   );    
 
   integer i;
   always @ (posedge clk) begin
-      if (rstn)
+      if (rst)
          out <= 1;
       else begin
         out[`size-1] <= ~out[0];
