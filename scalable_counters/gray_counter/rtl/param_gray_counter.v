@@ -9,13 +9,13 @@
 module gray_counter
  
   (	input 	clk,
-	input 	rstn,
+	input 	rst,
 	output reg [`size-1:0] out);
   
 	reg [`size-1:0] q; 	 	
   
 	always @ (posedge clk) begin
-		if (rstn) begin
+		if (rst) begin
     	q <= 0;
     		out <= 0;
       end else begin
