@@ -15,7 +15,7 @@ module johnson_counter
 
   integer i;
   always @ (posedge clk) begin
-      if (!rstn)
+      if (rstn)
          out <= 1;
       else begin
         out[`size-1] <= ~out[0];
