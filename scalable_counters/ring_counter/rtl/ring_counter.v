@@ -14,8 +14,9 @@ module ring_counter
        
       integer i;
       always @ (posedge clk) begin  
-          if (rst)  
-             out <= 1;  
+          if (rst)  begin
+             out[`size-1] <= 1'b1;
+             out[`size-2:0] <= 0;  end  
           else begin  
             out[`size-1] <= out[0];  
             for (i = 0; i < `size-1; i=i+1) begin  
