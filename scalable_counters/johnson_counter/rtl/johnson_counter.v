@@ -4,7 +4,9 @@
 //-------------------------------------------------------
 
 `timescale 1ns / 1ps
+`ifndef TESTBENCH
 `define size 5
+`endif
 
 module johnson_counter
   (  
