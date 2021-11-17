@@ -4,7 +4,9 @@
 //-------------------------------------------------------
 
 `timescale 1ns / 1ps
-`define size 7
+`ifndef TESTBENCH
+`define size 5
+`endif
 
 // Ripple Counter
 module ripple_counter (q, clk, reset);
