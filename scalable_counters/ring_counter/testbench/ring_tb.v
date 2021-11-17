@@ -1,6 +1,8 @@
 `timescale 1ns / 1ps
 `include "ring_counter.v"
+`ifndef TESTBENCH
 `define size 5
+`endif
     
     module tb;   
         
