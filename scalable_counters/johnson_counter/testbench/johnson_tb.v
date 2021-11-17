@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
+`ifndef TESTBENCH
 `define size 5
+`endif
 `include "johnson_counter.v"
 module tb;
   
