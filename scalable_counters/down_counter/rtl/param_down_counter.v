@@ -4,7 +4,9 @@
 //-------------------------------------------------------
 
 `timescale 1ns / 1ps
+`ifndef TESTBENCH
 `define size 5
+`endif
 
 module param_down_counter (clk_counter, q_counter, rst_counter);
 
