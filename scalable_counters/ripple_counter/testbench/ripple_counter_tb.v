@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
-`define size 7
+`ifndef TESTBENCH
+`define size 5
+`endif
 `include "ripple_counter.v"
 
 module test;
