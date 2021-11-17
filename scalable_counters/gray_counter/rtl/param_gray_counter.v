@@ -4,7 +4,9 @@
 //-------------------------------------------------------
 
 `timescale 1ns / 1ps
-`define size 10
+`ifndef TESTBENCH
+`define size 5
+`endif
 
 module gray_counter
  
