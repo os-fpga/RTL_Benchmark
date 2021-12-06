@@ -4,7 +4,7 @@
 //-------------------------------------------------------
 
 `timescale 1ns / 1ps
-`define size 25
+`define size 5
 
 module param_up_counter (clk_counter, q_counter, rst_counter);
 
