@@ -1,3 +1,4 @@
+/////// parameterized single port synchronous RAM ////////
 module param_sp_sync_ram
 #( 
     parameter ADDR_WIDTH = 4,
