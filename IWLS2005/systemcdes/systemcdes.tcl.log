@@ -1,0 +1,278 @@
+Checking out license 'RTL_Compiler_RD'......   (0 seconds elapsed)
+Checking out license 'RTL_Compiler_Ultra'......   (0 seconds elapsed)
+                           Cadence RTL Compiler (RC)
+                    Version v05.10-b006_1, built May 13 2005
+                      This program is the confidential and
+                     proprietary property of Cadence, Inc.
+
+
+  Setting attribute of message 'CDFG2G-503': 'max_print' = 1
+  Setting attribute of message 'TIM-20': 'max_print' = 1
+  Setting attribute of message 'GLO-12': 'max_print' = 1
+  Setting attribute of message 'CDFG-508': 'max_print' = 1
+  Setting attribute of message 'VLOGPT-35': 'max_print' = 1
+  Setting attribute of root '/': 'library' = ../../library/GSCLib_3.0.lib
+  Elaborating top-level block 'des' from file '../rtl/systemcdes/des.v'.
+Warning : Removing unused register [CDFG-508]
+        : Removing unused register 'prev0' in module 'key_gen' in file ../rtl/systemcdes/key_gen.v at line 71
+        : A flip-flop or latch that was inferred for an unused signal or variable was removed. Use 'set_attribute hdl_preserve_unused_registers true /' to preserve the flip-flop or latch.
+  Done elaborating 'des'.
+Mapping des to gates.
+ 
+Global mapping status
+=====================
+                         Worst  
+                 Total    Neg   
+Operation         Area   Slack  Worst Path
+-------------------------------------------------------------------------------
+ global_map     138745   -1694  stage1_iter_reg[1]/CK --> rd1_R_o_reg[18]/D
+ area_map       132342   -1684  stage1_iter_reg[1]/CK --> rd1_R_o_reg[8]/D
+
+Incremental optimization status
+===============================
+                         Worst  DRC Total 
+                 Total    Neg        Max 
+Operation         Area   Slack       Cap Worst Path
+-------------------------------------------------------------------------------
+ init_delay     132342   -1684         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[8]/D
+ incr_delay     135766   -1632         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[5]/D
+ incr_delay     136278   -1624         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[30]/D
+ incr_delay     136351   -1622         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[18]/D
+ incr_delay     136446   -1620         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[18]/D
+
+  Done mapping des
+  Synthesis succeeded.
+  Incrementally optimizing des
+
+Incremental optimization status
+===============================
+                         Worst  DRC Total 
+                 Total    Neg        Max 
+Operation         Area   Slack       Cap Worst Path
+-------------------------------------------------------------------------------
+ init_delay     136446   -1620         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[18]/D
+ incr_delay     136806   -1611         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[21]/D
+ incr_delay     139587   -1567         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[19]/D
+ incr_delay     139598   -1565         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[20]/D
+ incr_delay     139639   -1564         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[9]/D
+ incr_delay     139807   -1552         0 stage1_iter_reg[0]/CK -->
+                                            rd1_R_o_reg[17]/D
+ incr_delay     139896   -1551         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[19]/D
+ incr_delay     139911   -1550         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ incr_delay     139916   -1549         0 stage1_iter_reg[0]/CK -->
+                                            rd1_R_o_reg[22]/D
+ incr_delay     140162   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[0]/D
+ incr_delay     140162   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ init_drc       140162   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ init_area      140162   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ rem_buf        137256   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[21]/D
+ rem_inv        131898   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[3]/D
+ merge_bi       128307   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[8]/D
+ glob_area      127136   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[29]/D
+ area_down      126864   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+
+Incremental optimization status
+===============================
+                         Worst  DRC Total 
+                 Total    Neg        Max 
+Operation         Area   Slack       Cap Worst Path
+-------------------------------------------------------------------------------
+ init_delay     126864   -1549         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ incr_delay     127063   -1548         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[26]/D
+ incr_delay     127214   -1546         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ incr_delay     127225   -1546         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[21]/D
+ incr_delay     127779   -1546         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[31]/D
+ incr_delay     128056   -1543         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[5]/D
+ incr_delay     128160   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ init_drc       128160   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ init_area      128160   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ rem_buf        126875   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[12]/D
+ rem_inv        126169   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[12]/D
+ merge_bi       125353   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ glob_area      124857   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ area_down      124831   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+
+Incremental optimization status
+===============================
+                         Worst  DRC Total 
+                 Total    Neg        Max 
+Operation         Area   Slack       Cap Worst Path
+-------------------------------------------------------------------------------
+ init_delay     124831   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ init_area      124831   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ rem_buf        124778   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ rem_inv        124653   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ merge_bi       124569   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+ glob_area      124564   -1542         0 stage1_iter_reg[1]/CK -->
+                                            rd1_R_o_reg[22]/D
+
+  Done mapping des
+  Synthesis succeeded.
+============================================================
+  Generated by:           RTL Compiler (RC) v05.10-b006_1
+  Generated on:           Jun 06 2005  04:15:24 PM
+  Module:                 des
+  Technology library:     gsclib 
+  Operating conditions:   typical (balanced_tree)
+  Wireload mode:          enclosed
+============================================================
+
+    Pin                     Type     Fanout  Load  Slew   Delay   Arrival
+                                             (fF)  (ps)    (ps)    (ps)
+-----------------------------------------------------------------------------
+(clock clock)               launch                                     0 R
+stage1_iter_reg[1]/CK                                  0               0 R
+stage1_iter_reg[1]/Q        DFFSRX1       1   12.6    46     +95      95 F
+g10479/A                                                      +0      95  
+g10479/Y                    INVX2         3   26.9    40     +39     134 R
+g10355/A                                                      +0     134  
+g10355/Y                    NAND2X2       1   12.6    37     +38     173 F
+g10354/A                                                      +0     173  
+g10354/Y                    INVX2         2   18.9    31     +30     203 R
+g12406/A                                                      +0     203  
+g12406/Y                    NAND2X2       1   25.1    53     +50     253 F
+g12405/A                                                      +0     253  
+g12405/Y                    INVX4         5   59.9    45     +43     296 R
+g12404/A                                                      +0     296  
+g12404/Y                    INVX2         3   34.7    43     +44     340 F
+g12142/A                                                      +0     340  
+g12142/Y                    INVX2         2   34.6    47     +44     383 R
+g12141/A                                                      +0     383  
+g12141/Y                    CLKBUFX3      4   27.2    33     +59     442 R
+g10918/A                                                      +0     442  
+g10918/Y                    CLKBUFX2      2   14.6    28     +49     491 R
+g10005/A                                                      +0     491  
+g10005/Y                    NAND2X1       1   12.6    50     +48     539 F
+g9808/A                                                       +0     539  
+g9808/Y                     NAND2X2       3   18.9    43     +36     575 R
+g9740/A                                                       +0     575  
+g9740/Y                     NAND2X1       1    8.1    42     +41     616 F
+g9027/B                                                       +0     616  
+g9027/Y                     NAND3X1       1    6.3    54     +46     662 R
+g12314/A                                                      +0     662  
+g12314/Y                    NAND2X1       1   12.6    55     +53     715 F
+g12313/A                                                      +0     715  
+g12313/Y                    NAND2X2       3   26.9    50     +44     759 R
+g12556/S0                                                     +0     759  
+g12556/Y                    MX2X1         1   12.6    40     +78     837 R
+g8500/A                                                       +0     837  
+g8500/Y                     INVX2         4   37.6    45     +45     882 F
+g8499/A                                                       +0     882  
+g8499/Y                     INVX1         1    6.3    26     +28     910 R
+g8078/A                                                       +0     910  
+g8078/Y                     NAND2X1       3   20.6    72     +64     973 F
+g8077/A                                                       +0     973  
+g8077/Y                     INVX1         2   18.7    54     +54    1028 R
+g7766/B                                                       +0    1028  
+g7766/Y                     NAND2X1       2   12.4    52     +51    1079 F
+g7572/B                                                       +0    1079  
+g7572/Y                     NAND2X1       1    9.2    42     +41    1120 R
+g7297/A0                                                      +0    1120  
+g7297/Y                     OAI21X1       1    8.8    66     +52    1172 F
+g7097/A                                                       +0    1172  
+g7097/Y                     NAND4X1       1   12.6    86     +57    1229 R
+g7066/A                                                       +0    1229  
+g7066/Y                     NAND2X2       2   14.9    48     +50    1279 F
+g7002/B                                                       +0    1279  
+g7002/Y                     NAND2X1       1   12.6    48     +45    1324 R
+g6935/A                                                       +0    1324  
+g6935/Y                     NAND2X2       1   12.6    38     +40    1364 F
+g6931/A                                                       +0    1364  
+g6931/Y                     NAND2X2       1   18.7    43     +33    1397 R
+rd1_R_o_reg[4]/D            DFFSRX1                           +0    1397  
+rd1_R_o_reg[4]/CK           setup                      0    +145    1542 R
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(clock clock)               capture                                    0 R
+-----------------------------------------------------------------------------
+Timing slack :   -1542ps (TIMING VIOLATION)
+Start-point  : stage1_iter_reg[1]/CK
+End-point    : rd1_R_o_reg[4]/D
+
+============================================================
+  Generated by:           RTL Compiler (RC) v05.10-b006_1
+  Generated on:           Jun 06 2005  04:15:24 PM
+  Module:                 des
+  Technology library:     gsclib 
+  Operating conditions:   typical (balanced_tree)
+  Wireload mode:          enclosed
+============================================================
+
+                               
+  Gate   Instances     Area     Library  
+-----------------------------------------
+AND2X1          64    2007.232    gsclib 
+AOI21X1        156    4892.628    gsclib 
+AOI22X1         27    1129.086    gsclib 
+BUFX1            3      94.089    gsclib 
+BUFX3            3      94.089    gsclib 
+CLKBUFX1        76    1986.336    gsclib 
+CLKBUFX2         8     250.904    gsclib 
+CLKBUFX3        46    1442.698    gsclib 
+DFFSRX1        190   30788.170    gsclib 
+INVX1          578   12085.402    gsclib 
+INVX2          210    5488.560    gsclib 
+INVX4           44    1379.972    gsclib 
+MX2X1          152    9534.352    gsclib 
+NAND2X1        934   24411.024    gsclib 
+NAND2X2        172    6293.480    gsclib 
+NAND3X1        150    5488.500    gsclib 
+NAND4X1         80    3345.440    gsclib 
+NOR2X1         254    6638.544    gsclib 
+NOR3X1           7     439.082    gsclib 
+OAI21X1        129    5394.522    gsclib 
+OAI22X1          5     313.630    gsclib 
+OR2X1           34    1066.342    gsclib 
+-----------------------------------------
+total         3322  124564.082           
+
+                                       
+   Type    Instances    Area    Area % 
+---------------------------------------
+sequential       190  30788.170   24.7 
+inverter         832  18953.934   15.2 
+buffer           136   3868.116    3.1 
+logic           2164  70953.862   57.0 
+---------------------------------------
+total           3322 124564.082  100.0 
+
+Normal exit.

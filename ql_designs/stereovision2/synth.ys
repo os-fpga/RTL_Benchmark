@@ -1,0 +1,11 @@
+read -sv stereovision2.v
+
+synth -flatten -top sv_chip2_hierarchy_no_mem
+abc -lut 6
+#abc -script abc6.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+

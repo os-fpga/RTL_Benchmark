@@ -1,0 +1,295 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 57679 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1429.586 ; gain = 89.000 ; free physical = 53650 ; free virtual = 365897
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'top' (1#1) [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:57]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1473.219 ; gain = 132.633 ; free physical = 53654 ; free virtual = 365901
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1473.219 ; gain = 132.633 ; free physical = 53649 ; free virtual = 365897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1481.219 ; gain = 140.633 ; free physical = 53651 ; free virtual = 365899
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element rm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:109]
+WARNING: [Synth 8-6014] Unused sequential element bm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:132]
+WARNING: [Synth 8-6014] Unused sequential element rm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:109]
+WARNING: [Synth 8-6014] Unused sequential element bm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:132]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1489.227 ; gain = 148.641 ; free physical = 53645 ; free virtual = 365893
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     23 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               23 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               10 Bit    Registers := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     23 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               23 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               10 Bit    Registers := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element rm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:109]
+WARNING: [Synth 8-6014] Unused sequential element bm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:132]
+WARNING: [Synth 8-6014] Unused sequential element rm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:109]
+WARNING: [Synth 8-6014] Unused sequential element bm_reg was removed.  [/home/users/thierry.besson/ql_designs/ycrcb2rgb/ycrcb2rgb.v:132]
+DSP Report: Generating DSP ir_reg, operation Mode is: (C+(A*(B:0x19c))')'.
+DSP Report: register ir_reg is absorbed into DSP ir_reg.
+DSP Report: register rm_reg is absorbed into DSP ir_reg.
+DSP Report: operator ir0 is absorbed into DSP ir_reg.
+DSP Report: operator rm0 is absorbed into DSP ir_reg.
+DSP Report: Generating DSP gm2_reg, operation Mode is: ((A:0x2db)*B)'.
+DSP Report: register gm2_reg is absorbed into DSP gm2_reg.
+DSP Report: operator gm20 is absorbed into DSP gm2_reg.
+DSP Report: Generating DSP gm1_reg, operation Mode is: (A*(B:0x160))'.
+DSP Report: register gm1_reg is absorbed into DSP gm1_reg.
+DSP Report: operator gm10 is absorbed into DSP gm1_reg.
+DSP Report: Generating DSP ib_reg, operation Mode is: (C+((A:0x314)*B)')'.
+DSP Report: register ib_reg is absorbed into DSP ib_reg.
+DSP Report: register bm_reg is absorbed into DSP ib_reg.
+DSP Report: operator ib0 is absorbed into DSP ib_reg.
+DSP Report: operator bm0 is absorbed into DSP ib_reg.
+INFO: [Synth 8-3886] merging instance 'ig_reg[22]' (FDE) to 'ig_reg[21]'
+WARNING: [Synth 8-3332] Sequential element (ig_reg[9]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[8]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[7]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[6]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[5]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[4]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[3]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[2]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[1]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (ig_reg[0]) is unused and will be removed from module top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:03:04 . Memory (MB): peak = 1746.480 ; gain = 405.895 ; free physical = 53351 ; free virtual = 365601
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|top         | (C+(A*(B:0x19c))')' | 10     | 9      | 21     | -      | 22     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|top         | ((A:0x2db)*B)'      | 10     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|top         | (A*(B:0x160))'      | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|top         | (C+((A:0x314)*B)')' | 10     | 10     | 21     | -      | 22     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
++------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53352 ; free virtual = 365601
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    12|
+|3     |DSP48E1 |     4|
+|4     |LUT1    |     2|
+|5     |LUT2    |    40|
+|6     |LUT3    |    14|
+|7     |LUT4    |    15|
+|8     |LUT5    |     2|
+|9     |FDRE    |    42|
+|10    |FDSE    |    30|
+|11    |IBUF    |    32|
+|12    |OBUF    |    30|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   224|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53350 ; free virtual = 365600
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.484 ; gain = 405.898 ; free physical = 53352 ; free virtual = 365602
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:03:05 . Memory (MB): peak = 1746.488 ; gain = 405.898 ; free physical = 53352 ; free virtual = 365602
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:03:10 . Memory (MB): peak = 1894.414 ; gain = 574.285 ; free physical = 53341 ; free virtual = 365590
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/thierry.besson/ql_designs/ycrcb2rgb/project_1/project_1.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.53 . Memory (MB): peak = 1918.434 ; gain = 0.000 ; free physical = 53339 ; free virtual = 365589
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 21 22:44:22 2021...

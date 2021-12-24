@@ -1,0 +1,13 @@
+read -sv DMA_FIX_DEFINE.vh DMA_DEFINE.vh dma_ahbdec.v  dma_ahbmux.v  dma_chrf.v   dma_ctlrf.v   dma_fifo.v   dma_top.v dma_ahbmst.v  dma_ahbslv.v  dma_chsel.v  dma_engine.v  dma_rrarb.v
+
+
+synth -flatten -top dma_top
+#abc -lut 6
+#abc -script abc6.scr
+abc -script abc_base6.v1.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+
