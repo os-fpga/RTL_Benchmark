@@ -22,3 +22,4 @@ module param_up_counter (clk_counter, q_counter, rst_counter);
     end
 
 endmodule
+
