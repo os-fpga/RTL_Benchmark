@@ -5461,19 +5461,19 @@ module dual_port_ram (
 		if (we1) 
 			ram[addr1] <= data1;
 
-		data_out2 <= ram[addr2];
+		data_out1 <= ram[addr1];
 	end
-  assign data_out1 = 0;
+  //assign data_out1 = 0;
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule
 
@@ -5503,22 +5503,25 @@ module dual_port_ram_4096x32 (
     // data1 will be loaded through addr1
     // Otherwise, data will be read out through addr1
 	always @(posedge clk) begin
-		if (we1) 
+		if (we1) begin
 			ram[addr1] <= data1;
-		data_out2 <= ram[addr2];
+			end
+			else begin
+		data_out1 <= ram[addr1];
+		end
 	end
-  assign data_out1 = 0;
+  //assign data_out1 = 0;
 
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule
 
@@ -5548,21 +5551,24 @@ module dual_port_ram_rfifo (
     // data1 will be loaded through addr1
     // Otherwise, data will be read out through addr1
 	always @(posedge clk) begin
-		if (we1) 
+		if (we1) begin
 			ram[addr1] <= data1;
-    data_out1 <= ram[addr2];
+			end
+			else begin
+		data_out1 <= ram[addr1];
+		end
 	end
-  assign data_out2 = 0;
+  //assign data_out2 = 0;
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule
 
@@ -5592,21 +5598,24 @@ module dual_port_ram_wfifo (
     // data1 will be loaded through addr1
     // Otherwise, data will be read out through addr1
 	always @(posedge clk) begin
-		if (we1) 
+		if (we1) begin 
 			ram[addr1] <= data1;
-		data_out1 <= ram[addr2];
+			end
+			else begin
+				data_out1 <= ram[addr1];
+			end
 	end
-  assign data_out2 =0;
+  //assign data_out2 =0;
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule
 
@@ -5636,21 +5645,24 @@ module dual_port_ram_afifo (
     // data1 will be loaded through addr1
     // Otherwise, data will be read out through addr1
 	always @(posedge clk) begin
-		if (we1) 
+		if (we1) begin
 			ram[addr1] <= data1;
-		data_out1 <= ram[addr2];
+			end
+		else begin
+			data_out1 <= ram[addr1];
+			end
 	end
-  assign data_out2 = 0;
+  //assign data_out2 = 0;
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule
 
@@ -5680,20 +5692,23 @@ module dual_port_ram_mfifo (
     // data1 will be loaded through addr1
     // Otherwise, data will be read out through addr1
 	always @(posedge clk) begin
-		if (we1) 
+		if (we1) begin
 			ram[addr1] <= data1;
-		data_out1 <= ram[addr2];
+			end 
+			else begin
+		data_out1 <= ram[addr1];
+		end
 	end
-  assign data_out2 = 0;
+  //assign data_out2 = 0;
     // If writen enable 2 is activated,
     // data1 will be loaded through addr2
     // Otherwise, data will be read out through addr2
-/* 	always @(posedge clk) begin
+ 	always @(posedge clk) begin
 		if (we2) begin
 			ram[addr2] <= data2;
 		end else begin
 			data_out2 <= ram[addr2];
 		end
-	end */
+	end 
 
 endmodule

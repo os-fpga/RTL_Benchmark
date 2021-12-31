@@ -316,8 +316,8 @@ reg NOTIFIER ;
 
    not (I0_CLEAR, RN);
    not (I0_SET, SN);
-   udp_dff (NET0131_, D_, CK, I0_SET, I0_CLEAR, NOTIFIER);
-   udp_dff (P0001_, D, CK, I0_CLEAR, I0_SET, NOTIFIER);
+   mdff df1(NET0131_, D_, CK, I0_SET, I0_CLEAR, NOTIFIER);
+   mdff df2 (P0001_, D, CK, I0_CLEAR, I0_SET, NOTIFIER);
    not (D_, D);
    not (NET0131, NET0131_);
    not (P0001, P0001_);
@@ -394,7 +394,7 @@ output Q ;
 output QN ;
 reg NOTIFIER ;
 
-   udp_dff (P0001, D, CK, 1'B0, 1'B0, NOTIFIER);
+   mdff df11 (P0001, D, CK, 1'B0, 1'B0, NOTIFIER);
    not (P0000, P0001);
    not (Q, P0000);
    buf (QN, P0000);
@@ -526,7 +526,7 @@ input  B ;
 input  S0 ;
 output Y ;
 
-   udp_mux2 (Y, A, B, S0);
+   mmux2 mx (Y, A, B, S0);
 
    specify
      // delay parameters
@@ -948,10 +948,10 @@ output Q ;
 output QN ;
 reg NOTIFIER ;
 
-   udp_mux2 (I0_D, D, SI, SE);
+   mmux2 mx2 (I0_D, D, SI, SE);
    not (I0_CLEAR, RN);
    not (I0_SET, SN);
-   udp_dff (P0002, I0_D, CK, I0_CLEAR, I0_SET, NOTIFIER);
+   mdff df3 (P0002, I0_D, CK, I0_CLEAR, I0_SET, NOTIFIER);
    not (P0000, P0002);
    not (Q, P0000);
    buf (QN, P0000);
@@ -1172,137 +1172,137 @@ output Y ;
 endmodule
 `endcelldefine
 
-`timescale 1ns/10ps
-`celldefine
-module TLATSRX1 (D, G, RN, SN, Q, QN);
-input  D ;
-input  G ;
-input  RN ;
-input  SN ;
-output Q ;
-output QN ;
-reg NOTIFIER ;
+//`timescale 1ns/10ps
+//`celldefine
+//module TLATSRX1 (D, G, RN, SN, Q, QN);
+//input  D ;
+//input  G ;
+//input  RN ;
+//input  SN ;
+//output Q ;
+//output QN ;
+//reg NOTIFIER ;
 
-   not (I0_CLEAR, RN);
-   not (I0_SET, SN);
-   udp_tlat (P0001, D, G, I0_CLEAR, I0_SET, NOTIFIER);
-   not (P0000, P0001);
-   not (Q, P0000);
-   buf (QN, P0000);
-   not (I8_out, D);
-   and (D_EQ_0_AN_RN_EQ_1, I8_out, RN);
-   and (D_EQ_1_AN_SN_EQ_1, D, SN);
-   and (RN_EQ_1_AN_SN_EQ_1, RN, SN);
+//   not (I0_CLEAR, RN);
+//   not (I0_SET, SN);
+//   udp_tlat (P0001, D, G, I0_CLEAR, I0_SET, NOTIFIER);
+//   not (P0000, P0001);
+//   not (Q, P0000);
+//   buf (QN, P0000);
+//   not (I8_out, D);
+//   and (D_EQ_0_AN_RN_EQ_1, I8_out, RN);
+//   and (D_EQ_1_AN_SN_EQ_1, D, SN);
+//   and (RN_EQ_1_AN_SN_EQ_1, RN, SN);
 
-   specify
-     // delay parameters
-     specparam
-       tpllh$D$Q = 0.13:0.13:0.13,
-       tphhl$D$Q = 0.16:0.16:0.16,
-       tplhl$D$QN = 0.2:0.2:0.2,
-       tphlh$D$QN = 0.21:0.21:0.21,
-       tpllh$G$Q = 0.18:0.18:0.18,
-       tplhl$G$Q = 0.14:0.14:0.14,
-       tpllh$G$QN = 0.19:0.19:0.19,
-       tplhl$G$QN = 0.24:0.24:0.24,
-       tpllh$RN$Q = 0.13:0.13:0.13,
-       tphhl$RN$Q = 0.12:0.12:0.12,
-       tplhl$RN$QN = 0.2:0.2:0.2,
-       tphlh$RN$QN = 0.17:0.17:0.17,
-       tplhl$SN$Q = 0.15:0.15:0.15,
-       tphlh$SN$Q = 0.19:0.19:0.19,
-       tpllh$SN$QN = 0.2:0.2:0.2,
-       tphhl$SN$QN = 0.24:0.24:0.24,
-       tminpwh$G = 0.11:0.17:0.24,
-       tminpwl$RN = 0.085:0.13:0.17,
-       tminpwl$SN = 0.15:0.2:0.24,
-       tsetup_negedge$D$G = 0.19:0.19:0.19,
-       thold_negedge$D$G = -0.062:-0.062:-0.062,
-       tsetup_posedge$D$G = 0.12:0.12:0.12,
-       thold_posedge$D$G = 0:0:0,
-       trec$RN$G = 0.12:0.12:0.12,
-       trem$RN$G = 0:0:0,
-       trec$RN$SN = 0.19:0.19:0.19,
-       trec$SN$G = 0.19:0.19:0.19,
-       trem$SN$G = -0.12:-0.12:-0.12;
+//   specify
+//     // delay parameters
+//     specparam
+//       tpllh$D$Q = 0.13:0.13:0.13,
+//       tphhl$D$Q = 0.16:0.16:0.16,
+//       tplhl$D$QN = 0.2:0.2:0.2,
+//       tphlh$D$QN = 0.21:0.21:0.21,
+//       tpllh$G$Q = 0.18:0.18:0.18,
+//       tplhl$G$Q = 0.14:0.14:0.14,
+//       tpllh$G$QN = 0.19:0.19:0.19,
+//       tplhl$G$QN = 0.24:0.24:0.24,
+//       tpllh$RN$Q = 0.13:0.13:0.13,
+//       tphhl$RN$Q = 0.12:0.12:0.12,
+//       tplhl$RN$QN = 0.2:0.2:0.2,
+//       tphlh$RN$QN = 0.17:0.17:0.17,
+//       tplhl$SN$Q = 0.15:0.15:0.15,
+//       tphlh$SN$Q = 0.19:0.19:0.19,
+//       tpllh$SN$QN = 0.2:0.2:0.2,
+//       tphhl$SN$QN = 0.24:0.24:0.24,
+//       tminpwh$G = 0.11:0.17:0.24,
+//       tminpwl$RN = 0.085:0.13:0.17,
+//       tminpwl$SN = 0.15:0.2:0.24,
+//       tsetup_negedge$D$G = 0.19:0.19:0.19,
+//       thold_negedge$D$G = -0.062:-0.062:-0.062,
+//       tsetup_posedge$D$G = 0.12:0.12:0.12,
+//       thold_posedge$D$G = 0:0:0,
+//       trec$RN$G = 0.12:0.12:0.12,
+//       trem$RN$G = 0:0:0,
+//       trec$RN$SN = 0.19:0.19:0.19,
+//       trec$SN$G = 0.19:0.19:0.19,
+//       trem$SN$G = -0.12:-0.12:-0.12;
 
-     // path delays
-     (D *> Q) = (tpllh$D$Q, tphhl$D$Q);
-     (D *> QN) = (tphlh$D$QN, tplhl$D$QN);
-     if (G == 1'b1)
-       (G *> Q) = (tpllh$G$Q, tplhl$G$Q);
-     if (G == 1'b1)
-       (G *> QN) = (tpllh$G$QN, tplhl$G$QN);
-     (RN *> Q) = (tpllh$RN$Q, tphhl$RN$Q);
-     (RN *> QN) = (tphlh$RN$QN, tplhl$RN$QN);
-     (SN *> Q) = (tphlh$SN$Q, tplhl$SN$Q);
-     (SN *> QN) = (tpllh$SN$QN, tphhl$SN$QN);
-     $setup(negedge D, negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, tsetup_negedge$D$G, NOTIFIER);
-     $hold (negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, negedge D, thold_negedge$D$G,  NOTIFIER);
-     $setup(posedge D, negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, tsetup_posedge$D$G, NOTIFIER);
-     $hold (negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, posedge D, thold_posedge$D$G,  NOTIFIER);
-     $recovery(posedge RN, negedge G &&& D_EQ_1_AN_SN_EQ_1 == 1'b1, trec$RN$G, NOTIFIER);
-     $removal (posedge RN, negedge G &&& D_EQ_1_AN_SN_EQ_1 == 1'b1, trem$RN$G, NOTIFIER);
-     $recovery(posedge RN, posedge SN, trec$RN$SN, NOTIFIER);
-     $recovery(posedge SN, negedge G &&& D_EQ_0_AN_RN_EQ_1 == 1'b1, trec$SN$G, NOTIFIER);
-     $removal (posedge SN, negedge G &&& D_EQ_0_AN_RN_EQ_1 == 1'b1, trem$SN$G, NOTIFIER);
-     $width(posedge G, tminpwh$G, 0, NOTIFIER);
-     $width(negedge RN, tminpwl$RN, 0, NOTIFIER);
-     $width(negedge SN, tminpwl$SN, 0, NOTIFIER);
+//     // path delays
+//     (D *> Q) = (tpllh$D$Q, tphhl$D$Q);
+//     (D *> QN) = (tphlh$D$QN, tplhl$D$QN);
+//     if (G == 1'b1)
+//       (G *> Q) = (tpllh$G$Q, tplhl$G$Q);
+//     if (G == 1'b1)
+//       (G *> QN) = (tpllh$G$QN, tplhl$G$QN);
+//     (RN *> Q) = (tpllh$RN$Q, tphhl$RN$Q);
+//     (RN *> QN) = (tphlh$RN$QN, tplhl$RN$QN);
+//     (SN *> Q) = (tphlh$SN$Q, tplhl$SN$Q);
+//     (SN *> QN) = (tpllh$SN$QN, tphhl$SN$QN);
+//     $setup(negedge D, negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, tsetup_negedge$D$G, NOTIFIER);
+//     $hold (negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, negedge D, thold_negedge$D$G,  NOTIFIER);
+//     $setup(posedge D, negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, tsetup_posedge$D$G, NOTIFIER);
+//     $hold (negedge G &&& RN_EQ_1_AN_SN_EQ_1 == 1'b1, posedge D, thold_posedge$D$G,  NOTIFIER);
+//     $recovery(posedge RN, negedge G &&& D_EQ_1_AN_SN_EQ_1 == 1'b1, trec$RN$G, NOTIFIER);
+//     $removal (posedge RN, negedge G &&& D_EQ_1_AN_SN_EQ_1 == 1'b1, trem$RN$G, NOTIFIER);
+//     $recovery(posedge RN, posedge SN, trec$RN$SN, NOTIFIER);
+//     $recovery(posedge SN, negedge G &&& D_EQ_0_AN_RN_EQ_1 == 1'b1, trec$SN$G, NOTIFIER);
+//     $removal (posedge SN, negedge G &&& D_EQ_0_AN_RN_EQ_1 == 1'b1, trem$SN$G, NOTIFIER);
+//     $width(posedge G, tminpwh$G, 0, NOTIFIER);
+//     $width(negedge RN, tminpwl$RN, 0, NOTIFIER);
+//     $width(negedge SN, tminpwl$SN, 0, NOTIFIER);
 
-   endspecify
+//   endspecify
 
-endmodule
-`endcelldefine
+//endmodule
+//`endcelldefine
 
-`timescale 1ns/10ps
-`celldefine
-module TLATX1 (C, D, Q, QN);
-input  C ;
-input  D ;
-output Q ;
-output QN ;
-reg NOTIFIER ;
+//`timescale 1ns/10ps
+//`celldefine
+//module TLATX1 (C, D, Q, QN);
+//input  C ;
+//input  D ;
+//output Q ;
+//output QN ;
+//reg NOTIFIER ;
 
-   udp_tlat (P0000, D, C, 1'B0, 1'B0, NOTIFIER);
-   not (NET166, P0000);
-   buf (Q, P0000);
-   not (QN, P0000);
+//   udp_tlat (P0000, D, C, 1'B0, 1'B0, NOTIFIER);
+//   not (NET166, P0000);
+//   buf (Q, P0000);
+//   not (QN, P0000);
 
-   specify
-     // delay parameters
-     specparam
-       tpllh$C$Q = 0.13:0.13:0.13,
-       tplhl$C$Q = 0.12:0.12:0.12,
-       tpllh$C$QN = 0.16:0.16:0.16,
-       tplhl$C$QN = 0.16:0.16:0.16,
-       tpllh$D$Q = 0.087:0.087:0.087,
-       tphhl$D$Q = 0.11:0.11:0.11,
-       tplhl$D$QN = 0.12:0.12:0.12,
-       tphlh$D$QN = 0.15:0.15:0.15,
-       tminpwh$C = 0.088:0.12:0.16,
-       tsetup_negedge$D$C = 0.12:0.12:0.12,
-       thold_negedge$D$C = -0.062:-0.062:-0.062,
-       tsetup_posedge$D$C = 0.062:0.062:0.062,
-       thold_posedge$D$C = 0:0:0;
+//   specify
+//     // delay parameters
+//     specparam
+//       tpllh$C$Q = 0.13:0.13:0.13,
+//       tplhl$C$Q = 0.12:0.12:0.12,
+//       tpllh$C$QN = 0.16:0.16:0.16,
+//       tplhl$C$QN = 0.16:0.16:0.16,
+//       tpllh$D$Q = 0.087:0.087:0.087,
+//       tphhl$D$Q = 0.11:0.11:0.11,
+//       tplhl$D$QN = 0.12:0.12:0.12,
+//       tphlh$D$QN = 0.15:0.15:0.15,
+//       tminpwh$C = 0.088:0.12:0.16,
+//       tsetup_negedge$D$C = 0.12:0.12:0.12,
+//       thold_negedge$D$C = -0.062:-0.062:-0.062,
+//       tsetup_posedge$D$C = 0.062:0.062:0.062,
+//       thold_posedge$D$C = 0:0:0;
 
-     // path delays
-     if (C == 1'b1)
-       (C *> Q) = (tpllh$C$Q, tplhl$C$Q);
-     if (C == 1'b1)
-       (C *> QN) = (tpllh$C$QN, tplhl$C$QN);
-     (D *> Q) = (tpllh$D$Q, tphhl$D$Q);
-     (D *> QN) = (tphlh$D$QN, tplhl$D$QN);
-     $setup(negedge D, negedge C, tsetup_negedge$D$C, NOTIFIER);
-     $hold (negedge C, negedge D, thold_negedge$D$C,  NOTIFIER);
-     $setup(posedge D, negedge C, tsetup_posedge$D$C, NOTIFIER);
-     $hold (negedge C, posedge D, thold_posedge$D$C,  NOTIFIER);
-     $width(posedge C, tminpwh$C, 0, NOTIFIER);
+//     // path delays
+//     if (C == 1'b1)
+//       (C *> Q) = (tpllh$C$Q, tplhl$C$Q);
+//     if (C == 1'b1)
+//       (C *> QN) = (tpllh$C$QN, tplhl$C$QN);
+//     (D *> Q) = (tpllh$D$Q, tphhl$D$Q);
+//     (D *> QN) = (tphlh$D$QN, tplhl$D$QN);
+//     $setup(negedge D, negedge C, tsetup_negedge$D$C, NOTIFIER);
+//     $hold (negedge C, negedge D, thold_negedge$D$C,  NOTIFIER);
+//     $setup(posedge D, negedge C, tsetup_posedge$D$C, NOTIFIER);
+//     $hold (negedge C, posedge D, thold_posedge$D$C,  NOTIFIER);
+//     $width(posedge C, tminpwh$C, 0, NOTIFIER);
 
-   endspecify
+//   endspecify
 
-endmodule
-`endcelldefine
+//endmodule
+//`endcelldefine
 
 `timescale 1ns/10ps
 `celldefine
@@ -1330,92 +1330,121 @@ output Y ;
 endmodule
 `endcelldefine
 
-primitive udp_dff (out, in, clk, clr, set, NOTIFIER);
+//primitive udp_dff (out, in, clk, clr, set, NOTIFIER);
+//   output out;
+//   input  in, clk, clr, set, NOTIFIER;
+//   reg    out;
+
+//   table
+
+//// in  clk  clr   set  NOT  : Qt : Qt+1
+////
+//   0  r   ?   0   ?   : ?  :  0  ; // clock in 0
+//   1  r   0   ?   ?   : ?  :  1  ; // clock in 1
+//   1  *   0   ?   ?   : 1  :  1  ; // reduce pessimism
+//   0  *   ?   0   ?   : 0  :  0  ; // reduce pessimism
+//   ?  f   ?   ?   ?   : ?  :  -  ; // no changes on negedge clk
+//   *  b   ?   ?   ?   : ?  :  -  ; // no changes when in switches
+//   ?  ?   ?   1   ?   : ?  :  1  ; // set output
+//   ?  b   0   *   ?   : 1  :  1  ; // cover all transistions on set
+//   1  x   0   *   ?   : 1  :  1  ; // cover all transistions on set
+//   ?  ?   1   0   ?   : ?  :  0  ; // reset output
+//   ?  b   *   0   ?   : 0  :  0  ; // cover all transistions on clr
+//   0  x   *   0   ?   : 0  :  0  ; // cover all transistions on clr
+//   ?  ?   ?   ?   *   : ?  :  x  ; // any notifier changed
+
+//   endtable
+//endprimitive // udp_dff
+
+`timescale 1ns/10ps
+`celldefine
+module mdff (out, in, clk, clr, set, NOTIFIER);
    output out;
    input  in, clk, clr, set, NOTIFIER;
    reg    out;
 
-   table
+   always @(posedge clk or posedge set or posedge clr)
+       if (clr) out <= 0;
+       else if (set) out <= 1;
+       else
+          out <= in;
+endmodule // udp_dff
+`endcelldefine
 
-// in  clk  clr   set  NOT  : Qt : Qt+1
-//
-   0  r   ?   0   ?   : ?  :  0  ; // clock in 0
-   1  r   0   ?   ?   : ?  :  1  ; // clock in 1
-   1  *   0   ?   ?   : 1  :  1  ; // reduce pessimism
-   0  *   ?   0   ?   : 0  :  0  ; // reduce pessimism
-   ?  f   ?   ?   ?   : ?  :  -  ; // no changes on negedge clk
-   *  b   ?   ?   ?   : ?  :  -  ; // no changes when in switches
-   ?  ?   ?   1   ?   : ?  :  1  ; // set output
-   ?  b   0   *   ?   : 1  :  1  ; // cover all transistions on set
-   1  x   0   *   ?   : 1  :  1  ; // cover all transistions on set
-   ?  ?   1   0   ?   : ?  :  0  ; // reset output
-   ?  b   *   0   ?   : 0  :  0  ; // cover all transistions on clr
-   0  x   *   0   ?   : 0  :  0  ; // cover all transistions on clr
-   ?  ?   ?   ?   *   : ?  :  x  ; // any notifier changed
-
-   endtable
-endprimitive // udp_dff
-
-primitive udp_tlat (out, in, enable, clr, set, NOTIFIER);
-
-   output out;
-   input  in, enable, clr, set, NOTIFIER;
-   reg    out;
-
-   table
-
-// in  enable  clr   set  NOT  : Qt : Qt+1
-//
-   1  1   0   ?   ?   : ?  :  1  ; //
-   0  1   ?   0   ?   : ?  :  0  ; //
-   1  *   0   ?   ?   : 1  :  1  ; // reduce pessimism
-   0  *   ?   0   ?   : 0  :  0  ; // reduce pessimism
-   *  0   ?   ?   ?   : ?  :  -  ; // no changes when in switches
-   ?  ?   ?   1   ?   : ?  :  1  ; // set output
-   ?  0   0   *   ?   : 1  :  1  ; // cover all transistions on set
-   1  ?   0   *   ?   : 1  :  1  ; // cover all transistions on set
-   ?  ?   1   0   ?   : ?  :  0  ; // reset output
-   ?  0   *   0   ?   : 0  :  0  ; // cover all transistions on clr
-   0  ?   *   0   ?   : 0  :  0  ; // cover all transistions on clr
-   ?  ?   ?   ?   *   : ?  :  x  ; // any notifier changed
-
-   endtable
-endprimitive // udp_tlat
-
-primitive udp_rslat (out, clr, set, NOTIFIER);
-
-   output out;
-   input  clr, set, NOTIFIER;
-   reg    out;
-
-   table
-
-// clr   set  NOT  : Qt : Qt+1
-//
-   ?   1   ?   : ?  :  1  ; // set output
-   0   *   ?   : 1  :  1  ; // cover all transistions on set
-   1   0   ?   : ?  :  0  ; // reset output
-   *   0   ?   : 0  :  0  ; // cover all transistions on clr
-   ?   ?   *   : ?  :  x  ; // any notifier changed
-
-   endtable
-endprimitive // udp_tlat
-
-primitive udp_mux2 (out, in0, in1, sel);
+`timescale 1ns/10ps
+`celldefine
+module mmux2 (out, in0, in1, sel);
    output out;
    input  in0, in1, sel;
 
-   table
+   assign out = (sel) ? in1 : in0;
 
-// in0 in1 sel :  out
-//
-    1  ?  0 :  1 ;
-    0  ?  0 :  0 ;
-    ?  1  1 :  1 ;
-    ?  0  1 :  0 ;
-    0  0  x :  0 ;
-    1  1  x :  1 ;
+endmodule // udp_mux2
+`endcelldefine
 
-   endtable
-endprimitive // udp_mux2
+
+
+
+//primitive udp_tlat (out, in, enable, clr, set, NOTIFIER);
+
+//   output out;
+//   input  in, enable, clr, set, NOTIFIER;
+//   reg    out;
+
+//   table
+
+//// in  enable  clr   set  NOT  : Qt : Qt+1
+////
+//   1  1   0   ?   ?   : ?  :  1  ; //
+//   0  1   ?   0   ?   : ?  :  0  ; //
+//   1  *   0   ?   ?   : 1  :  1  ; // reduce pessimism
+//   0  *   ?   0   ?   : 0  :  0  ; // reduce pessimism
+//   *  0   ?   ?   ?   : ?  :  -  ; // no changes when in switches
+//   ?  ?   ?   1   ?   : ?  :  1  ; // set output
+//   ?  0   0   *   ?   : 1  :  1  ; // cover all transistions on set
+//   1  ?   0   *   ?   : 1  :  1  ; // cover all transistions on set
+//   ?  ?   1   0   ?   : ?  :  0  ; // reset output
+//   ?  0   *   0   ?   : 0  :  0  ; // cover all transistions on clr
+//   0  ?   *   0   ?   : 0  :  0  ; // cover all transistions on clr
+//   ?  ?   ?   ?   *   : ?  :  x  ; // any notifier changed
+
+//   endtable
+//endprimitive // udp_tlat
+
+//primitive udp_rslat (out, clr, set, NOTIFIER);
+
+//   output out;
+//   input  clr, set, NOTIFIER;
+//   reg    out;
+
+//   table
+
+//// clr   set  NOT  : Qt : Qt+1
+////
+//   ?   1   ?   : ?  :  1  ; // set output
+//   0   *   ?   : 1  :  1  ; // cover all transistions on set
+//   1   0   ?   : ?  :  0  ; // reset output
+//   *   0   ?   : 0  :  0  ; // cover all transistions on clr
+//   ?   ?   *   : ?  :  x  ; // any notifier changed
+
+//   endtable
+//endprimitive // udp_tlat
+
+//primitive udp_mux2 (out, in0, in1, sel);
+//   output out;
+//   input  in0, in1, sel;
+
+//   table
+
+//// in0 in1 sel :  out
+////
+//    1  ?  0 :  1 ;
+//    0  ?  0 :  0 ;
+//    ?  1  1 :  1 ;
+//    ?  0  1 :  0 ;
+//    0  0  x :  0 ;
+//    1  1  x :  1 ;
+
+//   endtable
+//endprimitive // udp_mux2
 

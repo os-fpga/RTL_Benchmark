@@ -6,15 +6,16 @@ module lut4_8ffs(qck, qst, qrt,c, d_out);
    input   qst,qrt;
    output  [0:7]d_out;
    
-genvar i;
-generate for (i = 0; i < 8; i = i + 1) begin
+genvar i; 
+generate for (i = 0; i < 8; i = i + 1) begin :abc
    D_ff dut(.D(c[i]),.QCK(qck),.QRT(qrt),.QST(qst),.CQZ(d_out[i]));
    
-end endgenerate
+end
+endgenerate 
 endmodule
 
 
-module D_ff(input QCK,QRT,QST,D, output CQZ);
+module D_ff(input QCK,QRT,QST,D, output reg CQZ);
 
 always @ (posedge QCK or posedge QST or posedge QRT)
 
