@@ -1,0 +1,12 @@
+read -sv leon3mp.v GSCLib_3.0.v
+
+synth -flatten -top leon3mp
+
+#abc -lut 6
+abc -script abc6.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+

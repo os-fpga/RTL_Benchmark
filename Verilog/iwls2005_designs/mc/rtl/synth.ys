@@ -1,0 +1,13 @@
+read -sv mc_adr_sel.v  mc_defines.v  mc_incn_r.v  mc_obct_top.v  mc_rd_fifo.v  mc_rf.v      mc_top.v mc_cs_rf.v    mc_dp.v       mc_mem_if.v  mc_obct.v      mc_refresh.v  mc_timing.v  mc_wb_if.v
+
+
+synth -flatten -top mc_top
+#abc -lut 6
+#abc -script abc6.scr
+abc -script abc_base6.v1.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+

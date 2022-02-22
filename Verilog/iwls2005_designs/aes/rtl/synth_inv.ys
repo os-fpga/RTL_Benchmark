@@ -1,0 +1,11 @@
+read -sv  aes_inv_sbox.v    aes_rcon.v  timescale.v aes_inv_cipher_top.v  aes_sbox.v aes_key_expand_128.v
+
+synth -flatten -top aes_inv_cipher_top
+#abc -lut 6
+abc -script abc6.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+
