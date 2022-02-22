@@ -1,0 +1,36 @@
+&get -n -m;
+
+&dsdb; &dch -C 500; &if -sz -S 66 -K 11 -a -C 6; &save -a
+&ps
+
+&synch2 -K %d -C 500; &lf -E 5 -K 6; &put; mfs2 -W 4 -M 500 -C 7000; &get -n -m; &save -a
+&ps
+&synch2 -K %d -C 500; &if -K 6; &put; mfs2 -W 4 -M 500 -C 7000; &get -n -m; &save -a
+&ps
+&dch -C 500;          &if -K 6; &put; mfs2 -W 4 -M 500 -C 7000; &get -n -m; &save -a
+&ps
+&dch -C 500;          &if -K 6; &put; mfs2 -W 4 -M 500 -C 7000; &get -n -m; &save -a
+&ps
+
+&dsdb; &dch -C 500; &if -sz -S 66 -K 11 -a -C 6; &save -a
+&ps
+
+&unmap; &if -sz -S 66 -K 11 -a -C 6; &save -a
+&ps
+
+&st; &jf -K 6 -e; &ps; &save
+&ps
+
+&st; &jf -K 6 -e; &ps; &save
+&ps
+
+&satlut;
+&ps
+
+&put
+
+lutpack
+
+&get -m -n ; &ps; 
+
+&put
