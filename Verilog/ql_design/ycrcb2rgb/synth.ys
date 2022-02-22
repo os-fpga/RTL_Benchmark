@@ -1,0 +1,13 @@
+read -sv ycrcb2rgb.v
+
+#synth -flatten -top top
+synth_xilinx -flatten -top top
+#abc -lut 6
+#abc -script abc6.scr
+#abc -script abc_base6.v1.scr
+opt_clean
+
+#write_verilog netlist.v
+
+stat
+
