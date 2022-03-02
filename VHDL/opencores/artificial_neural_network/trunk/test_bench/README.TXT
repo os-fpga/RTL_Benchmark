@@ -1,0 +1,4 @@
+The testbench requires octave and ghdl to run. You will also need the nnet package for Octave. 
+The package is here: https://octave.sourceforge.io/nnet/. Install it by following https://www.gnu.org/software/octave/doc/v4.2.0/Installing-and-Removing-Packages.html 
+
+Run the testbench script in linux by executing run.sh. The script first runs a basic neural net learning example in Octave, then exports the weights and biases to a vhdl file. This file is next used by the VHDL testbench (which runs in the GHDL simulator) to initialize the weight and bias RAM and perform output computation based on the input file. The input is a signal that goes from -1 to 1 a couple of times. We are testing how well the neural network approximates a sine (with the input normalized to -1 to 1 instead of -pi to pi).
