@@ -34,6 +34,7 @@ package otp_ctrl_part_pkg;
   } digest_mode_e;
 
   typedef logic [NumScrmblKeys-1:0][ScrmblKeyWidth-1:0] key_array_t;
+  typedef logic [NumDigestSets-1:0][ScrmblKeyWidth-1:0] digest_const_array_t;
   typedef logic [NumDigestSets-1:0][ScrmblBlockWidth-1:0] digest_iv_array_t;
 
   typedef enum logic [ConstSelWidth-1:0] {
@@ -44,7 +45,6 @@ package otp_ctrl_part_pkg;
 
   typedef enum logic [ConstSelWidth-1:0] {
     CnstyDigest,
-    LcRawDigest,
     FlashDataKey,
     FlashAddrKey,
     SramDataKey
@@ -99,9 +99,6 @@ package otp_ctrl_part_pkg;
     logic read_lock;  // Whether the partition is read lockable (via digest)
     logic ecc_fatal;  // Whether the an ECC uncorrectable error leads to a fatal alert
   } part_info_t;
-
-
-
 
   parameter part_info_t PartInfoDefault = '{
       variant:    Unbuffered,
@@ -309,7 +306,8 @@ package otp_ctrl_part_pkg;
     }),
     6400'({
       64'h39EB436F1D5AF2D7,
-      2336'h0, // unallocated space
+      2304'h0, // unallocated space
+      32'h0,
       512'h0,
       128'h0,
       128'h0,

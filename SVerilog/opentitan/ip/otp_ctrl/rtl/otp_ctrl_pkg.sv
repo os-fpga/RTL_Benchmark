@@ -17,7 +17,6 @@ package otp_ctrl_pkg;
   parameter int OtpTestCtrlWidth   = 32;
   parameter int OtpTestStatusWidth = 32;
   parameter int OtpTestVectWidth   = 8;
-   parameter int NumDigestSets = 5;
 
   // Width of entropy input
   parameter int EdnDataWidth = 64;
@@ -238,7 +237,7 @@ package otp_ctrl_pkg;
   typedef struct packed {
     logic        ack;        // Ack for key.
     sram_key_t   key;        // 128bit ephemeral scrambling key.
-    sram_nonce_t nonce;      // 64bit nonce.
+    sram_nonce_t nonce;      // 128bit nonce.
     logic        seed_valid; // Set to 1 if the key seed has been provisioned and is valid.
   } sram_otp_key_rsp_t;
 
@@ -297,24 +296,5 @@ package otp_ctrl_pkg;
   localparam lfsr_seed_t RndCnstLfsrSeedDefault = 40'h453d28ea98;
   localparam lfsr_perm_t RndCnstLfsrPermDefault =
       240'h4235171482c225f79289b32181a0163a760355d3447063d16661e44c12a5;
-
-
-        // Note: digest set 0 is used for computing the partition digests. Constants at
-  // higher indices are used to compute the scrambling keys.
-
- // Note: digest set 0 is used for computing the partition digests. Constants at
-  // higher indices are used to compute the scrambling keys.
-  typedef logic [NumDigestSets-1:0][ScrmblKeyWidth-1:0] digest_const_array_t;
-  parameter digest_const_array_t RndCnstDigestConstDefault = {
-    128'h9d40106e2dc2346ec96d61f0cc5295c7,
-    128'hafed2aa5c3284c01d71103edab1d8953,
-    128'h8a14fe0c08f8a3a190dd32c05f208474,
-    128'h9e6fac4ba15a3bce29d05a3e9e2d0846,
-    128'h3a0c6051392e00ef24073627319555b8
-  };
-
-  parameter lc_ctrl_pkg::lc_token_t RndCnstRawUnlockTokenDefault =
-    128'hcbbd013ff15eba2f3065461eeb88463e;
-
 
 endpackage : otp_ctrl_pkg
