@@ -1,4 +1,4 @@
-set ::env(PROJECT_NAME) cordic
+set ::env(PROJECT_NAME) polar2rect
 set ::env(DESIGN_TOP) sc_corproc
 set ::env(DESIGN_DIR) RTL_Benchmark/VHDL/opencores/cordic/rtl/polar2rect
 set ::env(TOP_VERILOG) RTL_Benchmark/VHDL/opencores/cordic/rtl/polar2rect/sc_corproc.vhd
