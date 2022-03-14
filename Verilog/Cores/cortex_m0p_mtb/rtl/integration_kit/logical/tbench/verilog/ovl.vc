@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+//  The confidential and proprietary information contained in this file may
+//  only be used by a person authorised under and to the extent permitted
+//  by a subsisting licensing agreement from ARM Limited.
+//
+//                (C) COPYRIGHT 2008-2012 ARM Limited
+//                    ALL RIGHTS RESERVED
+//
+//  This entire notice must be reproduced on all copies of this file
+//  and copies of this file may only be made by a person if such person is
+//  permitted to do so under the terms of a subsisting license agreement
+//  from ARM Limited.
+//
+//  SVN Information
+//
+//  Revision            : $Revision: 231275 $
+//  Release information : Cortex-M0+ AT590-r0p1-00rel0
+//
+// -----------------------------------------------------------------------------
+//  Purpose : CORTEX-M0+ IK testbench verilog command file for OVL Assertions
+//            and Protocol Checkers. For use with RunIK script
+// -----------------------------------------------------------------------------
+
+// Set the following OVL assertion defines to your requirements:
+
+// Uncomment to include OVL assertions. Make sure the OVL libraries are included
+//+define+OVL_INIT_MSG
++define+OVL_MAX_REPORT_ERROR=2
+//+define+OVL_ASSERT_ON
+//+define+ARM_ASSERT_ON
+
+// Uncomment to include AHB Lite Protocol Checker
+//+define+ARM_CM0PIK_AHBLitePC_ON
+
+// Uncomment to include IOP Protocol Checker
++define+ARM_CM0PIK_IOPPC_ON
+
+// Uncomment to include Slave port Protocol Checker
++define+ARM_CM0PIK_SLVPC_ON
+
+// ============= Verilog library extensions ===========
++libext+.v+.vlib+.vh
+
+// ============= OVL support libraries =============
+
+// Modify to point to your OVL libraries
+
+// ============= Include file search path =============
+//+incdir+<PATH to Library>/accellera/ovl/releases/ovl_v2p6_Oct2011/std_ovl
+
+// ============= Module search path =============
+//-y      <PATH to Library>/accellera/ovl/releases/ovl_v2p6_Oct2011/std_ovl
+
+// Uncomment the location of the AHB Lite Protocol Checker
+//-y ../../../external_ip/AhbLitePC/verilog
