@@ -1,0 +1,6 @@
+set ::env(PROJECT_NAME) IPV4_PACKET_TRANSMITTER
+set ::env(DESIGN_TOP) IPV4_PACKET_TRANSMITTER
+set ::env(DESIGN_DIR) RTL_Benchmark/VHDL/opencores/IPv4_PACKET_TRANSMITTER/rtl
+set ::env(TOP_VERILOG) RTL_Benchmark/VHDL/opencores/IPv4_PACKET_TRANSMITTER/rtl/IPV4_PACKET_TRANSMITTER.vhd
+set ::env(CLOCK_COUNT) 1
+set ::env(DOMAIN) OpenCores_designs
