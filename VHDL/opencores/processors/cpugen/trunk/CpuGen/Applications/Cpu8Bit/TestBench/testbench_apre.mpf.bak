@@ -1,0 +1,280 @@
+[Library]
+
+; Altera specific primitive library mappings 
+
+vital2000 = $MODEL_TECH/../vital2000
+ieee = $MODEL_TECH/../ieee
+verilog = $MODEL_TECH/../verilog
+std = $MODEL_TECH/../std
+std_developerskit = $MODEL_TECH/../std_developerskit
+synopsys = $MODEL_TECH/../synopsys
+modelsim_lib = $MODEL_TECH/../modelsim_lib
+apex20k = $MODEL_TECH/../altera/vhdl/apex20k
+apex20ke = $MODEL_TECH/../altera/vhdl/apex20ke
+apexii = $MODEL_TECH/../altera/vhdl/apexii
+altera_mf = $MODEL_TECH/../altera/vhdl/altera_mf
+220model = $MODEL_TECH/../altera/vhdl/220model
+lpm = $MODEL_TECH/../altera/vhdl/220model
+alt_vtl = $MODEL_TECH/../altera/vhdl/alt_vtl
+flex6000 = $MODEL_TECH/../altera/vhdl/flex6000
+flex10ke = $MODEL_TECH/../altera/vhdl/flex10ke
+mercury = $MODEL_TECH/../altera/vhdl/mercury
+max = $MODEL_TECH/../altera/vhdl/max
+stratix = $MODEL_TECH/../altera/vhdl/stratix
+cyclone = $MODEL_TECH/../altera/vhdl/cyclone
+stratixgx = $MODEL_TECH/../altera/vhdl/stratixgx
+altgxb = $MODEL_TECH/../altera/vhdl/altgxb
+stratixgx_gxb = $MODEL_TECH/../altera/vhdl/stratixgx_gxb
+apex20k_ver = $MODEL_TECH/../altera/verilog/apex20k
+apex20ke_ver = $MODEL_TECH/../altera/verilog/apex20ke
+apexii_ver = $MODEL_TECH/../altera/verilog/apexii
+altera_mf_ver = $MODEL_TECH/../altera/verilog/altera_mf
+220model_ver = $MODEL_TECH/../altera/verilog/220model
+lpm_ver = $MODEL_TECH/../altera/verilog/220model
+alt_ver = $MODEL_TECH/../altera/verilog/alt_vtl
+flex6000_ver = $MODEL_TECH/../altera/verilog/flex6000
+flex10ke_ver = $MODEL_TECH/../altera/verilog/flex10ke
+mercury_ver = $MODEL_TECH/../altera/verilog/mercury
+max_ver = $MODEL_TECH/../altera/verilog/max
+stratix_ver = $MODEL_TECH/../altera/verilog/stratix
+cyclone_ver = $MODEL_TECH/../altera/verilog/cyclone
+stratixgx_ver = $MODEL_TECH/../altera/verilog/stratixgx
+altgxb_ver = $MODEL_TECH/../altera/verilog/altgxb
+stratixgx_gxb_ver = $MODEL_TECH/../altera/verilog/stratixgx_gxb
+work = work
+[vcom]
+; Turn on VHDL-1993 as the default. Normally is off.
+; VHDL93 = 1
+
+; Show source line containing error. Default is off.
+; Show_source = 1
+
+; Turn off unbound-component warnings. Default is on.
+; Show_Warning1 = 0
+
+; Turn off process-without-a-wait-statement warnings. Default is on.
+; Show_Warning2 = 0
+
+; Turn off null-range warnings. Default is on.
+; Show_Warning3 = 0
+
+; Turn off no-space-in-time-literal warnings. Default is on.
+; Show_Warning4 = 0
+
+; Turn off multiple-drivers-on-unresolved-signal warnings. Default is on.
+; Show_Warning5 = 0
+
+; Turn off optimization for IEEE std_logic_1164 package. Default is on.
+; Optimize_1164 = 0
+
+; Turn on resolving of ambiguous function overloading in favor of the
+; "explicit" function declaration (not the one automatically created by
+; the compiler for each type declaration). Default is off.
+; .ini file has Explict enable so that std_logic_signed/unsigned
+; will match synthesis tools behavior.
+ Explicit = 1
+
+; Turn off VITAL compliance checking. Default is checking on.
+; NoVitalCheck = 1
+
+; Ignore VITAL compliance checking errors. Default is to not ignore.
+; IgnoreVitalErrors = 1
+
+; Turn off VITAL compliance checking warnings. Default is to show warnings.
+; Show_VitalChecksWarnings = false
+
+; Turn off acceleration of the VITAL packages. Default is to accelerate.
+; NoVital = 1
+
+; Turn off inclusion of debugging info within design units. Default is to include.
+; NoDebug = 1
+
+; Turn off "loading..." messages. Default is messages on.
+; Quiet = 1
+
+; Turn on some limited synthesis rule compliance checking. Checks only:
+;	-- signals used (read) by a process must be in the sensitivity list
+; CheckSynthesis = 1
+
+; Require the user to specify a configuration for all bindings,
+; and do not generate a compile time default binding for the
+; component. This will result in an elaboration error of
+; 'component not bound' if the user fails to do so. Avoids the rare
+; issue of a false dependency upon the unused default binding.
+
+; RequireConfigForAllDefaultBinding = 1 
+
+[vlog]
+
+; Turn off inclusion of debugging info within design units. Default is to include.
+; NoDebug = 1
+
+; Turn off "loading..." messages. Default is messages on.
+; Quiet = 1
+
+; Turn on Verilog hazard checking (order-dependent accessing of global vars).
+; Default is off.
+; Hazard = 1
+
+; Turn on converting regular Verilog identifiers to uppercase. Allows case
+; insensitivity for module names. Default is no conversion.
+; UpCase = 1
+
+; Turns on incremental compilation of modules 
+; Incremental = 1
+
+[vsim]
+; Simulator resolution
+; Set to fs, ps, ns, us, ms, or sec with optional prefix of 1, 10, or 100.
+resolution = 1ns
+
+; User time unit for run commands
+; Set to default, fs, ps, ns, us, ms, or sec. The default is to use the
+; unit specified for Resolution. For example, if Resolution is 100ps,
+; then UserTimeUnit defaults to ps.
+UserTimeUnit = ns
+
+; Default run length
+RunLength = 100000.000000
+
+; Maximum iterations that can be run without advancing simulation time
+IterationLimit = 5000
+
+; Directive to license manager:
+; vhdl          Immediately reserve a VHDL license
+; vlog          Immediately reserve a Verilog license
+; plus          Immediately reserve a VHDL and Verilog license
+; nomgc         Do not look for Mentor Graphics Licenses
+; nomti         Do not look for Model Technology Licenses
+; noqueue       Do not wait in the license queue when a license isn't available
+; License = plus
+
+; Stop the simulator after an assertion message
+; 0 = Note  1 = Warning  2 = Error  3 = Failure  4 = Fatal
+BreakOnAssertion = 3
+
+; Assertion Message Format
+; %S - Severity Level 
+; %R - Report Message
+; %T - Time of assertion
+; %D - Delta
+; %I - Instance or Region pathname (if available)
+; %% - print '%' character
+; AssertionFormat = "** %S: %R\n   Time: %T  Iteration: %D%I\n"
+
+; Assertion File - alternate file for storing assertion messages
+; AssertFile = assert.log
+
+; Default radix for all windows and commands...
+; Set to symbolic, ascii, binary, octal, decimal, hex, unsigned
+DefaultRadix = symbolic
+
+; VSIM Startup command
+; Startup = do startup.do
+
+; File for saving command transcript
+TranscriptFile = transcript
+
+; File for saving command history 
+;CommandHistory = cmdhist.log
+
+; Specify whether paths in simulator commands should be described 
+; in VHDL or Verilog format. For VHDL, PathSeparator = /
+; for Verilog, PathSeparator = .
+PathSeparator = /
+
+; Specify the dataset separator for fully rooted contexts.
+; The default is ':'. For example, sim:/top
+; Must not be the same character as PathSeparator.
+DatasetSeparator = :
+
+; Disable assertion messages
+; IgnoreNote = 1
+; IgnoreWarning = 1
+; IgnoreError = 1
+; IgnoreFailure = 1
+
+; Default force kind. May be freeze, drive, or deposit 
+; or in other terms, fixed, wired or charged.
+; DefaultForceKind = freeze
+
+; If zero, open files when elaborated
+; else open files on first read or write
+; DelayFileOpen = 0
+
+; Control VHDL files opened for write
+;   0 = Buffered, 1 = Unbuffered
+UnbufferedOutput = 0
+
+; Control number of VHDL files open concurrently
+;   This number should always be less then the 
+;   current ulimit setting for max file descriptors
+;   0 = unlimited
+ConcurrentFileLimit = 40
+
+; This controls the number of hierarchical regions displayed as
+; part of a signal name shown in the waveform window.  The default
+; value or a value of zero tells VSIM to display the full name.
+; WaveSignalNameWidth = 0
+
+; Turn off warnings from the std_logic_arith, std_logic_unsigned
+; and std_logic_signed packages.
+; StdArithNoWarnings = 1
+
+; Turn off warnings from the IEEE numeric_std and numeric_bit
+; packages.
+; NumericStdNoWarnings = 1
+
+; Control the format of a generate statement label. Don't quote it.
+; GenerateFormat = %s__%d
+
+; Specify whether checkpoint files should be compressed.
+; The default is to be compressed.
+; CheckpointCompressMode = 0
+
+; List of dynamically loaded objects for Verilog PLI applications
+; Veriuser = veriuser.sl
+Veriuser = $MODEL_TECH/../win32aloem/convert_hex2ver.dll
+[Project]
+Project_Version = 3
+Project_DefaultLib = work
+Project_SortMethod = alpha
+Project_Files_Count = 18
+Project_File_0 = ../..//Components/rom.vhd
+Project_File_P_0 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1051869806 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 12 dont_compile 0 vhdl_use93 1
+Project_File_1 = ../../Components/ctrl8cpu.vhd
+Project_File_P_1 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267031 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 15 dont_compile 0 vhdl_use93 0
+Project_File_2 = ../../Components/interrupt.vhd
+Project_File_P_2 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267052 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 10 dont_compile 0 vhdl_use93 0
+Project_File_3 = ../cpu_cu.vhd
+Project_File_P_3 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 4 dont_compile 0 vhdl_use93 0
+Project_File_4 = ../../Components/ram.vhd
+Project_File_P_4 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1051690428 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 11 dont_compile 0 vhdl_use93 1
+Project_File_5 = ../cpu_utils.vhd
+Project_File_P_5 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 3 dont_compile 0 vhdl_use93 0
+Project_File_6 = ./testbench_a.vhd
+Project_File_P_6 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1053894121 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 17 dont_compile 0 vhdl_use93 0
+Project_File_7 = ./World.vhd
+Project_File_P_7 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1053789508 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 2 dont_compile 0 vhdl_use93 0
+Project_File_8 = ../cpu_iu.vhd
+Project_File_P_8 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 6 dont_compile 0 vhdl_use93 0
+Project_File_9 = ./Clock.vhd
+Project_File_P_9 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1053273850 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 1 dont_compile 0 vhdl_use93 0
+Project_File_10 = ../../Components/tx_uart.vhd
+Project_File_P_10 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267149 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 14 dont_compile 0 vhdl_use93 0
+Project_File_11 = ../cpu_oa.vhd
+Project_File_P_11 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 7 dont_compile 0 vhdl_use93 0
+Project_File_12 = ../cpu_du.vhd
+Project_File_P_12 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 5 dont_compile 0 vhdl_use93 0
+Project_File_13 = ../cpu.vhd
+Project_File_P_13 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267223 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 8 dont_compile 0 vhdl_use93 0
+Project_File_14 = ../../Components/inout4reg.vhd
+Project_File_P_14 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1053889760 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 9 dont_compile 0 vhdl_use93 0
+Project_File_15 = ../../Components/timer.vhd
+Project_File_P_15 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1057267048 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 13 dont_compile 0 vhdl_use93 0
+Project_File_16 = ./cpu8bit.vhd
+Project_File_P_16 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1053895024 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 16 dont_compile 0 vhdl_use93 0
+Project_File_17 = ../../Components/Utils_pkg.vhd
+Project_File_P_17 = vhdl_novitalcheck 0 file_type VHDL group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 folder {Top Level} last_compile 1051625446 vhdl_vital 0 vhdl_warn1 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn3 1 vhdl_warn4 1 vhdl_warn5 1 ood 0 compile_to work compile_order 0 dont_compile 0 vhdl_use93 0
+Project_Sim_Count = 0
+Project_Folder_Count = 0

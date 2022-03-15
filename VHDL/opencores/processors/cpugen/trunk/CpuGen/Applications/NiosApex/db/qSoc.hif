@@ -1,0 +1,1726 @@
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+5
+OFF
+exemplar.lmf
+37658444
+# entity
+qSoc
+# case_insensitive
+# source_file
+qSoc.bdf
+1073836770
+23
+# storage
+db|qSoc(0).cnf
+db|qSoc(0).cnf
+# end
+# entity
+cpu_a
+# case_insensitive
+# source_file
+cpu_a.bdf
+1074025972
+23
+# storage
+db|qSoc(1).cnf
+db|qSoc(1).cnf
+# end
+# entity
+tx_uart
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|tx_uart.vhd
+1073767421
+4
+# storage
+db|qSoc(2).cnf
+db|qSoc(2).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+}
+# end
+# entity
+waitstategen
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|waitstategen.vhd
+1074002117
+4
+# storage
+db|qSoc(3).cnf
+db|qSoc(3).cnf
+# user_parameter {
+daddr_len
+10
+USR
+data_len
+8
+USR
+nwait
+00001111
+USR
+}
+# end
+# entity
+ctrl8cpuapex
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|ctrl8cpuApex.vhd
+1073856729
+4
+# storage
+db|qSoc(4).cnf
+db|qSoc(4).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu.vhd
+1074003321
+4
+# storage
+db|qSoc(5).cnf
+db|qSoc(5).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu_iu
+# architecture
+A:IU_STRUCT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu_iu.vhd
+1074003321
+4
+# storage
+db|qSoc(6).cnf
+db|qSoc(6).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu_cu
+# architecture
+A:CU_STRUCT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu_cu.vhd
+1074003321
+4
+# storage
+db|qSoc(7).cnf
+db|qSoc(7).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu_du
+# architecture
+A:DU_STRUCT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu_du.vhd
+1074003321
+4
+# storage
+db|qSoc(8).cnf
+db|qSoc(8).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu_oa
+# architecture
+A:OA_STRUCT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu_oa.vhd
+1074003321
+4
+# storage
+db|qSoc(9).cnf
+db|qSoc(9).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+cpu_wd
+# architecture
+A:WD_STRUCT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+cpu_wd.vhd
+1074003321
+4
+# storage
+db|qSoc(10).cnf
+db|qSoc(10).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+interrupt
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|interrupt.vhd
+1073767416
+4
+# storage
+db|qSoc(11).cnf
+db|qSoc(11).cnf
+# user_parameter {
+ni
+4
+USR
+}
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+}
+# end
+# entity
+rx_uart
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|rx_uart.vhd
+1073767419
+4
+# storage
+db|qSoc(12).cnf
+db|qSoc(12).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+}
+# end
+# entity
+timer
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|timer.vhd
+1073767420
+4
+# storage
+db|qSoc(13).cnf
+db|qSoc(13).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+}
+# end
+# entity
+h2v
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|h2v.vhd
+1073767415
+4
+# storage
+db|qSoc(14).cnf
+db|qSoc(14).cnf
+# user_parameter {
+maddr_len
+D"10"
+DEF
+}
+# end
+# entity
+lpm_ram_dq1
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lpm_ram_dq1.vhd
+1073774789
+4
+# storage
+db|qSoc(15).cnf
+db|qSoc(15).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+lpm_ram_dq
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+1060727016
+6
+# storage
+db|qSoc(16).cnf
+db|qSoc(16).cnf
+# user_parameter {
+LPM_WIDTH
+D"14"
+USR
+LPM_WIDTHAD
+D"10"
+USR
+LPM_NUMWORDS
+1024
+DEF
+LPM_INDATA
+S"REGISTERED"
+USR
+LPM_ADDRESS_CONTROL
+S"REGISTERED"
+USR
+LPM_OUTDATA
+S"UNREGISTERED"
+USR
+LPM_FILE
+S"rom.mif"
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+}
+# used_port {
+address0
+address1
+address2
+address3
+address4
+address5
+address6
+address7
+address8
+address9
+data0
+data10
+data11
+data12
+data13
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+data8
+data9
+inclock
+q0
+q10
+q11
+q12
+q13
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+q8
+q9
+we
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|altram.inc
+1049506060
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+1049510968
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+altram
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|altram.tdf
+1060727010
+6
+# storage
+db|qSoc(17).cnf
+db|qSoc(17).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+WIDTH
+14
+USR
+AD_WIDTH
+10
+USR
+NUMWORDS
+1024
+USR
+FILE
+rom.mif
+USR
+REGISTERINPUTMODE
+ALL
+USR
+USE_EAB
+S"ON"
+USR
+MAXIMUM_DEPTH
+2048
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+DEF
+}
+# used_port {
+we
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+data8
+data9
+data10
+data11
+data12
+data13
+address0
+address1
+address2
+address3
+address4
+address5
+address6
+address7
+address8
+address9
+clocki
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+q8
+q9
+q10
+q11
+q12
+q13
+}
+# include_file {
+..|..|..|quartus|libraries|others|maxplus2|memmodes.inc
+1049544780
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+1049510968
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+..|..|..|quartus|libraries|megafunctions|altsyncram.inc
+1049506506
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+1049506000
+}
+# memory_file {
+rom.mif
+1074026400
+}
+# end
+# entity
+stack
+# case_insensitive
+# source_file
+stack.bdf
+1073774813
+23
+# storage
+db|qSoc(18).cnf
+db|qSoc(18).cnf
+# end
+# entity
+lpm_ram_dq0
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lpm_ram_dq0.vhd
+1073774787
+4
+# storage
+db|qSoc(19).cnf
+db|qSoc(19).cnf
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+cpu_utils.vhd
+1074003320
+}
+# end
+# entity
+lpm_ram_dq
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+1060727016
+6
+# storage
+db|qSoc(20).cnf
+db|qSoc(20).cnf
+# user_parameter {
+LPM_WIDTH
+D"10"
+USR
+LPM_WIDTHAD
+D"8"
+USR
+LPM_NUMWORDS
+256
+DEF
+LPM_INDATA
+S"REGISTERED"
+USR
+LPM_ADDRESS_CONTROL
+S"REGISTERED"
+USR
+LPM_OUTDATA
+S"UNREGISTERED"
+USR
+LPM_FILE
+/////
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+}
+# used_port {
+address0
+address1
+address2
+address3
+address4
+address5
+address6
+address7
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+data8
+data9
+inclock
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+q8
+q9
+we
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|altram.inc
+1049506060
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+1049510968
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+altram
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|altram.tdf
+1060727010
+6
+# storage
+db|qSoc(21).cnf
+db|qSoc(21).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+WIDTH
+10
+USR
+AD_WIDTH
+8
+USR
+NUMWORDS
+256
+USR
+FILE
+/////
+DEF
+REGISTERINPUTMODE
+ALL
+USR
+USE_EAB
+S"ON"
+USR
+MAXIMUM_DEPTH
+2048
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+DEF
+}
+# used_port {
+we
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+data8
+data9
+address0
+address1
+address2
+address3
+address4
+address5
+address6
+address7
+clocki
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+q8
+q9
+}
+# include_file {
+..|..|..|quartus|libraries|others|maxplus2|memmodes.inc
+1049544780
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_mux.inc
+1049510968
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+..|..|..|quartus|libraries|megafunctions|altsyncram.inc
+1049506506
+..|..|..|quartus|libraries|megafunctions|altqpram.inc
+1049506000
+}
+# memory_file {
+none
+0
+}
+# end
+# entity
+stack_if
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Components|stack_if.vhd
+1073767419
+4
+# storage
+db|qSoc(22).cnf
+db|qSoc(22).cnf
+# user_parameter {
+data_len
+8
+USR
+}
+# include_file {
+..|Components|Utils_pkg.vhd
+1073767421
+}
+# end
+# entity
+lpm_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(23).cnf
+db|qSoc(23).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+2
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+DEF
+LPM_AVALUE
+0
+DEF
+LPM_SVALUE
+0
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+CARRY_CHAIN
+MANUAL
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+NOT_GATE_PUSH_BACK
+ON
+USR
+CARRY_CNT_EN
+SMART
+DEF
+LABWIDE_SCLR
+ON
+DEF
+USE_NEW_VERSION
+TRUE
+DEF
+}
+# used_port {
+aclr
+clock
+q0
+q1
+sset
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_add_sub.inc
+1049509720
+..|..|..|quartus|libraries|megafunctions|cmpconst.inc
+1049508040
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|lpm_counter.inc
+1049510198
+..|..|..|quartus|libraries|megafunctions|dffeea.inc
+1049508834
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.inc
+1049503730
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+1049503786
+..|..|..|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+1049502578
+..|..|..|quartus|libraries|megafunctions|alt_counter_stratix.inc
+1049502628
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+alt_synch_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(24).cnf
+db|qSoc(24).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+2
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+USR
+LPM_SVALUE
+0
+DEF
+LPM_AVALUE
+0
+DEF
+CARRY_CHAIN
+MANUAL
+USR
+CASCADE_CHAIN_LENGTH
+2
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+}
+# used_port {
+clock
+aclr
+sset
+q0
+q1
+cout
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|mercury_lcell.inc
+1049512056
+..|..|..|quartus|libraries|megafunctions|apex20ke_lcell.inc
+1049506948
+..|..|..|quartus|libraries|megafunctions|apex20k_lcell.inc
+1049506702
+..|..|..|quartus|libraries|megafunctions|flex6k_lcell.inc
+1049509332
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|alt_asynch_counter.inc
+1049502424
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+lpm_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(25).cnf
+db|qSoc(25).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+8
+USR
+LPM_DIRECTION
+DOWN
+USR
+LPM_MODULUS
+0
+DEF
+LPM_AVALUE
+0
+DEF
+LPM_SVALUE
+0
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+CARRY_CHAIN
+MANUAL
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+NOT_GATE_PUSH_BACK
+ON
+USR
+CARRY_CNT_EN
+SMART
+DEF
+LABWIDE_SCLR
+ON
+DEF
+USE_NEW_VERSION
+TRUE
+DEF
+}
+# used_port {
+aclr
+clock
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+sload
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_add_sub.inc
+1049509720
+..|..|..|quartus|libraries|megafunctions|cmpconst.inc
+1049508040
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|lpm_counter.inc
+1049510198
+..|..|..|quartus|libraries|megafunctions|dffeea.inc
+1049508834
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.inc
+1049503730
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+1049503786
+..|..|..|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+1049502578
+..|..|..|quartus|libraries|megafunctions|alt_counter_stratix.inc
+1049502628
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+alt_synch_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(26).cnf
+db|qSoc(26).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+8
+USR
+LPM_DIRECTION
+DOWN
+USR
+LPM_MODULUS
+0
+USR
+LPM_SVALUE
+0
+DEF
+LPM_AVALUE
+0
+DEF
+CARRY_CHAIN
+MANUAL
+USR
+CASCADE_CHAIN_LENGTH
+2
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+}
+# used_port {
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+clock
+aclr
+sload
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+cout
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|mercury_lcell.inc
+1049512056
+..|..|..|quartus|libraries|megafunctions|apex20ke_lcell.inc
+1049506948
+..|..|..|quartus|libraries|megafunctions|apex20k_lcell.inc
+1049506702
+..|..|..|quartus|libraries|megafunctions|flex6k_lcell.inc
+1049509332
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|alt_asynch_counter.inc
+1049502424
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+lpm_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(27).cnf
+db|qSoc(27).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+4
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+DEF
+LPM_AVALUE
+0
+DEF
+LPM_SVALUE
+0
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+CARRY_CHAIN
+MANUAL
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+NOT_GATE_PUSH_BACK
+ON
+USR
+CARRY_CNT_EN
+SMART
+DEF
+LABWIDE_SCLR
+ON
+DEF
+USE_NEW_VERSION
+TRUE
+DEF
+}
+# used_port {
+aclr
+clk_en
+clock
+q0
+q1
+q2
+q3
+sclr
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_add_sub.inc
+1049509720
+..|..|..|quartus|libraries|megafunctions|cmpconst.inc
+1049508040
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|lpm_counter.inc
+1049510198
+..|..|..|quartus|libraries|megafunctions|dffeea.inc
+1049508834
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.inc
+1049503730
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+1049503786
+..|..|..|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+1049502578
+..|..|..|quartus|libraries|megafunctions|alt_counter_stratix.inc
+1049502628
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+alt_synch_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(28).cnf
+db|qSoc(28).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+4
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+USR
+LPM_SVALUE
+0
+DEF
+LPM_AVALUE
+0
+DEF
+CARRY_CHAIN
+MANUAL
+USR
+CASCADE_CHAIN_LENGTH
+2
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+}
+# used_port {
+clock
+clk_en
+aclr
+sclr
+q0
+q1
+q2
+q3
+cout
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|mercury_lcell.inc
+1049512056
+..|..|..|quartus|libraries|megafunctions|apex20ke_lcell.inc
+1049506948
+..|..|..|quartus|libraries|megafunctions|apex20k_lcell.inc
+1049506702
+..|..|..|quartus|libraries|megafunctions|flex6k_lcell.inc
+1049509332
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|alt_asynch_counter.inc
+1049502424
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+lpm_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(29).cnf
+db|qSoc(29).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+4
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+DEF
+LPM_AVALUE
+0
+DEF
+LPM_SVALUE
+0
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+CARRY_CHAIN
+MANUAL
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+NOT_GATE_PUSH_BACK
+ON
+USR
+CARRY_CNT_EN
+SMART
+DEF
+LABWIDE_SCLR
+ON
+DEF
+USE_NEW_VERSION
+TRUE
+DEF
+}
+# used_port {
+clk_en
+clock
+cnt_en
+q0
+q1
+q2
+q3
+sclr
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_add_sub.inc
+1049509720
+..|..|..|quartus|libraries|megafunctions|cmpconst.inc
+1049508040
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|lpm_counter.inc
+1049510198
+..|..|..|quartus|libraries|megafunctions|dffeea.inc
+1049508834
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.inc
+1049503730
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+1049503786
+..|..|..|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+1049502578
+..|..|..|quartus|libraries|megafunctions|alt_counter_stratix.inc
+1049502628
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+alt_synch_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(30).cnf
+db|qSoc(30).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+4
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+USR
+LPM_SVALUE
+0
+DEF
+LPM_AVALUE
+0
+DEF
+CARRY_CHAIN
+MANUAL
+USR
+CASCADE_CHAIN_LENGTH
+2
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+}
+# used_port {
+clock
+clk_en
+cnt_en
+sclr
+q0
+q1
+q2
+q3
+cout
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|mercury_lcell.inc
+1049512056
+..|..|..|quartus|libraries|megafunctions|apex20ke_lcell.inc
+1049506948
+..|..|..|quartus|libraries|megafunctions|apex20k_lcell.inc
+1049506702
+..|..|..|quartus|libraries|megafunctions|flex6k_lcell.inc
+1049509332
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|alt_asynch_counter.inc
+1049502424
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+lpm_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|lpm_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(31).cnf
+db|qSoc(31).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+8
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+DEF
+LPM_AVALUE
+0
+DEF
+LPM_SVALUE
+0
+DEF
+DEVICE_FAMILY
+APEX20KE
+USR
+CARRY_CHAIN
+MANUAL
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+NOT_GATE_PUSH_BACK
+ON
+USR
+CARRY_CNT_EN
+SMART
+DEF
+LABWIDE_SCLR
+ON
+DEF
+USE_NEW_VERSION
+TRUE
+DEF
+}
+# used_port {
+aclr
+clock
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+sclr
+sload
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_decode.inc
+1049510276
+..|..|..|quartus|libraries|megafunctions|lpm_add_sub.inc
+1049509720
+..|..|..|quartus|libraries|megafunctions|cmpconst.inc
+1049508040
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|lpm_counter.inc
+1049510198
+..|..|..|quartus|libraries|megafunctions|dffeea.inc
+1049508834
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.inc
+1049503730
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter_f.inc
+1049503786
+..|..|..|quartus|libraries|megafunctions|alt_counter_f10ke.inc
+1049502578
+..|..|..|quartus|libraries|megafunctions|alt_counter_stratix.inc
+1049502628
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# entity
+alt_synch_counter
+# case_insensitive
+# source_file
+..|..|..|quartus|libraries|megafunctions|alt_synch_counter.tdf
+1060727014
+6
+# storage
+db|qSoc(32).cnf
+db|qSoc(32).cnf
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+USR
+AUTO_CASCADE_CHAINS
+ON
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+USR
+LPM_WIDTH
+8
+USR
+LPM_DIRECTION
+UP
+USR
+LPM_MODULUS
+0
+USR
+LPM_SVALUE
+0
+DEF
+LPM_AVALUE
+0
+DEF
+CARRY_CHAIN
+MANUAL
+USR
+CASCADE_CHAIN_LENGTH
+2
+USR
+CARRY_CHAIN_LENGTH
+32
+USR
+DEVICE_FAMILY
+APEX20KE
+USR
+}
+# used_port {
+data0
+data1
+data2
+data3
+data4
+data5
+data6
+data7
+clock
+aclr
+sclr
+sload
+q0
+q1
+q2
+q3
+q4
+q5
+q6
+q7
+cout
+}
+# include_file {
+..|..|..|quartus|libraries|megafunctions|mercury_lcell.inc
+1049512056
+..|..|..|quartus|libraries|megafunctions|apex20ke_lcell.inc
+1049506948
+..|..|..|quartus|libraries|megafunctions|apex20k_lcell.inc
+1049506702
+..|..|..|quartus|libraries|megafunctions|flex6k_lcell.inc
+1049509332
+..|..|..|quartus|libraries|megafunctions|lpm_constant.inc
+1049510120
+..|..|..|quartus|libraries|megafunctions|lpm_compare.inc
+1049510042
+..|..|..|quartus|libraries|megafunctions|alt_asynch_counter.inc
+1049502424
+..|..|..|quartus|libraries|megafunctions|aglobal.inc
+1053967086
+}
+# end
+# complete
+

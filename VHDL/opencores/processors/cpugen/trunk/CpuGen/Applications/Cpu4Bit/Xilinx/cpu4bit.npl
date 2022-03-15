@@ -1,0 +1,40 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT cpu4bit
+DESIGN cpu4bit
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s30
+DEVICETIME 0
+DEVPKG cs144
+DEVPKGTIME 1051557570
+DEVSPEED -5
+DEVSPEEDTIME 0
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Modelsim
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL VHDL
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE ..\cpu_oa.vhd
+SOURCE ram.xco
+SOURCE rom.xco
+SOURCE ..\cpu.vhd
+SOURCE cpu4bit.sch
+SOURCE ..\cpu_cu.vhd
+SOURCE ..\cpu_du.vhd
+SOURCE ..\cpu_iu.vhd
+SOURCE ..\..\Components\ctrl4cpu.vhd
+SOURCE ..\..\Components\pwm.vhd
+SOURCE ..\cpu_utils.vhd
+SOURCE ..\cpu_wd.vhd
+DEPASSOC cpu4bit cpu4bit.ucf
+[Normal]
+p_CompxlibSimPath=xstvhd, spartan2, Design.t_compLibraries, 1071005542, C:\CpuGen\Applications\Cpu4Bit\Xilinx
+p_CompxlibTargetSimulator=xstvhd, spartan2, Design.t_compLibraries, 1071005542, ModelSim SE
+[STATUS-ALL]
+cpu4bit.bitgenGroup=OK,0
+[STRATEGY-LIST]
+Normal=True

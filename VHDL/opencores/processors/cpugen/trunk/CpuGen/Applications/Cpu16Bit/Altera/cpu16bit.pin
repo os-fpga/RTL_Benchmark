@@ -1,0 +1,147 @@
+ -- Copyright (C) 1991-2003 Altera Corporation
+ -- Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+ -- support information,  device programming or simulation file,  and any other
+ -- associated  documentation or information  provided by  Altera  or a partner
+ -- under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+ -- to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+ -- other  use  of such  megafunction  design,  netlist,  support  information,
+ -- device programming or simulation file,  or any other  related documentation
+ -- or information  is prohibited  for  any  other purpose,  including, but not
+ -- limited to  modification,  reverse engineering,  de-compiling, or use  with
+ -- any other  silicon devices,  unless such use is  explicitly  licensed under
+ -- a separate agreement with  Altera  or a megafunction partner.  Title to the
+ -- intellectual property,  including patents,  copyrights,  trademarks,  trade
+ -- secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+ -- support  information,  device programming or simulation file,  or any other
+ -- related documentation or information provided by  Altera  or a megafunction
+ -- partner, remains with Altera, the megafunction partner, or their respective
+ -- licensors. No other licenses, including any licenses needed under any third
+ -- party's intellectual property, are provided herein.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.5V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		3.3V
+ --					Bank 2:		3.3V
+ --					Bank 3:		3.3V
+ --					Bank 4:		3.3V
+ -- GND           : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+          : Unused input. This pin should be connected to GND. It may also
+ --           	    be connected  to a  valid signal  on the board  (low, high, or
+ --           	    toggling)  if that signal is required for a different revision
+ --           	    of the design.
+ -- GND*          : Unused  I/O  pin.   This pin can either be left unconnected or
+ --           	    connected to GND.  Connecting this pin to GND will improve the
+ --           	    device's immunity to noise.
+ ---------------------------------------------------------------------------------
+
+Quartus II Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+CHIP  "cpu16bit"  ASSIGNED TO AN: EP1C3T100C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND*                         : 1         :        :                   :         : 1         :                
+GND*                         : 2         :        :                   :         : 1         :                
+GND*                         : 3         :        :                   :         : 1         :                
+NRE_EXT                      : 4         : output : LVTTL             :         : 1         : N              
+ADDR_OUT_EXT[2]              : 5         : output : LVTTL             :         : 1         : N              
+ADDR_OUT_EXT[8]              : 6         : output : LVTTL             :         : 1         : N              
+DATA0                        : 7         : input  :                   :         : 1         :                
+nCONFIG                      : 8         :        :                   :         : 1         :                
+VCCA_PLL1                    : 9         : power  :                   : 1.5V    : 1         :                
+clk_in                       : 10        : input  : LVTTL             :         : 1         : N              
+GNDA_PLL1                    : 11        : gnd    :                   :         : 1         :                
+nCEO                         : 12        :        :                   :         : 1         :                
+nCE                          : 13        :        :                   :         : 1         :                
+MSEL0                        : 14        :        :                   :         : 1         :                
+MSEL1                        : 15        :        :                   :         : 1         :                
+DCLK                         : 16        : bidir  :                   :         : 1         :                
+ADDR_OUT_EXT[3]              : 17        : output : LVTTL             :         : 1         : N              
+VCCIO1                       : 18        : power  :                   : 3.3V    : 1         :                
+GND                          : 19        : gnd    :                   :         : 1         :                
+ADDR_OUT_EXT[4]              : 20        : output : LVTTL             :         : 1         : N              
+ADDR_OUT_EXT[6]              : 21        : output : LVTTL             :         : 1         : N              
+GND*                         : 22        :        :                   :         : 1         :                
+GND*                         : 23        :        :                   :         : 1         :                
+GND*                         : 24        :        :                   :         : 1         :                
+GND*                         : 25        :        :                   :         : 1         :                
+GND*                         : 26        :        :                   :         : 4         :                
+GND*                         : 27        :        :                   :         : 4         :                
+DATA_OUT_EXT[10]             : 28        : output : LVTTL             :         : 4         : N              
+DATA_OUT_EXT[5]              : 29        : output : LVTTL             :         : 4         : N              
+GND                          : 30        : gnd    :                   :         : 1         :                
+VCCIO4                       : 31        : power  :                   : 3.3V    : 4         :                
+GND                          : 32        : gnd    :                   :         : 1         :                
+VCCINT                       : 33        : power  :                   : 1.5V    :           :                
+DATA_IN_EXT[12]              : 34        : input  : LVTTL             :         : 4         : N              
+ADDR_OUT_EXT[5]              : 35        : output : LVTTL             :         : 4         : N              
+DATA_OUT_EXT[15]             : 36        : output : LVTTL             :         : 4         : N              
+DATA_OUT_EXT[11]             : 37        : output : LVTTL             :         : 4         : N              
+DATA_IN_EXT[13]              : 38        : input  : LVTTL             :         : 4         : N              
+NCS_EXT                      : 39        : output : LVTTL             :         : 4         : N              
+DATA_IN_EXT[3]               : 40        : input  : LVTTL             :         : 4         : N              
+DATA_IN_EXT[10]              : 41        : input  : LVTTL             :         : 4         : N              
+DATA_OUT_EXT[13]             : 42        : output : LVTTL             :         : 4         : N              
+GND                          : 43        : gnd    :                   :         : 1         :                
+VCCINT                       : 44        : power  :                   : 1.5V    :           :                
+GND                          : 45        : gnd    :                   :         : 1         :                
+VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
+DATA_OUT_EXT[9]              : 47        : output : LVTTL             :         : 4         : N              
+DATA_IN_EXT[14]              : 48        : input  : LVTTL             :         : 4         : N              
+GND*                         : 49        :        :                   :         : 4         :                
+GND*                         : 50        :        :                   :         : 4         :                
+GND*                         : 51        :        :                   :         : 3         :                
+GND*                         : 52        :        :                   :         : 3         :                
+DATA_OUT_EXT[12]             : 53        : output : LVTTL             :         : 3         : N              
+DATA_OUT_EXT[14]             : 54        : output : LVTTL             :         : 3         : N              
+DATA_IN_EXT[11]              : 55        : input  : LVTTL             :         : 3         : N              
+DATA_IN_EXT[15]              : 56        : input  : LVTTL             :         : 3         : N              
+DATA_IN_EXT[9]               : 57        : input  : LVTTL             :         : 3         : N              
+GND                          : 58        : gnd    :                   :         : 1         :                
+VCCIO3                       : 59        : power  :                   : 3.3V    : 3         :                
+CONF_DONE                    : 60        :        :                   :         : 3         :                
+nSTATUS                      : 61        :        :                   :         : 3         :                
+TCK                          : 62        : input  :                   :         : 3         :                
+TMS                          : 63        : input  :                   :         : 3         :                
+TDO                          : 64        : output :                   :         : 3         :                
+DATA_IN_EXT[1]               : 65        : input  : LVTTL             :         : 3         : N              
+nreset_in                    : 66        : input  : LVTTL             :         : 3         : N              
+TDI                          : 67        : input  :                   :         : 3         :                
+DATA_IN_EXT[2]               : 68        : input  : LVTTL             :         : 3         : N              
+DATA_IN_EXT[4]               : 69        : input  : LVTTL             :         : 3         : N              
+DATA_OUT_EXT[1]              : 70        : output : LVTTL             :         : 3         : N              
+DATA_OUT_EXT[8]              : 71        : output : LVTTL             :         : 3         : N              
+DATA_OUT_EXT[6]              : 72        : output : LVTTL             :         : 3         : N              
+DATA_OUT_EXT[2]              : 73        : output : LVTTL             :         : 3         : N              
+DATA_IN_EXT[8]               : 74        : input  : LVTTL             :         : 3         : N              
+GND*                         : 75        :        :                   :         : 3         :                
+DATA_IN_EXT[0]               : 76        : input  : LVTTL             :         : 2         : N              
+GND*                         : 77        :        :                   :         : 2         :                
+DATA_IN_EXT[7]               : 78        : input  : LVTTL             :         : 2         : N              
+DATA_OUT_EXT[7]              : 79        : output : LVTTL             :         : 2         : N              
+VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
+GND                          : 81        : gnd    :                   :         : 1         :                
+VCCINT                       : 82        : power  :                   : 1.5V    :           :                
+GND                          : 83        : gnd    :                   :         : 1         :                
+DATA_IN_EXT[5]               : 84        : input  : LVTTL             :         : 2         : N              
+DATA_IN_EXT[6]               : 85        : input  : LVTTL             :         : 2         : N              
+ADDR_OUT_EXT[1]              : 86        : output : LVTTL             :         : 2         : N              
+cpu_int                      : 87        : input  : LVTTL             :         : 2         : N              
+ADDR_OUT_EXT[0]              : 88        : output : LVTTL             :         : 2         : N              
+DATA_OUT_EXT[3]              : 89        : output : LVTTL             :         : 2         : N              
+DATA_OUT_EXT[0]              : 90        : output : LVTTL             :         : 2         : N              
+DATA_OUT_EXT[4]              : 91        : output : LVTTL             :         : 2         : N              
+ADDR_OUT_EXT[9]              : 92        : output : LVTTL             :         : 2         : N              
+VCCINT                       : 93        : power  :                   : 1.5V    :           :                
+GND                          : 94        : gnd    :                   :         : 1         :                
+VCCIO2                       : 95        : power  :                   : 3.3V    : 2         :                
+GND                          : 96        : gnd    :                   :         : 1         :                
+NWE_EXT                      : 97        : output : LVTTL             :         : 2         : N              
+ADDR_OUT_EXT[7]              : 98        : output : LVTTL             :         : 2         : N              
+GND*                         : 99        :        :                   :         : 2         :                
+GND*                         : 100       :        :                   :         : 2         :                

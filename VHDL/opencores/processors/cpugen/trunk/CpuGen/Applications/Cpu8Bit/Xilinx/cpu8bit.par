@@ -1,0 +1,125 @@
+Release 6.1.03i Par G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+AMD64::  Fri Jan 09 23:23:37 2004
+
+
+C:/Xilinx/bin/nt/par.exe -w -intstyle ise -ol std -t 1 cpu8bit_map.ncd
+cpu8bit.ncd cpu8bit.pcf 
+
+
+Constraints file: cpu8bit.pcf
+
+Loading device database for application Par from file "cpu8bit_map.ncd".
+   "cpu8bit" is an NCD, version 2.38, device xc2s50e, package tq144, speed -7
+Loading device for application Par from file '2s50e.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.17 2003-11-04.
+
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         2 out of 4      50%
+   Number of External IOBs            38 out of 98     38%
+      Number of LOCed External IOBs    0 out of 38      0%
+
+   Number of BLOCKRAMs                 5 out of 8      62%
+   Number of SLICEs                  562 out of 768    73%
+
+   Number of GCLKs                     2 out of 4      50%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98a877) REAL time: 0 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+..........................................................
+Phase 5.8 (Checksum:b0e9be) REAL time: 6 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 6 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 6 secs 
+
+Writing design to file cpu8bit.ncd.
+
+Total REAL time to Placer completion: 7 secs 
+Total CPU time to Placer completion: 6 secs 
+
+
+Phase 1: 4458 unrouted;       REAL time: 7 secs 
+
+Phase 2: 4129 unrouted;       REAL time: 8 secs 
+
+Phase 3: 1649 unrouted;       REAL time: 8 secs 
+
+Phase 4: 0 unrouted;       REAL time: 8 secs 
+
+Total REAL time to Router completion: 9 secs 
+Total CPU time to Router completion: 8 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|        UCLK_BUFGP          |  Global  |  290   |  0.259     |  0.483      |
++----------------------------+----------+--------+------------+-------------+
+|      NRESET_BUFGP          |  Global  |  260   |  0.050     |  0.357      |
++----------------------------+----------+--------+------------+-------------+
+
+
+   The Delay Summary Report
+
+   The SCORE FOR THIS DESIGN is: 296
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        1.644
+   The MAXIMUM PIN DELAY IS:                               7.869
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   6.599
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 1.00   < d < 2.00  < d < 3.00  < d < 4.00  < d < 8.00  d >= 8.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+        1593        1454         884         303         224           0
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 9 secs 
+Total CPU time to PAR completion: 8 secs 
+
+Peak Memory Usage:  55 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file cpu8bit.ncd.
+
+
+PAR done.

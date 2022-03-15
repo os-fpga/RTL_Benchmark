@@ -1,0 +1,490 @@
+Analysis & Synthesis report for niosapex compilation.
+Sat Feb 28 12:40:13 2004
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+
+Command: quartus_map --import_settings_files=on --export_settings_files=off niosapex -c niosapex
+
+
+
+---------------------
+; Table of Contents ;
+---------------------
+   1. Legal Notice
+   2. Flow Summary
+   3. Flow Settings
+   4. Flow Elapsed Time
+   5. Analysis & Synthesis Summary
+   6. Analysis & Synthesis Settings
+   7. Hierarchy
+   8. State Machine - cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c
+   9. State Machine - cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c
+  10. State Machine - cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c
+  11. Analysis & Synthesis Resource Utilization by Entity
+  12. Analysis & Synthesis Equations
+  13. Analysis & Synthesis Messages
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
+
+-----------------------------------------------------------------
+; Flow Summary                                                  ;
+-----------------------------------------------------------------
+; Flow Status           ; Successful - Sat Feb 28 12:40:13 2004 ;
+; Compiler Setting Name ; niosapex                              ;
+; Top-level Entity Name ; niosapex                              ;
+; Family                ; APEX20KE                              ;
+; Device                ; EP20K200EFC484-2X                     ;
+; Total logic elements  ; 953                                   ;
+; Total pins            ; 35                                    ;
+; Total memory bits     ; 16,896                                ;
+; Total PLLs            ; 0                                     ;
+-----------------------------------------------------------------
+
+
+-----------------------------------------------
+; Flow Settings                               ;
+-----------------------------------------------
+; Option                ; Setting             ;
+-----------------------------------------------
+; Start date & time     ; 02/28/2004 12:39:59 ;
+; Main task             ; Compilation         ;
+; Compiler Setting Name ; niosapex            ;
+-----------------------------------------------
+
+
+---------------------------------------
+; Flow Elapsed Time                   ;
+---------------------------------------
+; Module Name          ; Elapsed Time ;
+---------------------------------------
+; Analysis & Synthesis ; 00:00:14     ;
+; Total                ; 00:00:14     ;
+---------------------------------------
+
+
+-----------------------------------------------------------------------
+; Analysis & Synthesis Summary                                        ;
+-----------------------------------------------------------------------
+; Analysis & Synthesis Status ; Successful - Sat Feb 28 12:40:13 2004 ;
+; Compiler Setting Name       ; niosapex                              ;
+; Top-level Entity Name       ; niosapex                              ;
+; Family                      ; APEX20KE                              ;
+; Total logic elements        ; 953                                   ;
+; Total pins                  ; 35                                    ;
+; Total memory bits           ; 16,896                                ;
+; Total PLLs                  ; 0                                     ;
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------
+; Analysis & Synthesis Settings                     ;
+-----------------------------------------------------
+; Option                                ; Setting   ;
+-----------------------------------------------------
+; Perform gate-level register retiming  ; Off       ;
+; Perform WYSIWYG primitive resynthesis ; Off       ;
+; Focus entity name                     ; |niosapex ;
+; Family name                           ; APEX20KE  ;
+; Preserve fewer node names             ; On        ;
+; Disk space/compilation speed tradeoff ; Normal    ;
+-----------------------------------------------------
+
+
+--------------
+; Hierarchy  ;
+--------------
+Hierarchy
+  niosapex
+    cpu_a:inst9
+      rx_uart:inst
+        lpm_counter:rx_clk_count_rtl_29
+          alt_synch_counter:wysi_counter
+      cpu:inst1
+        cpu_iu:I1
+          lpm_counter:nreset_v_rtl_25
+            alt_synch_counter:wysi_counter
+        cpu_cu:I2
+          lpm_counter:nreset_v_rtl_21
+            alt_synch_counter:wysi_counter
+        cpu_du:I3
+          lpm_counter:nreset_v_rtl_22
+            alt_synch_counter:wysi_counter
+        cpu_oa:I4
+          lpm_counter:nreset_v_rtl_23
+            alt_synch_counter:wysi_counter
+        cpu_wd:I5
+      tx_uart:inst2
+        lpm_counter:tx_16_count_rtl_27
+          alt_synch_counter:wysi_counter
+        lpm_counter:tx_bit_count_rtl_26
+          alt_synch_counter:wysi_counter
+        lpm_counter:tx_clk_count_rtl_24
+          alt_synch_counter:wysi_counter
+      h2v:inst4
+      interrupt:inst5
+      timer:inst10
+        lpm_counter:tmr_low_rtl_28
+          alt_synch_counter:wysi_counter
+      stack:inst11
+        lpm_ram_dq0:inst
+          lpm_ram_dq:lpm_ram_dq_component
+            altram:sram
+        stack_if:inst8
+      waitstategen:inst12
+      lpm_ram_dq1:inst15
+        lpm_ram_dq:lpm_ram_dq_component
+          altram:sram
+      ctrl8cpuapex:inst19
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; State Machine - cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c                                                                                                                                                                                                                                                                                                      ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Name          ; code_c~35 ; code_c~34 ; code_c~33 ; code_c~32 ; code_c~31 ; code_c~30 ; code_c~29 ; code_c~28 ; code_c~27 ; code_c~26 ; code_c~25 ; code_c~24 ; code_c~23 ; code_c~22 ; code_c~21 ; code_c~20 ; code_c~19 ; code_c~18 ; code_c~17 ; code_c~16 ; code_c~15 ; code_c~14 ; code_c~13 ; code_c~12 ; code_c~11 ; code_c~10 ; code_c~9 ; code_c~8 ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; code_c.nop_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ;
+; code_c.rol_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 1        ;
+; code_c.ror_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 1        ;
+; code_c.shl_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 1        ;
+; code_c.shr_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.not_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.cla_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skz_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skc_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknz_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknc_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rts_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rti_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jmp_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jms_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sta_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.lda_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xor_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.add_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.and_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sub_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.or_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ldai_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xori_i ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.addi_i ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.andi_i ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subi_i ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ori_i  ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------
+; State Machine - cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c ;
+------------------------------------------
+; Name          ; S_c~10 ; S_c~9 ; S_c~8 ;
+------------------------------------------
+; S_c.reset     ; 0      ; 0     ; 0     ;
+; S_c.normal    ; 0      ; 1     ; 1     ;
+; S_c.interrupt ; 1      ; 0     ; 1     ;
+------------------------------------------
+
+
+-------------------------------------------------
+; State Machine - cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c ;
+-------------------------------------------------
+; Name        ; E_c~11 ; E_c~10 ; E_c~9 ; E_c~8 ;
+-------------------------------------------------
+; E_c.none_e  ; 0      ; 0      ; 0     ; 0     ;
+; E_c.dwait_e ; 0      ; 0      ; 1     ; 1     ;
+; E_c.iwait_e ; 0      ; 1      ; 0     ; 1     ;
+; E_c.int_e   ; 1      ; 0      ; 0     ; 1     ;
+-------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Compilation Hierarchy Node                      ; Logic Cells ; Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                  ;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; |niosapex                                       ; 953 (133)   ; 294       ; 1280        ; 35   ; 0            ; 659 (133)    ; 34 (0)            ; 260 (0)          ; |niosapex                                                                                            ;
+;    |cpu_a:inst9|                                ; 820 (13)    ; 294       ; 1280        ; 0    ; 0            ; 526 (2)      ; 34 (1)            ; 260 (10)         ; |niosapex|cpu_a:inst9                                                                                ;
+;       |cpu:inst1|                               ; 430 (0)     ; 99        ; 0           ; 0    ; 0            ; 331 (0)      ; 2 (0)             ; 97 (0)           ; |niosapex|cpu_a:inst9|cpu:inst1                                                                      ;
+;          |cpu_cu:I2|                            ; 117 (115)   ; 30        ; 0           ; 0    ; 0            ; 87 (87)      ; 1 (1)             ; 29 (27)          ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2                                                            ;
+;             |lpm_counter:nreset_v_rtl_21|       ; 2 (0)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|lpm_counter:nreset_v_rtl_21                                ;
+;                |alt_synch_counter:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|lpm_counter:nreset_v_rtl_21|alt_synch_counter:wysi_counter ;
+;          |cpu_du:I3|                            ; 114 (112)   ; 21        ; 0           ; 0    ; 0            ; 93 (93)      ; 0 (0)             ; 21 (19)          ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3                                                            ;
+;             |lpm_counter:nreset_v_rtl_22|       ; 2 (0)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|lpm_counter:nreset_v_rtl_22                                ;
+;                |alt_synch_counter:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|lpm_counter:nreset_v_rtl_22|alt_synch_counter:wysi_counter ;
+;          |cpu_iu:I1|                            ; 89 (87)     ; 12        ; 0           ; 0    ; 0            ; 77 (77)      ; 1 (1)             ; 11 (9)           ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_iu:I1                                                            ;
+;             |lpm_counter:nreset_v_rtl_25|       ; 2 (0)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_iu:I1|lpm_counter:nreset_v_rtl_25                                ;
+;                |alt_synch_counter:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_iu:I1|lpm_counter:nreset_v_rtl_25|alt_synch_counter:wysi_counter ;
+;          |cpu_oa:I4|                            ; 110 (108)   ; 36        ; 0           ; 0    ; 0            ; 74 (74)      ; 0 (0)             ; 36 (34)          ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_oa:I4                                                            ;
+;             |lpm_counter:nreset_v_rtl_23|       ; 2 (0)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_oa:I4|lpm_counter:nreset_v_rtl_23                                ;
+;                |alt_synch_counter:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |niosapex|cpu_a:inst9|cpu:inst1|cpu_oa:I4|lpm_counter:nreset_v_rtl_23|alt_synch_counter:wysi_counter ;
+;       |ctrl8cpuapex:inst19|                     ; 9 (9)       ; 2         ; 0           ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 2 (2)            ; |niosapex|cpu_a:inst9|ctrl8cpuapex:inst19                                                            ;
+;       |h2v:inst4|                               ; 36 (36)     ; 12        ; 0           ; 0    ; 0            ; 24 (24)      ; 1 (1)             ; 11 (11)          ; |niosapex|cpu_a:inst9|h2v:inst4                                                                      ;
+;       |interrupt:inst5|                         ; 23 (23)     ; 20        ; 0           ; 0    ; 0            ; 3 (3)        ; 4 (4)             ; 16 (16)          ; |niosapex|cpu_a:inst9|interrupt:inst5                                                                ;
+;       |lpm_ram_dq1:inst15|                      ; 0 (0)       ; 0         ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|lpm_ram_dq1:inst15                                                             ;
+;          |lpm_ram_dq:lpm_ram_dq_component|      ; 0 (0)       ; 0         ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|lpm_ram_dq1:inst15|lpm_ram_dq:lpm_ram_dq_component                             ;
+;             |altram:sram|                       ; 0 (0)       ; 0         ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|lpm_ram_dq1:inst15|lpm_ram_dq:lpm_ram_dq_component|altram:sram                 ;
+;       |rx_uart:inst|                            ; 90 (82)     ; 55        ; 0           ; 0    ; 0            ; 35 (35)      ; 17 (17)           ; 38 (30)          ; |niosapex|cpu_a:inst9|rx_uart:inst                                                                   ;
+;          |lpm_counter:rx_clk_count_rtl_29|      ; 8 (0)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |niosapex|cpu_a:inst9|rx_uart:inst|lpm_counter:rx_clk_count_rtl_29                                   ;
+;             |alt_synch_counter:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |niosapex|cpu_a:inst9|rx_uart:inst|lpm_counter:rx_clk_count_rtl_29|alt_synch_counter:wysi_counter    ;
+;       |stack:inst11|                            ; 32 (0)      ; 8         ; 256         ; 0    ; 0            ; 24 (0)       ; 0 (0)             ; 8 (0)            ; |niosapex|cpu_a:inst9|stack:inst11                                                                   ;
+;          |lpm_ram_dq0:inst|                     ; 0 (0)       ; 0         ; 256         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|stack:inst11|lpm_ram_dq0:inst                                                  ;
+;             |lpm_ram_dq:lpm_ram_dq_component|   ; 0 (0)       ; 0         ; 256         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|stack:inst11|lpm_ram_dq0:inst|lpm_ram_dq:lpm_ram_dq_component                  ;
+;                |altram:sram|                    ; 0 (0)       ; 0         ; 256         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |niosapex|cpu_a:inst9|stack:inst11|lpm_ram_dq0:inst|lpm_ram_dq:lpm_ram_dq_component|altram:sram      ;
+;          |stack_if:inst8|                       ; 32 (32)     ; 8         ; 0           ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 8 (8)            ; |niosapex|cpu_a:inst9|stack:inst11|stack_if:inst8                                                    ;
+;       |timer:inst10|                            ; 71 (63)     ; 27        ; 0           ; 0    ; 0            ; 44 (44)      ; 0 (0)             ; 27 (19)          ; |niosapex|cpu_a:inst9|timer:inst10                                                                   ;
+;          |lpm_counter:tmr_low_rtl_28|           ; 8 (0)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |niosapex|cpu_a:inst9|timer:inst10|lpm_counter:tmr_low_rtl_28                                        ;
+;             |alt_synch_counter:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |niosapex|cpu_a:inst9|timer:inst10|lpm_counter:tmr_low_rtl_28|alt_synch_counter:wysi_counter         ;
+;       |tx_uart:inst2|                           ; 67 (51)     ; 44        ; 0           ; 0    ; 0            ; 23 (23)      ; 9 (9)             ; 35 (19)          ; |niosapex|cpu_a:inst9|tx_uart:inst2                                                                  ;
+;          |lpm_counter:tx_16_count_rtl_27|       ; 4 (0)       ; 4         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_16_count_rtl_27                                   ;
+;             |alt_synch_counter:wysi_counter|    ; 4 (4)       ; 4         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_16_count_rtl_27|alt_synch_counter:wysi_counter    ;
+;          |lpm_counter:tx_bit_count_rtl_26|      ; 4 (0)       ; 4         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_bit_count_rtl_26                                  ;
+;             |alt_synch_counter:wysi_counter|    ; 4 (4)       ; 4         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_bit_count_rtl_26|alt_synch_counter:wysi_counter   ;
+;          |lpm_counter:tx_clk_count_rtl_24|      ; 8 (0)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_clk_count_rtl_24                                  ;
+;             |alt_synch_counter:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |niosapex|cpu_a:inst9|tx_uart:inst2|lpm_counter:tx_clk_count_rtl_24|alt_synch_counter:wysi_counter   ;
+;       |waitstategen:inst12|                     ; 49 (49)     ; 16        ; 0           ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 16 (16)          ; |niosapex|cpu_a:inst9|waitstategen:inst12                                                            ;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------
+; Analysis & Synthesis Equations  ;
+-----------------------------------
+The equations can be found in C:\CpuGen\Applications\NiosApex\niosapex.map.eqn.
+
+
+----------------------------------
+; Analysis & Synthesis Messages  ;
+----------------------------------
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+  Info: Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+  Info: Processing started: Sat Feb 28 12:39:59 2004
+Info: Command: quartus_map --import_settings_files=on --export_settings_files=off niosapex -c niosapex
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\waitstategen.vhd
+  Info: Found design unit 1: waitstategen-waitstategen_struct
+  Info: Found entity 1: waitstategen
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\h2v.vhd
+  Info: Found design unit 1: h2v-h2v_struct
+  Info: Found entity 1: h2v
+Info: Found 2 design units and 0 entities in source file C:\CpuGen\Applications\Components\Utils_pkg.vhd
+  Info: Found design unit 1: utils_pkg
+  Info: Found design unit 2: utils_pkg-body
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\stack_if.vhd
+  Info: Found design unit 1: stack_if-struct
+  Info: Found entity 1: stack_if
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\timer.vhd
+  Info: Found design unit 1: timer-tmr_struct
+  Info: Found entity 1: timer
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\interrupt.vhd
+  Info: Found design unit 1: interrupt-interrupt_struct
+  Info: Found entity 1: interrupt
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\rx_uart.vhd
+  Info: Found design unit 1: rx_uart-rx_uart_struct
+  Info: Found entity 1: rx_uart
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\tx_uart.vhd
+  Info: Found design unit 1: tx_uart-tx_uart_struct
+  Info: Found entity 1: tx_uart
+Info: Found 2 design units and 0 entities in source file C:\CpuGen\Applications\NiosApex\cpu_utils.vhd
+  Info: Found design unit 1: cpu_utils
+  Info: Found design unit 2: cpu_utils-body
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_cu.vhd
+  Info: Found design unit 1: cpu_cu-cu_struct
+  Info: Found entity 1: cpu_cu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_du.vhd
+  Info: Found design unit 1: cpu_du-du_struct
+  Info: Found entity 1: cpu_du
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_iu.vhd
+  Info: Found design unit 1: cpu_iu-iu_struct
+  Info: Found entity 1: cpu_iu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_oa.vhd
+  Info: Found design unit 1: cpu_oa-oa_struct
+  Info: Found entity 1: cpu_oa
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_wd.vhd
+  Info: Found design unit 1: cpu_wd-wd_struct
+  Info: Found entity 1: cpu_wd
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu.vhd
+  Info: Found design unit 1: cpu-cpu_arch
+  Info: Found entity 1: cpu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\Components\ctrl8cpuApex.vhd
+  Info: Found design unit 1: ctrl8cpuapex-ctrl8cpuapex_struct
+  Info: Found entity 1: ctrl8cpuapex
+Info: Found 1 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\cpu_a.bdf
+  Info: Found entity 1: cpu_a
+Info: Found 1 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\arch_cpu.bdf
+  Info: Found entity 1: arch_cpu
+Info: Found 1 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\stack.bdf
+  Info: Found entity 1: stack
+Info: Found 1 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\niosapex.bdf
+  Info: Found entity 1: niosapex
+Warning: Feature SignalTap II is not available with your current license
+Warning: VHDL Process Statement warning at ctrl8cpuApex.vhd(60): signal nreset is in statement, but is not in sensitivity list
+Info: VHDL Case Statement information at cpu_iu.vhd(114): OTHERS choice is never selected
+Info: VHDL Case Statement information at cpu_du.vhd(231): OTHERS choice is never selected
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\lpm_ram_dq1.vhd
+  Info: Found design unit 1: lpm_ram_dq1-syn
+  Info: Found entity 1: lpm_ram_dq1
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_ram_dq.tdf
+  Info: Found entity 1: lpm_ram_dq
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altram.tdf
+  Info: Found entity 1: altram
+Info: Found 2 design units and 1 entities in source file C:\CpuGen\Applications\NiosApex\lpm_ram_dq0.vhd
+  Info: Found design unit 1: lpm_ram_dq0-syn
+  Info: Found entity 1: lpm_ram_dq0
+Info: Power-up level of register cpu_a:inst9|tx_uart:inst2|tx_uart_shift[10] is not specified -- using unspecified power-up level
+Warning: Reduced register cpu_a:inst9|tx_uart:inst2|tx_uart_shift[10] with stuck data_in port to stuck value VCC
+Info: Power-up level of register cpu_a:inst9|tx_uart:inst2|tx_uart_shift[9] is not specified -- using unspecified power-up level
+Warning: Reduced register cpu_a:inst9|tx_uart:inst2|tx_uart_shift[9] with stuck data_in port to stuck value VCC
+Info: Inferred 9 megafunctions from design logic
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu_a:inst9|cpu:inst1|cpu_cu:I2|nreset_v_rtl_21
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu_a:inst9|cpu:inst1|cpu_du:I3|nreset_v_rtl_22
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu_a:inst9|cpu:inst1|cpu_oa:I4|nreset_v_rtl_23
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: cpu_a:inst9|tx_uart:inst2|tx_clk_count_rtl_24
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu_a:inst9|cpu:inst1|cpu_iu:I1|nreset_v_rtl_25
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: cpu_a:inst9|tx_uart:inst2|tx_bit_count_rtl_26
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: cpu_a:inst9|tx_uart:inst2|tx_16_count_rtl_27
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: cpu_a:inst9|timer:inst10|tmr_low_rtl_28
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: cpu_a:inst9|rx_uart:inst|rx_clk_count_rtl_29
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_counter.tdf
+  Info: Found entity 1: lpm_counter
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\alt_synch_counter.tdf
+  Info: Found entity 1: alt_synch_counter
+Info: State machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c contains 28 states and 0 state bits
+Info: State machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c contains 3 states and 0 state bits
+Info: State machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c contains 4 states and 0 state bits
+Info: Selected Auto state machine encoding method for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c
+Info: Encoding result for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c
+  Info: Completed encoding using 28 state bits
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~35
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~34
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~33
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~32
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~31
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~30
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~29
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~28
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~27
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~26
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~25
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~24
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~23
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~22
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~21
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~20
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~19
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~18
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~17
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~16
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~15
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~14
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~13
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~12
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~11
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~10
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~9
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c~8
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.nop_i uses code string 0000000000000000000000000000
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.rol_i uses code string 0000000000000000000000000011
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.ror_i uses code string 0000000000000000000000000101
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.shl_i uses code string 0000000000000000000000001001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.shr_i uses code string 0000000000000000000000010001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.not_i uses code string 0000000000000000000000100001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.cla_i uses code string 0000000000000000000001000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.skz_i uses code string 0000000000000000000010000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.skc_i uses code string 0000000000000000000100000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.sknz_i uses code string 0000000000000000001000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.sknc_i uses code string 0000000000000000010000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.rts_i uses code string 0000000000000000100000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.rti_i uses code string 0000000000000001000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.jmp_i uses code string 0000000000000010000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.jms_i uses code string 0000000000000100000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.sta_i uses code string 0000000000001000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.lda_i uses code string 0000000000010000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.xor_i uses code string 0000000000100000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.add_i uses code string 0000000001000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.and_i uses code string 0000000010000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.sub_i uses code string 0000000100000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.or_i uses code string 0000001000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.ldai_i uses code string 0000010000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.xori_i uses code string 0000100000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.addi_i uses code string 0001000000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.andi_i uses code string 0010000000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.subi_i uses code string 0100000000000000000000000001
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_du:I3|code_c.ori_i uses code string 1000000000000000000000000001
+Info: Selected Auto state machine encoding method for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c
+Info: Encoding result for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c
+  Info: Completed encoding using 3 state bits
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c~10
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c~9
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c~8
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c.reset uses code string 000
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c.normal uses code string 011
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|S_c.interrupt uses code string 101
+Info: Selected Auto state machine encoding method for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c
+Info: Encoding result for state machine |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c
+  Info: Completed encoding using 4 state bits
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c~11
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c~10
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c~9
+    Info: Encoded state bit cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c~8
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c.none_e uses code string 0000
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c.dwait_e uses code string 0011
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c.iwait_e uses code string 0101
+  Info: State |niosapex|cpu_a:inst9|cpu:inst1|cpu_cu:I2|E_c.int_e uses code string 1001
+Info: Ignored 15 buffer(s)
+  Info: Ignored 15 SOFT buffer(s)
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Reduced register cpu_a:inst9|rx_uart:inst|rx_8_count[3] with stuck data_in port to stuck value GND
+Warning: Output pins are stuck at VCC or GND
+  Warning: Pin display_rw stuck at GND
+  Warning: Pin HEADER_SWITCH_enable1_n stuck at GND
+  Warning: Pin hex[7] stuck at VCC
+  Warning: Pin hex[6] stuck at VCC
+  Warning: Pin hex[5] stuck at VCC
+  Warning: Pin hex[4] stuck at VCC
+  Warning: Pin hex[3] stuck at VCC
+  Warning: Pin hex[2] stuck at VCC
+  Warning: Pin hex[1] stuck at VCC
+  Warning: Pin hex[0] stuck at VCC
+Warning: Design contains 9 input pin(s) that do not drive logic
+  Warning: No output dependent on input pin user_pb2
+  Warning: No output dependent on input pin user_sw[7]
+  Warning: No output dependent on input pin user_sw[6]
+  Warning: No output dependent on input pin user_sw[5]
+  Warning: No output dependent on input pin user_sw[4]
+  Warning: No output dependent on input pin user_sw[3]
+  Warning: No output dependent on input pin user_sw[2]
+  Warning: No output dependent on input pin user_sw[1]
+  Warning: No output dependent on input pin user_sw[0]
+Info: Implemented 1012 device resources after synthesis - the final resource count might be different
+  Info: Implemented 12 input pins
+  Info: Implemented 23 output pins
+  Info: Implemented 953 logic cells
+  Info: Implemented 24 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
+  Info: Processing ended: Sat Feb 28 12:40:13 2004
+  Info: Elapsed time: 00:00:14
+Info: Writing report file niosapex.map.rpt
+
+

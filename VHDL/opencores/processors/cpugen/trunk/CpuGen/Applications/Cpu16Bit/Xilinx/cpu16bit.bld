@@ -1,0 +1,50 @@
+Release 6.1.03i - ngdbuild G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\cpugen\applications\cpu16bit\xilinx/_ngo -i -p xc3s50-pq208-4 cpu16bit.ngc
+cpu16bit.ngd 
+
+Reading NGO file "C:/CpuGen/Applications/Cpu16Bit/Xilinx/cpu16bit.ngc" ...
+Reading component libraries for design expansion...
+Launcher: "ram.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu16bit\xilinx\_ngo\ram.ngo"...
+blkmemsp_v5_0, Coregen 6.1.02i
+Launcher: "sram.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu16bit\xilinx\_ngo\sram.ngo"...
+blkmemsp_v5_0, Coregen 6.1.02i
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:477 - clock net 'NRESET_IN_BUFGP' has non-clock connections.
+   These problematic connections include:
+     pin I0 on block XLXI_4_addr_c_Aset_INV1 with type LUT1,
+     pin I3 on block Cpu16_I2_Ker156981_SW3 with type LUT4,
+     pin I0 on block Cpu16_I4_Ker182841 with type LUT3,
+     pin I0 on block XLXI_5_ndre_out1 with type LUT2,
+     pin I1 on block XLXI_5_Ker129341 with type LUT4,
+     pin I0 on block Cpu16_I1__n00101 with type LUT2,
+     pin I0 on block Cpu16_I2_TD_x<2>72 with type LUT4,
+     pin I0 on block Cpu16_I2_TD_x<1>97 with type LUT4,
+     pin I0 on block Cpu16_I2_TD_x<0>67 with type LUT4,
+     pin I2 on block Cpu16_I2_ndre_x1_SW1_SW0_SW0_SW0 with type LUT4,
+     pin I0 on block Cpu16_I4_data_ox<0>1 with type LUT3,
+     pin I0 on block Cpu16_I4__n01621 with type LUT2,
+     pin I2 on block Cpu16_I2_ndre_x1_SW6_SW0_SW0_SW0 with type LUT4,
+     pin I0 on block Cpu16_I4_data_ox<15>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<14>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<13>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<12>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<11>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<10>1 with type LUT3,
+     pin I0 on block Cpu16_I4_data_ox<9>1 with type LUT3
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 40048 kilobytes
+
+Writing NGD file "cpu16bit.ngd" ...
+
+Writing NGDBUILD log file "cpu16bit.bld"...

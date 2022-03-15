@@ -1,0 +1,47 @@
+FILES
+{
+	VHDL_FILE = ..\Components\waitstategen.vhd;
+	VHDL_FILE = ..\Components\h2v.vhd;
+	VHDL_FILE = ..\Components\Utils_pkg.vhd;
+	VHDL_FILE = ..\Components\stack_if.vhd;
+	VHDL_FILE = ..\Components\timer.vhd;
+	VHDL_FILE = ..\Components\interrupt.vhd;
+	VHDL_FILE = ..\Components\rx_uart.vhd;
+	VHDL_FILE = ..\Components\tx_uart.vhd;
+	VHDL_FILE = cpu_utils.vhd;
+	VHDL_FILE = cpu_cu.vhd;
+	VHDL_FILE = cpu_du.vhd;
+	VHDL_FILE = cpu_iu.vhd;
+	VHDL_FILE = cpu_oa.vhd;
+	VHDL_FILE = cpu_wd.vhd;
+	VHDL_FILE = cpu.vhd;
+	VHDL_FILE = ..\Components\ctrl8cpuApex.vhd;
+	BDF_FILE = cpu_a.bdf;
+	BDF_FILE = arch_cpu.bdf;
+	BDF_FILE = stack.bdf;
+	VECTOR_WAVEFORM_FILE = stack.vwf;
+	VECTOR_WAVEFORM_FILE = qSoc.vwf;
+	BDF_FILE = niosapex.bdf;
+}
+COMPILER_SETTINGS_LIST
+{
+	COMPILER_SETTINGS = qSoc;
+	COMPILER_SETTINGS = FPGA_UC;
+	COMPILER_SETTINGS = fpga_soc;
+	COMPILER_SETTINGS = cs_decoder;
+	COMPILER_SETTINGS = interrupt;
+	COMPILER_SETTINGS = microcontroller;
+	COMPILER_SETTINGS = niosapex;
+}
+SIMULATOR_SETTINGS_LIST
+{
+	SIMULATOR_SETTINGS = qSoc;
+	SIMULATOR_SETTINGS = fpga_soc;
+	SIMULATOR_SETTINGS = fifo_test;
+	SIMULATOR_SETTINGS = stack;
+}
+SOFTWARE_SETTINGS_LIST
+{
+	SOFTWARE_SETTINGS = Debug;
+	SOFTWARE_SETTINGS = Release;
+}

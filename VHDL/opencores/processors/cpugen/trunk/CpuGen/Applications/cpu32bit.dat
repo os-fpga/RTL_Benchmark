@@ -1,0 +1,39 @@
+--
+-- Cpu Generator
+--
+-- gferrante@opencores.org
+--
+
+istr_word_len 32
+
+istr_addr_len 28
+
+data_word_len 32
+
+data_addr_len 28
+
+rom_addr_len 10
+
+ram_addr_len 10
+
+stack_type 0
+
+stack_deep 8
+
+interrupt 1
+
+indirect_address 1
+
+istr_variable_latency 0
+
+data_variable_latency 1
+
+assembler_file_name .\applications\cpu32bit\soc.asm
+
+hardware_directory .\applications\cpu32bit\
+
+software_directory .\applications\cpu32bit\
+
+istruction_set .\applications\cpu32bit\cpuC.ist
+
+cpu_id T

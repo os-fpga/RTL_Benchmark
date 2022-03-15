@@ -1,0 +1,50 @@
+# Xilinx CORE Generator 6.1.03i
+# Username = P3000
+# COREGenPath = C:\Xilinx\coregen
+# ProjectPath = C:\CpuGen\Applications\Cpu32bit\Xilinx
+# ExpandedProjectPath = C:\CpuGen\Applications\Cpu32bit\Xilinx
+# OverwriteFiles = true
+# Core name: ram
+# Number of Primitives in design: 2
+# Number of CLBs used in design cannot be determined when there is no RPMed logic
+# Number of Slices used in design cannot be determined when there is no RPMed logic
+# Number of LUT sites used in design: 0
+# Number of LUTs used in design: 0
+# Number of REG used in design: 0
+# Number of SRL16s used in design: 0
+# Number of Distributed RAM primitives used in design: 0
+# Number of Block Memories used in design: 2
+# Number of Dedicated Multipliers used in design: 0
+# Number of HU_SETs used: 0
+# 
+SET BusFormat = BusFormatAngleBracketNotRipped
+SET XilinxFamily = Spartan3
+SET OutputOption = OutputProducts
+SET FlowVendor = Foundation_iSE
+SET FormalVerification = None
+SET OutputProducts = ImpNetlist ASYSymbol VHDLSim VerilogSim
+SELECT Single_Port_Block_Memory Spartan3 Xilinx,_Inc. 5.0
+CSET primitive_selection = Optimize_For_Area
+CSET init_value = 0
+CSET register_inputs = false
+CSET write_enable_polarity = Active_High
+CSET init_pin = false
+CSET initialization_pin_polarity = Active_High
+CSET global_init_value = 0
+CSET select_primitive = 16kx1
+CSET enable_pin = false
+CSET write_mode = Read_After_Write
+CSET port_configuration = Read_And_Write
+CSET component_name = ram
+CSET active_clock_edge = Rising_Edge_Triggered
+CSET handshaking_pins = false
+CSET width = 32
+CSET load_init_file = true
+CSET enable_pin_polarity = Active_High
+CSET additional_output_pipe_stages = 0
+CSET coefficient_file = C:\CpuGen\Applications\Cpu32bit\ramT.coe
+CSET has_limit_data_pitch = false
+CSET limit_data_pitch = 18
+CSET depth = 1024
+GENERATE
+

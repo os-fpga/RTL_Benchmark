@@ -1,0 +1,2236 @@
+--B1_stack_addrs_c[0][7] is cpu_iu:I1|stack_addrs_c[0][7] at LC4_A22
+--operation mode is normal
+
+B1_stack_addrs_c[0][7]_lut_out = A1L54 & (B1L84 # !C1L74) # !A1L54 & B1L84 & C1L74;
+B1_stack_addrs_c[0][7] = DFFEA(B1_stack_addrs_c[0][7]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1_pc[7] is cpu_iu:I1|pc[7] at LC1_A20
+--operation mode is normal
+
+B1_pc[7]_lut_out = B1L36 & B1L54;
+B1_pc[7] = DFFEA(B1_pc[7]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--B1L34 is cpu_iu:I1|iaddr_x[7]~251 at LC2_A22
+--operation mode is normal
+
+B1L34 = B1_pc[7] & (G1_unreg_res_node[7] # C1L44) # !B1_pc[7] & G1_unreg_res_node[7] & !C1L44;
+
+
+--E1_ipage_c[1] is cpu_oa:I4|ipage_c[1] at LC4_C14
+--operation mode is normal
+
+E1_ipage_c[1]_lut_out = C1_nreset_c & (E1L82 # E1L01 & E1L62);
+E1_ipage_c[1] = DFFEA(E1_ipage_c[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1_nreset_d is cpu_du:I3|nreset_d at LC5_C19
+--operation mode is normal
+
+D1_nreset_d_lut_out = C1_nreset_c;
+D1_nreset_d = DFFEA(D1_nreset_d_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L66 is cpu_du:I3|nreset_i~7 at LC1_C20
+--operation mode is normal
+
+D1L66 = B1L36 & D1_nreset_d;
+
+
+--C1_valid_c is cpu_cu:I2|valid_c at LC6_C15
+--operation mode is normal
+
+C1_valid_c_lut_out = !D1L25 & (!C1L23 # !C1L73) # !D1L66;
+C1_valid_c = DFFEA(C1_valid_c_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_data_c_y[1] is cpu_cu:I2|data_c_y[1] at LC1_C16
+--operation mode is normal
+
+C1_data_c_y[1]_lut_out = C1L61;
+C1_data_c_y[1] = DFFEA(C1_data_c_y[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_data_c_y[2] is cpu_cu:I2|data_c_y[2] at LC3_C16
+--operation mode is normal
+
+C1_data_c_y[2]_lut_out = D1L66 & idata[3] & !idata[2] & !idata[1];
+C1_data_c_y[2] = DFFEA(C1_data_c_y[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L35 is cpu_du:I3|i~275 at LC8_C16
+--operation mode is normal
+
+D1L35 = C1_data_c_y[1] & !C1_data_c_y[2];
+
+
+--C1_data_c_y[0] is cpu_cu:I2|data_c_y[0] at LC3_C17
+--operation mode is normal
+
+C1_data_c_y[0]_lut_out = C1L41 & B1L36 & D1_nreset_d;
+C1_data_c_y[0] = DFFEA(C1_data_c_y[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L73 is cpu_cu:I2|i~244 at LC4_C21
+--operation mode is normal
+
+C1L73 = C1_valid_c & D1L66 & D1L35 & !C1_data_c_y[0];
+
+
+--A1L77 is rtl~1732 at LC8_C13
+--operation mode is normal
+
+A1L77 = idata[7] & (!idata[6] # !idata[5]);
+
+
+--C1L81 is cpu_cu:I2|data_c_x[2]~221 at LC3_C19
+--operation mode is normal
+
+C1L81 = !idata[2] & !idata[1];
+
+
+--C1L41 is cpu_cu:I2|data_c_x[0]~45 at LC4_C17
+--operation mode is normal
+
+C1L41 = idata[0] & idata[3] # !idata[0] & !idata[3] & A1L77 # !C1L81;
+
+
+--C1L43 is cpu_cu:I2|i~187 at LC2_C19
+--operation mode is normal
+
+C1L43 = C1L41 & B1L36 & D1_nreset_d & !C1L61;
+
+
+--C1L23 is cpu_cu:I2|i~6 at LC4_C19
+--operation mode is normal
+
+C1L23 = C1L43 & !idata[3];
+
+
+--D1_nreset_e is cpu_du:I3|nreset_e at LC5_C17
+--operation mode is normal
+
+D1_nreset_e_lut_out = D1_nreset_d;
+D1_nreset_e = DFFEA(D1_nreset_e_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L34 is cpu_du:I3|i~0 at LC1_C17
+--operation mode is normal
+
+D1L34 = C1_valid_c & D1_nreset_e & B1L36 & D1_nreset_d;
+
+
+--D1L45 is cpu_du:I3|i~283 at LC4_C16
+--operation mode is normal
+
+D1L45 = D1L34 & C1_data_c_y[0] & C1_data_c_y[1] & !C1_data_c_y[2];
+
+
+--D1_acc_c[3] is cpu_du:I3|acc_c[3] at LC7_C1
+--operation mode is normal
+
+D1_acc_c[3]_lut_out = D1L34 & !D1L22 # !D1L34 & D1_acc_c[3] & D1_nreset_i;
+D1_acc_c[3] = DFFEA(D1_acc_c[3]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1_acc_c[2] is cpu_du:I3|acc_c[2] at LC4_C4
+--operation mode is normal
+
+D1_acc_c[2]_lut_out = D1L34 & D1L31 # !D1L34 & D1_acc_c[2] & D1_nreset_i;
+D1_acc_c[2] = DFFEA(D1_acc_c[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1_acc_c[1] is cpu_du:I3|acc_c[1] at LC6_C1
+--operation mode is normal
+
+D1_acc_c[1]_lut_out = D1L34 & D1L01 # !D1L34 & D1_acc_c[1] & D1_nreset_i;
+D1_acc_c[1] = DFFEA(D1_acc_c[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1_acc_c[0] is cpu_du:I3|acc_c[0] at LC5_C1
+--operation mode is normal
+
+D1_acc_c[0]_lut_out = D1L34 & D1L1 # !D1L34 & D1_acc_c[0] & D1_nreset_i;
+D1_acc_c[0] = DFFEA(D1_acc_c[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L76 is cpu_du:I3|reduce_nor_90~2 at LC8_C1
+--operation mode is normal
+
+D1L76 = D1_acc_c[3] # D1_acc_c[2] # D1_acc_c[1] # D1_acc_c[0];
+
+
+--C1_data_t_y[1] is cpu_cu:I2|data_t_y[1] at LC2_C8
+--operation mode is normal
+
+C1_data_t_y[1]_lut_out = B1L36 & D1_nreset_d & (idata[1] # C1L42);
+C1_data_t_y[1] = DFFEA(C1_data_t_y[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_data_t_y[0] is cpu_cu:I2|data_t_y[0] at LC2_C17
+--operation mode is normal
+
+C1_data_t_y[0]_lut_out = C1L32 & B1L36 & D1_nreset_d;
+C1_data_t_y[0] = DFFEA(C1_data_t_y[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_data_t_y[2] is cpu_cu:I2|data_t_y[2] at LC8_C8
+--operation mode is normal
+
+C1_data_t_y[2]_lut_out = B1L36 & D1_nreset_d & (idata[2] # C1L62);
+C1_data_t_y[2] = DFFEA(C1_data_t_y[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--A1L001 is rtl~5501 at LC2_C1
+--operation mode is normal
+
+A1L001 = D1L76 & C1_data_t_y[1] & !C1_data_t_y[0] & !C1_data_t_y[2];
+
+
+--D1_acc_c[4] is cpu_du:I3|acc_c[4] at LC2_C5
+--operation mode is normal
+
+D1_acc_c[4]_lut_out = D1L34 & D1L62 # !D1L34 & D1_acc_c[4] & D1_nreset_i;
+D1_acc_c[4] = DFFEA(D1_acc_c[4]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--A1L87 is rtl~1738 at LC5_C16
+--operation mode is normal
+
+A1L87 = C1_data_t_y[0] & D1_acc_c[4] & !C1_data_t_y[2] # !C1_data_t_y[0] & (C1_data_t_y[2] & !D1_acc_c[4] # !C1_data_t_y[2] & !D1L76);
+
+
+--D1L25 is cpu_du:I3|i~53 at LC2_C16
+--operation mode is normal
+
+D1L25 = D1L45 & (A1L001 # A1L87 & !C1_data_t_y[1]);
+
+
+--C1L64 is cpu_cu:I2|pc_mux_x[1]~450 at LC1_C15
+--operation mode is normal
+
+C1L64 = !D1L25 & (C1L73 & !C1L23 # !C1L73 & D1L66);
+
+
+--C1_data_c_x[2] is cpu_cu:I2|data_c_x[2] at LC7_C20
+--operation mode is normal
+
+C1_data_c_x[2] = D1L66 & idata[3] & !idata[2] & !idata[1];
+
+
+--C1L94 is cpu_cu:I2|reduce_nor_98~23 at LC2_C20
+--operation mode is normal
+
+C1L94 = C1L61 # D1L66 & C1L41 # !C1_data_c_x[2];
+
+
+--C1L63 is cpu_cu:I2|i~230 at LC6_C20
+--operation mode is normal
+
+C1L63 = C1L94 & !C1L83 & (!C1L43 # !C1_data_c_x[2]);
+
+
+--B1L44 is cpu_iu:I1|iaddr_x[7]~256 at LC3_A22
+--operation mode is normal
+
+B1L44 = C1L64 & (C1L63 & B1L34 # !C1L63 & E1_ipage_c[1]) # !C1L64 & B1L34;
+
+
+--C1L74 is cpu_cu:I2|pc_mux_x[2]~43 at LC3_C15
+--operation mode is normal
+
+C1L74 = C1L64 & C1L83 & C1L94;
+
+
+--B1L64 is cpu_iu:I1|Mux_65_rtl_1~0 at LC1_A18
+--operation mode is normal
+
+B1L64 = C1L64 & !C1L44 & !C1L63;
+
+
+--B1L54 is cpu_iu:I1|iaddr_x[7]~266 at LC1_A22
+--operation mode is normal
+
+B1L54 = C1L74 & (B1_stack_addrs_c[0][7] # !B1L64) # !C1L74 & B1L44;
+
+
+--B1L24 is cpu_iu:I1|iaddr_x[7]~63 at LC7_A20
+--operation mode is normal
+
+B1L24 = B1L36 & B1L54;
+
+
+--B1_stack_addrs_c[0][6] is cpu_iu:I1|stack_addrs_c[0][6] at LC5_A18
+--operation mode is normal
+
+B1_stack_addrs_c[0][6]_lut_out = A1L64 & (B1L05 # !C1L74) # !A1L64 & B1L05 & C1L74;
+B1_stack_addrs_c[0][6] = DFFEA(B1_stack_addrs_c[0][6]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1_pc[6] is cpu_iu:I1|pc[6] at LC4_A19
+--operation mode is normal
+
+B1_pc[6]_lut_out = B1L36 & B1L14;
+B1_pc[6] = DFFEA(B1_pc[6]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[6] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[6] at LC7_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[6] = B1_pc[6] $ J2_cout[5];
+
+--J2_cout[6] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[6] at LC7_B16
+--operation mode is arithmetic
+
+J2_cout[6] = CARRY(B1_pc[6] & J2_cout[5]);
+
+
+--B1L93 is cpu_iu:I1|iaddr_x[6]~270 at LC3_A18
+--operation mode is normal
+
+B1L93 = B1_pc[6] & (J2_cs_buffer[6] # C1L44) # !B1_pc[6] & J2_cs_buffer[6] & !C1L44;
+
+
+--E1_ipage_c[0] is cpu_oa:I4|ipage_c[0] at LC1_C14
+--operation mode is normal
+
+E1_ipage_c[0]_lut_out = C1_nreset_c & (E1L92 # E1L01 & E1L72);
+E1_ipage_c[0] = DFFEA(E1_ipage_c[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--B1L04 is cpu_iu:I1|iaddr_x[6]~275 at LC2_A18
+--operation mode is normal
+
+B1L04 = C1L64 & (C1L63 & B1L93 # !C1L63 & E1_ipage_c[0]) # !C1L64 & B1L93;
+
+
+--B1L14 is cpu_iu:I1|iaddr_x[6]~285 at LC2_A19
+--operation mode is normal
+
+B1L14 = C1L74 & (B1_stack_addrs_c[0][6] # !B1L64) # !C1L74 & B1L04;
+
+
+--B1L83 is cpu_iu:I1|iaddr_x[6]~73 at LC1_A19
+--operation mode is normal
+
+B1L83 = B1L36 & B1L14;
+
+
+--B1_stack_addrs_c[0][5] is cpu_iu:I1|stack_addrs_c[0][5] at LC8_B12
+--operation mode is normal
+
+B1_stack_addrs_c[0][5]_lut_out = A1L74 & (B1L25 # !C1L74) # !A1L74 & B1L25 & C1L74;
+B1_stack_addrs_c[0][5] = DFFEA(B1_stack_addrs_c[0][5]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1_pc[5] is cpu_iu:I1|pc[5] at LC1_B6
+--operation mode is normal
+
+B1_pc[5]_lut_out = B1L36 & B1L73;
+B1_pc[5] = DFFEA(B1_pc[5]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[5] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[5] at LC6_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[5] = B1_pc[5] $ J2_cout[4];
+
+--J2_cout[5] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[5] at LC6_B16
+--operation mode is arithmetic
+
+J2_cout[5] = CARRY(B1_pc[5] & J2_cout[4]);
+
+
+--B1L53 is cpu_iu:I1|iaddr_x[5]~289 at LC2_B6
+--operation mode is normal
+
+B1L53 = B1_pc[5] & (J2_cs_buffer[5] # C1L44) # !B1_pc[5] & J2_cs_buffer[5] & !C1L44;
+
+
+--B1L63 is cpu_iu:I1|iaddr_x[5]~294 at LC3_B6
+--operation mode is normal
+
+B1L63 = C1L64 & (C1L63 & B1L53 # !C1L63 & idata[9]) # !C1L64 & B1L53;
+
+
+--B1L73 is cpu_iu:I1|iaddr_x[5]~304 at LC4_B6
+--operation mode is normal
+
+B1L73 = C1L74 & (B1_stack_addrs_c[0][5] # !B1L64) # !C1L74 & B1L63;
+
+
+--B1L43 is cpu_iu:I1|iaddr_x[5]~83 at LC8_B6
+--operation mode is normal
+
+B1L43 = B1L36 & B1L73;
+
+
+--B1_stack_addrs_c[0][4] is cpu_iu:I1|stack_addrs_c[0][4] at LC1_A15
+--operation mode is normal
+
+B1_stack_addrs_c[0][4]_lut_out = A1L84 & (B1L45 # !C1L74) # !A1L84 & B1L45 & C1L74;
+B1_stack_addrs_c[0][4] = DFFEA(B1_stack_addrs_c[0][4]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1_pc[4] is cpu_iu:I1|pc[4] at LC4_C18
+--operation mode is normal
+
+B1_pc[4]_lut_out = B1L36 & B1L33;
+B1_pc[4] = DFFEA(B1_pc[4]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[4] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[4] at LC5_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[4] = B1_pc[4] $ J2_cout[3];
+
+--J2_cout[4] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[4] at LC5_B16
+--operation mode is arithmetic
+
+J2_cout[4] = CARRY(B1_pc[4] & J2_cout[3]);
+
+
+--B1L13 is cpu_iu:I1|iaddr_x[4]~308 at LC2_C18
+--operation mode is normal
+
+B1L13 = B1_pc[4] & (J2_cs_buffer[4] # C1L44) # !B1_pc[4] & J2_cs_buffer[4] & !C1L44;
+
+
+--B1L23 is cpu_iu:I1|iaddr_x[4]~313 at LC3_C18
+--operation mode is normal
+
+B1L23 = C1L64 & (C1L63 & B1L13 # !C1L63 & idata[8]) # !C1L64 & B1L13;
+
+
+--B1L33 is cpu_iu:I1|iaddr_x[4]~323 at LC5_C18
+--operation mode is normal
+
+B1L33 = C1L74 & (B1_stack_addrs_c[0][4] # !B1L64) # !C1L74 & B1L23;
+
+
+--B1L03 is cpu_iu:I1|iaddr_x[4]~93 at LC7_C18
+--operation mode is normal
+
+B1L03 = B1L36 & B1L33;
+
+
+--B1_stack_addrs_c[0][3] is cpu_iu:I1|stack_addrs_c[0][3] at LC2_B24
+--operation mode is normal
+
+B1_stack_addrs_c[0][3]_lut_out = A1L94 & (B1L65 # !C1L74) # !A1L94 & B1L65 & C1L74;
+B1_stack_addrs_c[0][3] = DFFEA(B1_stack_addrs_c[0][3]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1_pc[3] is cpu_iu:I1|pc[3] at LC2_B9
+--operation mode is normal
+
+B1_pc[3]_lut_out = B1L36 & B1L92;
+B1_pc[3] = DFFEA(B1_pc[3]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[3] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] at LC4_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[3] = B1_pc[3] $ J2_cout[2];
+
+--J2_cout[3] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[3] at LC4_B16
+--operation mode is arithmetic
+
+J2_cout[3] = CARRY(B1_pc[3] & J2_cout[2]);
+
+
+--B1L72 is cpu_iu:I1|iaddr_x[3]~327 at LC3_B24
+--operation mode is normal
+
+B1L72 = B1_pc[3] & (J2_cs_buffer[3] # C1L44) # !B1_pc[3] & J2_cs_buffer[3] & !C1L44;
+
+
+--B1L82 is cpu_iu:I1|iaddr_x[3]~332 at LC4_B24
+--operation mode is normal
+
+B1L82 = C1L64 & (C1L63 & B1L72 # !C1L63 & idata[7]) # !C1L64 & B1L72;
+
+
+--B1L92 is cpu_iu:I1|iaddr_x[3]~342 at LC1_B24
+--operation mode is normal
+
+B1L92 = C1L74 & (B1_stack_addrs_c[0][3] # !B1L64) # !C1L74 & B1L82;
+
+
+--B1L62 is cpu_iu:I1|iaddr_x[3]~103 at LC3_B4
+--operation mode is normal
+
+B1L62 = B1L36 & B1L92;
+
+
+--B1_stack_addrs_c[0][2] is cpu_iu:I1|stack_addrs_c[0][2] at LC5_B19
+--operation mode is normal
+
+B1_stack_addrs_c[0][2]_lut_out = A1L05 & (B1L85 # !C1L74) # !A1L05 & B1L85 & C1L74;
+B1_stack_addrs_c[0][2] = DFFEA(B1_stack_addrs_c[0][2]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L14 is rtl~295 at LC2_B21
+--operation mode is normal
+
+A1L14 = B1_stack_addrs_c[0][2] & C1L64 & !C1L44 & !C1L63;
+
+
+--B1_pc[2] is cpu_iu:I1|pc[2] at LC1_B21
+--operation mode is normal
+
+B1_pc[2]_lut_out = B1L36 & (C1L74 & A1L14 # !C1L74 & B1L42);
+B1_pc[2] = DFFEA(B1_pc[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[2] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] at LC3_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[2] = B1_pc[2] $ J2_cout[1];
+
+--J2_cout[2] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[2] at LC3_B16
+--operation mode is arithmetic
+
+J2_cout[2] = CARRY(B1_pc[2] & J2_cout[1]);
+
+
+--B1L32 is cpu_iu:I1|iaddr_x[2]~200 at LC3_B21
+--operation mode is normal
+
+B1L32 = B1_pc[2] & (J2_cs_buffer[2] # C1L44) # !B1_pc[2] & J2_cs_buffer[2] & !C1L44;
+
+
+--B1L42 is cpu_iu:I1|iaddr_x[2]~205 at LC5_B21
+--operation mode is normal
+
+B1L42 = C1L64 & (C1L63 & B1L32 # !C1L63 & idata[6]) # !C1L64 & B1L32;
+
+
+--B1L52 is cpu_iu:I1|iaddr_x[2]~216 at LC7_B21
+--operation mode is normal
+
+B1L52 = B1L36 & (C1L74 & A1L14 # !C1L74 & B1L42);
+
+
+--B1_stack_addrs_c[0][1] is cpu_iu:I1|stack_addrs_c[0][1] at LC3_B22
+--operation mode is normal
+
+B1_stack_addrs_c[0][1]_lut_out = A1L15 & (B1L06 # !C1L74) # !A1L15 & B1L06 & C1L74;
+B1_stack_addrs_c[0][1] = DFFEA(B1_stack_addrs_c[0][1]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L24 is rtl~301 at LC1_B22
+--operation mode is normal
+
+A1L24 = B1_stack_addrs_c[0][1] & C1L64 & !C1L44 & !C1L63;
+
+
+--B1_pc[1] is cpu_iu:I1|pc[1] at LC5_B20
+--operation mode is normal
+
+B1_pc[1]_lut_out = B1L36 & (C1L74 & A1L24 # !C1L74 & B1L12);
+B1_pc[1] = DFFEA(B1_pc[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--J2_cs_buffer[1] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] at LC2_B16
+--operation mode is arithmetic
+
+J2_cs_buffer[1] = B1_pc[1] $ J2_cout[0];
+
+--J2_cout[1] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[1] at LC2_B16
+--operation mode is arithmetic
+
+J2_cout[1] = CARRY(B1_pc[1] & J2_cout[0]);
+
+
+--B1L02 is cpu_iu:I1|iaddr_x[1]~217 at LC4_B22
+--operation mode is normal
+
+B1L02 = B1_pc[1] & (J2_cs_buffer[1] # C1L44) # !B1_pc[1] & J2_cs_buffer[1] & !C1L44;
+
+
+--B1L12 is cpu_iu:I1|iaddr_x[1]~222 at LC2_B22
+--operation mode is normal
+
+B1L12 = C1L64 & (C1L63 & B1L02 # !C1L63 & idata[5]) # !C1L64 & B1L02;
+
+
+--B1L22 is cpu_iu:I1|iaddr_x[1]~233 at LC1_B20
+--operation mode is normal
+
+B1L22 = B1L36 & (C1L74 & A1L24 # !C1L74 & B1L12);
+
+
+--B1_stack_addrs_c[0][0] is cpu_iu:I1|stack_addrs_c[0][0] at LC6_B11
+--operation mode is normal
+
+B1_stack_addrs_c[0][0]_lut_out = A1L25 & (B1L16 # !C1L74) # !A1L25 & B1L16 & C1L74;
+B1_stack_addrs_c[0][0] = DFFEA(B1_stack_addrs_c[0][0]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L34 is rtl~307 at LC2_B11
+--operation mode is normal
+
+A1L34 = B1_stack_addrs_c[0][0] & C1L64 & !C1L44 & !C1L63;
+
+
+--B1_pc[0] is cpu_iu:I1|pc[0] at LC1_B16
+--operation mode is arithmetic
+
+B1_pc[0]_lut_out = B1L91;
+B1_pc[0] = DFFEA(B1_pc[0]_lut_out, GLOBAL(uclk), , , , , );
+
+--J2_cout[0] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|a_csnbuffer:result_node|cout[0] at LC1_B16
+--operation mode is arithmetic
+
+J2_cout[0] = CARRY(B1_pc[0]);
+
+
+--C1L54 is cpu_cu:I2|pc_mux_x[1]~36 at LC4_B19
+--operation mode is normal
+
+C1L54 = C1L64 & !C1L63;
+
+
+--B1L81 is cpu_iu:I1|iaddr_x[0]~239 at LC1_B11
+--operation mode is normal
+
+B1L81 = C1L54 & idata[4] # !C1L54 & (C1L44 $ !B1_pc[0]);
+
+
+--B1L91 is cpu_iu:I1|iaddr_x[0]~250 at LC5_B11
+--operation mode is normal
+
+B1L91 = B1L36 & (C1L74 & A1L34 # !C1L74 & B1L81);
+
+
+--C1_nreset_c is cpu_cu:I2|nreset_c at LC8_C19
+--operation mode is normal
+
+C1_nreset_c_lut_out = nreset;
+C1_nreset_c = DFFEA(C1_nreset_c_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_daddr_d_x[1] is cpu_cu:I2|daddr_d_x[1] at LC6_C23
+--operation mode is normal
+
+C1_daddr_d_x[1]_lut_out = idata[5];
+C1_daddr_d_x[1] = DFFEA(C1_daddr_d_x[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L9 is cpu_cu:I2|daddr_t[1]~8 at LC1_C23
+--operation mode is normal
+
+C1L9 = C1_daddr_d_x[1] & (idata[5] # C1L73) # !C1_daddr_d_x[1] & idata[5] & !C1L73;
+
+
+--C1_daddr_d_x[0] is cpu_cu:I2|daddr_d_x[0] at LC7_C6
+--operation mode is normal
+
+C1_daddr_d_x[0]_lut_out = idata[4];
+C1_daddr_d_x[0] = DFFEA(C1_daddr_d_x[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L8 is cpu_cu:I2|daddr_t[0]~5 at LC1_C22
+--operation mode is normal
+
+C1L8 = C1_daddr_d_x[0] & (idata[4] # C1L73) # !C1_daddr_d_x[0] & idata[4] & !C1L73;
+
+
+--C1_daddr_d_x[2] is cpu_cu:I2|daddr_d_x[2] at LC6_C11
+--operation mode is normal
+
+C1_daddr_d_x[2]_lut_out = idata[6];
+C1_daddr_d_x[2] = DFFEA(C1_daddr_d_x[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L01 is cpu_cu:I2|daddr_t[2]~2 at LC2_C22
+--operation mode is normal
+
+C1L01 = C1_daddr_d_x[2] & (idata[6] # C1L73) # !C1_daddr_d_x[2] & idata[6] & !C1L73;
+
+
+--C1_daddr_d_x[4] is cpu_cu:I2|daddr_d_x[4] at LC6_C18
+--operation mode is normal
+
+C1_daddr_d_x[4]_lut_out = idata[8];
+C1_daddr_d_x[4] = DFFEA(C1_daddr_d_x[4]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L11 is cpu_cu:I2|daddr_t[4]~14 at LC8_C18
+--operation mode is normal
+
+C1L11 = C1_daddr_d_x[4] & (idata[8] # C1L73) # !C1_daddr_d_x[4] & idata[8] & !C1L73;
+
+
+--E1L13 is cpu_oa:I4|i~828 at LC4_C22
+--operation mode is normal
+
+E1L13 = C1L9 & C1L8 & !C1L01 & !C1L11;
+
+
+--C1_daddr_d_x[3] is cpu_cu:I2|daddr_d_x[3] at LC8_C21
+--operation mode is normal
+
+C1_daddr_d_x[3]_lut_out = idata[7];
+C1_daddr_d_x[3] = DFFEA(C1_daddr_d_x[3]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_daddr_d_x[5] is cpu_cu:I2|daddr_d_x[5] at LC1_C21
+--operation mode is normal
+
+C1_daddr_d_x[5]_lut_out = idata[9];
+C1_daddr_d_x[5] = DFFEA(C1_daddr_d_x[5]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1L21 is cpu_cu:I2|daddr_t[5]~11 at LC3_C21
+--operation mode is normal
+
+C1L21 = C1_daddr_d_x[5] & (idata[9] # C1L73) # !C1_daddr_d_x[5] & idata[9] & !C1L73;
+
+
+--E1L23 is cpu_oa:I4|i~833 at LC5_C21
+--operation mode is normal
+
+E1L23 = !C1L21 & (C1L73 & !C1_daddr_d_x[3] # !C1L73 & !idata[7]);
+
+
+--C1L33 is cpu_cu:I2|i~36 at LC8_C20
+--operation mode is normal
+
+C1L33 = C1L63 & D1L66 & C1L23 & !D1L25;
+
+
+--E1L03 is cpu_oa:I4|i~794 at LC3_C22
+--operation mode is normal
+
+E1L03 = E1L13 & E1L23 & (C1L73 # C1L33);
+
+
+--E1L01 is cpu_oa:I4|data_ix[1]~306 at LC5_C22
+--operation mode is normal
+
+E1L01 = E1L03 & (C1L01 # C1L9 # C1L8);
+
+
+--E1L12 is cpu_oa:I4|data_ox[3]~43 at LC7_C24
+--operation mode is normal
+
+E1L12 = D1_acc_c[3] & C1_nreset_c & (!E1L01 # !C1L73);
+
+
+--E1L02 is cpu_oa:I4|data_ox[2]~53 at LC2_C24
+--operation mode is normal
+
+E1L02 = D1_acc_c[2] & C1_nreset_c & (!E1L01 # !C1L73);
+
+
+--E1_data_ox[1] is cpu_oa:I4|data_ox[1] at LC3_C12
+--operation mode is normal
+
+E1_data_ox[1] = C1_nreset_c & D1_acc_c[1];
+
+
+--E1_data_ox[0] is cpu_oa:I4|data_ox[0] at LC7_C12
+--operation mode is normal
+
+E1_data_ox[0] = C1_nreset_c & D1_acc_c[0];
+
+
+--E1_daddr_x[5] is cpu_oa:I4|daddr_x[5] at LC6_C21
+--operation mode is normal
+
+E1_daddr_x[5] = C1_nreset_c & (C1L73 & C1_daddr_d_x[5] # !C1L73 & idata[9]);
+
+
+--E1_daddr_x[4] is cpu_oa:I4|daddr_x[4] at LC1_C18
+--operation mode is normal
+
+E1_daddr_x[4] = C1_nreset_c & (C1L73 & C1_daddr_d_x[4] # !C1L73 & idata[8]);
+
+
+--E1_daddr_x[3] is cpu_oa:I4|daddr_x[3] at LC2_C21
+--operation mode is normal
+
+E1_daddr_x[3] = C1_nreset_c & (C1L73 & C1_daddr_d_x[3] # !C1L73 & idata[7]);
+
+
+--E1_daddr_x[2] is cpu_oa:I4|daddr_x[2] at LC2_C11
+--operation mode is normal
+
+E1_daddr_x[2] = C1_nreset_c & (C1L73 & C1_daddr_d_x[2] # !C1L73 & idata[6]);
+
+
+--E1_daddr_x[1] is cpu_oa:I4|daddr_x[1] at LC3_C24
+--operation mode is normal
+
+E1_daddr_x[1] = C1_nreset_c & (C1L73 & C1_daddr_d_x[1] # !C1L73 & idata[5]);
+
+
+--E1_daddr_x[0] is cpu_oa:I4|daddr_x[0] at LC4_C24
+--operation mode is normal
+
+E1_daddr_x[0] = C1_nreset_c & (C1L73 & C1_daddr_d_x[0] # !C1L73 & idata[4]);
+
+
+--E1_nre_x is cpu_oa:I4|nre_x at LC5_C24
+--operation mode is normal
+
+E1_nre_x = E1L03 # C1L73 # !C1L33 # !C1_nreset_c;
+
+
+--E1_nwe_x is cpu_oa:I4|nwe_x at LC6_C24
+--operation mode is normal
+
+E1_nwe_x = E1L03 # !C1L73 # !C1_nreset_c;
+
+
+--B1L36 is cpu_iu:I1|nreset_i~31 at LC1_C19
+--operation mode is normal
+
+B1L36 = C1_nreset_c & nreset;
+
+
+--G1_unreg_res_node[7] is cpu_iu:I1|lpm_add_sub:add_47|addcore:adder|unreg_res_node[7] at LC8_B16
+--operation mode is normal
+
+G1_unreg_res_node[7] = J2_cout[6] $ B1_pc[7];
+
+
+--E1L82 is cpu_oa:I4|i~460 at LC2_C14
+--operation mode is normal
+
+E1L82 = E1_ipage_c[1] & (!E1L01 # !C1L73);
+
+
+--E1L62 is cpu_oa:I4|i~437 at LC3_C14
+--operation mode is normal
+
+E1L62 = D1_acc_c[1] & C1L73;
+
+
+--D1_nreset_i is cpu_du:I3|nreset_i at LC7_C17
+--operation mode is normal
+
+D1_nreset_i = D1_nreset_e & B1L36 & D1_nreset_d;
+
+
+--D1L41 is cpu_du:I3|acc[2]~5616 at LC6_C16
+--operation mode is normal
+
+D1L41 = !C1_data_c_y[2] & !C1_data_c_y[1];
+
+
+--A1L97 is rtl~1768 at LC5_C10
+--operation mode is normal
+
+A1L97 = C1_data_t_y[2] & (D1_acc_c[2] $ C1_data_t_y[1]) # !C1_data_t_y[2] & D1_acc_c[1];
+
+
+--A1L08 is rtl~1773 at LC8_C10
+--operation mode is normal
+
+A1L08 = C1_data_t_y[1] & D1_acc_c[3] & !C1_data_t_y[2] # !C1_data_t_y[1] & (C1_data_t_y[2] & D1_acc_c[3] # !C1_data_t_y[2] & D1_acc_c[2]);
+
+
+--D1L11 is cpu_du:I3|acc[2]~146 at LC4_C10
+--operation mode is normal
+
+D1L11 = !C1_data_c_y[0] & (C1_data_t_y[0] & A1L97 # !C1_data_t_y[0] & A1L08);
+
+
+--E1_data_ix_c[2] is cpu_oa:I4|data_ix_c[2] at LC3_C11
+--operation mode is normal
+
+E1_data_ix_c[2]_lut_out = E1L11 & data_in[2];
+E1_data_ix_c[2] = DFFEA(E1_data_ix_c[2]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--E1L11 is cpu_oa:I4|data_ix[3]~307 at LC1_C11
+--operation mode is normal
+
+E1L11 = C1_nreset_c & (C1L73 # !C1L33 # !E1L01);
+
+
+--E1_int_re_c is cpu_oa:I4|int_re_c at LC8_C24
+--operation mode is normal
+
+E1_int_re_c_lut_out = C1_nreset_c & E1L03 & C1L33 & !C1L73;
+E1_int_re_c = DFFEA(E1_int_re_c_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L93 is cpu_du:I3|data_x[2]~64 at LC8_C11
+--operation mode is normal
+
+D1L93 = E1_int_re_c & E1_data_ix_c[2] # !E1_int_re_c & E1L11 & data_in[2];
+
+
+--C1_istr_op_c is cpu_cu:I2|istr_op_c at LC4_C13
+--operation mode is normal
+
+C1_istr_op_c_lut_out = idata[3] & B1L36 & D1_nreset_d;
+C1_istr_op_c = DFFEA(C1_istr_op_c_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L64 is cpu_du:I3|i~11 at LC5_C11
+--operation mode is normal
+
+D1L64 = D1_acc_c[2] & (C1_istr_op_c & C1_daddr_d_x[2] # !C1_istr_op_c & D1L93);
+
+
+--J6_cs_buffer[3] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] at LC6_C5
+--operation mode is arithmetic
+
+J6_cs_buffer[3] = D1L04 $ D1_acc_c[2] $ !J6_cout[2];
+
+--J6_cout[3] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cout[3] at LC6_C5
+--operation mode is arithmetic
+
+J6_cout[3] = CARRY(D1L04 & D1_acc_c[2] & J6_cout[2] # !D1L04 & (D1_acc_c[2] # J6_cout[2]));
+
+
+--D1L75 is cpu_du:I3|Mux_80_rtl_0~0 at LC1_C4
+--operation mode is normal
+
+D1L75 = C1_data_t_y[1] & (C1_data_t_y[0] # J6_cs_buffer[3]) # !C1_data_t_y[1] & !C1_data_t_y[0] & J4L6;
+
+
+--D1L05 is cpu_du:I3|i~20 at LC4_C11
+--operation mode is normal
+
+D1L05 = D1_acc_c[2] # C1_istr_op_c & C1_daddr_d_x[2] # !C1_istr_op_c & D1L93;
+
+
+--D1L85 is cpu_du:I3|Mux_80_rtl_0~1 at LC2_C4
+--operation mode is normal
+
+D1L85 = D1L75 & (D1L05 # !C1_data_t_y[0]) # !D1L75 & D1L64 & C1_data_t_y[0];
+
+
+--D1L04 is cpu_du:I3|data_x[2]~69 at LC7_C11
+--operation mode is normal
+
+D1L04 = C1_daddr_d_x[2] & (D1L93 # C1_istr_op_c) # !C1_daddr_d_x[2] & D1L93 & !C1_istr_op_c;
+
+
+--A1L18 is rtl~1790 at LC3_C4
+--operation mode is normal
+
+A1L18 = D1_acc_c[2] & (D1L04 $ C1_data_t_y[0] # !C1_data_t_y[1]) # !D1_acc_c[2] & D1L04 & C1_data_t_y[1];
+
+
+--D1L21 is cpu_du:I3|acc[2]~147 at LC5_C4
+--operation mode is normal
+
+D1L21 = C1_data_c_y[0] & (C1_data_t_y[2] & D1L85 # !C1_data_t_y[2] & A1L18);
+
+
+--D1L31 is cpu_du:I3|acc[2]~199 at LC6_C4
+--operation mode is normal
+
+D1L31 = D1L41 & (D1L11 # D1L21) # !D1L41 & D1_acc_c[2];
+
+
+--A1L99 is rtl~2022 at LC5_C14
+--operation mode is normal
+
+A1L99 = C1_data_t_y[2] & (D1_acc_c[1] $ C1_data_t_y[1]) # !C1_data_t_y[2] & D1_acc_c[0];
+
+
+--A1L44 is rtl~1335 at LC3_C10
+--operation mode is normal
+
+A1L44 = C1_data_t_y[1] & D1_acc_c[2] & !C1_data_t_y[2] # !C1_data_t_y[1] & (C1_data_t_y[2] & D1_acc_c[2] # !C1_data_t_y[2] & D1_acc_c[1]);
+
+
+--D1L8 is cpu_du:I3|acc[1]~156 at LC6_C14
+--operation mode is normal
+
+D1L8 = !C1_data_c_y[0] & (C1_data_t_y[0] & A1L99 # !C1_data_t_y[0] & A1L44);
+
+
+--E1_data_ix_c[1] is cpu_oa:I4|data_ix_c[1] at LC3_C23
+--operation mode is normal
+
+E1_data_ix_c[1]_lut_out = C1_nreset_c & E1L9;
+E1_data_ix_c[1] = DFFEA(E1_data_ix_c[1]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--C1_re is cpu_cu:I2|re at LC1_C24
+--operation mode is normal
+
+C1_re = C1L33 & !C1L73;
+
+
+--E1L9 is cpu_oa:I4|data_ix[1]~88 at LC5_C23
+--operation mode is normal
+
+E1L9 = E1L01 & (C1_re & E1_ipage_c[1] # !C1_re & data_in[1]) # !E1L01 & data_in[1];
+
+
+--D1L73 is cpu_du:I3|data_x[1]~74 at LC7_C23
+--operation mode is normal
+
+D1L73 = E1_int_re_c & E1_data_ix_c[1] # !E1_int_re_c & C1_nreset_c & E1L9;
+
+
+--D1L54 is cpu_du:I3|i~10 at LC4_C23
+--operation mode is normal
+
+D1L54 = D1_acc_c[1] & (C1_istr_op_c & C1_daddr_d_x[1] # !C1_istr_op_c & D1L73);
+
+
+--J6_cs_buffer[2] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] at LC5_C5
+--operation mode is arithmetic
+
+J6_cs_buffer[2] = D1L83 $ D1_acc_c[1] $ !J6_cout[1];
+
+--J6_cout[2] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cout[2] at LC5_C5
+--operation mode is arithmetic
+
+J6_cout[2] = CARRY(D1L83 & D1_acc_c[1] & J6_cout[1] # !D1L83 & (D1_acc_c[1] # J6_cout[1]));
+
+
+--D1L95 is cpu_du:I3|Mux_81_rtl_0~0 at LC1_C3
+--operation mode is normal
+
+D1L95 = C1_data_t_y[1] & (C1_data_t_y[0] # J6_cs_buffer[2]) # !C1_data_t_y[1] & !C1_data_t_y[0] & J4L4;
+
+
+--D1L94 is cpu_du:I3|i~19 at LC8_C23
+--operation mode is normal
+
+D1L94 = D1_acc_c[1] # C1_istr_op_c & C1_daddr_d_x[1] # !C1_istr_op_c & D1L73;
+
+
+--D1L06 is cpu_du:I3|Mux_81_rtl_0~1 at LC2_C3
+--operation mode is normal
+
+D1L06 = D1L95 & (D1L94 # !C1_data_t_y[0]) # !D1L95 & D1L54 & C1_data_t_y[0];
+
+
+--D1L83 is cpu_du:I3|data_x[1]~79 at LC2_C23
+--operation mode is normal
+
+D1L83 = C1_daddr_d_x[1] & (D1L73 # C1_istr_op_c) # !C1_daddr_d_x[1] & D1L73 & !C1_istr_op_c;
+
+
+--A1L28 is rtl~1812 at LC4_C3
+--operation mode is normal
+
+A1L28 = D1_acc_c[1] & (D1L83 $ C1_data_t_y[0] # !C1_data_t_y[1]) # !D1_acc_c[1] & D1L83 & C1_data_t_y[1];
+
+
+--D1L9 is cpu_du:I3|acc[1]~157 at LC3_C3
+--operation mode is normal
+
+D1L9 = C1_data_c_y[0] & (C1_data_t_y[2] & D1L06 # !C1_data_t_y[2] & A1L28);
+
+
+--D1L01 is cpu_du:I3|acc[1]~208 at LC2_C6
+--operation mode is normal
+
+D1L01 = D1L41 & (D1L8 # D1L9) # !D1L41 & D1_acc_c[1];
+
+
+--E1_data_ix_c[0] is cpu_oa:I4|data_ix_c[0] at LC7_C22
+--operation mode is normal
+
+E1_data_ix_c[0]_lut_out = C1_nreset_c & E1L8;
+E1_data_ix_c[0] = DFFEA(E1_data_ix_c[0]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--E1L8 is cpu_oa:I4|data_ix[0]~95 at LC8_C22
+--operation mode is normal
+
+E1L8 = E1L01 & (C1_re & E1_ipage_c[0] # !C1_re & data_in[0]) # !E1L01 & data_in[0];
+
+
+--D1L53 is cpu_du:I3|data_x[0]~84 at LC6_C22
+--operation mode is normal
+
+D1L53 = E1_int_re_c & E1_data_ix_c[0] # !E1_int_re_c & C1_nreset_c & E1L8;
+
+
+--D1L63 is cpu_du:I3|data_x[0]~89 at LC7_C3
+--operation mode is normal
+
+D1L63 = C1_daddr_d_x[0] & (D1L53 # C1_istr_op_c) # !C1_daddr_d_x[0] & D1L53 & !C1_istr_op_c;
+
+
+--D1L3 is cpu_du:I3|acc[0]~1851 at LC1_C7
+--operation mode is normal
+
+D1L3 = D1L63 & (D1_acc_c[1] # C1_data_c_y[0]) # !D1L63 & D1_acc_c[1] & !C1_data_c_y[0];
+
+
+--D1L4 is cpu_du:I3|acc[0]~1856 at LC2_C7
+--operation mode is normal
+
+D1L4 = C1_data_t_y[0] & C1_data_c_y[0] & J4L2 # !C1_data_t_y[0] & D1L3;
+
+
+--D1L2 is cpu_du:I3|acc[0]~1846 at LC3_C7
+--operation mode is normal
+
+D1L2 = C1_data_t_y[0] & (C1_data_c_y[0] & D1_acc_c[0] # !C1_data_c_y[0] & D1_acc_c[4]) # !C1_data_t_y[0] & D1_acc_c[0];
+
+
+--D1L6 is cpu_du:I3|acc[0]~1882 at LC4_C7
+--operation mode is normal
+
+D1L6 = !C1_data_t_y[2] & (C1_data_t_y[1] & D1L4 # !C1_data_t_y[1] & D1L2);
+
+
+--D1L44 is cpu_du:I3|i~9 at LC1_C6
+--operation mode is normal
+
+D1L44 = D1_acc_c[0] & (C1_istr_op_c & C1_daddr_d_x[0] # !C1_istr_op_c & D1L53);
+
+
+--J6_cs_buffer[1] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] at LC4_C5
+--operation mode is arithmetic
+
+J6_cs_buffer[1] = D1_acc_c[0] $ !D1L63;
+
+--J6_cout[1] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cout[1] at LC4_C5
+--operation mode is arithmetic
+
+J6_cout[1] = CARRY(D1_acc_c[0] # !D1L63);
+
+
+--D1L16 is cpu_du:I3|Mux_82_rtl_0~0 at LC4_C6
+--operation mode is normal
+
+D1L16 = C1_data_t_y[1] & (C1_data_t_y[0] # !J6_cs_buffer[1]) # !C1_data_t_y[1] & !C1_data_t_y[0] & J4L2;
+
+
+--D1L84 is cpu_du:I3|i~18 at LC5_C6
+--operation mode is normal
+
+D1L84 = D1_acc_c[0] # C1_istr_op_c & C1_daddr_d_x[0] # !C1_istr_op_c & D1L53;
+
+
+--D1L26 is cpu_du:I3|Mux_82_rtl_0~1 at LC8_C6
+--operation mode is normal
+
+D1L26 = D1L16 & (D1L84 # !C1_data_t_y[0]) # !D1L16 & D1L44 & C1_data_t_y[0];
+
+
+--D1L5 is cpu_du:I3|acc[0]~1871 at LC1_C1
+--operation mode is normal
+
+D1L5 = C1_data_t_y[0] & (D1_acc_c[0] $ C1_data_t_y[1]) # !C1_data_t_y[0] & D1_acc_c[1] & !C1_data_t_y[1];
+
+
+--D1L7 is cpu_du:I3|acc[0]~1883 at LC3_C1
+--operation mode is normal
+
+D1L7 = C1_data_t_y[2] & (C1_data_c_y[0] & D1L26 # !C1_data_c_y[0] & D1L5);
+
+
+--D1L1 is cpu_du:I3|acc[0]~217 at LC4_C1
+--operation mode is normal
+
+D1L1 = D1L41 & (D1L6 # D1L7) # !D1L41 & D1_acc_c[0];
+
+
+--C1L42 is cpu_cu:I2|data_t_x[1]~21 at LC3_C13
+--operation mode is normal
+
+C1L42 = C1L04 & !idata[3] & !idata[0] & !idata[2];
+
+
+--C1L32 is cpu_cu:I2|data_t_x[0]~51 at LC2_C13
+--operation mode is normal
+
+C1L32 = idata[0] & !C1L81 # !idata[0] & C1L14 & !idata[3] & C1L81;
+
+
+--C1L52 is cpu_cu:I2|data_t_x[2]~134 at LC1_C13
+--operation mode is normal
+
+C1L52 = idata[6] & (!idata[4] & !idata[7] # !idata[5]) # !idata[6] & idata[4] & idata[7] & idata[5];
+
+
+--C1L62 is cpu_cu:I2|data_t_x[2]~508 at LC5_C13
+--operation mode is normal
+
+C1L62 = C1L52 & !idata[1] & !idata[3] & !idata[0];
+
+
+--D1L82 is cpu_du:I3|acc[4]~5670 at LC6_C10
+--operation mode is normal
+
+D1L82 = C1_data_c_y[0] & C1_data_t_y[2] & !C1_data_t_y[0];
+
+
+--D1L52 is cpu_du:I3|acc[4]~2406 at LC8_C5
+--operation mode is normal
+
+D1L52 = D1L82 & (C1_data_t_y[1] & !J6_cout[4] # !C1_data_t_y[1] & J4L7);
+
+
+--D1L72 is cpu_du:I3|acc[4]~2780 at LC6_C7
+--operation mode is normal
+
+D1L72 = C1_data_t_y[0] & D1_acc_c[3] # !C1_data_t_y[0] & D1_acc_c[0] & C1_data_t_y[1];
+
+
+--D1L42 is cpu_du:I3|acc[4]~2404 at LC1_C5
+--operation mode is normal
+
+D1L42 = D1L52 # D1L72 & !C1_data_t_y[2] & !C1_data_c_y[0];
+
+
+--D1L32 is cpu_du:I3|acc[4]~2401 at LC7_C10
+--operation mode is normal
+
+D1L32 = !C1_data_t_y[1] & (C1_data_t_y[2] $ (C1_data_c_y[0] # !C1_data_t_y[0]));
+
+
+--D1L62 is cpu_du:I3|acc[4]~2409 at LC3_C5
+--operation mode is normal
+
+D1L62 = D1_acc_c[4] & (D1L42 # D1L32 # !D1L41) # !D1_acc_c[4] & D1L42 & D1L41;
+
+
+--E1L92 is cpu_oa:I4|i~467 at LC7_C14
+--operation mode is normal
+
+E1L92 = E1_ipage_c[0] & (!E1L01 # !C1L73);
+
+
+--E1L72 is cpu_oa:I4|i~448 at LC8_C14
+--operation mode is normal
+
+E1L72 = D1_acc_c[0] & C1L73;
+
+
+--B1L74 is cpu_iu:I1|Mux_82_rtl_0~0 at LC5_A22
+--operation mode is normal
+
+B1L74 = C1L54 & (B1L51 # !C1L44) # !C1L54 & C1L44 & G1_unreg_res_node[7];
+
+
+--B1_stack_addrs_c[1][7] is cpu_iu:I1|stack_addrs_c[1][7] at LC5_A17
+--operation mode is normal
+
+B1_stack_addrs_c[1][7]_lut_out = A1L35 & (A1L38 # !C1L74) # !A1L35 & A1L38 & C1L74;
+B1_stack_addrs_c[1][7] = DFFEA(B1_stack_addrs_c[1][7]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L84 is cpu_iu:I1|Mux_82_rtl_0~1 at LC6_A22
+--operation mode is normal
+
+B1L84 = B1L74 & (C1L44 # B1_stack_addrs_c[1][7]) # !B1L74 & B1_pc[7] & !C1L44;
+
+
+--A1L54 is rtl~1409 at LC7_A22
+--operation mode is normal
+
+A1L54 = G1_unreg_res_node[7] & (B1_stack_addrs_c[0][7] # B1L64) # !G1_unreg_res_node[7] & B1_stack_addrs_c[0][7] & !B1L64;
+
+
+--C1L34 is cpu_cu:I2|pc_mux_x[0]~50 at LC4_C15
+--operation mode is normal
+
+C1L34 = !D1L25 & (C1L23 # !C1L94) # !C1L73;
+
+
+--C1L44 is cpu_cu:I2|pc_mux_x[0]~493 at LC5_C15
+--operation mode is normal
+
+C1L44 = (!D1L25 & (C1L73 # !C1L94) # !D1L66) & CASCADE(C1L34);
+
+
+--C1L51 is cpu_cu:I2|data_c_x[1]~242 at LC6_C19
+--operation mode is normal
+
+C1L51 = B1L36 & D1_nreset_d & !idata[3];
+
+
+--C1L61 is cpu_cu:I2|data_c_x[1]~257 at LC7_C19
+--operation mode is normal
+
+C1L61 = (!idata[2] & !idata[1] & (idata[0] # A1L77)) & CASCADE(C1L51);
+
+
+--J4L6 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~16 at LC7_C4
+--operation mode is normal
+
+J4L6 = D1L04 $ D1_acc_c[2] $ J4L3;
+
+
+--J4L5 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~12 at LC1_C2
+--operation mode is normal
+
+J4L5 = D1L04 & (D1_acc_c[2] # J4L3) # !D1L04 & D1_acc_c[2] & J4L3;
+
+
+--J4L4 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~24 at LC5_C3
+--operation mode is normal
+
+J4L4 = D1L83 $ D1_acc_c[1] $ J4L1;
+
+
+--J4L3 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~20 at LC8_C3
+--operation mode is normal
+
+J4L3 = D1L83 & (D1_acc_c[1] # J4L1) # !D1L83 & D1_acc_c[1] & J4L1;
+
+
+--J4L2 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~31 at LC3_C6
+--operation mode is normal
+
+J4L2 = D1_acc_c[0] $ D1L63;
+
+
+--J4L1 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~28 at LC6_C3
+--operation mode is normal
+
+J4L1 = D1_acc_c[0] & D1L63;
+
+
+--J6_cs_buffer[4] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cs_buffer[4] at LC7_C5
+--operation mode is arithmetic
+
+J6_cs_buffer[4] = D1L24 $ D1_acc_c[3] $ !J6_cout[3];
+
+--J6_cout[4] is cpu_du:I3|lpm_add_sub:add_71|addcore:adder|a_csnbuffer:result_node|cout[4] at LC7_C5
+--operation mode is arithmetic
+
+J6_cout[4] = CARRY(D1L24 & D1_acc_c[3] & J6_cout[3] # !D1L24 & (D1_acc_c[3] # J6_cout[3]));
+
+
+--C1L83 is cpu_cu:I2|i~277 at LC5_C20
+--operation mode is normal
+
+C1L83 = (D1L66 & C1L61 & (idata[2] # C1L62)) & CASCADE(C1L93);
+
+
+--B1L94 is cpu_iu:I1|Mux_83_rtl_0~0 at LC4_A18
+--operation mode is normal
+
+B1L94 = C1L44 & !C1L54 & J2_cs_buffer[6] # !C1L44 & (C1L54 # B1_pc[6]);
+
+
+--B1_stack_addrs_c[1][6] is cpu_iu:I1|stack_addrs_c[1][6] at LC3_A19
+--operation mode is normal
+
+B1_stack_addrs_c[1][6]_lut_out = A1L45 & (A1L48 # !C1L74) # !A1L45 & A1L48 & C1L74;
+B1_stack_addrs_c[1][6] = DFFEA(B1_stack_addrs_c[1][6]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L05 is cpu_iu:I1|Mux_83_rtl_0~1 at LC6_A18
+--operation mode is normal
+
+B1L05 = B1L94 & (B1_stack_addrs_c[1][6] # !C1L54) # !B1L94 & B1L31 & C1L54;
+
+
+--A1L64 is rtl~1419 at LC7_A18
+--operation mode is normal
+
+A1L64 = J2_cs_buffer[6] & (B1_stack_addrs_c[0][6] # B1L64) # !J2_cs_buffer[6] & B1_stack_addrs_c[0][6] & !B1L64;
+
+
+--B1L15 is cpu_iu:I1|Mux_84_rtl_0~0 at LC1_B12
+--operation mode is normal
+
+B1L15 = C1L54 & (B1L11 # !C1L44) # !C1L54 & C1L44 & J2_cs_buffer[5];
+
+
+--B1_stack_addrs_c[1][5] is cpu_iu:I1|stack_addrs_c[1][5] at LC2_B12
+--operation mode is normal
+
+B1_stack_addrs_c[1][5]_lut_out = A1L55 & (A1L58 # !C1L74) # !A1L55 & A1L58 & C1L74;
+B1_stack_addrs_c[1][5] = DFFEA(B1_stack_addrs_c[1][5]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L25 is cpu_iu:I1|Mux_84_rtl_0~1 at LC3_B12
+--operation mode is normal
+
+B1L25 = B1L15 & (C1L44 # B1_stack_addrs_c[1][5]) # !B1L15 & B1_pc[5] & !C1L44;
+
+
+--A1L74 is rtl~1429 at LC4_B12
+--operation mode is normal
+
+A1L74 = J2_cs_buffer[5] & (B1_stack_addrs_c[0][5] # B1L64) # !J2_cs_buffer[5] & B1_stack_addrs_c[0][5] & !B1L64;
+
+
+--B1L35 is cpu_iu:I1|Mux_85_rtl_0~0 at LC3_A15
+--operation mode is normal
+
+B1L35 = C1L44 & !C1L54 & J2_cs_buffer[4] # !C1L44 & (C1L54 # B1_pc[4]);
+
+
+--B1_stack_addrs_c[1][4] is cpu_iu:I1|stack_addrs_c[1][4] at LC2_A15
+--operation mode is normal
+
+B1_stack_addrs_c[1][4]_lut_out = A1L65 & (A1L68 # !C1L74) # !A1L65 & A1L68 & C1L74;
+B1_stack_addrs_c[1][4] = DFFEA(B1_stack_addrs_c[1][4]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L45 is cpu_iu:I1|Mux_85_rtl_0~1 at LC4_A15
+--operation mode is normal
+
+B1L45 = B1L35 & (B1_stack_addrs_c[1][4] # !C1L54) # !B1L35 & B1L9 & C1L54;
+
+
+--A1L84 is rtl~1439 at LC5_A15
+--operation mode is normal
+
+A1L84 = J2_cs_buffer[4] & (B1_stack_addrs_c[0][4] # B1L64) # !J2_cs_buffer[4] & B1_stack_addrs_c[0][4] & !B1L64;
+
+
+--B1L55 is cpu_iu:I1|Mux_86_rtl_0~0 at LC5_B24
+--operation mode is normal
+
+B1L55 = C1L54 & (B1L7 # !C1L44) # !C1L54 & C1L44 & J2_cs_buffer[3];
+
+
+--B1_stack_addrs_c[1][3] is cpu_iu:I1|stack_addrs_c[1][3] at LC3_B17
+--operation mode is normal
+
+B1_stack_addrs_c[1][3]_lut_out = A1L75 & (A1L78 # !C1L74) # !A1L75 & A1L78 & C1L74;
+B1_stack_addrs_c[1][3] = DFFEA(B1_stack_addrs_c[1][3]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L65 is cpu_iu:I1|Mux_86_rtl_0~1 at LC6_B24
+--operation mode is normal
+
+B1L65 = B1L55 & (C1L44 # B1_stack_addrs_c[1][3]) # !B1L55 & B1_pc[3] & !C1L44;
+
+
+--A1L94 is rtl~1449 at LC7_B24
+--operation mode is normal
+
+A1L94 = J2_cs_buffer[3] & (B1_stack_addrs_c[0][3] # B1L64) # !J2_cs_buffer[3] & B1_stack_addrs_c[0][3] & !B1L64;
+
+
+--B1L75 is cpu_iu:I1|Mux_87_rtl_0~0 at LC1_B19
+--operation mode is normal
+
+B1L75 = C1L44 & !C1L54 & J2_cs_buffer[2] # !C1L44 & (C1L54 # B1_pc[2]);
+
+
+--B1_stack_addrs_c[1][2] is cpu_iu:I1|stack_addrs_c[1][2] at LC4_B21
+--operation mode is normal
+
+B1_stack_addrs_c[1][2]_lut_out = A1L85 & (A1L88 # !C1L74) # !A1L85 & A1L88 & C1L74;
+B1_stack_addrs_c[1][2] = DFFEA(B1_stack_addrs_c[1][2]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L85 is cpu_iu:I1|Mux_87_rtl_0~1 at LC3_B19
+--operation mode is normal
+
+B1L85 = B1L75 & (B1_stack_addrs_c[1][2] # !C1L54) # !B1L75 & B1L5 & C1L54;
+
+
+--A1L05 is rtl~1459 at LC6_B19
+--operation mode is normal
+
+A1L05 = J2_cs_buffer[2] & (B1_stack_addrs_c[0][2] # B1L64) # !J2_cs_buffer[2] & B1_stack_addrs_c[0][2] & !B1L64;
+
+
+--B1L95 is cpu_iu:I1|Mux_88_rtl_0~0 at LC5_B22
+--operation mode is normal
+
+B1L95 = C1L54 & (B1L3 # !C1L44) # !C1L54 & C1L44 & J2_cs_buffer[1];
+
+
+--B1_stack_addrs_c[1][1] is cpu_iu:I1|stack_addrs_c[1][1] at LC7_C15
+--operation mode is normal
+
+B1_stack_addrs_c[1][1]_lut_out = A1L95 & (A1L98 # !C1L74) # !A1L95 & A1L98 & C1L74;
+B1_stack_addrs_c[1][1] = DFFEA(B1_stack_addrs_c[1][1]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L06 is cpu_iu:I1|Mux_88_rtl_0~1 at LC6_B22
+--operation mode is normal
+
+B1L06 = B1L95 & (C1L44 # B1_stack_addrs_c[1][1]) # !B1L95 & B1_pc[1] & !C1L44;
+
+
+--A1L15 is rtl~1469 at LC7_B22
+--operation mode is normal
+
+A1L15 = J2_cs_buffer[1] & (B1_stack_addrs_c[0][1] # B1L64) # !J2_cs_buffer[1] & B1_stack_addrs_c[0][1] & !B1L64;
+
+
+--B1_stack_addrs_c[1][0] is cpu_iu:I1|stack_addrs_c[1][0] at LC2_B10
+--operation mode is normal
+
+B1_stack_addrs_c[1][0]_lut_out = A1L06 & (A1L09 # !C1L74) # !A1L06 & A1L09 & C1L74;
+B1_stack_addrs_c[1][0] = DFFEA(B1_stack_addrs_c[1][0]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--B1L16 is cpu_iu:I1|Mux_89_rtl_0~1 at LC3_B11
+--operation mode is normal
+
+B1L16 = B1L26 & (B1_stack_addrs_c[1][0] # !C1L54) # !B1L26 & B1L1 & C1L54;
+
+
+--A1L25 is rtl~1479 at LC4_B11
+--operation mode is normal
+
+A1L25 = B1_stack_addrs_c[0][0] & (!B1_pc[0] # !B1L64) # !B1_stack_addrs_c[0][0] & B1L64 & !B1_pc[0];
+
+
+--B1L71 is cpu_iu:I1|eaddr_x[7]~416 at LC2_B19
+--operation mode is normal
+
+B1L71 = C1L54 & C1L44 & B1L36 & C1L74;
+
+
+--B1L51 is cpu_iu:I1|eaddr_x[7]~8 at LC8_A22
+--operation mode is normal
+
+B1L51 = E1_ipage_c[1] & (B1L51 # B1L71) # !E1_ipage_c[1] & B1L51 & !B1L71;
+
+
+--E1_data_ix_c[3] is cpu_oa:I4|data_ix_c[3] at LC1_C9
+--operation mode is normal
+
+E1_data_ix_c[3]_lut_out = E1L11 & data_in[3];
+E1_data_ix_c[3] = DFFEA(E1_data_ix_c[3]_lut_out, GLOBAL(uclk), , , , , );
+
+
+--D1L14 is cpu_du:I3|data_x[3]~54 at LC3_C9
+--operation mode is normal
+
+D1L14 = E1_int_re_c & E1_data_ix_c[3] # !E1_int_re_c & E1L11 & data_in[3];
+
+
+--D1L24 is cpu_du:I3|data_x[3]~59 at LC2_C9
+--operation mode is normal
+
+D1L24 = C1_daddr_d_x[3] & (D1L14 # C1_istr_op_c) # !C1_daddr_d_x[3] & D1L14 & !C1_istr_op_c;
+
+
+--D1L91 is cpu_du:I3|acc[3]~3310 at LC2_C10
+--operation mode is normal
+
+D1L91 = C1_data_c_y[0] & (C1_data_t_y[0] & !D1L24 # !C1_data_t_y[1]) # !C1_data_c_y[0] & !C1_data_t_y[0] & !C1_data_t_y[1];
+
+
+--D1L02 is cpu_du:I3|acc[3]~3323 at LC2_C2
+--operation mode is normal
+
+D1L02 = D1L41 & (C1_data_t_y[2] # !D1L91) # !D1_acc_c[3];
+
+
+--D1L51 is cpu_du:I3|acc[3]~3273 at LC5_C7
+--operation mode is normal
+
+D1L51 = C1_data_t_y[2] & (D1_acc_c[3] $ C1_data_t_y[1]) # !C1_data_t_y[2] & D1_acc_c[2];
+
+
+--D1L61 is cpu_du:I3|acc[3]~3285 at LC8_C7
+--operation mode is normal
+
+D1L61 = C1_data_t_y[1] $ C1_data_t_y[2];
+
+
+--D1L81 is cpu_du:I3|acc[3]~3295 at LC7_C7
+--operation mode is normal
+
+D1L81 = C1_data_t_y[0] & D1L51 # !C1_data_t_y[0] & D1L61 & D1_acc_c[4];
+
+
+--D1L12 is cpu_du:I3|acc[3]~5629 at LC1_C10
+--operation mode is normal
+
+D1L12 = C1_data_t_y[1] & !C1_data_t_y[2] & (!C1_data_t_y[0] # !D1_acc_c[3]);
+
+
+--D1L74 is cpu_du:I3|i~12 at LC8_C9
+--operation mode is normal
+
+D1L74 = D1_acc_c[3] & (C1_istr_op_c & C1_daddr_d_x[3] # !C1_istr_op_c & D1L14);
+
+
+--D1L55 is cpu_du:I3|Mux_79_rtl_0~0 at LC4_C2
+--operation mode is normal
+
+D1L55 = C1_data_t_y[1] & (C1_data_t_y[0] # J6_cs_buffer[4]) # !C1_data_t_y[1] & !C1_data_t_y[0] & J4L8;
+
+
+--D1L15 is cpu_du:I3|i~21 at LC6_C9
+--operation mode is normal
+
+D1L15 = D1_acc_c[3] # C1_istr_op_c & C1_daddr_d_x[3] # !C1_istr_op_c & D1L14;
+
+
+--D1L65 is cpu_du:I3|Mux_79_rtl_0~1 at LC6_C2
+--operation mode is normal
+
+D1L65 = D1L55 & (D1L15 # !C1_data_t_y[0]) # !D1L55 & D1L74 & C1_data_t_y[0];
+
+
+--D1L71 is cpu_du:I3|acc[3]~3290 at LC7_C2
+--operation mode is normal
+
+D1L71 = C1_data_t_y[2] & (D1L65 # D1L24 & D1L12) # !C1_data_t_y[2] & D1L24 & D1L12;
+
+
+--D1L22 is cpu_du:I3|acc[3]~5680 at LC3_C2
+--operation mode is normal
+
+D1L22 = (C1_data_c_y[0] & !D1L71 # !C1_data_c_y[0] & !D1L81 # !D1L41) & CASCADE(D1L02);
+
+
+--J4L8 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~8 at LC8_C2
+--operation mode is normal
+
+J4L8 = D1L24 $ D1_acc_c[3] $ J4L5;
+
+
+--J4L7 is cpu_du:I3|lpm_add_sub:add_61|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~4 at LC5_C2
+--operation mode is normal
+
+J4L7 = D1L24 & (D1_acc_c[3] # J4L5) # !D1L24 & D1_acc_c[3] & J4L5;
+
+
+--B1L31 is cpu_iu:I1|eaddr_x[6]~9 at LC8_A18
+--operation mode is normal
+
+B1L31 = E1_ipage_c[0] & (B1L31 # B1L71) # !E1_ipage_c[0] & B1L31 & !B1L71;
+
+
+--B1L11 is cpu_iu:I1|eaddr_x[5]~10 at LC5_B12
+--operation mode is normal
+
+B1L11 = idata[9] & (B1L11 # B1L71) # !idata[9] & B1L11 & !B1L71;
+
+
+--B1L9 is cpu_iu:I1|eaddr_x[4]~11 at LC6_A15
+--operation mode is normal
+
+B1L9 = idata[8] & (B1L9 # B1L71) # !idata[8] & B1L9 & !B1L71;
+
+
+--B1L7 is cpu_iu:I1|eaddr_x[3]~12 at LC8_B24
+--operation mode is normal
+
+B1L7 = idata[7] & (B1L7 # B1L71) # !idata[7] & B1L7 & !B1L71;
+
+
+--B1L5 is cpu_iu:I1|eaddr_x[2]~13 at LC7_B19
+--operation mode is normal
+
+B1L5 = idata[6] & (B1L5 # B1L71) # !idata[6] & B1L5 & !B1L71;
+
+
+--B1L3 is cpu_iu:I1|eaddr_x[1]~14 at LC8_B22
+--operation mode is normal
+
+B1L3 = idata[5] & (B1L3 # B1L71) # !idata[5] & B1L3 & !B1L71;
+
+
+--B1L1 is cpu_iu:I1|eaddr_x[0]~15 at LC7_B11
+--operation mode is normal
+
+B1L1 = idata[4] & (B1L1 # B1L71) # !idata[4] & B1L1 & !B1L71;
+
+
+--B1_stack_addrs_c[2][7] is cpu_iu:I1|stack_addrs_c[2][7] at LC2_A17
+--operation mode is normal
+
+B1_stack_addrs_c[2][7]_lut_out = A1L16 & (A1L19 # !C1L74) # !A1L16 & A1L19 & C1L74;
+B1_stack_addrs_c[2][7] = DFFEA(B1_stack_addrs_c[2][7]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L38 is rtl~1854 at LC3_A17
+--operation mode is normal
+
+A1L38 = B1_stack_addrs_c[2][7] & (B1_stack_addrs_c[0][7] # B1L64) # !B1_stack_addrs_c[2][7] & B1_stack_addrs_c[0][7] & !B1L64;
+
+
+--A1L35 is rtl~1489 at LC4_A17
+--operation mode is normal
+
+A1L35 = B1_stack_addrs_c[0][7] & (B1_stack_addrs_c[1][7] # B1L64) # !B1_stack_addrs_c[0][7] & B1_stack_addrs_c[1][7] & !B1L64;
+
+
+--C1L53 is cpu_cu:I2|i~225 at LC3_C20
+--operation mode is normal
+
+C1L53 = D1L66 & C1L41 & !idata[1] & !C1L42;
+
+
+--C1L93 is cpu_cu:I2|i~278 at LC4_C20
+--operation mode is normal
+
+C1L93 = (D1L66 & C1L32 & (!idata[3] # !C1L81)) & CASCADE(C1L53);
+
+
+--B1_stack_addrs_c[2][6] is cpu_iu:I1|stack_addrs_c[2][6] at LC6_A19
+--operation mode is normal
+
+B1_stack_addrs_c[2][6]_lut_out = A1L26 & (A1L29 # !C1L74) # !A1L26 & A1L29 & C1L74;
+B1_stack_addrs_c[2][6] = DFFEA(B1_stack_addrs_c[2][6]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L48 is rtl~1863 at LC5_A19
+--operation mode is normal
+
+A1L48 = B1_stack_addrs_c[2][6] & (B1_stack_addrs_c[0][6] # B1L64) # !B1_stack_addrs_c[2][6] & B1_stack_addrs_c[0][6] & !B1L64;
+
+
+--A1L45 is rtl~1499 at LC7_A19
+--operation mode is normal
+
+A1L45 = B1_stack_addrs_c[0][6] & (B1_stack_addrs_c[1][6] # B1L64) # !B1_stack_addrs_c[0][6] & B1_stack_addrs_c[1][6] & !B1L64;
+
+
+--B1_stack_addrs_c[2][5] is cpu_iu:I1|stack_addrs_c[2][5] at LC1_B23
+--operation mode is normal
+
+B1_stack_addrs_c[2][5]_lut_out = A1L36 & (A1L39 # !C1L74) # !A1L36 & A1L39 & C1L74;
+B1_stack_addrs_c[2][5] = DFFEA(B1_stack_addrs_c[2][5]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L58 is rtl~1872 at LC6_B12
+--operation mode is normal
+
+A1L58 = B1_stack_addrs_c[2][5] & (B1_stack_addrs_c[0][5] # B1L64) # !B1_stack_addrs_c[2][5] & B1_stack_addrs_c[0][5] & !B1L64;
+
+
+--A1L55 is rtl~1509 at LC7_B12
+--operation mode is normal
+
+A1L55 = B1_stack_addrs_c[0][5] & (B1_stack_addrs_c[1][5] # B1L64) # !B1_stack_addrs_c[0][5] & B1_stack_addrs_c[1][5] & !B1L64;
+
+
+--B1_stack_addrs_c[2][4] is cpu_iu:I1|stack_addrs_c[2][4] at LC2_A21
+--operation mode is normal
+
+B1_stack_addrs_c[2][4]_lut_out = A1L46 & (A1L49 # !C1L74) # !A1L46 & A1L49 & C1L74;
+B1_stack_addrs_c[2][4] = DFFEA(B1_stack_addrs_c[2][4]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L68 is rtl~1881 at LC7_A15
+--operation mode is normal
+
+A1L68 = B1_stack_addrs_c[2][4] & (B1_stack_addrs_c[0][4] # B1L64) # !B1_stack_addrs_c[2][4] & B1_stack_addrs_c[0][4] & !B1L64;
+
+
+--A1L65 is rtl~1519 at LC8_A15
+--operation mode is normal
+
+A1L65 = B1_stack_addrs_c[0][4] & (B1_stack_addrs_c[1][4] # B1L64) # !B1_stack_addrs_c[0][4] & B1_stack_addrs_c[1][4] & !B1L64;
+
+
+--B1_stack_addrs_c[2][3] is cpu_iu:I1|stack_addrs_c[2][3] at LC1_B17
+--operation mode is normal
+
+B1_stack_addrs_c[2][3]_lut_out = A1L56 & (A1L59 # !C1L74) # !A1L56 & A1L59 & C1L74;
+B1_stack_addrs_c[2][3] = DFFEA(B1_stack_addrs_c[2][3]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L78 is rtl~1890 at LC4_B17
+--operation mode is normal
+
+A1L78 = B1_stack_addrs_c[2][3] & (B1_stack_addrs_c[0][3] # B1L64) # !B1_stack_addrs_c[2][3] & B1_stack_addrs_c[0][3] & !B1L64;
+
+
+--A1L75 is rtl~1529 at LC5_B17
+--operation mode is normal
+
+A1L75 = B1_stack_addrs_c[0][3] & (B1_stack_addrs_c[1][3] # B1L64) # !B1_stack_addrs_c[0][3] & B1_stack_addrs_c[1][3] & !B1L64;
+
+
+--B1_stack_addrs_c[2][2] is cpu_iu:I1|stack_addrs_c[2][2] at LC2_B13
+--operation mode is normal
+
+B1_stack_addrs_c[2][2]_lut_out = A1L66 & (A1L69 # !C1L74) # !A1L66 & A1L69 & C1L74;
+B1_stack_addrs_c[2][2] = DFFEA(B1_stack_addrs_c[2][2]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L88 is rtl~1899 at LC6_B21
+--operation mode is normal
+
+A1L88 = B1_stack_addrs_c[2][2] & (B1_stack_addrs_c[0][2] # B1L64) # !B1_stack_addrs_c[2][2] & B1_stack_addrs_c[0][2] & !B1L64;
+
+
+--A1L85 is rtl~1539 at LC8_B21
+--operation mode is normal
+
+A1L85 = A1L14 # B1_stack_addrs_c[1][2] & !B1L64;
+
+
+--B1_stack_addrs_c[2][1] is cpu_iu:I1|stack_addrs_c[2][1] at LC1_B15
+--operation mode is normal
+
+B1_stack_addrs_c[2][1]_lut_out = A1L76 & (A1L79 # !C1L74) # !A1L76 & A1L79 & C1L74;
+B1_stack_addrs_c[2][1] = DFFEA(B1_stack_addrs_c[2][1]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L98 is rtl~1908 at LC2_B15
+--operation mode is normal
+
+A1L98 = B1_stack_addrs_c[2][1] & (B1_stack_addrs_c[0][1] # B1L64) # !B1_stack_addrs_c[2][1] & B1_stack_addrs_c[0][1] & !B1L64;
+
+
+--A1L95 is rtl~1548 at LC2_C15
+--operation mode is normal
+
+A1L95 = A1L24 # B1_stack_addrs_c[1][1] & !B1L64;
+
+
+--B1_stack_addrs_c[2][0] is cpu_iu:I1|stack_addrs_c[2][0] at LC1_B13
+--operation mode is normal
+
+B1_stack_addrs_c[2][0]_lut_out = A1L86 & (A1L89 # !C1L74) # !A1L86 & A1L89 & C1L74;
+B1_stack_addrs_c[2][0] = DFFEA(B1_stack_addrs_c[2][0]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L09 is rtl~1917 at LC1_B10
+--operation mode is normal
+
+A1L09 = B1_stack_addrs_c[2][0] & (B1_stack_addrs_c[0][0] # B1L64) # !B1_stack_addrs_c[2][0] & B1_stack_addrs_c[0][0] & !B1L64;
+
+
+--A1L06 is rtl~1557 at LC3_B10
+--operation mode is normal
+
+A1L06 = A1L34 # B1_stack_addrs_c[1][0] & !B1L64;
+
+
+--B1_stack_addrs_c[3][7] is cpu_iu:I1|stack_addrs_c[3][7] at LC3_A21
+--operation mode is normal
+
+B1_stack_addrs_c[3][7]_lut_out = A1L96;
+B1_stack_addrs_c[3][7] = DFFEA(B1_stack_addrs_c[3][7]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L19 is rtl~1926 at LC1_A21
+--operation mode is normal
+
+A1L19 = B1_stack_addrs_c[3][7] & (B1_stack_addrs_c[1][7] # B1L64) # !B1_stack_addrs_c[3][7] & B1_stack_addrs_c[1][7] & !B1L64;
+
+
+--A1L16 is rtl~1566 at LC6_A17
+--operation mode is normal
+
+A1L16 = B1_stack_addrs_c[1][7] & (B1_stack_addrs_c[2][7] # B1L64) # !B1_stack_addrs_c[1][7] & B1_stack_addrs_c[2][7] & !B1L64;
+
+
+--B1_stack_addrs_c[3][6] is cpu_iu:I1|stack_addrs_c[3][6] at LC7_A17
+--operation mode is normal
+
+B1_stack_addrs_c[3][6]_lut_out = A1L07;
+B1_stack_addrs_c[3][6] = DFFEA(B1_stack_addrs_c[3][6]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L29 is rtl~1936 at LC1_A17
+--operation mode is normal
+
+A1L29 = B1_stack_addrs_c[3][6] & (B1_stack_addrs_c[1][6] # B1L64) # !B1_stack_addrs_c[3][6] & B1_stack_addrs_c[1][6] & !B1L64;
+
+
+--A1L26 is rtl~1576 at LC8_A19
+--operation mode is normal
+
+A1L26 = B1_stack_addrs_c[1][6] & (B1_stack_addrs_c[2][6] # B1L64) # !B1_stack_addrs_c[1][6] & B1_stack_addrs_c[2][6] & !B1L64;
+
+
+--B1_stack_addrs_c[3][5] is cpu_iu:I1|stack_addrs_c[3][5] at LC2_B23
+--operation mode is normal
+
+B1_stack_addrs_c[3][5]_lut_out = A1L17;
+B1_stack_addrs_c[3][5] = DFFEA(B1_stack_addrs_c[3][5]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L39 is rtl~1946 at LC3_B23
+--operation mode is normal
+
+A1L39 = B1_stack_addrs_c[3][5] & (B1_stack_addrs_c[1][5] # B1L64) # !B1_stack_addrs_c[3][5] & B1_stack_addrs_c[1][5] & !B1L64;
+
+
+--A1L36 is rtl~1586 at LC5_B23
+--operation mode is normal
+
+A1L36 = B1_stack_addrs_c[1][5] & (B1_stack_addrs_c[2][5] # B1L64) # !B1_stack_addrs_c[1][5] & B1_stack_addrs_c[2][5] & !B1L64;
+
+
+--B1_stack_addrs_c[3][4] is cpu_iu:I1|stack_addrs_c[3][4] at LC4_A21
+--operation mode is normal
+
+B1_stack_addrs_c[3][4]_lut_out = A1L27;
+B1_stack_addrs_c[3][4] = DFFEA(B1_stack_addrs_c[3][4]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L49 is rtl~1956 at LC5_A21
+--operation mode is normal
+
+A1L49 = B1_stack_addrs_c[3][4] & (B1_stack_addrs_c[1][4] # B1L64) # !B1_stack_addrs_c[3][4] & B1_stack_addrs_c[1][4] & !B1L64;
+
+
+--A1L46 is rtl~1596 at LC6_A21
+--operation mode is normal
+
+A1L46 = B1_stack_addrs_c[1][4] & (B1_stack_addrs_c[2][4] # B1L64) # !B1_stack_addrs_c[1][4] & B1_stack_addrs_c[2][4] & !B1L64;
+
+
+--B1_stack_addrs_c[3][3] is cpu_iu:I1|stack_addrs_c[3][3] at LC4_B23
+--operation mode is normal
+
+B1_stack_addrs_c[3][3]_lut_out = A1L37;
+B1_stack_addrs_c[3][3] = DFFEA(B1_stack_addrs_c[3][3]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L59 is rtl~1966 at LC6_B17
+--operation mode is normal
+
+A1L59 = B1_stack_addrs_c[3][3] & (B1_stack_addrs_c[1][3] # B1L64) # !B1_stack_addrs_c[3][3] & B1_stack_addrs_c[1][3] & !B1L64;
+
+
+--A1L56 is rtl~1606 at LC7_B17
+--operation mode is normal
+
+A1L56 = B1_stack_addrs_c[1][3] & (B1_stack_addrs_c[2][3] # B1L64) # !B1_stack_addrs_c[1][3] & B1_stack_addrs_c[2][3] & !B1L64;
+
+
+--B1_stack_addrs_c[3][2] is cpu_iu:I1|stack_addrs_c[3][2] at LC2_B17
+--operation mode is normal
+
+B1_stack_addrs_c[3][2]_lut_out = A1L47;
+B1_stack_addrs_c[3][2] = DFFEA(B1_stack_addrs_c[3][2]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L69 is rtl~1976 at LC3_B13
+--operation mode is normal
+
+A1L69 = B1_stack_addrs_c[3][2] & (B1_stack_addrs_c[1][2] # B1L64) # !B1_stack_addrs_c[3][2] & B1_stack_addrs_c[1][2] & !B1L64;
+
+
+--A1L66 is rtl~1616 at LC4_B13
+--operation mode is normal
+
+A1L66 = B1_stack_addrs_c[1][2] & (B1_stack_addrs_c[2][2] # B1L64) # !B1_stack_addrs_c[1][2] & B1_stack_addrs_c[2][2] & !B1L64;
+
+
+--B1_stack_addrs_c[3][1] is cpu_iu:I1|stack_addrs_c[3][1] at LC4_B15
+--operation mode is normal
+
+B1_stack_addrs_c[3][1]_lut_out = A1L57;
+B1_stack_addrs_c[3][1] = DFFEA(B1_stack_addrs_c[3][1]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L79 is rtl~1986 at LC5_B15
+--operation mode is normal
+
+A1L79 = B1_stack_addrs_c[3][1] & (B1_stack_addrs_c[1][1] # B1L64) # !B1_stack_addrs_c[3][1] & B1_stack_addrs_c[1][1] & !B1L64;
+
+
+--A1L76 is rtl~1626 at LC6_B15
+--operation mode is normal
+
+A1L76 = B1_stack_addrs_c[1][1] & (B1_stack_addrs_c[2][1] # B1L64) # !B1_stack_addrs_c[1][1] & B1_stack_addrs_c[2][1] & !B1L64;
+
+
+--B1_stack_addrs_c[3][0] is cpu_iu:I1|stack_addrs_c[3][0] at LC3_B15
+--operation mode is normal
+
+B1_stack_addrs_c[3][0]_lut_out = A1L67;
+B1_stack_addrs_c[3][0] = DFFEA(B1_stack_addrs_c[3][0]_lut_out, GLOBAL(uclk), , , B1L36, , );
+
+
+--A1L89 is rtl~1996 at LC5_B13
+--operation mode is normal
+
+A1L89 = B1_stack_addrs_c[3][0] & (B1_stack_addrs_c[1][0] # B1L64) # !B1_stack_addrs_c[3][0] & B1_stack_addrs_c[1][0] & !B1L64;
+
+
+--A1L86 is rtl~1636 at LC6_B13
+--operation mode is normal
+
+A1L86 = B1_stack_addrs_c[1][0] & (B1_stack_addrs_c[2][0] # B1L64) # !B1_stack_addrs_c[1][0] & B1_stack_addrs_c[2][0] & !B1L64;
+
+
+--A1L96 is rtl~1651 at LC7_A21
+--operation mode is normal
+
+A1L96 = C1L74 & B1_stack_addrs_c[2][7] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][7] # !B1L64 & B1_stack_addrs_c[3][7]);
+
+
+--A1L07 is rtl~1661 at LC8_A17
+--operation mode is normal
+
+A1L07 = C1L74 & B1_stack_addrs_c[2][6] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][6] # !B1L64 & B1_stack_addrs_c[3][6]);
+
+
+--A1L17 is rtl~1671 at LC6_B23
+--operation mode is normal
+
+A1L17 = C1L74 & B1_stack_addrs_c[2][5] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][5] # !B1L64 & B1_stack_addrs_c[3][5]);
+
+
+--A1L27 is rtl~1681 at LC8_A21
+--operation mode is normal
+
+A1L27 = C1L74 & B1_stack_addrs_c[2][4] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][4] # !B1L64 & B1_stack_addrs_c[3][4]);
+
+
+--A1L37 is rtl~1691 at LC7_B23
+--operation mode is normal
+
+A1L37 = C1L74 & B1_stack_addrs_c[2][3] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][3] # !B1L64 & B1_stack_addrs_c[3][3]);
+
+
+--A1L47 is rtl~1701 at LC8_B17
+--operation mode is normal
+
+A1L47 = C1L74 & B1_stack_addrs_c[2][2] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][2] # !B1L64 & B1_stack_addrs_c[3][2]);
+
+
+--A1L57 is rtl~1711 at LC7_B15
+--operation mode is normal
+
+A1L57 = C1L74 & B1_stack_addrs_c[2][1] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][1] # !B1L64 & B1_stack_addrs_c[3][1]);
+
+
+--A1L67 is rtl~1721 at LC8_B15
+--operation mode is normal
+
+A1L67 = C1L74 & B1_stack_addrs_c[2][0] & !B1L64 # !C1L74 & (B1L64 & B1_stack_addrs_c[2][0] # !B1L64 & B1_stack_addrs_c[3][0]);
+
+
+--B1L26 is cpu_iu:I1|Mux_89_rtl_0~8 at LC8_B11
+--operation mode is normal
+
+B1L26 = C1L44 $ (B1_pc[0] # C1L64 & !C1L63);
+
+
+--C1L04 is cpu_cu:I2|Mux_41_rtl_4~10 at LC6_C13
+--operation mode is normal
+
+C1L04 = idata[4] & (idata[5] & !idata[6] & !idata[7] # !idata[5] & idata[6]) # !idata[4] & idata[5] & (!idata[7] # !idata[6]);
+
+
+--C1L14 is cpu_cu:I2|Mux_42_rtl_4~10 at LC7_C13
+--operation mode is normal
+
+C1L14 = idata[5] & idata[4] & !idata[7] & !idata[6] # !idata[5] & (idata[4] $ (idata[7] & idata[6]));
+
+
+--idata[0] is idata[0] at Pin_94
+--operation mode is input
+
+idata[0] = INPUT();
+
+
+--idata[3] is idata[3] at Pin_91
+--operation mode is input
+
+idata[3] = INPUT();
+
+
+--idata[7] is idata[7] at Pin_89
+--operation mode is input
+
+idata[7] = INPUT();
+
+
+--idata[5] is idata[5] at Pin_38
+--operation mode is input
+
+idata[5] = INPUT();
+
+
+--idata[6] is idata[6] at Pin_40
+--operation mode is input
+
+idata[6] = INPUT();
+
+
+--idata[2] is idata[2] at Pin_90
+--operation mode is input
+
+idata[2] = INPUT();
+
+
+--idata[1] is idata[1] at Pin_56
+--operation mode is input
+
+idata[1] = INPUT();
+
+
+--idata[9] is idata[9] at Pin_79
+--operation mode is input
+
+idata[9] = INPUT();
+
+
+--idata[8] is idata[8] at Pin_31
+--operation mode is input
+
+idata[8] = INPUT();
+
+
+--idata[4] is idata[4] at Pin_46
+--operation mode is input
+
+idata[4] = INPUT();
+
+
+--nreset is nreset at Pin_19
+--operation mode is input
+
+nreset = INPUT();
+
+
+--uclk is uclk at Pin_39
+--operation mode is input
+
+uclk = INPUT();
+
+
+--data_in[2] is data_in[2] at Pin_85
+--operation mode is input
+
+data_in[2] = INPUT();
+
+
+--data_in[1] is data_in[1] at Pin_26
+--operation mode is input
+
+data_in[1] = INPUT();
+
+
+--data_in[0] is data_in[0] at Pin_22
+--operation mode is input
+
+data_in[0] = INPUT();
+
+
+--data_in[3] is data_in[3] at Pin_81
+--operation mode is input
+
+data_in[3] = INPUT();
+
+
+--iaddr[7] is iaddr[7] at Pin_9
+--operation mode is output
+
+iaddr[7] = OUTPUT(B1L24);
+
+
+--iaddr[6] is iaddr[6] at Pin_5
+--operation mode is output
+
+iaddr[6] = OUTPUT(B1L83);
+
+
+--iaddr[5] is iaddr[5] at Pin_61
+--operation mode is output
+
+iaddr[5] = OUTPUT(B1L43);
+
+
+--iaddr[4] is iaddr[4] at Pin_23
+--operation mode is output
+
+iaddr[4] = OUTPUT(B1L03);
+
+
+--iaddr[3] is iaddr[3] at Pin_14
+--operation mode is output
+
+iaddr[3] = OUTPUT(B1L62);
+
+
+--iaddr[2] is iaddr[2] at Pin_16
+--operation mode is output
+
+iaddr[2] = OUTPUT(B1L52);
+
+
+--iaddr[1] is iaddr[1] at Pin_13
+--operation mode is output
+
+iaddr[1] = OUTPUT(B1L22);
+
+
+--iaddr[0] is iaddr[0] at Pin_15
+--operation mode is output
+
+iaddr[0] = OUTPUT(B1L91);
+
+
+--data_out[3] is data_out[3] at Pin_98
+--operation mode is output
+
+data_out[3] = OUTPUT(E1L12);
+
+
+--data_out[2] is data_out[2] at Pin_97
+--operation mode is output
+
+data_out[2] = OUTPUT(E1L02);
+
+
+--data_out[1] is data_out[1] at Pin_45
+--operation mode is output
+
+data_out[1] = OUTPUT(E1_data_ox[1]);
+
+
+--data_out[0] is data_out[0] at Pin_55
+--operation mode is output
+
+data_out[0] = OUTPUT(E1_data_ox[0]);
+
+
+--daddr[5] is daddr[5] at Pin_96
+--operation mode is output
+
+daddr[5] = OUTPUT(E1_daddr_x[5]);
+
+
+--daddr[4] is daddr[4] at Pin_58
+--operation mode is output
+
+daddr[4] = OUTPUT(E1_daddr_x[4]);
+
+
+--daddr[3] is daddr[3] at Pin_20
+--operation mode is output
+
+daddr[3] = OUTPUT(E1_daddr_x[3]);
+
+
+--daddr[2] is daddr[2] at Pin_43
+--operation mode is output
+
+daddr[2] = OUTPUT(E1_daddr_x[2]);
+
+
+--daddr[1] is daddr[1] at Pin_57
+--operation mode is output
+
+daddr[1] = OUTPUT(E1_daddr_x[1]);
+
+
+--daddr[0] is daddr[0] at Pin_21
+--operation mode is output
+
+daddr[0] = OUTPUT(E1_daddr_x[0]);
+
+
+--nre is nre at Pin_8
+--operation mode is output
+
+nre = OUTPUT(E1_nre_x);
+
+
+--nwe is nwe at Pin_99
+--operation mode is output
+
+nwe = OUTPUT(E1_nwe_x);
+
+

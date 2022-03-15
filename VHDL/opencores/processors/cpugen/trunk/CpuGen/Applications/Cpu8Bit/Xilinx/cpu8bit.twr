@@ -1,0 +1,102 @@
+--------------------------------------------------------------------------------
+Release 6.1.03i Trace G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+C:/Xilinx/bin/nt/trce.exe -intstyle ise -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o
+cpu8bit.twr cpu8bit.pcf
+
+
+Design file:              cpu8bit.ncd
+Physical constraint file: cpu8bit.pcf
+Device,speed:             xc2s50e,-7 (PRODUCTION 1.17 2003-11-04)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths
+   option. All paths that are not constrained will be reported in the
+   unconstrained paths section(s) of the report.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock UCLK
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  |  Clock |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) |  Phase |
+------------+------------+------------+------------------+--------+
+IN0_REG<0>  |   14.060(R)|   -2.692(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<1>  |   13.474(R)|   -1.968(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<2>  |   14.082(R)|   -2.365(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<3>  |   14.333(R)|   -2.297(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<4>  |   14.203(R)|   -2.543(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<5>  |   14.297(R)|   -2.568(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<6>  |   14.656(R)|   -2.718(R)|UCLK_BUFGP        |   0.000|
+IN0_REG<7>  |   13.163(R)|   -1.978(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<0>  |   14.044(R)|   -2.676(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<1>  |   13.545(R)|   -2.039(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<2>  |   14.052(R)|   -2.335(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<3>  |   14.224(R)|   -2.188(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<4>  |   13.893(R)|   -2.233(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<5>  |   14.498(R)|   -2.769(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<6>  |   14.508(R)|   -2.570(R)|UCLK_BUFGP        |   0.000|
+IN1_REG<7>  |   13.474(R)|   -2.289(R)|UCLK_BUFGP        |   0.000|
+IN_INT<0>   |    0.922(R)|   -0.428(R)|UCLK_BUFGP        |   0.000|
+IN_INT<1>   |    0.851(R)|   -0.348(R)|UCLK_BUFGP        |   0.000|
+IN_INT<2>   |    1.863(R)|   -1.369(R)|UCLK_BUFGP        |   0.000|
+IN_INT<3>   |    1.937(R)|   -1.434(R)|UCLK_BUFGP        |   0.000|
+RXD         |    4.553(R)|   -0.135(R)|UCLK_BUFGP        |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock UCLK to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  |  Clock |
+Destination | to PAD     |Internal Clock(s) |  Phase |
+------------+------------+------------------+--------+
+OUT0_REG<0> |    6.148(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<1> |    6.148(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<2> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<3> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<4> |    6.147(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<5> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<6> |    6.149(R)|UCLK_BUFGP        |   0.000|
+OUT0_REG<7> |    6.149(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<0> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<1> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<2> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<3> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<4> |    6.149(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<5> |    6.097(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<6> |    6.149(R)|UCLK_BUFGP        |   0.000|
+OUT1_REG<7> |    6.097(R)|UCLK_BUFGP        |   0.000|
+TXD         |    6.147(R)|UCLK_BUFGP        |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock NRESET
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+NRESET         |         |         |   16.579|   16.579|
+UCLK           |         |         |   19.996|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock UCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+NRESET         |   32.064|   32.064|         |         |
+UCLK           |   34.254|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Analysis completed Fri Jan 09 23:23:49 2004
+--------------------------------------------------------------------------------
+
+Peak Memory Usage: 49 MB

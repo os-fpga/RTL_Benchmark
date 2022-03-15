@@ -1,0 +1,25 @@
+sch2vhdl -family spartan3 -flat -suppress -w cpu32bit.sch cpu32bit.vhf
+xst -intstyle ise -ifn __projnav/cpu32bit.xst -ofn cpu32bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu32bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu32bit.ngc cpu32bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu32bit_map.ncd cpu32bit.ngd cpu32bit.pcf
+sch2vhdl -family spartan3 -flat -suppress -w cpu32bit.sch cpu32bit.vhf
+xst -intstyle ise -ifn __projnav/cpu32bit.xst -ofn cpu32bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu32bit\xilinx/_ngo -i  -p xc3s200-pq208-4 cpu32bit.ngc cpu32bit.ngd
+map -intstyle ise -p xc3s200-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu32bit_map.ncd cpu32bit.ngd cpu32bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu32bit_map.ncd cpu32bit.ncd cpu32bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu32bit cpu32bit.ncd -o cpu32bit.twr cpu32bit.pcf
+bitgen -intstyle ise -f cpu32bit.ut cpu32bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu32bit.pcf -ngm cpu32bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu32bit.ncd cpu32bit_timesim.vhd
+xst -intstyle ise -ifn __projnav/cpu32bit.xst -ofn cpu32bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu32bit\xilinx/_ngo -i  -p xc3s200-pq208-4 cpu32bit.ngc cpu32bit.ngd
+map -intstyle ise -p xc3s200-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu32bit_map.ncd cpu32bit.ngd cpu32bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu32bit_map.ncd cpu32bit.ncd cpu32bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu32bit cpu32bit.ncd -o cpu32bit.twr cpu32bit.pcf
+bitgen -intstyle ise -f cpu32bit.ut cpu32bit.ncd
+sch2vhdl -family spartan3 -flat -suppress -w cpu32bit.sch cpu32bit.vhf
+xst -intstyle ise -ifn __projnav/cpu32bit.xst -ofn cpu32bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu32bit\xilinx/_ngo -i  -p xc3s200-pq208-4 cpu32bit.ngc cpu32bit.ngd
+map -intstyle ise -p xc3s200-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu32bit_map.ncd cpu32bit.ngd cpu32bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu32bit_map.ncd cpu32bit.ncd cpu32bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu32bit cpu32bit.ncd -o cpu32bit.twr cpu32bit.pcf
+bitgen -intstyle ise -f cpu32bit.ut cpu32bit.ncd

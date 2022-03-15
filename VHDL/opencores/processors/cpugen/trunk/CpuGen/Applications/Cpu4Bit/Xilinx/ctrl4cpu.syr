@@ -1,0 +1,309 @@
+Release 6.1.02i - xst G.25a
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.17 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.17 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: ctrl4cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+     4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : ctrl4cpu.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : ctrl4cpu
+Output Format                      : NGC
+Target Device                      : xc2s30-5-cs144
+
+---- Source Options
+Top Module Name                    : ctrl4cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : lut
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Equivalent register Removal        : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+Global Optimization                : AllClockNets
+RTL Output                         : Yes
+Write Timing Constraints           : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : ctrl4cpu.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+Optimize Instantiated Primitives   : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/CpuGen/Applications/Cpu4Bit/Xilinx/../../Components/ctrl4cpu.vhd in Library work.
+Entity <ctrl4cpu> (Architecture <ctrl4cpu_struct>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <ctrl4cpu> (Architecture <ctrl4cpu_struct>).
+INFO:Xst:1561 - C:/CpuGen/Applications/Cpu4Bit/Xilinx/../../Components/ctrl4cpu.vhd line 84: Mux is complete : default of case is discarded
+Entity <ctrl4cpu> analyzed. Unit <ctrl4cpu> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ctrl4cpu>.
+    Related source file is C:/CpuGen/Applications/Cpu4Bit/Xilinx/../../Components/ctrl4cpu.vhd.
+WARNING:Xst:647 - Input <nRE_CPU> is never used.
+    Found 4-bit register for signal <ctrl_data_c>.
+    Found 1-bit register for signal <mux_c<0>>.
+    Found 4-bit register for signal <pwm_data_c>.
+    Found 8 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <ctrl4cpu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                        : 3
+  1-bit register                   : 1
+  4-bit register                   : 2
+# Multiplexers                     : 2
+  2-to-1 multiplexer               : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ctrl4cpu> ...
+Loading device for application Xst from file '2s30.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ctrl4cpu, actual ratio is 2.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ctrl4cpu.ngr
+Top Level Output File Name         : ctrl4cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 39
+
+Macro Statistics :
+# Registers                        : 3
+#      1-bit register              : 1
+#      4-bit register              : 2
+# Multiplexers                     : 2
+#      2-to-1 multiplexer          : 2
+
+Cell Usage :
+# BELS                             : 20
+#      LUT1                        : 1
+#      LUT2                        : 2
+#      LUT3                        : 7
+#      LUT3_L                      : 4
+#      LUT4                        : 5
+#      VCC                         : 1
+# FlipFlops/Latches                : 9
+#      FDR                         : 1
+#      FDRE                        : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 37
+#      IBUF                        : 19
+#      OBUF                        : 18
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s30cs144-5 
+
+ Number of Slices:                      12  out of    432     2%  
+ Number of Slice Flip Flops:             9  out of    864     1%  
+ Number of 4 input LUTs:                19  out of    864     2%  
+ Number of bonded IOBs:                 37  out of     96    38%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 9     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.038ns (Maximum Frequency: 247.647MHz)
+   Minimum input arrival time before clock: 8.236ns
+   Maximum output required time after clock: 10.252ns
+   Maximum combinational path delay: 11.937ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk'
+Delay:               4.038ns (Levels of Logic = 1)
+  Source:            pwm_data_c_3 (FF)
+  Destination:       pwm_data_c_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: pwm_data_c_3 to pwm_data_c_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   1.292   1.340  pwm_data_c_3 (pwm_data_c_3)
+     LUT3_L:I1->LO         1   0.653   0.000  Mmux__n0021_Result<3>1 (_n0021<3>)
+     FDRE:D                    0.753          pwm_data_c_3
+    ----------------------------------------
+    Total                      4.038ns (2.698ns logic, 1.340ns route)
+                                       (66.8% logic, 33.2% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+Offset:              8.236ns (Levels of Logic = 4)
+  Source:            CPU_ADDR_OUT<4> (PAD)
+  Destination:       pwm_data_c_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: CPU_ADDR_OUT<4> to pwm_data_c_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.924   1.850  CPU_ADDR_OUT_4_IBUF (CPU_ADDR_OUT_4_IBUF)
+     LUT2:I1->O            1   0.653   1.150  _n0046_SW0 (N1384)
+     LUT4:I3->O            4   0.653   1.600  _n0046 (_n0046)
+     LUT3_L:I0->LO         1   0.653   0.000  Mmux__n0021_Result<2>1 (_n0021<2>)
+     FDRE:D                    0.753          pwm_data_c_2
+    ----------------------------------------
+    Total                      8.236ns (3.636ns logic, 4.600ns route)
+                                       (44.1% logic, 55.9% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+Offset:              10.252ns (Levels of Logic = 2)
+  Source:            mux_c_0 (FF)
+  Destination:       CPU_DATA_IN<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: mux_c_0 to CPU_DATA_IN<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   1.292   1.600  mux_c_0 (mux_c_0)
+     LUT3:I0->O            1   0.653   1.150  Mmux_CPU_DATA_IN_Result<1>1 (CPU_DATA_IN_1_OBUF)
+     OBUF:I->O                 5.557          CPU_DATA_IN_1_OBUF (CPU_DATA_IN<1>)
+    ----------------------------------------
+    Total                     10.252ns (7.502ns logic, 2.750ns route)
+                                       (73.2% logic, 26.8% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default path analysis
+Delay:               11.937ns (Levels of Logic = 4)
+  Source:            CPU_ADDR_OUT<4> (PAD)
+  Destination:       nCS_PWM (PAD)
+
+  Data Path: CPU_ADDR_OUT<4> to nCS_PWM
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.924   1.850  CPU_ADDR_OUT_4_IBUF (CPU_ADDR_OUT_4_IBUF)
+     LUT4:I2->O            1   0.653   1.150  nCS_PWM_SW0 (N1539)
+     LUT4:I3->O            1   0.653   1.150  nCS_PWM (nCS_PWM_OBUF)
+     OBUF:I->O                 5.557          nCS_PWM_OBUF (nCS_PWM)
+    ----------------------------------------
+    Total                     11.937ns (7.787ns logic, 4.150ns route)
+                                       (65.2% logic, 34.8% route)
+
+=========================================================================
+CPU : 2.08 / 2.41 s | Elapsed : 2.00 / 2.00 s
+ 
+--> 
+
+Total memory usage is 54352 kilobytes
+
+

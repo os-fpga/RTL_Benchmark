@@ -1,0 +1,512 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar  8 14:51:24 2022
+# Process ID: 55052
+# Current directory: /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.runs/synth_1
+# Command line: vivado -log mcu_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mcu_core.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.runs/synth_1/mcu_core.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source mcu_core.tcl -notrace
+Command: synth_design -top mcu_core -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 55902 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1451.543 ; gain = 90.000 ; free physical = 3086 ; free virtual = 274940
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mcu_core' [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:70]
+	Parameter G_PM_A_bits bound to: 16 - type: integer 
+	Parameter G_DM_A_bits bound to: 16 - type: integer 
+	Parameter G_DM_Areal_bits bound to: 16 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:476]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:535]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:585]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:1030]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:1323]
+WARNING: [Synth 8-6014] Unused sequential element reg_rRData_d_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:261]
+WARNING: [Synth 8-6014] Unused sequential element reg_pc_plus_one_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:393]
+WARNING: [Synth 8-6014] Unused sequential element next_pc_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:447]
+WARNING: [Synth 8-6014] Unused sequential element tmp_calc16_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:1089]
+INFO: [Synth 8-256] done synthesizing module 'mcu_core' (1#1) [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:70]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1500.176 ; gain = 138.633 ; free physical = 2848 ; free virtual = 274771
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1500.176 ; gain = 138.633 ; free physical = 2814 ; free virtual = 274745
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1508.176 ; gain = 146.633 ; free physical = 2795 ; free virtual = 274732
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:476]
+INFO: [Synth 8-802] inferred FSM for state register 'proc_state_reg' in module 'mcu_core'
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "loc_Rd5_locked" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "skip_next_instr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "OT_InstrErr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:251]
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "loc_Rd5_locked" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "skip_next_instr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "OT_InstrErr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "proc_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_pc" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_rAdr" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_dWE_b" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reg_dWE_b" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ext_rd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ext_rd" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ext_rd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ext_rd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ext_wr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.srcs/sources_1/imports/rtl/mcu_core.vhd:251]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset |                      00000000001 |                             0000
+             handleinstr |                      00000000010 |                             0011
+              instrerror |                      00000000100 |                             0100
+               handlelds |                      00000001000 |                             0101
+              handlelpmz |                      00000010000 |                             1000
+          handlelpmzplus |                      00000100000 |                             1001
+               handlests |                      00001000000 |                             0110
+            handlelpmr0z |                      00010000000 |                             0111
+               nextinstr |                      00100000000 |                             0001
+            waitforinstr |                      01000000000 |                             0010
+               skipinstr |                      10000000000 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'proc_state_reg' using encoding 'one-hot' in module 'mcu_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1524.191 ; gain = 162.648 ; free physical = 3093 ; free virtual = 275097
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 11    
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   4 Input      8 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 6     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---RAMs : 
+	              128 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 69    
+	  11 Input     16 Bit        Muxes := 7     
+	   4 Input     16 Bit        Muxes := 14    
+	   6 Input     16 Bit        Muxes := 4     
+	   8 Input     16 Bit        Muxes := 3     
+	   7 Input     16 Bit        Muxes := 5     
+	  14 Input     16 Bit        Muxes := 6     
+	   3 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	  74 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 33    
+	  11 Input      8 Bit        Muxes := 4     
+	   6 Input      8 Bit        Muxes := 2     
+	   7 Input      8 Bit        Muxes := 3     
+	  14 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 12    
+	   3 Input      6 Bit        Muxes := 2     
+	   5 Input      6 Bit        Muxes := 1     
+	  11 Input      5 Bit        Muxes := 4     
+	   4 Input      5 Bit        Muxes := 4     
+	   5 Input      5 Bit        Muxes := 3     
+	   7 Input      5 Bit        Muxes := 2     
+	   6 Input      5 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 10    
+	  14 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 2     
+	  11 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	  14 Input      3 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  11 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 40    
+	  11 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 22    
+	   8 Input      1 Bit        Muxes := 4     
+	  14 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mcu_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 11    
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   4 Input      8 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 6     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---RAMs : 
+	              128 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 69    
+	  11 Input     16 Bit        Muxes := 7     
+	   4 Input     16 Bit        Muxes := 14    
+	   6 Input     16 Bit        Muxes := 4     
+	   8 Input     16 Bit        Muxes := 3     
+	   7 Input     16 Bit        Muxes := 5     
+	  14 Input     16 Bit        Muxes := 6     
+	   3 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	  74 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 33    
+	  11 Input      8 Bit        Muxes := 4     
+	   6 Input      8 Bit        Muxes := 2     
+	   7 Input      8 Bit        Muxes := 3     
+	  14 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 12    
+	   3 Input      6 Bit        Muxes := 2     
+	   5 Input      6 Bit        Muxes := 1     
+	  11 Input      5 Bit        Muxes := 4     
+	   4 Input      5 Bit        Muxes := 4     
+	   5 Input      5 Bit        Muxes := 3     
+	   7 Input      5 Bit        Muxes := 2     
+	   6 Input      5 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 10    
+	  14 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 2     
+	  11 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	  14 Input      3 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  11 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 40    
+	  11 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 22    
+	   8 Input      1 Bit        Muxes := 4     
+	  14 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'reg_rAdr_reg[4]' (FDRE) to 'i_132'
+INFO: [Synth 8-3886] merging instance 'reg_rAdr_reg[3]' (FDRE) to 'i_133'
+INFO: [Synth 8-3886] merging instance 'reg_rAdr_reg[2]' (FDRE) to 'i_134'
+INFO: [Synth 8-3886] merging instance 'reg_rAdr_reg[1]' (FDRE) to 'i_135'
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[6]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[5]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[4]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[2]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[1]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dData_d_reg[0]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[6]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[5]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[4]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[2]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[1]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_rData_d_reg[0]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[14]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[13]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[12]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[11]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[10]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[9]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[8]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[7]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[6]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[5]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[4]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[3]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[2]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[1]) is unused and will be removed from module mcu_core.
+WARNING: [Synth 8-3332] Sequential element (reg_dRData_d_reg[0]) is unused and will be removed from module mcu_core.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:03:52 . Memory (MB): peak = 1885.484 ; gain = 523.941 ; free physical = 1421 ; free virtual = 276175
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+----------------+-----------+----------------------+----------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives     | 
++------------+----------------+-----------+----------------------+----------------+
+|mcu_core    | reg_regs_l_reg | Implied   | 16 x 8               | RAM16X1D x 8   | 
+|mcu_core    | reg_regs_h_reg | Implied   | 16 x 8               | RAM16X1D x 8   | 
++------------+----------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:03:53 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1357 ; free virtual = 276126
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+----------------+-----------+----------------------+----------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives     | 
++------------+----------------+-----------+----------------------+----------------+
+|mcu_core    | reg_regs_l_reg | Implied   | 16 x 8               | RAM16X1D x 8   | 
+|mcu_core    | reg_regs_h_reg | Implied   | 16 x 8               | RAM16X1D x 8   | 
++------------+----------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:07 ; elapsed = 00:03:53 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1276 ; free virtual = 276072
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1298 ; free virtual = 276037
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1293 ; free virtual = 276033
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1291 ; free virtual = 276031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1290 ; free virtual = 276031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1291 ; free virtual = 276015
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1296 ; free virtual = 276020
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    57|
+|3     |LUT1     |    76|
+|4     |LUT2     |   102|
+|5     |LUT3     |    97|
+|6     |LUT4     |   150|
+|7     |LUT5     |   175|
+|8     |LUT6     |   725|
+|9     |MUXF7    |    11|
+|10    |RAM16X1D |    16|
+|11    |FDRE     |   133|
+|12    |FDSE     |     1|
+|13    |IBUF     |    35|
+|14    |OBUF     |    76|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1655|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1295 ; free virtual = 276020
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 33 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.488 ; gain = 523.945 ; free physical = 1288 ; free virtual = 276014
+Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:03:54 . Memory (MB): peak = 1885.492 ; gain = 523.945 ; free physical = 1287 ; free virtual = 276014
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 119 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'mcu_core' is not ideal for floorplanning, since the cellview 'mcu_core' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 16 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+68 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:13 ; elapsed = 00:04:01 . Memory (MB): peak = 1941.516 ; gain = 621.387 ; free physical = 1453 ; free virtual = 276069
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.runs/synth_1/mcu_core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mcu_core_utilization_synth.rpt -pb mcu_core_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.54 . Memory (MB): peak = 1965.531 ; gain = 0.000 ; free physical = 1391 ; free virtual = 276053
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  8 14:55:40 2022...

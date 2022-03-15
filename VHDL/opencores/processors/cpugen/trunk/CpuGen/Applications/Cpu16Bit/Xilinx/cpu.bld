@@ -1,0 +1,43 @@
+Release 6.1.02i - ngdbuild G.25a
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\cpugen\applications\cpu16bit\xilinx/_ngo -i -p xc3s50-tq144-4 cpu.ngc cpu.ngd
+
+Reading NGO file "c:/cpugen/applications/cpu16bit/xilinx/cpu.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:477 - clock net 'nreset_in_BUFGP' has non-clock connections.
+   These problematic connections include:
+     pin I0 on block I5_ndwe_c_N9161 with type LUT1,
+     pin I1 on block I2__n01501_SW9_SW0 with type LUT4,
+     pin I0 on block I1__n00101 with type LUT2,
+     pin I0 on block I2_TD_x<2>72 with type LUT4,
+     pin I0 on block I2_TD_x<1>97 with type LUT4,
+     pin I0 on block I2_TD_x<0>67 with type LUT4,
+     pin I2 on block I2_pc_mux_x<0>631_G with type LUT3,
+     pin I1 on block I2_Mmux_idata_x_Result<3>1_SW3_SW0 with type LUT2,
+     pin I0 on block I2_pc_mux_x<2>42 with type LUT3,
+     pin I2 on block I4_Ker156281 with type LUT3,
+     pin I0 on block I4_data_ox<15>1 with type LUT3,
+     pin I0 on block I4_data_ox<14>1 with type LUT3,
+     pin I0 on block I4_data_ox<13>1 with type LUT3,
+     pin I0 on block I4_data_ox<12>1 with type LUT3,
+     pin I0 on block I4_data_ox<11>1 with type LUT3,
+     pin I0 on block I4_data_ox<10>1 with type LUT3,
+     pin I0 on block I4_data_ox<9>1 with type LUT3,
+     pin I0 on block I4_data_ox<8>1 with type LUT3,
+     pin I0 on block I4_data_ox<7>1 with type LUT3,
+     pin I0 on block I4_data_ox<6>1 with type LUT3
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 40044 kilobytes
+
+Writing NGD file "cpu.ngd" ...
+
+Writing NGDBUILD log file "cpu.bld"...

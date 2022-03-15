@@ -1,0 +1,488 @@
+Analysis & Synthesis report for cpu4bit compilation.
+Wed Feb 25 22:57:16 2004
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+
+Command: quartus_map --import_settings_files=on --export_settings_files=off cpu4bit -c cpu4bit
+
+
+
+---------------------
+; Table of Contents ;
+---------------------
+   1. Legal Notice
+   2. Flow Summary
+   3. Flow Settings
+   4. Flow Elapsed Time
+   5. Analysis & Synthesis Summary
+   6. Analysis & Synthesis Settings
+   7. Hierarchy
+   8. State Machine - cpu:inst|cpu_du:I3|code_c
+   9. State Machine - cpu:inst|cpu_cu:I2|S_c
+  10. State Machine - cpu:inst|cpu_cu:I2|E_c
+  11. Analysis & Synthesis Resource Utilization by Entity
+  12. Analysis & Synthesis Equations
+  13. Analysis & Synthesis Messages
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
+
+-----------------------------------------------------------------
+; Flow Summary                                                  ;
+-----------------------------------------------------------------
+; Flow Status           ; Successful - Wed Feb 25 22:57:16 2004 ;
+; Compiler Setting Name ; cpu4bit                               ;
+; Top-level Entity Name ; cpu4bit                               ;
+; Family                ; ACEX1K                                ;
+; Device                ; EP1K10TC100-3                         ;
+; Total logic elements  ; 384                                   ;
+; Total pins            ; 31                                    ;
+; Total memory bits     ; 2,624                                 ;
+; Total PLLs            ; 0                                     ;
+-----------------------------------------------------------------
+
+
+-----------------------------------------------
+; Flow Settings                               ;
+-----------------------------------------------
+; Option                ; Setting             ;
+-----------------------------------------------
+; Start date & time     ; 02/25/2004 22:57:08 ;
+; Main task             ; Compilation         ;
+; Compiler Setting Name ; cpu4bit             ;
+-----------------------------------------------
+
+
+---------------------------------------
+; Flow Elapsed Time                   ;
+---------------------------------------
+; Module Name          ; Elapsed Time ;
+---------------------------------------
+; Analysis & Synthesis ; 00:00:09     ;
+; Total                ; 00:00:09     ;
+---------------------------------------
+
+
+-----------------------------------------------------------------------
+; Analysis & Synthesis Summary                                        ;
+-----------------------------------------------------------------------
+; Analysis & Synthesis Status ; Successful - Wed Feb 25 22:57:16 2004 ;
+; Compiler Setting Name       ; cpu4bit                               ;
+; Top-level Entity Name       ; cpu4bit                               ;
+; Family                      ; ACEX1K                                ;
+; Total logic elements        ; 384                                   ;
+; Total pins                  ; 31                                    ;
+; Total memory bits           ; 2,624                                 ;
+; Total PLLs                  ; 0                                     ;
+-----------------------------------------------------------------------
+
+
+------------------------------------------------------------
+; Analysis & Synthesis Settings                            ;
+------------------------------------------------------------
+; Option                                        ; Setting  ;
+------------------------------------------------------------
+; Use Generated Physical Constraints File       ; On       ;
+; Physical Synthesis Level for Resynthesis      ; Normal   ;
+; Resynthesis Optimization Effort               ; Normal   ;
+; Type of Retiming Performed During Resynthesis ; Full     ;
+; Focus entity name                             ; |cpu4bit ;
+; Family name                                   ; ACEX1K   ;
+; Preserve fewer node names                     ; On       ;
+; Disk space/compilation speed tradeoff         ; Normal   ;
+------------------------------------------------------------
+
+
+--------------
+; Hierarchy  ;
+--------------
+Hierarchy
+  cpu4bit
+    cpu:inst
+      cpu_iu:I1
+        lpm_add_sub:add_87
+          addcore:adder
+            a_csnbuffer:cout_node
+            a_csnbuffer:oflow_node
+            a_csnbuffer:result_node
+          altshift:carry_ext_latency_ffs
+          altshift:oflow_ext_latency_ffs
+          altshift:result_ext_latency_ffs
+        lpm_counter:nreset_v_rtl_3
+          alt_counter_f10ke:wysi_counter
+      cpu_cu:I2
+        lpm_counter:nreset_v_rtl_2
+          alt_counter_f10ke:wysi_counter
+      cpu_du:I3
+        lpm_add_sub:add_89
+          addcore:adder
+            a_csnbuffer:cout_node
+            a_csnbuffer:oflow_node
+            a_csnbuffer:result_node
+          altshift:carry_ext_latency_ffs
+          altshift:oflow_ext_latency_ffs
+          altshift:result_ext_latency_ffs
+        lpm_add_sub:add_105
+          addcore:adder
+            a_csnbuffer:cout_node
+            a_csnbuffer:oflow_node
+            a_csnbuffer:result_node
+          altshift:carry_ext_latency_ffs
+          altshift:oflow_ext_latency_ffs
+          altshift:result_ext_latency_ffs
+        lpm_counter:nreset_v_rtl_1
+          alt_counter_f10ke:wysi_counter
+      cpu_oa:I4
+        lpm_counter:nreset_v_rtl_0
+          alt_counter_f10ke:wysi_counter
+      cpu_wd:I5
+    lpm_rom0:inst1
+      lpm_rom:lpm_rom_component
+        altrom:srom
+    lpm_ram_dq0:inst2
+      lpm_ram_dq:lpm_ram_dq_component
+        altram:sram
+    pwm:inst5
+      lpm_add_sub:add_20
+        addcore:adder
+          a_csnbuffer:cout_node
+          a_csnbuffer:oflow_node
+          a_csnbuffer:result_node
+        altshift:carry_ext_latency_ffs
+        altshift:oflow_ext_latency_ffs
+        altshift:result_ext_latency_ffs
+      lpm_add_sub:add_36
+        addcore:adder
+          a_csnbuffer:cout_node
+          a_csnbuffer:oflow_node
+          a_csnbuffer:result_node
+        altshift:carry_ext_latency_ffs
+        altshift:oflow_ext_latency_ffs
+        altshift:result_ext_latency_ffs
+      lpm_counter:pwm_count_rtl_4
+        alt_counter_f10ke:wysi_counter
+    ctrl4cpu:inst6
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; State Machine - cpu:inst|cpu_du:I3|code_c                                                                                                                                                                                                                                                                                                                   ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Name          ; code_c~35 ; code_c~34 ; code_c~33 ; code_c~32 ; code_c~31 ; code_c~30 ; code_c~29 ; code_c~28 ; code_c~27 ; code_c~26 ; code_c~25 ; code_c~24 ; code_c~23 ; code_c~22 ; code_c~21 ; code_c~20 ; code_c~19 ; code_c~18 ; code_c~17 ; code_c~16 ; code_c~15 ; code_c~14 ; code_c~13 ; code_c~12 ; code_c~11 ; code_c~10 ; code_c~9 ; code_c~8 ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; code_c.nop_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ;
+; code_c.rol_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 1        ;
+; code_c.ror_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 1        ;
+; code_c.shl_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 1        ;
+; code_c.shr_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.not_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.cla_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skz_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skc_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknz_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknc_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rts_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rti_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jmp_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jms_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sta_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.lda_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xor_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.add_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.and_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sub_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.or_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ldai_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xori_i ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.addi_i ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.andi_i ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subi_i ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ori_i  ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------
+; State Machine - cpu:inst|cpu_cu:I2|S_c ;
+------------------------------------------
+; Name          ; S_c~10 ; S_c~9 ; S_c~8 ;
+------------------------------------------
+; S_c.reset     ; 0      ; 0     ; 0     ;
+; S_c.normal    ; 0      ; 1     ; 1     ;
+; S_c.interrupt ; 1      ; 0     ; 1     ;
+------------------------------------------
+
+
+-------------------------------------------------
+; State Machine - cpu:inst|cpu_cu:I2|E_c        ;
+-------------------------------------------------
+; Name        ; E_c~11 ; E_c~10 ; E_c~9 ; E_c~8 ;
+-------------------------------------------------
+; E_c.none_e  ; 0      ; 0      ; 0     ; 0     ;
+; E_c.dwait_e ; 0      ; 0      ; 1     ; 1     ;
+; E_c.iwait_e ; 0      ; 1      ; 0     ; 1     ;
+; E_c.int_e   ; 1      ; 0      ; 0     ; 1     ;
+-------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Compilation Hierarchy Node                   ; Logic Cells ; Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                   ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; |cpu4bit                                     ; 384 (72)    ; 118       ; 272         ; 31   ; 266 (72)     ; 21 (0)            ; 97 (0)           ; |cpu4bit                                                                              ;
+;    |cpu:inst|                                ; 211 (0)     ; 76        ; 0           ; 0    ; 135 (0)      ; 12 (0)            ; 64 (0)           ; |cpu4bit|cpu:inst                                                                     ;
+;       |cpu_cu:I2|                            ; 43 (41)     ; 15        ; 0           ; 0    ; 28 (28)      ; 4 (4)             ; 11 (9)           ; |cpu4bit|cpu:inst|cpu_cu:I2                                                           ;
+;          |lpm_counter:nreset_v_rtl_2|        ; 2 (0)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu4bit|cpu:inst|cpu_cu:I2|lpm_counter:nreset_v_rtl_2                                ;
+;             |alt_counter_f10ke:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu4bit|cpu:inst|cpu_cu:I2|lpm_counter:nreset_v_rtl_2|alt_counter_f10ke:wysi_counter ;
+;       |cpu_du:I3|                            ; 59 (45)     ; 7         ; 0           ; 0    ; 52 (40)      ; 0 (0)             ; 7 (5)            ; |cpu4bit|cpu:inst|cpu_du:I3                                                           ;
+;          |lpm_add_sub:add_105|               ; 8 (0)       ; 0         ; 0           ; 0    ; 8 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_105                                       ;
+;             |addcore:adder|                  ; 8 (0)       ; 0         ; 0           ; 0    ; 8 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder                         ;
+;                |a_csnbuffer:result_node|     ; 8 (8)       ; 0         ; 0           ; 0    ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node ;
+;          |lpm_add_sub:add_89|                ; 4 (0)       ; 0         ; 0           ; 0    ; 4 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_89                                        ;
+;             |addcore:adder|                  ; 4 (0)       ; 0         ; 0           ; 0    ; 4 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_89|addcore:adder                          ;
+;                |a_csnbuffer:result_node|     ; 4 (4)       ; 0         ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_add_sub:add_89|addcore:adder|a_csnbuffer:result_node  ;
+;          |lpm_counter:nreset_v_rtl_1|        ; 2 (0)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_counter:nreset_v_rtl_1                                ;
+;             |alt_counter_f10ke:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu4bit|cpu:inst|cpu_du:I3|lpm_counter:nreset_v_rtl_1|alt_counter_f10ke:wysi_counter ;
+;       |cpu_iu:I1|                            ; 77 (68)     ; 42        ; 0           ; 0    ; 35 (28)      ; 8 (8)             ; 34 (32)          ; |cpu4bit|cpu:inst|cpu_iu:I1                                                           ;
+;          |lpm_add_sub:add_87|                ; 7 (0)       ; 0         ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_iu:I1|lpm_add_sub:add_87                                        ;
+;             |addcore:adder|                  ; 7 (1)       ; 0         ; 0           ; 0    ; 7 (1)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_iu:I1|lpm_add_sub:add_87|addcore:adder                          ;
+;                |a_csnbuffer:result_node|     ; 6 (6)       ; 0         ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|cpu:inst|cpu_iu:I1|lpm_add_sub:add_87|addcore:adder|a_csnbuffer:result_node  ;
+;          |lpm_counter:nreset_v_rtl_3|        ; 2 (0)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu4bit|cpu:inst|cpu_iu:I1|lpm_counter:nreset_v_rtl_3                                ;
+;             |alt_counter_f10ke:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu4bit|cpu:inst|cpu_iu:I1|lpm_counter:nreset_v_rtl_3|alt_counter_f10ke:wysi_counter ;
+;       |cpu_oa:I4|                            ; 19 (17)     ; 5         ; 0           ; 0    ; 14 (14)      ; 0 (0)             ; 5 (3)            ; |cpu4bit|cpu:inst|cpu_oa:I4                                                           ;
+;          |lpm_counter:nreset_v_rtl_0|        ; 2 (0)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu4bit|cpu:inst|cpu_oa:I4|lpm_counter:nreset_v_rtl_0                                ;
+;             |alt_counter_f10ke:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu4bit|cpu:inst|cpu_oa:I4|lpm_counter:nreset_v_rtl_0|alt_counter_f10ke:wysi_counter ;
+;       |cpu_wd:I5|                            ; 13 (13)     ; 7         ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 7 (7)            ; |cpu4bit|cpu:inst|cpu_wd:I5                                                           ;
+;    |ctrl4cpu:inst6|                          ; 26 (26)     ; 9         ; 0           ; 0    ; 17 (17)      ; 0 (0)             ; 9 (9)            ; |cpu4bit|ctrl4cpu:inst6                                                               ;
+;    |lpm_ram_dq0:inst2|                       ; 0 (0)       ; 0         ; 16          ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_ram_dq0:inst2                                                            ;
+;       |lpm_ram_dq:lpm_ram_dq_component|      ; 0 (0)       ; 0         ; 16          ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_ram_dq0:inst2|lpm_ram_dq:lpm_ram_dq_component                            ;
+;          |altram:sram|                       ; 0 (0)       ; 0         ; 16          ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_ram_dq0:inst2|lpm_ram_dq:lpm_ram_dq_component|altram:sram                ;
+;    |lpm_rom0:inst1|                          ; 0 (0)       ; 0         ; 256         ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_rom0:inst1                                                               ;
+;       |lpm_rom:lpm_rom_component|            ; 0 (0)       ; 0         ; 256         ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_rom0:inst1|lpm_rom:lpm_rom_component                                     ;
+;          |altrom:srom|                       ; 0 (0)       ; 0         ; 256         ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|lpm_rom0:inst1|lpm_rom:lpm_rom_component|altrom:srom                         ;
+;    |pwm:inst5|                               ; 75 (50)     ; 33        ; 0           ; 0    ; 42 (25)      ; 9 (9)             ; 24 (16)          ; |cpu4bit|pwm:inst5                                                                    ;
+;       |lpm_add_sub:add_20|                   ; 8 (0)       ; 0         ; 0           ; 0    ; 8 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_20                                                 ;
+;          |addcore:adder|                     ; 8 (1)       ; 0         ; 0           ; 0    ; 8 (1)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_20|addcore:adder                                   ;
+;             |a_csnbuffer:result_node|        ; 7 (7)       ; 0         ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_20|addcore:adder|a_csnbuffer:result_node           ;
+;       |lpm_add_sub:add_36|                   ; 8 (0)       ; 0         ; 0           ; 0    ; 8 (0)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_36                                                 ;
+;          |addcore:adder|                     ; 8 (1)       ; 0         ; 0           ; 0    ; 8 (1)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_36|addcore:adder                                   ;
+;             |a_csnbuffer:result_node|        ; 7 (7)       ; 0         ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |cpu4bit|pwm:inst5|lpm_add_sub:add_36|addcore:adder|a_csnbuffer:result_node           ;
+;       |lpm_counter:pwm_count_rtl_4|          ; 9 (0)       ; 8         ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 8 (0)            ; |cpu4bit|pwm:inst5|lpm_counter:pwm_count_rtl_4                                        ;
+;          |alt_counter_f10ke:wysi_counter|    ; 9 (9)       ; 8         ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |cpu4bit|pwm:inst5|lpm_counter:pwm_count_rtl_4|alt_counter_f10ke:wysi_counter         ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------
+; Analysis & Synthesis Equations  ;
+-----------------------------------
+The equations can be found in C:\CpuGen1\Applications\Cpu4Bit\Altera\cpu4bit.map.eqn.
+
+
+----------------------------------
+; Analysis & Synthesis Messages  ;
+----------------------------------
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+  Info: Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+  Info: Processing started: Wed Feb 25 22:57:07 2004
+Info: Command: quartus_map --import_settings_files=on --export_settings_files=off cpu4bit -c cpu4bit
+Info: Found 2 design units and 0 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_utils.vhd
+  Info: Found design unit 1: cpu_utils
+  Info: Found design unit 2: cpu_utils-body
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_cu.vhd
+  Info: Found design unit 1: cpu_cu-cu_struct
+  Info: Found entity 1: cpu_cu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_du.vhd
+  Info: Found design unit 1: cpu_du-du_struct
+  Info: Found entity 1: cpu_du
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_iu.vhd
+  Info: Found design unit 1: cpu_iu-iu_struct
+  Info: Found entity 1: cpu_iu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_wd.vhd
+  Info: Found design unit 1: cpu_wd-wd_struct
+  Info: Found entity 1: cpu_wd
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu_oa.vhd
+  Info: Found design unit 1: cpu_oa-oa_struct
+  Info: Found entity 1: cpu_oa
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\cpu.vhd
+  Info: Found design unit 1: cpu-cpu_arch
+  Info: Found entity 1: cpu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\pwm.vhd
+  Info: Found design unit 1: pwm-pwm_struct
+  Info: Found entity 1: pwm
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\ctrl4cpu.vhd
+  Info: Found design unit 1: ctrl4cpu-ctrl4cpu_struct
+  Info: Found entity 1: ctrl4cpu
+Info: Found 1 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\Altera\cpu4bit.bdf
+  Info: Found entity 1: cpu4bit
+Info: VHDL Case Statement information at cpu_du.vhd(215): OTHERS choice is never selected
+Info: VHDL Case Statement information at ctrl4cpu.vhd(87): OTHERS choice is never selected
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\Altera\lpm_ram_dq0.vhd
+  Info: Found design unit 1: lpm_ram_dq0-syn
+  Info: Found entity 1: lpm_ram_dq0
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_ram_dq.tdf
+  Info: Found entity 1: lpm_ram_dq
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altram.tdf
+  Info: Found entity 1: altram
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu4Bit\Altera\lpm_rom0.vhd
+  Info: Found design unit 1: lpm_rom0-syn
+  Info: Found entity 1: lpm_rom0
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_rom.tdf
+  Info: Found entity 1: lpm_rom
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altrom.tdf
+  Info: Found entity 1: altrom
+Info: Inferred 5 megafunctions from design logic
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_oa:I4|nreset_v_rtl_0
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_du:I3|nreset_v_rtl_1
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_cu:I2|nreset_v_rtl_2
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_iu:I1|nreset_v_rtl_3
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: pwm:inst5|pwm_count_rtl_4
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_counter.tdf
+  Info: Found entity 1: lpm_counter
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\alt_counter_f10ke.tdf
+  Info: Found entity 1: alt_counter_f10ke
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_add_sub.tdf
+  Info: Found entity 1: lpm_add_sub
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\addcore.tdf
+  Info: Found entity 1: addcore
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\a_csnbuffer.tdf
+  Info: Found entity 1: a_csnbuffer
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altshift.tdf
+  Info: Found entity 1: altshift
+Info: State machine |cpu4bit|cpu:inst|cpu_du:I3|code_c contains 28 states and 0 state bits
+Info: State machine |cpu4bit|cpu:inst|cpu_cu:I2|S_c contains 3 states and 0 state bits
+Info: State machine |cpu4bit|cpu:inst|cpu_cu:I2|E_c contains 4 states and 0 state bits
+Info: Selected Auto state machine encoding method for state machine |cpu4bit|cpu:inst|cpu_du:I3|code_c
+Info: Encoding result for state machine |cpu4bit|cpu:inst|cpu_du:I3|code_c
+  Info: Completed encoding using 28 state bits
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~35
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~34
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~33
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~32
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~31
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~30
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~29
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~28
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~27
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~26
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~25
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~24
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~23
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~22
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~21
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~20
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~19
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~18
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~17
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~16
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~15
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~14
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~13
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~12
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~11
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~10
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~9
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~8
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.nop_i uses code string 0000000000000000000000000000
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.rol_i uses code string 0000000000000000000000000011
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.ror_i uses code string 0000000000000000000000000101
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.shl_i uses code string 0000000000000000000000001001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.shr_i uses code string 0000000000000000000000010001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.not_i uses code string 0000000000000000000000100001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.cla_i uses code string 0000000000000000000001000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.skz_i uses code string 0000000000000000000010000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.skc_i uses code string 0000000000000000000100000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.sknz_i uses code string 0000000000000000001000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.sknc_i uses code string 0000000000000000010000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.rts_i uses code string 0000000000000000100000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.rti_i uses code string 0000000000000001000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.jmp_i uses code string 0000000000000010000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.jms_i uses code string 0000000000000100000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.sta_i uses code string 0000000000001000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.lda_i uses code string 0000000000010000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.xor_i uses code string 0000000000100000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.add_i uses code string 0000000001000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.and_i uses code string 0000000010000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.sub_i uses code string 0000000100000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.or_i uses code string 0000001000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.ldai_i uses code string 0000010000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.xori_i uses code string 0000100000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.addi_i uses code string 0001000000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.andi_i uses code string 0010000000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.subi_i uses code string 0100000000000000000000000001
+  Info: State |cpu4bit|cpu:inst|cpu_du:I3|code_c.ori_i uses code string 1000000000000000000000000001
+Info: Selected Auto state machine encoding method for state machine |cpu4bit|cpu:inst|cpu_cu:I2|S_c
+Info: Encoding result for state machine |cpu4bit|cpu:inst|cpu_cu:I2|S_c
+  Info: Completed encoding using 3 state bits
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~10
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~9
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~8
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|S_c.reset uses code string 000
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|S_c.normal uses code string 011
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|S_c.interrupt uses code string 101
+Info: Selected Auto state machine encoding method for state machine |cpu4bit|cpu:inst|cpu_cu:I2|E_c
+Info: Encoding result for state machine |cpu4bit|cpu:inst|cpu_cu:I2|E_c
+  Info: Completed encoding using 4 state bits
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~11
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~10
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~9
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~8
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|E_c.none_e uses code string 0000
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|E_c.dwait_e uses code string 0011
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|E_c.iwait_e uses code string 0101
+  Info: State |cpu4bit|cpu:inst|cpu_cu:I2|E_c.int_e uses code string 1001
+Warning: Converted TRI buffer to OR gate or removed OPNDRN
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[9] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[2] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[1] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[3] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[0] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[6] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[5] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[7] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[4] that feeds logic to an OR gate
+  Warning: Converting TRI node lpm_rom0:inst1|lpm_rom:lpm_rom_component|otri[8] that feeds logic to an OR gate
+Info: Registers with preset signals will power-up high
+Warning: Ignored 3 CARRY_SUM primitives
+  Warning: Ignored 3 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+    Warning: Can't place logic fed by CARRY_SUM primitive cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[3] into a single logic cell
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~17 of type LUT
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~13 of type LUT
+    Warning: Can't place logic fed by CARRY_SUM primitive cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] into a single logic cell
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~25 of type LUT
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~21 of type LUT
+    Warning: Can't place logic fed by CARRY_SUM primitive cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] into a single logic cell
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~33 of type LUT
+      Warning: Node cpu:inst|cpu_du:I3|lpm_add_sub:add_105|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~29 of type LUT
+Info: Implemented 429 device resources after synthesis - the final resource count might be different
+  Info: Implemented 6 input pins
+  Info: Implemented 25 output pins
+  Info: Implemented 384 logic cells
+  Info: Implemented 14 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 22 warnings
+  Info: Processing ended: Wed Feb 25 22:57:16 2004
+  Info: Elapsed time: 00:00:08
+Info: Writing report file cpu4bit.map.rpt
+
+

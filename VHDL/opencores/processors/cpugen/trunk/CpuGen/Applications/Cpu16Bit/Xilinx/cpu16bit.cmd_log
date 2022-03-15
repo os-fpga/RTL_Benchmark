@@ -1,0 +1,167 @@
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan2e -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu16bit.ngc cpu16bit.ngd
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu16bit.ngc cpu16bit.ngd
+sch2vhdl -family spartan2 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc2s15-tq144-6 cpu16bit.ngc cpu16bit.ngd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family virtexe -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xcv50e-cs144-8 cpu16bit.ngc cpu16bit.ngd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+sch2vhdl -family spartan2e -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc2s50e-pq208-7 cpu16bit.ngc cpu16bit.ngd
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc2s50e-pq208-7 cpu16bit.ngc cpu16bit.ngd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd
+netgen -intstyle ise -s 4   -pcf cpu16bit.pcf -ngm cpu16bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu16bit.ncd cpu16bit_timesim.vhd
+sch2vhdl -family spartan3 -flat -suppress -w cpu16bit.sch cpu16bit.vhf
+xst -intstyle ise -ifn __projnav/cpu16bit.xst -ofn cpu16bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-pq208-4 cpu16bit.ngc cpu16bit.ngd
+map -intstyle ise -p xc3s50-pq208-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu16bit_map.ncd cpu16bit.ngd cpu16bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu16bit_map.ncd cpu16bit.ncd cpu16bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o cpu16bit.twr cpu16bit.pcf
+bitgen -intstyle ise -f cpu16bit.ut cpu16bit.ncd

@@ -1,0 +1,711 @@
+
+*** Running vivado
+    with args -log core.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source core.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source core.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 109027 ; free virtual = 375766
+Command: synth_design -top core -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 47664
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 107900 ; free virtual = 374676
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'core' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:80]
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter USE_RESET bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'registers' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/registers.vhd:46' bound to instance 'u0' of component 'registers' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'registers' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/registers.vhd:69]
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter USE_RESET bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'registers' (1#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/registers.vhd:69]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:193]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:223]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'fmulp2' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmulp2.vhd:47' bound to instance 'u2' of component 'fmulp2' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'fmulp2' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmulp2.vhd:64]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY bound to: 0 - type: integer 
+WARNING: [Synth 8-5858] RAM y_1_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'fmulp2' (2#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmulp2.vhd:64]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'fadd_fsub' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:47' bound to instance 'u3' of component 'fadd_fsub' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:260]
+INFO: [Synth 8-638] synthesizing module 'fadd_fsub' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:66]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter SHIFT_MAX bound to: 255 - type: integer 
+	Parameter LATENCY bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'add_sub' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/add_sub.vhd:47' bound to instance 'u0' of component 'add_sub' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:181]
+INFO: [Synth 8-638] synthesizing module 'add_sub' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/add_sub.vhd:69]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter SHIFT_MAX bound to: 255 - type: integer 
+	Parameter LATENCY bound to: 1 - type: integer 
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].round_1_reg' in module 'add_sub' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/add_sub.vhd:93]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].sticky_1_reg' in module 'add_sub' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/add_sub.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'add_sub' (3#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/add_sub.vhd:69]
+WARNING: [Synth 8-5858] RAM x1_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM x2_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][zero] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][zero] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:112]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].add_sub_sel_reg' in module 'fadd_fsub' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:97]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].sign_reg' in module 'fadd_fsub' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:129]
+INFO: [Synth 8-256] done synthesizing module 'fadd_fsub' (4#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fadd_fsub.vhd:66]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+	Parameter EMBEDDED_MULTIPLIER bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'fmul' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:47' bound to instance 'u4' of component 'fmul' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'fmul' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:66]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+	Parameter EMBEDDED_MULTIPLIER bound to: 1 - type: bool 
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter LATENCY bound to: 1 - type: integer 
+	Parameter EMBEDDED_MULTIPLIER bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'mul' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/mul.vhd:48' bound to instance 'u0' of component 'mul' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'mul' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/mul.vhd:68]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter LATENCY bound to: 1 - type: integer 
+	Parameter EMBEDDED_MULTIPLIER bound to: 1 - type: bool 
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].round_1_reg' in module 'mul' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/mul.vhd:107]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].sticky_1_reg' in module 'mul' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/mul.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'mul' (5#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/mul.vhd:68]
+WARNING: [Synth 8-5858] RAM x1_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM x2_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:94]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:94]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:94]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:94]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:94]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].sign_reg' in module 'fmul' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'fmul' (6#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fmul.vhd:66]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 14 - type: integer 
+INFO: [Synth 8-3491] module 'fdiv' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:47' bound to instance 'u5' of component 'fdiv' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'fdiv' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:65]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter ROUND_STYLE bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 14 - type: integer 
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter LATENCY bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'div' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:48' bound to instance 'u0' of component 'div' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:154]
+INFO: [Synth 8-638] synthesizing module 'div' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:67]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter LATENCY bound to: 13 - type: integer 
+WARNING: [Synth 8-3919] null assignment ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:111]
+WARNING: [Synth 8-6014] Unused sequential element [24].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [22].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [20].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [18].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [16].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [14].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [12].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [10].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [8].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [6].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [4].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [2].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [0].div_var_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:112]
+WARNING: [Synth 8-6014] Unused sequential element [0].x2_reg_reg[0] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:97]
+WARNING: [Synth 8-3936] Found unconnected internal register 'div_reg_reg[26]' and it is trimmed from '26' to '24' bits. [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:93]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[24].y_reg_reg[24]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[22].y_reg_reg[22]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[20].y_reg_reg[20]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[18].y_reg_reg[18]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[16].y_reg_reg[16]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[14].y_reg_reg[14]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[12].y_reg_reg[12]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[10].y_reg_reg[10]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[8].y_reg_reg[8]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[6].y_reg_reg[6]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[4].y_reg_reg[4]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[2].y_reg_reg[2]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[0].y_reg_reg[0]' in module 'div' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:96]
+INFO: [Synth 8-256] done synthesizing module 'div' (7#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/div.vhd:67]
+WARNING: [Synth 8-5858] RAM x1_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM x2_c_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [1].x1_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [1].x2_c_reg[1][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [2].x1_c_reg[2][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [2].x1_c_reg[2][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [2].x1_c_reg[2][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [2].x1_c_reg[2][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [2].x1_c_reg[2][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [2].x2_c_reg[2][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [2].x2_c_reg[2][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [2].x2_c_reg[2][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [2].x2_c_reg[2][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [2].x2_c_reg[2][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [3].x1_c_reg[3][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [3].x1_c_reg[3][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [3].x1_c_reg[3][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [3].x1_c_reg[3][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [3].x1_c_reg[3][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [3].x2_c_reg[3][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [3].x2_c_reg[3][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [3].x2_c_reg[3][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [3].x2_c_reg[3][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [3].x2_c_reg[3][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [4].x1_c_reg[4][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [4].x1_c_reg[4][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [4].x1_c_reg[4][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [4].x1_c_reg[4][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [4].x1_c_reg[4][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [4].x2_c_reg[4][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [4].x2_c_reg[4][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [4].x2_c_reg[4][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [4].x2_c_reg[4][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [4].x2_c_reg[4][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [5].x1_c_reg[5][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [5].x1_c_reg[5][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [5].x1_c_reg[5][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [5].x1_c_reg[5][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [5].x1_c_reg[5][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [5].x2_c_reg[5][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [5].x2_c_reg[5][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [5].x2_c_reg[5][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [5].x2_c_reg[5][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [5].x2_c_reg[5][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [6].x1_c_reg[6][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [6].x1_c_reg[6][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [6].x1_c_reg[6][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [6].x1_c_reg[6][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [6].x1_c_reg[6][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [6].x2_c_reg[6][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [6].x2_c_reg[6][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [6].x2_c_reg[6][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [6].x2_c_reg[6][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [6].x2_c_reg[6][normal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:93]
+WARNING: [Synth 8-6014] Unused sequential element [7].x1_c_reg[7][exponent_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [7].x1_c_reg[7][exponent_and_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [7].x1_c_reg[7][fraction_or_reduce] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element [7].x1_c_reg[7][subnormal] was removed.  [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:92]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[1].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[2].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[3].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[4].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[5].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[6].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[7].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[8].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[9].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[10].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[11].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[12].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register '[13].sign_reg' in module 'fdiv' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:119]
+INFO: [Synth 8-256] done synthesizing module 'fdiv' (8#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:65]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY_1 bound to: 0 - type: integer 
+	Parameter LATENCY_2 bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'fcomp_fmin_fmax' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:47' bound to instance 'u6' of component 'fcomp_fmin_fmax' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:325]
+INFO: [Synth 8-638] synthesizing module 'fcomp_fmin_fmax' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:76]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY_1 bound to: 0 - type: integer 
+	Parameter LATENCY_2 bound to: 0 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:116]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:125]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:134]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:144]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:153]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:223]
+WARNING: [Synth 8-5858] RAM y_1_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'fcomp_fmin_fmax' (9#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fcomp_fmin_fmax.vhd:76]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'trunc_round_ceil_floor' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/trunc_round_ceil_floor.vhd:47' bound to instance 'u7' of component 'trunc_round_ceil_floor' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'trunc_round_ceil_floor' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/trunc_round_ceil_floor.vhd:64]
+	Parameter USE_SUBNORMAL bound to: 0 - type: bool 
+	Parameter LATENCY bound to: 0 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/trunc_round_ceil_floor.vhd:86]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/trunc_round_ceil_floor.vhd:115]
+WARNING: [Synth 8-5858] RAM y_1_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'trunc_round_ceil_floor' (10#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/trunc_round_ceil_floor.vhd:64]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'ftou8' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou8.vhd:48' bound to instance 'u8' of component 'ftou8' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:376]
+INFO: [Synth 8-638] synthesizing module 'ftou8' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou8.vhd:65]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou8.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'ftou8' (11#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou8.vhd:65]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'ftou16' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou16.vhd:48' bound to instance 'u9' of component 'ftou16' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:395]
+INFO: [Synth 8-638] synthesizing module 'ftou16' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou16.vhd:65]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou16.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'ftou16' (12#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou16.vhd:65]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'ftou32' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou32.vhd:47' bound to instance 'u10' of component 'ftou32' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:414]
+INFO: [Synth 8-638] synthesizing module 'ftou32' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou32.vhd:61]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'ftou32' (13#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/ftou32.vhd:61]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'u8tof' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u8tof.vhd:48' bound to instance 'u11' of component 'u8tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:430]
+INFO: [Synth 8-638] synthesizing module 'u8tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u8tof.vhd:64]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u8tof.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'u8tof' (14#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u8tof.vhd:64]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'u16tof' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u16tof.vhd:48' bound to instance 'u12' of component 'u16tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:448]
+INFO: [Synth 8-638] synthesizing module 'u16tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u16tof.vhd:64]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u16tof.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'u16tof' (15#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u16tof.vhd:64]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'u32tof' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u32tof.vhd:48' bound to instance 'u13' of component 'u32tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:466]
+INFO: [Synth 8-638] synthesizing module 'u32tof' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u32tof.vhd:62]
+	Parameter DATAC_REG bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'u32tof' (16#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/u32tof.vhd:62]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:485]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:534]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:548]
+	Parameter PORTS bound to: 17 - type: integer 
+INFO: [Synth 8-3491] module 'portc_tristate_bridge' declared at '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/portc_tristate_bridge.vhd:48' bound to instance 'u14' of component 'portc_tristate_bridge' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:604]
+INFO: [Synth 8-638] synthesizing module 'portc_tristate_bridge' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/portc_tristate_bridge.vhd:63]
+	Parameter PORTS bound to: 17 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'portc_tristate_bridge' (17#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/portc_tristate_bridge.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'core' (18#1) [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/core.vhd:80]
+WARNING: [Synth 8-7129] Port clk in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module registers is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 108401 ; free virtual = 375275
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 108459 ; free virtual = 375349
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 108458 ; free virtual = 375348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 108300 ; free virtual = 375214
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   34 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input   28 Bit       Adders := 1     
+	   2 Input   27 Bit       Adders := 26    
+	   2 Input   25 Bit       Adders := 4     
+	   3 Input   10 Bit       Adders := 3     
+	   2 Input   10 Bit       Adders := 1     
+	   4 Input   10 Bit       Adders := 3     
+	   3 Input    9 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 6     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input     27 Bit         XORs := 1     
+	   2 Input     25 Bit         XORs := 26    
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               32 Bit    Registers := 63    
+	               27 Bit    Registers := 13    
+	               26 Bit    Registers := 14    
+	               25 Bit    Registers := 1     
+	               24 Bit    Registers := 12    
+	               23 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 15    
+	                8 Bit    Registers := 4     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 92    
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 9     
+	   9 Input   32 Bit        Muxes := 1     
+	   2 Input   27 Bit        Muxes := 26    
+	   2 Input   24 Bit        Muxes := 4     
+	   2 Input   23 Bit        Muxes := 17    
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 22    
+	   4 Input    8 Bit        Muxes := 1     
+	   6 Input    7 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 2     
+	   9 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   9 Input    4 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 20    
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 41    
+	   3 Input    1 Bit        Muxes := 6     
+	   6 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP p_1_out, operation Mode is: A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP p_1_out, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+WARNING: [Synth 8-7129] Port clk in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u32tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u16tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module u8tof is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module ftou8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module trunc_round_ceil_floor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module fcomp_fmin_fmax is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cke in module fmulp2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module registers is either unconnected or has no load
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[13].sign_reg[13]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:119]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:119]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:119]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[1].sign_reg[2]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[1].sign_reg[12]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[3].sign_reg[3]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[4].sign_reg[4]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[5].sign_reg[5]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[6].sign_reg[6]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[7].sign_reg[7]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[8].sign_reg[8]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[9].sign_reg[9]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[10].sign_reg[10]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'u5/[11].sign_reg[11]/Q' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.srcs/sources_1/imports/core/fdiv.vhd:131]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107883 ; free virtual = 374870
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mul         | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mul         | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107859 ; free virtual = 374883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107779 ; free virtual = 374865
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107764 ; free virtual = 374911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107763 ; free virtual = 374910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|core        | u5/u0/[0].y_reg_reg[0][25]     | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][24]     | 12     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][22]     | 11     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][20]     | 10     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][18]     | 9      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][16]     | 8      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][14]     | 7      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][12]     | 6      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][10]     | 5      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/u0/[0].y_reg_reg[0][8]      | 4      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|core        | u5/[13].x2_c_reg[13][infinity] | 12     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|core        | u5/[13].exponent_reg[13][9]    | 13     | 10    | YES          | NO                 | YES               | 10     | 0       | 
+|core        | [14].instruction_1_reg[14][4]  | 12     | 5     | YES          | NO                 | YES               | 5      | 0       | 
+|core        | [14].ie_reg[14][6]             | 14     | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   275|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |     6|
+|5     |LUT2    |   411|
+|6     |LUT3    |   898|
+|7     |LUT4    |   443|
+|8     |LUT5    |   308|
+|9     |LUT6    |  1473|
+|10    |MUXF7   |   256|
+|11    |MUXF8   |    56|
+|12    |SRL16E  |    41|
+|13    |FDCE    |   979|
+|14    |FDPE    |     7|
+|15    |FDRE    |  1065|
+|16    |LDC     |     7|
+|17    |IBUF    |    67|
+|18    |OBUF    |   100|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |  6395|
+|2     |  u0     |registers |  4397|
+|3     |  u3     |fadd_fsub |   275|
+|4     |    u0   |add_sub   |   212|
+|5     |  u4     |fmul      |   218|
+|6     |    u0   |mul       |   107|
+|7     |  u5     |fdiv      |  1066|
+|8     |    u0   |div       |   948|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 36 critical warnings and 267 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107760 ; free virtual = 374910
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 107761 ; free virtual = 374911
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 107843 ; free virtual = 375000
+INFO: [Netlist 29-17] Analyzing 596 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 107547 ; free virtual = 374932
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7 instances were transformed.
+  LDC => LDCE: 7 instances
+
+Synth Design complete, checksum: 9a6e10d0
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 201 Warnings, 36 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:08 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 107743 ; free virtual = 375132
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/gpu/project_1/project_1.runs/synth_1/core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file core_utilization_synth.rpt -pb core_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:49:29 2022...

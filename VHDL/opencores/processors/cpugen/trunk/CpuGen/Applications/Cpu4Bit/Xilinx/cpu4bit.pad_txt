@@ -1,0 +1,166 @@
+Release 6.1.03i - Par G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Sun Feb 08 20:40:29 2004
+
+
+INPUT FILE:       cpu4bit_map.ncd
+OUTPUT FILE:      cpu4bit_pad.txt
+PART TYPE:        xc2s30
+SPEED GRADE:      -5
+PACKAGE:          cs144
+
+Pinout by Pin Number:
+
+-----     |-----           |-----    |-----       |-----    |-----      |-----         |-----     |-----    |-----      |-----    |-----  |-----     |
+Pin Number|Signal Name     |Pin Usage|Pin Name    |Direction|IO Standard|IO Bank Number|Drive (mA)|Slew Rate|Termination|IOB Delay|Voltage|Constraint|
+A1        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+A2        |                |         |VCCO        |         |           |0             |          |         |           |         |3.30   |          |
+A3        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+A4        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+A5        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+A6        |                |GCLKIOB  |GCK3        |UNUSED   |           |0             |          |         |           |         |       |          |
+A7        |                |GCLKIOB  |GCK2        |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+A8        |CTRL_DATA_IN<1> |IOB      |            |INPUT    |LVTTL      |(0,1)***      |          |         |           |NONE     |       |          |
+A9        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+A10       |                |IOB      |IO_VREF_1   |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+A11       |                |         |TDI         |         |           |              |          |         |           |         |       |          |
+A12       |                |         |TDO         |         |           |              |          |         |           |         |       |          |
+A13       |                |         |VCCO        |         |           |0             |          |         |           |         |3.30   |          |
+B1        |                |         |TMS         |         |           |              |          |         |           |         |       |          |
+B2        |                |         |VCCO        |         |           |3             |          |         |           |         |3.30   |          |
+B3        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+B4        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+B5        |                |IOB      |            |UNUSED   |           |0             |          |         |           |         |       |          |
+B6        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+B7        |CTRL_DATA_IN<0> |IOB      |            |INPUT    |LVTTL      |(0,1)***      |          |         |           |NONE     |       |          |
+B8        |CTRL_DATA_IN<2> |IOB      |IO_VREF_1   |INPUT    |LVTTL      |(0,1)***      |          |         |           |NONE     |       |          |
+B9        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+B10       |                |IOB      |            |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+B11       |                |         |GND         |         |           |              |          |         |           |         |       |          |
+B12       |                |         |VCCO        |         |           |1             |          |         |           |         |3.30   |          |
+B13       |                |         |CCLK        |         |           |              |          |         |           |         |       |          |
+C1        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+C2        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+C3        |                |         |TCK         |         |           |              |          |         |           |         |       |          |
+C4        |                |IOB      |IO_VREF_0   |UNUSED   |           |0             |          |         |           |         |       |          |
+C5        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+C6        |CTRL_DATA_IN<3> |IOB      |            |INPUT    |LVTTL      |0             |          |         |           |NONE     |       |          |
+C7        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+C8        |CPU_DATA_OUT<2> |IOB      |            |OUTPUT   |LVTTL      |(0,1)***      |12        |SLOW     |NONE**     |         |       |          |
+C9        |                |IOB      |            |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+C10       |                |IOB      |IO_WRITE    |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+C11       |                |IOB      |IO_DOUT_BUSY|UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+C12       |                |IOB      |IO_DIN_D0   |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+C13       |                |IOB      |            |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+D1        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+D2        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+D3        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+D4        |                |IOB      |IO_VREF_7   |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+D5        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+D6        |nWE_CPU         |IOB      |IO_VREF_0   |OUTPUT   |LVTTL      |0             |12        |SLOW     |NONE**     |         |       |          |
+D7        |                |         |VCCO        |         |           |0             |          |         |           |         |3.30   |          |
+D8        |nRE_CPU         |IOB      |            |OUTPUT   |LVTTL      |(0,1)***      |12        |SLOW     |NONE**     |         |       |          |
+D9        |                |IOB      |            |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+D10       |                |IOB      |IO_CS       |UNUSED   |           |(0,1)***      |          |         |           |         |       |          |
+D11       |                |IOB      |IO_VREF_2   |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+D12       |                |IOB      |            |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+D13       |                |IOB      |            |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+E1        |                |IOB      |IO_VREF_7   |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+E2        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+E3        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+E4        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+E10       |                |IOB      |IO_D1       |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+E11       |                |         |GND         |         |           |              |          |         |           |         |       |          |
+E12       |                |IOB      |IO_D2       |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+E13       |                |IOB      |            |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+F1        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+F2        |                |PCIIOB   |IO_IRDY     |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+F3        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+F4        |                |IOB      |            |UNUSED   |           |(3,7)***      |          |         |           |         |       |          |
+F10       |                |IOB      |IO_VREF_2   |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+F11       |CPU_DADDR<5>    |IOB      |IO_D3       |OUTPUT   |LVTTL      |(1,2)***      |12        |SLOW     |NONE**     |         |       |          |
+F12       |                |IOB      |            |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+F13       |                |PCIIOB   |IO_IRDY     |UNUSED   |           |(1,2)***      |          |         |           |         |       |          |
+G1        |                |PCIIOB   |IO_TRDY     |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+G2        |                |         |VCCO        |         |           |3             |          |         |           |         |3.30   |          |
+G3        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+G4        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+G10       |                |         |GND         |         |           |              |          |         |           |         |       |          |
+G11       |                |         |VCCO        |         |           |1             |          |         |           |         |3.30   |          |
+G12       |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+G13       |                |PCIIOB   |IO_TRDY     |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+H1        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+H2        |                |IOB      |IO_VREF_6   |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+H3        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+H4        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+H10       |                |IOB      |            |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+H11       |                |IOB      |IO_VREF_3   |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+H12       |                |IOB      |IO_D4       |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+H13       |                |IOB      |            |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+J1        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+J2        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+J3        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+J4        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+J10       |CPU_DADDR<4>    |IOB      |            |OUTPUT   |LVTTL      |(1,3)***      |12        |SLOW     |NONE**     |         |       |          |
+J11       |                |IOB      |IO_D6       |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+J12       |                |         |GND         |         |           |              |          |         |           |         |       |          |
+J13       |CPU_DADDR<0>    |IOB      |IO_D5       |OUTPUT   |LVTTL      |(1,3)***      |12        |SLOW     |NONE**     |         |       |          |
+K1        |                |IOB      |IO_VREF_6   |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+K2        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+K3        |                |IOB      |            |UNUSED   |           |(3,6)***      |          |         |           |         |       |          |
+K4        |                |IOB      |            |UNUSED   |           |(2,5)***      |          |         |           |         |       |          |
+K5        |CPU_IADDR<4>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+K6        |CPU_IADDR<0>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+K7        |                |GCLKIOB  |GCK0        |UNUSED   |           |(2,4)***      |          |         |           |         |       |          |
+K8        |CTRL_DATA_OUT<3>|IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+K9        |CPU_DADDR<3>    |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+K10       |                |IOB      |IO_D7       |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+K11       |                |IOB      |            |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+K12       |                |IOB      |IO_VREF_3   |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+K13       |CPU_IADDR<3>    |IOB      |            |OUTPUT   |LVTTL      |(1,3)***      |12        |SLOW     |NONE**     |         |       |          |
+L1        |NRESET          |IOB      |            |INPUT    |LVTTL      |(3,6)***      |          |         |           |NONE     |       |          |
+L2        |                |         |M1          |         |           |              |          |         |           |         |       |          |
+L3        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+L4        |                |IOB      |IO_VREF_5   |UNUSED   |           |(2,5)***      |          |         |           |         |       |          |
+L5        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+L6        |CPU_DATA_OUT<1> |IOB      |IO_VREF_5   |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+L7        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+L8        |CTRL_DATA_OUT<2>|IOB      |IO_VREF_4   |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+L9        |                |         |GND         |         |           |              |          |         |           |         |       |          |
+L10       |CPU_IADDR<1>    |IOB      |IO_VREF_4   |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+L11       |                |IOB      |            |UNUSED   |           |(2,4)***      |          |         |           |         |       |          |
+L12       |                |         |PROGRAM     |         |           |              |          |         |           |         |       |          |
+L13       |                |IOB      |IO_INIT     |UNUSED   |           |(1,3)***      |          |         |           |         |       |          |
+M1        |                |         |M0          |         |           |              |          |         |           |         |       |          |
+M2        |                |         |VCCO        |         |           |3             |          |         |           |         |3.30   |          |
+M4        |CPU_IADDR<6>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+M5        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+M6        |CPU_DADDR<2>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+M7        |CLK             |GCLKIOB  |GCK1        |INPUT    |LVTTL      |(2,5)***      |          |         |           |         |       |          |
+M8        |CPU_DADDR<1>    |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+M9        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+M10       |CPU_DATA_OUT<3> |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+M11       |PWM_OUT         |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+M12       |                |         |DONE        |         |           |              |          |         |           |         |       |          |
+M13       |                |         |VCCO        |         |           |1             |          |         |           |         |3.30   |          |
+N1        |                |         |VCCO        |         |           |2             |          |         |           |         |3.30   |          |
+N2        |                |         |M2          |         |           |              |          |         |           |         |       |          |
+N4        |CPU_IADDR<5>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+N5        |CPU_IADDR<7>    |IOB      |            |OUTPUT   |LVTTL      |(2,5)***      |12        |SLOW     |NONE**     |         |       |          |
+N6        |                |         |VCCINT      |         |           |              |          |         |           |         |2.5    |          |
+N7        |                |         |VCCO        |         |           |2             |          |         |           |         |3.30   |          |
+N8        |CTRL_DATA_OUT<1>|IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+N9        |CPU_DATA_OUT<0> |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+N10       |CTRL_DATA_OUT<0>|IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+N11       |CPU_IADDR<2>    |IOB      |            |OUTPUT   |LVTTL      |(2,4)***      |12        |SLOW     |NONE**     |         |       |          |
+N12       |                |         |GND         |         |           |              |          |         |           |         |       |          |
+N13       |                |         |VCCO        |         |           |2             |          |         |           |         |3.30   |          |
+
+-----     |-----           |-----    |-----       |-----    |-----      |-----         |-----     |-----    |-----      |-----    |-----  |-----     |
+
+* Default value.
+** This default Pullup/Pulldown value can be overridden in Bitgen.
+*** In some smaller packages, the VCCO bank number of a pin may trail
+     the VREF bank number (VCCO,VREF).
+

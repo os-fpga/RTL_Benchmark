@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn __projnav/ctrl4cpu.xst -ofn ctrl4cpu.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -i  -p xc2s30-cs144-5 ctrl4cpu.ngc ctrl4cpu.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o ctrl4cpu_map.ncd ctrl4cpu.ngd ctrl4cpu.pcf
+par -w -intstyle ise -ol std -t 1 ctrl4cpu_map.ncd ctrl4cpu.ncd ctrl4cpu.pcf
+trce -intstyle ise -e 3 -l 3 -xml ctrl4cpu ctrl4cpu.ncd -o ctrl4cpu.twr ctrl4cpu.pcf
+bitgen -intstyle ise -f ctrl4cpu.ut ctrl4cpu.ncd

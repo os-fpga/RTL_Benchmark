@@ -1,0 +1,181 @@
+Assembler report for cpu32bit compilation.
+Wed Feb 25 23:29:59 2004
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+
+Command: quartus_asm --import_settings_files=off --export_settings_files=off cpu32bit -c cpu32bit
+
+
+
+---------------------
+; Table of Contents ;
+---------------------
+   1. Legal Notice
+   2. Flow Summary
+   3. Flow Settings
+   4. Flow Elapsed Time
+   5. Assembler Summary
+   6. Assembler Settings
+   7. Assembler Generated Files
+   8. Assembler Device Options: cpu32bit.sof
+   9. Assembler Device Options: cpu32bit.pof
+  10. Assembler Messages
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
+
+--------------------------------------------------------------------
+; Flow Summary                                                     ;
+--------------------------------------------------------------------
+; Flow Status              ; Successful - Wed Feb 25 23:29:59 2004 ;
+; Compiler Setting Name    ; cpu32bit                              ;
+; Top-level Entity Name    ; cpu32bit                              ;
+; Family                   ; Stratix                               ;
+; Device                   ; EP1S10F780C6                          ;
+; Total logic elements     ; 2,092 / 10,570 ( 19 % )               ;
+; Total pins               ; 63 / 426 ( 14 % )                     ;
+; Total memory bits        ; 65,536 / 920,448 ( 7 % )              ;
+; DSP block 9-bit elements ; 16 / 48 ( 33 % )                      ;
+; Total PLLs               ; 0 / 6 ( 0 % )                         ;
+; Total DLLs               ; 0 / 2 ( 0 % )                         ;
+--------------------------------------------------------------------
+
+
+-----------------------------------------------
+; Flow Settings                               ;
+-----------------------------------------------
+; Option                ; Setting             ;
+-----------------------------------------------
+; Start date & time     ; 02/25/2004 23:26:50 ;
+; Main task             ; Compilation         ;
+; Compiler Setting Name ; cpu32bit            ;
+-----------------------------------------------
+
+
+---------------------------------------
+; Flow Elapsed Time                   ;
+---------------------------------------
+; Module Name          ; Elapsed Time ;
+---------------------------------------
+; Analysis & Synthesis ; 00:00:36     ;
+; Fitter               ; 00:02:28     ;
+; Assembler            ; 00:00:03     ;
+; Total                ; 00:03:07     ;
+---------------------------------------
+
+
+-----------------------------------------------------------------
+; Assembler Summary                                             ;
+-----------------------------------------------------------------
+; Assembler Status      ; Successful - Wed Feb 25 23:29:59 2004 ;
+; Compiler Setting Name ; cpu32bit                              ;
+; Top-level Entity Name ; cpu32bit                              ;
+; Family                ; Stratix                               ;
+; Device                ; EP1S10F780C6                          ;
+-----------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------
+; Assembler Settings                                                                            ;
+-------------------------------------------------------------------------------------------------
+; Option                                                                             ; Setting  ;
+-------------------------------------------------------------------------------------------------
+; Generate Hexadecimal (Intel-format) Output File (.hexout) For Configuration Device ; Off      ;
+; Generate Compressed Jam Byte-Code File (.jbc) For Configuration Device             ; On       ;
+; Generate uncompressed Jam File (.jbc) For Configuration Device                     ; Off      ;
+; Generate Jam File (.jam) For Configuration Device                                  ; Off      ;
+; Generate In System Configuration File (.isc) For Configuration Device              ; Off      ;
+; Generate Serial Vector Format File (.svf) For Configuration Device                 ; Off      ;
+; Generate Compressed Jam Byte-Code File (.jbc) for Target Device                    ; On       ;
+; Generate Uncompressed Jam Byte-Code File (.jbc) for Target Device                  ; Off      ;
+; Generate Jam File (.jam) for Target Device                                         ; Off      ;
+; Generate In System Configuration File (.isc) for Target Device                     ; Off      ;
+; Generate Serial Vector Format File (.svf) for Target Device                        ; Off      ;
+; Hexadecimal Output File count direction                                            ; Up       ;
+; Hexadecimal Output File start address                                              ; 0        ;
+; Generate Hexadecimal (Intel-Format) Output File (.hexout) for Target Device        ; Off      ;
+; Generate Raw Binary File (.rbf) For Target Device                                  ; Off      ;
+; Generate Tabular Text File (.ttf) For Target Device                                ; Off      ;
+; Disable CONF_DONE and nSTATUS pull-ups on configuration device                     ; Off      ;
+; Auto-increment JTAG user code for multiple configuration devices                   ; On       ;
+; Configuration device auto user code                                                ; Off      ;
+; JTAG user code for configuration device                                            ; Ffffffff ;
+; Configuration device                                                               ; Auto     ;
+; Use configuration device                                                           ; On       ;
+; Auto user code                                                                     ; Off      ;
+; JTAG user code for target device                                                   ; Ffffffff ;
+; Divide clock frequency by                                                          ; 1        ;
+; Clock frequency of the configuration device                                        ; 10 MHZ   ;
+; Clock source for configuration device                                              ; Internal ;
+; Compression mode                                                                   ; Off      ;
+-------------------------------------------------------------------------------------------------
+
+
+-----------------------------
+; Assembler Generated Files ;
+-----------------------------
+; File Name                 ;
+-----------------------------
+; cpu32bit.sof              ;
+; cpu32bit.pof              ;
+-----------------------------
+
+
+---------------------------------
+; Assembler Device Options: cpu32bit.sof ;
+---------------------------------
+; Option         ; Setting      ;
+---------------------------------
+; Device         ; EP1S10F780C6 ;
+; JTAG usercode  ; 0xFFFFFFFF   ;
+; Checksum       ; 0x002EC8D0   ;
+---------------------------------
+
+
+--------------------------------
+; Assembler Device Options: cpu32bit.pof ;
+--------------------------------
+; Option         ; Setting     ;
+--------------------------------
+; Device         ; EPC4        ;
+; JTAG usercode  ; 0xFFFFFFFF  ;
+; Checksum       ; 0x0604FB20  ;
+--------------------------------
+
+
+-----------------------
+; Assembler Messages  ;
+-----------------------
+Info: *******************************************************************
+Info: Running Quartus II Assembler
+  Info: Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+  Info: Processing started: Wed Feb 25 23:29:56 2004
+Info: Command: quartus_asm --import_settings_files=off --export_settings_files=off cpu32bit -c cpu32bit
+Info: Quartus II Assembler was successful. 0 errors, 0 warnings
+  Info: Processing ended: Wed Feb 25 23:29:59 2004
+  Info: Elapsed time: 00:00:03
+Info: Writing report file cpu32bit.asm.rpt
+
+

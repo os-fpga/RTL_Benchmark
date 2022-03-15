@@ -1,0 +1,42 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT cpu8bit
+DESIGN cpu8bit
+DEVFAM spartan2e
+DEVFAMTIME 1054239419
+DEVICE xc2s50e
+DEVICETIME 0
+DEVPKG tq144
+DEVPKGTIME 1054239419
+DEVSPEED -7
+DEVSPEEDTIME 1054239419
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Modelsim
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL VHDL
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE ..\cpu_oa.vhd
+SOURCE rom.xco
+SOURCE ram.xco
+SOURCE ..\cpu.vhd
+SOURCE ..\..\Components\interrupt.vhd
+SOURCE cpu8bit.sch
+SOURCE ..\cpu_cu.vhd
+SOURCE ..\cpu_du.vhd
+SOURCE ..\cpu_iu.vhd
+SOURCE ..\..\Components\inout4reg.vhd
+SOURCE ..\..\Components\tx_uart.vhd
+SOURCE ..\..\Components\rx_uart.vhd
+SOURCE ..\..\Components\timer.vhd
+SOURCE ..\..\Components\ctrl8cpu.vhd
+SOURCE ..\cpu_utils.vhd
+SOURCE ..\cpu_wd.vhd
+[Normal]
+p_CompxlibTargetSimulator=xstvhd, spartan2e, Design.t_compLibraries, 1071006685, ModelSim PE
+[STATUS-ALL]
+cpu8bit.bitgenGroup=OK,0
+[STRATEGY-LIST]
+Normal=True

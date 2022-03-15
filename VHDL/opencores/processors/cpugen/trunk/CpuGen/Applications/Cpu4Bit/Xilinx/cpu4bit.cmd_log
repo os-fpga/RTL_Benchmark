@@ -1,0 +1,155 @@
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family=spartan2 -tionly -w cpu4bit.sch cpu4bit.vhi
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu4bit\xilinx/_ngo -i  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family=spartan2 -tionly -w cpu4bit.sch cpu4bit.vhi
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.ngd cpu4bit_translate.vhd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit_map.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_map.vhd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.ngd cpu4bit_translate.vhd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.ngd cpu4bit_translate.vhd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit_map.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_map.vhd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+ngdanno -quiet -s -5   -o cpu4bit.nga -p cpu4bit.pcf cpu4bit.ncd cpu4bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu4bit.nga cpu4bit_timesim.vhd
+sch2vhdl -family=spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -quiet -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -quiet -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -ol 2 -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -f cpu4bit.ut cpu4bit.ncd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -tionly -w cpu4bit.sch cpu4bit.vhi
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ngd cpu4bit_translate.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit_map.ncd cpu4bit_map.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+sch2vhdl -family spartan2 -tionly -w cpu4bit.sch cpu4bit.vhi
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit_map.ncd cpu4bit_map.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit_map.ncd cpu4bit_map.vhd
+trce -intstyle ise -e 3 -l 3 -s -5 -xml cpu4bit_preroute cpu4bit_map.ncd -o cpu4bit_preroute.twr cpu4bit.pcf
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+sch2vhdl -family spartan2 -flat -suppress -w cpu4bit.sch cpu4bit.vhf
+xst -intstyle ise -ifn __projnav/cpu4bit.xst -ofn cpu4bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu4bit\xilinx/_ngo -uc cpu4bit.ucf  -p xc2s30-cs144-5 cpu4bit.ngc cpu4bit.ngd
+map -intstyle ise -p xc2s30-cs144-5 -cm area -pr b -k 4 -c 100 -tx off -o cpu4bit_map.ncd cpu4bit.ngd cpu4bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd cpu4bit.ncd cpu4bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu4bit cpu4bit.ncd -o cpu4bit.twr cpu4bit.pcf
+bitgen -intstyle ise -f cpu4bit.ut cpu4bit.ncd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd
+netgen -intstyle ise -s 5   -pcf cpu4bit.pcf -ngm cpu4bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu4bit.ncd cpu4bit_timesim.vhd

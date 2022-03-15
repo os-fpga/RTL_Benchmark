@@ -1,0 +1,124 @@
+Release 6.1.03i Par G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+AMD64::  Fri Feb 27 22:13:55 2004
+
+
+C:/Xilinx/bin/nt/par.exe -w -intstyle ise -ol std -t 1 cpu32bit_map.ncd
+cpu32bit.ncd cpu32bit.pcf 
+
+
+Constraints file: cpu32bit.pcf
+
+Loading device database for application Par from file "cpu32bit_map.ncd".
+   "cpu32bit" is an NCD, version 2.38, device xc3s200, package pq208, speed -4
+Loading device for application Par from file '3s200.nph' in environment
+C:/Xilinx.
+Device speed data version:  PREVIEW 1.27 2003-11-04.
+
+
+Device utilization summary:
+
+   Number of External IOBs            64 out of 141    45%
+      Number of LOCed External IOBs    0 out of 64      0%
+
+   Number of Slices                 1585 out of 1944   81%
+      Number of MULT18X18s             4 out of 12     33%
+      Number of RAMB16s                4 out of 12     33%
+
+   Number of BUFGMUXs                  2 out of 8      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+
+Phase 1.1
+Phase 1.1 (Checksum:98d351) REAL time: 0 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 0 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 0 secs 
+
+Phase 5.8
+..........................................................................................
+Phase 5.8 (Checksum:ddbe80) REAL time: 18 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 18 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 20 secs 
+
+Writing design to file cpu32bit.ncd.
+
+Total REAL time to Placer completion: 21 secs 
+Total CPU time to Placer completion: 21 secs 
+
+
+Phase 1: 12457 unrouted;       REAL time: 21 secs 
+
+Phase 2: 12005 unrouted;       REAL time: 21 secs 
+
+Phase 3: 8776 unrouted;       REAL time: 22 secs 
+
+Phase 4: 0 unrouted;       REAL time: 46 secs 
+
+Total REAL time to Router completion: 47 secs 
+Total CPU time to Router completion: 47 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++-------------------------+----------+------+------+------------+-------------+
+|        Clock Net        | Resource |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++-------------------------+----------+------+------+------------+-------------+
+|      CLK_IN_BUFGP       |  BUFGMUX1| No   |  371 |  0.318     |  0.631      |
++-------------------------+----------+------+------+------------+-------------+
+|   NRESET_IN_BUFGP       |  BUFGMUX0| No   |  299 |  0.034     |  0.347      |
++-------------------------+----------+------+------+------------+-------------+
+|     XLXI_1_I3__n00421_1 |   Local  |      |   33 |  0.154     |  2.080      |
++-------------------------+----------+------+------+------------+-------------+
+
+
+   The Delay Summary Report
+
+   The SCORE FOR THIS DESIGN is: 235
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        1.364
+   The MAXIMUM PIN DELAY IS:                               6.169
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   4.910
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 1.00   < d < 2.00  < d < 3.00  < d < 4.00  < d < 7.00  d >= 7.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+        4650        5200        2016         497          94           0
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 47 secs 
+Total CPU time to PAR completion: 47 secs 
+
+Peak Memory Usage:  77 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+Writing design to file cpu32bit.ncd.
+
+
+PAR done.

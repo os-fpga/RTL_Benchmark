@@ -1,0 +1,322 @@
+Pre-processor phase:
+Zone __equ: Label[0]: name = BASE_ROM, value = 0
+Zone __equ: Label[1]: name = BASE_OA, value = 0
+Zone __equ: Label[2]: name = BASE_RAM, value = 8
+Zone __equ: Label[3]: name = BASE_REG, value = 16
+Zone __equ: Label[4]: name = ROM_PAGE0, value = 0
+Zone __equ: Label[5]: name = ROM_PAGE1, value = 64
+Zone __equ: Label[6]: name = ROM_PAGE2, value = 128
+Zone __equ: Label[7]: name = ROM_PAGE3, value = 192
+Zone __equ: Label[8]: name = ROM_NUM0, value = 0
+Zone __equ: Label[9]: name = ROM_NUM1, value = 1
+Zone __equ: Label[10]: name = ROM_NUM2, value = 2
+Zone __equ: Label[11]: name = ROM_NUM3, value = 3
+Zone __equ: Label[12]: name = ONE, value = 1
+Zone __equ: Label[13]: name = PWM_DISABLE, value = 0
+Zone __equ: Label[14]: name = PWM_ENABLE, value = 1
+Zone __equ: Label[15]: name = PWMPL_INI, value = 0
+Zone __equ: Label[16]: name = PWMPH_INI, value = 1
+Zone __equ: Label[17]: name = PWMLL_INI, value = 2
+Zone __equ: Label[18]: name = PWMLH_INI, value = 0
+Zone __equ: Label[19]: name = THR1_PWM, value = 2
+Zone __equ: Label[20]: name = THR2_PWM, value = 4
+Zone __equ: Label[21]: name = THR3_PWM, value = 6
+Zone __equ: Label[22]: name = THR4_PWM, value = 8
+Zone __equ: Label[23]: name = PWMLL1, value = 2
+Zone __equ: Label[24]: name = PWMLL2, value = 6
+Zone __equ: Label[25]: name = PWMLL3, value = 10
+Zone __equ: Label[26]: name = PWMLL4, value = 14
+Zone __rom: Label[27]: name = start, line = 6
+Zone __rom: Label[28]: name = init, line = 64
+Zone __rom: Label[29]: name = set_pwm1, line = 128
+Zone __rom: Label[30]: name = set_pwm2, line = 135
+Zone __rom: Label[31]: name = set_pwm3, line = 142
+Zone __rom: Label[32]: name = set_pwm4, line = 149
+Zone __rom: Label[33]: name = ret_start, line = 156
+Zone __ram: Label[34]: name = IND_ADD, line = 0
+Zone __ram: Label[35]: name = IND_REG, line = 1
+Zone __ram: Label[36]: name = IND_INC, line = 2
+Zone __ram: Label[37]: name = ISTR_PAGE, line = 3
+Zone __ram: Label[38]: name = DATA_PAGE, line = 4
+Zone __ram: Label[39]: name = DATA_EXP, line = 5
+Zone __ram: Label[40]: name = ram_vec, line = 8
+Zone __reg: Label[41]: name = CTRL, line = 16
+Zone __reg: Label[42]: name = DUMMY, line = 17
+Zone __reg: Label[43]: name = PWMPL, line = 18
+Zone __reg: Label[44]: name = PWMPH, line = 19
+Zone __reg: Label[45]: name = PWMLL, line = 20
+Zone __reg: Label[46]: name = PWMLH, line = 21
+Compiling phase:
+0 : 1a 	 => ROM: 		ldai	ROM_NUM1;
+1 : 31 	 => ROM: 		sta	ISTR_PAGE;
+2 : 0 	 => ROM: 		nop;			-- NOTE:ISTR_PAGE and DATA_PAGE become valide two clock after update   
+3 : 409 	 => ROM: 		jms	init;
+4 : a 	 => ROM: 		ldai	ROM_NUM0;
+5 : 31 	 => ROM: 		sta	ISTR_PAGE;
+6 : 2a 	 => ROM: start:	ldai	ROM_NUM2;
+7 : 31 	 => ROM: 		sta	ISTR_PAGE;
+8 : a 	 => ROM: 		ldai	PWMLH_INI;	
+9 : 151 	 => ROM: 		sta	PWMLH;
+10 : 102 	 => ROM: 		lda 	CTRL;		-- Read reg
+11 : 2e 	 => ROM: 		subi	THR1_PWM;	-- check thresold 1
+12 : b0 	 => ROM: 		sknc;
+13 : 808 	 => ROM: 		jmp	set_pwm1;
+14 : 102 	 => ROM: 		lda 	CTRL;		-- Read reg
+15 : 4e 	 => ROM: 		subi	THR2_PWM;	-- check thresold 2
+16 : b0 	 => ROM: 		sknc;
+17 : 878 	 => ROM: 		jmp	set_pwm2;
+18 : 102 	 => ROM: 		lda 	CTRL;		-- Read reg
+19 : 6e 	 => ROM: 		subi	THR3_PWM;	-- check thresold 3
+20 : b0 	 => ROM: 		sknc;
+21 : 8e8 	 => ROM: 		jmp	set_pwm3;
+22 : 102 	 => ROM: 		lda 	CTRL;		-- Read reg
+23 : 8e 	 => ROM: 		subi	THR4_PWM;	-- check thresold 4
+24 : b0 	 => ROM: 		sknc;
+25 : 958 	 => ROM: 		jmp	set_pwm4;
+26 : 68 	 => ROM: 		jmp 	start;
+27 : 0 	 => ROM: org		ROM_PAGE1;
+28 : 0 	 => ROM: org		ROM_PAGE1;
+29 : 0 	 => ROM: org		ROM_PAGE1;
+30 : 0 	 => ROM: org		ROM_PAGE1;
+31 : 0 	 => ROM: org		ROM_PAGE1;
+32 : 0 	 => ROM: org		ROM_PAGE1;
+33 : 0 	 => ROM: org		ROM_PAGE1;
+34 : 0 	 => ROM: org		ROM_PAGE1;
+35 : 0 	 => ROM: org		ROM_PAGE1;
+36 : 0 	 => ROM: org		ROM_PAGE1;
+37 : 0 	 => ROM: org		ROM_PAGE1;
+38 : 0 	 => ROM: org		ROM_PAGE1;
+39 : 0 	 => ROM: org		ROM_PAGE1;
+40 : 0 	 => ROM: org		ROM_PAGE1;
+41 : 0 	 => ROM: org		ROM_PAGE1;
+42 : 0 	 => ROM: org		ROM_PAGE1;
+43 : 0 	 => ROM: org		ROM_PAGE1;
+44 : 0 	 => ROM: org		ROM_PAGE1;
+45 : 0 	 => ROM: org		ROM_PAGE1;
+46 : 0 	 => ROM: org		ROM_PAGE1;
+47 : 0 	 => ROM: org		ROM_PAGE1;
+48 : 0 	 => ROM: org		ROM_PAGE1;
+49 : 0 	 => ROM: org		ROM_PAGE1;
+50 : 0 	 => ROM: org		ROM_PAGE1;
+51 : 0 	 => ROM: org		ROM_PAGE1;
+52 : 0 	 => ROM: org		ROM_PAGE1;
+53 : 0 	 => ROM: org		ROM_PAGE1;
+54 : 0 	 => ROM: org		ROM_PAGE1;
+55 : 0 	 => ROM: org		ROM_PAGE1;
+56 : 0 	 => ROM: org		ROM_PAGE1;
+57 : 0 	 => ROM: org		ROM_PAGE1;
+58 : 0 	 => ROM: org		ROM_PAGE1;
+59 : 0 	 => ROM: org		ROM_PAGE1;
+60 : 0 	 => ROM: org		ROM_PAGE1;
+61 : 0 	 => ROM: org		ROM_PAGE1;
+62 : 0 	 => ROM: org		ROM_PAGE1;
+63 : 0 	 => ROM: org		ROM_PAGE1;
+64 : a 	 => ROM: init:		ldai	PWM_DISABLE;
+65 : 101 	 => ROM: 		sta	CTRL;
+66 : 1a 	 => ROM: 		ldai	PWMPH_INI;	
+67 : 131 	 => ROM: 		sta	PWMPH;
+68 : a 	 => ROM: 		ldai	PWMPL_INI;	
+69 : 121 	 => ROM: 		sta	PWMPL;
+70 : a 	 => ROM: 		ldai	PWMLH_INI;	
+71 : 151 	 => ROM: 		sta	PWMLH;
+72 : 2a 	 => ROM: 		ldai	PWMLL_INI;	
+73 : 141 	 => ROM: 		sta	PWMLL;
+74 : 1a 	 => ROM: 		ldai	PWM_ENABLE;
+75 : 101 	 => ROM: 		sta	CTRL;
+76 : c0 	 => ROM: 		rts;
+77 : 0 	 => ROM: org		ROM_PAGE2;
+78 : 0 	 => ROM: org		ROM_PAGE2;
+79 : 0 	 => ROM: org		ROM_PAGE2;
+80 : 0 	 => ROM: org		ROM_PAGE2;
+81 : 0 	 => ROM: org		ROM_PAGE2;
+82 : 0 	 => ROM: org		ROM_PAGE2;
+83 : 0 	 => ROM: org		ROM_PAGE2;
+84 : 0 	 => ROM: org		ROM_PAGE2;
+85 : 0 	 => ROM: org		ROM_PAGE2;
+86 : 0 	 => ROM: org		ROM_PAGE2;
+87 : 0 	 => ROM: org		ROM_PAGE2;
+88 : 0 	 => ROM: org		ROM_PAGE2;
+89 : 0 	 => ROM: org		ROM_PAGE2;
+90 : 0 	 => ROM: org		ROM_PAGE2;
+91 : 0 	 => ROM: org		ROM_PAGE2;
+92 : 0 	 => ROM: org		ROM_PAGE2;
+93 : 0 	 => ROM: org		ROM_PAGE2;
+94 : 0 	 => ROM: org		ROM_PAGE2;
+95 : 0 	 => ROM: org		ROM_PAGE2;
+96 : 0 	 => ROM: org		ROM_PAGE2;
+97 : 0 	 => ROM: org		ROM_PAGE2;
+98 : 0 	 => ROM: org		ROM_PAGE2;
+99 : 0 	 => ROM: org		ROM_PAGE2;
+100 : 0 	 => ROM: org		ROM_PAGE2;
+101 : 0 	 => ROM: org		ROM_PAGE2;
+102 : 0 	 => ROM: org		ROM_PAGE2;
+103 : 0 	 => ROM: org		ROM_PAGE2;
+104 : 0 	 => ROM: org		ROM_PAGE2;
+105 : 0 	 => ROM: org		ROM_PAGE2;
+106 : 0 	 => ROM: org		ROM_PAGE2;
+107 : 0 	 => ROM: org		ROM_PAGE2;
+108 : 0 	 => ROM: org		ROM_PAGE2;
+109 : 0 	 => ROM: org		ROM_PAGE2;
+110 : 0 	 => ROM: org		ROM_PAGE2;
+111 : 0 	 => ROM: org		ROM_PAGE2;
+112 : 0 	 => ROM: org		ROM_PAGE2;
+113 : 0 	 => ROM: org		ROM_PAGE2;
+114 : 0 	 => ROM: org		ROM_PAGE2;
+115 : 0 	 => ROM: org		ROM_PAGE2;
+116 : 0 	 => ROM: org		ROM_PAGE2;
+117 : 0 	 => ROM: org		ROM_PAGE2;
+118 : 0 	 => ROM: org		ROM_PAGE2;
+119 : 0 	 => ROM: org		ROM_PAGE2;
+120 : 0 	 => ROM: org		ROM_PAGE2;
+121 : 0 	 => ROM: org		ROM_PAGE2;
+122 : 0 	 => ROM: org		ROM_PAGE2;
+123 : 0 	 => ROM: org		ROM_PAGE2;
+124 : 0 	 => ROM: org		ROM_PAGE2;
+125 : 0 	 => ROM: org		ROM_PAGE2;
+126 : 0 	 => ROM: org		ROM_PAGE2;
+127 : 0 	 => ROM: org		ROM_PAGE2;
+128 : 2a 	 => ROM: set_pwm1:	ldai	PWMLL1;
+129 : 141 	 => ROM: 		sta	PWMLL;
+130 : 1a 	 => ROM: 		ldai	#1;
+131 : 30 	 => ROM: 		shl;
+132 : 1c 	 => ROM: 		addi	PWM_ENABLE;
+133 : 101 	 => ROM: 		sta	CTRL;
+134 : 9c8 	 => ROM: 		jmp	ret_start;
+135 : 6a 	 => ROM: set_pwm2:	ldai	PWMLL2;
+136 : 141 	 => ROM: 		sta	PWMLL;
+137 : 2a 	 => ROM: 		ldai	#2;
+138 : 30 	 => ROM: 		shl;
+139 : 1c 	 => ROM: 		addi	PWM_ENABLE;
+140 : 101 	 => ROM: 		sta	CTRL;
+141 : 9c8 	 => ROM: 		jmp	ret_start;
+142 : aa 	 => ROM: set_pwm3:	ldai	PWMLL3;
+143 : 141 	 => ROM: 		sta	PWMLL;
+144 : 3a 	 => ROM: 		ldai	#3;
+145 : 30 	 => ROM: 		shl;
+146 : 1c 	 => ROM: 		addi	PWM_ENABLE;
+147 : 101 	 => ROM: 		sta	CTRL;
+148 : 9c8 	 => ROM: 		jmp	ret_start;
+149 : ea 	 => ROM: set_pwm4:	ldai	PWMLL4;
+150 : 141 	 => ROM: 		sta	PWMLL;
+151 : 4a 	 => ROM: 		ldai	#4;
+152 : 30 	 => ROM: 		shl;
+153 : 1c 	 => ROM: 		addi	PWM_ENABLE;
+154 : 101 	 => ROM: 		sta	CTRL;
+155 : 9c8 	 => ROM: 		jmp	ret_start;
+156 : 2 	 => ROM: ret_start:  lda	ROM_NUM0;
+157 : 31 	 => ROM: 		sta	ISTR_PAGE;
+158 : 0 	 => ROM: 		nop;			-- NOTE:ISTR_PAGE and DATA_PAGE become valide two clock after update   
+159 : 68 	 => ROM: 		jmp	start;
+160 : 0 	 => ROM:
+161 : 0 	 => ROM:
+162 : 0 	 => ROM:
+163 : 0 	 => ROM:
+164 : 0 	 => ROM:
+165 : 0 	 => ROM:
+166 : 0 	 => ROM:
+167 : 0 	 => ROM:
+168 : 0 	 => ROM:
+169 : 0 	 => ROM:
+170 : 0 	 => ROM:
+171 : 0 	 => ROM:
+172 : 0 	 => ROM:
+173 : 0 	 => ROM:
+174 : 0 	 => ROM:
+175 : 0 	 => ROM:
+176 : 0 	 => ROM:
+177 : 0 	 => ROM:
+178 : 0 	 => ROM:
+179 : 0 	 => ROM:
+180 : 0 	 => ROM:
+181 : 0 	 => ROM:
+182 : 0 	 => ROM:
+183 : 0 	 => ROM:
+184 : 0 	 => ROM:
+185 : 0 	 => ROM:
+186 : 0 	 => ROM:
+187 : 0 	 => ROM:
+188 : 0 	 => ROM:
+189 : 0 	 => ROM:
+190 : 0 	 => ROM:
+191 : 0 	 => ROM:
+192 : 0 	 => ROM:
+193 : 0 	 => ROM:
+194 : 0 	 => ROM:
+195 : 0 	 => ROM:
+196 : 0 	 => ROM:
+197 : 0 	 => ROM:
+198 : 0 	 => ROM:
+199 : 0 	 => ROM:
+200 : 0 	 => ROM:
+201 : 0 	 => ROM:
+202 : 0 	 => ROM:
+203 : 0 	 => ROM:
+204 : 0 	 => ROM:
+205 : 0 	 => ROM:
+206 : 0 	 => ROM:
+207 : 0 	 => ROM:
+208 : 0 	 => ROM:
+209 : 0 	 => ROM:
+210 : 0 	 => ROM:
+211 : 0 	 => ROM:
+212 : 0 	 => ROM:
+213 : 0 	 => ROM:
+214 : 0 	 => ROM:
+215 : 0 	 => ROM:
+216 : 0 	 => ROM:
+217 : 0 	 => ROM:
+218 : 0 	 => ROM:
+219 : 0 	 => ROM:
+220 : 0 	 => ROM:
+221 : 0 	 => ROM:
+222 : 0 	 => ROM:
+223 : 0 	 => ROM:
+224 : 0 	 => ROM:
+225 : 0 	 => ROM:
+226 : 0 	 => ROM:
+227 : 0 	 => ROM:
+228 : 0 	 => ROM:
+229 : 0 	 => ROM:
+230 : 0 	 => ROM:
+231 : 0 	 => ROM:
+232 : 0 	 => ROM:
+233 : 0 	 => ROM:
+234 : 0 	 => ROM:
+235 : 0 	 => ROM:
+236 : 0 	 => ROM:
+237 : 0 	 => ROM:
+238 : 0 	 => ROM:
+239 : 0 	 => ROM:
+240 : 0 	 => ROM:
+241 : 0 	 => ROM:
+242 : 0 	 => ROM:
+243 : 0 	 => ROM:
+244 : 0 	 => ROM:
+245 : 0 	 => ROM:
+246 : 0 	 => ROM:
+247 : 0 	 => ROM:
+248 : 0 	 => ROM:
+249 : 0 	 => ROM:
+250 : 0 	 => ROM:
+251 : 0 	 => ROM:
+252 : 0 	 => ROM:
+253 : 0 	 => ROM:
+254 : 0 	 => ROM:
+255 : 0 	 => ROM:
+0 : 0 	 => RAM: IND_ADD:	;	-- Indirect address
+1 : 0 	 => RAM: IND_REG:	;	-- Indirect register
+2 : 0 	 => RAM: IND_INC:	;	-- Indirect register increment
+3 : 0 	 => RAM: ISTR_PAGE:	;	-- Multi page istruction addressing
+4 : 0 	 => RAM: DATA_PAGE:	;	-- Multi page data addressing
+5 : 0 	 => RAM: DATA_EXP:	;	-- Data bus expansion
+6 : 0 	 => RAM: org 		BASE_RAM;	-- page dependent memory
+7 : 0 	 => RAM: org 		BASE_RAM;	-- page dependent memory
+8 : 0 	 => RAM: ram_vec:	*8;	
+9 : 0 	 => RAM: ram_vec:	*8;	
+10 : 0 	 => RAM: ram_vec:	*8;	
+11 : 0 	 => RAM: ram_vec:	*8;	
+12 : 0 	 => RAM: ram_vec:	*8;	
+13 : 0 	 => RAM: ram_vec:	*8;	
+14 : 0 	 => RAM: ram_vec:	*8;	
+15 : 0 	 => RAM: ram_vec:	*8;	
+bye bye 

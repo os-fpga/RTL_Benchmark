@@ -1,0 +1,140 @@
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\opencorecpu\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_timesim.vhd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+bitgen -f cpu8bit.ut cpu8bit.ncd
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit_map.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_map.vhd
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.ngd cpu8bit_translate.vhd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_timesim.vhd
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_timesim.vhd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit_map.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_map.vhd
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.ngd cpu8bit_translate.vhd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_timesim.vhd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit_map.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_map.vhd
+sch2vhdl -family=spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -quiet -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -quiet -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -quiet -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -ol 2 -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -quiet -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -f cpu8bit.ut cpu8bit.ncd
+ngdanno -quiet -s -7   -o cpu8bit.nga -p cpu8bit.pcf cpu8bit.ncd cpu8bit.ngm
+ngd2vhdl -quiet -rpw 100 -tpw 0 -ar Structure -xon true -w -log __projnav/ngd2vhdl.log cpu8bit.nga cpu8bit_timesim.vhd
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -intstyle ise -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -intstyle ise -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit_map.ncd cpu8bit_map.vhd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit.ncd cpu8bit_timesim.vhd
+bitgen -intstyle ise -f cpu8bit.ut cpu8bit.ncd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit_map.ncd cpu8bit_map.vhd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit.ncd cpu8bit_timesim.vhd
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -intstyle ise -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -intstyle ise -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit_map.ncd cpu8bit_map.vhd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit.ncd cpu8bit_timesim.vhd
+bitgen -intstyle ise -f cpu8bit.ut cpu8bit.ncd
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -intstyle ise -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -intstyle ise -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -intstyle ise -f cpu8bit.ut cpu8bit.ncd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit.ncd cpu8bit_timesim.vhd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit_map.ncd cpu8bit_map.vhd
+sch2vhdl -family spartan2e -flat -suppress -w cpu8bit.sch cpu8bit.vhf
+xst -intstyle ise -ifn __projnav/cpu8bit.xst -ofn cpu8bit.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu8bit\xilinx/_ngo -i  -p xc2s50e-tq144-7 cpu8bit.ngc cpu8bit.ngd
+map -intstyle ise -p xc2s50e-tq144-7 -cm area -pr b -k 4 -c 100 -tx off -o cpu8bit_map.ncd cpu8bit.ngd cpu8bit.pcf
+par -w -intstyle ise -ol std -t 1 cpu8bit_map.ncd cpu8bit.ncd cpu8bit.pcf
+trce -intstyle ise -e 3 -l 3 -xml cpu8bit cpu8bit.ncd -o cpu8bit.twr cpu8bit.pcf
+bitgen -intstyle ise -f cpu8bit.ut cpu8bit.ncd
+netgen -intstyle ise -s 7   -pcf cpu8bit.pcf -ngm cpu8bit.ngm -rpw 100 -tpw 0 -ar Structure -xon true -w -ofmt vhdl -sim cpu8bit.ncd cpu8bit_timesim.vhd

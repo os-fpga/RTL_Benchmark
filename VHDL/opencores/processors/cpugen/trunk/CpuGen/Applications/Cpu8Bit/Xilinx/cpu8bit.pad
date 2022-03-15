@@ -1,0 +1,173 @@
+Release 6.1.03i - Par G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Fri Jan 09 23:23:46 2004
+
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The |
+character is used as the data field separator. This file is also designed
+to support parsing.
+
+INPUT FILE:       cpu8bit_map.ncd
+OUTPUT FILE:      cpu8bit.pad
+PART TYPE:        xc2s50e
+SPEED GRADE:      -7
+PACKAGE:          tq144
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|Drive (mA)|Slew Rate|Termination|IOB Delay|Voltage|Constraint|
+P1|||GND||||||||||
+P2|||TMS||||||||||
+P3||IOB|IO|UNUSED||(0,7)***|||||||
+P4||IOB|IO|UNUSED||(0,7)***|||||||
+P5||IOB|IO_VREF_7|UNUSED||(0,7)***|||||||
+P6||IOB|IO|UNUSED||(0,7)***|||||||
+P7||IOB|IO_L27P_Y|UNUSED||(0,7)***|||||||
+P8||IOB|IO_L27N_Y|UNUSED||(0,7)***|||||||
+P9|||GND||||||||||
+P10||IOB|IO_L26P_YY|UNUSED||(0,7)***|||||||
+P11||IOB|IO_L26N_YY|UNUSED||(0,7)***|||||||
+P12||IOB|IO_VREF_7_L25P_Y|UNUSED||(0,7)***|||||||
+P13||IOB|IO_L25N_Y|UNUSED||(0,7)***|||||||
+P14||IOB|IO|UNUSED||(0,7)***|||||||
+P15|IN0_REG<4>|IOB|IO_IRDY|INPUT|LVTTL|(0,7)***||||NONE|||
+P16|||GND||||||||||
+P17|||VCCO|||0|||||3.30||
+P18|IN1_REG<6>|IOB|IO_TRDY|INPUT|LVTTL|(0,6)***||||NONE|||
+P19|||VCCINT||||||||1.8||
+P20|IN0_REG<6>|IOB|IO|INPUT|LVTTL|(0,6)***||||NONE|||
+P21|IN1_REG<5>|IOB|IO_L24P_Y|INPUT|LVTTL|(0,6)***||||NONE|||
+P22|IN1_REG<4>|IOB|IO_VREF_6_L24N_Y|INPUT|LVTTL|(0,6)***||||NONE|||
+P23|IN0_REG<3>|IOB|IO_L23P_YY|INPUT|LVTTL|(0,6)***||||NONE|||
+P24|IN0_REG<2>|IOB|IO_L23N_YY|INPUT|LVTTL|(0,6)***||||NONE|||
+P25|||GND||||||||||
+P26|IN0_REG<5>|IOB|IO_L22P_Y|INPUT|LVTTL|(0,6)***||||NONE|||
+P27|IN1_REG<2>|IOB|IO_L22N_Y|INPUT|LVTTL|(0,6)***||||NONE|||
+P28|IN1_REG<1>|IOB|IO|INPUT|LVTTL|(0,6)***||||NONE|||
+P29|IN0_REG<7>|IOB|IO_VREF_6|INPUT|LVTTL|(0,6)***||||NONE|||
+P30|IN0_REG<0>|IOB|IO|INPUT|LVTTL|(0,6)***||||NONE|||
+P31||IOB|IO_L21P_YY|UNUSED||(0,6)***|||||||
+P32|IN1_REG<7>|IOB|IO_L21N_YY|INPUT|LVTTL|(0,6)***||||NONE|||
+P33|||M1||||||||||
+P34|||GND||||||||||
+P35|||M0||||||||||
+P36|||VCCO|||0|||||3.30||
+P37|||M2||||||||||
+P38|OUT1_REG<6>|IOB|IO_L20N_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P39|OUT1_REG<4>|IOB|IO_L20P_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P40|IN1_REG<0>|IOB|IO|INPUT|LVTTL|(0,5)***||||NONE|||
+P41|IN0_REG<1>|IOB|IO_VREF_5|INPUT|LVTTL|(0,5)***||||NONE|||
+P42|IN1_REG<3>|IOB|IO|INPUT|LVTTL|(0,5)***||||NONE|||
+P43|OUT0_REG<6>|IOB|IO_L19N_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P44|OUT0_REG<7>|IOB|IO_L19P_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P45|||GND||||||||||
+P46|||VCCINT||||||||1.8||
+P47|TXD|IOB|IO_L18N_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P48|OUT0_REG<4>|IOB|IO_L18P_YY|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P49|OUT0_REG<5>|IOB|IO_VREF_5|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P50|OUT1_REG<5>|IOB|IO_LVDS_DLL_L17N|OUTPUT|LVTTL|(0,5)***|12|SLOW|NONE**||||
+P51|||VCCINT||||||||1.8||
+P52|NRESET|GCLKIOB|GCK1|INPUT|LVTTL|(0,5)***|||||||
+P53|||VCCO|||0|||||3.30||
+P54|||GND||||||||||
+P55|UCLK|GCLKIOB|GCK0|INPUT|LVTTL|(0,4)***|||||||
+P56|OUT1_REG<7>|IOB|IO_LVDS_DLL_L17P|OUTPUT|LVTTL|(0,4)***|12|SLOW|NONE**||||
+P57|OUT1_REG<0>|IOB|IO|OUTPUT|LVTTL|(0,4)***|12|SLOW|NONE**||||
+P58|OUT1_REG<1>|IOB|IO_VREF_4|OUTPUT|LVTTL|(0,4)***|12|SLOW|NONE**||||
+P59|IN_INT<0>|IOB|IO_L16N_YY|INPUT|LVTTL|(0,4)***||||NONE|||
+P60|IN_INT<1>|IOB|IO_L16P_YY|INPUT|LVTTL|(0,4)***||||NONE|||
+P61|||VCCINT||||||||1.8||
+P62|||GND||||||||||
+P63|OUT0_REG<1>|IOB|IO_L15N_YY|OUTPUT|LVTTL|(0,4)***|12|SLOW|NONE**||||
+P64|OUT0_REG<0>|IOB|IO_L15P_YY|OUTPUT|LVTTL|(0,4)***|12|SLOW|NONE**||||
+P65||IOB|IO|UNUSED||(0,4)***|||||||
+P66||IOB|IO_VREF_4|UNUSED||(0,4)***|||||||
+P67||IOB|IO|UNUSED||(0,4)***|||||||
+P68||IOB|IO_L14N_YY|UNUSED||(0,4)***|||||||
+P69||IOB|IO_L14P_YY|UNUSED||(0,4)***|||||||
+P70|||GND||||||||||
+P71|||DONE||||||||||
+P72|||VCCO|||0|||||3.30||
+P73|||PROGRAM||||||||||
+P74||IOB|IO_INIT_L13N_YY|UNUSED||(0,3)***|||||||
+P75||IOB|IO_D7_L13P_YY|UNUSED||(0,3)***|||||||
+P76||IOB|IO|UNUSED||(0,3)***|||||||
+P77||IOB|IO_VREF_3|UNUSED||(0,3)***|||||||
+P78||IOB|IO|UNUSED||(0,3)***|||||||
+P79||IOB|IO_L12N_Y|UNUSED||(0,3)***|||||||
+P80||IOB|IO_D6_L12P_Y|UNUSED||(0,3)***|||||||
+P81|||GND||||||||||
+P82||IOB|IO_D5_L11N_YY|UNUSED||(0,3)***|||||||
+P83||IOB|IO_L11P_YY|UNUSED||(0,3)***|||||||
+P84||IOB|IO|UNUSED||(0,3)***|||||||
+P85||IOB|IO_VREF_3_L10N_Y|UNUSED||(0,3)***|||||||
+P86||IOB|IO_D4_L10P_Y|UNUSED||(0,3)***|||||||
+P87||IOB|IO|UNUSED||(0,3)***|||||||
+P88|||VCCINT||||||||1.8||
+P89||PCIIOB|IO_TRDY|UNUSED||(0,3)***|||||||
+P90|||VCCO|||0|||||3.30||
+P91|||GND||||||||||
+P92||PCIIOB|IO_IRDY|UNUSED||(0,2)***|||||||
+P93|RXD|IOB|IO|INPUT|LVTTL|(0,2)***||||IFD|||
+P94||IOB|IO_D3_L9N_Y|UNUSED||(0,2)***|||||||
+P95||IOB|IO_VREF_2_L9P_Y|UNUSED||(0,2)***|||||||
+P96||IOB|IO|UNUSED||(0,2)***|||||||
+P97||IOB|IO_L8N_YY|UNUSED||(0,2)***|||||||
+P98||IOB|IO_D2_L8P_YY|UNUSED||(0,2)***|||||||
+P99|||GND||||||||||
+P100||IOB|IO_D1_L7N_Y|UNUSED||(0,2)***|||||||
+P101||IOB|IO_L7P_Y|UNUSED||(0,2)***|||||||
+P102||IOB|IO|UNUSED||(0,2)***|||||||
+P103||IOB|IO_VREF_2|UNUSED||(0,2)***|||||||
+P104||IOB|IO|UNUSED||(0,2)***|||||||
+P105||IOB|IO_DIN_D0_L6N_YY|UNUSED||(0,2)***|||||||
+P106||IOB|IO_DOUT_BUSY_L6P_YY|UNUSED||(0,2)***|||||||
+P107|||CCLK||||||||||
+P108|||VCCO|||0|||||3.30||
+P109|||TDO||||||||||
+P110|||GND||||||||||
+P111|||TDI||||||||||
+P112||IOB|IO_CS_L5P_YY|UNUSED||(0,1)***|||||||
+P113||IOB|IO_WRITE_L5N_YY|UNUSED||(0,1)***|||||||
+P114||IOB|IO|UNUSED||(0,1)***|||||||
+P115||IOB|IO_VREF_1|UNUSED||(0,1)***|||||||
+P116||IOB|IO|UNUSED||(0,1)***|||||||
+P117||IOB|IO_L4P_YY|UNUSED||(0,1)***|||||||
+P118||IOB|IO_L4N_YY|UNUSED||(0,1)***|||||||
+P119|||GND||||||||||
+P120|||VCCINT||||||||1.8||
+P121||IOB|IO_L3P_YY|UNUSED||(0,1)***|||||||
+P122||IOB|IO_L3N_YY|UNUSED||(0,1)***|||||||
+P123||IOB|IO_VREF_1|UNUSED||(0,1)***|||||||
+P124|OUT1_REG<2>|IOB|IO|OUTPUT|LVTTL|(0,1)***|12|SLOW|NONE**||||
+P125|OUT0_REG<3>|IOB|IO_LVDS_DLL_L2P|OUTPUT|LVTTL|(0,1)***|12|SLOW|NONE**||||
+P126||GCLKIOB|GCK2|UNUSED||(0,1)***|||||||
+P127|||GND||||||||||
+P128|||VCCO|||0|||||3.30||
+P129||GCLKIOB|GCK3|UNUSED||0|||||||
+P130|||VCCINT||||||||1.8||
+P131|OUT1_REG<3>|IOB|IO_LVDS_DLL_L2N|OUTPUT|LVTTL|0|12|SLOW|NONE**||||
+P132|OUT0_REG<2>|IOB|IO_VREF_0|OUTPUT|LVTTL|0|12|SLOW|NONE**||||
+P133|IN_INT<2>|IOB|IO_L1P_YY|INPUT|LVTTL|0||||NONE|||
+P134|IN_INT<3>|IOB|IO_L1N_YY|INPUT|LVTTL|0||||NONE|||
+P135|||VCCINT||||||||1.8||
+P136|||GND||||||||||
+P137||IOB|IO_L0P_YY|UNUSED||0|||||||
+P138||IOB|IO_L0N_YY|UNUSED||0|||||||
+P139||IOB|IO|UNUSED||0|||||||
+P140||IOB|IO_VREF_0|UNUSED||0|||||||
+P141||IOB|IO|UNUSED||0|||||||
+P142||IOB|IO|UNUSED||0|||||||
+P143|||TCK||||||||||
+P144|||VCCO|||0|||||3.30||
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+
+* Default value.
+** This default Pullup/Pulldown value can be overridden in Bitgen.
+*** In some smaller packages, the VCCO bank number of a pin may trail
+     the VREF bank number (VCCO,VREF).
+

@@ -1,0 +1,62 @@
+Differences between CpuGen 1.0 and CpuGen 2.0
+
+1) Code refactoring: 
+
+	- inserted signal types 
+	- control unit re-designed
+	- istructions customization code oriented
+	- new instructions classification  
+
+2) Cpu signal name
+
+	- 1.0: iaddr		2.0: iaddr_out/saddr_out
+	- 1.0: data_out		2.0: data_out
+	- 1.0: daddr		2.0: daddr_out
+	- 1.0: saddr		2.0: saddr_in
+	- 1.0: idata		2.0: idata_in
+	- 1.0: data_in		2.0: data_in
+	- 1.0: ipush		2.0: ipush_out
+	- 1.0: ipop		2.0: ipop_out
+	- 1.0: nre		2.0: ndre_out
+	- 1.0: nwe		2.0: ndwe_out
+	- 1.0: int		2.0: int_in
+	- 1.0: dwait		2.0: dwait_in (works different)
+	- 1.0: nreset		2.0: nreset_in
+	- 1.0: uclk		2.0: clk_in
+	- 1.0: none		2.0: adaddr_out
+	- 1.0: none		2.0: nadwe_out
+	- 1.0: none		2.0: iwait_in
+	- 1.0: bgnt		2.0: none
+	- 1.0: breq		2.0: none
+
+3) Default instruction set
+
+	- Immediate and memory access instruction now have differents name:
+
+		- and 	& andi
+		- or	& ori
+		- add	& addi
+		- sub	& subi
+		- xor	& xori
+		- lda 	& ldai
+
+BUGS FIX
+
+	- corrected bugs into Instruction unit
+	- external stack support 
+	- documentation
+
+NEW FEATURES
+
+1) Data and instruction variable latency support
+
+2) Customizable instruction set
+
+3) Cpu ID support (useful in multi-cpu designs)
+
+4) Anticipated write_enable and address_write signals 
+   (better performances with data variable latency access)
+
+5) NEW test projects
+
+NOTE: bus request / grant no more supported (to implement it with iwait_in/dwait_in)

@@ -1,0 +1,675 @@
+Release 6.1.02i - xst G.25a
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.22 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.22 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+     4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : cpu.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : cpu
+Output Format                      : NGC
+Target Device                      : xc3s50-4-tq144
+
+---- Source Options
+Top Module Name                    : cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Equivalent register Removal        : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+Global Optimization                : AllClockNets
+RTL Output                         : Yes
+Write Timing Constraints           : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : cpu.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+Optimize Instantiated Primitives   : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_utils.vhd in Library work.
+Architecture cpu_utils of Entity cpu_utils is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_iu.vhd in Library work.
+Architecture iu_struct of Entity cpu_iu is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_cu.vhd in Library work.
+Architecture cu_struct of Entity cpu_cu is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_du.vhd in Library work.
+Architecture du_struct of Entity cpu_du is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_oa.vhd in Library work.
+Architecture oa_struct of Entity cpu_oa is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu_wd.vhd in Library work.
+Architecture wd_struct of Entity cpu_wd is up to date.
+Compiling vhdl file c:/cpugen/applications/cpu16bit/xilinx/cpu.vhd in Library work.
+Architecture cpu_arch of Entity cpu is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <cpu> (Architecture <cpu_arch>).
+Entity <cpu> analyzed. Unit <cpu> generated.
+
+Analyzing Entity <CPU_IU> (Architecture <iu_struct>).
+INFO:Xst:1561 - c:/cpugen/applications/cpu16bit/xilinx/cpu_iu.vhd line 108: Mux is complete : default of case is discarded
+Entity <CPU_IU> analyzed. Unit <CPU_IU> generated.
+
+Analyzing Entity <CPU_CU> (Architecture <cu_struct>).
+Entity <CPU_CU> analyzed. Unit <CPU_CU> generated.
+
+Analyzing Entity <CPU_DU> (Architecture <du_struct>).
+WARNING:Xst:819 - c:/cpugen/applications/cpu16bit/xilinx/cpu_du.vhd line 72: The following signals are missing in the process sensitivity list:
+   acc_c<0><15>, acc_c<0><14>, acc_c<0><13>, acc_c<0><12>, acc_c<0><11>, acc_c<0><10>, acc_c<0><9>, acc_c<0><8>, acc_c<0><7>, acc_c<0><6>, acc_c<0><5>, acc_c<0><4>, acc_c<0><3>, acc_c<0><2>, acc_c<0><1>, acc_c<0><0>, acc_c<0><16>.
+Entity <CPU_DU> analyzed. Unit <CPU_DU> generated.
+
+Analyzing Entity <CPU_OA> (Architecture <oa_struct>).
+Entity <CPU_OA> analyzed. Unit <CPU_OA> generated.
+
+Analyzing Entity <CPU_WD> (Architecture <wd_struct>).
+Entity <CPU_WD> analyzed. Unit <CPU_WD> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <CPU_WD>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu_wd.vhd.
+    Found 12-bit register for signal <daddr_c>.
+    Found 1-bit register for signal <ndwe_c>.
+    Found 12 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+Unit <CPU_WD> synthesized.
+
+
+Synthesizing Unit <CPU_OA>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu_oa.vhd.
+WARNING:Xst:646 - Signal <int_re_c> is assigned but never used.
+WARNING:Xst:646 - Signal <iadata_x<23:16>> is assigned but never used.
+    Found 2-bit comparator less for signal <$n0166> created at line 107.
+    Found 2-bit comparator greater for signal <$n0168> created at line 145.
+    Found 12-bit adder for signal <$n0182> created at line 151.
+    Found 2-bit adder for signal <$n0199> created at line 108.
+    Found 12-bit register for signal <data_exp_c>.
+    Found 12-bit register for signal <data_exp_i>.
+    Found 1-bit register for signal <dexp_we_c>.
+    Found 12-bit register for signal <iinc_c>.
+    Found 12-bit register for signal <iinc_i>.
+    Found 1-bit register for signal <iinc_we_c>.
+    Found 12-bit register for signal <ireg_c>.
+    Found 12-bit register for signal <ireg_i>.
+    Found 1-bit register for signal <ireg_we_c>.
+    Found 2-bit register for signal <nreset_v>.
+    Found 12 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  77 D-type flip-flop(s).
+	inferred   2 Adder/Subtracter(s).
+	inferred   2 Comparator(s).
+	inferred  12 Multiplexer(s).
+Unit <CPU_OA> synthesized.
+
+
+Synthesizing Unit <CPU_DU>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu_du.vhd.
+WARNING:Xst:646 - Signal <code_c> is assigned but never used.
+    Found 2-bit comparator less for signal <$n0026> created at line 225.
+    Found 1-bit xor2 for signal <$n0029> created at line 162.
+    Found 1-bit xor2 for signal <$n0030> created at line 162.
+    Found 1-bit xor2 for signal <$n0031> created at line 162.
+    Found 1-bit xor2 for signal <$n0032> created at line 162.
+    Found 1-bit xor2 for signal <$n0033> created at line 162.
+    Found 1-bit xor2 for signal <$n0034> created at line 162.
+    Found 1-bit xor2 for signal <$n0035> created at line 162.
+    Found 1-bit xor2 for signal <$n0036> created at line 162.
+    Found 1-bit xor2 for signal <$n0037> created at line 162.
+    Found 1-bit xor2 for signal <$n0038> created at line 162.
+    Found 1-bit xor2 for signal <$n0039> created at line 162.
+    Found 1-bit xor2 for signal <$n0040> created at line 162.
+    Found 1-bit xor2 for signal <$n0041> created at line 162.
+    Found 1-bit xor2 for signal <$n0042> created at line 162.
+    Found 1-bit xor2 for signal <$n0043> created at line 162.
+    Found 1-bit xor2 for signal <$n0044> created at line 162.
+    Found 17-bit subtractor for signal <$n0090> created at line 186.
+    Found 2-bit adder for signal <$n0094> created at line 63.
+    Found 2-bit comparator greater for signal <$n0095> created at line 87.
+    Found 16-bit adder carry out for signal <$n0098> created at line 170.
+    Found 17-bit register for signal <acc_c<0>>.
+    Found 17-bit register for signal <acc_i<0>>.
+    Found 2-bit register for signal <nreset_v>.
+    Found 1-bit register for signal <skip_i>.
+    Found 16 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  37 D-type flip-flop(s).
+	inferred   3 Adder/Subtracter(s).
+	inferred   2 Comparator(s).
+	inferred  16 Multiplexer(s).
+Unit <CPU_DU> synthesized.
+
+
+Synthesizing Unit <CPU_CU>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu_cu.vhd.
+WARNING:Xst:646 - Signal <ndre_c> is assigned but never used.
+WARNING:Xst:646 - Signal <ndwe_c> is assigned but never used.
+WARNING:Xst:646 - Signal <daddr_c> is assigned but never used.
+    Found finite state machine <FSM_0> for signal <E_c>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 42                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk_in (rising_edge)                           |
+    | Reset              | nreset_in (negative)                           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | none_e                                         |
+    | Power Up State     | none_e                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <S_c>.
+    Found 2-bit comparator greater for signal <$n0060> created at line 317.
+    Found 2-bit comparator less for signal <$n0079> created at line 424.
+    Found 2-bit comparator less for signal <$n0091> created at line 118.
+    Found 2-bit adder for signal <$n0129> created at line 119.
+    Found 12-bit register for signal <data_is_c>.
+    Found 16-bit register for signal <idata_c>.
+    Found 1-bit register for signal <int_start_c>.
+    Found 1-bit register for signal <int_stop_c>.
+    Found 2-bit register for signal <nreset_v>.
+    Found 3-bit register for signal <S_c>.
+    Found 1-bit register for signal <skip_c>.
+    Found 3-bit register for signal <TC_c>.
+    Found 4-bit register for signal <TD_c>.
+    Found 1-bit register for signal <valid_c>.
+    Found 17 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+	inferred   3 Comparator(s).
+	inferred  17 Multiplexer(s).
+Unit <CPU_CU> synthesized.
+
+
+Synthesizing Unit <CPU_IU>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu_iu.vhd.
+WARNING:Xst:737 - Found 12-bit latch for signal <eaddr_x>.
+    Found 2-bit comparator greater for signal <$n0007> created at line 65.
+    Found 12-bit adder for signal <$n0009> created at line 86.
+    Found 2-bit comparator less for signal <$n0012> created at line 48.
+    Found 2-bit adder for signal <$n0022> created at line 49.
+    Found 2-bit register for signal <nreset_v>.
+    Found 12-bit register for signal <pc>.
+    Found 24 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  14 D-type flip-flop(s).
+	inferred   2 Adder/Subtracter(s).
+	inferred   2 Comparator(s).
+	inferred  24 Multiplexer(s).
+Unit <CPU_IU> synthesized.
+
+
+Synthesizing Unit <cpu>.
+    Related source file is c:/cpugen/applications/cpu16bit/xilinx/cpu.vhd.
+WARNING:Xst:1780 - Signal <dwait_valid> is never used or assigned.
+Unit <cpu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                             : 1
+# Registers                        : 28
+  12-bit register                  : 9
+  3-bit register                   : 2
+  16-bit register                  : 1
+  4-bit register                   : 1
+  1-bit register                   : 9
+  2-bit register                   : 4
+  17-bit register                  : 2
+# Latches                          : 1
+  12-bit latch                     : 1
+# Multiplexers                     : 7
+  2-to-1 multiplexer               : 7
+# Adders/Subtractors               : 8
+  12-bit adder                     : 2
+  2-bit adder                      : 4
+  16-bit adder carry out           : 1
+  17-bit subtractor                : 1
+# Comparators                      : 9
+  2-bit comparator less            : 5
+  2-bit comparator greater         : 4
+# Xors                             : 16
+  1-bit xor2                       : 16
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Selecting encoding for FSM_0 ...
+Optimizing FSM <FSM_0> on signal <E_c> with one-hot encoding.
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1291 - FF/Latch <0> is unconnected in block <S_c>.
+WARNING:Xst:1291 - FF/Latch <S_c_0> is unconnected in block <CPU_CU>.
+
+Optimizing unit <cpu> ...
+
+Optimizing unit <CPU_IU> ...
+
+Optimizing unit <CPU_CU> ...
+
+Optimizing unit <CPU_DU> ...
+
+Optimizing unit <CPU_OA> ...
+Loading device for application Xst from file '3s50.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 52.
+FlipFlop I2_TC_c_1 has been replicated 1 time(s)
+FlipFlop I2_TC_c_0 has been replicated 1 time(s)
+FlipFlop I2_TC_c_2 has been replicated 1 time(s)
+FlipFlop I2_nreset_v_1 has been replicated 2 time(s)
+FlipFlop I2_TD_c_3 has been replicated 1 time(s)
+FlipFlop I2_TD_c_1 has been replicated 2 time(s)
+FlipFlop I2_TD_c_2 has been replicated 2 time(s)
+FlipFlop I2_TD_c_0 has been replicated 2 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cpu.ngr
+Top Level Output File Name         : cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 118
+
+Macro Statistics :
+# Registers                        : 30
+#      1-bit register              : 12
+#      12-bit register             : 9
+#      16-bit register             : 1
+#      17-bit register             : 2
+#      2-bit register              : 4
+#      3-bit register              : 1
+#      4-bit register              : 1
+# Multiplexers                     : 7
+#      2-to-1 multiplexer          : 7
+# Adders/Subtractors               : 4
+#      12-bit adder                : 2
+#      16-bit adder carry out      : 1
+#      17-bit subtractor           : 1
+# Comparators                      : 9
+#      2-bit comparator greater    : 4
+#      2-bit comparator less       : 5
+
+Cell Usage :
+# BELS                             : 998
+#      GND                         : 1
+#      LUT1                        : 13
+#      LUT2                        : 53
+#      LUT2_D                      : 2
+#      LUT2_L                      : 6
+#      LUT3                        : 155
+#      LUT3_D                      : 1
+#      LUT3_L                      : 14
+#      LUT4                        : 406
+#      LUT4_D                      : 103
+#      LUT4_L                      : 115
+#      MUXCY                       : 54
+#      MUXF5                       : 20
+#      VCC                         : 1
+#      XORCY                       : 54
+# FlipFlops/Latches                : 212
+#      FDC                         : 97
+#      FDCE                        : 65
+#      FDE                         : 36
+#      FDP                         : 2
+#      LDE                         : 12
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 116
+#      IBUF                        : 47
+#      OBUF                        : 69
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50tq144-4 
+
+ Number of Slices:                     472  out of    768    61%  
+ Number of Slice Flip Flops:           212  out of   1536    13%  
+ Number of 4 input LUTs:               868  out of   1536    56%  
+ Number of bonded IOBs:                116  out of     97   119% (*) 
+ Number of GCLKs:                        2  out of      8    25%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | BUFGP                  | 200   |
+nreset_in                          | BUFGP                  | 12    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 18.375ns (Maximum Frequency: 54.422MHz)
+   Minimum input arrival time before clock: 19.404ns
+   Maximum output required time after clock: 22.208ns
+   Maximum combinational path delay: 23.775ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk_in'
+Delay:               18.375ns (Levels of Logic = 28)
+  Source:            I2_nreset_v_1 (FF)
+  Destination:       I3_acc_i_0_15 (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: I2_nreset_v_1 to I3_acc_i_0_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            16   0.619   0.995  I2_nreset_v_1 (I2_nreset_v_1)
+     LUT2_D:I0->LO         1   0.720   0.100  I2_Ker130591 (N27651)
+     LUT4:I0->O           19   0.720   1.102  I2_Ker130491 (I2_C_dvalid)
+     LUT4:I0->O           10   0.720   0.806  I2_Mmux_idata_x_Result<3>1 (I2_idata_x<3>)
+     LUT4:I0->O            3   0.720   0.577  I2_TC_x<0>_SW0_SW0 (N26714)
+     LUT4:I3->O            1   0.720   0.240  I2__n0103_SW1_SW0 (N26474)
+     LUT4_D:I1->O         16   0.720   0.995  I2__n0103 (I2_C_store_x)
+     LUT4_D:I1->O          3   0.720   0.577  I3_Mmux_data_x_Result<0>43 (CHOICE1330)
+     LUT4:I2->O            1   0.720   0.000  I3_Mmux_data_x_Result<0>67_SW11_G (N27532)
+     MUXF5:I1->O           1   0.387   0.240  I3_Mmux_data_x_Result<0>67_SW11 (N26342)
+     LUT4_L:I2->LO         1   0.720   0.000  I3_Msub__n0090_inst_lut2_121 (I3_Msub__n0090_inst_lut2_12)
+     MUXCY:S->O            1   0.629   0.000  I3_Msub__n0090_inst_cy_12 (I3_Msub__n0090_inst_cy_12)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_13 (I3_Msub__n0090_inst_cy_13)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_14 (I3_Msub__n0090_inst_cy_14)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_15 (I3_Msub__n0090_inst_cy_15)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_16 (I3_Msub__n0090_inst_cy_16)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_17 (I3_Msub__n0090_inst_cy_17)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_18 (I3_Msub__n0090_inst_cy_18)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_19 (I3_Msub__n0090_inst_cy_19)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_20 (I3_Msub__n0090_inst_cy_20)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_21 (I3_Msub__n0090_inst_cy_21)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_22 (I3_Msub__n0090_inst_cy_22)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_23 (I3_Msub__n0090_inst_cy_23)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_24 (I3_Msub__n0090_inst_cy_24)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_25 (I3_Msub__n0090_inst_cy_25)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_26 (I3_Msub__n0090_inst_cy_26)
+     XORCY:CI->O           1   0.939   0.240  I3_Msub__n0090_inst_sum_27 (I3__n0090<15>)
+     LUT4:I3->O            1   0.720   0.240  I3__n0147<15>19 (CHOICE1425)
+     LUT4_D:I0->LO         1   0.720   0.000  I3__n0147<15>139 (N27695)
+     FDCE:D                    0.502          I3_acc_i_0_15
+    ----------------------------------------
+    Total                     18.375ns (12.263ns logic, 6.112ns route)
+                                       (66.7% logic, 33.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'nreset_in'
+Delay:               2.414ns (Levels of Logic = 1)
+  Source:            I1_eaddr_x_9 (LATCH)
+  Destination:       I1_eaddr_x_9 (LATCH)
+  Source Clock:      nreset_in falling
+  Destination Clock: nreset_in falling
+
+  Data Path: I1_eaddr_x_9 to I1_eaddr_x_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              2   0.727   0.465  I1_eaddr_x_9 (I1_eaddr_x_9)
+     LUT3:I2->O            1   0.720   0.000  I1_Mmux__n0008_Result<9>1 (I1__n0008<9>)
+     LDE:D                     0.502          I1_eaddr_x_9
+    ----------------------------------------
+    Total                      2.414ns (1.949ns logic, 0.465ns route)
+                                       (80.7% logic, 19.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+Offset:              19.404ns (Levels of Logic = 29)
+  Source:            nreset_in (PAD)
+  Destination:       I3_acc_i_0_15 (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: nreset_in to I3_acc_i_0_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     BUFGP:I->O           63   1.291   1.352  nreset_in_BUFGP (nreset_in_BUFGP)
+     LUT2_D:I1->LO         1   0.720   0.100  I2_Ker130591 (N27651)
+     LUT4:I0->O           19   0.720   1.102  I2_Ker130491 (I2_C_dvalid)
+     LUT4:I0->O           10   0.720   0.806  I2_Mmux_idata_x_Result<3>1 (I2_idata_x<3>)
+     LUT4:I0->O            3   0.720   0.577  I2_TC_x<0>_SW0_SW0 (N26714)
+     LUT4:I3->O            1   0.720   0.240  I2__n0103_SW1_SW0 (N26474)
+     LUT4_D:I1->O         16   0.720   0.995  I2__n0103 (I2_C_store_x)
+     LUT4_D:I1->O          3   0.720   0.577  I3_Mmux_data_x_Result<0>43 (CHOICE1330)
+     LUT4:I2->O            1   0.720   0.000  I3_Mmux_data_x_Result<0>67_SW11_G (N27532)
+     MUXF5:I1->O           1   0.387   0.240  I3_Mmux_data_x_Result<0>67_SW11 (N26342)
+     LUT4_L:I2->LO         1   0.720   0.000  I3_Msub__n0090_inst_lut2_121 (I3_Msub__n0090_inst_lut2_12)
+     MUXCY:S->O            1   0.629   0.000  I3_Msub__n0090_inst_cy_12 (I3_Msub__n0090_inst_cy_12)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_13 (I3_Msub__n0090_inst_cy_13)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_14 (I3_Msub__n0090_inst_cy_14)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_15 (I3_Msub__n0090_inst_cy_15)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_16 (I3_Msub__n0090_inst_cy_16)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_17 (I3_Msub__n0090_inst_cy_17)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_18 (I3_Msub__n0090_inst_cy_18)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_19 (I3_Msub__n0090_inst_cy_19)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_20 (I3_Msub__n0090_inst_cy_20)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_21 (I3_Msub__n0090_inst_cy_21)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_22 (I3_Msub__n0090_inst_cy_22)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_23 (I3_Msub__n0090_inst_cy_23)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_24 (I3_Msub__n0090_inst_cy_24)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_25 (I3_Msub__n0090_inst_cy_25)
+     MUXCY:CI->O           1   0.090   0.000  I3_Msub__n0090_inst_cy_26 (I3_Msub__n0090_inst_cy_26)
+     XORCY:CI->O           1   0.939   0.240  I3_Msub__n0090_inst_sum_27 (I3__n0090<15>)
+     LUT4:I3->O            1   0.720   0.240  I3__n0147<15>19 (CHOICE1425)
+     LUT4_D:I0->LO         1   0.720   0.000  I3__n0147<15>139 (N27695)
+     FDCE:D                    0.502          I3_acc_i_0_15
+    ----------------------------------------
+    Total                     19.404ns (12.935ns logic, 6.469ns route)
+                                       (66.7% logic, 33.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'nreset_in'
+Offset:              17.147ns (Levels of Logic = 13)
+  Source:            idata_in<2> (PAD)
+  Destination:       I1_eaddr_x_9 (LATCH)
+  Destination Clock: nreset_in falling
+
+  Data Path: idata_in<2> to I1_eaddr_x_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.492   0.629  idata_in_2_IBUF (idata_in_2_IBUF)
+     LUT2:I0->O            2   0.720   0.465  I2__n00771_SW0 (N26210)
+     LUT4:I2->O            1   0.720   0.240  I2__n01501_SW9_SW0 (N27479)
+     LUT4_L:I1->LO         1   0.720   0.100  I2__n01501_SW9 (N26801)
+     LUT4:I3->O           13   0.720   0.895  I2__n00771 (I2__n0077)
+     LUT2_L:I0->LO         1   0.720   0.100  I2_TC_x<2>_SW0 (N18299)
+     LUT4:I0->O            3   0.720   0.577  I2_TC_x<2> (I2_TC_x<2>)
+     LUT4_D:I1->O          6   0.720   0.688  I2_Ker130421 (I2_N13044)
+     LUT4:I0->O            1   0.720   0.240  I2_pc_mux_x<0>22 (CHOICE566)
+     LUT4:I3->O            2   0.720   0.465  I2_pc_mux_x<0>38 (CHOICE571)
+     LUT4:I2->O           11   0.720   0.836  I2_pc_mux_x<0>104_1 (I2_pc_mux_x<0>104_1)
+     LUT3:I1->O           24   0.720   1.278  I1__n00201 (I1__n0020)
+     LUT3:I0->O            1   0.720   0.000  I1_Mmux__n0008_Result<1>1 (I1__n0008<1>)
+     LDE:D                     0.502          I1_eaddr_x_1
+    ----------------------------------------
+    Total                     17.147ns (10.634ns logic, 6.513ns route)
+                                       (62.0% logic, 38.0% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+Offset:              22.208ns (Levels of Logic = 13)
+  Source:            I2_nreset_v_1 (FF)
+  Destination:       saddr_out<11> (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: I2_nreset_v_1 to saddr_out<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            16   0.619   0.995  I2_nreset_v_1 (I2_nreset_v_1)
+     LUT2_D:I0->LO         1   0.720   0.100  I2_Ker130591 (N27651)
+     LUT4:I0->O           19   0.720   1.102  I2_Ker130491 (I2_C_dvalid)
+     LUT4:I0->O           10   0.720   0.806  I2_Mmux_idata_x_Result<3>1 (I2_idata_x<3>)
+     LUT4:I0->O            3   0.720   0.577  I2_TC_x<0>_SW0_SW0 (N26714)
+     LUT4_D:I3->O          7   0.720   0.717  I2_TC_x<0> (I2_TC_x<0>)
+     LUT3:I1->O            1   0.720   0.240  I2__n00971 (I2_C_jmp)
+     MUXF5:S->O            2   0.863   0.465  I2_pc_mux_x<0>631 (CHOICE579)
+     LUT4:I1->O           11   0.720   0.836  I2_pc_mux_x<0>104_1 (I2_pc_mux_x<0>104_1)
+     LUT3:I1->O           11   0.720   0.836  I1__n00241 (I1__n0024)
+     LUT4:I1->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>6 (CHOICE20)
+     LUT4:I3->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>14 (CHOICE22)
+     LUT3:I2->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>19 (saddr_out_1_OBUF)
+     OBUF:I->O                 5.412          saddr_out_1_OBUF (saddr_out<1>)
+    ----------------------------------------
+    Total                     22.208ns (14.814ns logic, 7.394ns route)
+                                       (66.7% logic, 33.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'nreset_in'
+Offset:              8.524ns (Levels of Logic = 3)
+  Source:            I1_eaddr_x_11 (LATCH)
+  Destination:       saddr_out<11> (PAD)
+  Source Clock:      nreset_in falling
+
+  Data Path: I1_eaddr_x_11 to saddr_out<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              2   0.727   0.465  I1_eaddr_x_11 (I1_eaddr_x_11)
+     LUT4:I2->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<11>14 (CHOICE6)
+     LUT3:I2->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<11>19 (saddr_out_11_OBUF)
+     OBUF:I->O                 5.412          saddr_out_11_OBUF (saddr_out<11>)
+    ----------------------------------------
+    Total                      8.524ns (7.579ns logic, 0.945ns route)
+                                       (88.9% logic, 11.1% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default path analysis
+Delay:               23.775ns (Levels of Logic = 16)
+  Source:            idata_in<2> (PAD)
+  Destination:       saddr_out<11> (PAD)
+
+  Data Path: idata_in<2> to saddr_out<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.492   0.629  idata_in_2_IBUF (idata_in_2_IBUF)
+     LUT2:I0->O            2   0.720   0.465  I2__n00771_SW0 (N26210)
+     LUT4:I2->O            1   0.720   0.240  I2__n01501_SW9_SW0 (N27479)
+     LUT4_L:I1->LO         1   0.720   0.100  I2__n01501_SW9 (N26801)
+     LUT4:I3->O           13   0.720   0.895  I2__n00771 (I2__n0077)
+     LUT2_L:I0->LO         1   0.720   0.100  I2_TC_x<2>_SW0 (N18299)
+     LUT4:I0->O            3   0.720   0.577  I2_TC_x<2> (I2_TC_x<2>)
+     LUT4_D:I1->O          6   0.720   0.688  I2_Ker130421 (I2_N13044)
+     LUT4:I0->O            1   0.720   0.240  I2_pc_mux_x<0>22 (CHOICE566)
+     LUT4:I3->O            2   0.720   0.465  I2_pc_mux_x<0>38 (CHOICE571)
+     LUT4:I2->O           11   0.720   0.836  I2_pc_mux_x<0>104_1 (I2_pc_mux_x<0>104_1)
+     LUT3:I1->O           11   0.720   0.836  I1__n00241 (I1__n0024)
+     LUT4:I1->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>6 (CHOICE20)
+     LUT4:I3->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>14 (CHOICE22)
+     LUT3:I2->O            1   0.720   0.240  I1_Mmux_saddr_out_Result<1>19 (saddr_out_1_OBUF)
+     OBUF:I->O                 5.412          saddr_out_1_OBUF (saddr_out<1>)
+    ----------------------------------------
+    Total                     23.775ns (16.984ns logic, 6.791ns route)
+                                       (71.4% logic, 28.6% route)
+
+=========================================================================
+CPU : 17.72 / 18.20 s | Elapsed : 18.00 / 18.00 s
+ 
+--> 
+
+Total memory usage is 79268 kilobytes
+
+

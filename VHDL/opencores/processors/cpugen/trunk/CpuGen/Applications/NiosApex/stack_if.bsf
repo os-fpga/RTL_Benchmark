@@ -1,0 +1,76 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 280 144)
+	(text "stack_if" (rect 5 0 54 15)(font "Arial" ))
+	(text "inst" (rect 8 109 31 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "push_in" (rect 0 0 53 15)(font "Arial" ))
+		(text "push_in" (rect 21 27 74 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pop_in" (rect 0 0 44 15)(font "Arial" ))
+		(text "pop_in" (rect 21 43 65 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "nreset_in" (rect 0 0 61 15)(font "Arial" ))
+		(text "nreset_in" (rect 21 59 82 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk_in" (rect 0 0 37 15)(font "Arial" ))
+		(text "clk_in" (rect 21 75 58 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "addr_out[data_len-1..0]" (rect 0 0 149 15)(font "Arial" ))
+		(text "addr_out[data_len-1..0]" (rect 94 27 243 42)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(parameter
+		"DATA_LEN"
+		"8"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 248 112)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 280 -64 380 16))
+)

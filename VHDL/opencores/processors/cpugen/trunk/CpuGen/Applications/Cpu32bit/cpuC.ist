@@ -1,0 +1,152 @@
+-- 
+-- CPUASM ISTRUCTION SET
+--
+-- DEFAULT ISTRUCTION SET (5 BIT ENCODING)
+--
+-- STA_I class = (TC_STA, TD_NOP)
+sta	1
+1	5
+-- LDAI_I class = (TC_DAT, TD_LDA)
+ldai	1
+12	5
+-- LDA_I class = (TC_LDA, TD_LDA)
+lda	1
+2	5
+-- ADDI_I class = (TC_DAT, TD_ADD)
+addi	1
+14	5
+-- ADD_I class = (TC_LDA, TD_ADD)
+add	1
+4	5
+-- ANDI_I class = (TC_DAT, TD_AND)
+andi	1
+15	5
+-- AND_I class = (TC_LDA, TD_AND)
+and	1
+5	5
+-- SUBI_I class = (TC_DAT, TD_SUB)
+subi	1
+16	5
+-- SUB_I class = (TC_LDA, TD_SUB)
+sub	1
+6	5
+-- ORI_I class = (TC_DAT, TD_OR)
+ori	1
+17	5
+-- OR_I class = (TC_LDA, TD_OR)
+or	1
+7	5
+-- XORI_I class = (TC_DAT, TD_XOR)
+xori	1
+13	5
+-- XOR_I class = (TC_LDA, TD_XOR)
+xor	1
+3	5
+-- JMP_I class = (TC_JMP, TD_NOP)
+jmp	1
+8	5
+-- JMS_I class = (TC_JMS, TD_NOP)
+jms	1
+9	5
+-- RTS_I class = (TC_RTS, TD_NOP)
+rts	0
+180
+-- RTI_I class = (TC_RTI, TD_NOP)
+rti	0
+1A0
+-- NOP_I class = (TC_OTH, TD_NOP)
+nop	0
+0
+-- ROL_I class = (TC_OTH, TD_ROL)
+rol	0
+20
+-- ROR_I class = (TC_OTH, TD_ROR)
+ror	0
+40
+-- SHL_I class = (TC_OTH, TD_SHL)
+shl	0
+60
+-- SHR_I class = (TC_OTH, TD_SHR)
+shr	0
+80
+-- NOT_I class = (TC_OTH, TD_NOT)
+not	0
+A0
+-- CLA_I class = (TC_OTH, TD_CLA)
+cla	0
+C0
+-- SKZ_I class = (TC_OTH, TD_SKZ)
+skz	0
+100
+-- SKC_I class = (TC_OTH, TD_SKC)
+skc	0
+120
+-- SKNZ_I class = (TC_OTH, TD_SKNZ)
+sknz	0
+140
+-- SKNC_I class = (TC_OTH, TD_SKNC)
+sknc	0
+160
+--
+-- CUSTOM ISTRUCTION SET (5 BIT ENCODING)
+--
+-- ADDI with sign [ADDSI] (32 bit result: signed ACC = ACC + CONSTANT)
+-- ADDSI_I class = (TC_DAT, TD_ADDS)
+addsi		1		
+1A		5
+-- ADD with sign [ADDS] (32 bit result: signed ACC = ACC + OPERAND)
+-- ADDS_I class = (TC_LDA, TD_ADDS)
+adds		1		
+A		5
+-- SUB with sign [ADDSI] (32 bit result: signed ACC = ACC - CONSTANT)
+-- SUBSI_I class = (TC_DAT, TD_SUBS)
+subsi		1		
+1B		5
+-- SUB with sign [ADDS] (32 bit result: signed ACC = ACC - OPERAND)
+-- SUBS_I class = (TC_LDA, TD_SUBS)
+subs		1		
+B		5
+-- MUL with sign [MULSI] (64 bit result: signed ACC = ACC * CONSTANT; ACC(1) = HIGH WORD RESULT)
+-- MULSI_I class = (TC_DAT, TD_MULS)
+mulsi		1		
+1C		5
+-- MUL with sign [MULS] (64 bit result: signed ACC = ACC * OPERAND; ACC(1) = HIGH WORD RESULT)
+-- MULS_I class = (TC_LDA, TD_MULS)
+muls		1		
+C		5
+-- MUL  [MULI] (64 bit result: unsigned ACC = ACC * CONSTANT; ACC(1) = HIGH WORD RESULT)
+-- MULI_I class = (TC_DAT, TD_MUL)
+muli		1		
+1D		5
+-- MUL  [MUL] (64 bit result: unsigned ACC = ACC * OPERAND; ACC(1) = HIGH WORD RESULT)
+-- MUL_I class = (TC_LDA, TD_MUL)
+mul		1		
+D		5
+-- SHLNI [SHLNI] (32 bit result: ACC = shift_left(ACC, CONSTANT))
+-- SHLNI_I class = (TC_DAT, TD_SHLN)
+shlni		1		
+1E		5
+-- SHLN [SHLN] (32 bit result: ACC = shift_left(ACC, OPERAND))
+-- SHLN_I class = (TC_LDA, TD_SHLN)
+shln		1		
+E		5
+-- SHRNI [SHRNI] (32 bit result: ACC = shift_right(ACC, CONSTANT))
+-- SHRNI_I class = (TC_DAT, TD_SHRN)
+shrni		1		
+1F		5
+-- SHRN [SHRN] (32 bit result: ACC = shift_right(ACC, OPERAND))
+-- SHRN_I class = (TC_LDA, TD_SHRN)
+shrn		1		
+F		5
+-- SKIP IF OVERFLOW
+-- SKV_I class = (TC_OTH, TD_SKV)
+skv		0		
+1C0
+-- SKIP IF NOT OVERFLOW
+-- SKNV_I class = (TC_OTH, TD_SKNV)
+sknv		0		
+1E0
+-- MOVE HIGH RESULT MULS TO ACC = ACC(0) <= ACC(1)
+-- LMUHA_I class = (TC_OTH, TD_LMUHA)
+lmuha		0		
+E0

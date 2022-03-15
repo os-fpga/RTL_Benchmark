@@ -1,0 +1,135 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 384 176)
+	(text "waitstategen" (rect 5 0 66 12)(font "Arial" ))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "cpu_data_in[data_len-1..0]" (rect 0 0 129 12)(font "Arial" ))
+		(text "cpu_data_in[data_len-1..0]" (rect 21 27 150 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "cpu_adaddr_out_m[daddr_len-1..0]" (rect 0 0 169 12)(font "Arial" ))
+		(text "cpu_adaddr_out_m[daddr_len-1..0]" (rect 21 43 190 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "nacs_wait" (rect 0 0 48 12)(font "Arial" ))
+		(text "nacs_wait" (rect 21 59 69 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ndre_in" (rect 0 0 35 12)(font "Arial" ))
+		(text "ndre_in" (rect 21 75 56 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "nadwe_in" (rect 0 0 44 12)(font "Arial" ))
+		(text "nadwe_in" (rect 21 91 65 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "nreset_in" (rect 0 0 44 12)(font "Arial" ))
+		(text "nreset_in" (rect 21 107 65 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "clk_in" (rect 0 0 28 12)(font "Arial" ))
+		(text "clk_in" (rect 21 123 49 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 368 32)
+		(output)
+		(text "dwait_out" (rect 0 0 46 12)(font "Arial" ))
+		(text "dwait_out" (rect 301 27 347 39)(font "Arial" ))
+		(line (pt 368 32)(pt 352 32)(line_width 1))
+	)
+	(port
+		(pt 368 48)
+		(output)
+		(text "cpu_data_in_m[data_len-1..0]" (rect 0 0 145 12)(font "Arial" ))
+		(text "cpu_data_in_m[data_len-1..0]" (rect 202 43 347 55)(font "Arial" ))
+		(line (pt 368 48)(pt 352 48)(line_width 3))
+	)
+	(port
+		(pt 368 64)
+		(output)
+		(text "cpu_daddr_out[daddr_len-1..0]" (rect 0 0 148 12)(font "Arial" ))
+		(text "cpu_daddr_out[daddr_len-1..0]" (rect 199 59 347 71)(font "Arial" ))
+		(line (pt 368 64)(pt 352 64)(line_width 3))
+	)
+	(port
+		(pt 368 80)
+		(output)
+		(text "ndre_out" (rect 0 0 42 12)(font "Arial" ))
+		(text "ndre_out" (rect 305 75 347 87)(font "Arial" ))
+		(line (pt 368 80)(pt 352 80)(line_width 1))
+	)
+	(port
+		(pt 368 96)
+		(output)
+		(text "ndwe_out" (rect 0 0 46 12)(font "Arial" ))
+		(text "ndwe_out" (rect 301 91 347 103)(font "Arial" ))
+		(line (pt 368 96)(pt 352 96)(line_width 1))
+	)
+	(parameter
+		"DADDR_LEN"
+		"10"
+		""
+	)
+	(parameter
+		"DATA_LEN"
+		"16"
+		""
+	)
+	(parameter
+		"NWAIT"
+		"\"00000111\""
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 352 144)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 384 -64 484 16))
+)

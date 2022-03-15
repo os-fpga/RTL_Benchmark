@@ -1,0 +1,168 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 360 240)
+	(text "ctrl8cpuapex" (rect 5 0 86 15)(font "Arial" ))
+	(text "inst" (rect 8 205 31 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CPU_ADADDR_OUT[9..0]" (rect 0 0 166 15)(font "Arial" ))
+		(text "CPU_ADADDR_OUT[9..0]" (rect 21 27 187 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CPU_DADDR_OUT[9..0]" (rect 0 0 158 15)(font "Arial" ))
+		(text "CPU_DADDR_OUT[9..0]" (rect 21 43 179 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "CPU_DATA_OUT[7..0]" (rect 0 0 142 15)(font "Arial" ))
+		(text "CPU_DATA_OUT[7..0]" (rect 21 59 163 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "RAM_DATA_OUT[7..0]" (rect 0 0 141 15)(font "Arial" ))
+		(text "RAM_DATA_OUT[7..0]" (rect 21 75 162 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "UART_DATA_OUT[7..0]" (rect 0 0 149 15)(font "Arial" ))
+		(text "UART_DATA_OUT[7..0]" (rect 21 91 170 106)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "INT_DATA_OUT[7..0]" (rect 0 0 134 15)(font "Arial" ))
+		(text "INT_DATA_OUT[7..0]" (rect 21 107 155 122)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "nAWE_CPU" (rect 0 0 77 15)(font "Arial" ))
+		(text "nAWE_CPU" (rect 21 123 98 138)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "nWE_CPU" (rect 0 0 69 15)(font "Arial" ))
+		(text "nWE_CPU" (rect 21 139 90 154)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "nRE_CPU" (rect 0 0 67 15)(font "Arial" ))
+		(text "nRE_CPU" (rect 21 155 88 170)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "clk" (rect 0 0 17 15)(font "Arial" ))
+		(text "clk" (rect 21 171 38 186)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "nreset" (rect 0 0 41 15)(font "Arial" ))
+		(text "nreset" (rect 21 187 62 202)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 344 32)
+		(output)
+		(text "nWE_RAM" (rect 0 0 68 15)(font "Arial" ))
+		(text "nWE_RAM" (rect 255 27 323 42)(font "Arial" ))
+		(line (pt 344 32)(pt 328 32)(line_width 1))
+	)
+	(port
+		(pt 344 48)
+		(output)
+		(text "nCS_INT" (rect 0 0 59 15)(font "Arial" ))
+		(text "nCS_INT" (rect 264 43 323 58)(font "Arial" ))
+		(line (pt 344 48)(pt 328 48)(line_width 1))
+	)
+	(port
+		(pt 344 64)
+		(output)
+		(text "nCS_UART_TX" (rect 0 0 99 15)(font "Arial" ))
+		(text "nCS_UART_TX" (rect 224 59 323 74)(font "Arial" ))
+		(line (pt 344 64)(pt 328 64)(line_width 1))
+	)
+	(port
+		(pt 344 80)
+		(output)
+		(text "nCS_UART_RX" (rect 0 0 101 15)(font "Arial" ))
+		(text "nCS_UART_RX" (rect 222 75 323 90)(font "Arial" ))
+		(line (pt 344 80)(pt 328 80)(line_width 1))
+	)
+	(port
+		(pt 344 96)
+		(output)
+		(text "nCS_TIMER" (rect 0 0 79 15)(font "Arial" ))
+		(text "nCS_TIMER" (rect 244 91 323 106)(font "Arial" ))
+		(line (pt 344 96)(pt 328 96)(line_width 1))
+	)
+	(port
+		(pt 344 112)
+		(output)
+		(text "nWE_DISPLAY" (rect 0 0 96 15)(font "Arial" ))
+		(text "nWE_DISPLAY" (rect 227 107 323 122)(font "Arial" ))
+		(line (pt 344 112)(pt 328 112)(line_width 1))
+	)
+	(port
+		(pt 344 128)
+		(output)
+		(text "nACS_DISPLAY" (rect 0 0 102 15)(font "Arial" ))
+		(text "nACS_DISPLAY" (rect 221 123 323 138)(font "Arial" ))
+		(line (pt 344 128)(pt 328 128)(line_width 1))
+	)
+	(port
+		(pt 344 144)
+		(output)
+		(text "CPU_DATA_IN[7..0]" (rect 0 0 127 15)(font "Arial" ))
+		(text "CPU_DATA_IN[7..0]" (rect 196 139 323 154)(font "Arial" ))
+		(line (pt 344 144)(pt 328 144)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 328 208)(line_width 1))
+	)
+)

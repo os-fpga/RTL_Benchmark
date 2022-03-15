@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn __projnav/cpu.xst -ofn cpu.syr
+ngdbuild -intstyle ise -dd c:\cpugen\applications\cpu16bit\xilinx/_ngo -i  -p xc3s50-tq144-4 cpu.ngc cpu.ngd
+map -intstyle ise -p xc3s50-tq144-4 -cm area -pr b -k 4 -c 100 -tx off -o cpu_map.ncd cpu.ngd cpu.pcf

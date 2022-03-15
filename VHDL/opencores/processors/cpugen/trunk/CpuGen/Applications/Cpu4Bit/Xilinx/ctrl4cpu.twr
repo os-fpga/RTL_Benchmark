@@ -1,0 +1,105 @@
+--------------------------------------------------------------------------------
+Release 6.1.02i Trace G.25a
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+C:/Xilinx/bin/nt/trce.exe -intstyle ise -e 3 -l 3 -xml ctrl4cpu ctrl4cpu.ncd -o
+ctrl4cpu.twr ctrl4cpu.pcf
+
+
+Design file:              ctrl4cpu.ncd
+Physical constraint file: ctrl4cpu.pcf
+Device,speed:             xc2s30,-5 (PRODUCTION 1.27 2003-09-30)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths
+   option. All paths that are not constrained will be reported in the
+   unconstrained paths section(s) of the report.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+---------------+------------+------------+------------------+--------+
+               |  Setup to  |  Hold to   |                  |  Clock |
+Source         | clk (edge) | clk (edge) |Internal Clock(s) |  Phase |
+---------------+------------+------------+------------------+--------+
+CPU_ADDR_OUT<0>|    5.487(R)|   -1.562(R)|clk_BUFGP         |   0.000|
+CPU_ADDR_OUT<1>|    4.753(R)|   -1.656(R)|clk_BUFGP         |   0.000|
+CPU_ADDR_OUT<2>|    4.661(R)|   -1.674(R)|clk_BUFGP         |   0.000|
+CPU_ADDR_OUT<3>|    5.437(R)|   -3.073(R)|clk_BUFGP         |   0.000|
+CPU_ADDR_OUT<4>|    4.879(R)|   -1.491(R)|clk_BUFGP         |   0.000|
+CPU_DATA_OUT<0>|    2.369(R)|   -0.317(R)|clk_BUFGP         |   0.000|
+CPU_DATA_OUT<1>|    2.562(R)|   -0.718(R)|clk_BUFGP         |   0.000|
+CPU_DATA_OUT<2>|    2.371(R)|   -0.703(R)|clk_BUFGP         |   0.000|
+CPU_DATA_OUT<3>|    2.373(R)|   -0.722(R)|clk_BUFGP         |   0.000|
+nWE_CPU        |    5.122(R)|   -1.537(R)|clk_BUFGP         |   0.000|
+nreset         |    3.052(R)|   -0.208(R)|clk_BUFGP         |   0.000|
+---------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+----------------+------------+------------------+--------+
+                | clk (edge) |                  |  Clock |
+Destination     | to PAD     |Internal Clock(s) |  Phase |
+----------------+------------+------------------+--------+
+CPU_DATA_IN<0>  |   12.436(R)|clk_BUFGP         |   0.000|
+CPU_DATA_IN<1>  |   12.158(R)|clk_BUFGP         |   0.000|
+CPU_DATA_IN<2>  |   12.152(R)|clk_BUFGP         |   0.000|
+CPU_DATA_IN<3>  |   12.878(R)|clk_BUFGP         |   0.000|
+CTRL_DATA_OUT<0>|    9.714(R)|clk_BUFGP         |   0.000|
+CTRL_DATA_OUT<1>|    9.430(R)|clk_BUFGP         |   0.000|
+CTRL_DATA_OUT<2>|    9.414(R)|clk_BUFGP         |   0.000|
+CTRL_DATA_OUT<3>|   10.178(R)|clk_BUFGP         |   0.000|
+PWM_DATA_OUT<4> |   10.168(R)|clk_BUFGP         |   0.000|
+PWM_DATA_OUT<5> |   11.456(R)|clk_BUFGP         |   0.000|
+PWM_DATA_OUT<6> |   10.417(R)|clk_BUFGP         |   0.000|
+PWM_DATA_OUT<7> |   10.106(R)|clk_BUFGP         |   0.000|
+----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.783|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+CPU_ADDR_OUT<0>|nCS_PWM        |   10.574|
+CPU_ADDR_OUT<1>|nCS_PWM        |    9.721|
+CPU_ADDR_OUT<2>|nCS_PWM        |    9.540|
+CPU_ADDR_OUT<3>|nCS_PWM        |    9.408|
+CPU_ADDR_OUT<4>|nCS_PWM        |   10.445|
+CPU_ADDR_OUT<4>|nWR_RAM        |   10.248|
+CPU_DATA_OUT<0>|PWM_DATA_OUT<0>|    7.628|
+CPU_DATA_OUT<1>|PWM_DATA_OUT<1>|    7.176|
+CPU_DATA_OUT<2>|PWM_DATA_OUT<2>|    7.871|
+CPU_DATA_OUT<3>|PWM_DATA_OUT<3>|    7.934|
+CTRL_DATA_IN<0>|CPU_DATA_IN<0> |    8.750|
+CTRL_DATA_IN<1>|CPU_DATA_IN<1> |    9.345|
+CTRL_DATA_IN<2>|CPU_DATA_IN<2> |    8.450|
+CTRL_DATA_IN<3>|CPU_DATA_IN<3> |    8.560|
+RAM_DATA_OUT<0>|CPU_DATA_IN<0> |    8.904|
+RAM_DATA_OUT<1>|CPU_DATA_IN<1> |    9.029|
+RAM_DATA_OUT<2>|CPU_DATA_IN<2> |    8.624|
+RAM_DATA_OUT<3>|CPU_DATA_IN<3> |    9.277|
+nWE_CPU        |nCS_PWM        |   10.375|
+nWE_CPU        |nWR_RAM        |   10.522|
+nreset         |nCS_PWM        |   10.645|
+nreset         |nWR_RAM        |   10.483|
+---------------+---------------+---------+
+
+Analysis completed Tue Dec 09 22:38:13 2003
+--------------------------------------------------------------------------------
+
+Peak Memory Usage: 41 MB

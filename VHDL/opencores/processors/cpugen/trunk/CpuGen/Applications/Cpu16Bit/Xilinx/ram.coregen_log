@@ -1,0 +1,59 @@
+# Xilinx CORE Generator 6.1.02i
+# User = P3000
+Initializing default project...
+Loading plug-ins...
+All runtime messages will be recorded in C:\CpuGen\Applications\Cpu16Bit\Xilinx\coregen.log
+# lockprojectprops=false
+# busformat=BusFormatAngleBracketNotRipped
+# designflow=VHDL
+# expandedprojectpath=C:\CpuGen\Applications\Cpu16Bit\Xilinx
+# flowvendor=Foundation_iSE
+# formalverification=None
+# simulationoutputproducts=Verilog VHDL
+# xilinxfamily=Spartan3
+# outputoption=OutputProducts
+# overwritefiles=true
+# simvendor=ModelSim
+# expandedprojectpath=C:\CpuGen\Applications\Cpu16Bit\Xilinx
+SETPROJECT c:\cpugen\applications\cpu16bit\xilinx
+Set current Project to C:\CpuGen\Applications\Cpu16Bit\Xilinx
+SET OverwriteFiles=true
+SET SimulationOutputProducts = Verilog VHDL
+SET XilinxFamily = Spartan3
+EXECUTE ram.xcp
+SELECT Single_Port_Block_Memory Spartan3 Xilinx,_Inc. 5.0
+CSET primitive_selection = Optimize_For_Area
+CSET init_value = 0
+CSET register_inputs = false
+CSET write_enable_polarity = Active_High
+CSET init_pin = false
+CSET initialization_pin_polarity = Active_High
+CSET global_init_value = 0
+CSET select_primitive = 16kx1
+CSET enable_pin = false
+CSET write_mode = Read_After_Write
+CSET port_configuration = Read_And_Write
+CSET component_name = ram
+CSET active_clock_edge = Rising_Edge_Triggered
+CSET handshaking_pins = false
+CSET width = 16
+CSET load_init_file = true
+CSET enable_pin_polarity = Active_High
+CSET additional_output_pipe_stages = 0
+CSET coefficient_file = C:\CpuGen\Applications\Cpu16Bit\rom.coe
+CSET has_limit_data_pitch = false
+CSET limit_data_pitch = 18
+CSET depth = 1024
+GENERATE
+Preparing to elaborate core...
+Elaborating the module...
+Generating the core .EDN implementation netlist...
+Generating the .VHO/.VHD simulation support files...
+Generating the .VEO/.V simulation support files...
+Generating the .ASY symbol file...
+Generating ISE symbol file...
+# Executing: C:\Xilinx\bin\nt\asy2sym.exe C:\CpuGen\Applications\Cpu16Bit\Xilinx\ram.asy
+# Release 6.1.02i - asy2sym G.25a
+# Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+# Execution Complete.  Return code: 0
+ 

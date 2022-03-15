@@ -1,0 +1,322 @@
+Release 6.1.02i - xst G.25a
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 0.16 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.16 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: cpu_oa.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+     4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : cpu_oa.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : cpu_oa
+Output Format                      : NGC
+Target Device                      : xc2s30-5-cs144
+
+---- Source Options
+Top Module Name                    : cpu_oa
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : lut
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Equivalent register Removal        : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+Global Optimization                : AllClockNets
+RTL Output                         : Yes
+Write Timing Constraints           : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : cpu_oa.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+Optimize Instantiated Primitives   : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/CpuGen/Applications/Cpu4Bit/Xilinx/../cpu_utils.vhd in Library work.
+Architecture cpu_utils of Entity cpu_utils is up to date.
+Compiling vhdl file C:/CpuGen/Applications/Cpu4Bit/Xilinx/../cpu_oa.vhd in Library work.
+Architecture oa_struct of Entity cpu_oa is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <cpu_oa> (Architecture <oa_struct>).
+Entity <cpu_oa> analyzed. Unit <cpu_oa> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cpu_oa>.
+    Related source file is C:/CpuGen/Applications/Cpu4Bit/Xilinx/../cpu_oa.vhd.
+WARNING:Xst:646 - Signal <int_re_c> is assigned but never used.
+    Found 2-bit comparator less for signal <$n0033> created at line 71.
+    Found 2-bit comparator greater for signal <$n0034> created at line 99.
+    Found 2-bit adder for signal <$n0040> created at line 72.
+    Found 2-bit register for signal <ipage_c>.
+    Found 1-bit register for signal <ipage_we_c>.
+    Found 2-bit register for signal <nreset_v>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+	inferred   2 Comparator(s).
+Unit <cpu_oa> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                        : 3
+  2-bit register                   : 2
+  1-bit register                   : 1
+# Adders/Subtractors               : 1
+  2-bit adder                      : 1
+# Comparators                      : 2
+  2-bit comparator less            : 1
+  2-bit comparator greater         : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <cpu_oa> ...
+Loading device for application Xst from file '2s30.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block cpu_oa, actual ratio is 3.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cpu_oa.ngr
+Top Level Output File Name         : cpu_oa
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 44
+
+Macro Statistics :
+# Registers                        : 3
+#      1-bit register              : 1
+#      2-bit register              : 2
+# Comparators                      : 2
+#      2-bit comparator greater    : 1
+#      2-bit comparator less       : 1
+
+Cell Usage :
+# BELS                             : 31
+#      LUT1                        : 1
+#      LUT2                        : 5
+#      LUT2_L                      : 1
+#      LUT3                        : 13
+#      LUT4                        : 9
+#      LUT4_L                      : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 5
+#      FDC                         : 2
+#      FDCE                        : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 43
+#      IBUF                        : 21
+#      OBUF                        : 22
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s30cs144-5 
+
+ Number of Slices:                      17  out of    432     3%  
+ Number of Slice Flip Flops:             5  out of    864     0%  
+ Number of 4 input LUTs:                30  out of    864     3%  
+ Number of bonded IOBs:                 43  out of     96    44%  
+ Number of GCLKs:                        1  out of      4    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | BUFGP                  | 5     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.171ns (Maximum Frequency: 139.451MHz)
+   Minimum input arrival time before clock: 9.809ns
+   Maximum output required time after clock: 13.645ns
+   Maximum combinational path delay: 15.763ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'clk_in'
+Delay:               7.171ns (Levels of Logic = 1)
+  Source:            nreset_v_1 (FF)
+  Destination:       ipage_c_0 (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: nreset_v_1 to ipage_c_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            18   1.292   3.000  nreset_v_1 (nreset_v_1)
+     LUT2:I1->O            2   0.653   1.340  _n00441 (_n0044)
+     FDCE:CE                   0.886          ipage_c_0
+    ----------------------------------------
+    Total                      7.171ns (2.831ns logic, 4.340ns route)
+                                       (39.5% logic, 60.5% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+Offset:              9.809ns (Levels of Logic = 5)
+  Source:            daddr_is<3> (PAD)
+  Destination:       ipage_we_c (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: daddr_is<3> to ipage_we_c
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.924   1.480  daddr_is_3_IBUF (daddr_is_3_IBUF)
+     LUT3:I0->O            1   0.653   1.150  Ker1044_SW0 (N2571)
+     LUT4:I3->O            5   0.653   1.740  Ker1044 (N1046)
+     LUT2:I0->O            1   0.653   1.150  Ker10621_SW0 (N2727)
+     LUT4_L:I3->LO         1   0.653   0.000  ipage_we_x1 (ipage_we_x)
+     FDC:D                     0.753          ipage_we_c
+    ----------------------------------------
+    Total                      9.809ns (4.289ns logic, 5.520ns route)
+                                       (43.7% logic, 56.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+Offset:              13.645ns (Levels of Logic = 3)
+  Source:            nreset_v_1 (FF)
+  Destination:       data_in_int<1> (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: nreset_v_1 to data_in_int<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            18   1.292   3.000  nreset_v_1 (nreset_v_1)
+     LUT2:I0->O            2   0.653   1.340  Ker10621 (N1064)
+     LUT4:I0->O            1   0.653   1.150  _n0052 (data_in_int_1_OBUF)
+     OBUF:I->O                 5.557          data_in_int_1_OBUF (data_in_int<1>)
+    ----------------------------------------
+    Total                     13.645ns (8.155ns logic, 5.490ns route)
+                                       (59.8% logic, 40.2% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default path analysis
+Delay:               15.763ns (Levels of Logic = 6)
+  Source:            daddr_is<3> (PAD)
+  Destination:       data_in_int<1> (PAD)
+
+  Data Path: daddr_is<3> to data_in_int<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.924   1.480  daddr_is_3_IBUF (daddr_is_3_IBUF)
+     LUT3:I0->O            1   0.653   1.150  Ker1044_SW0 (N2571)
+     LUT4:I3->O            5   0.653   1.740  Ker1044 (N1046)
+     LUT3:I0->O            1   0.653   1.150  _n0052_SW0 (N2535)
+     LUT4:I1->O            1   0.653   1.150  _n0052 (data_in_int_1_OBUF)
+     OBUF:I->O                 5.557          data_in_int_1_OBUF (data_in_int<1>)
+    ----------------------------------------
+    Total                     15.763ns (9.093ns logic, 6.670ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+CPU : 1.06 / 1.36 s | Elapsed : 1.00 / 1.00 s
+ 
+--> 
+
+Total memory usage is 54352 kilobytes
+
+

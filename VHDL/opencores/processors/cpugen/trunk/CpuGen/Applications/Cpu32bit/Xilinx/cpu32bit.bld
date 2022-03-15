@@ -1,0 +1,50 @@
+Release 6.1.03i - ngdbuild G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\cpugen\applications\cpu32bit\xilinx/_ngo -i -p xc3s200-pq208-4 cpu32bit.ngc
+cpu32bit.ngd 
+
+Reading NGO file "C:/CpuGen/Applications/Cpu32bit/Xilinx/cpu32bit.ngc" ...
+Reading component libraries for design expansion...
+Launcher: "ram.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu32bit\xilinx\_ngo\ram.ngo"...
+blkmemsp_v5_0, Coregen 6.1.03i
+Launcher: "rom.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu32bit\xilinx\_ngo\rom.ngo"...
+blkmemsp_v5_0, Coregen 6.1.03i
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:477 - clock net 'NRESET_IN_BUFGP' has non-clock connections.
+   These problematic connections include:
+     pin I0 on block XLXI_1_I1_iaddr_x<1>55 with type LUT3,
+     pin I0 on block XLXI_1_I5_ndwe_c_N24721 with type LUT1,
+     pin I0 on block XLXI_1_I1__n00251 with type LUT2,
+     pin I2 on block XLXI_1_I2_ndre_x_SW0 with type LUT4,
+     pin I1 on block XLXI_1_I3_skip1_SW0 with type LUT2,
+     pin I0 on block XLXI_1_I2_TD_x<2> with type LUT4,
+     pin I0 on block XLXI_1_I4__n02831 with type LUT2,
+     pin I0 on block XLXI_1_I4_data_ox<0>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<1>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<2>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<3>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<4>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<5>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<6>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<7>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<8>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<9>1 with type LUT3,
+     pin I0 on block XLXI_1_I4_data_ox<10>1 with type LUT3,
+     pin I1 on block XLXI_1_I2_TD_x<1> with type LUT4,
+     pin I0 on block XLXI_1_I4_data_ox<11>1 with type LUT3
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 44144 kilobytes
+
+Writing NGD file "cpu32bit.ngd" ...
+
+Writing NGDBUILD log file "cpu32bit.bld"...

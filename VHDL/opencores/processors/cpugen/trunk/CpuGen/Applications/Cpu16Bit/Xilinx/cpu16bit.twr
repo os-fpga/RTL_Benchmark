@@ -1,0 +1,151 @@
+--------------------------------------------------------------------------------
+Release 6.1.03i Trace G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+C:/Xilinx/bin/nt/trce.exe -intstyle ise -e 3 -l 3 -xml cpu16bit cpu16bit.ncd -o
+cpu16bit.twr cpu16bit.pcf
+
+
+Design file:              cpu16bit.ncd
+Physical constraint file: cpu16bit.pcf
+Device,speed:             xc3s50,-4 (PREVIEW 1.27 2003-11-04)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths
+   option. All paths that are not constrained will be reported in the
+   unconstrained paths section(s) of the report.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK_IN
+---------------+------------+------------+------------------+--------+
+               |  Setup to  |  Hold to   |                  |  Clock |
+Source         | clk (edge) | clk (edge) |Internal Clock(s) |  Phase |
+---------------+------------+------------+------------------+--------+
+CPU_INT        |   15.218(R)|   -0.750(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<0> |   13.069(R)|   -3.380(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<10>|   11.102(R)|   -4.204(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<11>|   11.510(R)|   -4.730(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<12>|   10.560(R)|   -3.503(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<13>|   10.200(R)|   -4.087(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<14>|   10.136(R)|   -4.446(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<15>|    9.541(R)|   -4.598(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<1> |   11.826(R)|   -4.094(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<2> |   12.940(R)|   -4.253(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<3> |   12.240(R)|   -4.847(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<4> |   11.842(R)|   -4.245(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<5> |   12.057(R)|   -4.780(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<6> |   11.982(R)|   -4.739(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<7> |   12.299(R)|   -4.743(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<8> |   11.680(R)|   -4.877(R)|CLK_IN_BUFGP      |   0.000|
+DATA_IN_EXT<9> |   12.136(R)|   -4.211(R)|CLK_IN_BUFGP      |   0.000|
+---------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock NRESET_IN
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  |  Clock |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) |  Phase |
+------------+------------+------------+------------------+--------+
+CPU_INT     |   12.087(F)|   -4.242(F)|NRESET_IN_BUFGP   |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock CLK_IN to Pad
+----------------+------------+------------------+--------+
+                | clk (edge) |                  |  Clock |
+Destination     | to PAD     |Internal Clock(s) |  Phase |
+----------------+------------+------------------+--------+
+ADDR_OUT_EXT<0> |   27.676(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<1> |   27.447(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<2> |   27.855(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<3> |   27.446(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<4> |   27.295(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<5> |   27.363(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<6> |   28.267(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<7> |   27.778(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<8> |   27.962(R)|CLK_IN_BUFGP      |   0.000|
+ADDR_OUT_EXT<9> |   27.884(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<0> |   13.259(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<10>|   11.088(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<11>|   11.465(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<12>|   11.467(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<13>|   11.007(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<14>|   11.080(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<15>|   11.242(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<1> |   11.898(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<2> |   13.273(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<3> |   11.577(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<4> |   10.929(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<5> |   10.912(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<6> |   11.732(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<7> |   11.006(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<8> |   11.192(R)|CLK_IN_BUFGP      |   0.000|
+DATA_OUT_EXT<9> |   10.749(R)|CLK_IN_BUFGP      |   0.000|
+NCS_EXT         |    7.952(R)|CLK_IN_BUFGP      |   0.000|
+NRE_EXT         |   10.751(R)|CLK_IN_BUFGP      |   0.000|
+NWE_EXT         |    7.968(R)|CLK_IN_BUFGP      |   0.000|
+----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_IN         |   28.138|         |         |         |
+NRESET_IN      |   25.176|   25.176|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock NRESET_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_IN         |         |         |   23.313|         |
+NRESET_IN      |         |         |   20.351|   20.351|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+----------------+---------+
+Source Pad     |Destination Pad |  Delay  |
+---------------+----------------+---------+
+NRESET_IN      |ADDR_OUT_EXT<0> |   24.714|
+NRESET_IN      |ADDR_OUT_EXT<1> |   24.485|
+NRESET_IN      |ADDR_OUT_EXT<2> |   24.893|
+NRESET_IN      |ADDR_OUT_EXT<3> |   24.484|
+NRESET_IN      |ADDR_OUT_EXT<4> |   24.333|
+NRESET_IN      |ADDR_OUT_EXT<5> |   24.401|
+NRESET_IN      |ADDR_OUT_EXT<6> |   25.305|
+NRESET_IN      |ADDR_OUT_EXT<7> |   24.816|
+NRESET_IN      |ADDR_OUT_EXT<8> |   25.000|
+NRESET_IN      |ADDR_OUT_EXT<9> |   24.922|
+NRESET_IN      |DATA_OUT_EXT<0> |   10.847|
+NRESET_IN      |DATA_OUT_EXT<10>|   11.940|
+NRESET_IN      |DATA_OUT_EXT<11>|   11.366|
+NRESET_IN      |DATA_OUT_EXT<12>|   11.160|
+NRESET_IN      |DATA_OUT_EXT<13>|   11.897|
+NRESET_IN      |DATA_OUT_EXT<14>|   11.679|
+NRESET_IN      |DATA_OUT_EXT<15>|   11.659|
+NRESET_IN      |DATA_OUT_EXT<1> |   11.376|
+NRESET_IN      |DATA_OUT_EXT<2> |   10.877|
+NRESET_IN      |DATA_OUT_EXT<3> |   11.154|
+NRESET_IN      |DATA_OUT_EXT<4> |   11.087|
+NRESET_IN      |DATA_OUT_EXT<5> |   10.420|
+NRESET_IN      |DATA_OUT_EXT<6> |   10.886|
+NRESET_IN      |DATA_OUT_EXT<7> |   12.035|
+NRESET_IN      |DATA_OUT_EXT<8> |   11.469|
+NRESET_IN      |DATA_OUT_EXT<9> |   11.696|
+NRESET_IN      |NRE_EXT         |   10.677|
+---------------+----------------+---------+
+
+Analysis completed Sun Feb 29 11:14:39 2004
+--------------------------------------------------------------------------------
+
+Peak Memory Usage: 52 MB

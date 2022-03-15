@@ -1,0 +1,566 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar  8 16:05:01 2022
+# Process ID: 25526
+# Current directory: /home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.runs/synth_1
+# Command line: vivado -log cp_copyBlaze.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cp_copyBlaze.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.runs/synth_1/cp_copyBlaze.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source cp_copyBlaze.tcl -notrace
+Command: synth_design -top cp_copyBlaze -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 25749 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1451.543 ; gain = 90.000 ; free physical = 1938 ; free virtual = 279159
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cp_copyBlaze' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:100]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_WIDTH_INST bound to: 18 - type: integer 
+	Parameter GEN_DEPTH_STACK bound to: 15 - type: integer 
+	Parameter GEN_DEPTH_BANC bound to: 16 - type: integer 
+	Parameter GEN_DEPTH_SCRATCH bound to: 64 - type: integer 
+	Parameter GEN_INT_VECTOR bound to: 12'b001111111111 
+INFO: [Synth 8-3491] module 'cp_Toggle' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Toggle.vhd:38' bound to instance 'U_Toggle' of component 'cp_Toggle' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:472]
+INFO: [Synth 8-638] synthesizing module 'cp_Toggle' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Toggle.vhd:60]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Toggle.vhd:140]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Toggle.vhd:144]
+INFO: [Synth 8-256] done synthesizing module 'cp_Toggle' (1#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Toggle.vhd:60]
+INFO: [Synth 8-3491] module 'cp_Interrupt' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Interrupt.vhd:37' bound to instance 'U_Interrupt' of component 'cp_Interrupt' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:489]
+INFO: [Synth 8-638] synthesizing module 'cp_Interrupt' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Interrupt.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'cp_Interrupt' (2#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Interrupt.vhd:63]
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_INT_VECTOR bound to: 12'b001111111111 
+	Parameter GEN_DEPTH_STACK bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'cp_ProgramFlowControl' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramFlowControl.vhd:39' bound to instance 'U_ProgramFlowControl' of component 'cp_ProgramFlowControl' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:510]
+INFO: [Synth 8-638] synthesizing module 'cp_ProgramFlowControl' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramFlowControl.vhd:78]
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_INT_VECTOR bound to: 12'b001111111111 
+	Parameter GEN_DEPTH_STACK bound to: 15 - type: integer 
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'cp_ProgramCounter' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramCounter.vhd:38' bound to instance 'U_ProgramCounter' of component 'cp_ProgramCounter' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramFlowControl.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'cp_ProgramCounter' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramCounter.vhd:65]
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cp_ProgramCounter' (3#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramCounter.vhd:65]
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_DETPH bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'cp_Stack' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Stack.vhd:37' bound to instance 'U_Stack' of component 'cp_Stack' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramFlowControl.vhd:218]
+INFO: [Synth 8-638] synthesizing module 'cp_Stack' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Stack.vhd:67]
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_DETPH bound to: 15 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cp_Stack' (4#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Stack.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'cp_ProgramFlowControl' (5#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ProgramFlowControl.vhd:78]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'cp_Alu' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:37' bound to instance 'U_ALU' of component 'cp_Alu' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:544]
+INFO: [Synth 8-638] synthesizing module 'cp_Alu' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:71]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:147]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:152]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:161]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:178]
+	Parameter GEN_WIDTH_DATA bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'cp_CLAAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:37' bound to instance 'U_Adder' of component 'cp_CLAAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'cp_CLAAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:59]
+	Parameter GEN_WIDTH_DATA bound to: 9 - type: integer 
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'cp_FullAdder' (6#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:55]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-3491] module 'cp_FullAdder' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_FullAdder.vhd:37' bound to instance 'U_FullAdder' of component 'cp_FullAdder' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'cp_CLAAdder' (7#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_CLAAdder.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'cp_Alu' (8#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Alu.vhd:71]
+INFO: [Synth 8-3491] module 'cp_Flags' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Flags.vhd:37' bound to instance 'U_Flags' of component 'cp_Flags' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:573]
+INFO: [Synth 8-638] synthesizing module 'cp_Flags' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Flags.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'cp_Flags' (9#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_Flags.vhd:65]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+	Parameter GEN_DEPTH_BANC bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'cp_BancRegister' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_BancRegister.vhd:37' bound to instance 'U_BancRegister' of component 'cp_BancRegister' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:596]
+INFO: [Synth 8-638] synthesizing module 'cp_BancRegister' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_BancRegister.vhd:68]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+	Parameter GEN_DEPTH_BANC bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cp_BancRegister' (10#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_BancRegister.vhd:68]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+	Parameter GEN_DEPTH_SCRATCH bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'cp_ScratchPad' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ScratchPad.vhd:37' bound to instance 'U_ScratchPad' of component 'cp_ScratchPad' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:622]
+INFO: [Synth 8-638] synthesizing module 'cp_ScratchPad' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ScratchPad.vhd:66]
+	Parameter GEN_WIDTH_DATA bound to: 8 - type: integer 
+	Parameter GEN_DEPTH_SCRATCH bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cp_ScratchPad' (11#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_ScratchPad.vhd:66]
+	Parameter GEN_WIDTH_INST bound to: 18 - type: integer 
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_DEPTH_BANC bound to: 16 - type: integer 
+	Parameter GEN_DEPTH_SCRATCH bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'cp_DecodeControl' declared at '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_DecodeControl.vhd:38' bound to instance 'U_DecodeControl' of component 'cp_DecodeControl' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:646]
+INFO: [Synth 8-638] synthesizing module 'cp_DecodeControl' [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_DecodeControl.vhd:101]
+	Parameter GEN_WIDTH_INST bound to: 18 - type: integer 
+	Parameter GEN_WIDTH_PC bound to: 10 - type: integer 
+	Parameter GEN_DEPTH_BANC bound to: 16 - type: integer 
+	Parameter GEN_DEPTH_SCRATCH bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cp_DecodeControl' (12#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_DecodeControl.vhd:101]
+INFO: [Synth 8-256] done synthesizing module 'cp_copyBlaze' (13#1) [/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.srcs/sources_1/imports/cpu/cp_copyBlaze.vhd:100]
+WARNING: [Synth 8-3917] design cp_copyBlaze has port SEL_O[1] driven by constant 0
+WARNING: [Synth 8-3917] design cp_copyBlaze has port SEL_O[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1496.176 ; gain = 134.633 ; free physical = 1801 ; free virtual = 279158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1496.176 ; gain = 134.633 ; free physical = 1785 ; free virtual = 279157
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1504.176 ; gain = 142.633 ; free physical = 1780 ; free virtual = 279159
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "iStackMem_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[10]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[11]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[12]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[13]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iStackMem_reg[14]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[10]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[11]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[12]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[13]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[14]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iBancRegMem_reg[15]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[32]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[33]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[34]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[35]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[36]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[37]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[38]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[39]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[40]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[41]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[42]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[43]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[44]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[45]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[46]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[47]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[48]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[49]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[50]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[51]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[52]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[53]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[54]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[55]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[56]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[57]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[58]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[59]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[60]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[61]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[62]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iScratchPadMem_reg[63]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iFetch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iInput" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iOuput" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJump" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCall" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iReturn" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iReturnI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iSetInterrupt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iLoad" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iShift" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iStore" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iTest" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCompare" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iWBRdSing" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iWBWrSing" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iFetch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iInput" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iOuput" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iJump" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCall" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iReturn" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iReturnI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iSetInterrupt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iLoad" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iShift" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iStore" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iTest" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCompare" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iWBRdSing" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iWBWrSing" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1521.199 ; gain = 159.656 ; free physical = 1705 ; free virtual = 279147
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 9     
+	   8 Input      1 Bit         XORs := 1     
++---Registers : 
+	               10 Bit    Registers := 17    
+	                8 Bit    Registers := 81    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 8     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 129   
+	   5 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cp_copyBlaze 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module cp_Toggle 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module cp_Interrupt 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module cp_ProgramCounter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+Module cp_Stack 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 16    
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 16    
+Module cp_ProgramFlowControl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module cp_FullAdder 
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 1     
+Module cp_Alu 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   8 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
+Module cp_Flags 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module cp_BancRegister 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 16    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 16    
+Module cp_ScratchPad 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 64    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 64    
+Module cp_DecodeControl 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design cp_copyBlaze has port SEL_O[1] driven by constant 0
+WARNING: [Synth 8-3917] design cp_copyBlaze has port SEL_O[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:03:51 . Memory (MB): peak = 1842.625 ; gain = 481.082 ; free physical = 1316 ; free virtual = 279044
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:03:52 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1289 ; free virtual = 279048
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:03 ; elapsed = 00:03:53 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1251 ; free virtual = 279039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1215 ; free virtual = 279032
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1214 ; free virtual = 279032
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1214 ; free virtual = 279033
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1214 ; free virtual = 279033
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1213 ; free virtual = 279032
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1213 ; free virtual = 279032
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |    10|
+|3     |LUT2  |    39|
+|4     |LUT3  |    12|
+|5     |LUT4  |    33|
+|6     |LUT5  |    83|
+|7     |LUT6  |   382|
+|8     |MUXF7 |    74|
+|9     |MUXF8 |    32|
+|10    |FDCE  |   832|
+|11    |FDPE  |     3|
+|12    |IBUF  |    39|
+|13    |OBUF  |    50|
++------+------+------+
+
+Report Instance Areas: 
++------+-----------------------+----------------------+------+
+|      |Instance               |Module                |Cells |
++------+-----------------------+----------------------+------+
+|1     |top                    |                      |  1590|
+|2     |  U_BancRegister       |cp_BancRegister       |   342|
+|3     |  U_Flags              |cp_Flags              |     8|
+|4     |  U_Interrupt          |cp_Interrupt          |    95|
+|5     |  U_ProgramFlowControl |cp_ProgramFlowControl |   264|
+|6     |    U_ProgramCounter   |cp_ProgramCounter     |    19|
+|7     |    U_Stack            |cp_Stack              |   245|
+|8     |  U_ScratchPad         |cp_ScratchPad         |   750|
+|9     |  U_Toggle             |cp_Toggle             |    31|
++------+-----------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1213 ; free virtual = 279032
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.629 ; gain = 481.086 ; free physical = 1214 ; free virtual = 279035
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:03:54 . Memory (MB): peak = 1842.633 ; gain = 481.086 ; free physical = 1214 ; free virtual = 279035
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 145 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+186 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:04:01 . Memory (MB): peak = 1927.652 ; gain = 607.523 ; free physical = 1189 ; free virtual = 279016
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.runs/synth_1/cp_copyBlaze.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cp_copyBlaze_utilization_synth.rpt -pb cp_copyBlaze_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.55 . Memory (MB): peak = 1951.672 ; gain = 0.000 ; free physical = 1259 ; free virtual = 279007
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  8 16:09:15 2022...

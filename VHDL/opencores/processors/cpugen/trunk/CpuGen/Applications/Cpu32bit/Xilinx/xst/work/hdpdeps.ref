@@ -1,0 +1,53 @@
+V1 41
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_du.vhd 2004/02/01.07:27:30
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_iu.vhd 2004/01/17.07:48:32
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_cu.vhd 2004/02/07.11:31:44
+EN work/CPUC_CU         FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_cu.vhd \
+      PB ieee/STD_LOGIC_1164 PB ieee/STD_LOGIC_ARITH PB work/CPUC_UTILS
+AR work/CPUC_CU/CUC_STRUCT \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_cu.vhd EN work/CPUC_CU
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC.vhd 2004/01/17.07:48:32
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_du.vhd 2004/02/07.11:32:41
+EN work/CPUC_DU         FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_du.vhd \
+      PB ieee/STD_LOGIC_1164 PB ieee/STD_LOGIC_ARITH PB work/CPUC_UTILS
+AR work/CPUC_DU/DUC_STRUCT \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_du.vhd EN work/CPUC_DU
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_iu.vhd 2004/01/17.11:48:34
+EN work/CPUC_IU         FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_iu.vhd \
+      PB ieee/STD_LOGIC_1164 PB ieee/STD_LOGIC_ARITH PB work/CPUC_UTILS
+AR work/CPUC_IU/IUC_STRUCT \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_iu.vhd EN work/CPUC_IU
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_oa.vhd 2004/01/17.07:48:32
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_wd.vhd 2004/01/17.07:48:32
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC.vhd 2004/02/01.20:42:02
+EN work/CPUC            FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC.vhd \
+      PB ieee/STD_LOGIC_1164 PB work/CPUC_UTILS
+AR work/CPUC/CPUC_ARCH  FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC.vhd \
+      EN work/CPUC      EN work/CPUC_IU   EN work/CPUC_CU   EN work/CPUC_DU \
+      EN work/CPUC_OA   EN work/CPUC_WD   CP CPUC_IU        CP CPUC_CU        CP CPUC_DU \
+      CP CPUC_OA        CP CPUC_WD        AR work/CPUC_IU/IUC_STRUCT \
+      AR work/CPUC_CU/CUC_STRUCT AR work/CPUC_DU/DUC_STRUCT \
+      AR work/CPUC_OA/OAC_STRUCT AR work/CPUC_WD/WDC_STRUCT
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_utils.vhd 2004/02/07.11:34:23
+PH work/CPUC_UTILS      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_utils.vhd \
+      PB ieee/STD_LOGIC_1164
+PB work/CPUC_UTILS      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_utils.vhd \
+      PH work/CPUC_UTILS
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_utils.vhd 2004/01/25.14:26:10
+FL c:/cpugen/applications/cpu32bit/xilinx/../cpuC_cu.vhd 2004/01/25.14:23:57
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/cpu32bit.vhf 2004/02/27.22:12:28
+EN work/CPU32BIT        FL C:/CpuGen/Applications/Cpu32bit/Xilinx/cpu32bit.vhf \
+      PB ieee/STD_LOGIC_1164 PH ieee/NUMERIC_STD
+AR work/CPU32BIT/BEHAVIORAL \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/cpu32bit.vhf EN work/CPU32BIT \
+      CP CPUC           CP RAM            CP ROM            CP GND            CP INV
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_oa.vhd 2004/01/17.11:48:34
+EN work/CPUC_OA         FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_oa.vhd \
+      PB ieee/STD_LOGIC_1164 PB ieee/STD_LOGIC_ARITH PB work/CPUC_UTILS
+AR work/CPUC_OA/OAC_STRUCT \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_oa.vhd EN work/CPUC_OA
+FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_wd.vhd 2004/01/17.11:48:34
+EN work/CPUC_WD         FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_wd.vhd \
+      PB ieee/STD_LOGIC_1164 PB work/CPUC_UTILS
+AR work/CPUC_WD/WDC_STRUCT \
+      FL C:/CpuGen/Applications/Cpu32bit/Xilinx/../cpuC_wd.vhd EN work/CPUC_WD

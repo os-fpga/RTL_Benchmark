@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1646726661">
+  <File Type="VDS-TIMING-PB" Name="AVR_Core_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="AVR_Core_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="AVR_Core.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="AVR_Core_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="AVR_Core_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="AVR_Core_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="AVR_Core.vds"/>
+  <File Type="REPORTS-TCL" Name="AVR_Core_reports.tcl"/>
+  <File Type="PA-TCL" Name="AVR_Core.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Core/AVR_Core_CompPack.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/AVR_Core_CompPack.vhd"/>
+        <Attr Name="ImportTime" Val="1149094892"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/SynthCtrlPack.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/SynthCtrlPack.vhd"/>
+        <Attr Name="ImportTime" Val="1121331796"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/AVRuCPackage.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/AVRuCPackage.vhd"/>
+        <Attr Name="ImportTime" Val="1083753774"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/alu_avr.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/alu_avr.vhd"/>
+        <Attr Name="ImportTime" Val="1059769586"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/bit_processor.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/bit_processor.vhd"/>
+        <Attr Name="ImportTime" Val="1082610010"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/io_adr_dec.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/io_adr_dec.vhd"/>
+        <Attr Name="ImportTime" Val="1054797078"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/io_reg_file.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/io_reg_file.vhd"/>
+        <Attr Name="ImportTime" Val="1082610252"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/pm_fetch_dec.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/pm_fetch_dec.vhd"/>
+        <Attr Name="ImportTime" Val="1149095372"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/reg_file.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/reg_file.vhd"/>
+        <Attr Name="ImportTime" Val="1082609750"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Core/avr_core.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../web_uploads/Core/avr_core.vhd"/>
+        <Attr Name="ImportTime" Val="1149095040"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="AVR_Core"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

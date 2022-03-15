@@ -1,0 +1,522 @@
+ -- Copyright (C) 1991-2002 Altera Corporation
+ -- Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+ -- support information,  device programming or simulation file,  and any other
+ -- associated  documentation or information  provided by  Altera  or a partner
+ -- under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+ -- to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+ -- other  use  of such  megafunction  design,  netlist,  support  information,
+ -- device programming or simulation file,  or any other  related documentation
+ -- or information  is prohibited  for  any  other purpose,  including, but not
+ -- limited to  modification,  reverse engineering,  de-compiling, or use  with
+ -- any other  silicon devices,  unless such use is  explicitly  licensed under
+ -- a separate agreement with  Altera  or a megafunction partner.  Title to the
+ -- intellectual property,  including patents,  copyrights,  trademarks,  trade
+ -- secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+ -- support  information,  device programming or simulation file,  or any other
+ -- related documentation or information provided by  Altera  or a megafunction
+ -- partner, remains with Altera, the megafunction partner, or their respective
+ -- licensors. No other licenses, including any licenses needed under any third
+ -- party's intellectual property, are provided herein.
+ ------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------
+ -- N.C.       : No Connect. This pin has no internal connection to the device.
+ -- VCC_INT    : Dedicated power pin, which MUST be connected to VCC  (2.5V).
+ -- VCC_IO     : Dedicated power pin, which MUST be connected to VCC  (Refer to
+ --              the table below for voltage).
+ -- GND        : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+       : Unused input. This pin should be connected to GND. It may also
+ --              be connected  to a  valid signal  on the board  (low, high, or
+ --              toggling)  if that signal is required for a different revision
+ --              of the design.
+ -- RESERVED_INPUT : Pin is tri-stated and should be connected to the board.
+ ------------------------------------------------------------------------------
+
+
+CHIP  "standard_32"  ASSIGNED TO AN: EP20K200EFC484-2X
+GND                              : A1    :       
+SRAM_Lo_oe_n                     : A2    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[10] : A3    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[11] : A4    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[7] : A5    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[6] : A6    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[3] : A7    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[1] : A8    : output : LVTTL             :      
+N.C.                             : A9    :        :                   :      
+N.C.                             : A10   :        :                   :      
+GND                              : A11   :       
+N.C.                             : A12   :        :                   :      
+N.C.                             : A13   :        :                   :      
+N.C.                             : A14   :        :                   :      
+RESERVED_INPUT                   : A15   :        :                   :      
+RESERVED_INPUT                   : A16   :        :                   :      
+RESERVED_INPUT                   : A17   :        :                   :      
+RESERVED_INPUT                   : A18   :        :                   :      
+RESERVED_INPUT                   : A19   :        :                   :      
+RESERVED_INPUT                   : A20   :        :                   :      
+RESERVED_INPUT                   : A21   :        :                   :      
+GND                              : A22   :       
+VCC_INT                          : B1    :       
+GND                              : B2    :       
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[18] : B3    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[9] : B4    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[8] : B5    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[5] : B6    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[4] : B7    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[2] : B8    : output : LVTTL             :      
+RESERVED_INPUT                   : B9    :        :                   :      
+SRAM_Hi_data-SRAM_Lo_data[31]    : B10   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[30]    : B11   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : B12   :        :                   :      
+RESERVED_INPUT                   : B13   :        :                   :      
+RESERVED_INPUT                   : B14   :        :                   :      
+RESERVED_INPUT                   : B15   :        :                   :      
+RESERVED_INPUT                   : B16   :        :                   :      
+RESERVED_INPUT                   : B17   :        :                   :      
+RESERVED_INPUT                   : B18   :        :                   :      
+RESERVED_INPUT                   : B19   :        :                   :      
+RESERVED_INPUT                   : B20   :        :                   :      
+GND                              : B21   :       
+VCC_INT                          : B22   :       
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[13] : C1    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[16] : C2    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[12] : C3    : output : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[0]     : C4    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[10]    : C5    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[12]    : C6    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[16]    : C7    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[20]    : C8    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[23]    : C9    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[24]    : C10   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : C11   :        :                   :      
+RESERVED_INPUT                   : C12   :        :                   :      
+RESERVED_INPUT                   : C13   :        :                   :      
+RESERVED_INPUT                   : C14   :        :                   :      
+RESERVED_INPUT                   : C15   :        :                   :      
+RESERVED_INPUT                   : C16   :        :                   :      
+RESERVED_INPUT                   : C17   :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[7] : C18   : output : LVTTL             :      
+RESERVED_INPUT                   : C19   :        :                   :      
+RESERVED_INPUT                   : C20   :        :                   :      
+RESERVED_INPUT                   : C21   :        :                   :      
+RESERVED_INPUT                   : C22   :        :                   :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[17] : D1    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[15] : D2    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[14] : D3    : output : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[5]     : D4    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[6]     : D5    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[11]    : D6    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[15]    : D7    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[3]     : D8    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[19]    : D9    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[26]    : D10   : bidir  : LVTTL             :      
+GND+                             : D11   :        :                   :      
+TRST                             : D12   :        :                   :      
+RESERVED_INPUT                   : D13   :        :                   :      
+RESERVED_INPUT                   : D14   :        :                   :      
+DB9_CONNECTOR_txd                : D15   : output : LVTTL             :      
+RESERVED_INPUT                   : D16   :        :                   :      
+RESERVED_INPUT                   : D17   :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[15] : D18   : output : LVTTL             :      
+RESERVED_INPUT                   : D19   :        :                   :      
+RESERVED_INPUT                   : D20   :        :                   :      
+RESERVED_INPUT                   : D21   :        :                   :      
+RESERVED_INPUT                   : D22   :        :                   :      
+FLASH_ce_n                       : E1    : output : LVTTL             :      
+SRAM_Hi_cs_n                     : E2    : output : LVTTL             :      
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[19] : E3    : output : LVTTL             :      
+SRAM_Lo_cs_n                     : E4    : output : LVTTL             :      
+RESERVED_INPUT                   : E5    :        :                   :      
+SRAM_Lo_we_n                     : E6    : output : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[4]     : E7    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[9]     : E8    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[17]    : E9    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[18]    : E10   : bidir  : LVTTL             :      
+TDO                              : E11   :        :                   :      
+nCEO                             : E12   :        :                   :      
+RESERVED_INPUT                   : E13   :        :                   :      
+RESERVED_INPUT                   : E14   :        :                   :      
+RESERVED_INPUT                   : E15   :        :                   :      
+RESERVED_INPUT                   : E16   :        :                   :      
+RESERVED_INPUT                   : E17   :        :                   :      
+RESERVED_INPUT                   : E18   :        :                   :      
+RESERVED_INPUT                   : E19   :        :                   :      
+RESERVED_INPUT                   : E20   :        :                   :      
+RESERVED_INPUT                   : E21   :        :                   :      
+RESERVED_INPUT                   : E22   :        :                   :      
+RESERVED_INPUT                   : F1    :        :                   :      
+SRAM_Hi_be_n-SRAM_Lo_be_n[1]     : F2    : output : LVTTL             :      
+FLASH_a16                        : F3    : output : LVTTL             :      
+SRAM_Hi_be_n-SRAM_Lo_be_n[2]     : F4    : output : LVTTL             :      
+SRAM_Hi_be_n-SRAM_Lo_be_n[0]     : F5    : output : LVTTL             :      
+GND                              : F6    :       
+RESERVED_INPUT                   : F7    :        :                   :      
+SRAM_Hi_data-SRAM_Lo_data[8]     : F8    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[13]    : F9    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[21]    : F10   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[29]    : F11   : bidir  : LVTTL             :      
+RESET_SWITCH_out                 : F12   : input  : LVTTL             :      
+DB9_CONNECTOR_txd_uart2          : F13   : output : LVTTL             :      
+DB9_CONNECTOR_rxd_uart2          : F14   : input  : LVTTL             :      
+RESERVED_INPUT                   : F15   :        :                   :      
+RESERVED_INPUT                   : F16   :        :                   :      
+GND                              : F17   :       
+RESERVED_INPUT                   : F18   :        :                   :      
+RESERVED_INPUT                   : F19   :        :                   :      
+RESERVED_INPUT                   : F20   :        :                   :      
+RESERVED_INPUT                   : F21   :        :                   :      
+RESERVED_INPUT                   : F22   :        :                   :      
+RESERVED_INPUT                   : G1    :        :                   :      
+RESERVED_INPUT                   : G2    :        :                   :      
+RESERVED_INPUT                   : G3    :        :                   :      
+RESERVED_INPUT                   : G4    :        :                   :      
+RESERVED_INPUT                   : G5    :        :                   :      
+RESERVED_INPUT                   : G6    :        :                   :      
+GND                              : G7    :       
+VCC_IO                           : G8    : 3.3V  
+SRAM_Hi_data-SRAM_Lo_data[7]     : G9    : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[2]     : G10   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[22]    : G11   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[27]    : G12   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[28]    : G13   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : G14   :        :                   :      
+RESERVED_INPUT                   : G15   :        :                   :      
+GND                              : G16   :       
+FLASH_high_address_bits-SRAM_Lo_address-FLASH_a0-APEX_a0[0] : G17   : output : LVTTL             :      
+RESERVED_INPUT                   : G18   :        :                   :      
+RESERVED_INPUT                   : G19   :        :                   :      
+RESERVED_INPUT                   : G20   :        :                   :      
+RESERVED_INPUT                   : G21   :        :                   :      
+RESERVED_INPUT                   : G22   :        :                   :      
+RESERVED_INPUT                   : H1    :        :                   :      
+RESERVED_INPUT                   : H2    :        :                   :      
+RESERVED_INPUT                   : H3    :        :                   :      
+RESERVED_INPUT                   : H4    :        :                   :      
+SRAM_Hi_be_n-SRAM_Lo_be_n[3]     : H5    : output : LVTTL             :      
+RESERVED_INPUT                   : H6    :        :                   :      
+VCC_IO                           : H7    : 3.3V  
+GND                              : H8    :       
+VCC_INT                          : H9    :       
+SRAM_Hi_data-SRAM_Lo_data[14]    : H10   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[1]     : H11   : bidir  : LVTTL             :      
+SRAM_Hi_data-SRAM_Lo_data[25]    : H12   : bidir  : LVTTL             :      
+FLASH_we_n                       : H13   : output : LVTTL             :      
+VCC_IO                           : H14   : 3.3V  
+GND                              : H15   :       
+RESERVED_INPUT                   : H16   :        :                   :      
+RESERVED_INPUT                   : H17   :        :                   :      
+RESERVED_INPUT                   : H18   :        :                   :      
+RESERVED_INPUT                   : H19   :        :                   :      
+RESERVED_INPUT                   : H20   :        :                   :      
+RESERVED_INPUT                   : H21   :        :                   :      
+RESERVED_INPUT                   : H22   :        :                   :      
+RESERVED_INPUT                   : J1    :        :                   :      
+RESERVED_INPUT                   : J2    :        :                   :      
+RESERVED_INPUT                   : J3    :        :                   :      
+RESERVED_INPUT                   : J4    :        :                   :      
+RESERVED_INPUT                   : J5    :        :                   :      
+RESERVED_INPUT                   : J6    :        :                   :      
+RESERVED_INPUT                   : J7    :        :                   :      
+VCC_INT                          : J8    :       
+GND                              : J9    :       
+VCC_IO                           : J10   : 3.3V  
+GND                              : J11   :       
+RESERVED_INPUT                   : J12   :        :                   :      
+VCC_INT                          : J13   :       
+GND                              : J14   :       
+VCC_IO                           : J15   : 3.3V  
+RESERVED_INPUT                   : J16   :        :                   :      
+RESERVED_INPUT                   : J17   :        :                   :      
+RESERVED_INPUT                   : J18   :        :                   :      
+RESERVED_INPUT                   : J19   :        :                   :      
+RESERVED_INPUT                   : J20   :        :                   :      
+RESERVED_INPUT                   : J21   :        :                   :      
+RESERVED_INPUT                   : J22   :        :                   :      
+RESERVED_INPUT                   : K1    :        :                   :      
+RESERVED_INPUT                   : K2    :        :                   :      
+RESERVED_INPUT                   : K3    :        :                   :      
+RESERVED_INPUT                   : K4    :        :                   :      
+RESERVED_INPUT                   : K5    :        :                   :      
+RESERVED_INPUT                   : K6    :        :                   :      
+RESERVED_INPUT                   : K7    :        :                   :      
+RESERVED_INPUT                   : K8    :        :                   :      
+VCC_IO                           : K9    : 3.3V  
+GND                              : K10   :       
+VCC_INT                          : K11   :       
+VCC_IO                           : K12   : 3.3V  
+GND                              : K13   :       
+VCC_INT                          : K14   :       
+RESERVED_INPUT                   : K15   :        :                   :      
+RESERVED_INPUT                   : K16   :        :                   :      
+GND+                             : K17   :        :                   :      
+RESERVED_INPUT                   : K18   :        :                   :      
+RESERVED_INPUT                   : K19   :        :                   :      
+RESERVED_INPUT                   : K20   :        :                   :      
+RESERVED_INPUT                   : K21   :        :                   :      
+RESERVED_INPUT                   : K22   :        :                   :      
+VCC_IO                           : L1    : 3.3V  
+GND                              : L2    :       
+RESERVED_INPUT                   : L3    :        :                   :      
+DATA0                            : L4    :        :                   :      
+DCLK                             : L5    :        :                   :      
+CLK_DRV_clk_to_apex              : L6    : input  : LVTTL             :      
+RESERVED_INPUT                   : L7    :        :                   :      
+RESERVED_INPUT                   : L8    :        :                   :      
+VCC_CKLK2                        : L9    :       
+VCC_INT                          : L10   :       
+GND                              : L11   :       
+GND                              : L12   :       
+VCC_IO                           : L13   : 3.3V  
+RESERVED_INPUT                   : L14   :        :                   :      
+RESERVED_INPUT                   : L15   :        :                   :      
+RESERVED_INPUT                   : L16   :        :                   :      
+RESERVED_INPUT                   : L17   :        :                   :      
+MSEL1                            : L18   :        :                   :      
+MSEL0                            : L19   :        :                   :      
+RESERVED_INPUT                   : L20   :        :                   :      
+RESERVED_INPUT                   : L21   :        :                   :      
+VCC_IO                           : L22   : 3.3V  
+GND                              : M1    :       
+RESERVED_INPUT                   : M2    :        :                   :      
+RESERVED_INPUT                   : M3    :        :                   :      
+nCE                              : M4    :        :                   :      
+TDI                              : M5    :        :                   :      
+RESERVED_INPUT                   : M6    :        :                   :      
+RESERVED_INPUT                   : M7    :        :                   :      
+VCC_CKLK4                        : M8    :       
+GND_CKLK2                        : M9    :       
+VCC_IO                           : M10   : 3.3V  
+GND                              : M11   :       
+GND                              : M12   :       
+VCC_INT                          : M13   :       
+VCCINT                           : M14   :        :                   :      
+RESERVED_INPUT                   : M15   :        :                   :      
+RESERVED_INPUT                   : M16   :        :                   :      
+RESERVED_INPUT                   : M17   :        :                   :      
+GND+                             : M18   :        :                   :      
+NCONFIG                          : M19   :        :                   :      
+RESERVED_INPUT                   : M20   :        :                   :      
+GND                              : M21   :       
+VCC_INT                          : M22   :       
+RESERVED_INPUT                   : N1    :        :                   :      
+RESERVED_INPUT                   : N2    :        :                   :      
+RESERVED_INPUT                   : N3    :        :                   :      
+GND+                             : N4    :        :                   :      
+RESERVED_INPUT                   : N5    :        :                   :      
+RESERVED_INPUT                   : N6    :        :                   :      
+RESERVED_INPUT                   : N7    :        :                   :      
+GND_CKLK4                        : N8    :       
+VCC_INT                          : N9    :       
+GND                              : N10   :       
+VCC_IO                           : N11   : 3.3V  
+VCC_INT                          : N12   :       
+GND                              : N13   :       
+VCC_IO                           : N14   : 3.3V  
+LCD_HEADER_interface_pins[10]    : N15   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : N16   :        :                   :      
+RESERVED_INPUT                   : N17   :        :                   :      
+RESERVED_INPUT                   : N18   :        :                   :      
+RESERVED_INPUT                   : N19   :        :                   :      
+RESERVED_INPUT                   : N20   :        :                   :      
+RESERVED_INPUT                   : N21   :        :                   :      
+RESERVED_INPUT                   : N22   :        :                   :      
+RESERVED_INPUT                   : P1    :        :                   :      
+RESERVED_INPUT                   : P2    :        :                   :      
+RESERVED_INPUT                   : P3    :        :                   :      
+RESERVED_INPUT                   : P4    :        :                   :      
+GND*                             : P5    :        :                   :      
+RESERVED_INPUT                   : P6    :        :                   :      
+RESERVED_INPUT                   : P7    :        :                   :      
+VCC_IO                           : P8    : 3.3V  
+GND                              : P9    :       
+VCC_INT                          : P10   :       
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[9] : P11   : input  : LVTTL             :      
+RESERVED_INPUT                   : P12   :        :                   :      
+VCC_IO                           : P13   : 3.3V  
+GND                              : P14   :       
+VCC_INT                          : P15   :       
+RESERVED_INPUT                   : P16   :        :                   :      
+LCD_HEADER_interface_pins[1]     : P17   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : P18   :        :                   :      
+RESERVED_INPUT                   : P19   :        :                   :      
+RESERVED_INPUT                   : P20   :        :                   :      
+RESERVED_INPUT                   : P21   :        :                   :      
+RESERVED_INPUT                   : P22   :        :                   :      
+RESERVED_INPUT                   : R1    :        :                   :      
+RESERVED_INPUT                   : R2    :        :                   :      
+RESERVED_INPUT                   : R3    :        :                   :      
+RESERVED_INPUT                   : R4    :        :                   :      
+RESERVED_INPUT                   : R5    :        :                   :      
+GND+                             : R6    :        :                   :      
+VCC_INT                          : R7    :       
+GND                              : R8    :       
+VCC_IO                           : R9    : 3.3V  
+DISPLAY_tens_digit-DISPLAY_ones_digit[6] : R10   : output : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[14] : R11   : output : LVTTL             :      
+RESERVED_INPUT                   : R12   :        :                   :      
+RESERVED_INPUT                   : R13   :        :                   :      
+VCC_INT                          : R14   :       
+GND                              : R15   :       
+VCC_IO                           : R16   : 3.3V  
+RESERVED_INPUT                   : R17   :        :                   :      
+LCD_HEADER_interface_pins[8]     : R18   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : R19   :        :                   :      
+RESERVED_INPUT                   : R20   :        :                   :      
+RESERVED_INPUT                   : R21   :        :                   :      
+RESERVED_INPUT                   : R22   :        :                   :      
+RESERVED_INPUT                   : T1    :        :                   :      
+LCD_HEADER_interface_pins[4]     : T2    : bidir  : LVTTL             :      
+LCD_HEADER_interface_pins[5]     : T3    : bidir  : LVTTL             :      
+GND_CKOUT2                       : T4    :       
+VCC_CKOUT2                       : T5    :       
+RESERVED_INPUT                   : T6    :        :                   :      
+GND                              : T7    :       
+VCC_IO                           : T8    : 3.3V  
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[1] : T9    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[6] : T10   : input  : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[5] : T11   : output : LVTTL             :      
+RESERVED_INPUT                   : T12   :        :                   :      
+RESERVED_INPUT                   : T13   :        :                   :      
+RESERVED_INPUT                   : T14   :        :                   :      
+VCC_IO                           : T15   : 3.3V  
+GND                              : T16   :       
+RESERVED_INPUT                   : T17   :        :                   :      
+LED2_in-LED1_in[0]               : T18   : bidir  : LVTTL             :      
+LED2_in-LED1_in[1]               : T19   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : T20   :        :                   :      
+RESERVED_INPUT                   : T21   :        :                   :      
+RESERVED_INPUT                   : T22   :        :                   :      
+LCD_HEADER_interface_pins[2]     : U1    : bidir  : LVTTL             :      
+LCD_HEADER_interface_pins[3]     : U2    : bidir  : LVTTL             :      
+RESERVED_INPUT                   : U3    :        :                   :      
+LCD_HEADER_interface_pins[6]     : U4    : bidir  : LVTTL             :      
+RESERVED_INPUT                   : U5    :        :                   :      
+GND                              : U6    :       
+RESERVED_INPUT                   : U7    :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[4] : U8    : output : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[5] : U9    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[7] : U10   : input  : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[13] : U11   : output : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[10] : U12   : input  : LVTTL             :      
+RESERVED_INPUT                   : U13   :        :                   :      
+RESERVED_INPUT                   : U14   :        :                   :      
+RESERVED_INPUT                   : U15   :        :                   :      
+RESERVED_INPUT                   : U16   :        :                   :      
+GND                              : U17   :       
+DISPLAY_tens_digit-DISPLAY_ones_digit[1] : U18   : output : LVTTL             :      
+LCD_HEADER_interface_pins[7]     : U19   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : U20   :        :                   :      
+LCD_HEADER_interface_pins[0]     : U21   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : U22   :        :                   :      
+RESERVED_INPUT                   : V1    :        :                   :      
+RESERVED_INPUT                   : V2    :        :                   :      
+RESERVED_INPUT                   : V3    :        :                   :      
+RESERVED_INPUT                   : V4    :        :                   :      
+RESERVED_INPUT                   : V5    :        :                   :      
+RESERVED_INPUT                   : V6    :        :                   :      
+HEADER_SWITCH_enable1_n          : V7    : output : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[11] : V8    : output : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[4] : V9    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[8] : V10   : input  : LVTTL             :      
+GND+                             : V11   :        :                   :      
+GND+                             : V12   :        :                   :      
+RESERVED_INPUT                   : V13   :        :                   :      
+RESERVED_INPUT                   : V14   :        :                   :      
+RESERVED_INPUT                   : V15   :        :                   :      
+RESERVED_INPUT                   : V16   :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[8] : V17   : output : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[9] : V18   : output : LVTTL             :      
+RESERVED_INPUT                   : V19   :        :                   :      
+RESERVED_INPUT                   : V20   :        :                   :      
+RESERVED_INPUT                   : V21   :        :                   :      
+RESERVED_INPUT                   : V22   :        :                   :      
+RESERVED_INPUT                   : W1    :        :                   :      
+RESERVED_INPUT                   : W2    :        :                   :      
+RESERVED_INPUT                   : W3    :        :                   :      
+RESERVED_INPUT                   : W4    :        :                   :      
+RESERVED_INPUT                   : W5    :        :                   :      
+RESERVED_INPUT                   : W6    :        :                   :      
+RESERVED_INPUT                   : W7    :        :                   :      
+DB9_CONNECTOR_rxd                : W8    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[3] : W9    : input  : LVTTL             :      
+CONF_DONE                        : W10   :        :                   :      
+NSTATUS                          : W11   :        :                   :      
+TCK                              : W12   :        :                   :      
+TMS                              : W13   :        :                   :      
+RESERVED_INPUT                   : W14   :        :                   :      
+RESERVED_INPUT                   : W15   :        :                   :      
+RESERVED_INPUT                   : W16   :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[0] : W17   : output : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[3] : W18   : output : LVTTL             :      
+RESERVED_INPUT                   : W19   :        :                   :      
+LCD_HEADER_interface_pins[9]     : W20   : bidir  : LVTTL             :      
+RESERVED_INPUT                   : W21   :        :                   :      
+RESERVED_INPUT                   : W22   :        :                   :      
+RESERVED_INPUT                   : Y1    :        :                   :      
+RESERVED_INPUT                   : Y2    :        :                   :      
+RESERVED_INPUT                   : Y3    :        :                   :      
+RESERVED_INPUT                   : Y4    :        :                   :      
+RESERVED_INPUT                   : Y5    :        :                   :      
+RESERVED_INPUT                   : Y6    :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[12] : Y7    : output : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[2] : Y8    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[0] : Y9    : input  : LVTTL             :      
+DIP_SWITCH_all-SW7_out-SW6_out-SW5_out-SW4_out[11] : Y10   : input  : LVTTL             :      
+RESERVED_INPUT                   : Y11   :        :                   :      
+RESERVED_INPUT                   : Y12   :        :                   :      
+RESERVED_INPUT                   : Y13   :        :                   :      
+RESERVED_INPUT                   : Y14   :        :                   :      
+RESERVED_INPUT                   : Y15   :        :                   :      
+RESERVED_INPUT                   : Y16   :        :                   :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[10] : Y17   : output : LVTTL             :      
+DISPLAY_tens_digit-DISPLAY_ones_digit[2] : Y18   : output : LVTTL             :      
+RESERVED_INPUT                   : Y19   :        :                   :      
+RESERVED_INPUT                   : Y20   :        :                   :      
+RESERVED_INPUT                   : Y21   :        :                   :      
+RESERVED_INPUT                   : Y22   :        :                   :      
+VCC_INT                          : AA1   :       
+GND                              : AA2   :       
+RESERVED_INPUT                   : AA3   :        :                   :      
+RESERVED_INPUT                   : AA4   :        :                   :      
+RESERVED_INPUT                   : AA5   :        :                   :      
+RESERVED_INPUT                   : AA6   :        :                   :      
+RESERVED_INPUT                   : AA7   :        :                   :      
+RESERVED_INPUT                   : AA8   :        :                   :      
+RESERVED_INPUT                   : AA9   :        :                   :      
+RESERVED_INPUT                   : AA10  :        :                   :      
+RESERVED_INPUT                   : AA11  :        :                   :      
+RESERVED_INPUT                   : AA12  :        :                   :      
+RESERVED_INPUT                   : AA13  :        :                   :      
+RESERVED_INPUT                   : AA14  :        :                   :      
+RESERVED_INPUT                   : AA15  :        :                   :      
+RESERVED_INPUT                   : AA16  :        :                   :      
+RESERVED_INPUT                   : AA17  :        :                   :      
+RESERVED_INPUT                   : AA18  :        :                   :      
+RESERVED_INPUT                   : AA19  :        :                   :      
+RESERVED_INPUT                   : AA20  :        :                   :      
+GND                              : AA21  :       
+VCC_INT                          : AA22  :       
+GND                              : AB1   :       
+RESERVED_INPUT                   : AB2   :        :                   :      
+RESERVED_INPUT                   : AB3   :        :                   :      
+RESERVED_INPUT                   : AB4   :        :                   :      
+RESERVED_INPUT                   : AB5   :        :                   :      
+RESERVED_INPUT                   : AB6   :        :                   :      
+RESERVED_INPUT                   : AB7   :        :                   :      
+RESERVED_INPUT                   : AB8   :        :                   :      
+N.C.                             : AB9   :        :                   :      
+N.C.                             : AB10  :        :                   :      
+GND                              : AB11  :       
+N.C.                             : AB12  :        :                   :      
+N.C.                             : AB13  :        :                   :      
+N.C.                             : AB14  :        :                   :      
+RESERVED_INPUT                   : AB15  :        :                   :      
+RESERVED_INPUT                   : AB16  :        :                   :      
+RESERVED_INPUT                   : AB17  :        :                   :      
+RESERVED_INPUT                   : AB18  :        :                   :      
+RESERVED_INPUT                   : AB19  :        :                   :      
+RESERVED_INPUT                   : AB20  :        :                   :      
+RESERVED_INPUT                   : AB21  :        :                   :      
+GND                              : AB22  :       

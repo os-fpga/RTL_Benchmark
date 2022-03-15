@@ -1,0 +1,453 @@
+Analysis & Synthesis report for Cpu8Bit compilation.
+Wed Feb 25 23:01:19 2004
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+
+Command: quartus_map --import_settings_files=on --export_settings_files=off cpu8bit -c Cpu8Bit
+
+
+
+---------------------
+; Table of Contents ;
+---------------------
+   1. Legal Notice
+   2. Flow Summary
+   3. Flow Settings
+   4. Flow Elapsed Time
+   5. Analysis & Synthesis Summary
+   6. Analysis & Synthesis Settings
+   7. Hierarchy
+   8. State Machine - cpu:inst|cpu_du:I3|code_c
+   9. State Machine - cpu:inst|cpu_cu:I2|S_c
+  10. State Machine - cpu:inst|cpu_cu:I2|E_c
+  11. Analysis & Synthesis Resource Utilization by Entity
+  12. Analysis & Synthesis Equations
+  13. Analysis & Synthesis Messages
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
+
+-----------------------------------------------------------------
+; Flow Summary                                                  ;
+-----------------------------------------------------------------
+; Flow Status           ; Successful - Wed Feb 25 23:01:19 2004 ;
+; Compiler Setting Name ; Cpu8Bit                               ;
+; Top-level Entity Name ; Cpu8Bit                               ;
+; Family                ; Cyclone                               ;
+; Device                ; EP1C3T100C8                           ;
+; Total logic elements  ; 1,026                                 ;
+; Total pins            ; 40                                    ;
+; Total memory bits     ; 16,384                                ;
+; Total PLLs            ; 0                                     ;
+-----------------------------------------------------------------
+
+
+-----------------------------------------------
+; Flow Settings                               ;
+-----------------------------------------------
+; Option                ; Setting             ;
+-----------------------------------------------
+; Start date & time     ; 02/25/2004 23:00:58 ;
+; Main task             ; Compilation         ;
+; Compiler Setting Name ; Cpu8Bit             ;
+-----------------------------------------------
+
+
+---------------------------------------
+; Flow Elapsed Time                   ;
+---------------------------------------
+; Module Name          ; Elapsed Time ;
+---------------------------------------
+; Analysis & Synthesis ; 00:00:21     ;
+; Total                ; 00:00:21     ;
+---------------------------------------
+
+
+-----------------------------------------------------------------------
+; Analysis & Synthesis Summary                                        ;
+-----------------------------------------------------------------------
+; Analysis & Synthesis Status ; Successful - Wed Feb 25 23:01:19 2004 ;
+; Compiler Setting Name       ; Cpu8Bit                               ;
+; Top-level Entity Name       ; Cpu8Bit                               ;
+; Family                      ; Cyclone                               ;
+; Total logic elements        ; 1,026                                 ;
+; Total pins                  ; 40                                    ;
+; Total memory bits           ; 16,384                                ;
+; Total PLLs                  ; 0                                     ;
+-----------------------------------------------------------------------
+
+
+------------------------------------------------------------
+; Analysis & Synthesis Settings                            ;
+------------------------------------------------------------
+; Option                                        ; Setting  ;
+------------------------------------------------------------
+; Use Generated Physical Constraints File       ; On       ;
+; Physical Synthesis Level for Resynthesis      ; Normal   ;
+; Resynthesis Optimization Effort               ; Normal   ;
+; Type of Retiming Performed During Resynthesis ; Full     ;
+; Perform gate-level register retiming          ; Off      ;
+; Perform WYSIWYG primitive resynthesis         ; Off      ;
+; Focus entity name                             ; |Cpu8Bit ;
+; Family name                                   ; Cyclone  ;
+; Preserve fewer node names                     ; On       ;
+; Disk space/compilation speed tradeoff         ; Normal   ;
+------------------------------------------------------------
+
+
+--------------
+; Hierarchy  ;
+--------------
+Hierarchy
+  Cpu8Bit
+    cpu:inst
+      cpu_iu:I1
+        lpm_counter:nreset_v_rtl_9
+          alt_counter_stratix:wysi_counter
+      cpu_cu:I2
+        lpm_counter:nreset_v_rtl_4
+          alt_counter_stratix:wysi_counter
+      cpu_du:I3
+        lpm_counter:nreset_v_rtl_3
+          alt_counter_stratix:wysi_counter
+      cpu_oa:I4
+        lpm_counter:nreset_v_rtl_6
+          alt_counter_stratix:wysi_counter
+      cpu_wd:I5
+    tx_uart:inst1
+      lpm_counter:tx_16_count_rtl_8
+        alt_counter_stratix:wysi_counter
+      lpm_counter:tx_bit_count_rtl_7
+        alt_counter_stratix:wysi_counter
+      lpm_counter:tx_clk_count_rtl_5
+        alt_counter_stratix:wysi_counter
+    timer:inst2
+      lpm_counter:tmr_low_rtl_10
+        alt_counter_stratix:wysi_counter
+    interrupt:inst3
+    ctrl8cpu:inst5
+    lpm_rom0:inst6
+      altsyncram:altsyncram_component
+    lpm_ram_dq0:inst7
+      altsyncram:altsyncram_component
+    rx_uart:inst8
+      lpm_counter:rx_clk_count_rtl_11
+        alt_counter_stratix:wysi_counter
+    inout4reg:inst10
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; State Machine - cpu:inst|cpu_du:I3|code_c                                                                                                                                                                                                                                                                                                                   ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Name          ; code_c~35 ; code_c~34 ; code_c~33 ; code_c~32 ; code_c~31 ; code_c~30 ; code_c~29 ; code_c~28 ; code_c~27 ; code_c~26 ; code_c~25 ; code_c~24 ; code_c~23 ; code_c~22 ; code_c~21 ; code_c~20 ; code_c~19 ; code_c~18 ; code_c~17 ; code_c~16 ; code_c~15 ; code_c~14 ; code_c~13 ; code_c~12 ; code_c~11 ; code_c~10 ; code_c~9 ; code_c~8 ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; code_c.nop_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ;
+; code_c.rol_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 1        ;
+; code_c.ror_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 1        ;
+; code_c.shl_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 1        ;
+; code_c.shr_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.not_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.cla_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skz_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skc_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknz_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknc_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rts_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rti_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jmp_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jms_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sta_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.lda_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xor_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.add_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.and_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sub_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.or_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ldai_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xori_i ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.addi_i ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.andi_i ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subi_i ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ori_i  ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------
+; State Machine - cpu:inst|cpu_cu:I2|S_c ;
+------------------------------------------
+; Name          ; S_c~10 ; S_c~9 ; S_c~8 ;
+------------------------------------------
+; S_c.reset     ; 0      ; 0     ; 0     ;
+; S_c.normal    ; 0      ; 1     ; 1     ;
+; S_c.interrupt ; 1      ; 0     ; 1     ;
+------------------------------------------
+
+
+-------------------------------------------------
+; State Machine - cpu:inst|cpu_cu:I2|E_c        ;
+-------------------------------------------------
+; Name        ; E_c~11 ; E_c~10 ; E_c~9 ; E_c~8 ;
+-------------------------------------------------
+; E_c.none_e  ; 0      ; 0      ; 0     ; 0     ;
+; E_c.dwait_e ; 0      ; 0      ; 1     ; 1     ;
+; E_c.iwait_e ; 0      ; 1      ; 0     ; 1     ;
+; E_c.int_e   ; 1      ; 0      ; 0     ; 1     ;
+-------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Compilation Hierarchy Node                     ; Logic Cells ; Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                     ;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; |Cpu8Bit                                       ; 1026 (179)  ; 367       ; 16384       ; 0            ; 0       ; 0         ; 0         ; 40   ; 0            ; 659 (179)    ; 161 (0)           ; 206 (0)          ; |Cpu8Bit                                                                                ;
+;    |cpu:inst|                                  ; 501 (0)     ; 182       ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 319 (0)      ; 60 (0)            ; 122 (0)          ; |Cpu8Bit|cpu:inst                                                                       ;
+;       |cpu_cu:I2|                              ; 63 (61)     ; 23        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 40 (40)      ; 13 (13)           ; 10 (8)           ; |Cpu8Bit|cpu:inst|cpu_cu:I2                                                             ;
+;          |lpm_counter:nreset_v_rtl_4|          ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |Cpu8Bit|cpu:inst|cpu_cu:I2|lpm_counter:nreset_v_rtl_4                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |Cpu8Bit|cpu:inst|cpu_cu:I2|lpm_counter:nreset_v_rtl_4|alt_counter_stratix:wysi_counter ;
+;       |cpu_du:I3|                              ; 139 (137)   ; 21        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 118 (118)    ; 19 (19)           ; 2 (0)            ; |Cpu8Bit|cpu:inst|cpu_du:I3                                                             ;
+;          |lpm_counter:nreset_v_rtl_3|          ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |Cpu8Bit|cpu:inst|cpu_du:I3|lpm_counter:nreset_v_rtl_3                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |Cpu8Bit|cpu:inst|cpu_du:I3|lpm_counter:nreset_v_rtl_3|alt_counter_stratix:wysi_counter ;
+;       |cpu_iu:I1|                              ; 176 (174)   ; 92        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 84 (84)      ; 10 (10)           ; 82 (80)          ; |Cpu8Bit|cpu:inst|cpu_iu:I1                                                             ;
+;          |lpm_counter:nreset_v_rtl_9|          ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |Cpu8Bit|cpu:inst|cpu_iu:I1|lpm_counter:nreset_v_rtl_9                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |Cpu8Bit|cpu:inst|cpu_iu:I1|lpm_counter:nreset_v_rtl_9|alt_counter_stratix:wysi_counter ;
+;       |cpu_oa:I4|                              ; 104 (102)   ; 36        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 68 (68)      ; 16 (16)           ; 20 (18)          ; |Cpu8Bit|cpu:inst|cpu_oa:I4                                                             ;
+;          |lpm_counter:nreset_v_rtl_6|          ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |Cpu8Bit|cpu:inst|cpu_oa:I4|lpm_counter:nreset_v_rtl_6                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |Cpu8Bit|cpu:inst|cpu_oa:I4|lpm_counter:nreset_v_rtl_6|alt_counter_stratix:wysi_counter ;
+;       |cpu_wd:I5|                              ; 19 (19)     ; 10        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (9)        ; 2 (2)             ; 8 (8)            ; |Cpu8Bit|cpu:inst|cpu_wd:I5                                                             ;
+;    |ctrl8cpu:inst5|                            ; 22 (22)     ; 3         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 19 (19)      ; 1 (1)             ; 2 (2)            ; |Cpu8Bit|ctrl8cpu:inst5                                                                 ;
+;    |inout4reg:inst10|                          ; 53 (53)     ; 24        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 29 (29)      ; 24 (24)           ; 0 (0)            ; |Cpu8Bit|inout4reg:inst10                                                               ;
+;    |interrupt:inst3|                           ; 44 (44)     ; 40        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 24 (24)           ; 16 (16)          ; |Cpu8Bit|interrupt:inst3                                                                ;
+;    |lpm_ram_dq0:inst7|                         ; 0 (0)       ; 0         ; 2048        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Cpu8Bit|lpm_ram_dq0:inst7                                                              ;
+;       |altsyncram:altsyncram_component|        ; 0 (0)       ; 0         ; 2048        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Cpu8Bit|lpm_ram_dq0:inst7|altsyncram:altsyncram_component                              ;
+;    |lpm_rom0:inst6|                            ; 0 (0)       ; 0         ; 14336       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Cpu8Bit|lpm_rom0:inst6                                                                 ;
+;       |altsyncram:altsyncram_component|        ; 0 (0)       ; 0         ; 14336       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Cpu8Bit|lpm_rom0:inst6|altsyncram:altsyncram_component                                 ;
+;    |rx_uart:inst8|                             ; 82 (74)     ; 47        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 35 (35)      ; 17 (17)           ; 30 (22)          ; |Cpu8Bit|rx_uart:inst8                                                                  ;
+;       |lpm_counter:rx_clk_count_rtl_11|        ; 8 (0)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |Cpu8Bit|rx_uart:inst8|lpm_counter:rx_clk_count_rtl_11                                  ;
+;          |alt_counter_stratix:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |Cpu8Bit|rx_uart:inst8|lpm_counter:rx_clk_count_rtl_11|alt_counter_stratix:wysi_counter ;
+;    |timer:inst2|                               ; 77 (69)     ; 27        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 50 (50)      ; 10 (10)           ; 17 (9)           ; |Cpu8Bit|timer:inst2                                                                    ;
+;       |lpm_counter:tmr_low_rtl_10|             ; 8 (0)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |Cpu8Bit|timer:inst2|lpm_counter:tmr_low_rtl_10                                         ;
+;          |alt_counter_stratix:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |Cpu8Bit|timer:inst2|lpm_counter:tmr_low_rtl_10|alt_counter_stratix:wysi_counter        ;
+;    |tx_uart:inst1|                             ; 68 (52)     ; 44        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 24 (24)      ; 25 (25)           ; 19 (3)           ; |Cpu8Bit|tx_uart:inst1                                                                  ;
+;       |lpm_counter:tx_16_count_rtl_8|          ; 4 (0)       ; 4         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_16_count_rtl_8                                    ;
+;          |alt_counter_stratix:wysi_counter|    ; 4 (4)       ; 4         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_16_count_rtl_8|alt_counter_stratix:wysi_counter   ;
+;       |lpm_counter:tx_bit_count_rtl_7|         ; 4 (0)       ; 4         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_bit_count_rtl_7                                   ;
+;          |alt_counter_stratix:wysi_counter|    ; 4 (4)       ; 4         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_bit_count_rtl_7|alt_counter_stratix:wysi_counter  ;
+;       |lpm_counter:tx_clk_count_rtl_5|         ; 8 (0)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (0)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_clk_count_rtl_5                                   ;
+;          |alt_counter_stratix:wysi_counter|    ; 8 (8)       ; 8         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |Cpu8Bit|tx_uart:inst1|lpm_counter:tx_clk_count_rtl_5|alt_counter_stratix:wysi_counter  ;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------
+; Analysis & Synthesis Equations  ;
+-----------------------------------
+The equations can be found in C:\CpuGen1\Applications\Cpu8Bit\Altera\Cpu8Bit.map.eqn.
+
+
+----------------------------------
+; Analysis & Synthesis Messages  ;
+----------------------------------
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+  Info: Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+  Info: Processing started: Wed Feb 25 23:00:57 2004
+Info: Command: quartus_map --import_settings_files=on --export_settings_files=off cpu8bit -c Cpu8Bit
+Info: Found 1 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\Altera\Cpu8Bit.bdf
+  Info: Found entity 1: Cpu8Bit
+Info: Found 2 design units and 0 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_utils.vhd
+  Info: Found design unit 1: cpu_utils
+  Info: Found design unit 2: cpu_utils-body
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_wd.vhd
+  Info: Found design unit 1: cpu_wd-wd_struct
+  Info: Found entity 1: cpu_wd
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_cu.vhd
+  Info: Found design unit 1: cpu_cu-cu_struct
+  Info: Found entity 1: cpu_cu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_du.vhd
+  Info: Found design unit 1: cpu_du-du_struct
+  Info: Found entity 1: cpu_du
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_iu.vhd
+  Info: Found design unit 1: cpu_iu-iu_struct
+  Info: Found entity 1: cpu_iu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu_oa.vhd
+  Info: Found design unit 1: cpu_oa-oa_struct
+  Info: Found entity 1: cpu_oa
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\cpu.vhd
+  Info: Found design unit 1: cpu-cpu_arch
+  Info: Found entity 1: cpu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\ctrl8cpu.vhd
+  Info: Found design unit 1: ctrl8cpu-ctrl8cpu_struct
+  Info: Found entity 1: ctrl8cpu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\inout4reg.vhd
+  Info: Found design unit 1: inout4reg-inout4reg_struct
+  Info: Found entity 1: inout4reg
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\interrupt.vhd
+  Info: Found design unit 1: interrupt-interrupt_struct
+  Info: Found entity 1: interrupt
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\timer.vhd
+  Info: Found design unit 1: timer-tmr_struct
+  Info: Found entity 1: timer
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\tx_uart.vhd
+  Info: Found design unit 1: tx_uart-tx_uart_struct
+  Info: Found entity 1: tx_uart
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\rx_uart.vhd
+  Info: Found design unit 1: rx_uart-rx_uart_struct
+  Info: Found entity 1: rx_uart
+Warning: Feature SignalTap II is not available with your current license
+Info: VHDL Case Statement information at tx_uart.vhd(100): OTHERS choice is never selected
+Info: VHDL Case Statement information at cpu_iu.vhd(96): OTHERS choice is never selected
+Info: VHDL Case Statement information at cpu_du.vhd(231): OTHERS choice is never selected
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\Altera\lpm_ram_dq0.vhd
+  Info: Found design unit 1: lpm_ram_dq0-syn
+  Info: Found entity 1: lpm_ram_dq0
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altsyncram.tdf
+  Info: Found entity 1: altsyncram
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu8Bit\Altera\lpm_rom0.vhd
+  Info: Found design unit 1: lpm_rom0-syn
+  Info: Found entity 1: lpm_rom0
+Info: Power-up level of register tx_uart:inst1|tx_uart_shift[10] is not specified -- using unspecified power-up level
+Warning: Reduced register tx_uart:inst1|tx_uart_shift[10] with stuck data_in port to stuck value VCC
+Info: Power-up level of register tx_uart:inst1|tx_uart_shift[9] is not specified -- using unspecified power-up level
+Warning: Reduced register tx_uart:inst1|tx_uart_shift[9] with stuck data_in port to stuck value VCC
+Info: Inferred 9 megafunctions from design logic
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_du:I3|nreset_v_rtl_3
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_cu:I2|nreset_v_rtl_4
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: tx_uart:inst1|tx_clk_count_rtl_5
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_oa:I4|nreset_v_rtl_6
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: tx_uart:inst1|tx_bit_count_rtl_7
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: tx_uart:inst1|tx_16_count_rtl_8
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpu:inst|cpu_iu:I1|nreset_v_rtl_9
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: timer:inst2|tmr_low_rtl_10
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=8) from the following logic: rx_uart:inst8|rx_clk_count_rtl_11
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_counter.tdf
+  Info: Found entity 1: lpm_counter
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\alt_counter_stratix.tdf
+  Info: Found entity 1: alt_counter_stratix
+Info: State machine |Cpu8Bit|cpu:inst|cpu_du:I3|code_c contains 28 states and 0 state bits
+Info: State machine |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c contains 3 states and 0 state bits
+Info: State machine |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c contains 4 states and 0 state bits
+Info: Selected Auto state machine encoding method for state machine |Cpu8Bit|cpu:inst|cpu_du:I3|code_c
+Info: Encoding result for state machine |Cpu8Bit|cpu:inst|cpu_du:I3|code_c
+  Info: Completed encoding using 28 state bits
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~35
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~34
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~33
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~32
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~31
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~30
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~29
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~28
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~27
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~26
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~25
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~24
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~23
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~22
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~21
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~20
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~19
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~18
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~17
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~16
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~15
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~14
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~13
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~12
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~11
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~10
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~9
+    Info: Encoded state bit cpu:inst|cpu_du:I3|code_c~8
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.nop_i uses code string 0000000000000000000000000000
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.rol_i uses code string 0000000000000000000000000011
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.ror_i uses code string 0000000000000000000000000101
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.shl_i uses code string 0000000000000000000000001001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.shr_i uses code string 0000000000000000000000010001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.not_i uses code string 0000000000000000000000100001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.cla_i uses code string 0000000000000000000001000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.skz_i uses code string 0000000000000000000010000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.skc_i uses code string 0000000000000000000100000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.sknz_i uses code string 0000000000000000001000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.sknc_i uses code string 0000000000000000010000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.rts_i uses code string 0000000000000000100000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.rti_i uses code string 0000000000000001000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.jmp_i uses code string 0000000000000010000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.jms_i uses code string 0000000000000100000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.sta_i uses code string 0000000000001000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.lda_i uses code string 0000000000010000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.xor_i uses code string 0000000000100000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.add_i uses code string 0000000001000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.and_i uses code string 0000000010000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.sub_i uses code string 0000000100000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.or_i uses code string 0000001000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.ldai_i uses code string 0000010000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.xori_i uses code string 0000100000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.addi_i uses code string 0001000000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.andi_i uses code string 0010000000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.subi_i uses code string 0100000000000000000000000001
+  Info: State |Cpu8Bit|cpu:inst|cpu_du:I3|code_c.ori_i uses code string 1000000000000000000000000001
+Info: Selected Auto state machine encoding method for state machine |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c
+Info: Encoding result for state machine |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c
+  Info: Completed encoding using 3 state bits
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~10
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~9
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|S_c~8
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c.reset uses code string 000
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c.normal uses code string 011
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|S_c.interrupt uses code string 101
+Info: Selected Auto state machine encoding method for state machine |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c
+Info: Encoding result for state machine |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c
+  Info: Completed encoding using 4 state bits
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~11
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~10
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~9
+    Info: Encoded state bit cpu:inst|cpu_cu:I2|E_c~8
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c.none_e uses code string 0000
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c.dwait_e uses code string 0011
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c.iwait_e uses code string 0101
+  Info: State |Cpu8Bit|cpu:inst|cpu_cu:I2|E_c.int_e uses code string 1001
+Info: Ignored 6 buffer(s)
+  Info: Ignored 6 SOFT buffer(s)
+Info: Duplicate registers merged to single register
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[7] merged to single register tx_uart:inst1|tx_clk_div[7]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[6] merged to single register tx_uart:inst1|tx_clk_div[6]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[5] merged to single register tx_uart:inst1|tx_clk_div[5]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[4] merged to single register tx_uart:inst1|tx_clk_div[4]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[3] merged to single register tx_uart:inst1|tx_clk_div[3]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[2] merged to single register tx_uart:inst1|tx_clk_div[2]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[1] merged to single register tx_uart:inst1|tx_clk_div[1]
+  Info: Duplicate register rx_uart:inst8|rx_clk_div[0] merged to single register tx_uart:inst1|tx_clk_div[0]
+Warning: Reduced register rx_uart:inst8|rx_8_count[3] with stuck data_in port to stuck value GND
+Info: Registers with preset signals will power-up high
+Info: Implemented 1088 device resources after synthesis - the final resource count might be different
+  Info: Implemented 23 input pins
+  Info: Implemented 17 output pins
+  Info: Implemented 1026 logic cells
+  Info: Implemented 22 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
+  Info: Processing ended: Wed Feb 25 23:01:19 2004
+  Info: Elapsed time: 00:00:21
+Info: Writing report file Cpu8Bit.map.rpt
+
+

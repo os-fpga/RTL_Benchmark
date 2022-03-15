@@ -1,0 +1,149 @@
+Release 6.1.03i Par G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+AMD64::  Sun Feb 08 20:40:17 2004
+
+
+C:/Xilinx/bin/nt/par.exe -w -intstyle ise -ol std -t 1 cpu4bit_map.ncd
+cpu4bit.ncd cpu4bit.pcf 
+
+
+Constraints file: cpu4bit.pcf
+
+Loading device database for application Par from file "cpu4bit_map.ncd".
+   "cpu4bit" is an NCD, version 2.38, device xc2s30, package cs144, speed -5
+Loading device for application Par from file '2s30.nph' in environment
+C:/Xilinx.
+Device speed data version:  PRODUCTION 1.27 2003-11-04.
+
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         1 out of 4      25%
+   Number of External IOBs            30 out of 92     32%
+      Number of LOCed External IOBs    0 out of 30      0%
+
+   Number of BLOCKRAMs                 2 out of 6      33%
+   Number of SLICEs                  224 out of 432    51%
+
+   Number of GCLKs                     1 out of 4      25%
+
+
+
+Overall effort level (-ol):   Standard (set by user)
+Placer effort level (-pl):    Standard (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard (set by user)
+
+Starting initial Timing Analysis.  REAL time: 0 secs 
+Finished initial Timing Analysis.  REAL time: 0 secs 
+
+
+Phase 1.1
+Phase 1.1 (Checksum:989dff) REAL time: 8 secs 
+
+Phase 2.23
+Phase 2.23 (Checksum:1312cfe) REAL time: 8 secs 
+
+Phase 3.3
+Phase 3.3 (Checksum:1c9c37d) REAL time: 8 secs 
+
+Phase 4.5
+Phase 4.5 (Checksum:26259fc) REAL time: 8 secs 
+
+Phase 5.8
+..................................................
+...........
+Phase 5.8 (Checksum:9e745a) REAL time: 9 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 9 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 10 secs 
+
+Writing design to file cpu4bit.ncd.
+
+Total REAL time to Placer completion: 10 secs 
+Total CPU time to Placer completion: 2 secs 
+
+
+Phase 1: 1708 unrouted;       REAL time: 10 secs 
+
+Phase 2: 1592 unrouted;       REAL time: 10 secs 
+
+Phase 3: 474 unrouted;       REAL time: 10 secs 
+
+Phase 4: 474 unrouted; (0)      REAL time: 10 secs 
+
+Phase 5: 474 unrouted; (0)      REAL time: 10 secs 
+
+Phase 6: 474 unrouted; (0)      REAL time: 10 secs 
+
+Phase 7: 0 unrouted; (0)      REAL time: 11 secs 
+
+Total REAL time to Router completion: 11 secs 
+Total CPU time to Router completion: 3 secs 
+
+Generating "par" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++----------------------------+----------+--------+------------+-------------+
+|         Clock Net          | Resource | Fanout |Net Skew(ns)|Max Delay(ns)|
++----------------------------+----------+--------+------------+-------------+
+|         CLK_BUFGP          |  Global  |   92   |  0.473     |  0.601      |
++----------------------------+----------+--------+------------+-------------+
+
+
+   The Delay Summary Report
+
+   The SCORE FOR THIS DESIGN is: 237
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        1.642
+   The MAXIMUM PIN DELAY IS:                               5.140
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   3.654
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 1.00   < d < 2.00  < d < 3.00  < d < 4.00  < d < 6.00  d >= 6.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+         438         726         407         102          35           0
+
+Timing Score: 0
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+--------------------------------------------------------------------------------
+  Constraint                                | Requested  | Actual     | Logic 
+                                            |            |            | Levels
+--------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk"  50 nS   HI | 50.000ns   | 24.179ns   | 8    
+  GH 50.000000 %                            |            |            |      
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 12 secs 
+Total CPU time to PAR completion: 3 secs 
+
+Peak Memory Usage:  54 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Writing design to file cpu4bit.ncd.
+
+
+PAR done.

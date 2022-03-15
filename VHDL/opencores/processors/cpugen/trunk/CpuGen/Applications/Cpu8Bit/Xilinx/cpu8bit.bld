@@ -1,0 +1,50 @@
+Release 6.1.03i - ngdbuild G.26
+Copyright (c) 1995-2003 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd
+c:\cpugen\applications\cpu8bit\xilinx/_ngo -i -p xc2s50e-tq144-7 cpu8bit.ngc
+cpu8bit.ngd 
+
+Reading NGO file "C:/CpuGen/Applications/Cpu8Bit/Xilinx/cpu8bit.ngc" ...
+Reading component libraries for design expansion...
+Launcher: "ram.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu8bit\xilinx\_ngo\ram.ngo"...
+blkmemsp_v5_0, Coregen 6.1.02i
+Launcher: "rom.ngo" is up to date.
+Loading design module "c:\cpugen\applications\cpu8bit\xilinx\_ngo\rom.ngo"...
+blkmemsp_v5_0, Coregen 6.1.02i
+
+Checking timing specifications ...
+Checking expanded design ...
+WARNING:NgdBuild:477 - clock net 'NRESET_BUFGP' has non-clock connections. These
+   problematic connections include:
+     pin I0 on block XLXI_1_I5_ndwe_c_N13741 with type LUT1,
+     pin I1 on block XLXI_55_nCS_INT_SW0 with type LUT2,
+     pin I1 on block XLXI_55_mux_x<4>_SW0 with type LUT2,
+     pin I2 on block XLXI_1_I4_ireg_x<6>11 with type LUT3,
+     pin I2 on block XLXI_1_I3_Mmux_data_x_Result<5>123 with type LUT3,
+     pin I1 on block XLXI_6__n00071 with type LUT4,
+     pin I1 on block XLXI_1_I2__n01001 with type LUT3,
+     pin I2 on block XLXI_55_nWE_RAM1 with type LUT3,
+     pin I0 on block XLXI_1_I3__n0115<8>31_SW11_G with type LUT4,
+     pin I0 on block XLXI_1_I1__n00251 with type LUT2,
+     pin I2 on block XLXI_1_I3_Mmux_data_x_Result<6>123 with type LUT3,
+     pin I1 on block XLXI_1_I2__n01051 with type LUT4,
+     pin I3 on block XLXI_1_I4_Ker216591_SW0_SW1 with type LUT4,
+     pin I0 on block XLXI_1_I2_TC_x<1>1 with type LUT4,
+     pin I3 on block XLXI_1_I2_TD_x<0>76 with type LUT4,
+     pin I1 on block XLXI_1_I2_int_stop_x1 with type LUT4,
+     pin I3 on block XLXI_1_I2_TD_x<1>97 with type LUT4,
+     pin I3 on block XLXI_1_I2_TD_x<2>72 with type LUT4,
+     pin I0 on block XLXI_1_I4__n00371 with type LUT2,
+     pin I0 on block XLXI_1_I4_data_ox<7>1 with type LUT3
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 38968 kilobytes
+
+Writing NGD file "cpu8bit.ngd" ...
+
+Writing NGDBUILD log file "cpu8bit.bld"...

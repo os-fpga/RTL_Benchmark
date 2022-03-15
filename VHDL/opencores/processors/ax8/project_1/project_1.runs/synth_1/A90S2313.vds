@@ -1,0 +1,713 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar  8 14:37:43 2022
+# Process ID: 66748
+# Current directory: /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.runs/synth_1
+# Command line: vivado -log A90S2313.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source A90S2313.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.runs/synth_1/A90S2313.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source A90S2313.tcl -notrace
+Command: synth_design -top A90S2313 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 68174 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1452.539 ; gain = 91.000 ; free physical = 2408 ; free virtual = 273589
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'A90S2313' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:112]
+	Parameter SyncReset bound to: 1 - type: bool 
+	Parameter TriState bound to: 0 - type: bool 
+INFO: [Synth 8-637] synthesizing blackbox instance 'rom' of component 'ROM2313' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:316]
+	Parameter ROMAddressWidth bound to: 10 - type: integer 
+	Parameter RAMAddressWidth bound to: 7 - type: integer 
+	Parameter BigISet bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'AX8' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:59' bound to instance 'ax' of component 'AX8' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:321]
+INFO: [Synth 8-638] synthesizing module 'AX8' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:85]
+	Parameter ROMAddressWidth bound to: 10 - type: integer 
+	Parameter RAMAddressWidth bound to: 7 - type: integer 
+	Parameter BigISet bound to: 1 - type: bool 
+	Parameter TriState bound to: 0 - type: bool 
+	Parameter BigISet bound to: 1 - type: bool 
+INFO: [Synth 8-3491] module 'AX_Reg' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg2.vhd:53' bound to instance 'pr' of component 'AX_Reg' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:557]
+INFO: [Synth 8-638] synthesizing module 'AX_Reg' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg2.vhd:83]
+	Parameter BigISet bound to: 1 - type: bool 
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'g1.Status_D_reg' in module 'AX_Reg' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg2.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'AX_Reg' (1#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg2.vhd:83]
+	Parameter RAMAddressWidth bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'AX_RAM' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_RAM.vhd:54' bound to instance 'dr' of component 'AX_RAM' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:586]
+INFO: [Synth 8-638] synthesizing module 'AX_RAM' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_RAM.vhd:68]
+	Parameter RAMAddressWidth bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'AX_RAM' (2#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_RAM.vhd:68]
+	Parameter HW_Stack bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'AX_PCS' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_PCS.vhd:53' bound to instance 'pcnt' of component 'AX_PCS' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:630]
+INFO: [Synth 8-638] synthesizing module 'AX_PCS' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_PCS.vhd:78]
+	Parameter HW_Stack bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'AX_PCS' (3#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_PCS.vhd:78]
+INFO: [Synth 8-3491] module 'AX_ALU' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:53' bound to instance 'alu' of component 'AX_ALU' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:712]
+INFO: [Synth 8-638] synthesizing module 'AX_ALU' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:73]
+	Parameter TriState bound to: 0 - type: bool 
+WARNING: [Synth 8-6014] Unused sequential element Do_BLD_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:156]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Status_D_reg' in module 'AX_ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:289]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Status_D_reg' in module 'AX_ALU' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:309]
+INFO: [Synth 8-256] done synthesizing module 'AX_ALU' (4#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_ALU.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'AX8' (5#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX8.vhd:85]
+INFO: [Synth 8-3491] module 'AX_TC8' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC8.vhd:54' bound to instance 'tc0' of component 'AX_TC8' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'AX_TC8' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC8.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'AX_TC8' (6#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC8.vhd:69]
+INFO: [Synth 8-3491] module 'AX_TC16' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:55' bound to instance 'tc1' of component 'AX_TC16' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:360]
+INFO: [Synth 8-638] synthesizing module 'AX_TC16' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:84]
+WARNING: [Synth 8-6014] Unused sequential element PWM_T_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:160]
+WARNING: [Synth 8-6014] Unused sequential element PWM_B_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:161]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'OCR_reg' in module 'AX_TC16' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:109]
+INFO: [Synth 8-256] done synthesizing module 'AX_TC16' (7#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_TC16.vhd:84]
+INFO: [Synth 8-3491] module 'AX_UART' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:54' bound to instance 'uart' of component 'AX_UART' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:390]
+INFO: [Synth 8-638] synthesizing module 'AX_UART' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:78]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'UCR_i_reg' in module 'AX_UART' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:103]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'USR_i_reg' in module 'AX_UART' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:102]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'UCR_i_reg' in module 'AX_UART' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:162]
+INFO: [Synth 8-256] done synthesizing module 'AX_UART' (8#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_UART.vhd:78]
+INFO: [Synth 8-3491] module 'AX_Port' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Port.vhd:54' bound to instance 'portb' of component 'AX_Port' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:417]
+INFO: [Synth 8-638] synthesizing module 'AX_Port' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Port.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'AX_Port' (9#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Port.vhd:70]
+INFO: [Synth 8-3491] module 'AX_Port' declared at '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Port.vhd:54' bound to instance 'portd' of component 'AX_Port' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:429]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:308]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:309]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:310]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:311]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:312]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'Int_Trig_reg' in module 'A90S2313' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:313]
+INFO: [Synth 8-256] done synthesizing module 'A90S2313' (10#1) [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:112]
+WARNING: [Synth 8-3331] design AX_Port has unconnected port PIN_Sel
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[8]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[7]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[6]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[5]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[4]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[7]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[5]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[4]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[3]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[2]
+WARNING: [Synth 8-3331] design AX_PCS has unconnected port Push
+WARNING: [Synth 8-3331] design AX_PCS has unconnected port Pop
+WARNING: [Synth 8-3331] design AX_Reg has unconnected port Reset_n
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1505.172 ; gain = 143.633 ; free physical = 2278 ; free virtual = 273543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1505.172 ; gain = 143.633 ; free physical = 2260 ; free virtual = 273539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1513.172 ; gain = 151.633 ; free physical = 2252 ; free virtual = 273535
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "W_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "W_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "X_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "X_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Y_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Y_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Z_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Z_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Status_D" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_XOR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_BST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_SBRC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_SBRS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CBranch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Dec_X" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dec_Y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dec_Z" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_X" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_Y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_Z" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Reg_IW" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Inc_SP" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "WDR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CBranch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Dec_X" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dec_Y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dec_Z" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_X" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_Y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_Z" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Reg_IW" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Inc_SP" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "WDR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Bit_Pattern" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Int" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Int_TO" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Int_OC" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "PWM_Load" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Int_TO" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Int_OC" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "PWM_Load" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "T_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Baud16" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "RX_Filtered" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RX_Bit_Cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RX_Bit_Cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TX_Tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "USR_i" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "USR_i" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TX_ShiftReg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "UDR_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TCCR0_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TCNT0_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TCCR1_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TCNT1_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "OCR1_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ICR1_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PORTB_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DDRB_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PINB_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PORTD_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DDRD_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PIND_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "USR_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "UCR_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "UBRR_Sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-6430] The Block RAM DRAM_reg may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1529.188 ; gain = 167.648 ; free physical = 2146 ; free virtual = 273500
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 17    
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   3 Input      2 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 10    
++---Registers : 
+	               16 Bit    Registers := 13    
+	               15 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 19    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 13    
+	                1 Bit    Registers := 66    
++---RAMs : 
+	               1K Bit         RAMs := 1     
+	              256 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 55    
+	   4 Input     16 Bit        Muxes := 9     
+	   2 Input     15 Bit        Muxes := 1     
+	  17 Input     15 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   6 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 3     
+	   4 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 47    
+	   8 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 26    
+	   2 Input      4 Bit        Muxes := 24    
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 143   
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 2     
+	  15 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module A90S2313 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 28    
+Module AX_Reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 6     
+	   3 Input     16 Bit       Adders := 1     
+	   3 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               16 Bit    Registers := 6     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---RAMs : 
+	              256 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 20    
+	   4 Input     16 Bit        Muxes := 9     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 1     
+Module AX_PCS 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 2     
+Module AX_ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
+	   3 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 6     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 10    
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+Module AX_RAM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	               1K Bit         RAMs := 1     
+Module AX8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	               15 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 16    
+	  17 Input     15 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 7     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 7     
+	   2 Input      4 Bit        Muxes := 15    
+	   2 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 61    
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
+Module AX_TC8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module AX_TC16 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	               10 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 15    
+	   2 Input      8 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 25    
+	   8 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 1     
+Module AX_UART 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
++---Registers : 
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   6 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 3     
+	   4 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 19    
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module AX_Port 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "W_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "W_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Z_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Z_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Y_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Y_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "X_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "X_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Status_D" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_SBRC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_SBRS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Do_BST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SP_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "WDR" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Reg_IW" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tc0/Int" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tc1/Int_TO" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "uart/Baud16" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[8]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[7]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[6]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[5]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port ROM_Data[4]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[7]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[5]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[4]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[3]
+WARNING: [Synth 8-3331] design AX_ALU has unconnected port SREG[2]
+WARNING: [Synth 8-3331] design AX_PCS has unconnected port Push
+WARNING: [Synth 8-3331] design AX_PCS has unconnected port Pop
+WARNING: [Synth 8-3331] design AX_Reg has unconnected port Reset_n
+INFO: [Synth 8-6430] The Block RAM g1.dr/DRAM_reg may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM g1.dr/DRAM_reg to conserve power
+RAM Pipeline Warning: Read Address Register Found For RAM g1.dr/DRAM_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3886] merging instance 'ax/g1.dr/Wr_Addr_r_reg[0]' (FD) to 'ax/pr/Rd_Addr_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ax/g1.dr/Wr_Addr_r_reg[1]' (FD) to 'ax/pr/Rd_Addr_r_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ax/g1.dr/Wr_Addr_r_reg[2]' (FD) to 'ax/pr/Rd_Addr_r_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ax/g1.dr/Wr_Addr_r_reg[3]' (FD) to 'ax/pr/Rd_Addr_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ax/g1.dr/Wr_Addr_r_reg[4]' (FD) to 'ax/pr/Rd_Addr_r_reg[4]'
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[15]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[14]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[13]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[12]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[11]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[10]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[8]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (Int_Acc_reg[7]) is unused and will be removed from module AX8.
+WARNING: [Synth 8-3332] Sequential element (WDR_reg) is unused and will be removed from module AX8.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:03:50 . Memory (MB): peak = 1887.559 ; gain = 526.020 ; free physical = 2811 ; free virtual = 276489
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|AX_RAM:     | DRAM_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-------------+-----------+----------------------+--------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------+-----------+----------------------+--------------+
+|ax          | pr/RegD_reg | Implied   | 32 x 8               | RAM32M x 2   | 
+|ax          | pr/RegR_reg | Implied   | 32 x 8               | RAM32M x 2   | 
++------------+-------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance ax/g1.dri_33/g1.dr/DRAM_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:03:50 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2836 ; free virtual = 276556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|AX_RAM:     | DRAM_reg   | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+-------------+-----------+----------------------+--------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------+-----------+----------------------+--------------+
+|ax          | pr/RegD_reg | Implied   | 32 x 8               | RAM32M x 2   | 
+|ax          | pr/RegR_reg | Implied   | 32 x 8               | RAM32M x 2   | 
++------------+-------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance ax/g1.dr/DRAM_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:03 ; elapsed = 00:03:51 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2595 ; free virtual = 276348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2561 ; free virtual = 276351
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2559 ; free virtual = 276349
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2546 ; free virtual = 276340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2541 ; free virtual = 276336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2535 ; free virtual = 276332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2529 ; free virtual = 276327
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |ROM2313       |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------------+------+
+|      |Cell           |Count |
++------+---------------+------+
+|1     |ROM2313_bbox_0 |     1|
+|2     |BUFG           |     1|
+|3     |CARRY4         |    76|
+|4     |LUT1           |   150|
+|5     |LUT2           |   118|
+|6     |LUT3           |   170|
+|7     |LUT4           |   131|
+|8     |LUT5           |   328|
+|9     |LUT6           |   624|
+|10    |MUXF7          |     6|
+|11    |RAM32M         |     4|
+|12    |RAMB18E1       |     1|
+|13    |FDCE           |   319|
+|14    |FDPE           |    27|
+|15    |FDRE           |   180|
+|16    |IBUF           |     8|
+|17    |IOBUF          |    16|
+|18    |OBUF           |     2|
++------+---------------+------+
+
+Report Instance Areas: 
++------+------------+----------+------+
+|      |Instance    |Module    |Cells |
++------+------------+----------+------+
+|1     |top         |          |  2177|
+|2     |  ax        |AX8       |  1590|
+|3     |    alu     |AX_ALU    |   217|
+|4     |    \g1.dr  |AX_RAM    |    22|
+|5     |    pcnt    |AX_PCS    |   154|
+|6     |    pr      |AX_Reg    |   951|
+|7     |  portb     |AX_Port   |    44|
+|8     |  portd     |AX_Port_0 |    39|
+|9     |  tc0       |AX_TC8    |    55|
+|10    |  tc1       |AX_TC16   |   219|
+|11    |  uart      |AX_UART   |   163|
++------+------------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2526 ; free virtual = 276324
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 52 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.562 ; gain = 526.023 ; free physical = 2521 ; free virtual = 276320
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:03:52 . Memory (MB): peak = 1887.566 ; gain = 526.023 ; free physical = 2521 ; free virtual = 276319
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 111 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+139 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:03:59 . Memory (MB): peak = 1943.590 ; gain = 623.465 ; free physical = 1731 ; free virtual = 275808
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.runs/synth_1/A90S2313.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file A90S2313_utilization_synth.rpt -pb A90S2313_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.65 . Memory (MB): peak = 1967.605 ; gain = 0.000 ; free physical = 1990 ; free virtual = 276148
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  8 14:41:56 2022...

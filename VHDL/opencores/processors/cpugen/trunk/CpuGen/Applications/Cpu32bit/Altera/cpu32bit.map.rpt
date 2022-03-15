@@ -1,0 +1,448 @@
+Analysis & Synthesis report for cpu32bit compilation.
+Wed Feb 25 23:27:25 2004
+Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+
+Command: quartus_map --import_settings_files=on --export_settings_files=off cpu32bit -c cpu32bit
+
+
+
+---------------------
+; Table of Contents ;
+---------------------
+   1. Legal Notice
+   2. Flow Summary
+   3. Flow Settings
+   4. Flow Elapsed Time
+   5. Analysis & Synthesis Summary
+   6. Analysis & Synthesis Settings
+   7. Hierarchy
+   8. State Machine - cpuc:inst|cpuc_du:I3|code_c
+   9. State Machine - cpuc:inst|cpuc_cu:I2|S_c
+  10. State Machine - cpuc:inst|cpuc_cu:I2|E_c
+  11. Analysis & Synthesis Resource Utilization by Entity
+  12. Analysis & Synthesis Equations
+  13. Analysis & Synthesis Messages
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+
+
+
+--------------------------------------------------------------------
+; Flow Summary                                                     ;
+--------------------------------------------------------------------
+; Flow Status              ; Successful - Wed Feb 25 23:27:25 2004 ;
+; Compiler Setting Name    ; cpu32bit                              ;
+; Top-level Entity Name    ; cpu32bit                              ;
+; Family                   ; Stratix                               ;
+; Device                   ; EP1S10F780C6                          ;
+; Total logic elements     ; 2,281                                 ;
+; Total pins               ; 63                                    ;
+; Total memory bits        ; 65,536                                ;
+; DSP block 9-bit elements ; 16                                    ;
+; Total PLLs               ; 0                                     ;
+; Total DLLs               ; 0                                     ;
+--------------------------------------------------------------------
+
+
+-----------------------------------------------
+; Flow Settings                               ;
+-----------------------------------------------
+; Option                ; Setting             ;
+-----------------------------------------------
+; Start date & time     ; 02/25/2004 23:26:50 ;
+; Main task             ; Compilation         ;
+; Compiler Setting Name ; cpu32bit            ;
+-----------------------------------------------
+
+
+---------------------------------------
+; Flow Elapsed Time                   ;
+---------------------------------------
+; Module Name          ; Elapsed Time ;
+---------------------------------------
+; Analysis & Synthesis ; 00:00:36     ;
+; Total                ; 00:00:36     ;
+---------------------------------------
+
+
+-----------------------------------------------------------------------
+; Analysis & Synthesis Summary                                        ;
+-----------------------------------------------------------------------
+; Analysis & Synthesis Status ; Successful - Wed Feb 25 23:27:25 2004 ;
+; Compiler Setting Name       ; cpu32bit                              ;
+; Top-level Entity Name       ; cpu32bit                              ;
+; Family                      ; Stratix                               ;
+; Total logic elements        ; 2,281                                 ;
+; Total pins                  ; 63                                    ;
+; Total memory bits           ; 65,536                                ;
+; DSP block 9-bit elements    ; 16                                    ;
+; Total PLLs                  ; 0                                     ;
+; Total DLLs                  ; 0                                     ;
+-----------------------------------------------------------------------
+
+
+-------------------------------------------------------------
+; Analysis & Synthesis Settings                             ;
+-------------------------------------------------------------
+; Option                                        ; Setting   ;
+-------------------------------------------------------------
+; Use Generated Physical Constraints File       ; On        ;
+; Physical Synthesis Level for Resynthesis      ; Normal    ;
+; Resynthesis Optimization Effort               ; Normal    ;
+; Type of Retiming Performed During Resynthesis ; Full      ;
+; Perform gate-level register retiming          ; Off       ;
+; Perform WYSIWYG primitive resynthesis         ; Off       ;
+; Focus entity name                             ; |cpu32bit ;
+; Family name                                   ; Stratix   ;
+; Preserve fewer node names                     ; On        ;
+; Disk space/compilation speed tradeoff         ; Normal    ;
+-------------------------------------------------------------
+
+
+--------------
+; Hierarchy  ;
+--------------
+Hierarchy
+  cpu32bit
+    cpuc:inst
+      cpuc_iu:I1
+        lpm_counter:nreset_v_rtl_723
+          alt_counter_stratix:wysi_counter
+      cpuc_cu:I2
+        lpm_counter:nreset_v_rtl_721
+          alt_counter_stratix:wysi_counter
+      cpuc_du:I3
+        lpm_mult:mult_677
+          mult_m6n:auto_generated
+        lpm_mult:mult_681
+          mult_pdn:auto_generated
+        lpm_counter:nreset_v_rtl_720
+          alt_counter_stratix:wysi_counter
+      cpuc_oa:I4
+        lpm_counter:nreset_v_rtl_722
+          alt_counter_stratix:wysi_counter
+      cpuc_wd:I5
+    lpm_code:inst3
+      altsyncram:altsyncram_component
+    lpm_data:inst4
+      altsyncram:altsyncram_component
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; State Machine - cpuc:inst|cpuc_du:I3|code_c                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Name           ; code_c~50 ; code_c~49 ; code_c~48 ; code_c~47 ; code_c~46 ; code_c~45 ; code_c~44 ; code_c~43 ; code_c~42 ; code_c~41 ; code_c~40 ; code_c~39 ; code_c~38 ; code_c~37 ; code_c~36 ; code_c~35 ; code_c~34 ; code_c~33 ; code_c~32 ; code_c~31 ; code_c~30 ; code_c~29 ; code_c~28 ; code_c~27 ; code_c~26 ; code_c~25 ; code_c~24 ; code_c~23 ; code_c~22 ; code_c~21 ; code_c~20 ; code_c~19 ; code_c~18 ; code_c~17 ; code_c~16 ; code_c~15 ; code_c~14 ; code_c~13 ; code_c~12 ; code_c~11 ; code_c~10 ; code_c~9 ; code_c~8 ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; code_c.nop_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ;
+; code_c.rol_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 1        ;
+; code_c.ror_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 1        ;
+; code_c.shl_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 1        ;
+; code_c.shr_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.not_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.cla_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skz_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skc_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknz_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknc_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rts_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.rti_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jmp_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.jms_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sta_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.lda_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xor_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.add_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.and_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sub_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.or_i    ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ldai_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.xori_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.addi_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.andi_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subi_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.ori_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.adds_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.addsi_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subs_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.subsi_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.muls_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.mul_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.muli_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.mulsi_i ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.skv_i   ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.sknv_i  ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.lmuha_i ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.shln_i  ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.shrn_i  ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.shlni_i ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+; code_c.shrni_i ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------
+; State Machine - cpuc:inst|cpuc_cu:I2|S_c ;
+------------------------------------------
+; Name          ; S_c~10 ; S_c~9 ; S_c~8 ;
+------------------------------------------
+; S_c.reset     ; 0      ; 0     ; 0     ;
+; S_c.normal    ; 0      ; 1     ; 1     ;
+; S_c.interrupt ; 1      ; 0     ; 1     ;
+------------------------------------------
+
+
+-------------------------------------------------
+; State Machine - cpuc:inst|cpuc_cu:I2|E_c      ;
+-------------------------------------------------
+; Name        ; E_c~11 ; E_c~10 ; E_c~9 ; E_c~8 ;
+-------------------------------------------------
+; E_c.none_e  ; 0      ; 0      ; 0     ; 0     ;
+; E_c.dwait_e ; 0      ; 0      ; 1     ; 1     ;
+; E_c.iwait_e ; 0      ; 1      ; 0     ; 1     ;
+; E_c.int_e   ; 1      ; 0      ; 0     ; 1     ;
+-------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; Compilation Hierarchy Node                     ; Logic Cells ; Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                          ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+; |cpu32bit                                      ; 2281 (417)  ; 432       ; 65536       ; 16           ; 0       ; 0         ; 2         ; 63   ; 0            ; 1849 (417)   ; 189 (0)           ; 243 (0)          ; |cpu32bit                                                                                    ;
+;    |cpuc:inst|                                 ; 1864 (0)    ; 432       ; 0           ; 16           ; 0       ; 0         ; 2         ; 0    ; 0            ; 1432 (0)     ; 189 (0)           ; 243 (0)          ; |cpu32bit|cpuc:inst                                                                          ;
+;       |cpuc_cu:I2|                             ; 86 (84)     ; 43        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 43 (43)      ; 32 (32)           ; 11 (9)           ; |cpu32bit|cpuc:inst|cpuc_cu:I2                                                               ;
+;          |lpm_counter:nreset_v_rtl_721|        ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu32bit|cpuc:inst|cpuc_cu:I2|lpm_counter:nreset_v_rtl_721                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu32bit|cpuc:inst|cpuc_cu:I2|lpm_counter:nreset_v_rtl_721|alt_counter_stratix:wysi_counter ;
+;       |cpuc_du:I3|                             ; 1144 (1142) ; 102       ; 0           ; 16           ; 0       ; 0         ; 2         ; 0    ; 0            ; 1042 (1042)  ; 66 (66)           ; 36 (34)          ; |cpu32bit|cpuc:inst|cpuc_du:I3                                                               ;
+;          |lpm_counter:nreset_v_rtl_720|        ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_counter:nreset_v_rtl_720                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_counter:nreset_v_rtl_720|alt_counter_stratix:wysi_counter ;
+;          |lpm_mult:mult_677|                   ; 0 (0)       ; 0         ; 0           ; 8            ; 0       ; 0         ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_mult:mult_677                                             ;
+;             |mult_m6n:auto_generated|          ; 0 (0)       ; 0         ; 0           ; 8            ; 0       ; 0         ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_mult:mult_677|mult_m6n:auto_generated                     ;
+;          |lpm_mult:mult_681|                   ; 0 (0)       ; 0         ; 0           ; 8            ; 0       ; 0         ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_mult:mult_681                                             ;
+;             |mult_pdn:auto_generated|          ; 0 (0)       ; 0         ; 0           ; 8            ; 0       ; 0         ; 1         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|cpuc:inst|cpuc_du:I3|lpm_mult:mult_681|mult_pdn:auto_generated                     ;
+;       |cpuc_iu:I1|                             ; 163 (161)   ; 92        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 71 (71)      ; 10 (10)           ; 82 (80)          ; |cpu32bit|cpuc:inst|cpuc_iu:I1                                                               ;
+;          |lpm_counter:nreset_v_rtl_723|        ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu32bit|cpuc:inst|cpuc_iu:I1|lpm_counter:nreset_v_rtl_723                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu32bit|cpuc:inst|cpuc_iu:I1|lpm_counter:nreset_v_rtl_723|alt_counter_stratix:wysi_counter ;
+;       |cpuc_oa:I4|                             ; 416 (414)   ; 167       ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 249 (249)    ; 54 (54)           ; 113 (111)        ; |cpu32bit|cpuc:inst|cpuc_oa:I4                                                               ;
+;          |lpm_counter:nreset_v_rtl_722|        ; 2 (0)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; |cpu32bit|cpuc:inst|cpuc_oa:I4|lpm_counter:nreset_v_rtl_722                                  ;
+;             |alt_counter_stratix:wysi_counter| ; 2 (2)       ; 2         ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |cpu32bit|cpuc:inst|cpuc_oa:I4|lpm_counter:nreset_v_rtl_722|alt_counter_stratix:wysi_counter ;
+;       |cpuc_wd:I5|                             ; 55 (55)     ; 28        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 27 (27)      ; 27 (27)           ; 1 (1)            ; |cpu32bit|cpuc:inst|cpuc_wd:I5                                                               ;
+;    |lpm_code:inst3|                            ; 0 (0)       ; 0         ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|lpm_code:inst3                                                                     ;
+;       |altsyncram:altsyncram_component|        ; 0 (0)       ; 0         ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|lpm_code:inst3|altsyncram:altsyncram_component                                     ;
+;    |lpm_data:inst4|                            ; 0 (0)       ; 0         ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|lpm_data:inst4                                                                     ;
+;       |altsyncram:altsyncram_component|        ; 0 (0)       ; 0         ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |cpu32bit|lpm_data:inst4|altsyncram:altsyncram_component                                     ;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------
+; Analysis & Synthesis Equations  ;
+-----------------------------------
+The equations can be found in C:\CpuGen1\Applications\Cpu32bit\Altera\cpu32bit.map.eqn.
+
+
+----------------------------------
+; Analysis & Synthesis Messages  ;
+----------------------------------
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+  Info: Version 3.0 Build 223 08/14/2003 Service Pack 1 SJ Web Edition
+  Info: Processing started: Wed Feb 25 23:26:49 2004
+Info: Command: quartus_map --import_settings_files=on --export_settings_files=off cpu32bit -c cpu32bit
+Warning: Can't analyze file -- file C:\CpuGen1\Applications\Components\ctrl32cpuC.vhd is missing
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Components\interrupt.vhd
+  Info: Found design unit 1: interrupt-interrupt_struct
+  Info: Found entity 1: interrupt
+Info: Found 2 design units and 0 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_utils.vhd
+  Info: Found design unit 1: cpuc_utils
+  Info: Found design unit 2: cpuc_utils-body
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_wd.vhd
+  Info: Found design unit 1: cpuc_wd-wdc_struct
+  Info: Found entity 1: cpuc_wd
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_oa.vhd
+  Info: Found design unit 1: cpuc_oa-oac_struct
+  Info: Found entity 1: cpuc_oa
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_du.vhd
+  Info: Found design unit 1: cpuc_du-duc_struct
+  Info: Found entity 1: cpuc_du
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_cu.vhd
+  Info: Found design unit 1: cpuc_cu-cuc_struct
+  Info: Found entity 1: cpuc_cu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC_iu.vhd
+  Info: Found design unit 1: cpuc_iu-iuc_struct
+  Info: Found entity 1: cpuc_iu
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\cpuC.vhd
+  Info: Found design unit 1: cpuc-cpuc_arch
+  Info: Found entity 1: cpuc
+Info: Found 1 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\Altera\cpu32bit.bdf
+  Info: Found entity 1: cpu32bit
+Warning: Feature SignalTap II is not available with your current license
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\Altera\lpm_data.vhd
+  Info: Found design unit 1: lpm_data-syn
+  Info: Found entity 1: lpm_data
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\altsyncram.tdf
+  Info: Found entity 1: altsyncram
+Info: Found 2 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\Altera\lpm_code.vhd
+  Info: Found design unit 1: lpm_code-syn
+  Info: Found entity 1: lpm_code
+Info: Inferred 4 megafunctions from design logic
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpuc:inst|cpuc_du:I3|nreset_v_rtl_720
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpuc:inst|cpuc_cu:I2|nreset_v_rtl_721
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpuc:inst|cpuc_oa:I4|nreset_v_rtl_722
+  Info: Inferred lpm_counter megafunction (LPM_WIDTH=2) from the following logic: cpuc:inst|cpuc_iu:I1|nreset_v_rtl_723
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_counter.tdf
+  Info: Found entity 1: lpm_counter
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\alt_counter_stratix.tdf
+  Info: Found entity 1: alt_counter_stratix
+Info: Found 1 design units and 1 entities in source file c:\quartus\libraries\megafunctions\lpm_mult.tdf
+  Info: Found entity 1: lpm_mult
+Info: Found 1 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\Altera\db\mult_m6n.tdf
+  Info: Found entity 1: mult_m6n
+Info: Found 1 design units and 1 entities in source file C:\CpuGen1\Applications\Cpu32bit\Altera\db\mult_pdn.tdf
+  Info: Found entity 1: mult_pdn
+Info: State machine |cpu32bit|cpuc:inst|cpuc_du:I3|code_c contains 43 states and 0 state bits
+Info: State machine |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c contains 3 states and 0 state bits
+Info: State machine |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c contains 4 states and 0 state bits
+Info: Selected Auto state machine encoding method for state machine |cpu32bit|cpuc:inst|cpuc_du:I3|code_c
+Info: Encoding result for state machine |cpu32bit|cpuc:inst|cpuc_du:I3|code_c
+  Info: Completed encoding using 43 state bits
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~50
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~49
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~48
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~47
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~46
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~45
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~44
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~43
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~42
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~41
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~40
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~39
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~38
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~37
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~36
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~35
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~34
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~33
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~32
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~31
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~30
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~29
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~28
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~27
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~26
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~25
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~24
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~23
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~22
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~21
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~20
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~19
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~18
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~17
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~16
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~15
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~14
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~13
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~12
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~11
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~10
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~9
+    Info: Encoded state bit cpuc:inst|cpuc_du:I3|code_c~8
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.nop_i uses code string 0000000000000000000000000000000000000000000
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.rol_i uses code string 0000000000000000000000000000000000000000011
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.ror_i uses code string 0000000000000000000000000000000000000000101
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shl_i uses code string 0000000000000000000000000000000000000001001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shr_i uses code string 0000000000000000000000000000000000000010001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.not_i uses code string 0000000000000000000000000000000000000100001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.cla_i uses code string 0000000000000000000000000000000000001000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.skz_i uses code string 0000000000000000000000000000000000010000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.skc_i uses code string 0000000000000000000000000000000000100000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.sknz_i uses code string 0000000000000000000000000000000001000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.sknc_i uses code string 0000000000000000000000000000000010000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.rts_i uses code string 0000000000000000000000000000000100000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.rti_i uses code string 0000000000000000000000000000001000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.jmp_i uses code string 0000000000000000000000000000010000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.jms_i uses code string 0000000000000000000000000000100000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.sta_i uses code string 0000000000000000000000000001000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.lda_i uses code string 0000000000000000000000000010000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.xor_i uses code string 0000000000000000000000000100000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.add_i uses code string 0000000000000000000000001000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.and_i uses code string 0000000000000000000000010000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.sub_i uses code string 0000000000000000000000100000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.or_i uses code string 0000000000000000000001000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.ldai_i uses code string 0000000000000000000010000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.xori_i uses code string 0000000000000000000100000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.addi_i uses code string 0000000000000000001000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.andi_i uses code string 0000000000000000010000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.subi_i uses code string 0000000000000000100000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.ori_i uses code string 0000000000000001000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.adds_i uses code string 0000000000000010000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.addsi_i uses code string 0000000000000100000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.subs_i uses code string 0000000000001000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.subsi_i uses code string 0000000000010000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.muls_i uses code string 0000000000100000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.mul_i uses code string 0000000001000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.muli_i uses code string 0000000010000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.mulsi_i uses code string 0000000100000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.skv_i uses code string 0000001000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.sknv_i uses code string 0000010000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.lmuha_i uses code string 0000100000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shln_i uses code string 0001000000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shrn_i uses code string 0010000000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shlni_i uses code string 0100000000000000000000000000000000000000001
+  Info: State |cpu32bit|cpuc:inst|cpuc_du:I3|code_c.shrni_i uses code string 1000000000000000000000000000000000000000001
+Info: Selected Auto state machine encoding method for state machine |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c
+Info: Encoding result for state machine |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c
+  Info: Completed encoding using 3 state bits
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|S_c~10
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|S_c~9
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|S_c~8
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c.reset uses code string 000
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c.normal uses code string 011
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|S_c.interrupt uses code string 101
+Info: Selected Auto state machine encoding method for state machine |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c
+Info: Encoding result for state machine |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c
+  Info: Completed encoding using 4 state bits
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|E_c~11
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|E_c~10
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|E_c~9
+    Info: Encoded state bit cpuc:inst|cpuc_cu:I2|E_c~8
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c.none_e uses code string 0000
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c.dwait_e uses code string 0011
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c.iwait_e uses code string 0101
+  Info: State |cpu32bit|cpuc:inst|cpuc_cu:I2|E_c.int_e uses code string 1001
+Warning: Reduced register cpuc:inst|cpuc_du:I3|acc_c[1][32] with stuck data_in port to stuck value GND
+Info: Registers with preset signals will power-up high
+Info: Implemented 2424 device resources after synthesis - the final resource count might be different
+  Info: Implemented 3 input pins
+  Info: Implemented 60 output pins
+  Info: Implemented 2281 logic cells
+  Info: Implemented 64 RAM segments
+  Info: Implemented 16 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+  Info: Processing ended: Wed Feb 25 23:27:25 2004
+  Info: Elapsed time: 00:00:35
+Info: Writing report file cpu32bit.map.rpt
+
+

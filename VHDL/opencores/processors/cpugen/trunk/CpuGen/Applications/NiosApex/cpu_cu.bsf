@@ -1,0 +1,161 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2003 Altera Corporation
+Any  megafunction  design,  and related netlist (encrypted  or  decrypted),
+support information,  device programming or simulation file,  and any other
+associated  documentation or information  provided by  Altera  or a partner
+under  Altera's   Megafunction   Partnership   Program  may  be  used  only
+to program  PLD  devices (but not masked  PLD  devices) from  Altera.   Any
+other  use  of such  megafunction  design,  netlist,  support  information,
+device programming or simulation file,  or any other  related documentation
+or information  is prohibited  for  any  other purpose,  including, but not
+limited to  modification,  reverse engineering,  de-compiling, or use  with
+any other  silicon devices,  unless such use is  explicitly  licensed under
+a separate agreement with  Altera  or a megafunction partner.  Title to the
+intellectual property,  including patents,  copyrights,  trademarks,  trade
+secrets,  or maskworks,  embodied in any such megafunction design, netlist,
+support  information,  device programming or simulation file,  or any other
+related documentation or information provided by  Altera  or a megafunction
+partner, remains with Altera, the megafunction partner, or their respective
+licensors. No other licenses, including any licenses needed under any third
+party's intellectual property, are provided herein.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 248 240)
+	(text "cpu_cu" (rect 5 0 52 15)(font "Arial" ))
+	(text "inst" (rect 8 205 31 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "skip" (rect 0 0 27 15)(font "Arial" ))
+		(text "skip" (rect 21 27 48 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "int_in" (rect 0 0 35 15)(font "Arial" ))
+		(text "int_in" (rect 21 43 56 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "dwait_in" (rect 0 0 54 15)(font "Arial" ))
+		(text "dwait_in" (rect 21 59 75 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "iwait_in" (rect 0 0 49 15)(font "Arial" ))
+		(text "iwait_in" (rect 21 75 70 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "idata_in[13..0]" (rect 0 0 90 15)(font "Arial" ))
+		(text "idata_in[13..0]" (rect 21 91 111 106)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "nreset_in" (rect 0 0 61 15)(font "Arial" ))
+		(text "nreset_in" (rect 21 107 82 122)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "clk_in" (rect 0 0 37 15)(font "Arial" ))
+		(text "clk_in" (rect 21 123 58 138)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "class_cu[2..0]" (rect 0 0 89 15)(font "Arial" ))
+		(text "class_cu[2..0]" (rect 122 27 211 42)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "class_du[3..0]" (rect 0 0 90 15)(font "Arial" ))
+		(text "class_du[3..0]" (rect 121 43 211 58)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "valid" (rect 0 0 29 15)(font "Arial" ))
+		(text "valid" (rect 182 59 211 74)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 1))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "int_start" (rect 0 0 51 15)(font "Arial" ))
+		(text "int_start" (rect 160 75 211 90)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80)(line_width 1))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "int_stop" (rect 0 0 51 15)(font "Arial" ))
+		(text "int_stop" (rect 160 91 211 106)(font "Arial" ))
+		(line (pt 232 96)(pt 216 96)(line_width 1))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "ndre_int" (rect 0 0 53 15)(font "Arial" ))
+		(text "ndre_int" (rect 158 107 211 122)(font "Arial" ))
+		(line (pt 232 112)(pt 216 112)(line_width 1))
+	)
+	(port
+		(pt 232 128)
+		(output)
+		(text "ndwe_int" (rect 0 0 59 15)(font "Arial" ))
+		(text "ndwe_int" (rect 152 123 211 138)(font "Arial" ))
+		(line (pt 232 128)(pt 216 128)(line_width 1))
+	)
+	(port
+		(pt 232 144)
+		(output)
+		(text "daddr_is[9..0]" (rect 0 0 88 15)(font "Arial" ))
+		(text "daddr_is[9..0]" (rect 123 139 211 154)(font "Arial" ))
+		(line (pt 232 144)(pt 216 144)(line_width 3))
+	)
+	(port
+		(pt 232 160)
+		(output)
+		(text "data_is[7..0]" (rect 0 0 79 15)(font "Arial" ))
+		(text "data_is[7..0]" (rect 132 155 211 170)(font "Arial" ))
+		(line (pt 232 160)(pt 216 160)(line_width 3))
+	)
+	(port
+		(pt 232 176)
+		(output)
+		(text "pc_mux[2..0]" (rect 0 0 81 15)(font "Arial" ))
+		(text "pc_mux[2..0]" (rect 130 171 211 186)(font "Arial" ))
+		(line (pt 232 176)(pt 216 176)(line_width 3))
+	)
+	(port
+		(pt 232 192)
+		(output)
+		(text "ext_addr[9..0]" (rect 0 0 86 15)(font "Arial" ))
+		(text "ext_addr[9..0]" (rect 125 187 211 202)(font "Arial" ))
+		(line (pt 232 192)(pt 216 192)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 208)(line_width 1))
+	)
+)
