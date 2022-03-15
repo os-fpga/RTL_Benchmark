@@ -1,0 +1,483 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Mar  9 12:34:24 2022
+# Process ID: 20023
+# Current directory: /home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.runs/synth_1
+# Command line: vivado -log fwrisc_fpga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fwrisc_fpga_top.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.runs/synth_1/fwrisc_fpga_top.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1467.205 MHz, CPU Physical cores: 31, Host memory: 540770 MB
+#-----------------------------------------------------------
+source fwrisc_fpga_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.281 ; gain = 10.926 ; free physical = 110768 ; free virtual = 375073
+Command: synth_design -top fwrisc_fpga_top -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20751
+WARNING: [Synth 8-6901] identifier 'op_csr' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:110]
+WARNING: [Synth 8-6901] identifier 'op_shift' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:112]
+WARNING: [Synth 8-6901] identifier 'exception' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:128]
+WARNING: [Synth 8-6901] identifier 'op_ld' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:134]
+WARNING: [Synth 8-6901] identifier 'op_st' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:136]
+WARNING: [Synth 8-6901] identifier 'ra_rdata' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:167]
+WARNING: [Synth 8-6901] identifier 'op_shift_reg' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:173]
+WARNING: [Synth 8-6901] identifier 'rb_rdata' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:174]
+WARNING: [Synth 8-6901] identifier 'rb_rdata' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:175]
+WARNING: [Synth 8-6901] identifier 'rs2' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:181]
+WARNING: [Synth 8-6901] identifier 'rs2' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:182]
+WARNING: [Synth 8-6901] identifier 'op_arith_reg' is used before its declaration [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:228]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.242 ; gain = 0.004 ; free physical = 109880 ; free virtual = 374184
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_fpga_top' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:27]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'rom.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:116]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_comparator' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_comparator.sv:28]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_comparator' (1#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_comparator.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_regfile' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_regfile.sv:26]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'regs.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_regfile.sv:43]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_regfile' (2#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_regfile.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_alu' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_alu.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_alu' (3#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_alu.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_dbus_if' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_dbus_if.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_dbus_if' (4#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_dbus_if.sv:12]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:835]
+INFO: [Synth 8-6157] synthesizing module 'fwrisc_tracer' [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_tracer.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_tracer' (5#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_tracer.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc' (6#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc.sv:28]
+WARNING: [Synth 8-6014] Unused sequential element ram_1_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element ram_2_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element ram_3_reg was removed. 
+WARNING: [Synth 8-4767] Trying to implement RAM ' ' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+WARNING: [Synth 8-3848] Net iaddr_ok in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:38]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+WARNING: [Synth 8-3848] Net rom in module/entity fwrisc_fpga_top does not have driver. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:99]
+INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'fwrisc_fpga_top' (7#1) [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:27]
+WARNING: [Synth 8-7129] Port clock in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[31] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[30] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[29] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[28] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[27] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[26] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[25] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[24] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[14] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[6] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[5] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[4] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[3] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[2] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[1] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[0] in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dready in module fwrisc_dbus_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module fwrisc_alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fwrisc_alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fwrisc_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module fwrisc_comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module fwrisc_comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port d0_p in module fwrisc_fpga_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 110962 ; free virtual = 375264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 110979 ; free virtual = 375283
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2897.246 ; gain = 8.008 ; free physical = 110980 ; free virtual = 375283
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'fwrisc'
+WARNING: [Synth 8-3936] Found unconnected internal register 'led_reg' and it is trimmed from '32' to '4' bits. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:108]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tx_r_reg' and it is trimmed from '32' to '1' bits. [/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.srcs/sources_1/imports/rtl/fwrisc_fpga_top.sv:109]
+INFO: [Synth 8-3971] The signal "fwrisc_regfile:/regs_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE7 |                             0100 |                             0000
+*
+                 iSTATE6 |                             1001 |                             0001
+                 iSTATE0 |                             0000 |                             0011
+                  iSTATE |                             0001 |                             0100
+                 iSTATE8 |                             1100 |                             1001
+                 iSTATE5 |                             1011 |                             1010
+                 iSTATE2 |                             0010 |                             0010
+                 iSTATE9 |                             0101 |                             0111
+                iSTATE10 |                             1101 |                             1000
+                iSTATE11 |                             0110 |                             0110
+                iSTATE12 |                             0111 |                             0101
+                 iSTATE4 |                             1000 |                             1011
+                 iSTATE3 |                             1010 |                             1100
+                 iSTATE1 |                             0011 |                             1101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'fwrisc'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:22 . Memory (MB): peak = 2897.250 ; gain = 8.012 ; free physical = 110485 ; free virtual = 374818
+---------------------------------------------------------------------------------
+RAM Pipeline Warning: Read Address Register Found For RAM regs_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM ram_0_reg. We will not be able to pipeline it. This may degrade performance. 
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   30 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               30 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 1     
+	               2K Bit	(64 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 27    
+	   4 Input   32 Bit        Muxes := 4     
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 2     
+	  13 Input   30 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 12    
+	   3 Input    6 Bit        Muxes := 1     
+	  10 Input    6 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 7     
+	  13 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	  14 Input    4 Bit        Muxes := 1     
+	  23 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 10    
+	   5 Input    1 Bit        Muxes := 1     
+	  13 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port d0_p in module fwrisc_fpga_top is either unconnected or has no load
+RAM Pipeline Warning: Read Address Register Found For RAM ram_0_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-5784] Optimized 24 bits of RAM "ram_0_reg" due to constant propagation. Old ram width 32 bits, new ram width 8 bits.
+RAM Pipeline Warning: Read Address Register Found For RAM ram_0_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM u_core/u_regfile/regs_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM u_core/u_regfile/regs_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3971] The signal "fwrisc_fpga_top/u_core/u_regfile/regs_reg" was recognized as a true dual port RAM template.
+RAM Pipeline Warning: Read Address Register Found For RAM ram_0_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM u_core/u_regfile/regs_reg. We will not be able to pipeline it. This may degrade performance. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:00:58 . Memory (MB): peak = 3028.211 ; gain = 138.973 ; free physical = 110354 ; free virtual = 374726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|fwrisc_fpga_top | ram_0_reg  | 1 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:00:58 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110349 ; free virtual = 374720
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|fwrisc_fpga_top | ram_0_reg  | 1 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ram_0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_core/u_regfile/regs_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_core/u_regfile/regs_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:06 ; elapsed = 00:00:59 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110349 ; free virtual = 374721
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4649] Removing BlackBox instance \u_core/u_tracer  of module fwrisc_tracer having unconnected or no output ports
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110401 ; free virtual = 374747
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110401 ; free virtual = 374747
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110400 ; free virtual = 374746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110400 ; free virtual = 374746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110400 ; free virtual = 374746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110400 ; free virtual = 374746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    23|
+|3     |LUT1     |     6|
+|4     |LUT2     |    38|
+|5     |LUT3     |    11|
+|6     |LUT4     |    89|
+|7     |LUT5     |    81|
+|8     |LUT6     |   209|
+|9     |RAMB18E1 |     3|
+|10    |FDRE     |   101|
+|11    |FDSE     |     3|
+|12    |IBUF     |     1|
+|13    |OBUF     |     6|
+|14    |OBUFT    |     1|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------+------------------+------+
+|      |Instance      |Module            |Cells |
++------+--------------+------------------+------+
+|1     |top           |                  |   574|
+|2     |  u_core      |fwrisc            |   515|
+|3     |    u_alu     |fwrisc_alu        |    14|
+|4     |    u_comp    |fwrisc_comparator |    38|
+|5     |    u_regfile |fwrisc_regfile    |   337|
++------+--------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:01:03 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110400 ; free virtual = 374746
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 2 critical warnings and 4156 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:11 ; elapsed = 00:01:04 . Memory (MB): peak = 3028.215 ; gain = 138.977 ; free physical = 110401 ; free virtual = 374747
+Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:04 . Memory (MB): peak = 3028.219 ; gain = 138.977 ; free physical = 110401 ; free virtual = 374747
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3028.227 ; gain = 0.000 ; free physical = 110488 ; free virtual = 374834
+INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3084.242 ; gain = 0.000 ; free physical = 110400 ; free virtual = 374746
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 8637f06c
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 159 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:09 . Memory (MB): peak = 3084.242 ; gain = 223.961 ; free physical = 110604 ; free virtual = 374950
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/fwrisc/project_1/project_1.runs/synth_1/fwrisc_fpga_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fwrisc_fpga_top_utilization_synth.rpt -pb fwrisc_fpga_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:35:52 2022...

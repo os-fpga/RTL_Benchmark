@@ -1,0 +1,871 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Mar  9 12:26:10 2022
+# Process ID: 3184
+# Current directory: /home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.runs/synth_1/top.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1259.436 MHz, CPU Physical cores: 32, Host memory: 540770 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 111374 ; free virtual = 375578
+Command: synth_design -top top -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4167
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 110695 ; free virtual = 374871
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:46]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:21]
+	Parameter num bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'code_memory' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/code_memory.sv:21]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'loader.mem'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/code_memory.sv:71]
+INFO: [Synth 8-6155] done synthesizing module 'code_memory' (2#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/code_memory.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'data_memory' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/data_memory.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'data_memory' (3#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/data_memory.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'call_stack' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/call_stack.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'call_stack' (4#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/call_stack.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'fetch' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/fetch.sv:42]
+INFO: [Synth 8-6155] done synthesizing module 'fetch' (5#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/fetch.sv:42]
+INFO: [Synth 8-6157] synthesizing module 'decoder' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/decoder.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'decoder' (6#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/decoder.sv:20]
+INFO: [Synth 8-6157] synthesizing module 'register_read' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/register_read.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'register_read' (7#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/register_read.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'addressgenerator' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/addressgenerator.sv:18]
+WARNING: [Synth 8-3936] Found unconnected internal register 'base_pointer_reg' and it is trimmed from '17' to '16' bits. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/addressgenerator.sv:275]
+INFO: [Synth 8-6155] done synthesizing module 'addressgenerator' (8#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/addressgenerator.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'dataread' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:22]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:354]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:417]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:467]
+WARNING: [Synth 8-6014] Unused sequential element regmask_val_temp_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:535]
+INFO: [Synth 8-6155] done synthesizing module 'dataread' (9#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/dataread.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/alu.sv:18]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/alu.sv:398]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/alu.sv:714]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (10#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/alu.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'mul_div' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/mul_div.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'mul_div' (11#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/mul_div.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'in_out_ports' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:70]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:434]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:452]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:464]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:421]
+INFO: [Synth 8-6157] synthesizing module 'UART_RX' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'UART_RX' (12#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:20]
+INFO: [Synth 8-6157] synthesizing module 'UART_TX' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:115]
+INFO: [Synth 8-6155] done synthesizing module 'UART_TX' (13#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:115]
+INFO: [Synth 8-6157] synthesizing module 'fifo_buffer' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:238]
+	Parameter size_log2 bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_buffer' (14#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'fifo_buffer__parameterized0' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:238]
+	Parameter size_log2 bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_buffer__parameterized0' (14#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/uart_and_fifo.sv:238]
+WARNING: [Synth 8-6014] Unused sequential element num_instructions_3size_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:557]
+INFO: [Synth 8-6155] done synthesizing module 'in_out_ports' (15#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/in_out_ports.sv:70]
+INFO: [Synth 8-6157] synthesizing module 'debug_display' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debug_display.sv:16]
+INFO: [Synth 8-6157] synthesizing module 'lcd' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/lcd.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'lcd' (16#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/lcd.sv:17]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debug_display.sv:270]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debug_display.sv:670]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debug_display.sv:696]
+INFO: [Synth 8-6155] done synthesizing module 'debug_display' (17#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debug_display.sv:16]
+INFO: [Synth 8-6157] synthesizing module 'seg7' [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/seg7.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'seg7' (18#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/seg7.sv:16]
+WARNING: [Synth 8-3848] Net load_button_debounced in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:111]
+WARNING: [Synth 8-3848] Net reset_button_debounced in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:110]
+WARNING: [Synth 8-3848] Net run_button_debounced in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:109]
+WARNING: [Synth 8-3848] Net step_button_debounced in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:108]
+WARNING: [Synth 8-3848] Net clock in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:143]
+WARNING: [Synth 8-3848] Net step_button_pulse in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:112]
+WARNING: [Synth 8-3848] Net run_button_pulse in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:113]
+WARNING: [Synth 8-3848] Net clock in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:143]
+WARNING: [Synth 8-3848] Net decoder_read in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:185]
+WARNING: [Synth 8-3848] Net inout_stall in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:344]
+WARNING: [Synth 8-3848] Net reset_button_pulse in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:114]
+WARNING: [Synth 8-3848] Net load_button_pulse in module/entity top does not have driver. [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:115]
+INFO: [Synth 8-6155] done synthesizing module 'top' (19#1) [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/top.sv:46]
+WARNING: [Synth 8-7129] Port dataread_operand1[63] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[62] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[61] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[60] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[59] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[58] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[57] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[56] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[55] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[54] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[53] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[52] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[51] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[50] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[49] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[48] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[47] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[46] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[45] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[44] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[43] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[42] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[41] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[40] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[39] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[38] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[37] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[36] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[35] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[34] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[33] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[32] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[31] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[30] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[29] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[28] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[27] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[26] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[25] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[24] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[23] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[22] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[21] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[20] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[19] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[18] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[17] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand1[16] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[63] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[62] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[61] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[60] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[59] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[58] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[57] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[56] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[55] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[54] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[53] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[52] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[51] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[50] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[49] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[48] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[47] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[46] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[45] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[44] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[43] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[42] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[41] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[40] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[39] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[38] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[37] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[36] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[35] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[34] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[33] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[32] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[31] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[30] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[29] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[28] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[27] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[26] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[25] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[24] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[23] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[22] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[21] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[20] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[19] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[18] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[17] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand2[16] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand3[63] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand3[62] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand3[61] in module debug_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataread_operand3[60] in module debug_display is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 111079 ; free virtual = 375256
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 111590 ; free virtual = 375765
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 111589 ; free virtual = 375764
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'debug_display'
+WARNING: [Synth 8-6841] Block RAM (ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                             0010 |                               00
+                 iSTATE2 |                             0001 |                               01
+                  iSTATE |                             0100 |                               10
+                 iSTATE0 |                             1000 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'debug_display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 111126 ; free virtual = 375302
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   65 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 9     
+	   4 Input   64 Bit       Adders := 1     
+	   3 Input   64 Bit       Adders := 2     
+	   2 Input   27 Bit       Adders := 1     
+	   2 Input   20 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 1     
+	   3 Input   17 Bit       Adders := 1     
+	   3 Input   15 Bit       Adders := 1     
+	   2 Input   15 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 5     
+	   3 Input   14 Bit       Adders := 2     
+	   2 Input   13 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 5     
+	   2 Input   10 Bit       Adders := 10    
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 3     
+	  66 Input    7 Bit       Adders := 1     
+	   3 Input    7 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 37    
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 3     
+	   3 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 3     
++---XORs : 
+	   2 Input     64 Bit         XORs := 8     
+	   2 Input      1 Bit         XORs := 8     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               96 Bit    Registers := 2     
+	               65 Bit    Registers := 56    
+	               64 Bit    Registers := 10    
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 21    
+	               27 Bit    Registers := 1     
+	               17 Bit    Registers := 6     
+	               16 Bit    Registers := 5     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 10    
+	               13 Bit    Registers := 1     
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 6     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 47    
+	                7 Bit    Registers := 11    
+	                6 Bit    Registers := 7     
+	                5 Bit    Registers := 14    
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 23    
+	                2 Bit    Registers := 35    
+	                1 Bit    Registers := 135   
++---RAMs : 
+	             512K Bit	(8192 X 64 bit)          RAMs := 1     
+	             256K Bit	(4096 X 64 bit)          RAMs := 1     
+	              16K Bit	(2048 X 8 bit)          RAMs := 1     
+	              14K Bit	(1024 X 14 bit)          RAMs := 1     
+	               8K Bit	(1024 X 8 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 11    
+	   4 Input  128 Bit        Muxes := 1     
+	   2 Input   65 Bit        Muxes := 309   
+	   4 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 146   
+	   4 Input   64 Bit        Muxes := 14    
+	   3 Input   64 Bit        Muxes := 3     
+	   5 Input   64 Bit        Muxes := 2     
+	   9 Input   64 Bit        Muxes := 1     
+	   6 Input   64 Bit        Muxes := 1     
+	   2 Input   63 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 36    
+	   4 Input   32 Bit        Muxes := 10    
+	   2 Input   27 Bit        Muxes := 1     
+	   3 Input   22 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 42    
+	   3 Input   17 Bit        Muxes := 1     
+	   4 Input   17 Bit        Muxes := 1     
+	  10 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 17    
+	   3 Input   14 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 13    
+	   2 Input   13 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 15    
+	   4 Input    8 Bit        Muxes := 7     
+	   2 Input    8 Bit        Muxes := 88    
+	  10 Input    8 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 81    
+	  11 Input    7 Bit        Muxes := 1     
+	   3 Input    7 Bit        Muxes := 14    
+	   4 Input    7 Bit        Muxes := 4     
+	   5 Input    7 Bit        Muxes := 4     
+	  16 Input    7 Bit        Muxes := 1     
+	   6 Input    7 Bit        Muxes := 1     
+	  12 Input    7 Bit        Muxes := 2     
+	  51 Input    7 Bit        Muxes := 5     
+	  53 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 30    
+	   4 Input    6 Bit        Muxes := 4     
+	   8 Input    6 Bit        Muxes := 1     
+	  15 Input    6 Bit        Muxes := 2     
+	   3 Input    6 Bit        Muxes := 3     
+	   9 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 15    
+	   3 Input    5 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 35    
+	   4 Input    4 Bit        Muxes := 3     
+	   7 Input    4 Bit        Muxes := 1     
+	  10 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 1     
+	  51 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 67    
+	   3 Input    3 Bit        Muxes := 3     
+	   7 Input    3 Bit        Muxes := 3     
+	   8 Input    3 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 5     
+	   6 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 152   
+	   4 Input    2 Bit        Muxes := 19    
+	   3 Input    2 Bit        Muxes := 15    
+	   9 Input    2 Bit        Muxes := 2     
+	   7 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 5     
+	  10 Input    2 Bit        Muxes := 3     
+	   8 Input    2 Bit        Muxes := 3     
+	   6 Input    2 Bit        Muxes := 6     
+	  14 Input    2 Bit        Muxes := 1     
+	  13 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 561   
+	   4 Input    1 Bit        Muxes := 39    
+	   5 Input    1 Bit        Muxes := 11    
+	   3 Input    1 Bit        Muxes := 11    
+	   7 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 3     
+	   6 Input    1 Bit        Muxes := 2     
+	  10 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "opx" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "opx" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "opx2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "opx2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/instruction_name_reg[5][7]' (FDRE) to 'debug_display_inst/instruction_name_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/instruction_name_reg[4][7]' (FDRE) to 'debug_display_inst/instruction_name_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/display_text_reg[19][7]' (FDE) to 'debug_display_inst/display_text_reg[18][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/instruction_name_reg[3][7]' (FDRE) to 'debug_display_inst/instruction_name_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/display_text_reg[18][7]' (FDE) to 'debug_display_inst/display_text_reg[17][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/instruction_name_reg[2][7]' (FDRE) to 'debug_display_inst/instruction_name_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[56]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[59]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[60]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[57]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[58]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[14]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/instruction_name_reg[1][7]' (FDRE) to 'debug_display_inst/instruction_name_reg[0][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\instruction_name_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[13][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[12][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[9][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_pointer_reg[14]' (FDE) to 'debug_display_inst/alu_instruction_pointer_reg[15]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_pointer_reg[15]' (FDE) to 'debug_display_inst/alu_instruction_reg[63]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[62]' (FDE) to 'debug_display_inst/alu_instruction_reg[63]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[61]' (FDE) to 'debug_display_inst/alu_instruction_reg[63]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[63]' (FDE) to 'debug_display_inst/alu_instruction_reg[55]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/alu_instruction_reg[54]' (FDE) to 'debug_display_inst/alu_instruction_reg[55]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\alu_instruction_reg[55] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/display_text_reg[1][0]' (FDSE) to 'debug_display_inst/display_text_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/display_text_reg[1][1]' (FDRE) to 'debug_display_inst/display_text_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/display_text_reg[1][3]' (FDRE) to 'debug_display_inst/display_text_reg[1][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[1][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/column_reg[0]' (FDRE) to 'debug_display_inst/column_reg[4]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/column_reg[1]' (FDRE) to 'debug_display_inst/column_reg[4]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/column_reg[4]' (FDRE) to 'debug_display_inst/column_reg[3]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/column_reg[2]' (FDRE) to 'debug_display_inst/column_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\column_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (debug_display_inst/eol_reg)
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/state_reg_rep[0]' (FDRE) to 'debug_display_inst/lcd_inst/state_reg[0]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/state_reg_rep[3]' (FDRE) to 'debug_display_inst/lcd_inst/state_reg[3]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/state_reg_rep[2]' (FDRE) to 'debug_display_inst/lcd_inst/state_reg[2]'
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/state_reg_rep[1]' (FDRE) to 'debug_display_inst/lcd_inst/state_reg[1]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (in_out_ports_inst/uart_cts_out_reg)
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/error_parm_out_reg' (FDE) to 'muldiv_inst/debug1_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[2]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[3]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[4]' (FDE) to 'muldiv_inst/debug1_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[5]' (FDE) to 'muldiv_inst/debug1_out_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/\register_a_out_reg[5] )
+INFO: [Synth 8-3886] merging instance 'in_out_ports_inst/debug_out_reg[6]' (FDE) to 'in_out_ports_inst/debug_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[6]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[6]' (FDE) to 'muldiv_inst/debug1_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'in_out_ports_inst/debug_out_reg[7]' (FDE) to 'in_out_ports_inst/debug_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[7]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[7]' (FDE) to 'muldiv_inst/debug1_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[7]' (FDE) to 'muldiv_inst/debug1_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[8]' (FDE) to 'muldiv_inst/debug1_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[8]' (FDE) to 'muldiv_inst/debug1_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[9]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[9]' (FDE) to 'muldiv_inst/debug1_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[9]' (FDE) to 'muldiv_inst/debug1_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[10]' (FDE) to 'muldiv_inst/debug1_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[10]' (FDE) to 'muldiv_inst/debug1_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[11]' (FDE) to 'muldiv_inst/debug1_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[11]' (FDE) to 'muldiv_inst/debug1_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[12]' (FDE) to 'muldiv_inst/debug1_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[12]' (FDE) to 'muldiv_inst/debug1_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[13]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[13]' (FDE) to 'muldiv_inst/debug1_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[13]' (FDE) to 'muldiv_inst/debug1_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[14]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[14]' (FDE) to 'muldiv_inst/debug1_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[14]' (FDE) to 'muldiv_inst/debug1_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'in_out_ports_inst/debug_out_reg[15]' (FDE) to 'in_out_ports_inst/debug_out_reg[18]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[15]' (FDE) to 'muldiv_inst/debug1_out_reg[16]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[15]' (FDE) to 'muldiv_inst/debug1_out_reg[16]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[16]' (FDE) to 'muldiv_inst/debug1_out_reg[17]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[17]' (FDE) to 'muldiv_inst/debug1_out_reg[18]'
+INFO: [Synth 8-3886] merging instance 'in_out_ports_inst/debug_out_reg[18]' (FDE) to 'in_out_ports_inst/debug_out_reg[23]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[18]' (FDE) to 'muldiv_inst/debug1_out_reg[19]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[19]' (FDE) to 'muldiv_inst/debug1_out_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[21]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[22]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[22]' (FDE) to 'muldiv_inst/debug1_out_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/\debug_out_reg[23] )
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[23]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[23]' (FDE) to 'muldiv_inst/debug1_out_reg[26]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[26]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[26]' (FDE) to 'muldiv_inst/debug1_out_reg[28]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[27]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (muldiv_inst/\debug1_out_reg[27] )
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[28]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[28]' (FDE) to 'muldiv_inst/debug1_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[29]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[29]' (FDE) to 'muldiv_inst/debug1_out_reg[30]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[29]' (FDE) to 'muldiv_inst/debug1_out_reg[30]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[30]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[30]' (FDE) to 'muldiv_inst/debug1_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug2_out_reg[30]' (FDE) to 'muldiv_inst/debug1_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dataread_inst/debug_out_reg[31]' (FDE) to 'dataread_inst/write_address_error_out_reg'
+INFO: [Synth 8-3886] merging instance 'muldiv_inst/debug1_out_reg[31]' (FDE) to 'muldiv_inst/debug2_out_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (muldiv_inst/\debug2_out_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dataread_inst/write_address_error_out_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[17][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\display_text_reg[14][7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (debug_display_inst/\lcd_inst/eol_save_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (in_out_ports_inst/i_82/\num_write_violation_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[19][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[18][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[18][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[17][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[17][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[17][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[16][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[16][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[16][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[15][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[15][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[15][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[14][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[14][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[14][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[13][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[13][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[13][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[12][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[12][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[12][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[11][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[11][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[11][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[10][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[10][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[10][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[9][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[9][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[9][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[8][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[8][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[8][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[7][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[7][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[7][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[6][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[6][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[6][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[5][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[5][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[5][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[4][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[4][7] )
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[4][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[3][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (debug_display_inst/\lcd_inst/text_buffer_reg[3][7] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'debug_display_inst/lcd_inst/text_buffer_reg[3][7]' (FDE) to 'debug_display_inst/lcd_inst/text_buffer_reg[2][7]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[3]) is unused and will be removed from module debug_display.
+INFO: [Synth 8-5544] ROM "seg7_inst/segment" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-3917] design top__GB1 has port color_led16[2] driven by constant 0
+WARNING: [Synth 8-3917] design top__GB1 has port color_led16[1] driven by constant 0
+WARNING: [Synth 8-6841] Block RAM (code_memory_inst/ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+INFO: [Synth 8-5544] ROM "write_enable_out" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "write_enable_out" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3917] design register_read has port mask_status_out[1] driven by constant 0
+INFO: [Synth 8-5544] ROM "sizemask" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sbit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "msb" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:03:02 . Memory (MB): peak = 2925.180 ; gain = 35.938 ; free physical = 105578 ; free virtual = 369787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++--------------+------------------+---------------+----------------+
+|Module Name   | RTL Object       | Depth x Width | Implemented As | 
++--------------+------------------+---------------+----------------+
+|debug_display | instruction_name | 128x7         | LUT            | 
+|debug_display | instruction_name | 128x7         | LUT            | 
+|debug_display | instruction_name | 128x7         | LUT            | 
+|debug_display | instruction_name | 128x7         | LUT            | 
+|debug_display | instruction_name | 128x7         | LUT            | 
++--------------+------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name       | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|data_memory_inst  | dataram_reg                   | 4 K x 64(READ_FIRST)   | W |   | 4 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
+|in_out_ports_inst | fifo_buffer_input/buffer_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|in_out_ports_inst | fifo_buffer_output/buffer_reg | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|top__GB1          | code_memory_inst/ram_reg      | 8 K x 64(READ_FIRST)   | W |   | 8 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-----------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-----------------------------+-----------+----------------------+--------------+
+|top__GB1    | call_stack_instance/ram_reg | Implied   | 1 K x 14             | RAM64M x 80  | 
++------------+-----------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:20 ; elapsed = 00:03:07 . Memory (MB): peak = 2925.180 ; gain = 35.938 ; free physical = 105557 ; free virtual = 369785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name       | RTL Object                    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|data_memory_inst  | dataram_reg                   | 4 K x 64(READ_FIRST)   | W |   | 4 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
+|in_out_ports_inst | fifo_buffer_input/buffer_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|in_out_ports_inst | fifo_buffer_output/buffer_reg | 2 K x 8(READ_FIRST)    | W |   | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|top__GB1          | code_memory_inst/ram_reg      | 8 K x 64(READ_FIRST)   | W |   | 8 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
++------------------+-------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+-----------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-----------------------------+-----------+----------------------+--------------+
+|top__GB1    | call_stack_instance/ram_reg | Implied   | 1 K x 14             | RAM64M x 80  | 
++------------+-----------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[19] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[19] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[19] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[19] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[19] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[19] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[18] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[18] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[18] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[18] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[18] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[18] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[17] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[17] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[17] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[17] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[17] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[17] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[16] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[16] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[16] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[16] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[16] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[16] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[15] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[15] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[15] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[15] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[15] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[15] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[14] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[14] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[14] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[14] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[14] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[14] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[13] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[13] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[13] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[13] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[13] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[13] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[12] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[12] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[12] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[12] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[12] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[12] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[11] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[11] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[11] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[11] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[11] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[11] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[10] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[10] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[10] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[10] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[10] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[10] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[9] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[9] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[9] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[9] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[9] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[9] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[8] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[8] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[8] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[8] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[8] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[8] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[7] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[7] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[7] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[7] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[7] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[7] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[6] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[6] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[6] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[6] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[6] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[6] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[5] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[5] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[5] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[5] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[5] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[5] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[4] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[4] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[4] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[4] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[4] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[4] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[3] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[3] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[3] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[3] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[3] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[3] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[2] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[2] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[2] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[2] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[2] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[2] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[1] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[1] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[1] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[1] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[1] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[1] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[3].count_reg[0] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[0] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[2].count_reg[0] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[0] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-4765] Removing register instance (\debounce_inst/genblk1[1].count_reg[0] ) from module (top__GB1) as it is equivalent to (\debounce_inst/genblk1[0].count_reg[0] ) and driving same net [/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.srcs/sources_1/imports/trunk/debouncer.sv:36]
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_1/code_memory_inst/ram_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/data_memory_inst/dataram_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:21 ; elapsed = 00:03:10 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105556 ; free virtual = 369787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105593 ; free virtual = 369829
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105593 ; free virtual = 369829
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105593 ; free virtual = 369829
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105593 ; free virtual = 369829
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105594 ; free virtual = 369830
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105594 ; free virtual = 369830
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |FDRE |    14|
+|2     |OBUF |    40|
++------+-----+------+
+
+Report Instance Areas: 
++------+-------------+-------+------+
+|      |Instance     |Module |Cells |
++------+-------------+-------+------+
+|1     |top          |       |    54|
+|2     |  fetch_inst |fetch  |    14|
++------+-------------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:27 ; elapsed = 00:03:15 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 105593 ; free virtual = 369829
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 590 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:35 ; elapsed = 00:03:18 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 110441 ; free virtual = 374677
+Synthesis Optimization Complete : Time (s): cpu = 00:02:35 ; elapsed = 00:03:18 . Memory (MB): peak = 2933.184 ; gain = 43.941 ; free physical = 110445 ; free virtual = 374676
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2933.184 ; gain = 0.000 ; free physical = 110438 ; free virtual = 374669
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2933.184 ; gain = 0.000 ; free physical = 110379 ; free virtual = 374610
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 22c58850
+INFO: [Common 17-83] Releasing license: Synthesis
+364 Infos, 121 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:40 ; elapsed = 00:03:24 . Memory (MB): peak = 2933.184 ; gain = 72.898 ; free physical = 110587 ; free virtual = 374818
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/forwardcom/project_1/project_1.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:29:54 2022...
