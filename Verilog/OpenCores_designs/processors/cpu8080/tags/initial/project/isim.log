@@ -1,0 +1,64 @@
+ command line:
+   ./cpu_tbw_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  1048
+
+Fri Oct 06 10:03:58 2006
+
+Total Line Count = 944
+
+ Elaboration time 0.015625 sec.
+
+ Estimate current memory usage 34.5989 Meg. 
+
+ Total signals 119
+ Total nets 113
+ Total signal drivers 52
+ Total blocks 18
+ Total primitive blocks 14
+ Total processes 54
+ntrace select -o on -n /cpu_tbw/readio 
+ntrace select -o on -n /cpu_tbw/writemem 
+ntrace select -o on -n /cpu_tbw/writeio 
+ntrace select -o on -n /cpu_tbw/inta 
+ntrace select -o on -n /cpu_tbw/readmem 
+ntrace select -o on -n /cpu_tbw/clock 
+ntrace select -o on -n /cpu_tbw/waitr 
+ntrace select -o on -n /cpu_tbw/reset 
+ntrace select -o on -n /cpu_tbw/intr 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/addr 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/data 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/state 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/pc 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/raddrhold 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/statesel 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/nextstate 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/aluopra 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/aluoprb 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/alusel 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/alures 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/carry 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/zero 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/parity 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/sign 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/auxcar 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/ei 
+ntrace select -o on -n /cpu_tbw/UUT/cpu/sp 
+ntrace select -o on -n /cpu_tbw/UUT/ramsel 
+ntrace select -o on -n /cpu_tbw/UUT/romsel 
+ntrace select -o on -n /cpu_tbw/UUT/bootstrap 
+ntrace select -o on -n /cpu_tbw/UUT/select1/selecta/mask 
+ntrace select -o on -n /cpu_tbw/UUT/select1/selecta/comp 
+ntrace select -o on -n /cpu_tbw/UUT/select1/selecta/iaddr 
+ntrace select -o on -n /cpu_tbw/UUT/select1/selecta/selectout 
+ntrace start 
+run all 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+run 10000 ns 
+restart
+run all 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+run 10000 ns 

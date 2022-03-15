@@ -1,0 +1,19 @@
+V3 12
+FL $XILINX/ISEexamples/cpu8080/vga.vhd 2006/10/31.09:40:20 I.33
+PH work/vga_pckg 1162399259        FL $XILINX/ISEexamples/cpu8080/vga.vhd LB unisim \
+      PB ieee/std_logic_1164 1152316480 PH ieee/NUMERIC_STD 1152316491 \
+      PH unisim/VCOMPONENTS 1154399716 PB work/common 1162399258 CD vga
+EN work/vga 1162399260             FL $XILINX/ISEexamples/cpu8080/vga.vhd LB unisim \
+      PB ieee/std_logic_1164 1152316480 PH ieee/NUMERIC_STD 1152316491 \
+      PH unisim/VCOMPONENTS 1154399716 PB work/common 1162399258
+AR work/vga/vga_arch 1162399261    FL $XILINX/ISEexamples/cpu8080/vga.vhd EN work/vga 1162399260 \
+      CP sync
+EN work/sync 1162399262            FL $XILINX/ISEexamples/cpu8080/vga.vhd LB unisim \
+      PB ieee/std_logic_1164 1152316480 PH ieee/NUMERIC_STD 1152316491 \
+      PH unisim/VCOMPONENTS 1154399716 PB work/common 1162399258
+AR work/sync/sync_arch 1162399263  FL $XILINX/ISEexamples/cpu8080/vga.vhd EN work/sync 1162399262
+FL $XILINX/ISEexamples/cpu8080/common.vhd 2006/10/16.23:07:12 I.33
+PH work/common 1162399257          FL $XILINX/ISEexamples/cpu8080/common.vhd \
+      PB ieee/std_logic_1164 1152316480 PH ieee/NUMERIC_STD 1152316491
+PB work/common 1162399258          FL $XILINX/ISEexamples/cpu8080/common.vhd PH work/common 1162399257 \
+      PB ieee/std_logic_1164 1152316480 PH ieee/NUMERIC_STD 1152316491

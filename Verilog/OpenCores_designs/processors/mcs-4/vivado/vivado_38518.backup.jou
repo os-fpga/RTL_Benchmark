@@ -1,0 +1,306 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Mar  4 12:34:25 2022
+# Process ID: 38518
+# Current directory: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado
+# Command line: vivado
+# Log file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.log
+# Journal file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/instruction_pointer.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/timing_io.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/alu.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/counter.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/i4004.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/instruction_decode.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/scratchpad.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/defs.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/regblock.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/alu16.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/MC6809_cpu.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/decoders.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project 68hc05 /home/users/ayyaz.ahmed/Downloads/68hc05/68hc05 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/68hc05/trunk/6805.vhd
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/68hc08/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/68hc08/trunk/X68UR08.vhd
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap_hardwired_processor/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/sap_hardwired_processor/branches/CPU8_1.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/8051/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_memory_interface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_64x32_dual_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_wb_iinterface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sfr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_rom.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc2.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_test.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_src_sel.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_256x8_two_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_icache.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cache_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cy_select.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top oc8051_top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu_test.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu_test.v
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+import_files -force -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_memory_interface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_64x32_dual_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_wb_iinterface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_fpga_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sfr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/disp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_rom.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc2.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_src_sel.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_256x8_two_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_icache.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cache_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cy_select.v}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top oc8051_fpga_top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src3_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_tb.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_pc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_rd_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_cy_select.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src1_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_immediate_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_op_select.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_wr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg4.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg3.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg8.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_fpga_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg2.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_rom_addr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src2_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ext_addr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg1.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+set_property is_global_include true [get_files  /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_defines.v]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/ps2_kbd.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/cpu8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/vga.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/sm8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/m8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/vgachr.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/common.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top cpu8080 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/ps2_kbd.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vgachr.v] -no_script -reset -force -quiet
+remove_files  {/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/ps2_kbd.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vgachr.v}
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vga.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vga.vhd
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/mar_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/b_reg_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/irdec_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/ir_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/alu_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/control_unit_fsm.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/pc_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/rom_16_8_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/MP_struct.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/ac_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/o_behave.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/branches/MCPU8_1.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/a-z80/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/a-z80/rtl/coremodules.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_module.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_matrix.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/temp_wires.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/core.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/globals.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_zero.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_matrix_compiled.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/a-z80/rtl/inc_dec_2bit.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_4.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_switch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_8.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_slice.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/bus_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_latch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/interrupts.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/resets.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_bit_select.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_2z.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_select.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/pin_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/pla_decode.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/decode_state.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_latch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_pins.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/ir.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_flags.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/execute.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_shifter_core.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/inc_dec.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/bus_switch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/control_pins_n.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/clk_delay.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_core.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_3z.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_prep_daa.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/memory_ifc.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_2.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_file.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/z80_top_direct_n.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_pins.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_mux.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_switch_mask.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/sequencer.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ae18/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/ae18/trunk/rtl/verilog/ae18_core.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/aemb/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_gprf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_xecu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_dparam.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_intu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_sim.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_edk32.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_ctrl.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_brcc.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_ibuf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_mult.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_xslif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_bpcu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_memif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_regf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_pipe.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_core.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_edk63.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_edk62.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_sparam.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_regs.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_sim.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_bsft.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_spsram.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_tpsram.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_exec.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_iche.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_ctrl.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_dwbif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_iwbif.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top aeMB_core [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/ag_6502/trunk/ag_6502/states.v /home/users/ayyaz.ahmed/Downloads/ag_6502/trunk/ag_6502/ag_6502.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ag6502 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+synth_design -rtl -name rtl_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/altor32/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_lsu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_fetch.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_ram_dp.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/intr_periph.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/soc_pif8.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_writeback.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/top.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_alu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/cpu_if.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_defs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_funcs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/ram_dp8.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/timer_periph.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dcache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/dmem_mux3.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_sim.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_exec.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/ram.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_wb_fetch.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_alt.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dfu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/soc.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_lfu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_noicache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_ram_sp.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_icache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_xil.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/intr_defs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dcache_mem_if.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/timer_defs.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+refresh_design
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/alwcpu/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Ctrl.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Top.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/RegMap.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/DPLRAM.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/MuxBG.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Alu.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/GlobPkg.vhdl}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/agcnorm/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC_LOGIC.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGCPACK.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC_MEMORY.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/agc_erasable.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/amber/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/memory_configuration.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/register_addresses.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_config_defines.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_crc.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_random.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_register.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/uart.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_macstatus.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wishbone_arbiter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_registers.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/interrupt_controller.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_fifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_transmitcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timer_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ddr3_afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_defines.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem128.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_icache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_spram_256x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timescale.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_shifter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/clocks_resets.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ethmac_wb.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_clockgen.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_receivecontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/test_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone_buf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_maccontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/xilinx_dist_ram_16x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_shiftreg.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_xs6_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_miim.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/main_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_outputcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_cop.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxaddrcheck.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_dcache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_top.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_write_back.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_1/project_1.srcs/sources_1/imports/system/a25_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_1/project_1.srcs/sources_1/imports/system/a25_decompile.v
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/amber/project_2 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/memory_configuration.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/register_addresses.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_config_defines.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_crc.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_random.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_register.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/uart.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_macstatus.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wishbone_arbiter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_registers.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/interrupt_controller.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_ram_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_fifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_transmitcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timer_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ddr3_afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_defines.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem128.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_icache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_spram_256x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timescale.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_cache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_shifter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/clocks_resets.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ethmac_wb.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_clockgen.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_receivecontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/test_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone_buf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_maccontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/xilinx_dist_ram_16x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_shiftreg.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_xs6_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_miim.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/main_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_outputcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_cop.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_iobuf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxaddrcheck.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_barrel_shift_fpga.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_dcache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_top.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_write_back.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a23_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a23_decompile.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a25_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a25_decompile.v
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/global_defines.vh
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/global_timescale.vh
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_sram_byte_en.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_sram_line_en.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+close_project
+open_project /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/xilinx_dist_ram_16x32.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/xilinx_dist_ram_16x32.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_xs6_ddr3_bridge.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_xs6_ddr3_bridge.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_ddr3_bridge.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_ddr3_bridge.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ao68000/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/ao68000/rtl/ao68000.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

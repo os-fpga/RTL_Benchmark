@@ -1,0 +1,20 @@
+#!/bin/sh
+# $Id: gccrom,v 1.4 2007-04-30 15:57:31 sybreon Exp $
+# $Log: not supported by cvs2svn $
+# Revision 1.3  2007/04/25 22:15:06  sybreon
+# Added support for 8-bit and 16-bit data types.
+#
+# Revision 1.2  2007/04/04 06:14:39  sybreon
+# Minor changes
+#
+# Revision 1.1  2007/03/09 17:41:56  sybreon
+# initial import
+#
+#mb-gcc -g -mxl-soft-div -mxl-soft-mul -msoft-float -mno-clearbss -msmall-divides -mno-memcpy -mno-xl-gp-opt -o rom.o $@ && \
+mb-gcc -g -mxl-soft-div -mxl-soft-mul -msoft-float -o rom.o $@ && \
+#mb-run -v rom.o 2> rom.run && \
+mb-objcopy -O binary rom.o rom.bin && \
+hexdump -v -e'1/4 "%.8X\n"' rom.bin > ../sim/aeMB.rom && \
+mb-objdump -DSCs rom.o > rom.dump && \
+rm rom.bin && \
+echo "ROM generated"

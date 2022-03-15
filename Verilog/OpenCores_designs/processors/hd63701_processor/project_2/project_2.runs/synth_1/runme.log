@@ -1,0 +1,395 @@
+
+*** Running vivado
+    with args -log HD63701V0_M6.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source HD63701V0_M6.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source HD63701V0_M6.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.281 ; gain = 10.926 ; free physical = 6383 ; free virtual = 373640
+Command: synth_design -top HD63701V0_M6 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 64025
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.242 ; gain = 0.004 ; free physical = 5456 ; free virtual = 372746
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'HD63701V0_M6' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:5]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_BIRAM' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:100]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_BIRAM' (1#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:100]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_IOPort' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_IOPort' (2#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:122]
+WARNING: [Synth 8-689] width (5) of port connection 'PI2' does not match port width (4) of module 'HD63701_IOPort' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:43]
+WARNING: [Synth 8-689] width (5) of port connection 'PO2' does not match port width (4) of module 'HD63701_IOPort' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:43]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_Timer' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:159]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_Timer' (3#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:159]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_BIDSEL' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_BIDSEL' (4#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:79]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_Core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_CORE.v:7]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_SEQ' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_SEQ.v:8]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:6]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S0' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S0' (5#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:63]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S1' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S1' (6#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:68]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S2' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S2' (7#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:73]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S3' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S3' (8#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:78]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S4' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S4' (9#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:83]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S5' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S5' (10#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:88]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S6' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S6' (11#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:93]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S7' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:98]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S7' (12#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:98]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S8' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S8' (13#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:103]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_MCROM_S9' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:108]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM_S9' (14#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:108]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_MCROM' (15#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_MCROM.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_SEQ' (16#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_SEQ.v:8]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_EXEC' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:7]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_DSEL13' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:191]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_DSEL13' (17#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:191]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_ALU' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_ALU.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_ALU' (18#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_ALU.v:7]
+INFO: [Synth 8-6157] synthesizing module 'HD63701_DSEL8' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:229]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_DSEL8' (19#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:229]
+WARNING: [Synth 8-7137] Register rSp_reg in module HD63701_EXEC has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:141]
+WARNING: [Synth 8-7137] Register rX_reg in module HD63701_EXEC has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:68]
+WARNING: [Synth 8-7137] Register rD_reg in module HD63701_EXEC has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_EXEC' (20#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_EXEC.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701_Core' (21#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701_CORE.v:7]
+WARNING: [Synth 8-7071] port 'CLKo' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7071] port 'MC' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7071] port 'REG_D' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7071] port 'REG_X' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7071] port 'REG_S' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7071] port 'REG_C' of module 'HD63701_Core' is unconnected for instance 'core' [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-7023] instance 'core' of module 'HD63701_Core' has 17 connections declared, but only 11 given [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:67]
+WARNING: [Synth 8-3848] Net biromd in module/entity HD63701V0_M6 does not have driver. [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'HD63701V0_M6' (22#1) [/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.srcs/sources_1/imports/trunk/HD63701.v:5]
+WARNING: [Synth 8-3917] design HD63701V0_M6 has port PO2[4] driven by constant 0
+WARNING: [Synth 8-7129] Port cf[7] in module HD63701_ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cf[6] in module HD63701_ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[6] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[5] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[4] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PI2[4] in module HD63701V0_M6 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 5072 ; free virtual = 372367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 5067 ; free virtual = 372362
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.246 ; gain = 8.008 ; free physical = 5067 ; free virtual = 372362
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 5864 ; free virtual = 373160
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   17 Bit       Adders := 6     
+	   3 Input   17 Bit       Adders := 1     
+	   4 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 6     
+	   2 Input    6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     17 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 5     
+	   4 Input      1 Bit         XORs := 2     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               24 Bit    Registers := 11    
+	               16 Bit    Registers := 9     
+	                8 Bit    Registers := 8     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---RAMs : 
+	             1024 Bit	(128 X 8 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 2     
++---Muxes : 
+	 234 Input   24 Bit        Muxes := 1     
+	 184 Input   24 Bit        Muxes := 1     
+	  54 Input   24 Bit        Muxes := 1     
+	   4 Input   24 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 7     
+	  23 Input   24 Bit        Muxes := 1     
+	   5 Input   20 Bit        Muxes := 1     
+	  10 Input   17 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 1     
+	  11 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 8     
+	  18 Input   16 Bit        Muxes := 1     
+	  12 Input   16 Bit        Muxes := 4     
+	   6 Input   16 Bit        Muxes := 4     
+	  17 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 10    
+	  10 Input    8 Bit        Muxes := 1     
+	   7 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 3     
+	   6 Input    6 Bit        Muxes := 2     
+	  12 Input    6 Bit        Muxes := 2     
+	  26 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 2     
+	   6 Input    2 Bit        Muxes := 1     
+	   9 Input    2 Bit        Muxes := 2     
+	   8 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 22    
+	  10 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 4     
+	   6 Input    1 Bit        Muxes := 2     
+	  17 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP r13, operation Mode is: A*B.
+DSP Report: operator r13 is absorbed into DSP r13.
+WARNING: [Synth 8-3917] design HD63701V0_M6 has port PO2[4] driven by constant 0
+WARNING: [Synth 8-7129] Port cf[7] in module HD63701_ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cf[6] in module HD63701_ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[6] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[5] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mcode[4] in module HD63701_EXEC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PI2[4] in module HD63701V0_M6 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4710 ; free virtual = 372158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------+---------------------------+---------------+----------------+
+|Module Name  | RTL Object                | Depth x Width | Implemented As | 
++-------------+---------------------------+---------------+----------------+
+|HD63701V0_M6 | core/SEQ/mcr/r2/mcode_reg | 256x24        | Block RAM      | 
+|HD63701V0_M6 | core/SEQ/mcr/r3/mcode_reg | 256x24        | Block RAM      | 
++-------------+---------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name  | RTL Object      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|HD63701V0_M6 | biram/bimem_reg | 128 x 8(READ_FIRST)    | W |   | 128 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|HD63701_ALU | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4703 ; free virtual = 372151
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name  | RTL Object      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|HD63701V0_M6 | biram/bimem_reg | 128 x 8(READ_FIRST)    | W |   | 128 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++-------------+-----------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance biram/bimem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/SEQ/mcr/r2/mcode_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/SEQ/mcr/r2/mcode_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/SEQ/mcr/r3/mcode_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance core/SEQ/mcr/r3/mcode_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4695 ; free virtual = 372145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4693 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    67|
+|3     |DSP48E1  |     1|
+|4     |LUT1     |    25|
+|5     |LUT2     |   189|
+|6     |LUT3     |   133|
+|7     |LUT4     |   151|
+|8     |LUT5     |   266|
+|9     |LUT6     |   832|
+|10    |MUXF7    |    49|
+|11    |MUXF8    |     3|
+|12    |RAMB18E1 |     3|
+|13    |FDCE     |   147|
+|14    |FDPE     |    46|
+|15    |FDRE     |   151|
+|16    |FDSE     |     2|
+|17    |IBUF     |    24|
+|18    |OBUF     |    45|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------+-----------------+------+
+|      |Instance   |Module           |Cells |
++------+-----------+-----------------+------+
+|1     |top        |                 |  2136|
+|2     |  biram    |HD63701_BIRAM    |     1|
+|3     |  core     |HD63701_Core     |  1945|
+|4     |    EXEC   |HD63701_EXEC     |   686|
+|5     |      ALU  |HD63701_ALU      |   125|
+|6     |      sAB  |HD63701_DSEL8    |    46|
+|7     |      sR0  |HD63701_DSEL13   |   105|
+|8     |      sR1  |HD63701_DSEL13_0 |    94|
+|9     |    SEQ    |HD63701_SEQ      |  1257|
+|10    |      mcr  |HD63701_MCROM    |  1170|
+|11    |        r0 |HD63701_MCROM_S0 |   155|
+|12    |        r1 |HD63701_MCROM_S1 |   147|
+|13    |        r2 |HD63701_MCROM_S2 |    30|
+|14    |        r3 |HD63701_MCROM_S3 |   156|
+|15    |        r4 |HD63701_MCROM_S4 |   173|
+|16    |        r5 |HD63701_MCROM_S5 |    24|
+|17    |        r6 |HD63701_MCROM_S6 |    15|
+|18    |        r7 |HD63701_MCROM_S7 |   432|
+|19    |        r8 |HD63701_MCROM_S8 |    18|
+|20    |  iopt     |HD63701_IOPort   |    12|
+|21    |  timer    |HD63701_Timer    |   106|
++------+-----------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 4692 ; free virtual = 372143
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2897.258 ; gain = 0.000 ; free physical = 4768 ; free virtual = 372221
+INFO: [Netlist 29-17] Analyzing 123 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.273 ; gain = 0.000 ; free physical = 4540 ; free virtual = 372076
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 6d2146f3
+INFO: [Common 17-83] Releasing license: Synthesis
+61 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:00:57 . Memory (MB): peak = 2953.273 ; gain = 92.992 ; free physical = 4735 ; free virtual = 372274
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/hd63701/project_2/project_2.runs/synth_1/HD63701V0_M6.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file HD63701V0_M6_utilization_synth.rpt -pb HD63701V0_M6_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 15:12:12 2022...

@@ -1,0 +1,53 @@
+ command line:
+   ./cpu8080_tbw_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  1179
+
+Sat Nov 18 23:42:47 2006
+
+Total Line Count = 5816
+
+ Elaboration time 0.015625 sec.
+
+ Estimate current memory usage 36.7329 Meg. 
+
+ Total signals 323
+ Total nets 542
+ Total signal drivers 184
+ Total blocks 40
+ Total primitive blocks 29
+ Total processes 186
+ntrace select -o on -n /cpu8080_tbw/clock 
+ntrace select -o on -n /cpu8080_tbw/writemem 
+ntrace select -o on -n /cpu8080_tbw/readmem 
+ntrace select -o on -n /cpu8080_tbw/readio 
+ntrace select -o on -n /cpu8080_tbw/writeio 
+ntrace select -o on -n /cpu8080_tbw/data 
+ntrace select -o on -n /cpu8080_tbw/addr 
+ntrace select -o on -n /cpu8080_tbw/waitr 
+ntrace select -o on -n /cpu8080_tbw/intr 
+ntrace select -o on -n /cpu8080_tbw/inta 
+ntrace select -o on -n /cpu8080_tbw/UUT/reset 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/zero 
+ntrace select -o on -n /cpu8080_tbw/UUT/ramsel 
+ntrace select -o on -n /cpu8080_tbw/UUT/romsel 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/state 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/statesel 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/rdatahold 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/carry 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/alures 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/waddrhold 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/wdatahold 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/aluopra 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/aluoprb 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/alucin 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/alusel 
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/regfil 
+WARNING:Simulator:131 - Request to trace variable regfil was ignored. Tracing of
+   array of vector type is not supported.
+ntrace select -o on -n /cpu8080_tbw/UUT/cpu/auxcar 
+ntrace start 
+run all 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

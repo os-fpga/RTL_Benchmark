@@ -1,0 +1,393 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Mar  9 09:38:35 2022
+# Process ID: 24873
+# Current directory: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado
+# Command line: vivado
+# Log file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.log
+# Journal file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 2268.292 MHz, CPU Physical cores: 32, Host memory: 540770 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/mips32/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/ALU.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/CPU_Ctr.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/wback.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/bypath_ctr.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/bypath.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/PipelineMIPS.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/decode.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/bypath2.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/fetch.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/mem.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/writeback.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/execute.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/macros.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/allocate.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/SimpleCache.v /home/users/ayyaz.ahmed/Downloads/mips32/trunk/Classic-MIPS/source/src/ALU_Ctr.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/R6502_TC_config.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/core.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/fsm_nmi.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/regbank_axy.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/add_sub.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/fsm_execution_unit.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/reg_pc.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/reg_sp.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/alu.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/fsm_core_v2_0.vhd /home/users/ayyaz.ahmed/Downloads/cpu6502_true_cycle/tags/arelease/rtl/vhdl/r6502_tc.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top R6502_TC [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cpugen/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_du.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_wd.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_wd.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_cu.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_oa.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_iu.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_du.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_cu.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_oa.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_iu.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuT_utils.vhd /home/users/ayyaz.ahmed/Downloads/cpugen/rtl/cpuC_utils.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/darkriscv/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/darkriscv/trunk/rtl/config.vh
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/darkriscv/trunk/rtl/darksocv.v /home/users/ayyaz.ahmed/Downloads/darkriscv/trunk/rtl/darkriscv.v /home/users/ayyaz.ahmed/Downloads/darkriscv/trunk/rtl/darkuart.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/dfp/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/memory.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/programcounter.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/parameters.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/baudgen.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/DataFlowProcessor.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/texthi.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/operations.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/textinout.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/dfptypes.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/instructionregister.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/uart.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/rs232_tx.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/gctext.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/stack.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/romemory.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/program.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/ramemory.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/rs232_rx.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/gcsci.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/textout.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/top.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/sci.vhd /home/users/ayyaz.ahmed/Downloads/dfp/web_uploads/VHDL/function.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/dfp/project_1/project_1.srcs/sources_1/imports/VHDL/sci.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/dfp/project_1/project_1.srcs/sources_1/imports/VHDL/sci.vhd
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/ALU.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/mini_uP_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/single_rdecal_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/binary_counter_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/bus_access_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/registre.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/inverser.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/bus_register_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/generic_const_rdecal_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/rdecal_x16.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/sum_x16.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse {/home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/UnitTest.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/ALU_INT.vhd /home/users/ayyaz.ahmed/Downloads/distributed_intelligence/trunk/SRC/MY_FUNCS.vhd}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top single_rdecal_x16 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ecpu_alu/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_controller.vh
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_datapath.v /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_datapath.working_nosynth.v /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu.v /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_barrel_shifter.v /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_controller.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/ecpu_alu/trunk/alu/rtl/verilog/alu_adder.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/edge/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/ex_mem_pipereg.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/zero_extend.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shift_left.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/sign_extend.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shifter_right_logical.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/adder.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/edge_core.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/if_id_pipereg.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/hazard_unit.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/id_ex_pipereg.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shifter_right_arithmetic.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/mem_wb_pipereg.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/register.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/alu_decoder.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/clock_manager.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/alu.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/mult_unit.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shifter_decoder.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/mux2.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/regfile.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/div_unit.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/mux_WBResult.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shift_unit.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/shifter_left.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/controller.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/Coprocessor0.v /home/users/ayyaz.ahmed/Downloads/edge/trunk/HW/Verilog/reset_logic.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/mips_16/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/alu.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/data_mem.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/instruction_mem.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/ID_stage.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/MEM_stage.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/hazard_detection_unit.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/WB_stage.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/IF_stage.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/EX_stage.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/mips_16_core_top.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/mips_16_defs.v /home/users/ayyaz.ahmed/Downloads/mips_16/trunk/rtl/register_file.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/fluid_core_2/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/ID_Stage.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Shifter.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/data_mem.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/uOP_Store.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/FluidCore.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Programming.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/IF_Stage.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/interrupt_unit.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Configuration.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/EX_Stage.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Reg_Hist.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/WB_Stage.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/P_Reg.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Test_Bed.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Inst_Mem.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Staller.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/MEM_Stage.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/int_ALU.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/ioPort.v /home/users/ayyaz.ahmed/Downloads/fluid_core_2/trunk/rtl/Reg_File.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/forwardcom/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/subfunctions.vh /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/config_r32.vh {/home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/defines - Copy.vh} /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/debugger.vh /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/config_r64.vh /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/config_r32F675.vh /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/defines.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/debouncer.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/fetch.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/call_stack.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/code_memory.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/top.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/debug_display.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/in_out_ports.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/alu.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/decoder.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/dataread.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/lcd.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/uart_and_fifo.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/addressgenerator.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/data_memory.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/mul_div.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/seg7.sv /home/users/ayyaz.ahmed/Downloads/forwardcom/trunk/register_read.sv}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/fwrisc/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_defines.vh
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_regfile.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_dbus_if.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_alu.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_comparator.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_fpga_top.sv /home/users/ayyaz.ahmed/Downloads/fwrisc/trunk/rtl/fwrisc_tracer.sv}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/gpu/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/core.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/ftou16.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/fmul.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/trunc_round_ceil_floor.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/fadd_fsub.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/mul.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/div.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/ftou32.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/fdiv.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/portc_tristate_bridge.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/core_pkg.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/ftou8.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/registers.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/u32tof.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/u16tof.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/pfloat_pkg.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/fmulp2.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/add_sub.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/fcomp_fmin_fmax.vhd /home/users/ayyaz.ahmed/Downloads/gpu/trunk/gpu/rtl/vhdl/gpu_hw/core/u8tof.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/gup/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/div.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/reset_irq_handler.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/data_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/adv_math_unit.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/memory_controller.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/vector_split.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/address_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/register_array.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/ccr.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/microsquencer.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/mul.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gator_uprocessor/mapper.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/gup/project_2 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/mul.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/int_rom.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/reset_irq_handler.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/vector_split.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/io_port.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/gucode.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/mapper.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/sci_rx.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/sci.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/ext_bus_interface.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/address_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/sci_tx.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/hprio_reg.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/led_sw_interface.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/memory_controller.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/data_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/dev_bus_switch.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/register_array.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/adv_math_unit.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/div.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/main_bus_switch.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/microsquencer.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/int_ram.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/ccr.vhd /home/users/ayyaz.ahmed/Downloads/gup/web_uploads/gator_ucomputer_v1.0/timer.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_project
+create_project project_3 /home/users/ayyaz.ahmed/Downloads/gup/project_3 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/gup/rtl/adv_math_unit_top.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/data_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/microsquencer.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/register_array.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/vector_split.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/div.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/mul.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/mapper.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/reset_irq_handler.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/address_alu.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/ccr.vhd /home/users/ayyaz.ahmed/Downloads/gup/rtl/memory_controller.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/hd63701/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_defs.vh /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_MCODE.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_ALU.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_EXEC.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_CORE.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_MCROM.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_SEQ.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/hd63701/project_2 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_defs.vh /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_MCODE.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_ALU.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_EXEC.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_CORE.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_MCROM.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701_SEQ.v /home/users/ayyaz.ahmed/Downloads/hd63701/trunk/HD63701.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/hf-risc/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/bshifter.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/datapath.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/control.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/alu.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/peripherals_busmux.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/uart.vhd /home/users/ayyaz.ahmed/Downloads/hf-risc/trunk/hf-riscv/core_rv32i/reg_bank.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/hicovec/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/instructioncounter.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/multiplexer4.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/valu_controlunit.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/cpu.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/rs232.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/dataregister.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/flag.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/flaggroup.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/vector_register.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/sram.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/debugger.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/vector_executionunit.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/demultiplexer1x4.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/vector_alu_32.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/vector_slice.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/alu.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/shuffle.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/selectunit.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/config.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/addressgroup.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/multiplexer2.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/registergroup.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/system.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/vector_controlunit.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/aluinputgroup.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/memoryinterface.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/controlunit.vhd /home/users/ayyaz.ahmed/Downloads/hicovec/trunk/cpu/units/datatypes.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/hive/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_base_reg.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_vector_pipe.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_mult_shift.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_stack_pipe.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_op_decode.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_control_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_level_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_uart_tx.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_pkg.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/ramp_tri_sq.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_add_sub.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_uart.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/ram_dp_dual.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_data_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_core.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_version.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_tst_decode.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_vector_ctl.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_error.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_mux.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/rst_bridge.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_main_mem.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_pc_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_logical.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_multiply.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_uart_rx.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_stack_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_gpio.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_top.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/in_cond.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_alu_top.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_id_ring.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/hive_stacks.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/pipe.sv /home/users/ayyaz.ahmed/Downloads/hive/trunk/v08.06/_SV_/ram_dq.sv}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top hive_top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/hive/project_1/project_1.srcs/sources_1/imports/_SV_/hive_stack_pipe.sv] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/hive/project_1/project_1.srcs/sources_1/imports/_SV_/hive_stack_pipe.sv
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/hpc-16/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/regfile.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/arith_arch_neutral.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/con1_arch_rtlfast.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/con_pkg.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/shifter.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/cpu_pkg.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/flags.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/fcmp.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/sync.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/cpu.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/dp_pkg.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/alu.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/dp.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/con1.vhd /home/users/ayyaz.ahmed/Downloads/hpc-16/trunk/impl0/rtl/vhdl/log.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/c16/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/data_core.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/input_output.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/cpu_engine.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/memory.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/opcode_decoder.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/BaudGen.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/Board_cpu.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/cpu.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/bin_to_7segment.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/cpu_pack.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/test.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/cpu_test.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/uart_tx.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/ds1722.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/temperature.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/uart_rx.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/select_yy.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/mem_content.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/opcode_fetch.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/uart._baudgen.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/uart.vhd /home/users/ayyaz.ahmed/Downloads/c16/16_bit_Microprocessor/vhdl/alu8.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/test.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/test.vhd
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/cpu_test.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/cpu_test.vhd
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top cpu [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/memory.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/c16/project_1/project_1.srcs/sources_1/imports/vhdl/memory.vhd
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/neorv32/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_application_image.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_uart.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_imem.legacy.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_regfile.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_boot_rom.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_cp_bitmanip.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_dmem.legacy.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_gptmr.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_wishbone.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_ProcessorTop_UP5KDemo.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_dmem.default.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_cp_muldiv.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_debug_dm.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_slink.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_fifo.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_package.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_twi.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_bootloader_image.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_mtime.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_imem.entity.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_alu.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_trng.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_control.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_imem.default.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_xip.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_xirq.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_gpio.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_decompressor.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cfs.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_neoled.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_cp_cfu.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_bus.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_debug_dtm.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_icache.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_wdt.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_pwm.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_cp_shifter.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_bus_keeper.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu_cp_fpu.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_sysinfo.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_dmem.entity.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_busswitch.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_top.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_spi.vhd /home/users/ayyaz.ahmed/Downloads/neorv32/core/neorv32_cpu.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

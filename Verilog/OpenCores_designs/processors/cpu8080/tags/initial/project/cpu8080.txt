@@ -1,0 +1,83 @@
+Intel 8080 CPU Verilog core
+
+2006/9/12
+
+PROJECT:  8080 CPU
+LANGUAGE: VERILOG
+TARGET:   Xilinx xc3s1000-4
+
+This core was implemented as a first project in Verilog by an old schematic 
+design engineer. There were a few reasons for implementing an 8080 processor.
+First, it was the first true general purpose processor available. Second, it
+was, by nature, designed to be compact in instruction set and implementation.
+Third, it has a rich set of software applications, including assemblers,
+compilers and operating systems.
+
+More often, A Z80 target is used in Verilog or VHDL, with the idea that the
+Z80 is the superset of the 8080. However, the Z80 is significantly more
+complex than the 8080. The 8080 can make a useful maintainence processor for
+SOC systems, since it consumes a small amount of resources. The 8080 has a
+significant body of support, since it was a primary 8 bit processor before
+the Z80, and coding for the 8080 instruction set often continued even after
+general Z80 use, because that was the universal subset of both processors.
+
+My own experience with 8080 coding lasted perhaps a year, then I switched
+to the Z80. Although he Z80 was a significantly more usable processor to
+code for than a 8080, it made a mildly non-orthogonal instruction set much
+more so. I have worked on several processors through the series, including
+working on the design for the Z280, a Z80 16 bit replacement at Zilog
+Corporation, so hopefully nobody can accuse me of bias against the Z80 :-)
+
+The core presented is completely compatible with the original 8080 instruction
+set, although the exact handling of the two undefined bits in the status (flags)
+register have not been verified to be identical to the original. This only
+matters for "trick" code that expects a value which is pop'ed into the PSW
+to be preserved when subsequently pushed. This core preserves all bits,
+including the undefined bits, which means such code would function correctly.
+Also needing verification to the original are the illegal opcodes, which on
+this core are treated as nops.
+
+The pinout is decidedly not compatible with the original pinout. The original
+8080 pinout was a multiplexed nightmare that was never really designed to be
+directly used. Intel was attempting to save on pins, and much of the CPU status
+was sent out on every cycle via the data pins. Intel subsequently came out with
+"demultiplexor" chips to result in simple signals.
+
+The cpu8080 signals are a simple unmultiplexed 16 bit address, and a 
+bidirectional, separate 8 bit data bus. The read and write for each of memory
+and I/O spaces are all separately decoded. An interrupt request and acknowledge
+is implemented sufficient to allow an external interrupt controller to be
+connected. A readint signal is implemented that is true for the entire time that
+an interrupt fetch is occuring. This allows simple implementation of full
+vectoring mode.
+
+There were two vectoring modes on the 8080. The most famous one was the use of
+a single instruction byte that was forced onto the data lines during an
+interrupt acknowledge cycle. This instruction could be any valid instruction,
+but was most likely a restart, which gave 8 possible vector locations for the
+interrupt.
+
+It was not as well known, but the original 8080 could accept a full 2 or 3 byte
+instruction via the interrupt acknowledge cycle. This was used by advanced
+Intel interrupt controllers to place a full CALL instruction on the data lines,
+and thus achieve full arbitrary address vectoring. I have included such an
+advanced interrupt controller as an accessory to the cpu8080 core, also in
+verilog.
+
+cpu8080 was implemented in Xilinx ISE, simulated, and then carried out to an 
+XESS XSA-3S1000 board with a Spartan-3 XC3S1000 FPGA. This board can download
+the test design and run it with a standard PC keyboard and VGA monitor. To drive
+the onboard pheriperhals, the total package includes a VGA/Keyboard driver that
+emulates the original Altair serial port card, addressing for the flash, and
+addressing for 64kb of the SDRAM.
+
+The software provided includes a BIOS image sufficient to run CP/M 3.1 from the
+onboard flash. The flash contains a short bootstrap, then the BIOS treats the
+flash as partitioned disk drive. Also included are utilities to get the flash
+images and programs on and off the board. The resulting software/hardware
+combination emulates a minimal video terminal connected to a Altair or similar
+Home Computer running CP/M. Several simulators can be found for the PC that
+run this same combination.
+
+Scott Moore
+

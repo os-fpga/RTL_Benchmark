@@ -1,0 +1,908 @@
+Release 8.2.02i - xst I.33
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.23 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.23 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: testbench.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "testbench.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "testbench"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-pq208
+
+---- Source Options
+Top Module Name                    : testbench
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Write Timing Constraints           : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : testbench.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+safe_implementation                : No
+Optimize Instantiated Primitives   : NO
+use_clock_enable                   : Yes
+use_sync_set                       : Yes
+use_sync_reset                     : Yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "cpu8080.v" in library work
+Module <cpu8080> compiled
+Compiling verilog file "testbench.v" in library work
+Module <alu> compiled
+Module <testbench> compiled
+Module <select> compiled
+Module <selectone> compiled
+Module <rom> compiled
+Module <ram> compiled
+No errors in compilation
+Analysis of file <"testbench.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <testbench> in library <work>.
+
+Analyzing hierarchy for module <select> in library <work>.
+
+Analyzing hierarchy for module <cpu8080> in library <work>.
+
+Analyzing hierarchy for module <rom> in library <work>.
+
+Analyzing hierarchy for module <ram> in library <work>.
+
+Analyzing hierarchy for module <selectone> in library <work>.
+
+Analyzing hierarchy for module <alu> in library <work>.
+
+Building hierarchy successfully finished.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <testbench>.
+Module <testbench> is correct for synthesis.
+ 
+Analyzing module <select> in library <work>.
+Module <select> is correct for synthesis.
+ 
+Analyzing module <selectone> in library <work>.
+WARNING:Xst:905 - "testbench.v" line 229: The signals <reset, selectin, data, comp, mask> are missing in the sensitivity list of always block.
+Module <selectone> is correct for synthesis.
+ 
+Analyzing module <cpu8080> in library <work>.
+Module <cpu8080> is correct for synthesis.
+ 
+Analyzing module <alu> in library <work>.
+Module <alu> is correct for synthesis.
+ 
+Analyzing module <rom> in library <work>.
+Module <rom> is correct for synthesis.
+ 
+Analyzing module <ram> in library <work>.
+Module <ram> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rom>.
+    Related source file is "testbench.v".
+    Found 8-bit tristate buffer for signal <data>.
+    Summary:
+	inferred   8 Tristate(s).
+Unit <rom> synthesized.
+
+
+Synthesizing Unit <ram>.
+    Related source file is "testbench.v".
+    Found 1024x8-bit single-port block RAM for signal <ramcore>.
+    -----------------------------------------------------------------------
+    | ram_style          | Auto                                |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 8-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clock>         | rise     |
+    |     enA            | connected to signal <select>        | high     |
+    |     weA            | connected to signal <write>         | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to signal <data>          |          |
+    |     doA            | connected to signal <datao>         |          |
+    -----------------------------------------------------------------------
+    Found 8-bit tristate buffer for signal <data>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 Tristate(s).
+Unit <ram> synthesized.
+
+
+Synthesizing Unit <selectone>.
+    Related source file is "testbench.v".
+WARNING:Xst:647 - Input <addr<9:8>> is never used.
+WARNING:Xst:647 - Input <addr<1>> is never used.
+WARNING:Xst:737 - Found 6-bit latch for signal <comp>.
+WARNING:Xst:737 - Found 8-bit latch for signal <mask>.
+WARNING:Xst:737 - Found 8-bit latch for signal <datai>.
+    Found 8-bit tristate buffer for signal <data>.
+    Found 6-bit comparator equal for signal <$cmp_eq0000> created at line 226.
+    Summary:
+	inferred   1 Comparator(s).
+	inferred   8 Tristate(s).
+Unit <selectone> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "cpu8080.v".
+WARNING:Xst:646 - Signal <resi> is assigned but never used.
+    Found 1-bit 8-to-1 multiplexer for signal <cout>.
+    Found 1-bit 8-to-1 multiplexer for signal <auxcar>.
+    Found 5-bit adder for signal <$add0001> created at line 1441.
+    Found 8-bit adder carry out for signal <$addsub0000> created at line 1434.
+    Found 4-bit adder carry out for signal <$addsub0001> created at line 1435.
+    Found 6-bit subtractor for signal <$sub0000> created at line 1447.
+    Found 6-bit subtractor for signal <$sub0001> created at line 1453.
+    Found 9-bit subtractor for signal <$sub0002> created at line 1446.
+    Found 8-bit xor2 for signal <$xor0000> created at line 1464.
+    Found 1-bit xor8 for signal <$xor0002>.
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Xor(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <select>.
+    Related source file is "testbench.v".
+    Found 1-bit register for signal <bootstrap>.
+    Found 8-bit tristate buffer for signal <data>.
+    Found 8-bit register for signal <datai>.
+    Found 4-bit comparator equal for signal <selacc>.
+    Found 4-bit register for signal <seladr>.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   8 Tristate(s).
+Unit <select> synthesized.
+
+
+Synthesizing Unit <cpu8080>.
+    Related source file is "cpu8080.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 30                                             |
+    | Transitions        | 897                                            |
+    | Inputs             | 138                                            |
+    | Outputs            | 31                                             |
+    | Clock              | clock (rising_edge)                            |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00001                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4x1-bit ROM for signal <$mux0041> created at line 271.
+    Found 16-bit register for signal <addr>.
+    Found 1-bit register for signal <writeio>.
+    Found 1-bit register for signal <readio>.
+    Found 1-bit register for signal <writemem>.
+    Found 1-bit register for signal <readmem>.
+    Found 1-bit register for signal <inta>.
+    Found 8-bit tristate buffer for signal <data>.
+    Found 32-bit adder for signal <$add0001> created at line 453.
+    Found 32-bit adder for signal <$add0002> created at line 465.
+    Found 32-bit adder for signal <$add0003> created at line 477.
+    Found 16-bit adder for signal <$add0004> created at line 930.
+    Found 16-bit adder for signal <$add0005> created at line 845.
+    Found 32-bit adder for signal <$add0006> created at line 522.
+    Found 32-bit adder for signal <$add0007> created at line 510.
+    Found 32-bit adder for signal <$add0008> created at line 498.
+    Found 17-bit adder for signal <$add0009> created at line 443.
+    Found 17-bit adder for signal <$addsub0000>.
+    Found 17-bit adder for signal <$addsub0001>.
+    Found 17-bit adder for signal <$addsub0002>.
+    Found 8-bit adder for signal <$addsub0003>.
+    Found 8-bit addsub for signal <$addsub0004>.
+    Found 8-bit addsub for signal <$addsub0005>.
+    Found 8-bit addsub for signal <$addsub0006>.
+    Found 16-bit adder for signal <$addsub0007> created at line 1001.
+    Found 16-bit adder for signal <$addsub0008> created at line 1042.
+    Found 8-bit adder carry out for signal <$addsub0009>.
+    Found 4-bit adder carry out for signal <$addsub0010> created at line 318.
+    Found 8-bit adder carry out for signal <$addsub0011>.
+    Found 4-bit comparator greater for signal <$cmp_gt0000> created at line 315.
+    Found 4-bit comparator greater for signal <$cmp_gt0001> created at line 1251.
+    Found 3-bit 4-to-1 multiplexer for signal <$mux0020> created at line 271.
+    Found 8-bit 4-to-1 multiplexer for signal <$mux0021> created at line 271.
+    Found 3-bit 4-to-1 multiplexer for signal <$mux0023> created at line 271.
+    Found 8-bit 4-to-1 multiplexer for signal <$mux0029> created at line 271.
+    Found 3-bit 4-to-1 multiplexer for signal <$mux0043>.
+    Found 3-bit 4-to-1 multiplexer for signal <$mux0048> created at line 275.
+    Found 8-bit 4-to-1 multiplexer for signal <$mux0049>.
+    Found 16-bit adder for signal <$share0000> created at line 271.
+    Found 6-bit adder for signal <$share0005> created at line 250.
+    Found 16-bit addsub for signal <$share0006> created at line 271.
+    Found 32-bit subtractor for signal <$sub0000> created at line 498.
+    Found 32-bit subtractor for signal <$sub0001> created at line 510.
+    Found 32-bit subtractor for signal <$sub0002> created at line 522.
+    Found 16-bit subtractor for signal <$sub0003> created at line 719.
+    Found 1-bit register for signal <alucin>.
+    Found 8-bit register for signal <aluopra>.
+    Found 8-bit register for signal <aluoprb>.
+    Found 3-bit register for signal <alusel>.
+    Found 1-bit register for signal <auxcar>.
+    Found 1-bit register for signal <carry>.
+    Found 1-bit register for signal <dataeno>.
+    Found 8-bit register for signal <datao>.
+    Found 1-bit register for signal <ei>.
+    Found 1-bit register for signal <parity>.
+    Found 16-bit register for signal <pc>.
+    Found 2-bit register for signal <popdes>.
+    Found 16-bit register for signal <raddrhold>.
+    Found 8-bit register for signal <rdatahold>.
+    Found 8-bit register for signal <rdatahold2>.
+    Found 3-bit register for signal <regd>.
+    Found 64-bit register for signal <regfil>.
+    Found 1-bit register for signal <sign>.
+    Found 16-bit register for signal <sp>.
+    Found 6-bit register for signal <statesel>.
+    Found 16-bit register for signal <waddrhold>.
+    Found 8-bit register for signal <wdatahold>.
+    Found 8-bit register for signal <wdatahold2>.
+    Found 1-bit register for signal <zero>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred 227 D-type flip-flop(s).
+	inferred  34 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred  52 Multiplexer(s).
+	inferred   8 Tristate(s).
+Unit <cpu8080> synthesized.
+
+
+Synthesizing Unit <testbench>.
+    Related source file is "testbench.v".
+WARNING:Xst:646 - Signal <select2> is assigned but never used.
+WARNING:Xst:646 - Signal <select4> is assigned but never used.
+WARNING:Xst:646 - Signal <bootstrap> is assigned but never used.
+    Found 8-bit tristate buffer for signal <data>.
+    Summary:
+	inferred   8 Tristate(s).
+Unit <testbench> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 1024x8-bit single-port block RAM                      : 1
+# ROMs                                                 : 1
+ 4x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 42
+ 16-bit adder                                          : 5
+ 16-bit addsub                                         : 1
+ 16-bit subtractor                                     : 1
+ 17-bit adder                                          : 8
+ 32-bit adder                                          : 6
+ 32-bit subtractor                                     : 3
+ 4-bit adder carry out                                 : 2
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 6-bit subtractor                                      : 2
+ 8-bit adder                                           : 1
+ 8-bit adder carry out                                 : 3
+ 8-bit addsub                                          : 3
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 2
+# Registers                                            : 40
+ 1-bit register                                        : 14
+ 16-bit register                                       : 5
+ 2-bit register                                        : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 16
+# Latches                                              : 12
+ 6-bit latch                                           : 4
+ 8-bit latch                                           : 8
+# Comparators                                          : 7
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 2
+ 6-bit comparator equal                                : 4
+# Multiplexers                                         : 12
+ 1-bit 8-to-1 multiplexer                              : 2
+ 3-bit 4-to-1 multiplexer                              : 4
+ 8-bit 4-to-1 multiplexer                              : 3
+ 8-bit 8-to-1 multiplexer                              : 3
+# Tristates                                            : 9
+ 8-bit tristate buffer                                 : 9
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <cpu/state> on signal <state[1:32]> with speed1 encoding.
+-------------------------------------------
+ State | Encoding
+-------------------------------------------
+ 00001 | 10000000000000000000000000000000
+ 00010 | 01000000000000000000000000000000
+ 00011 | 00000010000000000000000000000000
+ 00100 | 00000001000010000000000000000000
+ 00101 | 00010000000010000000000000000000
+ 00110 | 00000000000011000000000000000000
+ 00111 | 00000000000010100000000000000000
+ 01000 | 00000000000010010000000000000000
+ 01001 | 00000000000010001000000000000000
+ 01010 | 00000000000000000000000010000001
+ 01011 | 00000000000010000000010000000000
+ 01100 | 00001000000000000000000000000000
+ 01101 | 00000000100000000000000000000000
+ 01110 | 00000000010000000000000000000000
+ 01111 | 00000000001000000000000000000001
+ 10000 | 00000100000000000000000000000000
+ 10001 | 00000000000000000000000000100000
+ 10010 | 00000000000000000100000000000000
+ 10011 | 00000000000000000000000100000000
+ 10100 | 00000000000010000000000000010000
+ 10101 | 00000000000000000000000001000000
+ 10110 | 00000000000000000000000000001000
+ 10111 | 00000000000000000000000000000100
+ 11000 | 00000000000010000000000000000010
+ 11001 | 00000000000100000000000000000001
+ 11010 | 00000000000000000010000000000001
+ 11011 | 00000000000000000000100000000001
+ 11100 | 00000000000000000000001000000001
+ 11101 | 00000000000000000001000000000000
+ 11110 | 00100000000010000000000000000000
+-------------------------------------------
+Loading device for application Rf_Device from file '3s200.nph' in environment C:\Xilinx.
+WARNING:Xst:1710 - FF/Latch  <datai_0> (without init value) has a constant value of 0 in block <select>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <datai_1> (without init value) has a constant value of 0 in block <select>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <datai_2> (without init value) has a constant value of 0 in block <select>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <datai_3> (without init value) has a constant value of 0 in block <select>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 1024x8-bit single-port block RAM                      : 1
+# ROMs                                                 : 1
+ 4x1-bit ROM                                           : 1
+# Adders/Subtractors                                   : 42
+ 16-bit adder                                          : 5
+ 16-bit addsub                                         : 1
+ 16-bit subtractor                                     : 1
+ 17-bit adder                                          : 8
+ 32-bit adder                                          : 6
+ 32-bit subtractor                                     : 3
+ 4-bit adder carry out                                 : 2
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 6-bit subtractor                                      : 2
+ 8-bit adder                                           : 1
+ 8-bit adder carry out                                 : 3
+ 8-bit addsub                                          : 3
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 2
+# Registers                                            : 267
+ Flip-Flops                                            : 267
+# Latches                                              : 12
+ 6-bit latch                                           : 4
+ 8-bit latch                                           : 8
+# Comparators                                          : 7
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 2
+ 6-bit comparator equal                                : 4
+# Multiplexers                                         : 12
+ 1-bit 8-to-1 multiplexer                              : 2
+ 3-bit 4-to-1 multiplexer                              : 4
+ 8-bit 4-to-1 multiplexer                              : 3
+ 8-bit 8-to-1 multiplexer                              : 3
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2040 - Unit testbench: 8 multi-source signals are replaced by logic (pull-up yes): N11, N13, N15, N17, N3, N5, N7, N9.
+
+Optimizing unit <testbench> ...
+
+Optimizing unit <alu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block testbench, actual ratio is 65.
+FlipFlop cpu/alusel_0 has been replicated 2 time(s)
+FlipFlop cpu/alusel_1 has been replicated 2 time(s)
+FlipFlop cpu/alusel_2 has been replicated 2 time(s)
+FlipFlop cpu/regd_0 has been replicated 1 time(s)
+FlipFlop cpu/regd_1 has been replicated 1 time(s)
+FlipFlop cpu/regd_2 has been replicated 1 time(s)
+FlipFlop cpu/regfil_5_0 has been replicated 1 time(s)
+FlipFlop cpu/regfil_5_1 has been replicated 2 time(s)
+FlipFlop cpu/state_FFd12 has been replicated 3 time(s)
+FlipFlop cpu/state_FFd18 has been replicated 2 time(s)
+FlipFlop cpu/state_FFd2 has been replicated 4 time(s)
+FlipFlop cpu/state_FFd4 has been replicated 3 time(s)
+FlipFlop cpu/statesel_1 has been replicated 1 time(s)
+FlipFlop cpu/statesel_2 has been replicated 2 time(s)
+FlipFlop cpu/statesel_3 has been replicated 2 time(s)
+FlipFlop cpu/statesel_4 has been replicated 1 time(s)
+FlipFlop cpu/statesel_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 297
+ Flip-Flops                                            : 297
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : testbench.ngr
+Top Level Output File Name         : testbench
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 33
+
+Cell Usage :
+# BELS                             : 2939
+#      GND                         : 1
+#      INV                         : 82
+#      LUT1                        : 139
+#      LUT2                        : 154
+#      LUT2_D                      : 6
+#      LUT2_L                      : 3
+#      LUT3                        : 306
+#      LUT3_D                      : 20
+#      LUT3_L                      : 32
+#      LUT4                        : 1115
+#      LUT4_D                      : 41
+#      LUT4_L                      : 255
+#      MULT_AND                    : 28
+#      MUXCY                       : 279
+#      MUXF5                       : 215
+#      MUXF6                       : 24
+#      VCC                         : 1
+#      XORCY                       : 238
+# FlipFlops/Latches                : 371
+#      FDE                         : 226
+#      FDR                         : 27
+#      FDRE                        : 5
+#      FDRS                        : 34
+#      FDRSE                       : 2
+#      FDS                         : 1
+#      FDSE                        : 2
+#      LDCE                        : 50
+#      LDE_1                       : 24
+# RAMS                             : 1
+#      RAMB16_S9                   : 1
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 31
+#      IBUF                        : 2
+#      IOBUF                       : 8
+#      OBUF                        : 21
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200pq208-5 
+
+ Number of Slices:                    1139  out of   1920    59%  
+ Number of Slice Flip Flops:           371  out of   3840     9%  
+ Number of 4 input LUTs:              2153  out of   3840    56%  
+ Number of IOs:                         33
+ Number of bonded IOBs:                 33  out of    141    23%  
+ Number of BRAMs:                        1  out of     12     8%  
+ Number of GCLKs:                        2  out of      8    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------+--------------------------------+-------+
+Clock Signal                                         | Clock buffer(FF name)          | Load  |
+-----------------------------------------------------+--------------------------------+-------+
+clock                                                | BUFGP                          | 297   |
+reset                                                | BUFGP                          | 24    |
+select1/selectd/_and0000(select1/selectd/_and00001:O)| NONE(*)(select1/selectd/mask_7)| 11    |
+select1/selectc/_and0000(select1/selectc/_and00001:O)| NONE(*)(select1/selectc/comp_1)| 11    |
+select1/selectb/_and0000(select1/selectb/_and00001:O)| NONE(*)(select1/selectb/mask_2)| 14    |
+select1/selecta/_and0000(select1/selecta/_and00001:O)| NONE(*)(select1/selecta/comp_3)| 14    |
+-----------------------------------------------------+--------------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | BUFGP                  | 50    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 9.734ns (Maximum Frequency: 102.728MHz)
+   Minimum input arrival time before clock: 15.385ns
+   Maximum output required time after clock: 16.387ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 9.734ns (frequency: 102.728MHz)
+  Total number of paths / destination ports: 22856 / 378
+-------------------------------------------------------------------------
+Delay:               9.734ns (Levels of Logic = 10)
+  Source:            cpu/aluoprb_0 (FF)
+  Destination:       cpu/regfil_2_5 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: cpu/aluoprb_0 to cpu/regfil_2_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             13   0.626   1.289  cpu/aluoprb_0 (cpu/aluoprb_0)
+     LUT2:I0->O            1   0.479   0.000  cpu/alu/Msub__sub0002_lut<0> (cpu/alu/N19)
+     MUXCY:S->O            1   0.435   0.000  cpu/alu/Msub__sub0002_cy<0> (cpu/alu/Msub__sub0002_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  cpu/alu/Msub__sub0002_cy<1> (cpu/alu/Msub__sub0002_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  cpu/alu/Msub__sub0002_cy<2> (cpu/alu/Msub__sub0002_cy<2>)
+     XORCY:CI->O           7   0.786   1.076  cpu/alu/Msub__sub0002_xor<3> (cpu/alu/_sub0002<3>)
+     LUT2:I1->O            1   0.479   0.740  cpu/alu/Msub__AUX_32_xor<5>11_SW0 (N9996)
+     LUT4:I2->O            1   0.479   0.000  cpu/alu/sel<0>22 (cpu/alu/N241)
+     MUXF5:I1->O           2   0.314   0.745  cpu/alu/sel<1>_f5_10 (cpu/alu/sel<1>_f511)
+     MUXF5:S->O            8   0.540   0.980  cpu/alu/res<5>1 (cpu/alures<5>)
+     LUT4:I2->O            1   0.479   0.000  cpu/_mux0016<5>60 (cpu/_mux0016<5>)
+     FDE:D                     0.176          cpu/regfil_2_5
+    ----------------------------------------
+    Total                      9.734ns (4.904ns logic, 4.830ns route)
+                                       (50.4% logic, 49.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 15524 / 569
+-------------------------------------------------------------------------
+Offset:              15.385ns (Levels of Logic = 10)
+  Source:            data<4> (PAD)
+  Destination:       cpu/regfil_1_5 (FF)
+  Destination Clock: clock rising
+
+  Data Path: data<4> to cpu/regfil_1_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O         153   0.715   2.459  data_4_IOBUF (N9902)
+     LUT2:I0->O           18   0.479   1.227  cpu/_mux0026<5>29 (N112)
+     LUT4:I3->O           14   0.479   1.304  cpu/_cmp_eq00652 (cpu/_cmp_eq0065)
+     LUT4:I0->O            1   0.479   0.976  cpu/_cmp_eq00671_SW0 (N10381)
+     LUT4_D:I0->O         10   0.479   0.987  cpu/_mux0016<7>1113 (N149)
+     LUT4:I3->O            1   0.479   0.740  cpu/_mux0015<2>31_SW2 (N10542)
+     LUT4:I2->O            8   0.479   0.944  cpu/_mux0015<2>31 (N277)
+     LUT4:I3->O            2   0.479   0.745  cpu/_mux0015<5>38 (cpu/_mux0015<5>_map1354)
+     MUXF5:S->O            1   0.540   0.740  cpu/_mux0012<5>31_SW5 (N10424)
+     LUT4:I2->O            1   0.479   0.000  cpu/_mux0015<5>40 (cpu/_mux0015<5>)
+     FDE:D                     0.176          cpu/regfil_1_5
+    ----------------------------------------
+    Total                     15.385ns (5.263ns logic, 10.122ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'select1/selectd/_and0000'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              3.304ns (Levels of Logic = 1)
+  Source:            data<3> (PAD)
+  Destination:       select1/selectd/mask_3 (LATCH)
+  Destination Clock: select1/selectd/_and0000 falling
+
+  Data Path: data<3> to select1/selectd/mask_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O         204   0.715   2.413  data_3_IOBUF (N9903)
+     LDCE:D                    0.176          select1/selectd/mask_3
+    ----------------------------------------
+    Total                      3.304ns (0.891ns logic, 2.413ns route)
+                                       (27.0% logic, 73.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'select1/selectc/_and0000'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              3.304ns (Levels of Logic = 1)
+  Source:            data<3> (PAD)
+  Destination:       select1/selectc/mask_3 (LATCH)
+  Destination Clock: select1/selectc/_and0000 falling
+
+  Data Path: data<3> to select1/selectc/mask_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O         204   0.715   2.413  data_3_IOBUF (N9903)
+     LDCE:D                    0.176          select1/selectc/mask_3
+    ----------------------------------------
+    Total                      3.304ns (0.891ns logic, 2.413ns route)
+                                       (27.0% logic, 73.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'select1/selectb/_and0000'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.304ns (Levels of Logic = 1)
+  Source:            data<3> (PAD)
+  Destination:       select1/selectb/mask_3 (LATCH)
+  Destination Clock: select1/selectb/_and0000 falling
+
+  Data Path: data<3> to select1/selectb/mask_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O         204   0.715   2.413  data_3_IOBUF (N9903)
+     LDCE:D                    0.176          select1/selectb/mask_3
+    ----------------------------------------
+    Total                      3.304ns (0.891ns logic, 2.413ns route)
+                                       (27.0% logic, 73.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'select1/selecta/_and0000'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.304ns (Levels of Logic = 1)
+  Source:            data<3> (PAD)
+  Destination:       select1/selecta/mask_3 (LATCH)
+  Destination Clock: select1/selecta/_and0000 falling
+
+  Data Path: data<3> to select1/selecta/mask_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O         204   0.715   2.413  data_3_IOBUF (N9903)
+     LDCE:D                    0.176          select1/selecta/mask_3
+    ----------------------------------------
+    Total                      3.304ns (0.891ns logic, 2.413ns route)
+                                       (27.0% logic, 73.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 1369 / 29
+-------------------------------------------------------------------------
+Offset:              16.387ns (Levels of Logic = 9)
+  Source:            cpu/addr_2 (FF)
+  Destination:       data<7> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: cpu/addr_2 to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             31   0.626   1.593  cpu/addr_2 (cpu/addr_2)
+     LUT4:I3->O            1   0.479   0.000  select1/select11021 (N11407)
+     MUXF5:I1->O           1   0.314   0.851  select1/select1102_f5 (select1/select1_map3479)
+     LUT4:I1->O            1   0.479   0.851  select1/select1123 (select1/select1_map3481)
+     LUT4:I1->O           10   0.479   1.259  select1/select1446 (romsel)
+     LUT3:I0->O            2   0.479   1.040  N11LogicTrst438 (N565)
+     LUT4:I0->O            4   0.479   1.074  N17LogicTrst21 (N191)
+     LUT4:I0->O            1   0.479   0.000  N17LogicTrst802 (N11410)
+     MUXF5:I0->O           1   0.314   0.681  N17LogicTrst80_f5 (data_0_IOBUF)
+     IOBUF:I->IO               4.909          data_0_IOBUF (data<0>)
+    ----------------------------------------
+    Total                     16.387ns (9.037ns logic, 7.350ns route)
+                                       (55.1% logic, 44.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'select1/selecta/_and0000'
+  Total number of paths / destination ports: 810 / 8
+-------------------------------------------------------------------------
+Offset:              15.933ns (Levels of Logic = 9)
+  Source:            select1/selecta/mask_1 (LATCH)
+  Destination:       data<7> (PAD)
+  Source Clock:      select1/selecta/_and0000 falling
+
+  Data Path: select1/selecta/mask_1 to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE:G->Q             7   0.551   1.201  select1/selecta/mask_1 (select1/selecta/mask_1)
+     LUT4:I0->O            1   0.479   0.000  select1/select11961 (N11471)
+     MUXF5:I1->O           1   0.314   0.976  select1/select1196_f5 (select1/select1_map3499)
+     LUT4:I0->O            1   0.479   0.740  select1/select1420 (select1/select1_map3553)
+     LUT4:I2->O           10   0.479   1.259  select1/select1446 (romsel)
+     LUT3:I0->O            2   0.479   1.040  N11LogicTrst438 (N565)
+     LUT4:I0->O            4   0.479   1.074  N17LogicTrst21 (N191)
+     LUT4:I0->O            1   0.479   0.000  N17LogicTrst802 (N11410)
+     MUXF5:I0->O           1   0.314   0.681  N17LogicTrst80_f5 (data_0_IOBUF)
+     IOBUF:I->IO               4.909          data_0_IOBUF (data<0>)
+    ----------------------------------------
+    Total                     15.933ns (8.962ns logic, 6.971ns route)
+                                       (56.2% logic, 43.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'select1/selectb/_and0000'
+  Total number of paths / destination ports: 806 / 8
+-------------------------------------------------------------------------
+Offset:              16.154ns (Levels of Logic = 10)
+  Source:            select1/selectb/mask_1 (LATCH)
+  Destination:       data<7> (PAD)
+  Source Clock:      select1/selectb/_and0000 falling
+
+  Data Path: select1/selectb/mask_1 to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE:G->Q             7   0.551   1.201  select1/selectb/mask_1 (select1/selectb/mask_1)
+     LUT4:I0->O            1   0.479   0.000  select1/selectb/_cmp_eq000011 (N11441)
+     MUXF5:I1->O           3   0.314   1.066  select1/selectb/_cmp_eq00001_f5 (select1/selectb/_cmp_eq00002)
+     LUT3:I0->O            1   0.479   0.000  ram/_and0000_inv231 (N11451)
+     MUXF5:I1->O           1   0.314   0.740  ram/_and0000_inv23_f5 (ram/_and0000_inv_map3882)
+     LUT4:I2->O           12   0.479   1.120  ram/_and0000_inv79 (ram/_and0000_inv)
+     LUT4:I1->O           11   0.479   0.995  N21 (N2)
+     LUT4:I3->O            4   0.479   1.074  N17LogicTrst21 (N191)
+     LUT4:I0->O            1   0.479   0.000  N17LogicTrst802 (N11410)
+     MUXF5:I0->O           1   0.314   0.681  N17LogicTrst80_f5 (data_0_IOBUF)
+     IOBUF:I->IO               4.909          data_0_IOBUF (data<0>)
+    ----------------------------------------
+    Total                     16.154ns (9.276ns logic, 6.878ns route)
+                                       (57.4% logic, 42.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'reset'
+  Total number of paths / destination ports: 41 / 6
+-------------------------------------------------------------------------
+Offset:              11.595ns (Levels of Logic = 6)
+  Source:            select1/selecta/datai_3 (LATCH)
+  Destination:       data<3> (PAD)
+  Source Clock:      reset rising
+
+  Data Path: select1/selecta/datai_3 to data<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            2   0.551   0.804  select1/selecta/datai_3 (select1/selecta/datai_3)
+     LUT4:I2->O            1   0.479   0.000  N11LogicTrst461_SW02 (N11480)
+     MUXF5:I0->O           1   0.314   0.740  N11LogicTrst461_SW0_f5 (N11197)
+     LUT4:I2->O            1   0.479   0.976  N11LogicTrst461 (N11LogicTrst_map3597)
+     LUT4:I0->O            1   0.479   0.704  N11LogicTrst76 (N11LogicTrst_map3602)
+     LUT4:I3->O            1   0.479   0.681  N11LogicTrst87 (data_3_IOBUF)
+     IOBUF:I->IO               4.909          data_3_IOBUF (data<3>)
+    ----------------------------------------
+    Total                     11.595ns (7.690ns logic, 3.905ns route)
+                                       (66.3% logic, 33.7% route)
+
+=========================================================================
+CPU : 119.56 / 119.83 s | Elapsed : 119.00 / 120.00 s
+ 
+--> 
+
+Total memory usage is 198928 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

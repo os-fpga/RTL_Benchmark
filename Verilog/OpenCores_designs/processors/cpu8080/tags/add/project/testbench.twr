@@ -1,0 +1,98 @@
+--------------------------------------------------------------------------------
+Release 8.2.02i Trace 
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\bin\nt\trce.exe -ise C:/Xilinx/ISEexamples/cpu8080/cpu8080.ise
+-intstyle ise -e 3 -l 3 -s 4 -xml testbench testbench.ncd -o testbench.twr
+testbench.pcf -ucf cpu8080.ucf
+
+Design file:              testbench.ncd
+Physical constraint file: testbench.pcf
+Device,speed:             xc3s1000,-4 (PRODUCTION 1.39 2006-07-07)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clock
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+data<0>     |    1.780(F)|   -0.244(F)|clock_BUFGP       |   0.000|
+data<1>     |    1.755(F)|   -0.245(F)|clock_BUFGP       |   0.000|
+data<2>     |    1.450(F)|    0.000(F)|clock_BUFGP       |   0.000|
+data<3>     |    1.598(F)|   -0.100(F)|clock_BUFGP       |   0.000|
+data<4>     |    2.784(F)|   -1.048(F)|clock_BUFGP       |   0.000|
+data<5>     |    1.848(F)|   -0.299(F)|clock_BUFGP       |   0.000|
+data<6>     |    2.383(F)|   -0.727(F)|clock_BUFGP       |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clock to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+b<0>        |   11.478(R)|clock_BUFGP       |   0.000|
+b<1>        |   12.199(R)|clock_BUFGP       |   0.000|
+b<2>        |   13.285(R)|clock_BUFGP       |   0.000|
+data<7>     |   14.925(F)|clock_BUFGP       |   0.000|
+g<0>        |   11.488(R)|clock_BUFGP       |   0.000|
+g<1>        |   12.569(R)|clock_BUFGP       |   0.000|
+g<2>        |   15.745(R)|clock_BUFGP       |   0.000|
+hsync_n     |    7.261(R)|clock_BUFGP       |   0.000|
+r<0>        |   11.828(R)|clock_BUFGP       |   0.000|
+r<1>        |   12.569(R)|clock_BUFGP       |   0.000|
+r<2>        |   16.801(R)|clock_BUFGP       |   0.000|
+vsync_n     |   11.434(R)|clock_BUFGP       |   0.000|
+------------+------------+------------------+--------+
+
+Clock reset_n to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+data<0>     |   16.635(F)|reset_n_BUFGP     |   0.000|
+data<1>     |   17.155(F)|reset_n_BUFGP     |   0.000|
+data<2>     |   16.212(F)|reset_n_BUFGP     |   0.000|
+data<3>     |   16.353(F)|reset_n_BUFGP     |   0.000|
+data<4>     |   16.527(F)|reset_n_BUFGP     |   0.000|
+data<5>     |   15.584(F)|reset_n_BUFGP     |   0.000|
+data<6>     |   15.882(F)|reset_n_BUFGP     |   0.000|
+data<7>     |   17.447(F)|reset_n_BUFGP     |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |   31.744|   15.579|         |   12.459|
+reset_n        |   12.834|   12.834|   10.602|   10.602|
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Wed Nov 01 08:51:25 2006
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 182 MB
+
+
+

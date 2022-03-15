@@ -1,0 +1,70 @@
+Release 8.2.02i reportgen I.33
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+
+SCOTT-H-PC::  Sat Nov 04 19:31:52 2006
+
+C:\Xilinx\bin\nt\reportgen.exe -intstyle ise -delay -o testbench testbench.ncd 
+
+Loading device for application Rf_Device from file '3s1000.nph' in environment
+C:\Xilinx.
+   "testbench" is an NCD, version 3.1, device xc3s1000, package ft256, speed -4
+ReportGen:LoadDesign: 'testbench.ncd'
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000
+Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+Device speed data version:  "PRODUCTION 1.39 2006-07-07".
+
+Generating Delay Report: testbench.dly
+
+
+   The Delay Summary Report
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        2.105
+   The MAXIMUM PIN DELAY IS:                              10.487
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   9.285
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 2.00   < d < 4.00  < d < 6.00  < d < 8.00  < d < 11.00  d >= 11.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+       15626        8599        2634         525         124           0
+
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|       reset_n_BUFGP |      BUFGMUX5| No   |  418 |  0.182     |  0.987      |
++---------------------+--------------+------+------+------------+-------------+
+|         clock_BUFGP |      BUFGMUX0| No   | 1564 |  0.451     |  1.154      |
++---------------------+--------------+------+------+------------+-------------+
+|select1/selecta/_and |              |      |      |            |             |
+|                0000 |         Local|      |    7 |  0.067     |  2.166      |
++---------------------+--------------+------+------+------------+-------------+
+|select1/selectd/_and |              |      |      |            |             |
+|                0000 |         Local|      |    7 |  0.931     |  1.779      |
++---------------------+--------------+------+------+------------+-------------+
+|select1/selectb/_and |              |      |      |            |             |
+|                0000 |         Local|      |    7 |  0.048     |  1.842      |
++---------------------+--------------+------+------+------------+-------------+
+|select1/selectc/_and |              |      |      |            |             |
+|                0000 |         Local|      |    7 |  0.007     |  2.251      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+
+Number of error messages: 0
+Number of warning messages: 0
+Number of info messages: 0
+
+reportgen done!

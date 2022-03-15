@@ -1,0 +1,342 @@
+
+*** Running vivado
+    with args -log mips_16_core_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mips_16_core_top.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source mips_16_core_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 111597 ; free virtual = 375421
+Command: synth_design -top mips_16_core_top -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 31549
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 110680 ; free virtual = 374504
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mips_16_core_top' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/mips_16_core_top.v:18]
+INFO: [Synth 8-6157] synthesizing module 'IF_stage' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/IF_stage.v:15]
+INFO: [Synth 8-6157] synthesizing module 'instruction_mem' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:15]
+WARNING: [Synth 8-4767] Trying to implement RAM ' ' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+WARNING: [Synth 8-3848] Net rom in module/entity instruction_mem does not have driver. [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:23]
+INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'instruction_mem' (1#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/instruction_mem.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'IF_stage' (2#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/IF_stage.v:15]
+INFO: [Synth 8-6157] synthesizing module 'ID_stage' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/ID_stage.v:14]
+INFO: [Synth 8-251] ERROR: Unknown Instruction: 4'bxxxx [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/ID_stage.v:206]
+INFO: [Synth 8-251] ERROR: Unknown branch condition 3'bxxx, in branch instruction 4'bxxxx 
+ [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/ID_stage.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'ID_stage' (3#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/ID_stage.v:14]
+INFO: [Synth 8-6157] synthesizing module 'EX_stage' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/EX_stage.v:13]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:13]
+WARNING: [Synth 8-153] case item 3'bxxx will never be executed [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:22]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (4#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'EX_stage' (5#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/EX_stage.v:13]
+INFO: [Synth 8-6157] synthesizing module 'MEM_stage' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/MEM_stage.v:14]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/data_mem.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (6#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/data_mem.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_stage' (7#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/MEM_stage.v:14]
+INFO: [Synth 8-6157] synthesizing module 'WB_stage' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/WB_stage.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'WB_stage' (8#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/WB_stage.v:13]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/register_file.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (9#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/register_file.v:18]
+INFO: [Synth 8-6157] synthesizing module 'hazard_detection_unit' [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/hazard_detection_unit.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_detection_unit' (10#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/hazard_detection_unit.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'mips_16_core_top' (11#1) [/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.srcs/sources_1/imports/rtl/mips_16_core_top.v:18]
+WARNING: [Synth 8-7129] Port mem_access_addr[15] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[14] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[13] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[12] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[11] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[10] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[9] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mem_access_addr[8] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module instruction_mem is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 110267 ; free virtual = 374092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 110248 ; free virtual = 374073
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 110247 ; free virtual = 374072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110206 ; free virtual = 374031
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
++---Registers : 
+	               57 Bit    Registers := 1     
+	               38 Bit    Registers := 1     
+	               37 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   8 Input   16 Bit        Muxes := 1     
+	   9 Input   16 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	  15 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	  14 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 10    
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port clk in module instruction_mem is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110766 ; free virtual = 374595
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110761 ; free virtual = 374591
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110759 ; free virtual = 374588
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     2|
+|3     |LUT1   |     1|
+|4     |FDCE   |     8|
+|5     |IBUF   |     2|
+|6     |OBUF   |     8|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------+---------+------+
+|      |Instance        |Module   |Cells |
++------+----------------+---------+------+
+|1     |top             |         |    22|
+|2     |  IF_stage_inst |IF_stage |    11|
++------+----------------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110764 ; free virtual = 374593
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 269 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110765 ; free virtual = 374594
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 110765 ; free virtual = 374594
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 110870 ; free virtual = 374699
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 110765 ; free virtual = 374594
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 4a6a3db3
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 113 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 2897.262 ; gain = 36.977 ; free physical = 110954 ; free virtual = 374785
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/mips_16/project_1/project_1.runs/synth_1/mips_16_core_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mips_16_core_top_utilization_synth.rpt -pb mips_16_core_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:04:37 2022...

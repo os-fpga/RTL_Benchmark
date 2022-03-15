@@ -1,0 +1,363 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2003 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 8.2.02i
+//  \   \         Application : ISE
+//  /   /         Filename : cpu_tbw.tfw
+// /___/   /\     Timestamp : Sat Sep 23 19:23:16 2006
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: cpu_tbw
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module cpu_tbw;
+    wire [15:0] addr;
+    reg [7:0] data$inout$reg = 8'bZZZZZZZZ;
+    wire [7:0] data = data$inout$reg;
+    wire readmem;
+    wire writemem;
+    wire readio;
+    wire writeio;
+    reg intr = 1'b0;
+    wire inta;
+    reg waitr = 1'b0;
+    reg reset = 1'b1;
+    reg clock = 1'b0;
+
+    parameter PERIOD = 200;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 0;
+
+    initial    // Clock process for clock
+    begin
+        #OFFSET;
+        forever
+        begin
+            clock = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) clock = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    testbench UUT (
+        .addr(addr),
+        .data(data),
+        .readmem(readmem),
+        .writemem(writemem),
+        .readio(readio),
+        .writeio(writeio),
+        .intr(intr),
+        .inta(inta),
+        .waitr(waitr),
+        .reset(reset),
+        .clock(clock));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin  // Open the results file...
+        TX_FILE = $fopen("results.txt");
+        #10200 // Final time:  10200 ns
+        if (TX_ERROR == 0) begin
+            $display("No errors or warnings.");
+            $fdisplay(TX_FILE, "No errors or warnings.");
+        end else begin
+            $display("%d errors found in simulation.", TX_ERROR);
+            $fdisplay(TX_FILE, "%d errors found in simulation.", TX_ERROR);
+        end
+        $fclose(TX_FILE);
+        $stop;
+    end
+
+    initial begin
+        // -------------  Current Time:  115ns
+        #115;
+        CHECK_inta(1'b0);
+        CHECK_readio(1'b0);
+        CHECK_readmem(1'b0);
+        CHECK_writeio(1'b0);
+        CHECK_writemem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  485ns
+        #370;
+        reset = 1'b0;
+        // -------------------------------------
+        // -------------  Current Time:  515ns
+        #30;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  715ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  915ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+        // -------------  Current Time:  1115ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  1315ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000010);
+        // -------------------------------------
+        // -------------  Current Time:  1515ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  1715ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000011);
+        // -------------------------------------
+        // -------------  Current Time:  1915ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  2315ns
+        #400;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  2515ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  2715ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+        // -------------  Current Time:  2915ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  3115ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000010);
+        // -------------------------------------
+        // -------------  Current Time:  3315ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  3515ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000011);
+        // -------------------------------------
+        // -------------  Current Time:  3715ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  4115ns
+        #400;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  4315ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  4515ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+        // -------------  Current Time:  4715ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  4915ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000010);
+        // -------------------------------------
+        // -------------  Current Time:  5115ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  5315ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000011);
+        // -------------------------------------
+        // -------------  Current Time:  5515ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  5915ns
+        #400;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  6115ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  6315ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+        // -------------  Current Time:  6515ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  6715ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000010);
+        // -------------------------------------
+        // -------------  Current Time:  6915ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  7115ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000011);
+        // -------------------------------------
+        // -------------  Current Time:  7315ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  7715ns
+        #400;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  7915ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  8115ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+        // -------------  Current Time:  8315ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  8515ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000010);
+        // -------------------------------------
+        // -------------  Current Time:  8715ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  8915ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000011);
+        // -------------------------------------
+        // -------------  Current Time:  9115ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  9515ns
+        #400;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000000);
+        // -------------------------------------
+        // -------------  Current Time:  9715ns
+        #200;
+        CHECK_readmem(1'b0);
+        // -------------------------------------
+        // -------------  Current Time:  9915ns
+        #200;
+        CHECK_readmem(1'b1);
+        CHECK_addr(16'b0000000000000001);
+        // -------------------------------------
+    end
+
+    task CHECK_addr;
+        input [15:0] NEXT_addr;
+
+        #0 begin
+            if (NEXT_addr !== addr) begin
+                $display("Error at time=%dns addr=%b, expected=%b", $time, addr, NEXT_addr);
+                $fdisplay(TX_FILE, "Error at time=%dns addr=%b, expected=%b", $time, addr, NEXT_addr);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_readmem;
+        input NEXT_readmem;
+
+        #0 begin
+            if (NEXT_readmem !== readmem) begin
+                $display("Error at time=%dns readmem=%b, expected=%b", $time, readmem, NEXT_readmem);
+                $fdisplay(TX_FILE, "Error at time=%dns readmem=%b, expected=%b", $time, readmem, NEXT_readmem);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_writemem;
+        input NEXT_writemem;
+
+        #0 begin
+            if (NEXT_writemem !== writemem) begin
+                $display("Error at time=%dns writemem=%b, expected=%b", $time, writemem, NEXT_writemem);
+                $fdisplay(TX_FILE, "Error at time=%dns writemem=%b, expected=%b", $time, writemem, NEXT_writemem);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_readio;
+        input NEXT_readio;
+
+        #0 begin
+            if (NEXT_readio !== readio) begin
+                $display("Error at time=%dns readio=%b, expected=%b", $time, readio, NEXT_readio);
+                $fdisplay(TX_FILE, "Error at time=%dns readio=%b, expected=%b", $time, readio, NEXT_readio);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_writeio;
+        input NEXT_writeio;
+
+        #0 begin
+            if (NEXT_writeio !== writeio) begin
+                $display("Error at time=%dns writeio=%b, expected=%b", $time, writeio, NEXT_writeio);
+                $fdisplay(TX_FILE, "Error at time=%dns writeio=%b, expected=%b", $time, writeio, NEXT_writeio);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_inta;
+        input NEXT_inta;
+
+        #0 begin
+            if (NEXT_inta !== inta) begin
+                $display("Error at time=%dns inta=%b, expected=%b", $time, inta, NEXT_inta);
+                $fdisplay(TX_FILE, "Error at time=%dns inta=%b, expected=%b", $time, inta, NEXT_inta);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+
+endmodule
+

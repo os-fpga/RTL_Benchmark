@@ -1,0 +1,384 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar  8 11:27:21 2022
+# Process ID: 49454
+# Current directory: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado
+# Command line: vivado
+# Log file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.log
+# Journal file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/aspida/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 6437.691 ; gain = 36.590 ; free physical = 32672 ; free virtual = 277457
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/vgatop.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/DLX_top.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/vganew.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/ID.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/vmem.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/mem_if.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/MEM.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/DLX.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/EX.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/fpga/sync/src/IF.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 11:28:34 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aspida/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 11:29:28 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aspida/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 11:31:45 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aspida/project_1/project_1.runs/synth_1/runme.log
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/aspida/project_2 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/asic/src/IF.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/asic/src/MEM.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/asic/src/ID.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/asic/src/DLX.v /home/users/ayyaz.ahmed/Downloads/aspida/web_uploads/aspida_dlx_core/asic/src/EX.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 11:41:13 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aspida/project_2/project_2.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 625 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'DLX_sync' is not ideal for floorplanning, since the cellview 'ID' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:01:34 ; elapsed = 00:03:41 . Memory (MB): peak = 7195.203 ; gain = 577.699 ; free physical = 25337 ; free virtual = 275408
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:36 ; elapsed = 00:00:04 . Memory (MB): peak = 7195.203 ; gain = 0.000 ; free physical = 25006 ; free virtual = 275087
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/atlas_core/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/ATLAS_CPU.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/MEM_GATE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/SYSTEM_CP.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/COM_0_CORE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/SYS_1_CORE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/ATLAS_pkg.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/OP_DEC.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/SYS_REG.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/BOOT_MEM.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/COM_1_CORE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/REG_FILE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/INT_RAM.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/ATLAS_2K_BASE_TOP.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/MEM_ACC.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/CTRL.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/WB_UNIT.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/SYS_0_CORE.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/ATLAS_2K_TOP.vhd /home/users/ayyaz.ahmed/Downloads/atlas_core/trunk/rtl/ALU.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 12:02:57 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/atlas_core/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 177 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:18 ; elapsed = 00:00:03 . Memory (MB): peak = 7604.348 ; gain = 0.000 ; free physical = 25545 ; free virtual = 275044
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/mega_core_opt.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/spi_s.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/sim_uc.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/io_s_h.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/rtc_s.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/twi_s.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/uart_s.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/pio_s.v /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/rtl/sim_i2c.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top mega_core [current_fileset]
+update_compile_order -fileset sources_1
+set_property top sim_uc [current_fileset]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 12:37:17 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 12:40:26 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1/project_1.srcs/sources_1/imports/rtl/sim_i2c.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1/project_1.srcs/sources_1/imports/rtl/sim_i2c.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 12:45:34 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/attiny_atmega_xmega_core/project_1/project_1.runs/synth_1/runme.log
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/avr_core/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/io_adr_dec.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/reg_file.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/avr_core.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/io_reg_file.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/AVR_Core_CompPack.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/pm_fetch_dec.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/bit_processor.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/alu_avr.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 13:01:39 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/avr_core/project_1/project_1.runs/synth_1/runme.log
+import_files -norecurse {/home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/SynthCtrlPack.vhd /home/users/ayyaz.ahmed/Downloads/avr_core/web_uploads/Core/AVRuCPackage.vhd}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 13:04:21 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/avr_core/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 141 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:28 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 24398 ; free virtual = 279350
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/avr_hp/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/alu_avr.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/reg_file.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/AVRuCPackage.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/avr_core_cm4_top.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/avr_core.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/SynthCtrlPack.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/bit_processor.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/io_adr_dec.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/pm_fetch_dec.vhd /home/users/ayyaz.ahmed/Downloads/avr_hp/trunk/rtl/rtl_v5_cm4/io_reg_file.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 13:15:29 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/avr_hp/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 148 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:30 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 1223 ; free virtual = 277286
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ax8/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_TC8.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_Pack.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_RAM.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX8.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_Port.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/A90S2313.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/A90S1200.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_DPRAM.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_TC16.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_Reg2.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_Reg.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_ALU.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_PCS.vhd /home/users/ayyaz.ahmed/Downloads/ax8/trunk/rtl/vhdl/AX_UART.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'AX_Reg(rtl)' found in library 'xil_defaultlib'
+Duplicate found at line 86 of file /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg.vhd
+	(Active) Duplicate found at line 83 of file /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/AX_Reg2.vhd
+[Tue Mar  8 14:37:41 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 111 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'ROM2313' instantiated as 'rom' [/home/users/ayyaz.ahmed/Downloads/ax8/project_1/project_1.srcs/sources_1/imports/vhdl/A90S2313.vhd:316]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:22 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 2450 ; free virtual = 276865
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/rtl/mcu_core.vhd
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 14:51:22 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/avrtinyx61core/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 119 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'mcu_core' is not ideal for floorplanning, since the cellview 'mcu_core' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 16 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 1334 ; free virtual = 276399
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/bitserial/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/bitserial/rtl/top.vhd /home/users/ayyaz.ahmed/Downloads/bitserial/rtl/uart.vhd /home/users/ayyaz.ahmed/Downloads/bitserial/rtl/util.vhd /home/users/ayyaz.ahmed/Downloads/bitserial/rtl/bit.vhd /home/users/ayyaz.ahmed/Downloads/bitserial/rtl/peripherals.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/bitserial/project_1/project_1.srcs/sources_1/imports/rtl/uart.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/bitserial/project_1/project_1.srcs/sources_1/imports/rtl/uart.vhd
+import_files -force -norecurse /home/users/ayyaz.ahmed/Downloads/bitserial/rtl/uart.vhd
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 15:16:21 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/bitserial/project_1/project_1.runs/synth_1/runme.log
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/brainfuckcpu/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/brainfuckcpu/trunk/rtl/brainfuck_cpu.v /home/users/ayyaz.ahmed/Downloads/brainfuckcpu/trunk/rtl/brainfuck_cpu_ascii.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/brainfuckcpu/project_2 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/brainfuckcpu/trunk/rtl/brainfuck_cpu.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 15:21:54 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/brainfuckcpu/project_2/project_2.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:21 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 7858 ; free virtual = 279130
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cf_ssp/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/cf_ssp/cf_ssp_64_10.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 15:52:55 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/cf_ssp/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 503 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:26 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 1502 ; free virtual = 278411
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/copyblaze/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_BancRegister.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Alu.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_ProgramCounter.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_CLAAdder.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_DecodeControl.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_copyBlaze.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_FullAdder.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_ScratchPad.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_ProgramFlowControl.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Stack.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Interrupt.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Usefull_Pkg.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Flags.vhd /home/users/ayyaz.ahmed/Downloads/copyblaze/trunk/copyblaze/rtl/vhdl/cpu/cp_Toggle.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 16:04:58 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/copyblaze/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 145 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:20 ; elapsed = 00:00:03 . Memory (MB): peak = 7686.395 ; gain = 0.000 ; free physical = 1262 ; free virtual = 279507
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/register.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/control.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/alu.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/regtest.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/cowgirl.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/mux_2_1.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/pc.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/shifter.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/mux_8_1.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/logical.vhd /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/arithmetic.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/prog_rom.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/regsiters.vhdl /home/users/ayyaz.ahmed/Downloads/cowgirl/trunk/reg_decode.vhdl}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'prog_rom(rom_arch)' found in library 'xil_defaultlib'
+Duplicate found at line 10 of file /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.srcs/sources_1/imports/trunk/prog_rom.vhdl
+	(Active) Duplicate found at line 10 of file /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.srcs/sources_1/imports/trunk/regtest.vhdl
+[Tue Mar  8 16:44:51 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'prog_rom(rom_arch)' found in library 'xil_defaultlib'
+Duplicate found at line 10 of file /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.srcs/sources_1/imports/trunk/prog_rom.vhdl
+	(Active) Duplicate found at line 10 of file /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.srcs/sources_1/imports/trunk/regtest.vhdl
+[Tue Mar  8 16:50:58 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/cowgirl/project_1/project_1.runs/synth_1/runme.log
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/alt_mem_set.h /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/rom_set.h /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/clairisc_def.h}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/device_box.v /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/memory.v /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/sim_rom.v /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/mem_man.v /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/risc_core.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top ClaiRISC_core [current_fileset]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.srcs/sources_1/imports/RTL/device_box.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.srcs/sources_1/imports/RTL/device_box.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.srcs/sources_1/imports/RTL/sim_rom.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.srcs/sources_1/imports/RTL/sim_rom.v
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/lwrisc/trunk/RTL/rom128x12.v
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 17:45:02 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 17:57:27 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/lwrisc/project_1/project_1.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  8 18:10:11 2022...

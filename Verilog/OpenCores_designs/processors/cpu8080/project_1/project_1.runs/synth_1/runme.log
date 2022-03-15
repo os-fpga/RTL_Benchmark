@@ -1,0 +1,421 @@
+
+*** Running vivado
+    with args -log cpu8080.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu8080.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source cpu8080.tcl -notrace
+Command: synth_design -top cpu8080 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 35340 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1452.539 ; gain = 91.000 ; free physical = 25636 ; free virtual = 393790
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cpu8080' [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:196]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:1600]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (1#1) [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:1600]
+WARNING: [Synth 8-151] case item 6'b110000 is unreachable [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-6155] done synthesizing module 'cpu8080' (2#1) [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:196]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1509.172 ; gain = 147.633 ; free physical = 25633 ; free virtual = 393788
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1509.172 ; gain = 147.633 ; free physical = 25636 ; free virtual = 393791
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1517.172 ; gain = 155.633 ; free physical = 25634 ; free virtual = 393789
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v:351]
+INFO: [Synth 8-5544] ROM "regfil_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "regfil" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "regfil_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regfil_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "regfil" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regfil" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "regfil_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regfil_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "regfil" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "regfil_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regfil_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regfil_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "pc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ei" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "eienb" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regd" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "aluopra" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "aluopra" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "raddrhold" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5544] ROM "raddrhold" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "raddrhold" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "statesel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "statesel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5587] ROM size for "statesel" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "wdatahold" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "wdatahold" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wdatahold2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "popdes" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1541.195 ; gain = 179.656 ; free physical = 25593 ; free virtual = 393747
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 3     
+	   2 Input     16 Bit       Adders := 17    
+	   2 Input      9 Bit       Adders := 4     
+	   3 Input      9 Bit       Adders := 1     
+	   4 Input      9 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 16    
+	                6 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	  19 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 4     
+	   6 Input     16 Bit        Muxes := 1     
+	  35 Input     16 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	  40 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	  35 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 12    
+	  40 Input      8 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 2     
+	  38 Input      8 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 2     
+	   6 Input      6 Bit        Muxes := 1     
+	  35 Input      6 Bit        Muxes := 1     
+	  22 Input      6 Bit        Muxes := 1     
+	  40 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 12    
+	  19 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	  35 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	  19 Input      3 Bit        Muxes := 3     
+	  40 Input      2 Bit        Muxes := 2     
+	  35 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	  40 Input      1 Bit        Muxes := 40    
+	   4 Input      1 Bit        Muxes := 13    
+	  35 Input      1 Bit        Muxes := 10    
+	  22 Input      1 Bit        Muxes := 6     
+	   8 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 15    
+	  38 Input      1 Bit        Muxes := 4     
+	  19 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cpu8080 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 3     
+	   2 Input     16 Bit       Adders := 17    
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 16    
+	                6 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	  19 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 4     
+	   6 Input     16 Bit        Muxes := 1     
+	  35 Input     16 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	  40 Input     16 Bit        Muxes := 1     
+	  35 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 12    
+	  40 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 2     
+	  38 Input      8 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 2     
+	   6 Input      6 Bit        Muxes := 1     
+	  35 Input      6 Bit        Muxes := 1     
+	  22 Input      6 Bit        Muxes := 1     
+	  40 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 12    
+	  19 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	  35 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	  19 Input      3 Bit        Muxes := 3     
+	  40 Input      2 Bit        Muxes := 2     
+	  35 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
+	  40 Input      1 Bit        Muxes := 40    
+	   4 Input      1 Bit        Muxes := 13    
+	  35 Input      1 Bit        Muxes := 10    
+	  22 Input      1 Bit        Muxes := 6     
+	   8 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 15    
+	  38 Input      1 Bit        Muxes := 4     
+	  19 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 3     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 1     
+	   4 Input      9 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:03:54 . Memory (MB): peak = 1849.473 ; gain = 487.934 ; free physical = 25140 ; free virtual = 393306
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|cpu8080     | carry      | 64x1          | LUT            | 
+|cpu8080     | nextstate  | 64x6          | LUT            | 
+|cpu8080     | nextstate  | 64x6          | LUT            | 
+|cpu8080     | carry      | 64x1          | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:03:54 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25149 ; free virtual = 393315
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:03:55 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25146 ; free virtual = 393312
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25148 ; free virtual = 393314
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25149 ; free virtual = 393315
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25149 ; free virtual = 393315
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25149 ; free virtual = 393315
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25144 ; free virtual = 393310
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25143 ; free virtual = 393309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    86|
+|3     |LUT1   |    70|
+|4     |LUT2   |   151|
+|5     |LUT3   |   117|
+|6     |LUT4   |    62|
+|7     |LUT5   |   331|
+|8     |LUT6   |   421|
+|9     |MUXF7  |    43|
+|10    |FDRE   |   240|
+|11    |FDSE   |     3|
+|12    |IBUF   |     4|
+|13    |IOBUF  |     8|
+|14    |OBUF   |    21|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1558|
+|2     |  alu    |alu    |   183|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25150 ; free virtual = 393315
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.477 ; gain = 487.938 ; free physical = 25144 ; free virtual = 393309
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:03:56 . Memory (MB): peak = 1849.480 ; gain = 487.938 ; free physical = 25143 ; free virtual = 393309
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 141 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'cpu8080' is not ideal for floorplanning, since the cellview 'cpu8080' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+53 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:04:03 . Memory (MB): peak = 1930.504 ; gain = 610.379 ; free physical = 25108 ; free virtual = 393274
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.runs/synth_1/cpu8080.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu8080_utilization_synth.rpt -pb cpu8080_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.68 . Memory (MB): peak = 1954.520 ; gain = 0.000 ; free physical = 25089 ; free virtual = 393255
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  4 17:37:43 2022...

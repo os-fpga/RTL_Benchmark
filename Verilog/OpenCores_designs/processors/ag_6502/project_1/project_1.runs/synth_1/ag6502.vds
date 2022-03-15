@@ -1,0 +1,303 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Mar  7 12:30:00 2022
+# Process ID: 34533
+# Current directory: /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.runs/synth_1
+# Command line: vivado -log ag6502.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ag6502.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.runs/synth_1/ag6502.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source ag6502.tcl -notrace
+Command: synth_design -top ag6502 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 35474 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1452.539 ; gain = 91.000 ; free physical = 7267 ; free virtual = 379138
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ag6502' [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:129]
+INFO: [Synth 8-6157] synthesizing module 'ag6502_alu' [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:92]
+INFO: [Synth 8-6157] synthesizing module 'ag6502_decimal' [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'ag6502_decimal' (1#1) [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'ag6502_alu' (2#1) [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'ag6502' (3#1) [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/ag_6502.v:129]
+WARNING: [Synth 8-3331] design ag6502 has unconnected port phi_0
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1507.172 ; gain = 145.633 ; free physical = 6473 ; free virtual = 378573
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1507.172 ; gain = 145.633 ; free physical = 6109 ; free virtual = 378243
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1515.172 ; gain = 153.633 ; free physical = 6042 ; free virtual = 378182
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "ALU_A6" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ab" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "vec_bits0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "T1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "T" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "T" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1531.188 ; gain = 169.648 ; free physical = 5755 ; free virtual = 377906
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      9 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 7     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 32    
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 37    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ag6502 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 7     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 32    
+	   4 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 37    
+Module ag6502_decimal 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+Module ag6502_alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      5 Bit       Adders := 2     
++---XORs : 
+	   2 Input      9 Bit         XORs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "ALU_A6" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-3331] design ag6502 has unconnected port phi_0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:03:39 . Memory (MB): peak = 1852.480 ; gain = 490.941 ; free physical = 5886 ; free virtual = 378711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:03:40 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5887 ; free virtual = 378713
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:03:40 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5893 ; free virtual = 378718
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5893 ; free virtual = 378718
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5893 ; free virtual = 378718
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     4|
+|3     |LUT1   |     3|
+|4     |LUT2   |    99|
+|5     |LUT3   |   106|
+|6     |LUT4   |    86|
+|7     |LUT5   |   113|
+|8     |LUT6   |   375|
+|9     |MUXF7  |     3|
+|10    |FDRE   |   109|
+|11    |FDSE   |     9|
+|12    |IBUF   |    15|
+|13    |OBUF   |    26|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   950|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.484 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:03:41 . Memory (MB): peak = 1852.488 ; gain = 490.945 ; free physical = 5894 ; free virtual = 378719
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:03:47 . Memory (MB): peak = 1926.508 ; gain = 606.383 ; free physical = 5865 ; free virtual = 378690
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.runs/synth_1/ag6502.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ag6502_utilization_synth.rpt -pb ag6502_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.55 . Memory (MB): peak = 1950.527 ; gain = 0.000 ; free physical = 5864 ; free virtual = 378689
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  7 12:33:59 2022...

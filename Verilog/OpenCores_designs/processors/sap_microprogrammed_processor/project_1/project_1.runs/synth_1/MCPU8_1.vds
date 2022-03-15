@@ -1,0 +1,424 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Mar  7 10:26:39 2022
+# Process ID: 63692
+# Current directory: /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.runs/synth_1
+# Command line: vivado -log MCPU8_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MCPU8_1.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.runs/synth_1/MCPU8_1.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source MCPU8_1.tcl -notrace
+Command: synth_design -top MCPU8_1 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 64094 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1451.547 ; gain = 90.000 ; free physical = 8781 ; free virtual = 379893
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'MCPU8_1' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:21]
+INFO: [Synth 8-6157] synthesizing module 'PC_4' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'PC_4' (1#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:77]
+INFO: [Synth 8-6157] synthesizing module 'PC_LATCH_4' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:89]
+WARNING: [Synth 8-567] referenced signal 'PC_IN' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'PC_LATCH_4' (2#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:89]
+INFO: [Synth 8-6157] synthesizing module 'MAR_MUX' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:98]
+INFO: [Synth 8-6155] done synthesizing module 'MAR_MUX' (3#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:98]
+INFO: [Synth 8-6157] synthesizing module 'MAR' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'MAR' (4#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:102]
+INFO: [Synth 8-6157] synthesizing module 'SRAM_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:112]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[14][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[13][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[12][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[8][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[7][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[6][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-4471] merging register 'SRAM_reg[5][7:0]' into 'SRAM_reg[15][7:0]' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[14] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[13] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[12] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[8] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[7] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[6] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+WARNING: [Synth 8-6014] Unused sequential element SRAM_reg[5] was removed.  [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:114]
+INFO: [Synth 8-6155] done synthesizing module 'SRAM_8' (5#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:112]
+INFO: [Synth 8-6157] synthesizing module 'IR_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:136]
+INFO: [Synth 8-6155] done synthesizing module 'IR_8' (6#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:136]
+INFO: [Synth 8-6157] synthesizing module 'ADDR_ROM' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:149]
+INFO: [Synth 8-6155] done synthesizing module 'ADDR_ROM' (7#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:149]
+INFO: [Synth 8-6157] synthesizing module 'PRESET_COUNT' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'PRESET_COUNT' (8#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:174]
+INFO: [Synth 8-6157] synthesizing module 'CONTROL_ROM' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:190]
+WARNING: [Synth 8-3848] Net CR[15] in module/entity CONTROL_ROM does not have driver. [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:191]
+INFO: [Synth 8-6155] done synthesizing module 'CONTROL_ROM' (9#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:190]
+INFO: [Synth 8-6157] synthesizing module 'MICRO_DECODER' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:223]
+INFO: [Synth 8-6155] done synthesizing module 'MICRO_DECODER' (10#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:223]
+INFO: [Synth 8-6157] synthesizing module 'ACC_8_MUX' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:244]
+INFO: [Synth 8-6155] done synthesizing module 'ACC_8_MUX' (11#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:244]
+INFO: [Synth 8-6157] synthesizing module 'ACC_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:248]
+INFO: [Synth 8-6155] done synthesizing module 'ACC_8' (12#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:248]
+INFO: [Synth 8-6157] synthesizing module 'B_REG_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:259]
+INFO: [Synth 8-6155] done synthesizing module 'B_REG_8' (13#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:259]
+INFO: [Synth 8-6157] synthesizing module 'OUT_REG_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:269]
+INFO: [Synth 8-6155] done synthesizing module 'OUT_REG_8' (14#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:269]
+INFO: [Synth 8-6157] synthesizing module 'ALU_8' [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:279]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_8' (15#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:279]
+INFO: [Synth 8-6155] done synthesizing module 'MCPU8_1' (16#1) [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:21]
+WARNING: [Synth 8-3331] design PC_LATCH_4 has unconnected port EP
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1495.180 ; gain = 133.633 ; free physical = 8787 ; free virtual = 379899
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1495.180 ; gain = 133.633 ; free physical = 8778 ; free virtual = 379891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1503.180 ; gain = 141.633 ; free physical = 8771 ; free virtual = 379883
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.srcs/sources_1/imports/branches/MCPU8_1.v:281]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1519.195 ; gain = 157.648 ; free physical = 8779 ; free virtual = 379892
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 13    
+	                4 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PC_4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+Module MAR_MUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module MAR 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+Module SRAM_8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module IR_8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module ADDR_ROM 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module PRESET_COUNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module ACC_8_MUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module ACC_8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module B_REG_8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module OUT_REG_8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module ALU_8 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][0]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][0]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][0]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][0]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][0]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][0]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][0]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][1]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][1]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][1]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][1]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][1]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][1]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][1]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][2]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][2]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][3]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][3]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][3]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][3]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][3]' (FD) to 'UUT5/SRAM_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][3]' (FD) to 'UUT5/SRAM_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][3]' (FD) to 'UUT5/SRAM_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][4]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][4]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][4]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[3][4]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][4]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][4]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][4]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][4]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[4][4]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[3][5]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][5]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][5]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[4][5]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[3][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[0][6]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][6]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[4][6]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[11][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[10][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[9][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[3][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[2][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[1][7]' (FD) to 'UUT5/SRAM_reg[0][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UUT5/SRAM_reg[0][7] )
+INFO: [Synth 8-3886] merging instance 'UUT5/SRAM_reg[15][7]' (FD) to 'UUT5/SRAM_reg[4][7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UUT5/SRAM_reg[4][7] )
+INFO: [Synth 8-3886] merging instance 'UUT13/B_OUT_r_reg[6]' (FDE) to 'UUT13/B_OUT_r_reg[7]'
+INFO: [Synth 8-3886] merging instance 'UUT6/IR_r_reg[6]' (FDCE) to 'UUT6/IR_r_reg[7]'
+WARNING: [Synth 8-3332] Sequential element (UUT5/SRAM_reg[0][7]) is unused and will be removed from module MCPU8_1.
+WARNING: [Synth 8-3332] Sequential element (UUT5/SRAM_reg[4][7]) is unused and will be removed from module MCPU8_1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:03:08 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8536 ; free virtual = 379645
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:03:08 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8536 ; free virtual = 379645
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:03:08 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     2|
+|3     |LUT1   |     1|
+|4     |LUT2   |     8|
+|5     |LUT3   |     2|
+|6     |LUT4   |    33|
+|7     |LUT5   |    37|
+|8     |LUT6   |     7|
+|9     |FDCE   |    15|
+|10    |FDRE   |    27|
+|11    |IBUF   |     2|
+|12    |OBUF   |   108|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------------+------+
+|      |Instance |Module       |Cells |
++------+---------+-------------+------+
+|1     |top      |             |   243|
+|2     |  UUT1   |PC_4         |     8|
+|3     |  UUT12  |ACC_8        |     8|
+|4     |  UUT13  |B_REG_8      |    14|
+|5     |  UUT14  |OUT_REG_8    |     8|
+|6     |  UUT15  |ALU_8        |     2|
+|7     |  UUT4   |MAR          |    18|
+|8     |  UUT6   |IR_8         |    10|
+|9     |  UUT8   |PRESET_COUNT |    64|
++------+---------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:03:09 . Memory (MB): peak = 1777.465 ; gain = 415.918 ; free physical = 8535 ; free virtual = 379645
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+115 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:03:15 . Memory (MB): peak = 1917.609 ; gain = 597.477 ; free physical = 8461 ; free virtual = 379571
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.runs/synth_1/MCPU8_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MCPU8_1_utilization_synth.rpt -pb MCPU8_1_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.54 . Memory (MB): peak = 1941.629 ; gain = 0.000 ; free physical = 8458 ; free virtual = 379568
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  7 10:30:06 2022...

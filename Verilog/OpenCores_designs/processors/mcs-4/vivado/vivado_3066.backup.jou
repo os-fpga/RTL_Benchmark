@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar  8 10:37:39 2022
+# Process ID: 3066
+# Current directory: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado
+# Command line: vivado
+# Log file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.log
+# Journal file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/aor3000/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/aor3000/rtl/model_fifo.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/memory_tlb_ram.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/defines.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/model_simple_dual_ram.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/block_shift.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/pipeline_rf.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/memory_data_tlb_micro.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/model_mult.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/memory_ram.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/memory_instr_tlb_micro.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/model_true_dual_ram.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/pipeline_mem.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/pipeline_exe.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/aoR3000.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/block_long_div.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/pipeline_if.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/block_cp0.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/block_muldiv.v /home/users/ayyaz.ahmed/Downloads/aor3000/rtl/memory_avalon.v}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/arm4u/project_1 -part xc7vx485tffg1157-1
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/arm4u/rtl/forwarding.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/register_file.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/execute.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/fetch.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/barrelshift.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/cpu.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/arm_types.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/decode.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/writeback.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/cache.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/alu.vhd /home/users/ayyaz.ahmed/Downloads/arm4u/rtl/memory.vhd}
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

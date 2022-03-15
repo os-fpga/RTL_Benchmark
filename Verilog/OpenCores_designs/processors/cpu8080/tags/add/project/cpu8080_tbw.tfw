@@ -1,0 +1,248 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2003 Xilinx, Inc.
+// All Right Reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 8.2.02i
+//  \   \         Application : ISE
+//  /   /         Filename : cpu8080_tbw.tfw
+// /___/   /\     Timestamp : Sat Oct 28 22:18:07 2006
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: 
+//Design Name: cpu8080_tbw
+//Device: Xilinx
+//
+`timescale 1ns/1ps
+
+module cpu8080_tbw;
+    wire [15:0] addr;
+    reg [7:0] data$inout$reg = 8'b00000000;
+    wire [7:0] data = data$inout$reg;
+    wire readmem;
+    wire writemem;
+    wire readio;
+    wire writeio;
+    wire intr;
+    wire inta;
+    reg waitr = 1'b0;
+    wire [2:0] r;
+    wire [2:0] g;
+    wire [2:0] b;
+    wire hsync_n;
+    wire vsync_n;
+    reg reset_n = 1'b1;
+    reg clock = 1'b0;
+
+    parameter PERIOD = 40;
+    parameter real DUTY_CYCLE = 0.5;
+    parameter OFFSET = 100;
+
+    initial    // Clock process for clock
+    begin
+        #OFFSET;
+        forever
+        begin
+            clock = 1'b0;
+            #(PERIOD-(PERIOD*DUTY_CYCLE)) clock = 1'b1;
+            #(PERIOD*DUTY_CYCLE);
+        end
+    end
+
+    testbench UUT (
+        .addr(addr),
+        .data(data),
+        .readmem(readmem),
+        .writemem(writemem),
+        .readio(readio),
+        .writeio(writeio),
+        .intr(intr),
+        .inta(inta),
+        .waitr(waitr),
+        .r(r),
+        .g(g),
+        .b(b),
+        .hsync_n(hsync_n),
+        .vsync_n(vsync_n),
+        .reset_n(reset_n),
+        .clock(clock));
+
+    integer TX_FILE = 0;
+    integer TX_ERROR = 0;
+    
+    initial begin  // Open the results file...
+        TX_FILE = $fopen("results.txt");
+        #100040 // Final time:  100040 ns
+        if (TX_ERROR == 0) begin
+            $display("No errors or warnings.");
+            $fdisplay(TX_FILE, "No errors or warnings.");
+        end else begin
+            $display("%d errors found in simulation.", TX_ERROR);
+            $fdisplay(TX_FILE, "%d errors found in simulation.", TX_ERROR);
+        end
+        $fclose(TX_FILE);
+        $stop;
+    end
+
+    initial begin
+        // -------------  Current Time:  110ns
+        #110;
+        reset_n = 1'b0;
+        data$inout$reg = 8'bZZZZZZZZ;
+        // -------------------------------------
+        // -------------  Current Time:  270ns
+        #160;
+        reset_n = 1'b1;
+        // -------------------------------------
+    end
+
+    task CHECK_addr;
+        input [15:0] NEXT_addr;
+
+        #0 begin
+            if (NEXT_addr !== addr) begin
+                $display("Error at time=%dns addr=%b, expected=%b", $time, addr, NEXT_addr);
+                $fdisplay(TX_FILE, "Error at time=%dns addr=%b, expected=%b", $time, addr, NEXT_addr);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_readmem;
+        input NEXT_readmem;
+
+        #0 begin
+            if (NEXT_readmem !== readmem) begin
+                $display("Error at time=%dns readmem=%b, expected=%b", $time, readmem, NEXT_readmem);
+                $fdisplay(TX_FILE, "Error at time=%dns readmem=%b, expected=%b", $time, readmem, NEXT_readmem);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_writemem;
+        input NEXT_writemem;
+
+        #0 begin
+            if (NEXT_writemem !== writemem) begin
+                $display("Error at time=%dns writemem=%b, expected=%b", $time, writemem, NEXT_writemem);
+                $fdisplay(TX_FILE, "Error at time=%dns writemem=%b, expected=%b", $time, writemem, NEXT_writemem);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_readio;
+        input NEXT_readio;
+
+        #0 begin
+            if (NEXT_readio !== readio) begin
+                $display("Error at time=%dns readio=%b, expected=%b", $time, readio, NEXT_readio);
+                $fdisplay(TX_FILE, "Error at time=%dns readio=%b, expected=%b", $time, readio, NEXT_readio);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_writeio;
+        input NEXT_writeio;
+
+        #0 begin
+            if (NEXT_writeio !== writeio) begin
+                $display("Error at time=%dns writeio=%b, expected=%b", $time, writeio, NEXT_writeio);
+                $fdisplay(TX_FILE, "Error at time=%dns writeio=%b, expected=%b", $time, writeio, NEXT_writeio);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_intr;
+        input NEXT_intr;
+
+        #0 begin
+            if (NEXT_intr !== intr) begin
+                $display("Error at time=%dns intr=%b, expected=%b", $time, intr, NEXT_intr);
+                $fdisplay(TX_FILE, "Error at time=%dns intr=%b, expected=%b", $time, intr, NEXT_intr);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_inta;
+        input NEXT_inta;
+
+        #0 begin
+            if (NEXT_inta !== inta) begin
+                $display("Error at time=%dns inta=%b, expected=%b", $time, inta, NEXT_inta);
+                $fdisplay(TX_FILE, "Error at time=%dns inta=%b, expected=%b", $time, inta, NEXT_inta);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_r;
+        input [2:0] NEXT_r;
+
+        #0 begin
+            if (NEXT_r !== r) begin
+                $display("Error at time=%dns r=%b, expected=%b", $time, r, NEXT_r);
+                $fdisplay(TX_FILE, "Error at time=%dns r=%b, expected=%b", $time, r, NEXT_r);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_g;
+        input [2:0] NEXT_g;
+
+        #0 begin
+            if (NEXT_g !== g) begin
+                $display("Error at time=%dns g=%b, expected=%b", $time, g, NEXT_g);
+                $fdisplay(TX_FILE, "Error at time=%dns g=%b, expected=%b", $time, g, NEXT_g);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_b;
+        input [2:0] NEXT_b;
+
+        #0 begin
+            if (NEXT_b !== b) begin
+                $display("Error at time=%dns b=%b, expected=%b", $time, b, NEXT_b);
+                $fdisplay(TX_FILE, "Error at time=%dns b=%b, expected=%b", $time, b, NEXT_b);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_hsync_n;
+        input NEXT_hsync_n;
+
+        #0 begin
+            if (NEXT_hsync_n !== hsync_n) begin
+                $display("Error at time=%dns hsync_n=%b, expected=%b", $time, hsync_n, NEXT_hsync_n);
+                $fdisplay(TX_FILE, "Error at time=%dns hsync_n=%b, expected=%b", $time, hsync_n, NEXT_hsync_n);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+    task CHECK_vsync_n;
+        input NEXT_vsync_n;
+
+        #0 begin
+            if (NEXT_vsync_n !== vsync_n) begin
+                $display("Error at time=%dns vsync_n=%b, expected=%b", $time, vsync_n, NEXT_vsync_n);
+                $fdisplay(TX_FILE, "Error at time=%dns vsync_n=%b, expected=%b", $time, vsync_n, NEXT_vsync_n);
+                $fflush(TX_FILE);
+                TX_ERROR = TX_ERROR + 1;
+            end
+        end
+    endtask
+
+endmodule
+

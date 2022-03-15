@@ -1,0 +1,613 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Mar  7 11:43:57 2022
+# Process ID: 68272
+# Current directory: /home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.runs/synth_1
+# Command line: vivado -log ae18_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ae18_core.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.runs/synth_1/ae18_core.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source ae18_core.tcl -notrace
+Command: synth_design -top ae18_core -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 68747 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1452.535 ; gain = 91.000 ; free physical = 15301 ; free virtual = 381450
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ae18_core' [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:49]
+	Parameter ISIZ bound to: 20 - type: integer 
+	Parameter DSIZ bound to: 12 - type: integer 
+	Parameter WSIZ bound to: 16 - type: integer 
+	Parameter FSM_RUN bound to: 3'b000 
+	Parameter FSM_ISRL bound to: 3'b001 
+	Parameter FSM_ISRH bound to: 3'b010 
+	Parameter FSM_SLEEP bound to: 3'b011 
+	Parameter FSM_Q0 bound to: 2'b00 
+	Parameter FSM_Q1 bound to: 2'b01 
+	Parameter FSM_Q2 bound to: 2'b10 
+	Parameter FSM_Q3 bound to: 2'b11 
+	Parameter MXSRC_MASK bound to: 2'b10 
+	Parameter MXSRC_LIT bound to: 2'b11 
+	Parameter MXSRC_WREG bound to: 2'b00 
+	Parameter MXSRC_FILE bound to: 2'b01 
+	Parameter MXTGT_MASK bound to: 2'b10 
+	Parameter MXTGT_LIT bound to: 2'b11 
+	Parameter MXTGT_WREG bound to: 2'b00 
+	Parameter MXTGT_FILE bound to: 2'b01 
+	Parameter MXDST_NULL bound to: 2'b00 
+	Parameter MXDST_EXT bound to: 2'b01 
+	Parameter MXDST_WREG bound to: 2'b10 
+	Parameter MXDST_FILE bound to: 2'b11 
+	Parameter MXALU_XOR bound to: 4'b0000 
+	Parameter MXALU_IOR bound to: 4'b0001 
+	Parameter MXALU_AND bound to: 4'b0010 
+	Parameter MXALU_SWAP bound to: 4'b0011 
+	Parameter MXALU_ADD bound to: 4'b0100 
+	Parameter MXALU_ADDC bound to: 4'b0101 
+	Parameter MXALU_SUB bound to: 4'b0110 
+	Parameter MXALU_SUBC bound to: 4'b0111 
+	Parameter MXALU_RLNC bound to: 4'b1000 
+	Parameter MXALU_RLC bound to: 4'b1001 
+	Parameter MXALU_RRNC bound to: 4'b1010 
+	Parameter MXALU_RRC bound to: 4'b1011 
+	Parameter MXALU_NEG bound to: 4'b1100 
+	Parameter MXALU_MOVLB bound to: 4'b1100 
+	Parameter MXALU_DAW bound to: 4'b1101 
+	Parameter MXALU_LFSR bound to: 4'b1110 
+	Parameter MXALU_MUL bound to: 4'b1111 
+	Parameter MXBSR_BSR bound to: 2'b11 
+	Parameter MXBSR_BSA bound to: 2'b10 
+	Parameter MXBSR_LIT bound to: 2'b01 
+	Parameter MXBSR_NUL bound to: 2'b00 
+	Parameter MXSKP_SZ bound to: 3'b001 
+	Parameter MXSKP_SNZ bound to: 3'b010 
+	Parameter MXSKP_SNC bound to: 3'b011 
+	Parameter MXSKP_SU bound to: 3'b100 
+	Parameter MXSKP_SCC bound to: 3'b111 
+	Parameter MXSKP_NON bound to: 3'b000 
+	Parameter MXNPC_FAR bound to: 3'b011 
+	Parameter MXNPC_NEAR bound to: 3'b010 
+	Parameter MXNPC_BCC bound to: 3'b111 
+	Parameter MXNPC_RET bound to: 3'b001 
+	Parameter MXNPC_RESET bound to: 3'b100 
+	Parameter MXNPC_ISRH bound to: 3'b101 
+	Parameter MXNPC_ISRL bound to: 3'b110 
+	Parameter MXNPC_INC bound to: 3'b000 
+	Parameter MXSTA_ALL bound to: 3'b111 
+	Parameter MXSTA_CZN bound to: 3'b001 
+	Parameter MXSTA_ZN bound to: 3'b010 
+	Parameter MXSTA_Z bound to: 3'b011 
+	Parameter MXSTA_C bound to: 3'b100 
+	Parameter MXSTA_NONE bound to: 3'b000 
+	Parameter MXBCC_BZ bound to: 3'b000 
+	Parameter MXBCC_BNZ bound to: 3'b001 
+	Parameter MXBCC_BC bound to: 3'b010 
+	Parameter MXBCC_BNC bound to: 3'b011 
+	Parameter MXBCC_BOV bound to: 3'b100 
+	Parameter MXBCC_BNOV bound to: 3'b101 
+	Parameter MXBCC_BN bound to: 3'b110 
+	Parameter MXBCC_BNN bound to: 3'b111 
+	Parameter MXSTK_PUSH bound to: 2'b10 
+	Parameter MXSTK_POP bound to: 2'b01 
+	Parameter MXSTK_NONE bound to: 2'b00 
+	Parameter MXSHA_CALL bound to: 2'b10 
+	Parameter MXSHA_RET bound to: 2'b01 
+	Parameter MXSHA_NONE bound to: 2'b00 
+	Parameter MXTBL_RD bound to: 4'b1000 
+	Parameter MXTBL_RDINC bound to: 4'b1001 
+	Parameter MXTBL_RDDEC bound to: 4'b1010 
+	Parameter MXTBL_RDPRE bound to: 4'b1011 
+	Parameter MXTBL_WT bound to: 4'b1100 
+	Parameter MXTBL_WTINC bound to: 4'b1101 
+	Parameter MXTBL_WTDEC bound to: 4'b1110 
+	Parameter MXTBL_WTPRE bound to: 4'b1111 
+	Parameter MXTBL_NOP bound to: 4'b0000 
+	Parameter aPLUSW2 bound to: 16'b1111111111011011 
+	Parameter aPREINC2 bound to: 16'b1111111111011100 
+	Parameter aPOSTDEC2 bound to: 16'b1111111111011101 
+	Parameter aPOSTINC2 bound to: 16'b1111111111011110 
+	Parameter aINDF2 bound to: 16'b1111111111011111 
+	Parameter aPLUSW1 bound to: 16'b1111111111100011 
+	Parameter aPREINC1 bound to: 16'b1111111111100100 
+	Parameter aPOSTDEC1 bound to: 16'b1111111111100101 
+	Parameter aPOSTINC1 bound to: 16'b1111111111100110 
+	Parameter aINDF1 bound to: 16'b1111111111100111 
+	Parameter aPLUSW0 bound to: 16'b1111111111101011 
+	Parameter aPREINC0 bound to: 16'b1111111111101100 
+	Parameter aPOSTDEC0 bound to: 16'b1111111111101101 
+	Parameter aPOSTINC0 bound to: 16'b1111111111101110 
+	Parameter aINDF0 bound to: 16'b1111111111101111 
+	Parameter MXFSR_INDF2 bound to: 4'b1111 
+	Parameter MXFSR_POSTINC2 bound to: 4'b1110 
+	Parameter MXFSR_POSTDEC2 bound to: 4'b1101 
+	Parameter MXFSR_PREINC2 bound to: 4'b1100 
+	Parameter MXFSR_PLUSW2 bound to: 4'b1011 
+	Parameter MXFSR_INDF1 bound to: 4'b1010 
+	Parameter MXFSR_POSTINC1 bound to: 4'b1001 
+	Parameter MXFSR_POSTDEC1 bound to: 4'b1000 
+	Parameter MXFSR_PREINC1 bound to: 4'b0111 
+	Parameter MXFSR_PLUSW1 bound to: 4'b0110 
+	Parameter MXFSR_INDF0 bound to: 4'b0101 
+	Parameter MXFSR_POSTINC0 bound to: 4'b0100 
+	Parameter MXFSR_POSTDEC0 bound to: 4'b0011 
+	Parameter MXFSR_PREINC0 bound to: 4'b0010 
+	Parameter MXFSR_PLUSW0 bound to: 4'b0001 
+	Parameter MXFSR_NORM bound to: 4'b0000 
+	Parameter aWDTCON bound to: 16'b1111111111010001 
+	Parameter aSTATUS bound to: 16'b1111111111011000 
+	Parameter aFSR2L bound to: 16'b1111111111011001 
+	Parameter aFSR2H bound to: 16'b1111111111011010 
+	Parameter aBSR bound to: 16'b1111111111100000 
+	Parameter aFSR1L bound to: 16'b1111111111100001 
+	Parameter aFSR1H bound to: 16'b1111111111100010 
+	Parameter aWREG bound to: 16'b1111111111101000 
+	Parameter aFSR0L bound to: 16'b1111111111101001 
+	Parameter aFSR0H bound to: 16'b1111111111101010 
+	Parameter aPRODL bound to: 16'b1111111111110011 
+	Parameter aPRODH bound to: 16'b1111111111110100 
+	Parameter aPRNG bound to: 16'b1111111111010100 
+	Parameter aTABLAT bound to: 16'b1111111111110101 
+	Parameter aTBLPTRL bound to: 16'b1111111111110110 
+	Parameter aTBLPTRH bound to: 16'b1111111111110111 
+	Parameter aTBLPTRU bound to: 16'b1111111111111000 
+	Parameter aPCL bound to: 16'b1111111111111001 
+	Parameter aPCLATH bound to: 16'b1111111111111010 
+	Parameter aPCLATU bound to: 16'b1111111111111011 
+	Parameter aSTKPTR bound to: 16'b1111111111111100 
+	Parameter aTOSL bound to: 16'b1111111111111101 
+	Parameter aTOSH bound to: 16'b1111111111111110 
+	Parameter aTOSU bound to: 16'b1111111111111111 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:419]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:470]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:1504]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:1516]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:1525]
+INFO: [Synth 8-6155] done synthesizing module 'ae18_core' (1#1) [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:49]
+WARNING: [Synth 8-3917] design ae18_core has port iwb_adr_o[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1500.168 ; gain = 138.633 ; free physical = 15323 ; free virtual = 381472
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1500.168 ; gain = 138.633 ; free physical = 15325 ; free virtual = 381474
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1508.168 ; gain = 146.633 ; free physical = 15326 ; free virtual = 381474
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "rIWBADR0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rDWBADR0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "rSFRDAT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "rTOSH" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rBSR_0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rWREG1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR0H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR0H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR1H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR1H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR2H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR2H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rIWBADR0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rDWBADR0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "rSFRDAT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "rTOSH" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rBSR_0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rWREG1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR0H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR0H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR1H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR1H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR2H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR2H" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rNXT" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rILAT" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rIREG" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rROMLAT" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wMXSRC1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wMXSTK0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wMXTGT1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rEAPTR" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rC" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rDC" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rZ" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR0H" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR1H" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rFSR2H" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'rFSM_reg' in module 'ae18_core'
+WARNING: [Synth 8-6014] Unused sequential element rSTKPTR_reg_rep was removed.  [/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.srcs/sources_1/imports/verilog/ae18_core.v:1328]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+*
+               FSM_SLEEP |                               01 |                               11
+                FSM_ISRH |                               10 |                               10
+                FSM_ISRL |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rFSM_reg' using encoding 'sequential' in module 'ae18_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1524.184 ; gain = 162.648 ; free physical = 15309 ; free virtual = 381459
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 2     
+	   2 Input     19 Bit       Adders := 3     
+	   2 Input     12 Bit       Adders := 9     
+	   2 Input      9 Bit       Adders := 3     
+	   3 Input      9 Bit       Adders := 1     
+	   4 Input      9 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---XORs : 
+	                4 Bit    Wide XORs := 1     
+	                2 Bit    Wide XORs := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 30    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 22    
++---RAMs : 
+	              640 Bit         RAMs := 1     
++---Muxes : 
+	   3 Input     24 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 2     
+	   3 Input     19 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 5     
+	   2 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 17    
+	   8 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 8     
+	   7 Input      8 Bit        Muxes := 6     
+	   3 Input      8 Bit        Muxes := 6     
+	  25 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  25 Input      5 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 14    
+	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 26    
+	   4 Input      1 Bit        Muxes := 21    
+	  25 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ae18_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 2     
+	   2 Input     19 Bit       Adders := 3     
+	   2 Input     12 Bit       Adders := 9     
+	   2 Input      9 Bit       Adders := 3     
+	   3 Input      9 Bit       Adders := 1     
+	   4 Input      9 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---XORs : 
+	                4 Bit    Wide XORs := 1     
+	                2 Bit    Wide XORs := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 30    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 22    
++---RAMs : 
+	              640 Bit         RAMs := 1     
++---Muxes : 
+	   3 Input     24 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 2     
+	   3 Input     19 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 5     
+	   2 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 17    
+	   8 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 8     
+	   7 Input      8 Bit        Muxes := 6     
+	   3 Input      8 Bit        Muxes := 6     
+	  25 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  25 Input      5 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 14    
+	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 26    
+	   4 Input      1 Bit        Muxes := 21    
+	  25 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design ae18_core has port iwb_adr_o[0] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'rSTKPTR_reg_rep[0]' (FDCE) to 'rSTKPTR_reg[0]'
+INFO: [Synth 8-3886] merging instance 'rSTKPTR_reg_rep[1]' (FDCE) to 'rSTKPTR_reg[1]'
+INFO: [Synth 8-3886] merging instance 'rSTKPTR_reg_rep[2]' (FDCE) to 'rSTKPTR_reg[2]'
+INFO: [Synth 8-3886] merging instance 'rSTKPTR_reg_rep[3]' (FDCE) to 'rSTKPTR_reg[3]'
+INFO: [Synth 8-3886] merging instance 'rSTKPTR_reg_rep[4]' (FDCE) to 'rSTKPTR_reg[4]'
+WARNING: [Synth 8-3332] Sequential element (rSTKPTR__reg[5]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIREG_reg[15]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIREG_reg[14]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIREG_reg[13]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIREG_reg[12]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIREG_reg[11]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIWBADR_reg[23]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIWBADR_reg[22]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIWBADR_reg[21]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIWBADR_reg[20]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rIWBADR_reg[19]) is unused and will be removed from module ae18_core.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:03:24 . Memory (MB): peak = 1843.469 ; gain = 481.934 ; free physical = 14646 ; free virtual = 381112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-------------+-----------+----------------------+--------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------+-----------+----------------------+--------------+
+|ae18_core   | rSTKRAM_reg | Implied   | 32 x 20              | RAM32M x 4   | 
++------------+-------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:03:25 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14643 ; free virtual = 381109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+-------------+-----------+----------------------+--------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------+-----------+----------------------+--------------+
+|ae18_core   | rSTKRAM_reg | Implied   | 32 x 20              | RAM32M x 4   | 
++------------+-------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[7]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[6]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[5]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[4]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[3]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[2]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[1]) is unused and will be removed from module ae18_core.
+WARNING: [Synth 8-3332] Sequential element (rPRNG_reg[0]) is unused and will be removed from module ae18_core.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:03:25 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14646 ; free virtual = 381112
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14646 ; free virtual = 381112
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14646 ; free virtual = 381112
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    76|
+|3     |LUT1   |    64|
+|4     |LUT2   |   151|
+|5     |LUT3   |   143|
+|6     |LUT4   |   100|
+|7     |LUT5   |   220|
+|8     |LUT6   |   371|
+|9     |MUXF7  |    13|
+|10    |MUXF8  |     1|
+|11    |RAM32M |     4|
+|12    |FDCE   |   439|
+|13    |FDC_1  |     2|
+|14    |FDPE   |     5|
+|15    |IBUF   |    32|
+|16    |OBUF   |    64|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1686|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.473 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:03:26 . Memory (MB): peak = 1843.477 ; gain = 481.938 ; free physical = 14647 ; free virtual = 381112
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'ae18_core' is not ideal for floorplanning, since the cellview 'ae18_core' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  FDC_1 => FDCE (inverted pins: C): 2 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+62 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:03:32 . Memory (MB): peak = 1933.496 ; gain = 613.375 ; free physical = 14625 ; free virtual = 381091
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.runs/synth_1/ae18_core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ae18_core_utilization_synth.rpt -pb ae18_core_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.57 . Memory (MB): peak = 1957.516 ; gain = 0.000 ; free physical = 14625 ; free virtual = 381091
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  7 11:47:42 2022...

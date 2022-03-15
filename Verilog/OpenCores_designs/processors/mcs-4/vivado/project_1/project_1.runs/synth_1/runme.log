@@ -1,0 +1,362 @@
+
+*** Running vivado
+    with args -log i4004.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i4004.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source i4004.tcl -notrace
+Command: synth_design -top i4004 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 43787 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1452.539 ; gain = 91.000 ; free physical = 4239 ; free virtual = 391218
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'i4004' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/i4004.v:22]
+INFO: [Synth 8-6157] synthesizing module 'timing_io' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/timing_io.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'timing_io' (1#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/timing_io.v:22]
+INFO: [Synth 8-6157] synthesizing module 'instruction_decode' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/instruction_decode.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_decode' (2#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/instruction_decode.v:22]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (3#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/alu.v:22]
+INFO: [Synth 8-6157] synthesizing module 'instruction_pointer' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/instruction_pointer.v:22]
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/counter.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (4#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/counter.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_pointer' (5#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/instruction_pointer.v:22]
+INFO: [Synth 8-6157] synthesizing module 'scratchpad' [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/scratchpad.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'scratchpad' (6#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/scratchpad.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'i4004' (7#1) [/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.srcs/sources_1/imports/rtl/i4004.v:22]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1496.172 ; gain = 134.633 ; free physical = 3798 ; free virtual = 390780
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1496.172 ; gain = 134.633 ; free physical = 3821 ; free virtual = 390802
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1504.172 ; gain = 142.633 ; free physical = 3815 ; free virtual = 390798
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1512.180 ; gain = 150.641 ; free physical = 4368 ; free virtual = 391347
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 57    
++---RAMs : 
+	               64 Bit         RAMs := 1     
+	               48 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 21    
+	   3 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 28    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module timing_io 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 2     
+Module instruction_decode 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 12    
+Module alu 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 26    
+Module counter 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module instruction_pointer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---RAMs : 
+	               48 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 6     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module scratchpad 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---RAMs : 
+	               64 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:03:26 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25690 ; free virtual = 393749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-------------------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives      | 
++------------+-------------------------+-----------+----------------------+-----------------+
+|i4004       | ip_board/dram_array_reg | Implied   | 4 x 12               | RAM16X1S x 12   | 
+|i4004       | sp_board/dram_array_reg | Implied   | 8 x 8                | RAM16X1S x 8    | 
++------------+-------------------------+-----------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:03:26 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25693 ; free virtual = 393753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+-------------------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives      | 
++------------+-------------------------+-----------+----------------------+-----------------+
+|i4004       | ip_board/dram_array_reg | Implied   | 4 x 12               | RAM16X1S x 12   | 
+|i4004       | sp_board/dram_array_reg | Implied   | 8 x 8                | RAM16X1S x 8    | 
++------------+-------------------------+-----------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop id_board/n0362_reg is being inverted and renamed to id_board/n0362_reg_inv.
+INFO: [Synth 8-5365] Flop id_board/n0405_reg is being inverted and renamed to id_board/n0405_reg_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393754
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |LUT1     |    17|
+|3     |LUT2     |    31|
+|4     |LUT3     |    29|
+|5     |LUT4     |    50|
+|6     |LUT5     |    50|
+|7     |LUT6     |    66|
+|8     |RAM16X1S |    20|
+|9     |FDRE     |   124|
+|10    |FDSE     |     6|
+|11    |IBUF     |     5|
+|12    |IOBUF    |     4|
+|13    |OBUF     |     6|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------+--------------------+------+
+|      |Instance        |Module              |Cells |
++------+----------------+--------------------+------+
+|1     |top             |                    |   409|
+|2     |  alu_board     |alu                 |    69|
+|3     |  id_board      |instruction_decode  |   108|
+|4     |  ip_board      |instruction_pointer |    72|
+|5     |    addr_ptr_0  |counter_2           |     4|
+|6     |    addr_ptr_1  |counter_3           |     4|
+|7     |    addr_rfsh_0 |counter_4           |     4|
+|8     |    addr_rfsh_1 |counter_5           |     4|
+|9     |  sp_board      |scratchpad          |    69|
+|10    |    reg_rfsh_0  |counter             |     4|
+|11    |    reg_rfsh_1  |counter_0           |     4|
+|12    |    reg_rfsh_2  |counter_1           |     4|
+|13    |  tio_board     |timing_io           |    75|
++------+----------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25694 ; free virtual = 393753
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25698 ; free virtual = 393757
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:03:27 . Memory (MB): peak = 1788.457 ; gain = 426.918 ; free physical = 25698 ; free virtual = 393757
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 24 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 4 instances
+  RAM16X1S => RAM32X1S (RAMS32): 20 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:03:34 . Memory (MB): peak = 1921.477 ; gain = 601.352 ; free physical = 25633 ; free virtual = 393693
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.runs/synth_1/i4004.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file i4004_utilization_synth.rpt -pb i4004_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.58 . Memory (MB): peak = 1945.496 ; gain = 0.000 ; free physical = 25618 ; free virtual = 393677
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  4 12:40:14 2022...

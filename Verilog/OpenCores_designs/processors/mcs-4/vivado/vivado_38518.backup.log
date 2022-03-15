@@ -1,0 +1,1540 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Mar  4 12:34:25 2022
+# Process ID: 38518
+# Current directory: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado
+# Command line: vivado
+# Log file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.log
+# Journal file: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+create_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:06 . Memory (MB): peak = 6485.770 ; gain = 79.707 ; free physical = 4844 ; free virtual = 391827
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/instruction_pointer.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/timing_io.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/alu.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/counter.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/i4004.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/instruction_decode.v /home/users/ayyaz.ahmed/Downloads/mcs-4/rtl/scratchpad.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 12:36:24 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/mcs-4/vivado/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 24 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 4 instances
+  RAM16X1S => RAM32X1S (RAMS32): 20 instances
+
+open_run: Time (s): cpu = 00:01:46 ; elapsed = 00:04:00 . Memory (MB): peak = 7154.750 ; gain = 632.965 ; free physical = 25814 ; free virtual = 393209
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:30 ; elapsed = 00:00:04 . Memory (MB): peak = 7527.543 ; gain = 14.727 ; free physical = 21703 ; free virtual = 390574
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/defs.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/regblock.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/alu16.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/MC6809_cpu.v /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/trunk/rtl/verilog/decoders.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 14:55:39 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/6809_6309_compatible_core/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 121 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:21 ; elapsed = 00:00:03 . Memory (MB): peak = 7585.613 ; gain = 0.000 ; free physical = 30098 ; free virtual = 394887
+close_project
+create_project 68hc05 /home/users/ayyaz.ahmed/Downloads/68hc05/68hc05 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/68hc05/trunk/6805.vhd
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 16:13:01 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/68hc05/68hc05/68hc05.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'UR6805' is not ideal for floorplanning, since the cellview 'UR6805' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:23 ; elapsed = 00:00:03 . Memory (MB): peak = 7585.613 ; gain = 0.000 ; free physical = 28568 ; free virtual = 395334
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/68hc08/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/68hc08/trunk/X68UR08.vhd
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 16:21:29 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/68hc08/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 237 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'X68UR08' is not ideal for floorplanning, since the cellview 'X68UR08' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:15 ; elapsed = 00:00:03 . Memory (MB): peak = 7594.004 ; gain = 0.000 ; free physical = 26847 ; free virtual = 394181
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap_hardwired_processor/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/sap_hardwired_processor/branches/CPU8_1.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 16:35:18 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/sap_hardwired_processor/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:21 ; elapsed = 00:00:03 . Memory (MB): peak = 7600.895 ; gain = 0.000 ; free physical = 27359 ; free virtual = 394772
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/8051/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_memory_interface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_64x32_dual_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_wb_iinterface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sfr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_rom.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc2.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_test.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_src_sel.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_256x8_two_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_icache.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cache_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cy_select.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: oc8051_rom
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:238]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:239]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:240]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:243]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:244]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:245]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:248]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:249]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:250]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:253]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:254]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:255]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:258]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:259]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:260]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:263]
+ERROR: [Synth 8-1031] data2 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:264]
+ERROR: [Synth 8-1031] data3 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:265]
+ERROR: [Synth 8-1031] data1 is not declared [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v:268]
+Failed to read verilog '/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_rom.v'
+0 Infos, 0 Warnings, 0 Critical Warnings and 20 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+set_property top oc8051_top [current_fileset]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu_test.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu_test.v
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: oc8051_top
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7647.961 ; gain = 0.000 ; free physical = 27256 ; free virtual = 394716
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:115]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_decoder' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:90]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:171]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:171]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:173]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:192]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:339]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:402]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1204]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1206]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1302]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1358]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1397]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2643]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2647]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2647]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2694]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_decoder' (1#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:90]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_alu' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:89]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_multiply' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_multiply.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_multiply' (2#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_multiply.v:65]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_divide' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_divide.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_divide' (3#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_divide.v:57]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:202]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:202]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_alu' (4#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:89]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_ram_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_top.v:77]
+	Parameter ram_aw bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'oc8051_ram_256x8_two_bist' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:59]
+ERROR: [Synth 8-439] module 'generic_dpram' not found [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:132]
+	Parameter positional_param_0 bound to: 32'sb00000000000000000000000000001000 
+	Parameter positional_param_1 bound to: 32'sb00000000000000000000000000001000 
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_ram_256x8_two_bist' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:59]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_ram_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_top.v:77]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:115]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7647.961 ; gain = 0.000 ; free physical = 27266 ; free virtual = 394727
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+28 Infos, 0 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+import_files -force -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_memory_interface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_64x32_dual_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_wb_iinterface.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_fpga_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sfr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/disp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_rom.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_tc2.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_alu_src_sel.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_ram_256x8_two_bist.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_icache.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cache_ram.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/trunk/rtl/verilog/oc8051_cy_select.v}
+update_compile_order -fileset sources_1
+set_property top oc8051_fpga_top [current_fileset]
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: oc8051_fpga_top
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7708.996 ; gain = 0.000 ; free physical = 27108 ; free virtual = 395202
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'oc8051_fpga_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:56]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:104]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:115]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_decoder' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:90]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:171]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:171]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:173]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:192]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:339]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:402]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1204]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1206]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1302]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1358]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:1397]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2643]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2647]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2647]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:2694]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_decoder' (1#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_decoder.v:90]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_alu' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:89]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_multiply' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_multiply.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_multiply' (2#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_multiply.v:65]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_divide' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_divide.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_divide' (3#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_divide.v:57]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:202]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:202]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_alu' (4#1) [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_alu.v:89]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_ram_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_top.v:77]
+	Parameter ram_aw bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'oc8051_ram_256x8_two_bist' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:59]
+ERROR: [Synth 8-439] module 'generic_dpram' not found [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:132]
+	Parameter positional_param_0 bound to: 32'sb00000000000000000000000000001000 
+	Parameter positional_param_1 bound to: 32'sb00000000000000000000000000001000 
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_ram_256x8_two_bist' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_256x8_two_bist.v:59]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_ram_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_ram_top.v:77]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:115]
+ERROR: [Synth 8-476] no matching instance 'oc8051_icache1' for defparam [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:148]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_fpga_top' [/home/users/ayyaz.ahmed/Downloads/8051/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:56]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 7708.996 ; gain = 0.000 ; free physical = 27120 ; free virtual = 395215
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+29 Infos, 1 Warnings, 0 Critical Warnings and 7 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src3_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_tc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_tb.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_pc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_rd_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_defines.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_divide.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_timescale.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_cy_select.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src1_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_immediate_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_uart.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_b_register.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_comp.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_op_select.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ports.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_wr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_decoder.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ram_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg4.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg3.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg8.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_int.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_psw.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_dptr.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_multiply.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_sp.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_acc.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_fpga_top.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg2.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_rom_addr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_alu_src2_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_indi_addr.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_ext_addr_sel.v /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/rtl/verilog/oc8051_reg1.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: oc8051_fpga_top
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7708.996 ; gain = 0.000 ; free physical = 27139 ; free virtual = 395034
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'oc8051_fpga_top' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:5]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:54]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_reg8' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg8.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_reg8' (1#1) [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg8.v:51]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_reg1' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg1.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_reg1' (2#1) [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_reg2' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg2.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_reg2' (3#1) [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg2.v:52]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_reg3' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg3.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_reg3' (4#1) [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg3.v:52]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_reg4' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg4.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'oc8051_reg4' (5#1) [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_reg4.v:51]
+INFO: [Synth 8-6157] synthesizing module 'oc8051_pc' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_pc.v:55]
+ERROR: [Synth 8-91] ambiguous clock in event control [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_pc.v:189]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_pc' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_pc.v:55]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_top' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_top.v:54]
+ERROR: [Synth 8-6156] failed synthesizing module 'oc8051_fpga_top' [/home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_fpga_top.v:5]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7708.996 ; gain = 0.000 ; free physical = 27138 ; free virtual = 395033
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+13 Infos, 0 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 17:06:49 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.runs/synth_1/runme.log
+set_property is_global_include true [get_files  /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.srcs/sources_1/imports/verilog/oc8051_defines.v]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 17:10:52 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/8051/tags/rel0/project_1/project_1.runs/synth_1/runme.log
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/ps2_kbd.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/cpu8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/vga.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/sm8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/m8080.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/vgachr.v /home/users/ayyaz.ahmed/Downloads/cpu8080/trunk/project/common.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top cpu8080 [current_fileset]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+WARNING: [HDL 9-2994] overwriting previous definition of module alu [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v:1532]
+WARNING: [HDL 9-2994] overwriting previous definition of module alu [/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v:1482]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'alu()' found in library 'xil_defaultlib'
+Duplicate found at line 1600 of file /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/cpu8080.v
+Duplicate found at line 1532 of file /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v
+	(Active) Duplicate found at line 1482 of file /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v
+[Fri Mar  4 17:23:52 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/ps2_kbd.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vgachr.v] -no_script -reset -force -quiet
+remove_files  {/home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/ps2_kbd.vhd /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vgachr.v}
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vga.vhd] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/vga.vhd
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/m8080.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.srcs/sources_1/imports/project/sm8080.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Mar  4 17:33:24 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/cpu8080/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 141 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'cpu8080' is not ideal for floorplanning, since the cellview 'cpu8080' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:25 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 25914 ; free virtual = 393989
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/mar_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/b_reg_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/irdec_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/ir_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/alu_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/control_unit_fsm.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/pc_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/rom_16_8_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/MP_struct.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/ac_behave.vhd /home/users/ayyaz.ahmed/Downloads/sap/trunk/sap/src/o_behave.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 10:11:11 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/sap/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:18 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 9984 ; free virtual = 380643
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/branches/MCPU8_1.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 10:26:36 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/sap_microprogrammed_processor/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:22 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 9045 ; free virtual = 380156
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/a-z80/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/a-z80/rtl/coremodules.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_module.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_matrix.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/temp_wires.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/core.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/globals.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_zero.vh /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/exec_matrix_compiled.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/a-z80/rtl/inc_dec_2bit.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_4.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_switch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_8.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_slice.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/bus_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_latch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/interrupts.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/resets.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_bit_select.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_2z.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_select.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/pin_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/pla_decode.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_control.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/decode_state.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_latch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_pins.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/ir.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_flags.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/execute.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_shifter_core.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/inc_dec.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/bus_switch.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/control_pins_n.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/clk_delay.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_core.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_3z.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_prep_daa.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/memory_ifc.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/alu_mux_2.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/reg_file.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/z80_top_direct_n.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_pins.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/address_mux.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/data_switch_mask.v /home/users/ayyaz.ahmed/Downloads/a-z80/rtl/sequencer.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 11:25:30 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/a-z80/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:19 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 15191 ; free virtual = 381513
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ae18/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/ae18/trunk/rtl/verilog/ae18_core.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 11:43:54 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/ae18/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 126 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'ae18_core' is not ideal for floorplanning, since the cellview 'ae18_core' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:23 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 15034 ; free virtual = 381565
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/aemb/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_gprf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_xecu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_dparam.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_intu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_sim.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_edk32.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_ctrl.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_brcc.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_ibuf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_mult.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_xslif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_bpcu.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_memif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_regf.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_pipe.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB_core.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_edk63.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_edk62.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_sparam.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_regs.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_sim.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_bsft.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_spsram.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_tpsram.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_exec.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_iche.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_ctrl.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_dwbif.v /home/users/ayyaz.ahmed/Downloads/aemb/trunk/rtl/verilog/aeMB2_iwbif.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 12:04:20 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aemb/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 198 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 70 instances were transformed.
+  RAM32X1S => RAM32X1S (RAMS32): 37 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 33 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:20 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 10816 ; free virtual = 382254
+set_property top aeMB_core [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 12:13:16 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/aemb/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 187 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 44 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:19 ; elapsed = 00:00:03 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 10843 ; free virtual = 382271
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/ag_6502/trunk/ag_6502/states.v /home/users/ayyaz.ahmed/Downloads/ag_6502/trunk/ag_6502/ag_6502.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+set_property top ag6502 [current_fileset]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: ag6502
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:8]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:9]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:10]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:11]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:12]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:13]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:14]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:15]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:16]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:17]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:18]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:19]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:20]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:21]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:22]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:23]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:24]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:25]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:26]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:27]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:28]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:29]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:30]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:31]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:32]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:33]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:34]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:35]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:36]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:37]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:38]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:39]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:40]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:41]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:42]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:43]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:44]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:45]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:46]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:47]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:48]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:49]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:50]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:51]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:52]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:53]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:54]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:55]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:56]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:57]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:58]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:59]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:60]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:61]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:62]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:63]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:64]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:65]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:66]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:67]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:68]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:69]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:70]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:71]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:72]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:73]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:74]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:75]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:76]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:77]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:78]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:79]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:80]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:81]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:82]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:83]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:84]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:85]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:86]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:87]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:88]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:89]
+ERROR: [Synth 8-2715] syntax error near assign [/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v:94]
+Failed to read verilog '/home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v'
+0 Infos, 82 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.srcs/sources_1/imports/ag_6502/states.v
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 12:29:57 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/ag_6502/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:18 ; elapsed = 00:00:04 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 3144 ; free virtual = 375994
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/altor32/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_lsu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_fetch.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_ram_dp.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/intr_periph.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/soc_pif8.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_writeback.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/top.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_alu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/cpu_if.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_defs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_funcs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/ram_dp8.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/timer_periph.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dcache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/dmem_mux3.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_sim.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_exec.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/ram.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_wb_fetch.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_alt.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dfu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/soc.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_lfu.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_noicache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_ram_sp.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_icache.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_regfile_xil.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/intr_defs.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/altor32_dcache_mem_if.v /home/users/ayyaz.ahmed/Downloads/altor32/trunk/rtl/rtl/timer_defs.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: top
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:54]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:74]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:92]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:112]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:131]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:150]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:162]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:177]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:192]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:207]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:222]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:239]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:253]
+WARNING: [Synth 8-2841] use of undefined macro ICACHE_ENABLED [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:126]
+WARNING: [Synth 8-2841] use of undefined macro DCACHE_ENABLED [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:127]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 3561 ; free virtual = 374430
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+	Parameter ENABLE_ICACHE bound to: ENABLED - type: string 
+	Parameter ENABLE_DCACHE bound to: ENABLED - type: string 
+INFO: [Synth 8-6157] synthesizing module 'ram' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram.v:41]
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_3.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_3.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized0' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_2.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_2.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized0' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized1' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_1.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_1.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized1' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized2' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_0.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_0.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized2' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (2#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram.v:41]
+INFO: [Synth 8-6157] synthesizing module 'cpu_if' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/cpu_if.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter ENABLE_ICACHE bound to: ENABLED - type: string 
+	Parameter ENABLE_DCACHE bound to: ENABLED - type: string 
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+	Parameter REGISTER_FILE_TYPE bound to: SIMULATION - type: string 
+INFO: [Synth 8-6157] synthesizing module 'cpu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+	Parameter REGISTER_FILE_TYPE bound to: SIMULATION - type: string 
+	Parameter ENABLE_ICACHE bound to: ENABLED - type: string 
+	Parameter ENABLE_DCACHE bound to: ENABLED - type: string 
+	Parameter SUPPORT_32REGS bound to: ENABLED - type: string 
+	Parameter PIPELINED_FETCH bound to: ENABLED - type: string 
+INFO: [Synth 8-6157] synthesizing module 'altor32_icache' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter CACHE_NUM_WAYS bound to: 1 - type: integer 
+	Parameter CACHE_LINE_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_SIZE_BYTES bound to: 32 - type: integer 
+	Parameter CACHE_TAG_ENTRIES bound to: 256 - type: integer 
+	Parameter CACHE_DSIZE bound to: 8192 - type: integer 
+	Parameter CACHE_DWIDTH bound to: 11 - type: integer 
+	Parameter CACHE_TAG_WIDTH bound to: 16 - type: integer 
+	Parameter CACHE_TAG_STAT_BITS bound to: 1 - type: integer 
+	Parameter CACHE_TAG_LINE_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter CACHE_TAG_ADDR_LOW bound to: 13 - type: integer 
+	Parameter CACHE_TAG_ADDR_HIGH bound to: 27 - type: integer 
+	Parameter CACHE_TAG_VALID_BIT bound to: 15 - type: integer 
+	Parameter CACHE_TAG_LRU_BIT bound to: 14 - type: integer 
+	Parameter CACHE_TAG_ADDR_BITS bound to: 15 - type: integer 
+	Parameter STATE_CHECK bound to: 0 - type: integer 
+	Parameter STATE_FETCH bound to: 1 - type: integer 
+	Parameter STATE_WAIT bound to: 2 - type: integer 
+	Parameter STATE_FLUSH bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:193]
+INFO: [Synth 8-6157] synthesizing module 'altor32_wb_fetch' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_wb_fetch.v:46]
+	Parameter FETCH_WORDS_W bound to: 3 - type: integer 
+	Parameter FETCH_BYTES_W bound to: 5 - type: integer 
+	Parameter WB_CTI_BURST bound to: 3'b010 
+	Parameter WB_CTI_FINAL bound to: 3'b111 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_wb_fetch' (3#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_wb_fetch.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp' (4#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp__parameterized0' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SIZE bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp__parameterized0' (4#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+WARNING: [Synth 8-6014] Unused sequential element tag_address_q_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:286]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_icache' (5#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_regfile_sim' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:46]
+	Parameter SUPPORT_32REGS bound to: ENABLED - type: string 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:220]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:289]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_regfile_sim' (6#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_dcache' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache.v:41]
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_SIZE_BYTES bound to: 32 - type: integer 
+	Parameter CACHE_LINE_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter CACHE_LINE_WORDS_IDX_MAX bound to: 3 - type: integer 
+	Parameter CACHE_TAG_ENTRIES bound to: 256 - type: integer 
+	Parameter CACHE_DSIZE bound to: 256 - type: integer 
+	Parameter CACHE_DWIDTH bound to: 11 - type: integer 
+	Parameter CACHE_TAG_WIDTH bound to: 16 - type: integer 
+	Parameter CACHE_TAG_LINE_ADDR_WIDTH bound to: 14 - type: integer 
+	Parameter CACHE_TAG_ADDR_LOW bound to: 13 - type: integer 
+	Parameter CACHE_TAG_ADDR_HIGH bound to: 26 - type: integer 
+	Parameter CACHE_TAG_DIRTY_BIT bound to: 14 - type: integer 
+	Parameter CACHE_TAG_VALID_BIT bound to: 15 - type: integer 
+	Parameter ADDR_NO_CACHE_BIT bound to: 25 - type: integer 
+	Parameter ADDR_CACHE_BYPASS_BIT bound to: 31 - type: integer 
+	Parameter FLUSH_INITIAL bound to: 0 - type: integer 
+	Parameter STATE_IDLE bound to: 0 - type: integer 
+	Parameter STATE_SINGLE bound to: 1 - type: integer 
+	Parameter STATE_CHECK bound to: 2 - type: integer 
+	Parameter STATE_FETCH bound to: 3 - type: integer 
+	Parameter STATE_WAIT bound to: 4 - type: integer 
+	Parameter STATE_WAIT2 bound to: 5 - type: integer 
+	Parameter STATE_WRITE bound to: 6 - type: integer 
+	Parameter STATE_SINGLE_READY bound to: 7 - type: integer 
+	Parameter STATE_EVICTING bound to: 8 - type: integer 
+	Parameter STATE_UPDATE bound to: 9 - type: integer 
+	Parameter STATE_FLUSH1 bound to: 10 - type: integer 
+	Parameter STATE_FLUSH2 bound to: 11 - type: integer 
+	Parameter STATE_FLUSH3 bound to: 12 - type: integer 
+	Parameter STATE_FLUSH4 bound to: 13 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'altor32_dcache_mem_if' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache_mem_if.v:41]
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_WORDS_IDX_MAX bound to: 3 - type: integer 
+	Parameter STATE_IDLE bound to: 0 - type: integer 
+	Parameter STATE_FETCH bound to: 1 - type: integer 
+	Parameter STATE_WRITE_SETUP bound to: 2 - type: integer 
+	Parameter STATE_WRITE bound to: 3 - type: integer 
+	Parameter STATE_WRITE_WAIT bound to: 4 - type: integer 
+	Parameter STATE_MEM_SINGLE bound to: 5 - type: integer 
+	Parameter STATE_FETCH_WAIT bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dcache_mem_if' (7#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache_mem_if.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_sp' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_sp.v:41]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_sp' (8#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_sp.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp__parameterized1' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp__parameterized1' (8#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dcache' (9#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_fetch' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_fetch.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter PIPELINED_FETCH bound to: ENABLED - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_fetch' (10#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_fetch.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_exec' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:44]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'altor32_alu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_alu.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_alu' (11#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_alu.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_lfu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:46]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:72]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_lfu' (12#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_lsu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lsu.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_lsu' (13#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lsu.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_dfu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dfu.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dfu' (14#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dfu.v:46]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:556]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:1423]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:1538]
+WARNING: [Synth 8-3936] Found unconnected internal register 'target_int26_r_reg' and it is trimmed from '32' to '30' bits. [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:362]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_exec' (15#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:44]
+INFO: [Synth 8-6157] synthesizing module 'altor32_writeback' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_writeback.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_writeback' (16#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_writeback.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'cpu' (17#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32.v:46]
+INFO: [Synth 8-6157] synthesizing module 'dmem_mux3' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/dmem_mux3.v:41]
+	Parameter ADDR_MUX_START bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dmem_mux3' (18#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/dmem_mux3.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_if' (19#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/cpu_if.v:41]
+INFO: [Synth 8-6157] synthesizing module 'soc' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter EXTERNAL_INTERRUPTS bound to: 32'b00000000000000000000000000000001 
+	Parameter SYSTICK_INTR_MS bound to: 1 - type: integer 
+	Parameter ENABLE_SYSTICK_TIMER bound to: ENABLED - type: string 
+	Parameter ENABLE_HIGHRES_TIMER bound to: ENABLED - type: string 
+INFO: [Synth 8-6157] synthesizing module 'soc_pif8' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc_pif8.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'soc_pif8' (20#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc_pif8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'timer_periph' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/timer_periph.v:46]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter SYSTICK_INTR_MS bound to: 1 - type: integer 
+	Parameter ENABLE_SYSTICK_TIMER bound to: ENABLED - type: string 
+	Parameter ENABLE_HIGHRES_TIMER bound to: ENABLED - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'timer_periph' (21#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/timer_periph.v:46]
+INFO: [Synth 8-6157] synthesizing module 'intr_periph' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:46]
+	Parameter EXTERNAL_INTERRUPTS bound to: 1 - type: integer 
+	Parameter INTERRUPT_COUNT bound to: 9 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element v_irq_status_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:127]
+INFO: [Synth 8-6155] done synthesizing module 'intr_periph' (22#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'soc' (23#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top' (24#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:41]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[31]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[30]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[29]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[28]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[27]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[26]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[25]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[24]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[23]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[22]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[21]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[20]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[19]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[18]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[17]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[16]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[15]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[14]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[13]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[12]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[11]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[10]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[9]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[31]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[30]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[29]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[28]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[27]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[26]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[25]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[24]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[23]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[22]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[21]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[20]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[19]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[18]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[17]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[16]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[15]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[14]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[13]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[12]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[25]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[24]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[23]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[22]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[21]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[20]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[19]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[18]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[17]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[16]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[15]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[14]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[13]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[12]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[11]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[10]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[9]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[8]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[7]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[6]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[5]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[4]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[3]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[2]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[1]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[0]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[63]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[62]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[61]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[60]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[59]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[58]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[57]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[56]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[55]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[54]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[53]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[52]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[51]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[50]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[49]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[48]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[47]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[46]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[45]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[44]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[43]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[42]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[41]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[40]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[39]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[38]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[37]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[36]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[35]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[34]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[33]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 3836 ; free virtual = 374692
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 3839 ; free virtual = 374696
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 7817.727 ; gain = 0.000 ; free physical = 3839 ; free virtual = 374696
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:38 ; elapsed = 00:00:18 . Memory (MB): peak = 7933.980 ; gain = 116.254 ; free physical = 3987 ; free virtual = 374829
+70 Infos, 118 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:18 . Memory (MB): peak = 7933.980 ; gain = 116.254 ; free physical = 3987 ; free virtual = 374829
+refresh_design
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:54]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:74]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:92]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:112]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:131]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:150]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:162]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:177]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:192]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:207]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:222]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:239]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_funcs.v:253]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 7955.137 ; gain = 0.000 ; free physical = 4706 ; free virtual = 375550
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram.v:41]
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_3.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_3.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized0' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_2.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_2.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized0' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized1' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_1.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_1.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized1' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'ram_dp8__parameterized2' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001000 
+	Parameter SIZE bound to: 32'b00000000000000000000000000001110 
+	Parameter FILENAME bound to: mem_0.hex - type: string 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'mem_0.hex'; please make sure the file is added to project and has read permission, ignoring [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'ram_dp8__parameterized2' (1#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram_dp8.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (2#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/ram.v:41]
+INFO: [Synth 8-6157] synthesizing module 'cpu_if' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/cpu_if.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter ENABLE_ICACHE bound to: ENABLED - type: string 
+	Parameter ENABLE_DCACHE bound to: ENABLED - type: string 
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+	Parameter REGISTER_FILE_TYPE bound to: SIMULATION - type: string 
+INFO: [Synth 8-6157] synthesizing module 'cpu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+	Parameter REGISTER_FILE_TYPE bound to: SIMULATION - type: string 
+	Parameter ENABLE_ICACHE bound to: ENABLED - type: string 
+	Parameter ENABLE_DCACHE bound to: ENABLED - type: string 
+	Parameter SUPPORT_32REGS bound to: ENABLED - type: string 
+	Parameter PIPELINED_FETCH bound to: ENABLED - type: string 
+INFO: [Synth 8-6157] synthesizing module 'altor32_icache' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter CACHE_NUM_WAYS bound to: 1 - type: integer 
+	Parameter CACHE_LINE_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_SIZE_BYTES bound to: 32 - type: integer 
+	Parameter CACHE_TAG_ENTRIES bound to: 256 - type: integer 
+	Parameter CACHE_DSIZE bound to: 8192 - type: integer 
+	Parameter CACHE_DWIDTH bound to: 11 - type: integer 
+	Parameter CACHE_TAG_WIDTH bound to: 16 - type: integer 
+	Parameter CACHE_TAG_STAT_BITS bound to: 1 - type: integer 
+	Parameter CACHE_TAG_LINE_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter CACHE_TAG_ADDR_LOW bound to: 13 - type: integer 
+	Parameter CACHE_TAG_ADDR_HIGH bound to: 27 - type: integer 
+	Parameter CACHE_TAG_VALID_BIT bound to: 15 - type: integer 
+	Parameter CACHE_TAG_LRU_BIT bound to: 14 - type: integer 
+	Parameter CACHE_TAG_ADDR_BITS bound to: 15 - type: integer 
+	Parameter STATE_CHECK bound to: 0 - type: integer 
+	Parameter STATE_FETCH bound to: 1 - type: integer 
+	Parameter STATE_WAIT bound to: 2 - type: integer 
+	Parameter STATE_FLUSH bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:193]
+INFO: [Synth 8-6157] synthesizing module 'altor32_wb_fetch' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_wb_fetch.v:46]
+	Parameter FETCH_WORDS_W bound to: 3 - type: integer 
+	Parameter FETCH_BYTES_W bound to: 5 - type: integer 
+	Parameter WB_CTI_BURST bound to: 3'b010 
+	Parameter WB_CTI_FINAL bound to: 3'b111 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_wb_fetch' (3#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_wb_fetch.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp' (4#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp__parameterized0' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter SIZE bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp__parameterized0' (4#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+WARNING: [Synth 8-6014] Unused sequential element tag_address_q_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:286]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_icache' (5#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_icache.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_regfile_sim' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:46]
+	Parameter SUPPORT_32REGS bound to: ENABLED - type: string 
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:220]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:289]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_regfile_sim' (6#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_regfile_sim.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_dcache' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache.v:41]
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_SIZE_BYTES bound to: 32 - type: integer 
+	Parameter CACHE_LINE_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter CACHE_LINE_WORDS_IDX_MAX bound to: 3 - type: integer 
+	Parameter CACHE_TAG_ENTRIES bound to: 256 - type: integer 
+	Parameter CACHE_DSIZE bound to: 256 - type: integer 
+	Parameter CACHE_DWIDTH bound to: 11 - type: integer 
+	Parameter CACHE_TAG_WIDTH bound to: 16 - type: integer 
+	Parameter CACHE_TAG_LINE_ADDR_WIDTH bound to: 14 - type: integer 
+	Parameter CACHE_TAG_ADDR_LOW bound to: 13 - type: integer 
+	Parameter CACHE_TAG_ADDR_HIGH bound to: 26 - type: integer 
+	Parameter CACHE_TAG_DIRTY_BIT bound to: 14 - type: integer 
+	Parameter CACHE_TAG_VALID_BIT bound to: 15 - type: integer 
+	Parameter ADDR_NO_CACHE_BIT bound to: 25 - type: integer 
+	Parameter ADDR_CACHE_BYPASS_BIT bound to: 31 - type: integer 
+	Parameter FLUSH_INITIAL bound to: 0 - type: integer 
+	Parameter STATE_IDLE bound to: 0 - type: integer 
+	Parameter STATE_SINGLE bound to: 1 - type: integer 
+	Parameter STATE_CHECK bound to: 2 - type: integer 
+	Parameter STATE_FETCH bound to: 3 - type: integer 
+	Parameter STATE_WAIT bound to: 4 - type: integer 
+	Parameter STATE_WAIT2 bound to: 5 - type: integer 
+	Parameter STATE_WRITE bound to: 6 - type: integer 
+	Parameter STATE_SINGLE_READY bound to: 7 - type: integer 
+	Parameter STATE_EVICTING bound to: 8 - type: integer 
+	Parameter STATE_UPDATE bound to: 9 - type: integer 
+	Parameter STATE_FLUSH1 bound to: 10 - type: integer 
+	Parameter STATE_FLUSH2 bound to: 11 - type: integer 
+	Parameter STATE_FLUSH3 bound to: 12 - type: integer 
+	Parameter STATE_FLUSH4 bound to: 13 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'altor32_dcache_mem_if' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache_mem_if.v:41]
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter CACHE_LINE_WORDS_IDX_MAX bound to: 3 - type: integer 
+	Parameter STATE_IDLE bound to: 0 - type: integer 
+	Parameter STATE_FETCH bound to: 1 - type: integer 
+	Parameter STATE_WRITE_SETUP bound to: 2 - type: integer 
+	Parameter STATE_WRITE bound to: 3 - type: integer 
+	Parameter STATE_WRITE_WAIT bound to: 4 - type: integer 
+	Parameter STATE_MEM_SINGLE bound to: 5 - type: integer 
+	Parameter STATE_FETCH_WAIT bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dcache_mem_if' (7#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache_mem_if.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_sp' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_sp.v:41]
+	Parameter WIDTH bound to: 16 - type: integer 
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_sp' (8#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_sp.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_ram_dp__parameterized1' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter SIZE bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_ram_dp__parameterized1' (8#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_ram_dp.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dcache' (9#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dcache.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_fetch' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_fetch.v:46]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter CACHE_LINE_SIZE_WIDTH bound to: 5 - type: integer 
+	Parameter PIPELINED_FETCH bound to: ENABLED - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'altor32_fetch' (10#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_fetch.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_exec' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:44]
+	Parameter BOOT_VECTOR bound to: 268435456 - type: integer 
+	Parameter ISR_VECTOR bound to: 268435456 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'altor32_alu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_alu.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_alu' (11#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_alu.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_lfu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:46]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:72]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_lfu' (12#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lfu.v:46]
+INFO: [Synth 8-6157] synthesizing module 'altor32_lsu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lsu.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_lsu' (13#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_lsu.v:41]
+INFO: [Synth 8-6157] synthesizing module 'altor32_dfu' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dfu.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_dfu' (14#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_dfu.v:46]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:556]
+INFO: [Synth 8-226] default block is never used [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:1423]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:1538]
+WARNING: [Synth 8-3936] Found unconnected internal register 'target_int26_r_reg' and it is trimmed from '32' to '30' bits. [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:362]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_exec' (15#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_exec.v:44]
+INFO: [Synth 8-6157] synthesizing module 'altor32_writeback' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_writeback.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'altor32_writeback' (16#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32_writeback.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'cpu' (17#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/altor32.v:46]
+INFO: [Synth 8-6157] synthesizing module 'dmem_mux3' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/dmem_mux3.v:41]
+	Parameter ADDR_MUX_START bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dmem_mux3' (18#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/dmem_mux3.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_if' (19#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/cpu_if.v:41]
+INFO: [Synth 8-6157] synthesizing module 'soc' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc.v:41]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter EXTERNAL_INTERRUPTS bound to: 32'b00000000000000000000000000000001 
+	Parameter SYSTICK_INTR_MS bound to: 1 - type: integer 
+	Parameter ENABLE_SYSTICK_TIMER bound to: ENABLED - type: string 
+	Parameter ENABLE_HIGHRES_TIMER bound to: ENABLED - type: string 
+INFO: [Synth 8-6157] synthesizing module 'soc_pif8' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc_pif8.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'soc_pif8' (20#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc_pif8.v:41]
+INFO: [Synth 8-6157] synthesizing module 'timer_periph' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/timer_periph.v:46]
+	Parameter CLK_KHZ bound to: 8192 - type: integer 
+	Parameter SYSTICK_INTR_MS bound to: 1 - type: integer 
+	Parameter ENABLE_SYSTICK_TIMER bound to: ENABLED - type: string 
+	Parameter ENABLE_HIGHRES_TIMER bound to: ENABLED - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'timer_periph' (21#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/timer_periph.v:46]
+INFO: [Synth 8-6157] synthesizing module 'intr_periph' [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:46]
+	Parameter EXTERNAL_INTERRUPTS bound to: 1 - type: integer 
+	Parameter INTERRUPT_COUNT bound to: 9 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element v_irq_status_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:127]
+INFO: [Synth 8-6155] done synthesizing module 'intr_periph' (22#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/intr_periph.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'soc' (23#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/soc.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top' (24#1) [/home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.srcs/sources_1/imports/rtl/top.v:41]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[31]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[30]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[29]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[28]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[27]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[26]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[25]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[24]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[23]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[22]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[21]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[20]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[19]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[18]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[17]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[16]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[15]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[14]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[13]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[12]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[11]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[10]
+WARNING: [Synth 8-3331] design intr_periph has unconnected port data_i[9]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[31]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[30]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[29]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[28]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[27]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[26]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[25]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[24]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[23]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[22]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[21]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[20]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[19]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[18]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[17]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[16]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[15]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[14]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[13]
+WARNING: [Synth 8-3331] design soc_pif8 has unconnected port io_addr_i[12]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[25]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[24]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[23]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[22]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[21]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[20]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[19]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[18]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[17]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[16]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[15]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[14]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[13]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[12]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[11]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[10]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[9]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[8]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[7]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[6]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[5]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[4]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[3]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[2]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[1]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port opcode_i[0]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[63]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[62]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[61]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[60]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[59]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[58]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[57]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[56]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[55]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[54]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[53]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[52]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[51]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[50]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[49]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[48]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[47]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[46]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[45]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[44]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[43]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[42]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[41]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[40]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[39]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[38]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[37]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[36]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[35]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[34]
+WARNING: [Synth 8-3331] design altor32_writeback has unconnected port mult_result_i[33]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 7986.996 ; gain = 31.859 ; free physical = 4737 ; free virtual = 375580
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 7986.996 ; gain = 31.859 ; free physical = 4743 ; free virtual = 375587
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 7986.996 ; gain = 31.859 ; free physical = 4743 ; free virtual = 375587
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:18 . Memory (MB): peak = 8074.008 ; gain = 118.871 ; free physical = 4751 ; free virtual = 375595
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 13:04:07 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/altor32/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 423 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 8115.129 ; gain = 41.121 ; free physical = 10559 ; free virtual = 379935
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:29 ; elapsed = 00:00:03 . Memory (MB): peak = 8115.129 ; gain = 0.000 ; free physical = 10484 ; free virtual = 379863
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/alwcpu/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Ctrl.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Top.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/RegMap.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/DPLRAM.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/MuxBG.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/Alu.vhdl /home/users/ayyaz.ahmed/Downloads/alwcpu/rtl/Alwcpu/Alwcpu/GlobPkg.vhdl}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 14:19:11 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/alwcpu/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 16 instances
+
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:13 ; elapsed = 00:00:03 . Memory (MB): peak = 8115.129 ; gain = 0.000 ; free physical = 11658 ; free virtual = 380661
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/agcnorm/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC_LOGIC.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGCPACK.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC_MEMORY.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/AGC.vhd /home/users/ayyaz.ahmed/Downloads/agcnorm/trunk/AGCNORM/source/agc_erasable.vhd}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 14:32:09 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/agcnorm/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Netlist 29-17] Analyzing 69 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'AGC' is not ideal for floorplanning, since the cellview 'AGC_LOGIC' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:05 . Memory (MB): peak = 8115.129 ; gain = 0.000 ; free physical = 10644 ; free virtual = 379777
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:31 ; elapsed = 00:00:03 . Memory (MB): peak = 8115.129 ; gain = 0.000 ; free physical = 10713 ; free virtual = 379843
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/amber/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/memory_configuration.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/register_addresses.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_config_defines.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_crc.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_random.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_register.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/uart.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_macstatus.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wishbone_arbiter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_registers.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/interrupt_controller.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_fifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_transmitcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timer_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ddr3_afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_defines.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem128.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_icache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_spram_256x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timescale.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_shifter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/clocks_resets.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ethmac_wb.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_clockgen.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_receivecontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/test_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone_buf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_maccontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/xilinx_dist_ram_16x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_shiftreg.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_xs6_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_miim.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/main_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_outputcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_cop.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxaddrcheck.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_dcache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_top.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_write_back.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_1/project_1.srcs/sources_1/imports/system/a25_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_1/project_1.srcs/sources_1/imports/system/a25_decompile.v
+close_project
+create_project project_2 /home/users/ayyaz.ahmed/Downloads/amber/project_2 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/memory_configuration.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/register_addresses.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_config_defines.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_functions.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_localparams.vh /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system_config_defines.vh}
+add_files -norecurse {/home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_crc.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_random.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_register.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/system.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/uart.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_macstatus.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wishbone_arbiter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_fetch.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_registers.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/interrupt_controller.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decompile.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_ram_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_fifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_transmitcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timer_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ddr3_afifo.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_defines.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxcounters.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/boot_mem128.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_register_bank.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_barrel_shift.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_icache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_spram_256x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/timescale.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_alu.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_cache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txstatem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_core.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_shifter.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/clocks_resets.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/ethmac_wb.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_clockgen.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_coprocessor.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_receivecontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/test_module.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone_buf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_maccontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/xilinx_dist_ram_16x32.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_shiftreg.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_decode.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/wb_xs6_ddr3_bridge.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_txethmac.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_miim.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/main_mem.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_outputcontrol.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_wishbone.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_cop.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_iobuf.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_rxaddrcheck.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_barrel_shift_fpga.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_multiply.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a23_execute.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_dcache.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/eth_top.v /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/a25_write_back.v}
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a23_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a23_decompile.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a25_decompile.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/a25_decompile.v
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:27:46 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/global_defines.vh
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:31:31 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/global_timescale.vh
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:32:55 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_sram_byte_en.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:34:22 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+import_files -norecurse /home/users/ayyaz.ahmed/Downloads/amber/trunk/hw/vlog/system/generic_sram_line_en.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:37:04 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:41:03 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon Mar  7 15:41:36 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+close_project
+open_project /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 09:20:35 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/xilinx_dist_ram_16x32.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/xilinx_dist_ram_16x32.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_xs6_ddr3_bridge.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_xs6_ddr3_bridge.v
+export_ip_user_files -of_objects  [get_files /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_ddr3_bridge.v] -no_script -reset -force -quiet
+remove_files  /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.srcs/sources_1/imports/system/wb_ddr3_bridge.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 09:47:29 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/amber/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+close_project
+create_project project_1 /home/users/ayyaz.ahmed/Downloads/ao68000/project_1 -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+add_files -norecurse /home/users/ayyaz.ahmed/Downloads/ao68000/rtl/ao68000.v
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 10:33:16 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/ao68000/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Mar  8 10:36:41 2022] Launched synth_1...
+Run output will be captured here: /home/users/ayyaz.ahmed/Downloads/ao68000/project_1/project_1.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  8 10:37:23 2022...
