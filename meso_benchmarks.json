@@ -628,6 +628,131 @@
            "CLOCK_DATA": {
                 "Clock1": "sd_clk"
             }
-        }
+        },
+        "edn_core": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/edn_core/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "entropy_src": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/entropy_src/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "flash_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/flash_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_otp_i"
+            }
+        },
+        "hmac": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/hmac/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "i2c": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/i2c/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "kmac": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/kmac/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "lc_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/lc_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_kmac_i"
+            }
+        },
+        "otp_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/otp_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_edn_i"
+            }
+        },
+        "rom_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/rom_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "rv_core_ibex": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/rv_core_ibex/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_edn_i",
+                "Clock3": "clk_esc_i"
+            }
+        },
+        "spi_device": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/spi_device/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_spi_in_i",
+                "Clock3": "clk_spi_out_i"
+            }
+        },
+        "sram_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/sram_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "usbdev": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/usbdev/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_usb_48mhz_i"
+            }
+        },
+        "usbuart": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/usbuart/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_usb_48mhz_i"
+            }
+        },
+        "b20": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/i99t/b20/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b21": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/i99t/b21/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b22": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/i99t/b22/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
     }
 }
