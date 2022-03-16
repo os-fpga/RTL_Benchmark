@@ -270,6 +270,60 @@
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
-        }
+        },
+        "aes": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/aes/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_edn_i"
+            }
+        },
+        "clkmgr": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/clkmgr/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_main_i",
+                "Clock3": "clk_fixed_i",
+                "Clock4": "clk_usb_48mhz_i"
+            }
+        },
+        "csrng": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/csrng/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "keymgr": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/keymgr/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_edn_i"
+            }
+        },
+        "pattgen": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/pattgen/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "prim_xilinx": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/prim_xilinx/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "rv_timer": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/rv_timer/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
     }
 }
