@@ -1,0 +1,237 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{
+// Name of the sim cfg - typically same as the name of the DUT.
+name:
+  otbn
+
+  // Top level dut name (sv module).
+  dut: otbn
+
+  // Top level testbench name (sv module).
+  tb: tb
+
+  // Simulator used to sign off this block
+  tool: vcs
+
+  // Fusesoc core file used for building the file list.
+  fusesoc_core: lowrisc:dv:otbn_sim:0.1
+
+  otbn_dir: "{proj_root}/hw/ip/otbn"
+
+  // Testplan hjson file.
+  testplan: "{otbn_dir}/data/otbn_testplan.hjson"
+
+  exports: [
+    { REPO_TOP: "{proj_root}" },
+  ]
+
+  // Import additional common sim cfg files.
+  // TODO: remove imported cfgs that do not apply.
+  import_cfgs: [
+      // Project wide common sim cfg file
+      "{proj_root}/hw/dv/tools/dvsim/common_sim_cfg.hjson",
+      // Config files to get the correct flags for otbn_memutil and otbn_tracer
+      "{proj_root}/hw/dv/verilator/memutil_dpi_scrambled_opts.hjson",
+      "{otbn_dir}/dv/memutil/otbn_memutil_sim_opts.hjson",
+      "{otbn_dir}/dv/tracer/otbn_tracer_sim_opts.hjson",
+      // Common CIP test lists
+      "{proj_root}/hw/dv/tools/dvsim/tests/csr_tests.hjson",
+      "{proj_root}/hw/dv/tools/dvsim/tests/mem_tests.hjson",
+      "{proj_root}/hw/dv/tools/dvsim/tests/alert_test.hjson",
+      "{proj_root}/hw/dv/tools/dvsim/tests/intr_test.hjson",
+      "{proj_root}/hw/dv/tools/dvsim/tests/tl_access_tests.hjson",
+      "{proj_root}/hw/dv/tools/dvsim/tests/stress_tests.hjson"
+      "{proj_root}/hw/dv/tools/dvsim/tests/passthru_mem_intg_tests.hjson"
+  ]
+
+  // Add options needed to compile against otbn_memutil, otbn_tracer, and
+  // memutil_dpi_scrambled.
+  en_build_modes: ["{tool}_otbn_memutil_build_opts",
+                   "{tool}_otbn_tracer_build_opts",
+                   "{tool}_memutil_dpi_scrambled_build_opts"]
+
+  // Add additional tops for simulation.
+  sim_tops: ["otbn_bind"]
+
+  // Default iterations for all tests - each test entry can override this.
+  reseed: 50
+
+  // Default UVM test and seq class name.
+  uvm_test: otbn_base_test
+  uvm_test_seq: otbn_base_vseq
+
+  // The default place to find and build ELF binaries. If you have
+  // some pre-built binaries, you can run the simulation with them by using
+  // --run-opts to override the otbn_elf_dir plusarg in run_opts.
+  otbn_elf_dir: "{run_dir}/otbn-binaries"
+
+  run_opts: ["+otbn_elf_dir={otbn_elf_dir}"]
+
+  // A default build mode, used for the tests explicitly listed below. This
+  // runs meson to set up a .env file, needed by gen-binaries.py to find a
+  // toolchain. This isn't needed for things like the automated CSR tests, and
+  // they won't use it because they build in a different mode anyway.
+  //
+  // This step could run either as a pre-build command or a post-build command.
+  // Since it's much quicker than the SV build, we do it first so that you get
+  // a quick result if something has gone wrong.
+  build_modes: [
+    {
+      name: default
+      pre_build_cmds: ["cd {proj_root} && BUILD_ROOT={build_dir} ./meson_init.sh"]
+    }
+  ]
+
+  // The value to pass to the --size parameter for gen-binaries.py. This
+  // controls the number of instructions that are run before ECALL or error.
+  binary_size: 2000
+
+  otbn_obj_dir: "{build_dir}/build-out"
+  gen_binaries_py: "{otbn_dir}/dv/uvm/gen-binaries.py"
+
+  rnd_args: "--seed {seed} --size {binary_size}"
+  gen_fixed: "{gen_binaries_py} --obj-dir {otbn_obj_dir}"
+  gen_rnd: "{gen_binaries_py} --obj-dir {otbn_obj_dir} {rnd_args}"
+
+  smoke_dir: "{otbn_dir}/dv/smoke"
+  multi_err_dir: "{otbn_dir}/dv/otbnsim/test/simple/multi"
+
+  run_modes: [
+    // Run the random instruction generator and builds the one resulting binary
+    // in {otbn_elf_dir}. If you override the otbn_elf_dir plusarg with
+    // --run-opts, we'll still build the binary (but will ignore it).
+    {
+      name: build_otbn_rig_binary_mode
+      pre_run_cmds: [
+        "{gen_rnd} --count 1 {otbn_elf_dir}"
+      ]
+    }
+
+    // Run the random instruction generator several times and build the
+    // resulting binaries in {otbn_elf_dir}.
+    {
+      name: build_otbn_rig_binaries_mode
+      pre_run_cmds: [
+        "{gen_rnd} --count 10 {otbn_elf_dir}"
+      ]
+    }
+
+    // Build the smoke test in {otbn_elf_dir}.
+    {
+      name: build_otbn_smoke_binary_mode
+      pre_run_cmds: [
+        "{gen_fixed} --src-dir {smoke_dir} {otbn_elf_dir}"
+      ]
+    }
+
+    // Build the multi-error tests in {otbn_elf_dir}.
+    {
+      name: build_otbn_multi_err_binaries_mode
+      pre_run_cmds: [
+        "{gen_fixed} --src-dir {multi_err_dir} {otbn_elf_dir}"
+      ]
+    }
+  ]
+
+  // List of test specifications.
+  tests: [
+    {
+      name: "otbn_smoke"
+      uvm_test_seq: "otbn_smoke_vseq"
+      en_run_modes: ["build_otbn_smoke_binary_mode"]
+      // Run just one smoke test: it's a fixed binary and there's not much
+      // interaction with the environment so there's probably not much point
+      // in running it loads of times.
+      reseed: 1
+    }
+
+    {
+      name: "otbn_single"
+      uvm_test_seq: "otbn_single_vseq"
+      en_run_modes: ["build_otbn_rig_binary_mode"]
+      reseed: 100
+    }
+
+    // This test runs 10 binaries each time, so we give it a reseed value
+    // that's about a tenth of the value for otbn_single: these tests should
+    // equally good at catching errors within a program, so there's no need to
+    // run it more.
+    {
+      name: "otbn_multi"
+      uvm_test_seq: "otbn_multi_vseq"
+      en_run_modes: ["build_otbn_rig_binaries_mode"]
+      reseed: 5
+    }
+
+    {
+      name: "otbn_reset"
+      uvm_test_seq: "otbn_reset_vseq"
+      en_run_modes: ["build_otbn_rig_binary_mode"]
+      reseed: 5
+    }
+
+    // This test runs a fixed set of binaries, one after the other. Since this
+    // is essentially a directed test, there's probably no real benefit to
+    // running it more than once.
+    {
+      name: "otbn_multi_err"
+      uvm_test_seq: "otbn_sequential_vseq"
+      en_run_modes: ["build_otbn_multi_err_binaries_mode"]
+      reseed: 1
+    }
+
+    {
+      name: "otbn_imem_err"
+      uvm_test_seq: "otbn_imem_err_vseq"
+      en_run_modes: ["build_otbn_rig_binary_mode"]
+      reseed: 5
+    }
+
+    {
+      name: "otbn_dmem_err"
+      uvm_test_seq: "otbn_dmem_err_vseq"
+      en_run_modes: ["build_otbn_rig_binary_mode"]
+      reseed: 5
+    }
+
+    {
+      name: "otbn_escalate"
+      uvm_test_seq: "otbn_escalate_vseq"
+      en_run_modes: ["build_otbn_rig_binary_mode"]
+      reseed: 5
+    }
+
+    {
+      name: "otbn_stress_all"
+      uvm_test_seq: "otbn_stress_all_vseq"
+      en_run_modes: ["build_otbn_rig_binaries_mode"]
+      reseed: 5
+    }
+
+    {
+      name: "otbn_stress_all_with_rand_reset"
+      en_run_modes: ["build_otbn_rig_binaries_mode"]
+      reseed: 5
+    }
+
+  ]
+
+  // List of regressions.
+  regressions: [
+    {
+      name: smoke
+      tests: ["otbn_smoke"]
+    }
+
+    {
+      name: "core"
+      tests: [
+        "otbn_smoke", "otbn_single", "otbn_multi", "otbn_reset",
+         "otbn_multi_err", "otbn_imem_err", "otbn_dmem_err",
+         "otbn_stress_all"
+      ]
+    }
+  ]
+}

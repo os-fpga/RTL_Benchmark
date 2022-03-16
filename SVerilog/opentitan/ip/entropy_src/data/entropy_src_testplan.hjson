@@ -1,0 +1,139 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{
+  name: "entropy_src"
+  import_testplans: ["hw/dv/tools/dvsim/testplans/csr_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/intr_test_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/alert_test_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/tl_device_access_types_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/stress_all_with_reset_testplan.hjson"]
+  testpoints: [
+    {
+      name: smoke
+      desc: '''
+            Enable entropy_src, wait for interrupt, verify entropy.
+            '''
+      milestone: V1
+      tests: ["entropy_src_smoke"]
+    }
+    {
+      name: firmware
+      desc: '''
+            Verify ability to access entropy register based on value of efuse input
+            Verify es_regen bit enables/disables write access to control registers
+            Verify registers at End-Of-Test
+            '''
+      milestone: V2
+      tests: []
+    }
+    {
+      name: firmware_mode
+      desc: '''
+            Verify health_checks aren't active
+            Verify bypass active
+            Verify read FIFO
+            - Random FIFO depths
+            '''
+      milestone: V2
+      tests: []
+    }
+    {
+      name: rng_mode
+      desc: '''
+            Verify rng entropy
+            - Random FIFO depths
+            - Random rates
+            - Verify single_bit_mode for all bit_selector values
+            Verify FIPS bits match predicted
+            '''
+      milestone: V2
+      tests: ["entropy_src_rng"]
+    }
+    {
+      name: health_checks
+      desc: '''
+            Verify AdaptProp, RepCnt, RepCntSym, Bucket, Markov health check results match predicted.
+            - Generate passing and failing raw entropy streams
+            - Random window sizes
+            - Default and random hi/lo bypass/fips thresholds
+            - Enables/fail counts/clears
+            - Verify hi/lo bypass/fips watermarks
+            - Verify External health check behaves as predicted
+            - Verify outputs match internal reg values/entropy bus
+            - Pulse inputs and verify captured
+            - Verify health testing stops when no demand for entropy
+            '''
+      milestone: V2
+      tests: []
+    }
+    {
+      name: conditioning
+      desc: '''
+            Verify genbits seeds in bypass mode as predicted.
+            Verify genbits seeds after shah3 conditioning as predicted.
+            '''
+      milestone: V2
+      tests: []
+    }
+    {
+      name: interrupts
+      desc: '''
+            Verify es_entropy_valid interrupt asserts as predicted.
+            Verify es_health_test_failed interrupt asserts as predicted.
+            Verify es_fifo_err interrupt asserts as predicted.
+            '''
+      milestone: V2
+      tests: ["entropy_src_intr"]
+    }
+    {
+      name: alerts
+      desc: '''
+            Verify es_alert_count_met asserts as expected.
+            '''
+      milestone: V2
+      tests: ["entropy_src_alert"]
+    }
+    {
+      name: stress_all
+      desc: '''
+            Combine the individual test points while injecting TL errors and
+            running CSR tests in parallel.
+            '''
+      milestone: V2
+      tests: ["entropy_src_stress_all"]
+    }
+    {
+      name: fifo_errs
+      desc: '''
+            Verify they never occur with asserts
+            '''
+      milestone: V2
+      tests: ["entropy_src_err"]
+    }
+  ]
+  covergroups: [
+    {
+      name: err_test_cg
+      desc: '''
+            Covers that all health test fails, fatal errors, all counters errors and
+            all error codes of entropy_src have been tested.
+            Individual config settings that will be covered include:
+            - which_ht_fail (0 to 3), 4 health tests, repcnt, adaptp, bucket and markov test
+            - which_ht (0 to 1), some health tests have low and high fails
+            - which_markov_cntr (0 to 3), markov test has 4 counters
+            - which_fatal_err (0 to 5), 6 fatal errors, esrng, observe, esfinal fifo errors,
+              main state machine, ack state machine errors, and counter error
+            - which_fifo_err_2 (0 to 1), esrng and observe fifo has only read and state errors
+            - which_fifo_err_3 (0 to 2), esfinal fifo has write, read and state errors
+            - which_cntr (0 to 5), 6 possible counter errors, window counter, repcnt ht counter,
+              repcnts ht counter, adaptive proportion ht counter, bucket ht counter and
+              markov ht counter
+            - which_err_code (0 to 17), ERR_CODE has 9 fields, plus 9 ERR_CODE_TEST bits test
+            - which_fifo_read_err (0 to 2), esrng, observe and esfinal fifos
+            - which_fifo_state_err (0 to 2), esrng, observe and esfinal fifos
+            - which_invalid_mubi (0 to 8), 9 possible invalid mubi value fields
+            '''
+    }
+  ]
+}

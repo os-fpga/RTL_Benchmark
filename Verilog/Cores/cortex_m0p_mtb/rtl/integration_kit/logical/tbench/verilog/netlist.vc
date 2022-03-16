@@ -1,0 +1,129 @@
+// -----------------------------------------------------------------------------
+//  The confidential and proprietary information contained in this file may
+//  only be used by a person authorised under and to the extent permitted
+//  by a subsisting licensing agreement from ARM Limited.
+//
+//                (C) COPYRIGHT 2008-2012 ARM Limited
+//                    ALL RIGHTS RESERVED
+//
+//  This entire notice must be reproduced on all copies of this file
+//  and copies of this file may only be made by a person if such person is
+//  permitted to do so under the terms of a subsisting license agreement
+//  from ARM Limited.
+//
+//  SVN Information
+//
+//  Revision            : $Revision: 220755 $
+//  Release information : Cortex-M0+ AT590-r0p1-00rel0
+//
+// -----------------------------------------------------------------------------
+//  Purpose : CORTEX-M0+ IK testbench verilog command file.
+//            For use with RunIK -netlist
+// -----------------------------------------------------------------------------
+
+// Identify netlist is being used
++define+ARM_CM0PIK_NETLIST=1
+
+// Set the following defines to your requirements:
+
+// Uncomment if using power aware simulations UPF, CPF or SRPG Netlist
+//+define+ARM_SRPG_ON
+
+// Uncomment to use SDF with netlists
+//+define+ARM_CM0PIK_SDF
+
+// ============= Verilog library extensions ===========
++libext+.v+.vlib+.vh
+
+// ============= Include file search path =============
+
+// -----------------------------------------------------------------------------
+// Include following lines only for CORTEXM0PLUSIMP netlist
+//+incdir+verilog/models/cells/generic/.
+//+incdir+verilog/cm0p_dap/verilog/.
+//+incdir+verilog/cm0p_integration/verilog/.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Include following line only for CM0PINTEGRATION or CORTEXM0PLUSIMP netlist with CoreSight MTB-M0+ present
+//+incdir+verilog/cm0p_mtb/verilog/.
+// -----------------------------------------------------------------------------
+
++incdir+../../logical/cm0p_ik_mcu/verilog/.
+
+// ============= Module search path =============
+
+// -----------------------------------------------------------------------------
+// Include the Netlist here
+//-v <PATH to Netlist>/CM0PINTEGRATION.v
+// -----------------------------------------------------------------------------
+// Include the Technology Cell Libraries here
+//-v <PATH to Library>/sc7_ce018fg_base_rvt.v
+//-v <PATH to Library>/sc7_ce018fg_base_rvt_neg.v
+//-v <PATH to LIbrary>/sc7_ce018fg_base_rvt_udp.v
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Include following lines only for CORTEXM0PLUSIMP netlist
+//-v verilog/models/cells/generic/cm0p_dap_cdc_capt_sync.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_comb_and.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_comb_and_addr.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_comb_and_data.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_send.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_send_addr.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_send_data.v
+//-v verilog/models/cells/generic/cm0p_dap_cdc_send_reset.v
+//-v verilog/models/cells/generic/cm0p_dap_jt_cdc_comb_and.v
+//-v verilog/models/cells/generic/cm0p_dap_sw_cdc_capt_reset.v
+//-v verilog/models/cells/generic/cm0p_dap_sw_cdc_capt_sync.v
+//-v verilog/models/cells/generic/cm0p_dbg_reset_sync.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_ap.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_ap_cdc.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_ap_mast.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_dp.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_dp_cdc.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_dp_jtag.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_dp_pwr.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_dp_sw.v
+//-v verilog/cm0p_dap/verilog/cm0p_dap_top.v
+//-v verilog/cm0p_dap/verilog/CM0PDAP.v
+//-v verilog/cm0p_integration/verilog/cm0p_wic.v
+//-v verilog/cm0p_integration/verilog/CM0PINTEGRATION.v
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Include following lines only for CM0PINTEGRATION or CORTEXM0PLUSIMP netlist
+-v verilog/cm0p_integration/verilog/CM0PMTBINTEGRATION.v
+// Include following lines if using CM0PINTEGRATION or CORTEXM0PLUSIMP netlist with CoreSight MTB-M0+ present
+//-v verilog/cm0p_mtb/verilog/cm0p_mtb_sram_bridge.v
+//-v verilog/cm0p_mtb/verilog/cm0p_mtb_top.v
+//-v verilog/cm0p_mtb/verilog/cm0p_mtb_trace.v
+//-v verilog/cm0p_mtb/verilog/CM0PMTB.v
+// -----------------------------------------------------------------------------
+
+-v verilog/models/cells/generic/cm0p_rst_send_set.v
+-v verilog/models/cells/generic/cm0p_rst_sync.v
+-v verilog/models/cells/generic/cm0p_acg.v
+-v verilog/models/cells/generic/cm0p_pmu_sync_set.v
+-v verilog/models/cells/generic/cm0p_pmu_sync_reset.v
+-v verilog/models/cells/generic/cm0p_pmu_cdc_send_reset.v
+-v verilog/models/cells/generic/cm0p_pmu_cdc_send_set.v
+-v verilog/models/cells/generic/cm0p_pmu_acg.v
+
+-v verilog/cm0p_integration/verilog/cm0p_ahb_cs_rom_table.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_ahb_def_slv.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_ahb_gpio.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_ahb_interconnect.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_ahb_sram_bridge.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_clk_gen.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_iop_gpio.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_iop_interconnect.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_misc.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_misc_delay.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_pmu.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_rom.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_rst_ctl.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_sram.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_stclken_gen.v
+-v ../../logical/cm0p_ik_mcu/verilog/cm0p_ik_sys.v
+-v ../../logical/cm0p_ik_mcu/verilog/CM0PIKMCU.v
