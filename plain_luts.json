@@ -174,10 +174,374 @@
                 "Clock1": "blif_clk_net"
             }
         },
-        "systemCdes": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/systemCdes/rtl/verilog/config.tcl",
+        "serv_core": {
+            "design":"RTL_Benchmark/Verilog/Cores/serv/rtl/config.tcl",
            "CLOCK_DATA": {
                 "Clock1": "clk"
+            }
+        },
+        "8bit_vedic_multiplier": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/8bit_vedic_multiplier/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "configurable_crc_core": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/configurable_crc_core/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "parallel_scrambler": {
+            "design":"RTL_Benchmark/VHDL/opencores/parallel_scrambler/rtl/src/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "crcahb": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/crcahb/rtl/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "HCLK"
+            }
+        },
+        "lcd162b_behavior": {
+            "design":"RTL_Benchmark/VHDL/opencores/lcd162b_behavior/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "fast_log": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/fast_log/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "mesi_isc": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/mesi_isc/rtl/src/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "mod3_calc": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/mod3_calc/rtl/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "nlprg": {
+            "design":"RTL_Benchmark/Verilog/OpenCores_designs/nlprg/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "ck"
+            }
+        },
+        "b01": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b01/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b02": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b02/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b03": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b03/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b06": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b06/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b08": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b08/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b09": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b09/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b10": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b10/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b12": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b12/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "b13": {
+            "design":"RTL_Benchmark/VHDL/itc99-poli/itc99/b13/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "comb-ckt": {
+            "design":"RTL_Benchmark/VHDL/comb-ckt/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "comparator": {
+            "design":"RTL_Benchmark/VHDL/comparator/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "Trivium_FPGA": {
+            "design":"RTL_Benchmark/VHDL/Trivium_FPGA/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "adc_ctrl": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/adc_ctrl/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+             "Clock1": "clk_i",
+            "Clock2": "clk_aon_i"
+            }
+        },
+        "aon_timer": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/aon_timer/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_aon_i"
+            }
+        },
+        "gpio": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/gpio/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "pinmux": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/pinmux/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "prim": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/prim/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "pwm": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/pwm/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "clk_core_i"
+            }
+        },
+        "pwrmgr": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/pwrmgr/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_slow_i",
+                "Clock2": "clk_i",
+                "Clock3": "clk_esc_i"
+            }
+        },
+        "spi_host": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/spi_host/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "tlul": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/tlul/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "trial1": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/trial1/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "uart": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/uart/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "usb_fs_nb_pe": {
+            "design":"RTL_Benchmark/SVerilog/opentitan/ip/usb_fs_nb_pe/rtl/config.tcl",
+            "multi_clock":false,
+            "CLOCK_DATA": {
+                "Clock1": "clk_48mhz_i"
+            }
+        },
+        "adder": {
+            "design":"RTL_Benchmark/Verilog/EPFL/adder/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "arbiter": {
+            "design":"RTL_Benchmark/Verilog/EPFL/arbiter/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "bar": {
+            "design":"RTL_Benchmark/Verilog/EPFL/bar/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "i2c": {
+            "design":"RTL_Benchmark/Verilog/EPFL/i2c/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "log2": {
+            "design":"RTL_Benchmark/Verilog/EPFL/log2/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "max": {
+            "design":"RTL_Benchmark/Verilog/EPFL/max/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "mem_ctrl": {
+            "design":"RTL_Benchmark/Verilog/EPFL/mem_ctrl/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "multiplier": {
+            "design":"RTL_Benchmark/Verilog/EPFL/multiplier/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "alu4": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/alu4/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "apex2": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/apex2/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "apex4": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/apex4/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "bigkey": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/bigkey/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "clma": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/clma/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "des": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/des/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "diffeq": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/diffeq/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "dsip": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/dsip/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "elliptic": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/elliptic/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "ex1010": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/ex1010/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "frisc": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/frisc/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "pclk"
+            }
+        },
+        "misex3": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/misex3/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "pdc": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/pdc/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "s38417": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/s38417/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "seq": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/seq/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "spla": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/spla/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "tseng": {
+            "design":"RTL_Benchmark/Verilog/Gate_Level_Netlist/tseng/rtl/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
             }
         }
     }

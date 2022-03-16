@@ -1,3 +1,0 @@
-    wait;                               --
-  end process;
-end;
