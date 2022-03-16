@@ -1,4 +1,4 @@
-set ::env(PROJECT_NAME) itc99-poli
+set ::env(PROJECT_NAME) b15
 set ::env(DESIGN_TOP) b15
 set ::env(DESIGN_DIR) RTL_Benchmark/VHDL/itc99-poli/itc99/b15/rtl
 set ::env(TOP_VERILOG) RTL_Benchmark/VHDL/itc99-poli/itc99/b15/rtl/b15.vhd
