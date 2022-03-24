@@ -1,0 +1,469 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Mar 10 14:39:28 2022
+# Process ID: 43162
+# Current directory: /home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/project_1/project_1.runs/synth_1
+# Command line: vivado -log lpif_txrx_x16_asym2_full_master_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lpif_txrx_x16_asym2_full_master_top.tcl
+# Log file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/project_1/project_1.runs/synth_1/lpif_txrx_x16_asym2_full_master_top.vds
+# Journal file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source lpif_txrx_x16_asym2_full_master_top.tcl -notrace
+Command: synth_design -top lpif_txrx_x16_asym2_full_master_top -part xc7a100tfgg676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 57331 
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/ll_auto_sync.sv:53]
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/ll_auto_sync.sv:54]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1428.957 ; gain = 96.223 ; free physical = 8389 ; free virtual = 374837
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lpif_txrx_x16_asym2_full_master_top' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_top.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'll_auto_sync' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/ll_auto_sync.sv:29]
+	Parameter MARKER_WIDTH bound to: 1 - type: integer 
+	Parameter PERSISTENT_MARKER bound to: 1'b1 
+	Parameter PERSISTENT_STROBE bound to: 1'b1 
+	Parameter NO_MARKER bound to: 1'b0 
+	Parameter DISABLE_TX_AUTOSYNC bound to: 1'b0 
+	Parameter DISABLE_RX_AUTOSYNC bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'level_delay' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/level_delay.sv:36]
+INFO: [Synth 8-6155] done synthesizing module 'level_delay' (1#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/level_delay.sv:36]
+WARNING: [Synth 8-6014] Unused sequential element marker_replay_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/ll_auto_sync.sv:151]
+INFO: [Synth 8-6155] done synthesizing module 'll_auto_sync' (2#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/ll_auto_sync.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'lpif_txrx_x16_asym2_full_master_name' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_name.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'lpif_txrx_x16_asym2_full_master_name' (3#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_name.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'lpif_txrx_x16_asym2_full_master_concat' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_concat.sv:18]
+	Parameter TX_REG_PHY bound to: 1'b0 
+	Parameter RX_REG_PHY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'lpif_txrx_x16_asym2_full_master_concat' (4#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_concat.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'lpif_txrx_x16_asym2_full_master_top' (5#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/lpif_txrx_x16_asym2_full_master_top.sv:18]
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[23] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[22] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[21] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[20] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[17] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[16] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[15] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[14] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[13] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[12] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[11] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[10] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[9] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[8] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[7] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[6] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[5] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[4] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[3] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[2] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[1] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[0] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[23] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[22] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[21] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[20] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[17] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[16] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[15] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[14] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[13] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[12] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[11] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[10] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[9] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[8] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[7] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[6] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[5] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[4] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[3] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[2] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[1] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port rx_upstream_debug_status[0] driven by constant 0
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy0[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy0[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy1[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy1[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy2[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy2[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[79]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[78]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[76]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[75]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[74]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[73]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[72]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[71]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[70]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[69]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[68]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[67]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[66]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[65]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[64]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[63]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[62]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[61]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[60]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[59]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[58]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[57]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[56]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[55]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[54]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[53]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[52]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[51]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[50]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[49]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[48]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rx_phy3[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port clk_wr
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port clk_rd
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rst_wr_n
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port rst_rd_n
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_concat has unconnected port tx_online
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_name has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[7]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[6]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[5]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[4]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[3]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[2]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1459.090 ; gain = 126.355 ; free physical = 7949 ; free virtual = 374473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1459.090 ; gain = 126.355 ; free physical = 7875 ; free virtual = 374410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.090 ; gain = 134.355 ; free physical = 7843 ; free virtual = 374383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1484.109 ; gain = 151.375 ; free physical = 8327 ; free virtual = 374911
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module level_delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module ll_auto_sync 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[79] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[78] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[76] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[75] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[74] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[73] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[72] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[71] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[70] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[69] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[68] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[67] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[66] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[65] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[64] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[63] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[62] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[61] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[60] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[59] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[58] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[57] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[56] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[55] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[54] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[53] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[52] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[51] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[50] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[49] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_phy3[48] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design lpif_txrx_x16_asym2_full_master_top has port tx_downstream_debug_status[23] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[7]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[6]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[5]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[4]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[3]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[2]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port init_downstream_credit[0]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy0[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy0[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy1[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy1[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy2[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy2[1]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[79]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[78]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[77]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[76]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[75]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[74]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[73]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[72]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[71]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[70]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[69]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[68]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[67]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[66]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[65]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[64]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[63]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[62]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[61]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[60]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[59]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[58]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[57]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[56]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[55]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[54]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[53]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[52]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[51]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[50]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[49]
+WARNING: [Synth 8-3331] design lpif_txrx_x16_asym2_full_master_top has unconnected port rx_phy3[48]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:52 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8870 ; free virtual = 375414
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:52 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8868 ; free virtual = 375411
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:52 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8866 ; free virtual = 375410
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8876 ; free virtual = 375420
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8877 ; free virtual = 375420
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8877 ; free virtual = 375420
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8877 ; free virtual = 375420
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8876 ; free virtual = 375420
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8876 ; free virtual = 375420
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     1|
+|4     |LUT2   |    45|
+|5     |LUT3   |    20|
+|6     |LUT4   |    11|
+|7     |LUT5   |     3|
+|8     |LUT6   |    32|
+|9     |FDCE   |    54|
+|10    |FDPE   |     1|
+|11    |IBUF   |   616|
+|12    |OBUF   |   665|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------+--------------+------+
+|      |Instance                 |Module        |Cells |
++------+-------------------------+--------------+------+
+|1     |top                      |              |  1473|
+|2     |  ll_auto_sync_i         |ll_auto_sync  |   187|
+|3     |    level_delay_i_xvalue |level_delay   |    59|
+|4     |    level_delay_i_yvalue |level_delay_0 |    39|
+|5     |    level_delay_i_zvalue |level_delay_1 |    79|
++------+-------------------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8876 ; free virtual = 375420
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 256 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8877 ; free virtual = 375421
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:53 . Memory (MB): peak = 1613.484 ; gain = 280.750 ; free physical = 8877 ; free virtual = 375421
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 640 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'lpif_txrx_x16_asym2_full_master_top' is not ideal for floorplanning, since the cellview 'lpif_txrx_x16_asym2_full_master_top' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 204 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 1750.504 ; gain = 430.375 ; free physical = 8852 ; free virtual = 375386
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Documents/Task_5/aib-protocols/lpif/rtl/lpif_txrx_asym/lpif_txrx_x16_asym2/project_1/project_1.runs/synth_1/lpif_txrx_x16_asym2_full_master_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lpif_txrx_x16_asym2_full_master_top_utilization_synth.rpt -pb lpif_txrx_x16_asym2_full_master_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.19 . Memory (MB): peak = 1774.523 ; gain = 0.000 ; free physical = 8856 ; free virtual = 375391
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 10 14:40:36 2022...
