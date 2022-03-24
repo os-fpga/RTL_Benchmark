@@ -1,0 +1,342 @@
+
+*** Running vivado
+    with args -log minimips.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source minimips.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source minimips.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 2078 ; free virtual = 440384
+Command: synth_design -top minimips -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 63327
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 1255 ; free virtual = 439804
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'minimips' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:73]
+INFO: [Synth 8-3491] module 'pps_pf' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_pf.vhd:58' bound to instance 'U1_pf' of component 'pps_pf' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'pps_pf' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_pf.vhd:77]
+INFO: [Synth 8-256] done synthesizing module 'pps_pf' (1#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_pf.vhd:77]
+INFO: [Synth 8-3491] module 'pps_ei' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ei.vhd:58' bound to instance 'U2_ei' of component 'pps_ei' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'pps_ei' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ei.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'pps_ei' (2#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ei.vhd:82]
+INFO: [Synth 8-3491] module 'pps_di' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_di.vhd:58' bound to instance 'U3_di' of component 'pps_di' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:230]
+INFO: [Synth 8-638] synthesizing module 'pps_di' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_di.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'pps_di' (3#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_di.vhd:100]
+INFO: [Synth 8-3491] module 'pps_ex' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ex.vhd:59' bound to instance 'U4_ex' of component 'pps_ex' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:270]
+INFO: [Synth 8-638] synthesizing module 'pps_ex' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ex.vhd:99]
+INFO: [Synth 8-3491] module 'alu' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/alu.vhd:58' bound to instance 'U1_alu' of component 'alu' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ex.vhd:126]
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/alu.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'alu' (4#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/alu.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'pps_ex' (5#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_ex.vhd:99]
+INFO: [Synth 8-3491] module 'pps_mem' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_mem.vhd:59' bound to instance 'U5_mem' of component 'pps_mem' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:308]
+INFO: [Synth 8-638] synthesizing module 'pps_mem' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_mem.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'pps_mem' (6#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/pps_mem.vhd:98]
+INFO: [Synth 8-3491] module 'renvoi' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/renvoi.vhd:59' bound to instance 'U6_renvoi' of component 'renvoi' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'renvoi' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/renvoi.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'renvoi' (7#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/renvoi.vhd:107]
+INFO: [Synth 8-3491] module 'banc' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/banc.vhd:58' bound to instance 'U7_banc' of component 'banc' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:391]
+INFO: [Synth 8-638] synthesizing module 'banc' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/banc.vhd:81]
+INFO: [Synth 8-256] done synthesizing module 'banc' (8#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/banc.vhd:81]
+INFO: [Synth 8-3491] module 'syscop' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/syscop.vhd:61' bound to instance 'U8_syscop' of component 'syscop' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:412]
+INFO: [Synth 8-638] synthesizing module 'syscop' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/syscop.vhd:93]
+WARNING: [Synth 8-614] signal 'save_msk' is read in the process but is not in the sensitivity list [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/syscop.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'syscop' (9#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/syscop.vhd:93]
+INFO: [Synth 8-3491] module 'bus_ctrl' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/bus_ctrl.vhd:58' bound to instance 'U9_bus_ctrl' of component 'bus_ctrl' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:441]
+INFO: [Synth 8-638] synthesizing module 'bus_ctrl' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/bus_ctrl.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'bus_ctrl' (10#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/bus_ctrl.vhd:91]
+INFO: [Synth 8-3491] module 'predict' declared at '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:58' bound to instance 'U10_predict' of component 'predict' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:470]
+INFO: [Synth 8-638] synthesizing module 'predict' [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:91]
+	Parameter nb_record bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'EX_uncleared' is read in the process but is not in the sensitivity list [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:114]
+WARNING: [Synth 8-614] signal 'pre_pred_tab' is read in the process but is not in the sensitivity list [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:114]
+WARNING: [Synth 8-614] signal 'next_out' is read in the process but is not in the sensitivity list [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:114]
+WARNING: [Synth 8-5858] RAM pre_pred_tab_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM pred_tab_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'predict' (11#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/predict.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'minimips' (12#1) [/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.srcs/sources_1/imports/src/minimips.vhd:73]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 1592 ; free virtual = 439143
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 1544 ; free virtual = 439120
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 1545 ; free virtual = 439122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2897.258 ; gain = 8.016 ; free physical = 2294 ; free virtual = 439912
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 57    
+	               28 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 25    
++---Multipliers : 
+	              32x32  Multipliers := 2     
++---Muxes : 
+	   7 Input   64 Bit        Muxes := 1     
+	   5 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   33 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 71    
+	  51 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 5     
+	   3 Input   32 Bit        Muxes := 7     
+	   8 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
+	  51 Input   28 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 3     
+	  51 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 19    
+	   4 Input    2 Bit        Muxes := 1     
+	  51 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 77    
+	  51 Input    1 Bit        Muxes := 10    
+	   4 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: Generating DSP tmp_hilo0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+DSP Report: operator tmp_hilo0 is absorbed into DSP tmp_hilo0.
+WARNING: [Synth 8-7129] Port EX_level[0] in module renvoi is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:12 . Memory (MB): peak = 2922.254 ; gain = 33.012 ; free physical = 1493 ; free virtual = 439630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------------------+---------------+----------------+
+|Module Name | RTL Object             | Depth x Width | Implemented As | 
++------------+------------------------+---------------+----------------+
+|pps_di      | micro_code[0][cs_imm1] | 64x1          | LUT            | 
+|pps_di      | micro_code[0][cs_imm2] | 64x1          | LUT            | 
+|pps_di      | micro_code[0][des_sel] | 64x2          | LUT            | 
+|pps_di      | micro_code[0][ecr_reg] | 64x1          | LUT            | 
+|pps_di      | micro_code[0][cs_imm2] | 64x1          | LUT            | 
+|pps_di      | micro_code[0][des_sel] | 64x2          | LUT            | 
+|pps_di      | micro_code[0][ecr_reg] | 64x1          | LUT            | 
++------------+------------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu         | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1504 ; free virtual = 439643
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1534 ; free virtual = 439686
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1343 ; free virtual = 439568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1337 ; free virtual = 439562
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1327 ; free virtual = 439552
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1330 ; free virtual = 439555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1313 ; free virtual = 439538
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1312 ; free virtual = 439537
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   103|
+|3     |DSP48E1 |     8|
+|4     |LUT1    |    33|
+|5     |LUT2    |   224|
+|6     |LUT3    |   289|
+|7     |LUT4    |   264|
+|8     |LUT5    |   377|
+|9     |LUT6    |  1699|
+|10    |MUXF7   |   256|
+|11    |MUXF8   |    64|
+|12    |FDCE    |     5|
+|13    |FDPE    |     1|
+|14    |FDRE    |  1869|
+|15    |FDSE    |     7|
+|16    |IBUF    |     4|
+|17    |IOBUF   |    32|
+|18    |OBUF    |    34|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------+---------+------+
+|      |Instance      |Module   |Cells |
++------+--------------+---------+------+
+|1     |top           |         |  5270|
+|2     |  U10_predict |predict  |   907|
+|3     |  U1_pf       |pps_pf   |    46|
+|4     |  U2_ei       |pps_ei   |   404|
+|5     |  U3_di       |pps_di   |   959|
+|6     |  U4_ex       |pps_ex   |   531|
+|7     |    U1_alu    |alu      |   271|
+|8     |  U5_mem      |pps_mem  |   233|
+|9     |  U7_banc     |banc     |  1856|
+|10    |  U8_syscop   |syscop   |   194|
+|11    |  U9_bus_ctrl |bus_ctrl |    68|
++------+--------------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1314 ; free virtual = 439539
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.258 ; gain = 33.016 ; free physical = 1312 ; free virtual = 439537
+Synthesis Optimization Complete : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 2922.262 ; gain = 33.016 ; free physical = 1312 ; free virtual = 439537
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2922.270 ; gain = 0.000 ; free physical = 1438 ; free virtual = 439662
+INFO: [Netlist 29-17] Analyzing 463 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2978.285 ; gain = 0.000 ; free physical = 1346 ; free virtual = 439574
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 32 instances
+
+Synth Design complete, checksum: 7713b290
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:29 . Memory (MB): peak = 2978.285 ; gain = 118.000 ; free physical = 1506 ; free virtual = 439762
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/minimips/project_1/project_1.runs/synth_1/minimips.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file minimips_utilization_synth.rpt -pb minimips_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 18 10:21:40 2022...

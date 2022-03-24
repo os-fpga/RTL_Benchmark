@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -rf $M1_ROOT/run/sim/icarus
+mkdir $M1_ROOT/run/sim/icarus
+cd $M1_ROOT/run/sim/icarus
+iverilog -o testbench -c$FILELIST_ICARUS 2>&1 | tee build.log
+

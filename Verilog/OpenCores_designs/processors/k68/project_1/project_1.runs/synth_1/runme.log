@@ -1,0 +1,445 @@
+
+*** Running vivado
+    with args -log k68_appl.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source k68_appl.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source k68_appl.tcl -notrace
+Command: synth_design -top k68_appl -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 55788
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 67612 ; free virtual = 451054
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'k68_appl' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:57]
+INFO: [Synth 8-6157] synthesizing module 'RAMB4_S8' [/home/users/eda_tools/fpga_tools/vivado_2021_instl_dir/Vivado/2021.2/scripts/rt/data/unisim_comp.v:126943]
+INFO: [Synth 8-6155] done synthesizing module 'RAMB4_S8' (1#1) [/home/users/eda_tools/fpga_tools/vivado_2021_instl_dir/Vivado/2021.2/scripts/rt/data/unisim_comp.v:126943]
+WARNING: [Synth 8-7071] port 'DI' of module 'RAMB4_S8' is unconnected for instance 'rom0' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:95]
+WARNING: [Synth 8-7023] instance 'rom0' of module 'RAMB4_S8' has 7 connections declared, but only 6 given [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:95]
+WARNING: [Synth 8-7071] port 'DI' of module 'RAMB4_S8' is unconnected for instance 'rom1' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:104]
+WARNING: [Synth 8-7023] instance 'rom1' of module 'RAMB4_S8' has 7 connections declared, but only 6 given [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:104]
+WARNING: [Synth 8-7071] port 'DI' of module 'RAMB4_S8' is unconnected for instance 'rom2' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:113]
+WARNING: [Synth 8-7023] instance 'rom2' of module 'RAMB4_S8' has 7 connections declared, but only 6 given [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:113]
+WARNING: [Synth 8-7071] port 'DI' of module 'RAMB4_S8' is unconnected for instance 'rom3' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:122]
+WARNING: [Synth 8-7023] instance 'rom3' of module 'RAMB4_S8' has 7 connections declared, but only 6 given [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:122]
+INFO: [Synth 8-6157] synthesizing module 'k68_soc' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_arb' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'k68_arb' (2#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:168]
+WARNING: [Synth 8-7071] port 'g_we_o' of module 'k68_arb' is unconnected for instance 'arb0' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:80]
+WARNING: [Synth 8-7071] port 'g_cs_o' of module 'k68_arb' is unconnected for instance 'arb0' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:80]
+WARNING: [Synth 8-7071] port 'g_dat_i' of module 'k68_arb' is unconnected for instance 'arb0' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:80]
+WARNING: [Synth 8-7023] instance 'arb0' of module 'k68_arb' has 16 connections declared, but only 13 given [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:80]
+INFO: [Synth 8-6157] synthesizing module 'k68_cpu' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_clkgen' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:320]
+INFO: [Synth 8-6155] done synthesizing module 'k68_clkgen' (3#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:320]
+INFO: [Synth 8-6157] synthesizing module 'k68_buni' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:266]
+INFO: [Synth 8-6155] done synthesizing module 'k68_buni' (4#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:266]
+INFO: [Synth 8-6157] synthesizing module 'k68_fetch' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_fetch.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'k68_fetch' (5#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_fetch.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_load' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_load.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_calc' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_load.v:326]
+INFO: [Synth 8-6155] done synthesizing module 'k68_calc' (6#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_load.v:326]
+INFO: [Synth 8-6155] done synthesizing module 'k68_load' (7#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_load.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_execute' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:38]
+WARNING: [Synth 8-567] referenced signal 'add_c' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:400]
+INFO: [Synth 8-6157] synthesizing module 'k68_rox' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'k68_rox' (8#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:42]
+INFO: [Synth 8-6157] synthesizing module 'k68_d2b' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:349]
+INFO: [Synth 8-6155] done synthesizing module 'k68_d2b' (9#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:349]
+INFO: [Synth 8-6157] synthesizing module 'k68_b2d' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:380]
+INFO: [Synth 8-6155] done synthesizing module 'k68_b2d' (10#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:380]
+INFO: [Synth 8-6157] synthesizing module 'k68_ccc' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:304]
+INFO: [Synth 8-6155] done synthesizing module 'k68_ccc' (11#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_prims.v:304]
+WARNING: [Synth 8-3848] Net x in module/entity k68_execute does not have driver. [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'k68_execute' (12#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_regbank' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_regbank.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_dpmem' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_regbank.v:84]
+	Parameter gw bound to: 6'b000100 
+	Parameter dw bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'k68_dpmem' (13#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_regbank.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'k68_regbank' (14#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_regbank.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_decode' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_decode.v:38]
+WARNING: [Synth 8-3848] Net op in module/entity k68_decode does not have driver. [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_decode.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'k68_decode' (15#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_decode.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'k68_cpu' (16#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_cpu.v:38]
+INFO: [Synth 8-6157] synthesizing module 'k68_sasc' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_sasc.v:3]
+INFO: [Synth 8-6157] synthesizing module 'sasc_top' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_top.v:73]
+INFO: [Synth 8-6157] synthesizing module 'sasc_fifo4' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_fifo4.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'sasc_fifo4' (17#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_fifo4.v:63]
+WARNING: [Synth 8-6014] Unused sequential element load_r_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_top.v:172]
+WARNING: [Synth 8-6014] Unused sequential element rxd_r1_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_top.v:249]
+WARNING: [Synth 8-6014] Unused sequential element rxd_r2_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_top.v:252]
+INFO: [Synth 8-6155] done synthesizing module 'sasc_top' (18#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_top.v:73]
+INFO: [Synth 8-6157] synthesizing module 'sasc_brg' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_brg.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'sasc_brg' (19#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/sasc_brg.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'k68_sasc' (20#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_sasc.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'k68_soc' (21#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_soc.v:38]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:86]
+INFO: [Synth 8-6155] done synthesizing module 'k68_appl' (22#1) [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_appl.v:57]
+WARNING: [Synth 8-7129] Port alu_pc_i[0] in module k68_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_i in module k68_dpmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[7] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[6] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[5] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[4] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[5] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[4] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[3] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[2] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[1] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[0] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk_i in module k68_load is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[15] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[14] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[13] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[12] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[11] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[10] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[9] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[8] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[7] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[6] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[5] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[4] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[3] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[2] in module k68_arb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_add_i[0] in module k68_arb is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 67105 ; free virtual = 450543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 67792 ; free virtual = 451248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 67787 ; free virtual = 451243
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'dpll_state_reg' in module 'sasc_top'
+WARNING: [Synth 8-327] inferring latch for variable 'add_c_reg' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:406]
+WARNING: [Synth 8-327] inferring latch for variable 'c_reg' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:409]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_reg' [/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.srcs/sources_1/imports/rtl/k68_execute.v:408]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               01
+                 iSTATE0 |                               01 |                               10
+                 iSTATE1 |                               10 |                               11
+                 iSTATE2 |                               11 |                               00
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dpll_state_reg' using encoding 'sequential' in module 'sasc_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 67689 ; free virtual = 451136
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   32 Bit       Adders := 4     
+	   3 Input    9 Bit       Adders := 2     
+	   4 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 10    
+	   3 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 17    
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 11    
+	               16 Bit    Registers := 7     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 5     
+	                4 Bit    Registers := 5     
+	                2 Bit    Registers := 14    
+	                1 Bit    Registers := 53    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 58    
+	   7 Input   32 Bit        Muxes := 4     
+	   8 Input   32 Bit        Muxes := 6     
+	   4 Input   32 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 9     
+	  33 Input   32 Bit        Muxes := 1     
+	  25 Input   32 Bit        Muxes := 1     
+	   6 Input   32 Bit        Muxes := 1     
+	  18 Input   32 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   7 Input    8 Bit        Muxes := 1     
+	  14 Input    8 Bit        Muxes := 3     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 48    
+	   6 Input    6 Bit        Muxes := 1     
+	  13 Input    6 Bit        Muxes := 5     
+	  18 Input    6 Bit        Muxes := 2     
+	   8 Input    6 Bit        Muxes := 3     
+	   3 Input    6 Bit        Muxes := 8     
+	   9 Input    6 Bit        Muxes := 1     
+	   7 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	  33 Input    5 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 1     
+	   3 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 16    
+	   7 Input    4 Bit        Muxes := 3     
+	   8 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 5     
+	  14 Input    3 Bit        Muxes := 1     
+	  33 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 8     
+	  13 Input    3 Bit        Muxes := 1     
+	  18 Input    3 Bit        Muxes := 4     
+	  16 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 35    
+	   4 Input    2 Bit        Muxes := 4     
+	   3 Input    2 Bit        Muxes := 6     
+	   8 Input    2 Bit        Muxes := 4     
+	  13 Input    2 Bit        Muxes := 2     
+	   7 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 53    
+	   4 Input    1 Bit        Muxes := 21    
+	   7 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 6     
+	  33 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port alu_pc_i[0] in module k68_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[7] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[6] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[5] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cc[4] in module k68_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[5] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[4] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[3] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[2] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[1] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dst_i[0] in module k68_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk_i in module k68_load is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68322 ; free virtual = 451658
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+--------------------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object                           | Inference | Size (Depth x Width) | Primitives  | 
++------------+--------------------------------------+-----------+----------------------+-------------+
+|\soc0/cpu0  | regbank0/bank0/mem_reg               | Implied   | 16 x 32              | RAM32M x 6  | 
+|\soc0/cpu0  | regbank0/bank1/mem_reg               | Implied   | 16 x 32              | RAM32M x 6  | 
+|k68_appl    | soc0/uart1/sasc_top0/rx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart0/sasc_top0/rx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart0/sasc_top0/tx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart1/sasc_top0/tx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
++------------+--------------------------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68296 ; free virtual = 451630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+--------------------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object                           | Inference | Size (Depth x Width) | Primitives  | 
++------------+--------------------------------------+-----------+----------------------+-------------+
+|\soc0/cpu0  | regbank0/bank0/mem_reg               | Implied   | 16 x 32              | RAM32M x 6  | 
+|\soc0/cpu0  | regbank0/bank1/mem_reg               | Implied   | 16 x 32              | RAM32M x 6  | 
+|k68_appl    | soc0/uart1/sasc_top0/rx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart0/sasc_top0/rx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart0/sasc_top0/tx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
+|k68_appl    | soc0/uart1/sasc_top0/tx_fifo/mem_reg | Implied   | 4 x 8                | RAM32M x 2  | 
++------------+--------------------------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68561 ; free virtual = 451881
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68574 ; free virtual = 451895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68574 ; free virtual = 451895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68575 ; free virtual = 451896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68575 ; free virtual = 451896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68575 ; free virtual = 451896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68575 ; free virtual = 451896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    96|
+|3     |LUT1     |    65|
+|4     |LUT2     |   208|
+|5     |LUT3     |   306|
+|6     |LUT4     |   327|
+|7     |LUT5     |   410|
+|8     |LUT6     |  1358|
+|9     |MUXF7    |    12|
+|10    |MUXF8    |     1|
+|11    |RAM32M   |    14|
+|12    |RAM32X1D |    12|
+|13    |RAMB4_S8 |     8|
+|14    |FDCE     |    20|
+|15    |FDRE     |   664|
+|16    |FDSE     |    66|
+|17    |LDC      |    15|
+|18    |IBUF     |     9|
+|19    |OBUF     |    13|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------+-------------+------+
+|      |Instance        |Module       |Cells |
++------+----------------+-------------+------+
+|1     |top             |             |  3606|
+|2     |  soc0          |k68_soc      |  3573|
+|3     |    cpu0        |k68_cpu      |  3259|
+|4     |      addmode0  |k68_load     |   233|
+|5     |        calc0   |k68_calc     |    24|
+|6     |      clkgen0   |k68_clkgen   |    13|
+|7     |      decode0   |k68_decode   |  1369|
+|8     |      execute0  |k68_execute  |   271|
+|9     |      fetch0    |k68_fetch    |  1237|
+|10    |      regbank0  |k68_regbank  |   120|
+|11    |        bank0   |k68_dpmem    |    37|
+|12    |        bank1   |k68_dpmem_6  |    46|
+|13    |      unify0    |k68_buni     |    16|
+|14    |    uart0       |k68_sasc     |   157|
+|15    |      sasc_brg0 |sasc_brg_2   |    52|
+|16    |      sasc_top0 |sasc_top_3   |   105|
+|17    |        rx_fifo |sasc_fifo4_4 |    15|
+|18    |        tx_fifo |sasc_fifo4_5 |    22|
+|19    |    uart1       |k68_sasc_0   |   157|
+|20    |      sasc_brg0 |sasc_brg     |    52|
+|21    |      sasc_top0 |sasc_top     |   105|
+|22    |        rx_fifo |sasc_fifo4   |    15|
+|23    |        tx_fifo |sasc_fifo4_1 |    22|
++------+----------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68575 ; free virtual = 451896
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 63 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68574 ; free virtual = 451895
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 68574 ; free virtual = 451895
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 68670 ; free virtual = 451992
+INFO: [Netlist 29-17] Analyzing 150 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 68583 ; free virtual = 451910
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 41 instances were transformed.
+  LDC => LDCE: 15 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32(x6), RAMS32(x2)): 4 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32X1D => RAM32X1D (inverted pins: WCLK) (RAMD32(x2)): 8 instances
+
+Synth Design complete, checksum: 6a88c663
+INFO: [Common 17-83] Releasing license: Synthesis
+58 Infos, 63 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:01:16 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 68781 ; free virtual = 452112
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/k68/project_1/project_1.runs/synth_1/k68_appl.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file k68_appl_utilization_synth.rpt -pb k68_appl_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 16 12:13:53 2022...

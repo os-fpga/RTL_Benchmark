@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 17 09:35:13 2022
+# Process ID: 57303
+# Current directory: /home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.runs/synth_1
+# Command line: vivado -log l80soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source l80soc.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.runs/synth_1/l80soc.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1200.091 MHz, CPU Physical cores: 32, Host memory: 540770 MB
+#-----------------------------------------------------------
+source l80soc.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 7720 ; free virtual = 455927
+Command: synth_design -top l80soc -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 57606
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 7343 ; free virtual = 455550
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'l80soc' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/l80soc.v:31]
+INFO: [Synth 8-6157] synthesizing module 'light8080' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/light8080.v:61]
+INFO: [Synth 8-6157] synthesizing module 'micro_rom' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/micro_rom.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'micro_rom' (1#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/micro_rom.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'light8080' (2#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/light8080.v:61]
+INFO: [Synth 8-6157] synthesizing module 'ram_image' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/ram_image.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ram_image' (3#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/ram_image.v:6]
+INFO: [Synth 8-6157] synthesizing module 'intr_ctrl' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/intr_ctrl.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'intr_ctrl' (4#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/intr_ctrl.v:35]
+INFO: [Synth 8-6157] synthesizing module 'uart' [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/uart.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (5#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/uart.v:6]
+WARNING: [Synth 8-7137] Register scpu_io_reg in module l80soc has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/l80soc.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'l80soc' (6#1) [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/l80soc.v:31]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 6408 ; free virtual = 454615
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 6401 ; free virtual = 454608
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 6403 ; free virtual = 454611
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'IR_reg' and it is trimmed from '8' to '6' bits. [/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.srcs/sources_1/imports/rtl/light8080.v:300]
+INFO: [Synth 8-802] inferred FSM for state register 'intSq_reg' in module 'intr_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                             0001 |                               00
+                 iSTATE0 |                             0010 |                               01
+                  iSTATE |                             0100 |                               10
+*
+                 iSTATE2 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'intSq_reg' using encoding 'one-hot' in module 'intr_ctrl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 7101 ; free virtual = 455384
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    9 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               25 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---RAMs : 
+	              32K Bit	(4096 X 8 bit)          RAMs := 1     
+	              128 Bit	(16 X 8 bit)          RAMs := 1     
++---Muxes : 
+	 512 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 3     
+	   3 Input    9 Bit        Muxes := 1     
+	   5 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 13    
+	   4 Input    8 Bit        Muxes := 2     
+	   3 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 7     
+	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 53    
+	   3 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (intrc/FSM_onehot_intSq_reg[3]) is unused and will be removed from module l80soc.
+WARNING: [Synth 8-3332] Sequential element (intrc/FSM_onehot_intSq_reg[2]) is unused and will be removed from module l80soc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6814 ; free virtual = 455099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|l80soc      | ram/ram_reg | 4 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 0      | 1      | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+---------------+-----------+----------------------+-------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives  | 
++------------+---------------+-----------+----------------------+-------------+
+|l80soc      | cpu/rbank_reg | Implied   | 16 x 8               | RAM32M x 2  | 
++------------+---------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6815 ; free virtual = 455100
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|l80soc      | ram/ram_reg | 4 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 0      | 1      | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+---------------+-----------+----------------------+-------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives  | 
++------------+---------------+-----------+----------------------+-------------+
+|l80soc      | cpu/rbank_reg | Implied   | 16 x 8               | RAM32M x 2  | 
++------------+---------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ram/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6817 ; free virtual = 455103
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6819 ; free virtual = 455105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6822 ; free virtual = 455108
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6819 ; free virtual = 455105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6823 ; free virtual = 455108
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6817 ; free virtual = 455103
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6817 ; free virtual = 455103
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    11|
+|3     |LUT1     |    11|
+|4     |LUT2     |    62|
+|5     |LUT3     |    48|
+|6     |LUT4     |    57|
+|7     |LUT5     |    93|
+|8     |LUT6     |   314|
+|9     |MUXF7    |    53|
+|10    |RAM32M   |     1|
+|11    |RAM32X1D |     2|
+|12    |RAMB36E1 |     1|
+|13    |FDCE     |   117|
+|14    |FDPE     |    18|
+|15    |FDRE     |   124|
+|16    |FDSE     |     1|
+|17    |IBUF     |     7|
+|18    |IOBUF    |    16|
+|19    |OBUF     |     1|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |   938|
+|2     |  cpu    |light8080 |   680|
+|3     |    rom  |micro_rom |   478|
+|4     |  intrc  |intr_ctrl |    34|
+|5     |  ram    |ram_image |     1|
+|6     |  uart   |uart      |   136|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6817 ; free virtual = 455103
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6820 ; free virtual = 455106
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 6817 ; free virtual = 455103
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 6909 ; free virtual = 455195
+INFO: [Netlist 29-17] Analyzing 84 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 6809 ; free virtual = 455105
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 19 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+
+Synth Design complete, checksum: c520a800
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:49 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 7018 ; free virtual = 455314
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/light8080/project_1/project_1.runs/synth_1/l80soc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file l80soc_utilization_synth.rpt -pb l80soc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 17 09:36:21 2022...

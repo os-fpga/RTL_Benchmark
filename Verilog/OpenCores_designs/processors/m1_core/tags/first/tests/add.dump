@@ -1,0 +1,32 @@
+
+add.bin:     file format elf32-tradlittlemips
+
+Disassembly of section .text:
+
+00000000 <main-0x10>:
+   0:	23bd0400 	addi	sp,sp,1024
+   4:	3c1fdead 	lui	ra,0xdead
+   8:	37ffbeef 	ori	ra,ra,0xbeef
+   c:	00000000 	nop
+
+00000010 <main>:
+  10:	27bdffe0 	addiu	sp,sp,-32
+  14:	afbe0018 	sw	s8,24(sp)
+  18:	03a0f021 	move	s8,sp
+  1c:	24020005 	li	v0,5
+  20:	afc20010 	sw	v0,16(s8)
+  24:	24020007 	li	v0,7
+  28:	afc2000c 	sw	v0,12(s8)
+  2c:	8fc30010 	lw	v1,16(s8)
+  30:	8fc2000c 	lw	v0,12(s8)
+  34:	00000000 	nop
+  38:	00621021 	addu	v0,v1,v0
+  3c:	afc20008 	sw	v0,8(s8)
+  40:	00001021 	move	v0,zero
+  44:	03c0e821 	move	sp,s8
+  48:	8fbe0018 	lw	s8,24(sp)
+  4c:	27bd0020 	addiu	sp,sp,32
+  50:	03e00008 	jr	ra
+  54:	00000000 	nop
+  58:	00000000 	nop
+  5c:	00000000 	nop

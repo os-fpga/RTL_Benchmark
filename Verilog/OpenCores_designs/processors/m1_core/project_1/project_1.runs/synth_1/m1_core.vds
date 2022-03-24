@@ -1,0 +1,487 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 17 10:32:29 2022
+# Process ID: 37099
+# Current directory: /home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.runs/synth_1
+# Command line: vivado -log m1_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source m1_core.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.runs/synth_1/m1_core.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1200.219 MHz, CPU Physical cores: 32, Host memory: 540770 MB
+#-----------------------------------------------------------
+source m1_core.tcl -notrace
+Command: synth_design -top m1_core -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37410
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 11720 ; free virtual = 452605
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'm1_core' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_core.v:7]
+INFO: [Synth 8-6157] synthesizing module 'm1_cpu' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:7]
+WARNING: [Synth 8-639] system function call 'time' not supported [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:326]
+INFO: [Synth 8-251] ================> Time 1'b0 <================ [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:326]
+INFO: [Synth 8-251] INFO: CPU()-IF: Fetching stalled like ID, latch keeps old value [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:346]
+INFO: [Synth 8-251] INFO: CPU()-IF: Fetching stalled due to IMEM, latch filled with bubble [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:349]
+INFO: [Synth 8-251] INFO: CPU()-IF: Bubble inserted due branch taken in EX/MEM instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx having ALUout=xxxxxxxxxxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:358]
+INFO: [Synth 8-251] INFO: CPU()-IF: Bubble inserted due to jump in ID/EX instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:365]
+INFO: [Synth 8-251] INFO: CPU()-IF: Bubble inserted due to jump register in ID/EX instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:372]
+INFO: [Synth 8-251] INFO: CPU()-IF: Fetched from Program Counter @ADDR=xxxxxxxx getting OPCODE=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:379]
+INFO: [Synth 8-251] INFO: CPU()-ID: Branch taken and bubble inserted [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:401]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoding stalled and latch kept [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:425]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoding stalled and bubble inserted [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:427]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=ffffffff as BUBBLE [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:458]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as J xxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:479]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as JAL xxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:500]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BEQ rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:521]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BNE rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:542]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BLEZ rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:563]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BGTZ rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:584]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ADDI rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:605]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ADDIU rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:626]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLTI rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:647]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLTIU rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:668]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ANDI rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:689]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ORI rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:710]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as XORI rx, rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:731]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LUI rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:752]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as COP0 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:773]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as COP1 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:777]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as COP2 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:781]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as COP3 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:785]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LB rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:789]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LH rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:810]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LWL rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:831]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LW rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:852]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LBU rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:873]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LHU rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:894]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LWR rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:915]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SB rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:936]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SH rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:957]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SWL rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:978]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SW rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:999]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SWR rx, x(rx) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1020]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LWC1 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1041]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LWC2 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1045]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as LWC3 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1049]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SWC1 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1053]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SWC2 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1057]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SWC3 [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1061]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=0 as NOP [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1067]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLL rx, rx, xx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1068]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SRL rx, rx, xx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1089]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SRA rx, rx, xx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1110]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLLV rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1131]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SRLV rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1152]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SRAV rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1173]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as JR rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1194]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as JALR [rx,] rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1215]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SYSCALL [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1236]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BREAK [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1257]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MFHI rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1278]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MTHI rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1299]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MFLO rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1320]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MTLO rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1341]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MULT rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1361]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as MULTU rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1383]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as DIV rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1405]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as DIVU rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1427]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ADD rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1449]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as ADDU rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1470]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SUB rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1491]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SUBU rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1512]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as AND rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1533]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as OR rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1554]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as XOR rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1575]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as NOR rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1596]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLT rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1617]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as SLTU rx, rx, rx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1638]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1064]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BLTZ rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1662]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BGEZ rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1683]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BLTZAL rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1704]
+INFO: [Synth 8-251] INFO: CPU()-ID: Decoded instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx as BGEZAL rx, xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1725]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1659]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:476]
+INFO: [Synth 8-251] INFO: CPU()-EX: Execution stalled and latch kept [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1765]
+INFO: [Synth 8-251] INFO: CPU()-EX: Execution stalled and bubble inserted [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1767]
+INFO: [Synth 8-251] INFO: CPU()-EX: Execution of Store instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx started to STORE_ADDR=xxxxxxxxx w/STORE_DATA=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1812]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1813]
+INFO: [Synth 8-251] INFO: CPU()-EX: Execution of instruction @ADDR=xxxxxxxx w/OPCODE=xxxxxxxx gave ALU result xxxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1891]
+INFO: [Synth 8-251] INFO: CPU()-MEM: Memory stalled [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1911]
+INFO: [Synth 8-251] INFO: CPU()-MEM: Loading value xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1925]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1927]
+INFO: [Synth 8-251] INFO: CPU()-MEM: Propagating value xxxxxxxxxxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1964]
+INFO: [Synth 8-251] INFO: CPU()-MEM: Propagating value xxxxxxxxxxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1971]
+INFO: [Synth 8-251] INFO: CPU()-MEM: Propagating value xxxxxxxxxxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1978]
+INFO: [Synth 8-251] INFO: CPU()-WB: Write-Back stalled [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:1999]
+INFO: [Synth 8-251] INFO: CPU()-WB: Writing Back GPR[x]=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2005]
+INFO: [Synth 8-251] INFO: CPU()-WB: Writing Back HI=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2011]
+INFO: [Synth 8-251] INFO: CPU()-WB: Writing Back LO=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2017]
+INFO: [Synth 8-251] INFO: CPU()-WB: Writing Back SysCon[x]=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2023]
+INFO: [Synth 8-251] INFO: CPU()-WB: Write-Back has nothing to do [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2029]
+INFO: [Synth 8-251] INFO: CPU()-Regs: R00=xxxxxxxx R01=xxxxxxxx R02=xxxxxxxx R03=xxxxxxxx R04=xxxxxxxx R05=xxxxxxxx R06=xxxxxxxx R07=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2034]
+INFO: [Synth 8-251] INFO: CPU()-Regs: R08=xxxxxxxx R09=xxxxxxxx R10=xxxxxxxx R11=xxxxxxxx R12=xxxxxxxx R13=xxxxxxxx R14=xxxxxxxx R15=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2036]
+INFO: [Synth 8-251] INFO: CPU()-Regs: R16=xxxxxxxx R17=xxxxxxxx R18=xxxxxxxx R19=xxxxxxxx R20=xxxxxxxx R21=xxxxxxxx R22=xxxxxxxx R23=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2038]
+INFO: [Synth 8-251] INFO: CPU()-Regs: R24=xxxxxxxx R25=xxxxxxxx R26=xxxxxxxx R27=xxxxxxxx R28=xxxxxxxx R29=xxxxxxxx R30=xxxxxxxx R31=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2040]
+INFO: [Synth 8-251] INFO: CPU()-Regs: PC=xxxxxxxx HI=xxxxxxxx LO=xxxxxxxx [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:2042]
+INFO: [Common 17-14] Message 'Synth 8-251' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[0] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[1] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[2] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[3] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[4] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[5] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[6] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[7] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[8] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[9] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[10] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[11] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[12] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[13] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[14] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[15] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[16] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[17] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[18] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[19] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[20] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[21] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[22] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[23] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[24] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[25] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[26] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[27] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[28] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[29] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[30] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element SysCon_reg[31] was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:232]
+WARNING: [Synth 8-6014] Unused sequential element id_ex_opcode_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:271]
+WARNING: [Synth 8-6014] Unused sequential element id_ex_addr_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:272]
+WARNING: [Synth 8-6014] Unused sequential element id_ex_addrnext_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:273]
+WARNING: [Synth 8-6014] Unused sequential element id_ex_linked_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:283]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_opcode_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:294]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_addr_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:295]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_addrnext_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:296]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_addrjump_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:297]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_carry_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:300]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_jump_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:302]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_jr_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:303]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_linked_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:304]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_mult_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:305]
+WARNING: [Synth 8-6014] Unused sequential element ex_mem_div_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:306]
+WARNING: [Synth 8-6014] Unused sequential element mem_wb_opcode_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:316]
+WARNING: [Synth 8-6014] Unused sequential element mem_wb_addr_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:317]
+WARNING: [Synth 8-6014] Unused sequential element mem_wb_addrnext_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:318]
+INFO: [Synth 8-6155] done synthesizing module 'm1_cpu' (1#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_cpu.v:7]
+INFO: [Synth 8-6157] synthesizing module 'm1_alu' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_alu.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'm1_alu' (2#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_alu.v:10]
+INFO: [Synth 8-6157] synthesizing module 'm1_mul' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_mul.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'm1_mul' (3#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_mul.v:8]
+INFO: [Synth 8-6157] synthesizing module 'm1_div' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_div.v:8]
+WARNING: [Synth 8-6014] Unused sequential element remainder_tmp_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_div.v:49]
+WARNING: [Synth 8-6014] Unused sequential element diff_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_div.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'm1_div' (4#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_div.v:8]
+INFO: [Synth 8-6157] synthesizing module 'm1_mmu' [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_mmu.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'm1_mmu' (5#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_mmu.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'm1_core' (6#1) [/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.srcs/sources_1/imports/rtl/m1_core.v:7]
+WARNING: [Synth 8-7129] Port sys_clock_i in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sys_reset_i in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[31] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[30] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[29] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[28] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[27] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[26] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[25] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[24] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[23] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[22] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[21] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[20] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[19] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[18] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[17] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[16] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[15] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[14] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[13] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[12] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[11] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[10] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[1] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[0] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sys_irq_i in module m1_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_result_i[32] in module m1_cpu is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 10777 ; free virtual = 451670
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 10745 ; free virtual = 451640
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 10744 ; free virtual = 451638
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11484 ; free virtual = 452380
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 3     
+	   3 Input   64 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 1     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 8     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               64 Bit    Registers := 6     
+	               32 Bit    Registers := 51    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 16    
+	   6 Input   64 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 3     
+	   6 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 22    
+	   4 Input   32 Bit        Muxes := 6     
+	   3 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
+	 257 Input   32 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   3 Input    5 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
+	  29 Input    5 Bit        Muxes := 1     
+	  39 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 3     
+	  39 Input    3 Bit        Muxes := 3     
+	  29 Input    3 Bit        Muxes := 1     
+	  39 Input    2 Bit        Muxes := 6     
+	  29 Input    2 Bit        Muxes := 1     
+	  29 Input    1 Bit        Muxes := 10    
+	  39 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 70    
+	   5 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 5     
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port sys_clock_i in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sys_reset_i in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[31] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[30] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[29] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[28] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[27] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[26] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[25] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[24] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[23] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[22] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[21] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[20] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[19] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[18] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[17] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[16] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[15] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[14] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[13] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[12] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[11] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[10] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[1] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port imem_addr_i[0] in module m1_mmu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sys_irq_i in module m1_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_result_i[32] in module m1_cpu is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11228 ; free virtual = 452116
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+--------------+---------------+----------------+
+|Module Name | RTL Object   | Depth x Width | Implemented As | 
++------------+--------------+---------------+----------------+
+|m1_cpu      | id_ex_branch | 64x1          | LUT            | 
+|m1_cpu      | id_ex_store  | 64x1          | LUT            | 
+|m1_cpu      | id_ex_load   | 64x1          | LUT            | 
+|m1_cpu      | id_ex_jump   | 64x1          | LUT            | 
+|m1_cpu      | id_ex_size   | 64x3          | LUT            | 
+|m1_cpu      | id_ex_branch | 64x1          | LUT            | 
+|m1_cpu      | id_ex_store  | 64x1          | LUT            | 
+|m1_cpu      | id_ex_load   | 64x1          | LUT            | 
+|m1_cpu      | id_ex_jump   | 64x1          | LUT            | 
+|m1_cpu      | id_ex_size   | 64x3          | LUT            | 
++------------+--------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11234 ; free virtual = 452121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11237 ; free virtual = 452124
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11239 ; free virtual = 452127
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11239 ; free virtual = 452127
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11239 ; free virtual = 452128
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11242 ; free virtual = 452131
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11239 ; free virtual = 452127
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11239 ; free virtual = 452127
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   220|
+|3     |LUT1   |   354|
+|4     |LUT2   |   227|
+|5     |LUT3   |   312|
+|6     |LUT4   |   365|
+|7     |LUT5   |   508|
+|8     |LUT6   |   907|
+|9     |MUXF7  |   130|
+|10    |MUXF8  |     1|
+|11    |FDRE   |  1308|
+|12    |FDSE   |     1|
+|13    |IBUF   |    35|
+|14    |OBUF   |    71|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------+-------+------+
+|      |Instance   |Module |Cells |
++------+-----------+-------+------+
+|1     |top        |       |  4440|
+|2     |  m1_cpu_0 |m1_cpu |  3063|
+|3     |  m1_div_0 |m1_div |   640|
+|4     |  m1_mul_0 |m1_mul |   630|
++------+-----------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11243 ; free virtual = 452131
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 109 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11240 ; free virtual = 452129
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 11240 ; free virtual = 452129
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 11331 ; free virtual = 452219
+INFO: [Netlist 29-17] Analyzing 351 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 11231 ; free virtual = 452120
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: f8e5dce4
+INFO: [Common 17-83] Releasing license: Synthesis
+130 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 11435 ; free virtual = 452324
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/m1_core/project_1/project_1.runs/synth_1/m1_core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file m1_core_utilization_synth.rpt -pb m1_core_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 17 10:33:37 2022...

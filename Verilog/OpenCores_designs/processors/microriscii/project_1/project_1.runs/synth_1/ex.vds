@@ -1,0 +1,359 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 17 16:49:54 2022
+# Process ID: 11096
+# Current directory: /home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.runs/synth_1
+# Command line: vivado -log ex.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ex.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.runs/synth_1/ex.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1269.177 MHz, CPU Physical cores: 31, Host memory: 540770 MB
+#-----------------------------------------------------------
+source ex.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2860.285 ; gain = 10.926 ; free physical = 2495 ; free virtual = 445155
+Command: synth_design -top ex -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12269
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 1150 ; free virtual = 443962
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ex' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/ex.v:10]
+INFO: [Synth 8-6157] synthesizing module 'au' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:30]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:95]
+WARNING: [Synth 8-567] referenced signal 'arith_op' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-567] referenced signal 'a' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-567] referenced signal 'b' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-567] referenced signal 'a_inv' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-567] referenced signal 'a_chg' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-567] referenced signal 'rnd' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:94]
+WARNING: [Synth 8-3848] Net carry in module/entity au does not have driver. [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:43]
+WARNING: [Synth 8-3848] Net rnd in module/entity au does not have driver. [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'au' (1#1) [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:30]
+INFO: [Synth 8-6157] synthesizing module 'lu' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:15]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:28]
+WARNING: [Synth 8-567] referenced signal 'logic_op' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:27]
+WARNING: [Synth 8-567] referenced signal 'a' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:27]
+WARNING: [Synth 8-567] referenced signal 'b' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'lu' (2#1) [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:15]
+INFO: [Synth 8-6157] synthesizing module 'cmp' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:28]
+WARNING: [Synth 8-567] referenced signal 'a' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:49]
+WARNING: [Synth 8-567] referenced signal 'b' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:49]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:82]
+WARNING: [Synth 8-567] referenced signal 'cmp_op' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'eq' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'z' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'c' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'lts' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'lt' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'gts' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+WARNING: [Synth 8-567] referenced signal 'gt' should be on the sensitivity list [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'cmp' (3#1) [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:28]
+WARNING: [Synth 8-3848] Net rndau in module/entity ex does not have driver. [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/ex.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'ex' (4#1) [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/ex.v:10]
+WARNING: [Synth 8-7129] Port carry in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[31] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[30] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[29] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[28] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[27] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[26] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[25] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[24] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[23] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[22] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[21] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[20] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[19] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[18] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[17] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[16] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[15] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[14] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[13] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[12] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[11] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[10] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[9] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[8] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[7] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[6] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[5] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[4] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[3] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[2] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[1] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[0] in module au is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 1966 ; free virtual = 443920
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 1954 ; free virtual = 443910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 1947 ; free virtual = 443904
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'o_reg' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/au.v:97]
+WARNING: [Synth 8-327] inferring latch for variable 'o_reg' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/lu.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'true_reg' [/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.srcs/sources_1/imports/rtl/cmp.v:85]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1895 ; free virtual = 443841
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   4 Input    5 Bit       Adders := 4     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 80    
++---XORs : 
+	               32 Bit    Wide XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Multipliers : 
+	              32x32  Multipliers := 1     
+	              31x31  Multipliers := 1     
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 2     
+	  13 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 1     
+	  15 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP o0, operation Mode is: A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: C+A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: Generating DSP o0, operation Mode is: C+A*B.
+DSP Report: operator o0 is absorbed into DSP o0.
+DSP Report: operator o0 is absorbed into DSP o0.
+WARNING: [Synth 8-7129] Port carry in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[31] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[30] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[29] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[28] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[27] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[26] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[25] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[24] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[23] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[22] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[21] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[20] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[19] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[18] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[17] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[16] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[15] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[14] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[13] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[12] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[11] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[10] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[9] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[8] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[7] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[6] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[5] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[4] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[3] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[2] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[1] in module au is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rndin[0] in module au is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1556 ; free virtual = 443988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|au          | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au          | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au          | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au          | C+A*B          | 18     | 15     | 48     | -      | 48     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|au          | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au          | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au          | C+A*B          | 18     | 16     | 48     | -      | 48     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1549 ; free virtual = 443982
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1533 ; free virtual = 443982
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1276 ; free virtual = 443694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1275 ; free virtual = 443694
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1272 ; free virtual = 443690
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1272 ; free virtual = 443690
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1262 ; free virtual = 443681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1261 ; free virtual = 443680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     3|
+|2     |CARRY4  |    43|
+|3     |DSP48E1 |     5|
+|4     |LUT1    |     3|
+|5     |LUT2    |   163|
+|6     |LUT3    |   100|
+|7     |LUT4    |   130|
+|8     |LUT5    |   110|
+|9     |LUT6    |   319|
+|10    |MUXF7   |     2|
+|11    |FDRE    |    34|
+|12    |LD      |    65|
+|13    |IBUF    |    74|
+|14    |OBUF    |    33|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------------+-------+------+
+|      |Instance       |Module |Cells |
++------+---------------+-------+------+
+|1     |top            |       |  1084|
+|2     |  arith_unit   |au     |   701|
+|3     |  compare_unit |cmp    |   150|
+|4     |  logic_unit   |lu     |    84|
++------+---------------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1260 ; free virtual = 443679
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 92 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1261 ; free virtual = 443680
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 1258 ; free virtual = 443677
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 1281 ; free virtual = 443719
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 1352 ; free virtual = 443450
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 65 instances were transformed.
+  LD => LDCE: 65 instances
+
+Synth Design complete, checksum: bd0855b3
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:41 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 1555 ; free virtual = 443655
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/microriscii/project_1/project_1.runs/synth_1/ex.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ex_utilization_synth.rpt -pb ex_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 17 16:50:53 2022...

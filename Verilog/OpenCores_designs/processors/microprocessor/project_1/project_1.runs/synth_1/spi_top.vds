@@ -1,0 +1,216 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 17 16:44:17 2022
+# Process ID: 69502
+# Current directory: /home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.runs/synth_1
+# Command line: vivado -log spi_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_top.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.runs/synth_1/spi_top.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 2678.961 MHz, CPU Physical cores: 32, Host memory: 540770 MB
+#-----------------------------------------------------------
+source spi_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2860.281 ; gain = 10.926 ; free physical = 1201 ; free virtual = 442766
+Command: synth_design -top spi_top -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 71053
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.242 ; gain = 0.004 ; free physical = 1857 ; free virtual = 442435
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'spi_top' [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_top.v:45]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_top.v:120]
+INFO: [Synth 8-6157] synthesizing module 'spi_clgen' [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_clgen.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'spi_clgen' (1#1) [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_clgen.v:44]
+INFO: [Synth 8-6157] synthesizing module 'spi_shift' [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_shift.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'spi_shift' (2#1) [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_shift.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'spi_top' (3#1) [/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.srcs/sources_1/imports/rtl/spi_top.v:45]
+WARNING: [Synth 8-3917] design spi_top has port wb_err_o driven by constant 0
+WARNING: [Synth 8-7129] Port wb_adr_i[1] in module spi_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wb_adr_i[0] in module spi_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 1339 ; free virtual = 441739
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 1165 ; free virtual = 441283
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.012 ; free physical = 1172 ; free virtual = 441239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 1217 ; free virtual = 441074
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 2     
+	   3 Input    7 Bit       Adders := 2     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design spi_top has port wb_err_o driven by constant 0
+WARNING: [Synth 8-7129] Port wb_adr_i[1] in module spi_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wb_adr_i[0] in module spi_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 2624 ; free virtual = 442502
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 2571 ; free virtual = 442459
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 2580 ; free virtual = 442471
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3346 ; free virtual = 443296
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3346 ; free virtual = 443296
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3344 ; free virtual = 443294
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3342 ; free virtual = 443292
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3345 ; free virtual = 443295
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3344 ; free virtual = 443294
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT2   |    33|
+|4     |LUT3   |    25|
+|5     |LUT4   |    54|
+|6     |LUT5   |   128|
+|7     |LUT6   |   343|
+|8     |FDCE   |   213|
+|9     |FDPE   |    16|
+|10    |IBUF   |    45|
+|11    |OBUF   |    45|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          |   911|
+|2     |  clgen  |spi_clgen |    69|
+|3     |  shift  |spi_shift |   675|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3344 ; free virtual = 443294
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3346 ; free virtual = 443296
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2897.254 ; gain = 8.016 ; free physical = 3342 ; free virtual = 443292
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2897.258 ; gain = 0.000 ; free physical = 3391 ; free virtual = 443362
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.273 ; gain = 0.000 ; free physical = 2816 ; free virtual = 443268
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: f4cde416
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2953.273 ; gain = 92.992 ; free physical = 2995 ; free virtual = 443471
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/microprocessor/project_1/project_1.runs/synth_1/spi_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file spi_top_utilization_synth.rpt -pb spi_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 17 16:45:21 2022...

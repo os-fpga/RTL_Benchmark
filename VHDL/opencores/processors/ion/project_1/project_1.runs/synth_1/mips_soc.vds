@@ -1,0 +1,463 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Mar 16 11:58:55 2022
+# Process ID: 62681
+# Current directory: /home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.runs/synth_1
+# Command line: vivado -log mips_soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mips_soc.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.runs/synth_1/mips_soc.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 1233.544 MHz, CPU Physical cores: 31, Host memory: 540770 MB
+#-----------------------------------------------------------
+source mips_soc.tcl -notrace
+Command: synth_design -top mips_soc -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 63315
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.246 ; gain = 0.004 ; free physical = 74066 ; free virtual = 451756
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mips_soc' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_soc.vhdl:131]
+INFO: [Synth 8-638] synthesizing module 'mips_cpu' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cpu.vhdl:104]
+INFO: [Synth 8-638] synthesizing module 'mips_alu' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_alu.vhdl:53]
+INFO: [Synth 8-638] synthesizing module 'mips_shifter' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_shifter.vhdl:47]
+INFO: [Synth 8-256] done synthesizing module 'mips_shifter' (1#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_shifter.vhdl:47]
+INFO: [Synth 8-256] done synthesizing module 'mips_alu' (2#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_alu.vhdl:53]
+INFO: [Synth 8-638] synthesizing module 'mips_mult' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_mult.vhdl:63]
+INFO: [Synth 8-256] done synthesizing module 'mips_mult' (3#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_mult.vhdl:63]
+INFO: [Synth 8-638] synthesizing module 'mips_cop0' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cop0.vhdl:49]
+INFO: [Synth 8-256] done synthesizing module 'mips_cop0' (4#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cop0.vhdl:49]
+WARNING: [Synth 8-6014] Unused sequential element p2_do_store_reg was removed.  [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cpu.vhdl:870]
+INFO: [Synth 8-256] done synthesizing module 'mips_cpu' (5#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cpu.vhdl:104]
+INFO: [Synth 8-638] synthesizing module 'mips_cache' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cache.vhdl:240]
+	Parameter BRAM_ADDR_SIZE bound to: 10 - type: integer 
+	Parameter SRAM_ADDR_SIZE bound to: 17 - type: integer 
+WARNING: [Synth 8-3848] Net bram_wr_data in module/entity mips_cache does not have driver. [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cache.vhdl:224]
+WARNING: [Synth 8-3848] Net bram_wr_addr in module/entity mips_cache does not have driver. [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cache.vhdl:226]
+WARNING: [Synth 8-3848] Net bram_byte_we in module/entity mips_cache does not have driver. [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cache.vhdl:227]
+INFO: [Synth 8-256] done synthesizing module 'mips_cache' (6#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_cache.vhdl:240]
+INFO: [Synth 8-638] synthesizing module 'uart' [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/uart.vhdl:183]
+	Parameter BAUD_RATE bound to: 19200 - type: integer 
+	Parameter CLOCK_FREQ bound to: 50000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uart' (7#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/uart.vhdl:183]
+INFO: [Synth 8-256] done synthesizing module 'mips_soc' (8#1) [/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.srcs/sources_1/imports/rtl/mips_soc.vhdl:131]
+WARNING: [Synth 8-7129] Port bram_wr_data[31] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[30] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[29] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[28] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[27] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[26] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[25] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[24] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[23] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[22] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[21] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[20] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[19] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[18] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[17] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[16] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[15] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[14] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[13] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[12] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[11] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[10] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[9] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[8] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[7] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[6] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[5] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[4] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[3] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[2] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[1] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_data[0] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[11] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[10] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[9] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[8] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[7] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[6] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[5] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[4] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[3] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_wr_addr[2] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_byte_we[3] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_byte_we[2] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_byte_we[1] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bram_byte_we[0] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_addr[1] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_addr[0] in module mips_cache is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][31] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][30] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][29] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][28] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][27] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][26] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][25] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][24] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][23] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][22] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][21] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][20] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][19] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][18] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][15] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][14] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][13] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][12] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][11] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][10] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][9] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][8] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][7] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][6] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module mips_alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module mips_alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[7] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[6] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[5] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[4] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[3] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[2] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[1] in module mips_cpu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port interrupt[0] in module mips_cpu is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 73098 ; free virtual = 450787
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2889.250 ; gain = 0.008 ; free physical = 73065 ; free virtual = 450754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2897.250 ; gain = 8.008 ; free physical = 73255 ; free virtual = 450944
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 73892 ; free virtual = 451578
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 4     
+	   2 Input   30 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 13    
+	               30 Bit    Registers := 6     
+	               24 Bit    Registers := 1     
+	               15 Bit    Registers := 4     
+	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 33    
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 2     
+	               3K Bit	(256 X 15 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   33 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 34    
+	   4 Input   32 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 2     
+	   7 Input   32 Bit        Muxes := 3     
+	   2 Input   30 Bit        Muxes := 4     
+	   2 Input   24 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 4     
+	   7 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 7     
+	   3 Input    8 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 26    
+	   7 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 10    
+	   4 Input    5 Bit        Muxes := 2     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 10    
+	   8 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 2     
+	   6 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 3     
+	   8 Input    2 Bit        Muxes := 2     
+	   5 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 3     
+	  15 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 44    
+	   7 Input    1 Bit        Muxes := 11    
+	   8 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 2     
+	  17 Input    1 Bit        Muxes := 1     
+	  10 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port cpu_i[data][31] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][30] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][29] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][28] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][27] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][26] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][25] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][24] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][23] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][22] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][21] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][20] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][19] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][18] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][15] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][14] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][13] in module mips_cop0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cpu_i[data][12] in module mips_cop0 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74302 ; free virtual = 451501
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------------+---------------+----------------+
+|Module Name | RTL Object       | Depth x Width | Implemented As | 
++------------+------------------+---------------+----------------+
+|mips_soc    | bram_rd_data_reg | 1024x1        | Block RAM      | 
++------------+------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mips_soc    | cache/data_tag_table_reg  | 256 x 15(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
+|mips_soc    | cache/code_tag_table_reg  | 256 x 15(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
+|mips_soc    | cache/data_line_table_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|mips_soc    | cache/code_line_table_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+--------------+----------------+----------------------+--------------+
+|Module Name | RTL Object   | Inference      | Size (Depth x Width) | Primitives   | 
++------------+--------------+----------------+----------------------+--------------+
+|cpu         | p1_rbank_reg | User Attribute | 32 x 32              | RAM32M x 12  | 
++------------+--------------+----------------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74301 ; free virtual = 451501
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mips_soc    | cache/data_tag_table_reg  | 256 x 15(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
+|mips_soc    | cache/code_tag_table_reg  | 256 x 15(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
+|mips_soc    | cache/data_line_table_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|mips_soc    | cache/code_line_table_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+--------------+----------------+----------------------+--------------+
+|Module Name | RTL Object   | Inference      | Size (Depth x Width) | Primitives   | 
++------------+--------------+----------------+----------------------+--------------+
+|cpu         | p1_rbank_reg | User Attribute | 32 x 32              | RAM32M x 12  | 
++------------+--------------+----------------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance cache/data_tag_table_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance cache/code_tag_table_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance cache/data_line_table_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance cache/code_line_table_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance bram_rd_data_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74287 ; free virtual = 451488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74242 ; free virtual = 451439
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74240 ; free virtual = 451436
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74241 ; free virtual = 451437
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74241 ; free virtual = 451437
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74240 ; free virtual = 451436
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74242 ; free virtual = 451439
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    86|
+|3     |LUT1     |    39|
+|4     |LUT2     |   166|
+|5     |LUT3     |   340|
+|6     |LUT4     |   190|
+|7     |LUT5     |   404|
+|8     |LUT6     |   692|
+|9     |MUXF7    |     1|
+|10    |RAM32M   |    10|
+|11    |RAM32X1D |     4|
+|12    |RAMB18E1 |     3|
+|13    |RAMB36E1 |     2|
+|14    |FDRE     |   674|
+|15    |FDSE     |    53|
+|16    |IBUF     |    83|
+|17    |OBUF     |   152|
+|18    |OBUFT    |    16|
++------+---------+------+
+
+Report Instance Areas: 
++------+-------------+-----------+------+
+|      |Instance     |Module     |Cells |
++------+-------------+-----------+------+
+|1     |top          |           |  2916|
+|2     |  cache      |mips_cache |   629|
+|3     |  cpu        |mips_cpu   |  1807|
+|4     |    alu_inst |mips_alu   |   135|
+|5     |    cop0     |mips_cop0  |   160|
+|6     |    mult_div |mips_mult  |   979|
+|7     |  uart       |uart       |   161|
++------+-------------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74246 ; free virtual = 451443
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 121 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74242 ; free virtual = 451439
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2897.254 ; gain = 8.012 ; free physical = 74243 ; free virtual = 451439
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2897.262 ; gain = 0.000 ; free physical = 74295 ; free virtual = 451501
+INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2953.277 ; gain = 0.000 ; free physical = 74268 ; free virtual = 451472
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: caf4911f
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:50 . Memory (MB): peak = 2953.277 ; gain = 92.992 ; free physical = 74464 ; free virtual = 451669
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/ion/project_1/project_1.runs/synth_1/mips_soc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mips_soc_utilization_synth.rpt -pb mips_soc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 16 12:00:02 2022...

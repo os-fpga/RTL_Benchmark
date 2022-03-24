@@ -1,0 +1,27 @@
+Author: Dr Ian S Schofield
+License: GPL
+
+
+This project implements a minimal PDP8/L processor with 4K memory, a single (32K) DF32 disk and a serial interface. The project was created and tested using Altera's Quartus II development environment version 11.0. All of the project and intermediate files are included in this directory. The project is configured for the Altera 3c25F324C FPGA as included in the Altera NEEK devlopment kit. A serial terminal at 115200 baud is required and the .sof file can be directly programmed into the NEEK. The system will boot to a monitor '.'.
+
+The files are as follows:
+
+1. Top.VHD: An instantiation and connection list of the modules below.
+2. Cpu.VHD: The PDP8 processor logic.
+3. Uart.VHD: The serial interface logic.
+4. DF32.VHD: An Altera standard FPGA (megafunction) ram module of 32Kx12.
+5. Mem.VHD:  An Altera standard FPGA (megafunction) ram module of 4Kx12.
+6. Divider.VHD: A simple clock divider to generate the 16x and 8x clock for the serial interface.
+7. Cpu-Test.VHD: An instantiation of all of the modules containing a simulation section for use with Altera's Modelsim.
+8. ./Mif directory. Contains the initialisation data for the FPGA ram mdules:
+		Osboot.mif: The 4k Disk Monitor bootstrap.
+		DF32.mif: An image of a fully functional 4K DMS.
+
+Ref: 
+	1. The Small Computer Handbook 1970 (Digital Equipment Corp)
+	   http://www.textfiles.com/bitsavers/pdf/dec/pdp8/handbooks/SmallComputerHandbook_1970.pdf 
+	2. The 4K Disk Monitor System (DMS).
+	   http://pdp8.co.uk/library/bitsavers/pdf/dec/pdp8/software/DEC-D8-SDAB-D_diskMonPgmRef.pdf
+
+	It is highly recommended that the documents for 4K Fortran and FOCAL are viewed as these programming environments are included in the DF32 disk image.
+

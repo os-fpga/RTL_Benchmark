@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $M1_ROOT/run/sim/icarus
+ln -f -s ../../../tests/code.txt .
+./testbench 2>&1 | tee sim.log
+
+

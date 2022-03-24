@@ -1,0 +1,878 @@
+
+                    Synopsys Interface Shell (TM)
+              Version 2001.08 for linux -- Aug 22, 2001
+              Copyright (c) 1988-2001 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys, Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Initializing...
+# Synthesis script for dc_shell (Tcl mode)
+# Analyze
+set search_path [concat [list /home/fabrizio/m1_core/hdl/rtl/m1_cpu] $search_path]
+/home/fabrizio/m1_core/hdl/rtl/m1_cpu . /usr/synopsys/synthesis/libraries/syn /usr/synopsys/synthesis/dw/sim_ver /usr/synopsys/libraries/umc/
+analyze -format verilog ~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Running PRESTO HDLC
+Searching for /home/fabrizio/m1_core/hdl/rtl/m1_cpu/~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for ./~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for /usr/synopsys/synthesis/libraries/syn/~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for /usr/synopsys/synthesis/dw/sim_ver/~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for /usr/synopsys/libraries/umc//~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for ~/m1_core/hdl/rtl/m1_cpu/~/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Compiling source netlist file /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v
+Searching for /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_defs.h
+Opening include file /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_defs.h
+Presto compilation completed successfully.
+1
+analyze -format verilog ~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Running PRESTO HDLC
+Searching for /home/fabrizio/m1_core/hdl/rtl/m1_cpu/~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for ./~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for /usr/synopsys/synthesis/libraries/syn/~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for /usr/synopsys/synthesis/dw/sim_ver/~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for /usr/synopsys/libraries/umc//~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for ~/m1_core/hdl/rtl/m1_cpu/~/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Compiling source netlist file /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v
+Searching for /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_defs.h
+Opening include file /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_defs.h
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:270: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:359: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:377: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:382: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:382: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:382: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:382: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:388: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:388: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:388: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:394: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:394: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:394: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:400: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:400: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:422: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:450: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:450: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:450: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:454: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:454: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:454: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:476: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:476: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:476: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:498: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:498: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:498: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:520: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:520: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:520: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:542: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:542: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:542: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:564: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:564: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:564: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:586: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:586: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:586: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:608: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:608: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:608: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:630: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:630: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:630: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:652: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:652: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:652: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:674: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:674: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:674: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:696: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:696: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:696: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:718: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:718: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:718: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:740: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:740: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:740: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:762: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:762: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:762: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:766: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:766: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:766: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:770: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:770: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:770: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:774: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:774: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:774: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:778: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:778: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:778: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:800: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:800: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:800: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:822: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:822: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:822: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:844: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:844: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:844: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:866: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:866: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:866: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:888: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:888: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:888: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:910: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:910: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:910: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:932: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:932: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:932: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:954: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:954: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:954: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:976: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:976: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:976: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:998: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:998: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:998: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1020: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1020: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1020: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1042: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1042: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1042: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1046: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1046: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1046: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1050: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1050: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1050: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1054: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1054: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1054: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1058: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1058: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1058: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1062: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1062: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1062: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1068: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1068: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1068: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1069: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1069: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1069: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1091: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1091: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1091: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1113: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1113: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1113: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1135: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1135: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1135: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1157: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1157: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1157: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1179: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1179: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1179: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1201: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1201: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1201: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1223: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1223: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1223: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1245: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1245: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1245: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1267: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1267: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1267: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1289: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1289: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1289: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1311: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1311: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1311: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1333: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1333: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1333: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1355: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1355: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1355: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1376: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1376: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1376: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1399: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1399: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1399: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1422: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1422: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1422: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1445: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1445: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1445: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1468: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1468: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1468: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1490: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1490: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1490: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1512: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1512: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1512: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1534: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1534: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1534: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1556: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1556: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1556: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1578: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1578: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1578: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1600: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1600: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1600: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1622: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1622: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1622: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1644: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1644: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1644: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1666: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1666: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1666: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1691: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1691: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1691: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1713: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1713: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1713: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1735: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1735: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1735: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1757: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1757: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1757: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1797: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1827: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1827: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1827: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1827: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1867: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1867: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1867: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1867: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1890: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1904: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1904: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1910: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1910: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1930: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1936: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1936: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1942: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1942: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1948: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1948: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1954: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1954: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1960: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1966: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1968: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1970: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1972: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: In the call to '$display', the '%m' format specifier is not supported. (ELAB-902)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:1974: Invalid escape sequence '\X' in call to '$display'. (VER-941)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:267: Register 'mul_req_i' is the target of both blocking and non-blocking assignments in the same process. (VER-208)
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v:267: Register 'div_req_i' is the target of both blocking and non-blocking assignments in the same process. (VER-208)
+Presto compilation completed successfully.
+1
+# Elaborate
+elaborate m1_cpu
+Running PRESTO HDLC
+Loading db file '/usr/synopsys/synthesis/libraries/syn/gtech.db'
+Loading db file '/usr/synopsys/synthesis/libraries/syn/standard.sldb'
+Loading db file '/usr/synopsys/libraries/umc/umce13h210t3_tc_120V_25C.db'
+$display output: ================> Time  <================0
+$display output: ================> Time  <================0
+$display output: INFO: CPU()-IF: Fetching stalled
+$display output: INFO: CPU()-IF: Bubble inserted due branch taken in EX/MEM instruction @ADDR= w/OPCODE= having ALUout=????
+$display output: INFO: CPU()-IF: Bubble inserted due to jump in ID/EX instruction @ADDR= w/OPCODE=??
+$display output: INFO: CPU()-IF: Bubble inserted due to jump register in ID/EX instruction @ADDR= w/OPCODE=??
+$display output: INFO: CPU()-IF: Fetched from Program Counter @ADDR=???????? getting OPCODE=?
+$display output: INFO: CPU()-ID: Decoding stalled
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BUBBLE??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as J ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as JAL ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BEQ r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BNE r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BLEZ r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BGTZ r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ADDI r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ADDIU r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLTI r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLTIU r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ANDI r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ORI r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as XORI r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LUI r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as COP0??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as COP1??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as COP2??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as COP3??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LB r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LH r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LWL r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LW r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LBU r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LHU r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LWR r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SB r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SH r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SWL r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SW r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SWR r?, ?(r?)??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LWC1??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LWC2??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as LWC3??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SWC1??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SWC2??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SWC3??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as NOP??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLL r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SRL r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SRA r?, r?, ????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLLV r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SRLV r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SRAV r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as JR r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as JALR [r?,] r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SYSCALL??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BREAK??
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MFHI r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MTHI r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MFLO r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MTLO r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MULT r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as MULTU r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as DIV r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as DIVU r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ADD r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as ADDU r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SUB r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SUBU r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as AND r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as OR r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as XOR r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as NOR r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLT r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as SLTU r?, r?, r???
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BLTZ r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BGEZ r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BLTZAL r?, ??????????
+$display output: INFO: CPU()-ID: Decoded instruction @ADDR= w/OPCODE= as BGEZAL r?, ??????????
+$display output: INFO: CPU()-EX: Execution stalled
+$display output: INFO: CPU()-EX: Execution of Store instruction @ADDR= w/OPCODE= started to STORE_ADDR=???
+$display output: INFO: CPU()-EX: Execution of instruction @ADDR= w/OPCODE= gave ALU result ???
+$display output: INFO: CPU()-MEM: Memory stalled
+$display output: INFO: CPU()-MEM: LOADing value ?
+$display output: INFO: CPU()-MEM: Propagating value ??
+$display output: INFO: CPU()-WB: Write-Back stalled
+$display output: INFO: CPU()-WB: Writing Back GPR[?]=?
+$display output: INFO: CPU()-WB: Writing Back HI=?
+$display output: INFO: CPU()-WB: Writing Back LO=?
+$display output: INFO: CPU()-WB: Writing Back SysCon[?]=?
+$display output: INFO: CPU()-WB: Write-Back has nothing to do
+$display output: INFO: CPU()-Regs: R00= R01= R02= R03= R04= R05= R06= R07=????????
+$display output: INFO: CPU()-Regs: R08= R09= R10= R11= R12= R13= R14= R15=????????
+$display output: INFO: CPU()-Regs: R16= R17= R18= R19= R20= R21= R22= R23=????????
+$display output: INFO: CPU()-Regs: R24= R25= R26= R27= R28= R29= R30= R31=????????
+$display output: INFO: CPU()-Regs: PC= HI= LO= Status= Cause= EPC=??????
+
+Statistics for case statements in always block at line 267 in file
+	'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           451            |     no/auto      |
+|           1065           |     no/auto      |
+|           1688           |     no/auto      |
+|           1828           |     no/auto      |
+|           1843           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine m1_cpu line 267 in file
+		'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_cpu.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|    id_ex_addrjr_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     div_req_i_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  id_ex_alu_signed_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    ex_mem_store_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   id_ex_addrjump_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| ex_mem_store_value_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   mem_wb_desthi_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| mem_wb_destsyscon_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    id_ex_destlo_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  id_ex_addrbranch_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    mem_wb_value_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   ex_mem_destlo_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   if_id_addrnext_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   ex_mem_branch_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   mem_wb_destlo_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     id_ex_size_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|         HI_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     id_ex_load_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   mem_wb_destreg_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|  id_ex_destsyscon_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     id_ex_div_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     if_id_addr_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   ex_mem_desthi_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    id_ex_branch_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     id_ex_mult_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     mul_req_i_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    id_ex_alu_b_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   ex_mem_destreg_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|         PC_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| ex_mem_destsyscon_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   ex_mem_aluout_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   id_ex_destreg_reg    | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    id_ex_desthi_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    id_ex_alu_a_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| id_ex_store_value_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     id_ex_jump_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    if_id_opcode_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      id_ex_jr_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|         LO_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   id_ex_alu_func_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+| ex_mem_addrbranch_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  ex_mem_store_sel_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    id_ex_store_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    ex_mem_load_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        GPR_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+Running PRESTO HDLC
+Warning:  /home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v:37: 'signed_i' is read but does not appear in the sensitivity list of this 'always' block. (ELAB-292)
+
+Statistics for case statements in always block at line 24 in file
+	'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            25            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine alu line 24 in file
+		'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    result_o_reg     | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'multiplier'. (HDL-193)
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine multiplier line 73 in file
+		'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    abp_ack_o_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   product_tmp_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    product_o_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| negative_output_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    a_latched_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|    abp_last_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    b_latched_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'divider'. (HDL-193)
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine divider line 143 in file
+		'/home/fabrizio/m1_core/hdl/rtl/m1_cpu/m1_alu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   quotient_o_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    b_latched_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| negative_output_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  quotient_tmp_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    abp_last_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    abp_ack_o_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    a_latched_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   remainder_o_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now 'm1_cpu'
+1
+link
+Linking design:
+  m1_cpu
+Using the following designs and libraries:
+  m1_cpu, alu, multiplier, divider, umce13h210t3_tc_120V_25C (library)
+1
+uniquify
+1
+check_design
+Warning: In design 'm1_cpu', port 'sys_irq_i[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', port 'sys_irq_i[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'm1_cpu', net 'alu_carry_o' driven by pin 'alu_0/carry_o' has no loads. (LINT-2)
+Warning: In design 'm1_cpu', net 'div_signed_i' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'alu', port 'carry_o' is not connected to any nets. (LINT-28)
+1
+# Constraints
+create_clock -name "sys_clock_i" -period 2.0 -waveform {0 1.0} [get_ports "sys_clock_i"]
+1
+set_dont_touch_network [get_clocks "sys_clock_i"]
+1
+set_input_delay 1.25 -max -rise -clock "sys_clock_i" [get_ports "sys_reset_i"]
+1
+set_input_delay 1.25 -max -fall -clock "sys_clock_i" [get_ports "sys_reset_i"]
+1
+set_output_delay 1.25 -clock sys_clock_i -max -rise [all_outputs]
+1
+set_output_delay 1.25 -clock sys_clock_i -max -fall [all_outputs]
+1
+set_wire_load_mode "enclosed" 
+1
+# Compile
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Library                                         |  Available  |
+============================================================================
+| DesignWare-Basic                                           |      *      |
+| DesignWare-Foundation                                      |             |
+============================================================================
+
+
+  Loading target library 'umce13h210t3_tc_120V_25C'
+  Loading design 'm1_cpu'
+
+
+Information: Changed wire load model for 'divider' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'multiplier' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'alu' from '(none)' to 'zero_load'. (OPT-170)
+Warning: Design 'm1_cpu' contains 4 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+  Beginning Resource Allocation  (constraint driven)
+  -----------------------------
+  Structuring 'divider'
+  Mapping 'divider'
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_146' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_144' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_142' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_140' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_138' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_136' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_134' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_132' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_130' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_128' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_126' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_124' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_122' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_120' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_118' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_116' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_114' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_112' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_110' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_108' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_106' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_104' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_102' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_100' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_98' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_96' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_94' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_92' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_90' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_88' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_86' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_84' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_82' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_80' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_78' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_76' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_74' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_72' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_70' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_68' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_66' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_64' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_62' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_60' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_58' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_56' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_54' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_52' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_50' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_48' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_46' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_44' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_42' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_40' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_38' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_36' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_34' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_32' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_30' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_28' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_26' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_24' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_22' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_20' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_18' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_16' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_14' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_12' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_10' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_8' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_6' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_4' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32_2' from '(none)' to 'suggested_10K'. (OPT-170)
+Information: Changed wire load model for 'm1_cpu_MUX_OP_32_5_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Structuring 'multiplier'
+  Mapping 'multiplier'
+  Structuring 'alu'
+  Mapping 'alu'
+  Structuring 'm1_cpu'
+  Mapping 'm1_cpu'
+  Allocating blocks in 'm1_cpu'
+Reading in the Synopsys synthetic primitives.
+  Allocating blocks in 'DW01_add_32'
+  Building model 'DW01_add_32' (rpl)
+Information: Changed wire load model for 'DW01_add_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'alu_0'
+  Allocating blocks in 'DW01_sub_32'
+  Building model 'DW01_sub_32' (rpl)
+Information: Changed wire load model for 'DW01_sub_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'mul_0'
+  Allocating blocks in 'DW01_ADD_AB'
+  Building model 'DW01_ADD_AB'
+Information: Changed wire load model for 'DW01_ADD_AB' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'DW01_ADD_AB' from 'zero_load' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_ADD_AB1'
+  Building model 'DW01_ADD_AB1'
+Information: Changed wire load model for 'DW01_ADD_AB1' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'DW01_ADD_AB1' from 'zero_load' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_cmp2_6'
+  Building model 'DW01_cmp2_6' (rpl)
+Information: Changed wire load model for 'DW01_cmp2_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_inc_32'
+  Building model 'DW01_inc_32' (rpl)
+Information: Changed wire load model for 'DW01_inc_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_dec_6'
+  Building model 'DW01_dec_6' (rpl)
+Information: Changed wire load model for 'DW01_dec_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_add_64'
+  Building model 'DW01_add_64' (rpl)
+Information: Changed wire load model for 'DW01_add_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_inc_64'
+  Building model 'DW01_inc_64' (rpl)
+Information: Changed wire load model for 'DW01_inc_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'div_0'
+  Allocating blocks in 'DW01_sub_64'
+  Building model 'DW01_sub_64' (rpl)
+Information: Changed wire load model for 'DW01_sub_64' from '(none)' to 'suggested_10K'. (OPT-170)
+Warning: Design 'm1_cpu' contains 13 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+  Allocating blocks in 'div_0'
+  Allocating blocks in 'DW01_incdec_6'
+  Building model 'DW01_incdec_6' (rpl)
+Information: Changed wire load model for 'DW01_incdec_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_addsub_64'
+  Building model 'DW01_addsub_64' (rpl)
+Information: Changed wire load model for 'DW01_addsub_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_incdec_32'
+  Building model 'DW01_incdec_32' (rpl)
+Information: Changed wire load model for 'DW01_incdec_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_cmp6_6'
+  Building model 'DW01_cmp6_6' (rpl)
+Information: Changed wire load model for 'DW01_cmp6_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_GP_DEC'
+  Building model 'DW01_GP_DEC'
+Information: Changed wire load model for 'DW01_GP_DEC' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'DW01_GP_DEC' from 'zero_load' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_CL_DEC'
+  Building model 'DW01_CL_DEC'
+Information: Changed wire load model for 'DW01_CL_DEC' from '(none)' to 'zero_load'. (OPT-170)
+Information: Changed wire load model for 'DW01_CL_DEC' from 'zero_load' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_inc_32'
+  Building model 'DW01_inc_32' (cla)
+Information: Changed wire load model for 'DW01_inc_32' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_sub_64'
+  Building model 'DW01_sub_64' (cla)
+Information: Changed wire load model for 'DW01_sub_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_dec_6'
+  Building model 'DW01_dec_6' (cla)
+Information: Changed wire load model for 'DW01_dec_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'mul_0'
+  Allocating blocks in 'DW01_sub_6'
+  Building model 'DW01_sub_6' (cla)
+Information: Changed wire load model for 'DW01_sub_6' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_add_64'
+  Building model 'DW01_add_64' (cla)
+Information: Changed wire load model for 'DW01_add_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'DW01_inc_64'
+  Building model 'DW01_inc_64' (cla)
+Information: Changed wire load model for 'DW01_inc_64' from '(none)' to 'suggested_10K'. (OPT-170)
+  Allocating blocks in 'alu_0'
+  Allocating blocks in 'm1_cpu'
+  Allocating blocks in 'DW01_add_32'
+  Building model 'DW01_add_32' (cla)
+Information: Changed wire load model for 'DW01_add_32' from '(none)' to 'suggested_10K'. (OPT-170)
+Warning: Design 'm1_cpu' contains 13 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Design 'm1_cpu' contains 14 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Structuring 'divider'
+  Mapping 'divider'
+  Structuring 'multiplier'
+  Mapping 'multiplier'
+  Structuring 'alu'
+  Mapping 'alu'
+
+
+Fatal: Internal system error, cannot recover.
+You can use SOLV-IT! Fatal Hunt to search for articles that may
+be related to this error.
+If you wish to use SOLV-IT, please complete the following steps:
+    1. Copy and paste everything between the dotted lines
+       into the body of an email message.
+    2. Replace <your synopsys registered email address> with the
+       email address you use to access the SolvNET system.
+    3. Please email the message to solvit@synopsys.com.
+---------------------cut below this line-----------------
+start:
+email: <your synopsys registered email address>
+getfatal:
+
+Release = '2001.08'  Architecture = 'linux'  Program = 'dc_shell'
+
+'157020216 157020433 -7136 157134368 157134600 157134849 157141334 157143525 157151486 157151931 156943841 156944043 154789868 151978446 151982171 151982899 151997244 151999214 152000506 152000984 148931890 148931359 148942090 148942385 144113656 144115019 144158539 144115340 144181534 144180868 138712934 138713864 138733053 135672509 135674983 135675109 135675141 135863026 156761771 157186325 157398122 157399922 157400506 156742228 156754503 156761771 157186325 157398122 157399922 157400506 157194304 156764238 156763703 134549145 134558355 134558029 134557880 134538310'
+
+end:
+---------------------cut above this line-----------------

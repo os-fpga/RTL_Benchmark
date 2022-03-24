@@ -1,0 +1,924 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 17 11:32:37 2022
+# Process ID: 28669
+# Current directory: /home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.runs/synth_1
+# Command line: vivado -log M32632.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source M32632.tcl
+# Log file: /home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.runs/synth_1/M32632.vds
+# Journal file: /home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: khyber, OS: Linux, CPU Frequency: 2599.877 MHz, CPU Physical cores: 30, Host memory: 540770 MB
+#-----------------------------------------------------------
+source M32632.tcl -notrace
+Command: synth_design -top M32632 -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 29644
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2889.242 ; gain = 0.004 ; free physical = 2554 ; free virtual = 441505
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'M32632' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/M32632.v:47]
+INFO: [Synth 8-6157] synthesizing module 'DCACHE' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DCACHE.v:44]
+INFO: [Synth 8-6157] synthesizing module 'NEU_VALID' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:96]
+INFO: [Synth 8-6155] done synthesizing module 'NEU_VALID' (1#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:96]
+INFO: [Synth 8-6157] synthesizing module 'WRPORT' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'WRPORT' (2#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:56]
+INFO: [Synth 8-6157] synthesizing module 'DCACHE_SM' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:521]
+INFO: [Synth 8-6155] done synthesizing module 'DCACHE_SM' (3#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:521]
+INFO: [Synth 8-6157] synthesizing module 'CA_MATCH' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:385]
+INFO: [Synth 8-6155] done synthesizing module 'CA_MATCH' (4#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:385]
+INFO: [Synth 8-6157] synthesizing module 'DCA_CONTROL' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:224]
+INFO: [Synth 8-6155] done synthesizing module 'DCA_CONTROL' (5#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:224]
+INFO: [Synth 8-6157] synthesizing module 'MMU_MATCH' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:298]
+INFO: [Synth 8-6155] done synthesizing module 'MMU_MATCH' (6#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:298]
+INFO: [Synth 8-6157] synthesizing module 'MMU_UP' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:173]
+INFO: [Synth 8-6155] done synthesizing module 'MMU_UP' (7#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:173]
+INFO: [Synth 8-6157] synthesizing module 'RD_ALIGNER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ALIGNER.v:176]
+INFO: [Synth 8-6155] done synthesizing module 'RD_ALIGNER' (8#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ALIGNER.v:176]
+INFO: [Synth 8-6157] synthesizing module 'WR_ALIGNER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ALIGNER.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'WR_ALIGNER' (9#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ALIGNER.v:47]
+INFO: [Synth 8-6157] synthesizing module 'DEBUG_AE' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'DEBUG_AE' (10#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:126]
+INFO: [Synth 8-6157] synthesizing module 'FILTCMP' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:480]
+INFO: [Synth 8-6155] done synthesizing module 'FILTCMP' (11#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/CACHE_LOGIK.v:480]
+INFO: [Synth 8-6155] done synthesizing module 'DCACHE' (12#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DCACHE.v:44]
+INFO: [Synth 8-6157] synthesizing module 'DATENPFAD' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DATENPFAD.v:46]
+INFO: [Synth 8-6157] synthesizing module 'REGISTER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:271]
+INFO: [Synth 8-6155] done synthesizing module 'REGISTER' (13#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:271]
+INFO: [Synth 8-6157] synthesizing module 'MULFILTER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'MULFILTER' (14#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:117]
+INFO: [Synth 8-6157] synthesizing module 'BITMASK' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'BITMASK' (15#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:52]
+INFO: [Synth 8-6157] synthesizing module 'I_PFAD' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:337]
+INFO: [Synth 8-6157] synthesizing module 'SCHALE' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:295]
+INFO: [Synth 8-6155] done synthesizing module 'SCHALE' (16#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:295]
+INFO: [Synth 8-6157] synthesizing module 'SHIFTER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:144]
+INFO: [Synth 8-6155] done synthesizing module 'SHIFTER' (17#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:144]
+INFO: [Synth 8-6157] synthesizing module 'FFS_LOGIK' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:219]
+INFO: [Synth 8-6155] done synthesizing module 'FFS_LOGIK' (18#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:219]
+INFO: [Synth 8-6155] done synthesizing module 'I_PFAD' (19#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/I_PFAD.v:337]
+INFO: [Synth 8-6157] synthesizing module 'ADDR_UNIT' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ADDR_UNIT.v:43]
+INFO: [Synth 8-6155] done synthesizing module 'ADDR_UNIT' (20#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ADDR_UNIT.v:43]
+INFO: [Synth 8-6157] synthesizing module 'CONFIG_REGS' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'CONFIG_REGS' (21#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:50]
+INFO: [Synth 8-6157] synthesizing module 'DP_FPU' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:1344]
+INFO: [Synth 8-6157] synthesizing module 'DP_LOGIK' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'DFPU_ADDSUB' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:209]
+INFO: [Synth 8-6155] done synthesizing module 'DFPU_ADDSUB' (22#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:209]
+INFO: [Synth 8-6157] synthesizing module 'DFPU_MUL' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:585]
+INFO: [Synth 8-6155] done synthesizing module 'DFPU_MUL' (23#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:585]
+INFO: [Synth 8-6157] synthesizing module 'DFPU_DIV' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:707]
+INFO: [Synth 8-6157] synthesizing module 'DIVI_PREP' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:642]
+INFO: [Synth 8-6157] synthesizing module 'SCANDIG' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:626]
+INFO: [Synth 8-6155] done synthesizing module 'SCANDIG' (24#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:626]
+INFO: [Synth 8-6155] done synthesizing module 'DIVI_PREP' (25#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:642]
+INFO: [Synth 8-6155] done synthesizing module 'DFPU_DIV' (26#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:707]
+INFO: [Synth 8-6157] synthesizing module 'DFPU_MISC' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:474]
+INFO: [Synth 8-6155] done synthesizing module 'DFPU_MISC' (27#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:474]
+INFO: [Synth 8-6157] synthesizing module 'DFPU_BCD' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:143]
+INFO: [Synth 8-6157] synthesizing module 'BCDADDER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'BCDADDER' (28#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'DFPU_BCD' (29#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'DP_LOGIK' (30#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'PREPDATA' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'PREPDATA' (31#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'DP_FPU' (32#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DP_FPU.v:1344]
+INFO: [Synth 8-6157] synthesizing module 'SP_FPU' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:386]
+INFO: [Synth 8-6157] synthesizing module 'SFPU_ADDSUB' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:66]
+INFO: [Synth 8-6157] synthesizing module 'ADDSUB' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'ADDSUB' (33#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'SFPU_ADDSUB' (34#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:66]
+INFO: [Synth 8-6157] synthesizing module 'SFPU_MUL' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:350]
+INFO: [Synth 8-6155] done synthesizing module 'SFPU_MUL' (35#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:350]
+INFO: [Synth 8-6155] done synthesizing module 'SP_FPU' (36#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/SP_FPU.v:386]
+INFO: [Synth 8-6157] synthesizing module 'FP_STAT_REG' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'FP_STAT_REG' (37#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/REGISTERS.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'DATENPFAD' (38#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DATENPFAD.v:46]
+INFO: [Synth 8-6157] synthesizing module 'ICACHE' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE.v:45]
+INFO: [Synth 8-6157] synthesizing module 'DMUX' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:253]
+INFO: [Synth 8-6155] done synthesizing module 'DMUX' (39#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:253]
+INFO: [Synth 8-6157] synthesizing module 'ICACHE_SM' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:275]
+INFO: [Synth 8-6155] done synthesizing module 'ICACHE_SM' (40#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:275]
+INFO: [Synth 8-6157] synthesizing module 'KOLDETECT' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'KOLDETECT' (41#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE_SM.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'ICACHE' (42#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/ICACHE.v:45]
+INFO: [Synth 8-6157] synthesizing module 'STEUERUNG' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUERUNG.v:40]
+INFO: [Synth 8-6157] synthesizing module 'DECODER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DECODER.v:42]
+INFO: [Synth 8-6157] synthesizing module 'REG_LIST' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:263]
+INFO: [Synth 8-6155] done synthesizing module 'REG_LIST' (43#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:263]
+INFO: [Synth 8-6157] synthesizing module 'GRUPPE_2' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:425]
+INFO: [Synth 8-6155] done synthesizing module 'GRUPPE_2' (44#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:425]
+INFO: [Synth 8-6155] done synthesizing module 'DECODER' (45#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/DECODER.v:42]
+INFO: [Synth 8-6157] synthesizing module 'ILL_UNDEF' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:303]
+INFO: [Synth 8-6155] done synthesizing module 'ILL_UNDEF' (46#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:303]
+INFO: [Synth 8-6157] synthesizing module 'OPDEC_REG' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:50]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:134]
+INFO: [Synth 8-6155] done synthesizing module 'OPDEC_REG' (47#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:50]
+INFO: [Synth 8-6157] synthesizing module 'PROG_COUNTER' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:186]
+INFO: [Synth 8-6155] done synthesizing module 'PROG_COUNTER' (48#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUER_MISC.v:186]
+INFO: [Synth 8-6155] done synthesizing module 'STEUERUNG' (49#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/STEUERUNG.v:40]
+INFO: [Synth 8-6157] synthesizing module 'IO_SWITCH' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/TOP_MISC.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'IO_SWITCH' (50#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/TOP_MISC.v:47]
+INFO: [Synth 8-6157] synthesizing module 'MAKE_STAT' [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/TOP_MISC.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'MAKE_STAT' (51#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/TOP_MISC.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'M32632' (52#1) [/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.srcs/sources_1/imports/rtl/M32632.v:47]
+WARNING: [Synth 8-7129] Port ACCA[2] in module GRUPPE_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACCA[0] in module GRUPPE_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[55] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[54] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[53] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[52] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[51] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[50] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[49] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[48] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[47] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[46] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[45] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[44] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[43] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[42] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[41] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[40] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[39] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[38] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[37] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[36] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[35] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[34] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[33] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OPREG[32] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[7] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[6] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[5] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[4] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[3] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[2] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CFG[1] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PSR[3] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PSR[1] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port STRING[4] in module DECODER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port VADR_R[19] in module MMU_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port VADR_R[18] in module MMU_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port VADR_R[17] in module MMU_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port VADR_R[16] in module MMU_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port USER in module ICACHE_SM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[11] in module CA_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[10] in module CA_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[9] in module CA_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[8] in module CA_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[7] in module CA_MATCH is either unconnected or has no load
+WARNING: [Synth 8-7129] Port FSR[6] in module SP_FPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port FSR[4] in module SP_FPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRCFLAGS[5] in module DFPU_MISC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRCFLAGS[4] in module DFPU_MISC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[31] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[19] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[18] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[17] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[16] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[15] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[14] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[13] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[12] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[11] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[10] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[9] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[8] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[7] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[6] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[5] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[4] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[3] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[2] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[1] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC1[0] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[31] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[19] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[18] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[17] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[16] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[15] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[14] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[13] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[12] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[11] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[10] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[9] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[8] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[7] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[6] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[5] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[4] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[3] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[2] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[1] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SRC2[0] in module DFPU_MUL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port FSR[6] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port FSR[4] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[23] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[22] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[21] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[20] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[19] in module DP_LOGIK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COP_OP[16] in module DP_LOGIK is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 2376 ; free virtual = 441419
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2889.246 ; gain = 0.008 ; free physical = 2312 ; free virtual = 441383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2897.246 ; gain = 8.008 ; free physical = 2303 ; free virtual = 441376
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:22 . Memory (MB): peak = 2897.250 ; gain = 8.012 ; free physical = 2251 ; free virtual = 440858
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   68 Bit       Adders := 1     
+	   2 Input   65 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 1     
+	   3 Input   57 Bit       Adders := 3     
+	   2 Input   56 Bit       Adders := 1     
+	   3 Input   36 Bit       Adders := 3     
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   33 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 4     
+	   2 Input   32 Bit       Adders := 10    
+	   3 Input   24 Bit       Adders := 1     
+	   3 Input   21 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 2     
+	   3 Input   13 Bit       Adders := 3     
+	   2 Input   13 Bit       Adders := 4     
+	   3 Input   12 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 2     
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 3     
+	   3 Input   10 Bit       Adders := 1     
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 2     
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   3 Input    7 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 5     
+	   2 Input    4 Bit       Adders := 7     
+	   3 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
+	   3 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 6     
+	   3 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 6     
+	   2 Input      5 Bit         XORs := 1     
+	   2 Input      2 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 20    
++---Registers : 
+	              128 Bit    Registers := 2     
+	               70 Bit    Registers := 4     
+	               64 Bit    Registers := 2     
+	               57 Bit    Registers := 2     
+	               56 Bit    Registers := 3     
+	               48 Bit    Registers := 1     
+	               37 Bit    Registers := 2     
+	               36 Bit    Registers := 4     
+	               34 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 37    
+	               30 Bit    Registers := 1     
+	               29 Bit    Registers := 2     
+	               25 Bit    Registers := 1     
+	               24 Bit    Registers := 7     
+	               21 Bit    Registers := 2     
+	               20 Bit    Registers := 1     
+	               17 Bit    Registers := 8     
+	               16 Bit    Registers := 3     
+	               13 Bit    Registers := 3     
+	               12 Bit    Registers := 5     
+	               11 Bit    Registers := 6     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 51    
+	                6 Bit    Registers := 7     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 16    
+	                2 Bit    Registers := 29    
+	                1 Bit    Registers := 205   
++---Multipliers : 
+	              53x53  Multipliers := 1     
++---RAMs : 
+	              32K Bit	(256 X 128 bit)          RAMs := 2     
+	               9K Bit	(256 X 36 bit)          RAMs := 2     
+	               4K Bit	(256 X 17 bit)          RAMs := 6     
+	               2K Bit	(256 X 8 bit)          RAMs := 32    
+	             1024 Bit	(64 X 16 bit)          RAMs := 2     
+	              768 Bit	(32 X 24 bit)          RAMs := 3     
+	              512 Bit	(64 X 8 bit)          RAMs := 4     
+	              512 Bit	(16 X 32 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 1     
+	   2 Input   70 Bit        Muxes := 6     
+	   4 Input   70 Bit        Muxes := 2     
+	   2 Input   68 Bit        Muxes := 1     
+	   2 Input   67 Bit        Muxes := 60    
+	  10 Input   67 Bit        Muxes := 1     
+	   7 Input   67 Bit        Muxes := 1     
+	  19 Input   67 Bit        Muxes := 5     
+	   3 Input   67 Bit        Muxes := 2     
+	 149 Input   67 Bit        Muxes := 1     
+	   2 Input   66 Bit        Muxes := 1     
+	   2 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 3     
+	   6 Input   64 Bit        Muxes := 1     
+	   4 Input   63 Bit        Muxes := 1     
+	   2 Input   63 Bit        Muxes := 4     
+	   4 Input   57 Bit        Muxes := 2     
+	   2 Input   57 Bit        Muxes := 3     
+	   2 Input   56 Bit        Muxes := 12    
+	   8 Input   56 Bit        Muxes := 2     
+	  11 Input   56 Bit        Muxes := 2     
+	   2 Input   55 Bit        Muxes := 1     
+	   2 Input   53 Bit        Muxes := 3     
+	  16 Input   53 Bit        Muxes := 1     
+	   2 Input   48 Bit        Muxes := 4     
+	  47 Input   48 Bit        Muxes := 1     
+	  18 Input   48 Bit        Muxes := 1     
+	   2 Input   37 Bit        Muxes := 5     
+	   2 Input   36 Bit        Muxes := 6     
+	  11 Input   36 Bit        Muxes := 1     
+	   2 Input   34 Bit        Muxes := 6     
+	  11 Input   34 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 9     
+	   4 Input   33 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 12    
+	   2 Input   32 Bit        Muxes := 81    
+	   6 Input   32 Bit        Muxes := 1     
+	   9 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 2     
+	  10 Input   32 Bit        Muxes := 2     
+	   7 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 3     
+	   2 Input   31 Bit        Muxes := 2     
+	   2 Input   29 Bit        Muxes := 2     
+	   2 Input   28 Bit        Muxes := 1     
+	   2 Input   25 Bit        Muxes := 4     
+	   2 Input   24 Bit        Muxes := 10    
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   20 Bit        Muxes := 4     
+	   2 Input   19 Bit        Muxes := 3     
+	   2 Input   17 Bit        Muxes := 1     
+	   7 Input   17 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 33    
+	   4 Input   16 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 6     
+	   5 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 3     
+	   2 Input   11 Bit        Muxes := 9     
+	  19 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 8     
+	   2 Input    9 Bit        Muxes := 2     
+	   4 Input    9 Bit        Muxes := 2     
+	   7 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 48    
+	   3 Input    8 Bit        Muxes := 2     
+	   5 Input    8 Bit        Muxes := 2     
+	  14 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 11    
+	   7 Input    8 Bit        Muxes := 1     
+	   6 Input    8 Bit        Muxes := 1     
+	   8 Input    7 Bit        Muxes := 4     
+	   2 Input    7 Bit        Muxes := 12    
+	  12 Input    7 Bit        Muxes := 1     
+	   4 Input    7 Bit        Muxes := 2     
+	   3 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 13    
+	  28 Input    6 Bit        Muxes := 1     
+	   7 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 24    
+	  12 Input    5 Bit        Muxes := 2     
+	  21 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 23    
+	   3 Input    4 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	  26 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 3     
+	  19 Input    4 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 17    
+	   8 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
+	  16 Input    3 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 2     
+	  19 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 30    
+	   6 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 2     
+	  11 Input    2 Bit        Muxes := 1     
+	  13 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 133   
+	   4 Input    1 Bit        Muxes := 15    
+	   8 Input    1 Bit        Muxes := 1     
+	  13 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 2     
+	  10 Input    1 Bit        Muxes := 1     
+	  17 Input    1 Bit        Muxes := 1     
+	  21 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mulw, operation Mode is: A*B.
+DSP Report: operator mulw is absorbed into DSP mulw.
+DSP Report: Generating DSP muld, operation Mode is: A*B.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: Generating DSP muld, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: Generating DSP muld, operation Mode is: A*B.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: Generating DSP muld, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: operator muld is absorbed into DSP muld.
+DSP Report: Generating DSP MRESULT, operation Mode is: A2*B.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: PCIN+A2*B.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: A2*B2.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: PCIN+A*B.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: PCIN+A2*B2.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: A2*B2.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP MRESULT, operation Mode is: PCIN+A*B2.
+DSP Report: register MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: operator MRESULT is absorbed into DSP MRESULT.
+DSP Report: Generating DSP IMUL/mresult, operation Mode is: A*B.
+DSP Report: operator IMUL/mresult is absorbed into DSP IMUL/mresult.
+DSP Report: operator IMUL/mresult is absorbed into DSP IMUL/mresult.
+DSP Report: Generating DSP IMUL/mresult, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator IMUL/mresult is absorbed into DSP IMUL/mresult.
+DSP Report: operator IMUL/mresult is absorbed into DSP IMUL/mresult.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:08 ; elapsed = 00:02:03 . Memory (MB): peak = 3256.633 ; gain = 367.395 ; free physical = 2191 ; free virtual = 441749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|STOMACH     | REG_SET_A/REGFILE_C_reg | 64 x 16(READ_FIRST)    | W |   | 64 x 16(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|STOMACH     | REG_SET_B/REGFILE_C_reg | 64 x 16(READ_FIRST)    | W |   | 64 x 16(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | MMU_TAGS_reg            | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | TAGSET_0_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | TAGSET_1_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_A_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_B_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_C_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_D_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_E_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_F_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_G_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_H_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_I_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_J_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_K_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_L_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_M_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_N_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_O_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_P_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_A_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_B_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_C_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_D_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_E_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_F_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_G_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_H_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_I_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_J_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_K_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_L_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_M_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_N_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_O_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_P_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | MMU_TAGS_reg            | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | DATA0_reg               | 256 x 128(READ_FIRST)  | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
+|LEGS        | DATA1_reg               | 256 x 128(READ_FIRST)  | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
+|LEGS        | KTAGSET_0_reg           | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | KTAGSET_1_reg           | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | TAGSET_0_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | TAGSET_1_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives  | 
++------------+-------------------------+-----------+----------------------+-------------+
+|STOMACH     | REG_SET_A/REGFILE_A_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_A/REGFILE_B_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_B/REGFILE_A_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_B/REGFILE_B_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|ARMS        | VALID_RAM/cvalid_reg    | Implied   | 32 x 24              | RAM32M x 4  | 
+|ARMS        | MMU_VALID_reg           | Implied   | 16 x 32              | RAM32M x 6  | 
+|LEGS        | MMU_VALID_reg           | Implied   | 16 x 32              | RAM32M x 6  | 
+|LEGS        | VALID_RAM/cvalid_reg    | Implied   | 32 x 24              | RAM32M x 4  | 
+|LEGS        | KOL_VAL/cvalid_reg      | Implied   | 32 x 24              | RAM32M x 4  | 
++------------+-------------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|MULFILTER   | A*B              | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULFILTER   | A*B              | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULFILTER   | (PCIN>>17)+A*B   | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULFILTER   | A*B              | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULFILTER   | (PCIN>>17)+A*B   | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | A2*B             | 20     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | PCIN+A2*B        | 20     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | (PCIN>>17)+A2*B2 | 20     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | A2*B2            | 20     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | PCIN+A*B         | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | PCIN+A2*B2       | 20     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | (PCIN>>17)+A2*B  | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|DP_FPU      | PCIN+A*B2        | 18     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|SFPU_MUL    | A*B              | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|SFPU_MUL    | (PCIN>>17)+A*B   | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:09 ; elapsed = 00:02:03 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 2136 ; free virtual = 441699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|STOMACH     | REG_SET_A/REGFILE_C_reg | 64 x 16(READ_FIRST)    | W |   | 64 x 16(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|STOMACH     | REG_SET_B/REGFILE_C_reg | 64 x 16(READ_FIRST)    | W |   | 64 x 16(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | MMU_TAGS_reg            | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | TAGSET_0_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | TAGSET_1_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_A_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_B_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_C_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_D_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_E_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_F_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_G_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_H_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_I_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_J_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_K_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_L_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_M_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_N_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_O_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA0_P_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_A_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_B_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_C_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_D_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_E_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_F_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_G_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_H_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_I_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_J_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_K_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_L_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_M_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_N_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_O_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|ARMS        | DATA1_P_reg             | 256 x 8(READ_FIRST)    | W |   | 256 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | MMU_TAGS_reg            | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | DATA0_reg               | 256 x 128(READ_FIRST)  | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
+|LEGS        | DATA1_reg               | 256 x 128(READ_FIRST)  | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
+|LEGS        | KTAGSET_0_reg           | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | KTAGSET_1_reg           | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | TAGSET_0_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|LEGS        | TAGSET_1_reg            | 256 x 17(READ_FIRST)   | W |   | 256 x 17(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+-------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives  | 
++------------+-------------------------+-----------+----------------------+-------------+
+|STOMACH     | REG_SET_A/REGFILE_A_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_A/REGFILE_B_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_B/REGFILE_A_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|STOMACH     | REG_SET_B/REGFILE_B_reg | Implied   | 64 x 8               | RAM64M x 3  | 
+|ARMS        | VALID_RAM/cvalid_reg    | Implied   | 32 x 24              | RAM32M x 4  | 
+|ARMS        | MMU_VALID_reg           | Implied   | 16 x 32              | RAM32M x 6  | 
+|LEGS        | MMU_VALID_reg           | Implied   | 16 x 32              | RAM32M x 6  | 
+|LEGS        | VALID_RAM/cvalid_reg    | Implied   | 32 x 24              | RAM32M x 4  | 
+|LEGS        | KOL_VAL/cvalid_reg      | Implied   | 32 x 24              | RAM32M x 4  | 
++------------+-------------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance STOMACH/REG_SET_A/REGFILE_C_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance STOMACH/REG_SET_B/REGFILE_C_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/MMU_TAGS_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/TAGSET_0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/TAGSET_1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_A_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_B_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_C_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_D_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_E_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_F_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_G_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_H_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_I_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_J_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_K_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_L_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_M_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_N_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_O_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA0_P_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_A_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_B_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_C_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_D_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_E_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_F_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_G_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_H_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_I_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_J_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_K_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_L_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_M_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_N_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_O_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ARMS/DATA1_P_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/MMU_TAGS_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/DATA0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/DATA0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/DATA1_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/DATA1_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/KTAGSET_0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/KTAGSET_1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/TAGSET_0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance LEGS/TAGSET_1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:15 ; elapsed = 00:02:10 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1956 ; free virtual = 441636
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:21 ; elapsed = 00:02:16 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1938 ; free virtual = 441725
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:21 ; elapsed = 00:02:16 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1951 ; free virtual = 441740
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:22 ; elapsed = 00:02:17 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1816 ; free virtual = 441630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:23 ; elapsed = 00:02:17 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1861 ; free virtual = 441613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:23 ; elapsed = 00:02:18 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1787 ; free virtual = 441529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:24 ; elapsed = 00:02:18 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1777 ; free virtual = 441521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |   439|
+|3     |DSP48E1  |    16|
+|4     |LUT1     |   125|
+|5     |LUT2     |  1438|
+|6     |LUT3     |  1567|
+|7     |LUT4     |  1433|
+|8     |LUT5     |  2168|
+|9     |LUT6     |  5288|
+|10    |MUXF7    |    24|
+|11    |MUXF8    |     1|
+|12    |RAM32M   |    22|
+|13    |RAM32X1D |     4|
+|14    |RAM64M   |    12|
+|15    |RAMB18E1 |    42|
+|16    |RAMB36E1 |     4|
+|17    |FDCE     |   193|
+|18    |FDRE     |  2997|
+|19    |FDSE     |    22|
+|20    |IBUF     |   266|
+|21    |OBUF     |   334|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------------+--------------+------+
+|      |Instance            |Module        |Cells |
++------+--------------------+--------------+------+
+|1     |top                 |              | 16396|
+|2     |  ARMS              |DCACHE        |  1295|
+|3     |    DBGAE           |DEBUG_AE      |    10|
+|4     |    DCA_COMPARE     |CA_MATCH_4    |     4|
+|5     |    DCA_CTRL        |DCA_CONTROL_5 |    23|
+|6     |    DC_SM           |DCACHE_SM     |   386|
+|7     |    FILT_CMP        |FILTCMP       |    31|
+|8     |    MMU_COMPARE     |MMU_MATCH_6   |     1|
+|9     |    MMU_CTRL        |MMU_UP_7      |    72|
+|10    |    RD_ALI          |RD_ALIGNER    |   212|
+|11    |    VALID_RAM       |NEU_VALID_8   |   127|
+|12    |  BRAIN             |STEUERUNG     |  5502|
+|13    |    BEFEHLS_DEC     |DECODER       |  3103|
+|14    |      reste_ops     |GRUPPE_2      |   163|
+|15    |    OPC_REG         |OPDEC_REG     |  2075|
+|16    |    PCS             |PROG_COUNTER  |   324|
+|17    |  ISWITCH           |IO_SWITCH     |    10|
+|18    |  LEGS              |ICACHE        |  1003|
+|19    |    DCA_COMPARE     |CA_MATCH      |    28|
+|20    |    DCA_CTRL        |DCA_CONTROL   |    17|
+|21    |    IC_SM           |ICACHE_SM     |    53|
+|22    |    KOLLOGIK        |KOLDETECT     |   192|
+|23    |    KOL_VAL         |NEU_VALID     |    52|
+|24    |    MMU_COMPARE     |MMU_MATCH     |     1|
+|25    |    MMU_CTRL        |MMU_UP        |    71|
+|26    |    VALID_RAM       |NEU_VALID_3   |   226|
+|27    |  MKSTAT            |MAKE_STAT     |     8|
+|28    |  STOMACH           |DATENPFAD     |  7976|
+|29    |    ADDR_U          |ADDR_UNIT     |  1290|
+|30    |    CFG_DBG         |CONFIG_REGS   |   155|
+|31    |    DOUBLE_U        |DP_FPU        |  3665|
+|32    |      DOUBLE_U      |DP_LOGIK      |  3478|
+|33    |        as_inst     |DFPU_ADDSUB   |  1137|
+|34    |        bcd_inst    |DFPU_BCD      |    40|
+|35    |        div_inst    |DFPU_DIV      |  1606|
+|36    |        misc_inst   |DFPU_MISC     |   310|
+|37    |        mul_inst    |DFPU_MUL      |   321|
+|38    |    FPS_REG         |FP_STAT_REG   |    51|
+|39    |    GANZ_U          |I_PFAD        |   138|
+|40    |    M_FILTER        |MULFILTER     |    95|
+|41    |    REG_SET_A       |REGISTER      |   850|
+|42    |    REG_SET_B       |REGISTER_0    |   990|
+|43    |    SINGLE_U        |SP_FPU        |   612|
+|44    |      IADDSUB       |SFPU_ADDSUB   |   522|
+|45    |        addsub_nosw |ADDSUB        |   135|
+|46    |        addsub_sw   |ADDSUB_1      |    11|
+|47    |        addsub_v    |ADDSUB_2      |    45|
+|48    |      IMUL          |SFPU_MUL      |    87|
++------+--------------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:24 ; elapsed = 00:02:18 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1778 ; free virtual = 441523
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 114 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:24 ; elapsed = 00:02:18 . Memory (MB): peak = 3256.637 ; gain = 367.398 ; free physical = 1772 ; free virtual = 441517
+Synthesis Optimization Complete : Time (s): cpu = 00:02:24 ; elapsed = 00:02:18 . Memory (MB): peak = 3256.641 ; gain = 367.398 ; free physical = 1772 ; free virtual = 441517
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.30 ; elapsed = 00:00:00.29 . Memory (MB): peak = 3256.648 ; gain = 0.000 ; free physical = 1431 ; free virtual = 441222
+INFO: [Netlist 29-17] Analyzing 564 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 22 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3312.664 ; gain = 0.000 ; free physical = 1880 ; free virtual = 441785
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 38 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (inverted pins: WCLK) (RAMD32(x2)): 4 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 12 instances
+
+Synth Design complete, checksum: 254e7b05
+INFO: [Common 17-83] Releasing license: Synthesis
+164 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:41 ; elapsed = 00:02:28 . Memory (MB): peak = 3312.664 ; gain = 452.383 ; free physical = 2007 ; free virtual = 441956
+INFO: [Common 17-1381] The checkpoint '/home/users/ayyaz.ahmed/Downloads/m32632/project_1/project_1.runs/synth_1/M32632.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file M32632_utilization_synth.rpt -pb M32632_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 17 11:35:30 2022...
