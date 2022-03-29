@@ -437,3 +437,294 @@ module swerv_wrapper
 
 endmodule
 
+module clockhdr
+  (
+   input logic TE, E, CP,
+   output Q
+   );
+
+   logic  en_ff;
+   logic  enable;
+
+   assign      enable = E | TE;
+
+`ifdef VERILATOR
+   always @(negedge CP) begin
+      en_ff <= enable;
+   end
+`else
+   always @(CP, enable) begin
+      if(!CP)
+        en_ff = enable;
+   end
+`endif
+   assign Q = CP & en_ff;
+
+endmodule
+
+
+module rvoclkhdr
+  (
+   input  logic en,
+   input  logic clk,
+   input  logic scan_mode,
+   output logic l1clk
+   );
+
+   logic        TE;
+   assign       TE = scan_mode;
+
+`ifdef RV_FPGA_OPTIMIZE
+   assign l1clk = clk;
+`else
+   clockhdr rvclkhdr ( .*, .E(en), .CP(clk), .Q(l1clk));
+`endif
+
+endmodule
+
+
+
+
+`ifndef RV_FPGA_OPTIMIZE
+module rvclkhdr
+  (
+   input  logic en,
+   input  logic clk,
+   input  logic scan_mode,
+   output logic l1clk
+   );
+
+   logic        TE;
+   assign       TE = scan_mode;
+
+   clockhdr clkhdr ( .*, .E(en), .CP(clk), .Q(l1clk));
+
+endmodule // rvclkhdr
+`endif
+
+
+module rvdffs #( parameter WIDTH=1 )
+   (
+     input logic [WIDTH-1:0] din,
+     input logic             en,
+     input logic           clk,
+     input logic                   rst_l,
+     output logic [WIDTH-1:0] dout
+     );
+
+   rvdff #(WIDTH) dffs (.din((en) ? din[WIDTH-1:0] : dout[WIDTH-1:0]), .*);
+
+endmodule
+
+module rvdff #( parameter WIDTH=1 )
+   (
+     input logic [WIDTH-1:0] din,
+     input logic           clk,
+     input logic                   rst_l,
+
+     output logic [WIDTH-1:0] dout
+     );
+
+`ifdef RV_CLOCKGATE
+   always @(posedge tb_top.clk) begin
+      #0 $strobe("CG: %0t %m din %x dout %x clk %b width %d",$time,din,dout,clk,WIDTH);
+   end
+`endif
+
+   always_ff @(posedge clk or negedge rst_l) begin
+      if (rst_l == 0)
+        dout[WIDTH-1:0] <= 0;
+      else
+        dout[WIDTH-1:0] <= din[WIDTH-1:0];
+   end
+
+
+endmodule
+
+
+module rvdffe #( parameter WIDTH=1, OVERRIDE=0 )
+   (
+     input  logic [WIDTH-1:0] din,
+     input  logic           en,
+     input  logic           clk,
+     input  logic           rst_l,
+     input  logic             scan_mode,
+     output logic [WIDTH-1:0] dout
+     );
+
+   logic                      l1clk;
+
+`ifndef RV_PHYSICAL
+   if (WIDTH >= 8 || OVERRIDE==1) begin: genblock
+`endif
+
+`ifdef RV_FPGA_OPTIMIZE
+      rvdffs #(WIDTH) dff ( .* );
+`else
+      rvclkhdr clkhdr ( .* );
+      rvdff #(WIDTH) dff (.*, .clk(l1clk));
+`endif
+
+`ifndef RV_PHYSICAL
+   end
+   else
+      $error("%m: rvdffe width must be >= 8");
+`endif
+
+endmodule // rvdffe
+
+
+module rvdff_fpga #( parameter WIDTH=1 )
+   (
+     input logic [WIDTH-1:0] din,
+     input logic           clk,
+     input logic           clken,
+     input logic           rawclk,
+     input logic           rst_l,
+
+     output logic [WIDTH-1:0] dout
+     );
+
+`ifdef RV_FPGA_OPTIMIZE
+   rvdffs #(WIDTH) dffs (.clk(rawclk), .en(clken), .*);
+`else
+   rvdff #(WIDTH)  dff (.*);
+`endif
+
+endmodule
+
+
+module rvsyncss #(parameter WIDTH = 251)
+   (
+     input  logic                 clk,
+     input  logic                 rst_l,
+     input  logic [WIDTH-1:0]     din,
+     output logic [WIDTH-1:0]     dout
+     );
+
+   logic [WIDTH-1:0]              din_ff1;
+
+   rvdff #(WIDTH) sync_ff1  (.*, .din (din[WIDTH-1:0]),     .dout(din_ff1[WIDTH-1:0]));
+   rvdff #(WIDTH) sync_ff2  (.*, .din (din_ff1[WIDTH-1:0]), .dout(dout[WIDTH-1:0]));
+
+endmodule // rvsyncss
+
+
+module rvmaskandmatch #( parameter WIDTH=32 )
+   (
+     input  logic [WIDTH-1:0] mask,     // this will have the mask in the lower bit positions
+     input  logic [WIDTH-1:0] data,     // this is what needs to be matched on the upper bits with the mask's upper bits
+     input  logic             masken,   // when 1 : do mask. 0 : full match
+     output logic             match
+     );
+
+   logic [WIDTH-1:0]          matchvec;
+   logic                      masken_or_fullmask;
+
+   assign masken_or_fullmask = masken &  ~(&mask[WIDTH-1:0]);
+
+   assign matchvec[0]        = masken_or_fullmask | (mask[0] == data[0]);
+   genvar                     i;
+
+   for ( i = 1; i < WIDTH; i++ )  begin : match_after_first_zero
+      assign matchvec[i] = (&mask[i-1:0] & masken_or_fullmask) ? 1'b1 : (mask[i] == data[i]);
+   end : match_after_first_zero
+
+   assign match  = &matchvec[WIDTH-1:0];    // all bits either matched or were masked off
+
+endmodule // rvmaskandmatch
+
+module rvbtb_addr_hash (
+                       input logic [31:1] pc,
+                        output logic [5:4] hash
+                      );
+
+ assign hash[5:4] = pc[5:4] ^
+
+`ifndef RV_BTB_FOLD2_INDEX_HASH
+                                                  pc[7:6] ^
+`endif
+
+                                                  pc[9:8];
+
+endmodule
+
+
+module rvbtb_tag_hash (
+                       input logic [32:1] pc,
+                      output logic [9-1:0] hash
+                       );
+// `ifndef RV_BTB_BTAG_FOLD
+  //  assign hash = {(pc[5+9+9+9:5+9+9+1])} ^
+    //               pc[5+9+9:5+9+1] ^
+      //             pc[5+9:5+1])};
+//`else
+  //  assign hash = {(
+    //               pc[5+9+9:5+9+1] ^
+      //            pc[5+9:5+1])};
+ //`endif
+
+  assign hash = {pc[5+1],(pc[5+13:5+10] ^
+                                      pc[5+9:5+6] ^
+                                       pc[5+5:5+2])};
+
+endmodule
+
+
+module rvbtb_ghr_hash (
+                       input logic [5:4] hashin,
+                       input logic [4:0] ghr,
+                       output logic [7:4] hash
+                       );
+
+   // The hash function is too complex to write in verilog for all cases.
+   // The config script generates the logic string based on the bp config.
+  // assign hash[`RV_BHT_ADDR_HI:`RV_BHT_ADDR_LO] = `RV_BHT_HASH_STRING;
+
+ endmodule
+
+
+module rvdffs_fpga #( parameter WIDTH=1 )
+   (
+     input logic [WIDTH-1:0] din,
+     input logic             en,
+     input logic           clk,
+     input logic           clken,
+     input logic           rawclk,
+     input logic           rst_l,
+     input logic           scan_mode,
+     output logic [WIDTH-1:0] dout
+     );
+
+`ifdef RV_FPGA_OPTIMIZE
+   rvdffs #(WIDTH)   dffs (.clk(rawclk), .en(clken & en), .*);
+`else
+   rvdffs #(WIDTH)   dffs (.*);
+`endif
+
+endmodule
+
+
+module rveven_paritycheck #(WIDTH = 16)  (
+                                           input  logic [WIDTH-1:0]  data_in,         // Data
+                                           input  logic              parity_in,
+                                           output logic              parity_err       // Parity error
+                                           );
+
+   assign  parity_err =  ^(data_in[WIDTH-1:0]) ^ parity_in ;
+
+endmodule  // rveven_paritycheck
+
+
+module rveven_paritygen #(WIDTH = 16)  (
+                                         input  logic [WIDTH-1:0]  data_in,         // Data
+                                         output logic              parity_out       // generated even parity
+                                         );
+
+   assign  parity_out =  ^(data_in[WIDTH-1:0]) ;
+
+endmodule  // rveven_paritygen
+
+
+
+
