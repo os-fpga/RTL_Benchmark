@@ -381,6 +381,23 @@
                 "Clock1": "spi_clk_in",
                 "Clock2": "avmm_clk"
             }
+        },
+        "dmi_wrapper": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Quasar/design/src/main/resources/vsrc/dmi_wrapper/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "tck",
+                "Clock2": "core_clk"
+            }
+        },
+        "vsrc": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Quasar/design/src/main/resources/vsrc/mem/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "dccm_clk_override",
+                "Clock3": "icm_clk_override"
+            }
         }
     }
 }
