@@ -1,0 +1,386 @@
+ 
+{
+    "GENERAL": {
+      "DESIGN_STAGE"    : "yosys",
+      "STRATEGY"        : "performance",
+      "POWER_ANALYSIS"  : false,
+      "SWEEP"           : false 
+    },
+    "OpenFPGA_Commandline_args": {
+        "continue_on_fail"  : false,
+        "debug"             : true,
+        "test_run"          : false,
+        "show_thread_logs"  : true
+    },
+    "SYNTHESIS_PARAM": {
+        "command"   : "synth_rs",
+        "verific"   : true,
+        "synth_ql":{
+            "top"       : "${TOP_MODULE}",
+            "family"    : "qlf_k6n10f",
+            "no_abc_opt": null,
+            "edif"      : null,
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : null,
+            "no_dsp"    : true,
+            "no_adder"  : true,
+            "no_bram"   : true,
+            "no_ff_map" : null
+        },
+        "synth_rs":{
+            "top"       : "${TOP_MODULE}",
+            "tech"      : "generic",
+            "goal"      : "area",
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : "${OUTPUT_VERILOG}",
+            "no_dsp"    : true,
+            "no_bram"   : true,
+            "effort"     : "medium",
+            "abc"       : null,
+            "cec"       : null
+
+        },
+        "synth":{
+            "top"       : "${TOP_MODULE}",
+            "auto-top"  : null,
+            "flatten"   : true,
+            "encfile"   : null,
+            "lut"       : null,
+            "nofsm"     : null,
+            "noabc"     : null,
+            "noalumacc" : null,
+            "nordff"    : null,
+            "noshare"   : null,
+            "run"       : null,
+            "flowmap"   : null
+        }
+    },
+    "ABC": {
+        "lut"   : "6",
+        "script": null
+    },
+    "BENCHMARKS": {
+        "axi_lite_a32_d32": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-mm/axi_lite_a32_d32/config.tcl",
+            
+            "CLOCK_DATA": {
+             "Clock1": "clk_wr"
+            }
+        },
+        "axi_mm_a32_d128": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-mm/axi_mm_a32_d128/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_mm_a32_d128_packet": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-mm/axi_mm_a32_d128_packet/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_mm_a32_d128_packet_gen1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-mm/axi_mm_a32_d128_packet_gen1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi4-mm": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-mm/axi_mm_multi/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_st_d64": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-st/axi_st_d64/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_st_d64_nordy": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-st/axi_st_d64_nordy/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_st_d256_gen1_gen2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-st/axi_st_d256_gen1_gen2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_st_d256_gen2_only": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-st/axi_st_d256_gen2_only/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "axi_st_d256_multichannel": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/axi4-st/axi_st_d256_multichannel/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "spim": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/backup/spi/rtl/spim/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "sclk_in",
+                "Clock2": "sclk",
+                "Clock3": "m_avmm_clk"
+            }
+        },
+        "spis": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/backup/spi/rtl/spis/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "sclk",
+                "Clock2": "s_avmm_clk"
+            }
+        },
+        "ca": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/ca/rtl/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "lane_clk",
+                "Clock2": "com_clk"
+            }
+        },
+        "asyncfifo": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/asyncfifo/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_write",
+                "Clock2": "clk_read"
+            }
+        },
+        "level_delay": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/level_delay/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_core"
+            }
+        },
+        "levelsync": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/levelsync/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_dest"
+            }
+        },
+        "levelsync_sr": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/levelsync_sr/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_dest"
+            }
+        },
+        "rrarb": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/rrarb/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_core"
+            }
+        },
+        "rst_regen_low": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/rst_regen_low/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "strobe_gen_w_delay": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/strobe_gen_w_delay/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "syncfifo": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/common/rtl/syncfifo/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_core"
+            }
+        },
+        "ll_auto_sync": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/llink/rtl/II_auto_sync/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "II_receive": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/llink/rtl/II_receive/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "II_transmit": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/llink/rtl/II_transmit/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/rtl/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "lclk",
+                "Clock2": "lp_clk_ack"
+            }
+        },
+        "lpif_txrx_x1_f1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x1_f1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x1_h1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x1_h1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x2_f1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x2_f1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x2_h1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x2_h1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x4_f1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x4_f1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x4_f2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x4_f2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x4_h1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x4_h1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x4_h2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x4_h2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x4_q2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x4_q2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x8_f1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x8_f1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x8_f2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x8_f2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x8_h1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x8_h1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x8_h2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x8_h2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x8_q2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x8_q2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x16_h1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x16_h1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x16_f1": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x16_f1/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x16_f2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x16_f2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x16_h2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x16_h2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "lpif_txrx_x16_q2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/lpif/lpif_txrx_x16_q2/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk_wr"
+            }
+        },
+        "spi-aib": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/aib-protocols/spi-aib/rtl/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "spi_clk_in",
+                "Clock2": "avmm_clk"
+            }
+        }
+    }
+}

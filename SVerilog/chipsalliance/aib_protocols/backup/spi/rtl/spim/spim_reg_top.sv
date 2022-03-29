@@ -269,10 +269,10 @@ assign s_transvld_int	= m_cmd[0];
 
 //Adding the following logic to account for case when SPI clock is 
 //very very slow in comparision to AVMM clock. 
-parameter ST_ZERO         =2'b00;
-parameter ST_WAIT_ONE     =2'b01;
-parameter ST_ONE          =2'b10;
-parameter ST_WAIT_ZERO    =2'b11;
+localparam ST_ZERO         =2'b00;
+localparam ST_WAIT_ONE     =2'b01;
+localparam ST_ONE          =2'b10;
+localparam ST_WAIT_ZERO    =2'b11;
 
 logic [1:0] cdc_st;
 logic start_transvld; 
