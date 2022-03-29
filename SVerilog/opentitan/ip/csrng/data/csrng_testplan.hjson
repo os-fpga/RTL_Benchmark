@@ -1,0 +1,103 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{
+  name: "csrng"
+  import_testplans: ["hw/dv/tools/dvsim/testplans/csr_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/intr_test_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/alert_test_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/tl_device_access_types_testplan.hjson",
+                     "hw/dv/tools/dvsim/testplans/stress_all_with_reset_testplan.hjson"]
+  testpoints: [
+    {
+      name: smoke
+      desc: '''
+	    Verify sending instantiate/generate cmds via SW path.
+	    Verify reading genbits via SW path.
+            '''
+      milestone: V1
+      tests: ["csrng_smoke"]
+    }
+    {
+      name: interrupts
+      desc: '''
+            Verify cs_cmd_req_done interrupt asserts/clears as predicted.
+            Verify cs_entropy_req interrupt asserts/clears as predicted.
+            Verify cs_hw_inst_exc interrupt asserts/clears as predicted.
+            Verify cs_fifo_err interrupt asserts/clears as predicted.
+            Verify fifo error status bits are set as predicted.
+            '''
+      milestone: V2
+      tests: ["csrng_intr"]
+    }
+    {
+      name: alerts
+      desc: '''
+            Verify recov_alert_sts asserts/clears as predicted.
+            '''
+      milestone: V2
+      tests: ["csrng_alert"]
+    }
+    {
+      name: err
+      desc: '''
+            Verify err_code register asserts/clears as predicted.
+            '''
+      milestone: V2
+      tests: ["csrng_err"]
+    }
+    {
+      name: cmds
+      desc: '''
+            Verify all SW app csrng commands req/status behave as predicted.
+            Verify all HW app csrng commands req/status behave as predicted.
+            Verify above for all valid values of acmd, clen, flags, glen.
+            Verify for multiple hw app interfaces running in parallel.
+            Verify sw/hw app interfaces running in parallel.
+            Verify internal state for sw/hw apps.
+            Verify genbits generated as predicted.
+            Verify fips bit is passed through properly.
+            Verify ability to access registers based on otp, enables.
+            '''
+      milestone: V2
+      tests: ["csrng_cmds"]
+    }
+    {
+      name: life cycle
+      desc: '''
+            Verify lifecycle hardware debug mode enables AES bypass, reading CSRNG internal state.
+            '''
+      milestone: V2
+      tests: []
+    }
+    {
+      name: stress_all
+      desc: '''
+            Combine the other individual testpoints while injecting TL errors and running CSR tests
+            in parallel.
+            '''
+      milestone: V2
+      tests: ["csrng_stress_all"]
+    }
+  ]
+
+  covergroups: [
+    {
+      name: err_test_cg
+      desc: '''
+            Covers that all fatal errors, all fifo errors, all state machine errors and
+            all error codes of csrng have been tested.
+            Individual config settings that will be covered include:
+            - which_hw_inst_exc (0 to NHwApps-1), NHwApps possible hw instance exceptions
+            - which_sp2v (0 to Sp2VWidth-1), SP2V_HIGH_LOGIC width
+            - which_fatal_err (0 to 25), 26 possible fatal errors
+            - which_fifo_write_err (0 to 15), 16 different fifos
+            - which_fifo_read_err (0 to 15), 16 different fifos
+            - which_fifo_state_err (0 to 15), 16 different fifos
+            - which_err_code (0 to 51), 26 possible fatal errors, plus 26 ERR_CODE_TEST bits test
+            - which_fifo_err (0 to 2), fifo write/read/state errors
+            - which_invalid_mubi (0 to 2), 3 possible invalid mubi4 fields 
+            '''
+    }
+  ]
+}
