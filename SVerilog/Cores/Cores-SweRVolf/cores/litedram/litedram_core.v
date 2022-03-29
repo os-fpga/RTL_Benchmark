@@ -16695,9 +16695,9 @@ end
 
 assign litedramcore_dat_r = memdat;
 
-initial begin
-	$readmemh("litedram_core.init", mem);
-end
+//initial begin
+//	$readmemh("litedram_core.init", mem);
+//end
 
 reg [31:0] mem_1[0:2047];
 reg [10:0] memadr;
@@ -16715,9 +16715,9 @@ end
 
 assign ram_dat_r = mem_1[memadr];
 
-initial begin
-	$readmemh("mem_1.init", mem_1);
-end
+//initial begin
+//	$readmemh("mem_1.init", mem_1);
+//end
 
 reg [9:0] storage[0:15];
 reg [9:0] memdat_1;
@@ -17472,25 +17472,25 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip03[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay0),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed0)
-);
-
+//    IDELAYE2 #(
+//    	.CINVCTRL_SEL("FALSE"),
+//    	.DELAY_SRC("IDATAIN"),
+//    	.HIGH_PERFORMANCE_MODE("TRUE"),
+//    	.IDELAY_TYPE("VARIABLE"),
+//    	.IDELAY_VALUE(1'd0),
+//    	.PIPE_SEL("FALSE"),
+//    	.REFCLK_FREQUENCY(200.0),
+//    	.SIGNAL_PATTERN("DATA")
+//    ) IDELAYE2 (
+//    	.C(sys_clk),
+//    	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+//    	.IDATAIN(a7ddrphy_dq_i_nodelay0),
+//    	.INC(1'd1),
+//    	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//    	.LDPIPEEN(1'd0),
+//    	.DATAOUT(a7ddrphy_dq_i_delayed0)
+//    );
+//    
 IOBUF IOBUF(
 	.I(a7ddrphy_dq_o_nodelay0),
 	.T(a7ddrphy_dq_t0),
@@ -17548,24 +17548,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip13[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_1 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay1),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed1)
-);
+//   IDELAYE2 #(
+//   	.CINVCTRL_SEL("FALSE"),
+//   	.DELAY_SRC("IDATAIN"),
+//   	.HIGH_PERFORMANCE_MODE("TRUE"),
+//   	.IDELAY_TYPE("VARIABLE"),
+//   	.IDELAY_VALUE(1'd0),
+//   	.PIPE_SEL("FALSE"),
+//   	.REFCLK_FREQUENCY(200.0),
+//   	.SIGNAL_PATTERN("DATA")
+//   ) IDELAYE2_1 (
+//   	.C(sys_clk),
+//   	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+//   	.IDATAIN(a7ddrphy_dq_i_nodelay1),
+//   	.INC(1'd1),
+//   	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//   	.LDPIPEEN(1'd0),
+//   	.DATAOUT(a7ddrphy_dq_i_delayed1)
+//   );
 
 IOBUF IOBUF_1(
 	.I(a7ddrphy_dq_o_nodelay1),
@@ -17624,25 +17624,25 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip21[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_2 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay2),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed2)
-);
-
+//  IDELAYE2 #(
+//  	.CINVCTRL_SEL("FALSE"),
+//  	.DELAY_SRC("IDATAIN"),
+//  	.HIGH_PERFORMANCE_MODE("TRUE"),
+//  	.IDELAY_TYPE("VARIABLE"),
+//  	.IDELAY_VALUE(1'd0),
+//  	.PIPE_SEL("FALSE"),
+//  	.REFCLK_FREQUENCY(200.0),
+//  	.SIGNAL_PATTERN("DATA")
+//  ) IDELAYE2_2 (
+//  	.C(sys_clk),
+//  	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+//  	.IDATAIN(a7ddrphy_dq_i_nodelay2),
+//  	.INC(1'd1),
+//  	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//  	.LDPIPEEN(1'd0),
+//  	.DATAOUT(a7ddrphy_dq_i_delayed2)
+//  );
+//  
 IOBUF IOBUF_2(
 	.I(a7ddrphy_dq_o_nodelay2),
 	.T(a7ddrphy_dq_t2),
@@ -17700,24 +17700,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip31[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_3 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay3),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed3)
-);
+//   IDELAYE2 #(
+//   	.CINVCTRL_SEL("FALSE"),
+//   	.DELAY_SRC("IDATAIN"),
+//   	.HIGH_PERFORMANCE_MODE("TRUE"),
+//   	.IDELAY_TYPE("VARIABLE"),
+//   	.IDELAY_VALUE(1'd0),
+//   	.PIPE_SEL("FALSE"),
+//   	.REFCLK_FREQUENCY(200.0),
+//   	.SIGNAL_PATTERN("DATA")
+//   ) IDELAYE2_3 (
+//   	.C(sys_clk),
+//   	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+//   	.IDATAIN(a7ddrphy_dq_i_nodelay3),
+//   	.INC(1'd1),
+//   	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//   	.LDPIPEEN(1'd0),
+//   	.DATAOUT(a7ddrphy_dq_i_delayed3)
+//   );
 
 IOBUF IOBUF_3(
 	.I(a7ddrphy_dq_o_nodelay3),
@@ -17776,24 +17776,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip41[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_4 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay4),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed4)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_4 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay4),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed4)
+// );
 
 IOBUF IOBUF_4(
 	.I(a7ddrphy_dq_o_nodelay4),
@@ -17852,24 +17852,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip51[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_5 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay5),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed5)
-);
+////     IDELAYE2 #(
+////     	.CINVCTRL_SEL("FALSE"),
+////     	.DELAY_SRC("IDATAIN"),
+////     	.HIGH_PERFORMANCE_MODE("TRUE"),
+////     	.IDELAY_TYPE("VARIABLE"),
+////     	.IDELAY_VALUE(1'd0),
+////     	.PIPE_SEL("FALSE"),
+////     	.REFCLK_FREQUENCY(200.0),
+////     	.SIGNAL_PATTERN("DATA")
+////     ) IDELAYE2_5 (
+////     	.C(sys_clk),
+////     	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+////     	.IDATAIN(a7ddrphy_dq_i_nodelay5),
+////     	.INC(1'd1),
+////     	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+////     	.LDPIPEEN(1'd0),
+////     	.DATAOUT(a7ddrphy_dq_i_delayed5)
+////     );
 
 IOBUF IOBUF_5(
 	.I(a7ddrphy_dq_o_nodelay5),
@@ -17928,24 +17928,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip61[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_6 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay6),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed6)
-);
+//IDELAYE2 #(
+//	.CINVCTRL_SEL("FALSE"),
+//	.DELAY_SRC("IDATAIN"),
+//	.HIGH_PERFORMANCE_MODE("TRUE"),
+//	.IDELAY_TYPE("VARIABLE"),
+//	.IDELAY_VALUE(1'd0),
+//	.PIPE_SEL("FALSE"),
+//	.REFCLK_FREQUENCY(200.0),
+//	.SIGNAL_PATTERN("DATA")
+//) IDELAYE2_6 (
+//	.C(sys_clk),
+//	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+//	.IDATAIN(a7ddrphy_dq_i_nodelay6),
+//	.INC(1'd1),
+//	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//	.LDPIPEEN(1'd0),
+//	.DATAOUT(a7ddrphy_dq_i_delayed6)
+//);
 
 IOBUF IOBUF_6(
 	.I(a7ddrphy_dq_o_nodelay6),
@@ -18004,24 +18004,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip71[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_7 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay7),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed7)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_7 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay7),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[0] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed7)
+// );
 
 IOBUF IOBUF_7(
 	.I(a7ddrphy_dq_o_nodelay7),
@@ -18080,24 +18080,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip81[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_8 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay8),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed8)
-);
+//IDELAYE2 #(
+//	.CINVCTRL_SEL("FALSE"),
+//	.DELAY_SRC("IDATAIN"),
+//	.HIGH_PERFORMANCE_MODE("TRUE"),
+//	.IDELAY_TYPE("VARIABLE"),
+//	.IDELAY_VALUE(1'd0),
+//	.PIPE_SEL("FALSE"),
+//	.REFCLK_FREQUENCY(200.0),
+//	.SIGNAL_PATTERN("DATA")
+//) IDELAYE2_8 (
+//	.C(sys_clk),
+//	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+//	.IDATAIN(a7ddrphy_dq_i_nodelay8),
+//	.INC(1'd1),
+//	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//	.LDPIPEEN(1'd0),
+//	.DATAOUT(a7ddrphy_dq_i_delayed8)
+//);
 
 IOBUF IOBUF_8(
 	.I(a7ddrphy_dq_o_nodelay8),
@@ -18156,24 +18156,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip91[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_9 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay9),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed9)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_9 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay9),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed9)
+// );
 
 IOBUF IOBUF_9(
 	.I(a7ddrphy_dq_o_nodelay9),
@@ -18232,24 +18232,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip101[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_10 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay10),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed10)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_10 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay10),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed10)
+// );
 
 IOBUF IOBUF_10(
 	.I(a7ddrphy_dq_o_nodelay10),
@@ -18308,24 +18308,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip111[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_11 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay11),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed11)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_11 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay11),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed11)
+// );
 
 IOBUF IOBUF_11(
 	.I(a7ddrphy_dq_o_nodelay11),
@@ -18384,24 +18384,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip121[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_12 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay12),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed12)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_12 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay12),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed12)
+// );
 
 IOBUF IOBUF_12(
 	.I(a7ddrphy_dq_o_nodelay12),
@@ -18459,26 +18459,26 @@ ISERDESE2 #(
 	.Q7(a7ddrphy_bitslip131[1]),
 	.Q8(a7ddrphy_bitslip131[0])
 );
-
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_13 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay13),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed13)
-);
-
+// 
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_13 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay13),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed13)
+// );
+// 
 IOBUF IOBUF_13(
 	.I(a7ddrphy_dq_o_nodelay13),
 	.T(a7ddrphy_dq_t13),
@@ -18536,24 +18536,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip141[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_14 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay14),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed14)
-);
+//IDELAYE2 #(
+//	.CINVCTRL_SEL("FALSE"),
+//	.DELAY_SRC("IDATAIN"),
+//	.HIGH_PERFORMANCE_MODE("TRUE"),
+//	.IDELAY_TYPE("VARIABLE"),
+//	.IDELAY_VALUE(1'd0),
+//	.PIPE_SEL("FALSE"),
+//	.REFCLK_FREQUENCY(200.0),
+//	.SIGNAL_PATTERN("DATA")
+//) IDELAYE2_14 (
+//	.C(sys_clk),
+//	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+//	.IDATAIN(a7ddrphy_dq_i_nodelay14),
+//	.INC(1'd1),
+//	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+//	.LDPIPEEN(1'd0),
+//	.DATAOUT(a7ddrphy_dq_i_delayed14)
+//);
 
 IOBUF IOBUF_14(
 	.I(a7ddrphy_dq_o_nodelay14),
@@ -18612,24 +18612,24 @@ ISERDESE2 #(
 	.Q8(a7ddrphy_bitslip151[0])
 );
 
-IDELAYE2 #(
-	.CINVCTRL_SEL("FALSE"),
-	.DELAY_SRC("IDATAIN"),
-	.HIGH_PERFORMANCE_MODE("TRUE"),
-	.IDELAY_TYPE("VARIABLE"),
-	.IDELAY_VALUE(1'd0),
-	.PIPE_SEL("FALSE"),
-	.REFCLK_FREQUENCY(200.0),
-	.SIGNAL_PATTERN("DATA")
-) IDELAYE2_15 (
-	.C(sys_clk),
-	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
-	.IDATAIN(a7ddrphy_dq_i_nodelay15),
-	.INC(1'd1),
-	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
-	.LDPIPEEN(1'd0),
-	.DATAOUT(a7ddrphy_dq_i_delayed15)
-);
+// IDELAYE2 #(
+// 	.CINVCTRL_SEL("FALSE"),
+// 	.DELAY_SRC("IDATAIN"),
+// 	.HIGH_PERFORMANCE_MODE("TRUE"),
+// 	.IDELAY_TYPE("VARIABLE"),
+// 	.IDELAY_VALUE(1'd0),
+// 	.PIPE_SEL("FALSE"),
+// 	.REFCLK_FREQUENCY(200.0),
+// 	.SIGNAL_PATTERN("DATA")
+// ) IDELAYE2_15 (
+// 	.C(sys_clk),
+// 	.CE((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_inc_re)),
+// 	.IDATAIN(a7ddrphy_dq_i_nodelay15),
+// 	.INC(1'd1),
+// 	.LD(((a7ddrphy_dly_sel_storage[1] & a7ddrphy_rdly_dq_rst_re) | a7ddrphy_rst_storage)),
+// 	.LDPIPEEN(1'd0),
+// 	.DATAOUT(a7ddrphy_dq_i_delayed15)
+// );
 
 IOBUF IOBUF_15(
 	.I(a7ddrphy_dq_o_nodelay15),
@@ -18853,79 +18853,79 @@ serv_rf_top  serv_rf_top (
 	.o_ibus_cyc(serv_ibus_cyc)
 );
 
-FD FD(
-	.C(clkin),
-	.D(reset),
-	.Q(subfragments_reset0)
-);
+// FD FD(
+// 	.C(clkin),
+// 	.D(reset),
+// 	.Q(subfragments_reset0)
+// );
+// 
+// FD FD_1(
+// 	.C(clkin),
+// 	.D(subfragments_reset0),
+// 	.Q(subfragments_reset1)
+// );
+// 
+// FD FD_2(
+// 	.C(clkin),
+// 	.D(subfragments_reset1),
+// 	.Q(subfragments_reset2)
+// );
+// 
+// FD FD_3(
+// 	.C(clkin),
+// 	.D(subfragments_reset2),
+// 	.Q(subfragments_reset3)
+// );
+// 
+// FD FD_4(
+// 	.C(clkin),
+// 	.D(subfragments_reset3),
+// 	.Q(subfragments_reset4)
+// );
+// 
+// FD FD_5(
+// 	.C(clkin),
+// 	.D(subfragments_reset4),
+// 	.Q(subfragments_reset5)
+// );
+// 
+// FD FD_6(
+// 	.C(clkin),
+// 	.D(subfragments_reset5),
+// 	.Q(subfragments_reset6)
+// );
+// 
+// FD FD_7(
+// 	.C(clkin),
+// 	.D(subfragments_reset6),
+// 	.Q(subfragments_reset7)
+// );
 
-FD FD_1(
-	.C(clkin),
-	.D(subfragments_reset0),
-	.Q(subfragments_reset1)
-);
-
-FD FD_2(
-	.C(clkin),
-	.D(subfragments_reset1),
-	.Q(subfragments_reset2)
-);
-
-FD FD_3(
-	.C(clkin),
-	.D(subfragments_reset2),
-	.Q(subfragments_reset3)
-);
-
-FD FD_4(
-	.C(clkin),
-	.D(subfragments_reset3),
-	.Q(subfragments_reset4)
-);
-
-FD FD_5(
-	.C(clkin),
-	.D(subfragments_reset4),
-	.Q(subfragments_reset5)
-);
-
-FD FD_6(
-	.C(clkin),
-	.D(subfragments_reset5),
-	.Q(subfragments_reset6)
-);
-
-FD FD_7(
-	.C(clkin),
-	.D(subfragments_reset6),
-	.Q(subfragments_reset7)
-);
-
-PLLE2_ADV #(
-	.CLKFBOUT_MULT(5'd16),
-	.CLKIN1_PERIOD(10.0),
-	.CLKOUT0_DIVIDE(4'd8),
-	.CLKOUT0_PHASE(1'd0),
-	.CLKOUT1_DIVIDE(5'd16),
-	.CLKOUT1_PHASE(1'd0),
-	.CLKOUT2_DIVIDE(4'd8),
-	.CLKOUT2_PHASE(1'd0),
-	.CLKOUT3_DIVIDE(4'd8),
-	.CLKOUT3_PHASE(7'd90),
-	.DIVCLK_DIVIDE(1'd1),
-	.REF_JITTER1(0.01),
-	.STARTUP_WAIT("FALSE")
-) PLLE2_ADV (
-	.CLKFBIN(subfragments_pll_fb),
-	.CLKIN1(clkin),
-	.RST(subfragments_reset7),
-	.CLKFBOUT(subfragments_pll_fb),
-	.CLKOUT0(clkout0),
-	.CLKOUT1(clkout1),
-	.CLKOUT2(clkout2),
-	.CLKOUT3(clkout3),
-	.LOCKED(locked)
-);
+//PLLE2_ADV #(
+//	.CLKFBOUT_MULT(5'd16),
+//	.CLKIN1_PERIOD(10.0),
+//	.CLKOUT0_DIVIDE(4'd8),
+//	.CLKOUT0_PHASE(1'd0),
+//	.CLKOUT1_DIVIDE(5'd16),
+//	.CLKOUT1_PHASE(1'd0),
+//	.CLKOUT2_DIVIDE(4'd8),
+//	.CLKOUT2_PHASE(1'd0),
+//	.CLKOUT3_DIVIDE(4'd8),
+//	.CLKOUT3_PHASE(7'd90),
+//	.DIVCLK_DIVIDE(1'd1),
+//	.REF_JITTER1(0.01),
+//	.STARTUP_WAIT("FALSE")
+//) PLLE2_ADV (
+//	.CLKFBIN(subfragments_pll_fb),
+//	.CLKIN1(clkin),
+//	.RST(subfragments_reset7),
+//	.CLKFBOUT(subfragments_pll_fb),
+//	.CLKOUT0(clkout0),
+//	.CLKOUT1(clkout1),
+//	.CLKOUT2(clkout2),
+//	.CLKOUT3(clkout3),
+//	.LOCKED(locked)
+//);
 
 reg [7:0] data_mem_grain0[0:1];
 reg [0:0] memadr_2;
@@ -19007,84 +19007,84 @@ end
 
 assign data_port_dat_r[63:56] = data_mem_grain7[memadr_9];
 
-(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE (
-	.C(iodelay_clk),
-	.CE(1'd1),
-	.D(1'd0),
-	.PRE(xilinxasyncresetsynchronizerimpl0),
-	.Q(xilinxasyncresetsynchronizerimpl0_rst_meta)
-);
+// (* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+// 	.INIT(1'd1)
+// ) FDPE (
+// 	.C(iodelay_clk),
+// 	.CE(1'd1),
+// 	.D(1'd0),
+// 	.PRE(xilinxasyncresetsynchronizerimpl0),
+// 	.Q(xilinxasyncresetsynchronizerimpl0_rst_meta)
+// );
+// 
+// (* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+// 	.INIT(1'd1)
+// ) FDPE_1 (
+// 	.C(iodelay_clk),
+// 	.CE(1'd1),
+// 	.D(xilinxasyncresetsynchronizerimpl0_rst_meta),
+// 	.PRE(xilinxasyncresetsynchronizerimpl0),
+// 	.Q(iodelay_rst)
+// );
+// 
+// (* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+// 	.INIT(1'd1)
+// ) FDPE_2 (
+// 	.C(sys_clk),
+// 	.CE(1'd1),
+// 	.D(1'd0),
+// 	.PRE(xilinxasyncresetsynchronizerimpl1),
+// 	.Q(xilinxasyncresetsynchronizerimpl1_rst_meta)
+// );
+// 
+// (* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+// 	.INIT(1'd1)
+// ) FDPE_3 (
+// 	.C(sys_clk),
+// 	.CE(1'd1),
+// 	.D(xilinxasyncresetsynchronizerimpl1_rst_meta),
+// 	.PRE(xilinxasyncresetsynchronizerimpl1),
+// 	.Q(sys_rst)
+// );
+// 
+// (* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+// 	.INIT(1'd1)
+// ) FDPE_4 (
+// 	.C(sys2x_clk),
+// 	.CE(1'd1),
+// 	.D(1'd0),
+// 	.PRE(xilinxasyncresetsynchronizerimpl2),
+// 	.Q(xilinxasyncresetsynchronizerimpl2_rst_meta)
+// );
 
-(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_1 (
-	.C(iodelay_clk),
-	.CE(1'd1),
-	.D(xilinxasyncresetsynchronizerimpl0_rst_meta),
-	.PRE(xilinxasyncresetsynchronizerimpl0),
-	.Q(iodelay_rst)
-);
-
-(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_2 (
-	.C(sys_clk),
-	.CE(1'd1),
-	.D(1'd0),
-	.PRE(xilinxasyncresetsynchronizerimpl1),
-	.Q(xilinxasyncresetsynchronizerimpl1_rst_meta)
-);
-
-(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_3 (
-	.C(sys_clk),
-	.CE(1'd1),
-	.D(xilinxasyncresetsynchronizerimpl1_rst_meta),
-	.PRE(xilinxasyncresetsynchronizerimpl1),
-	.Q(sys_rst)
-);
-
-(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_4 (
-	.C(sys2x_clk),
-	.CE(1'd1),
-	.D(1'd0),
-	.PRE(xilinxasyncresetsynchronizerimpl2),
-	.Q(xilinxasyncresetsynchronizerimpl2_rst_meta)
-);
-
-(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_5 (
-	.C(sys2x_clk),
-	.CE(1'd1),
-	.D(xilinxasyncresetsynchronizerimpl2_rst_meta),
-	.PRE(xilinxasyncresetsynchronizerimpl2),
-	.Q(xilinxasyncresetsynchronizerimpl2_expr)
-);
-
-(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_6 (
-	.C(sys2x_dqs_clk),
-	.CE(1'd1),
-	.D(1'd0),
-	.PRE(xilinxasyncresetsynchronizerimpl3),
-	.Q(xilinxasyncresetsynchronizerimpl3_rst_meta)
-);
-
-(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
-	.INIT(1'd1)
-) FDPE_7 (
-	.C(sys2x_dqs_clk),
-	.CE(1'd1),
-	.D(xilinxasyncresetsynchronizerimpl3_rst_meta),
-	.PRE(xilinxasyncresetsynchronizerimpl3),
-	.Q(xilinxasyncresetsynchronizerimpl3_expr)
-);
+//    (* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+//    	.INIT(1'd1)
+//    ) FDPE_5 (
+//    	.C(sys2x_clk),
+//    	.CE(1'd1),
+//    	.D(xilinxasyncresetsynchronizerimpl2_rst_meta),
+//    	.PRE(xilinxasyncresetsynchronizerimpl2),
+//    	.Q(xilinxasyncresetsynchronizerimpl2_expr)
+//    );
+//    
+//    (* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+//    	.INIT(1'd1)
+//    ) FDPE_6 (
+//    	.C(sys2x_dqs_clk),
+//    	.CE(1'd1),
+//    	.D(1'd0),
+//    	.PRE(xilinxasyncresetsynchronizerimpl3),
+//    	.Q(xilinxasyncresetsynchronizerimpl3_rst_meta)
+//    );
+//    
+//    (* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+//    	.INIT(1'd1)
+//    ) FDPE_7 (
+//    	.C(sys2x_dqs_clk),
+//    	.CE(1'd1),
+//    	.D(xilinxasyncresetsynchronizerimpl3_rst_meta),
+//    	.PRE(xilinxasyncresetsynchronizerimpl3),
+//    	.Q(xilinxasyncresetsynchronizerimpl3_expr)
+//    );
 
 endmodule
