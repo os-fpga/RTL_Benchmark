@@ -1,0 +1,149 @@
+ 
+{
+    "GENERAL": {
+      "DESIGN_STAGE"    : "yosys",
+      "STRATEGY"        : "performance",
+      "POWER_ANALYSIS"  : false,
+      "SWEEP"           : false 
+    },
+    "OpenFPGA_Commandline_args": {
+        "continue_on_fail"  : false,
+        "debug"             : true,
+        "test_run"          : false,
+        "show_thread_logs"  : true
+    },
+    "SYNTHESIS_PARAM": {
+        "command"   : "synth_rs",
+        "verific"   : true,
+        "synth_ql":{
+            "top"       : "${TOP_MODULE}",
+            "family"    : "qlf_k6n10f",
+            "no_abc_opt": null,
+            "edif"      : null,
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : null,
+            "no_dsp"    : true,
+            "no_adder"  : true,
+            "no_bram"   : true,
+            "no_ff_map" : null
+        },
+        "synth_rs":{
+            "top"       : "${TOP_MODULE}",
+            "tech"      : "generic",
+            "goal"      : "area",
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : "${OUTPUT_VERILOG}",
+            "no_dsp"    : true,
+            "no_bram"   : true,
+            "effort"     : "medium",
+            "abc"       : null,
+            "cec"       : null
+
+        },
+        "synth":{
+            "top"       : "${TOP_MODULE}",
+            "auto-top"  : null,
+            "flatten"   : true,
+            "encfile"   : null,
+            "lut"       : null,
+            "nofsm"     : null,
+            "noabc"     : null,
+            "noalumacc" : null,
+            "nordff"    : null,
+            "noshare"   : null,
+            "run"       : null,
+            "flowmap"   : null
+        }
+    },
+    "ABC": {
+        "lut"   : "6",
+        "script": null
+    },
+    "BENCHMARKS": {
+        "dbg_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/dbg/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "clk_override"
+            }
+        },
+        "dec_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/dec/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "active_clk",
+                "Clock4": "free_l2clk"
+            }
+        },
+        "dmi_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/dmi/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "tck",
+                "Clock2": "core_clk"
+            }
+        },
+        "exu_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/exu/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "ifu_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/dec/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "free_l2clk",
+                "Clock2": "active_clk",
+                "Clock3": "clk"
+            }
+        },
+        "lsu_el2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/lsu/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "active_clk",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+        "Core_Swerv_EL2": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/Core/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "jtag_tck",
+                "Clock2": "clk"
+            }
+        },
+        "EL2_ahb_to_axi4": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/lib/ahb_to_axi4/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "bus_clk_en",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+        "EL2_axi4_to_ahb": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/lib/axi4_to_ahb/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "bus_clk_en",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+        "EL2_mem_lib": {
+            "design":"RTL_Benchmark/SVerilog/Chipalliance/Cores-SweRV-EL2/design/lib/el2_ram/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "CLK"
+            }
+        }
+    }
+}
