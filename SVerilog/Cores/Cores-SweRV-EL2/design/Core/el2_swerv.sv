@@ -125,20 +125,21 @@ import el2_pkg::*;
    input  logic [2-1:0]            ic_rd_hit,
    input  logic                  ic_tag_perr,        // Icache Tag parity error
 
-   //-------------------------- LSU AXI signals--------------------------
-   // AXI Write Channels
-   output logic                            lsu_axi_awvalid,
-   input  logic                            lsu_axi_awready,
-   output logic [4-1:0]       lsu_axi_awid,
-   output logic [31:0]                     lsu_axi_awaddr,
-   output logic [3:0]                      lsu_axi_awregion,
-   output logic [7:0]                      lsu_axi_awlen,
-   output logic [2:0]                      lsu_axi_awsize,
-   output logic [1:0]                      lsu_axi_awburst,
+ 
    output logic                            lsu_axi_awlock,
    output logic [3:0]                      lsu_axi_awcache,
    output logic [2:0]                      lsu_axi_awprot,
    output logic [3:0]                      lsu_axi_awqos,
+   output logic                              lsu_axi_awvalid,
+   input logic                               lsu_axi_awready,
+   output logic [3:0]                        lsu_axi_awid,
+   output logic                              lsu_axi_awaddr,
+   output logic [3:0]                        lsu_axi_awregion,
+   output logic [7:0]                        lsu_axi_awlen,
+   output logic [2:0]                        lsu_axi_awsize,
+   output logic [1:0]                        lsu_axi_awburst,
+
+
 
    output logic                            lsu_axi_wvalid,
    input  logic                            lsu_axi_wready,
@@ -970,7 +971,7 @@ localparam BUILD_AHB_LITE=1;
          .axi_awvalid(lsu_axi_awvalid),
          .axi_awready(lsu_axi_awready_ahb),
          .axi_awid(lsu_axi_awid[4-1:0]),
-         .axi_awaddr(lsu_axi_awaddr[31:0]),
+    //     .axi_awaddr(lsu_axi_awaddr[31:0]),
          .axi_awsize(lsu_axi_awsize[2:0]),
          .axi_awprot(lsu_axi_awprot[2:0]),
 
@@ -1012,9 +1013,9 @@ localparam BUILD_AHB_LITE=1;
 
          .ahb_hrdata(lsu_hrdata[63:0]),
          .ahb_hready(lsu_hready),
-         .ahb_hresp(lsu_hresp),
+         .ahb_hresp(lsu_hresp)
 
-         .*
+         
       );
 
       axi4_to_ahb #(
