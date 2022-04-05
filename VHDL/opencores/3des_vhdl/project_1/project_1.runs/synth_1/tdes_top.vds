@@ -1,0 +1,563 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Apr  5 12:43:11 2022
+# Process ID: 50556
+# Current directory: /home/users/komal.inayat/Downloads/3des_vhdl/project_1/project_1.runs/synth_1
+# Command line: vivado -log tdes_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tdes_top.tcl
+# Log file: /home/users/komal.inayat/Downloads/3des_vhdl/project_1/project_1.runs/synth_1/tdes_top.vds
+# Journal file: /home/users/komal.inayat/Downloads/3des_vhdl/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source tdes_top.tcl -notrace
+Command: synth_design -top tdes_top -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 51080 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1419.582 ; gain = 86.848 ; free physical = 313214 ; free virtual = 437460
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'tdes_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:106]
+WARNING: [Synth 8-5640] Port 'core_busy' is missing in component declaration [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:108]
+INFO: [Synth 8-3491] module 'des_cipher_top' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:67' bound to instance 'DESCIPHERTOP1' of component 'des_cipher_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:218]
+INFO: [Synth 8-638] synthesizing module 'des_cipher_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:90]
+INFO: [Synth 8-3491] module 'key_schedule' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/key_schedule.vhd:68' bound to instance 'KEYSCHEDULE' of component 'key_schedule' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:162]
+INFO: [Synth 8-638] synthesizing module 'key_schedule' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/key_schedule.vhd:83]
+INFO: [Synth 8-256] done synthesizing module 'key_schedule' (1#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/key_schedule.vhd:83]
+INFO: [Synth 8-3491] module 'des_top' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_top.vhd:67' bound to instance 'DESTOP' of component 'des_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:175]
+INFO: [Synth 8-638] synthesizing module 'des_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_top.vhd:89]
+INFO: [Synth 8-3491] module 'block_top' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:68' bound to instance 'BLOCKTOP' of component 'block_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_top.vhd:275]
+INFO: [Synth 8-638] synthesizing module 'block_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:90]
+INFO: [Synth 8-3491] module 'e_expansion_function' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/e_expansion_function.vhd:68' bound to instance 'E_EXPANSIONFUNCTION' of component 'e_expansion_function' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'e_expansion_function' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/e_expansion_function.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'e_expansion_function' (2#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/e_expansion_function.vhd:82]
+INFO: [Synth 8-3491] module 'add_key' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_key.vhd:68' bound to instance 'ADDKEY' of component 'add_key' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'add_key' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_key.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'add_key' (3#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_key.vhd:91]
+INFO: [Synth 8-3491] module 's_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:68' bound to instance 'SBOX' of component 's_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:247]
+INFO: [Synth 8-638] synthesizing module 's_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:89]
+INFO: [Synth 8-3491] module 's1_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s1_box.vhd:68' bound to instance 'S1' of component 's1_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:149]
+INFO: [Synth 8-638] synthesizing module 's1_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s1_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's1_box' (4#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s1_box.vhd:74]
+INFO: [Synth 8-3491] module 's2_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s2_box.vhd:68' bound to instance 'S2' of component 's2_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:155]
+INFO: [Synth 8-638] synthesizing module 's2_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s2_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's2_box' (5#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s2_box.vhd:74]
+INFO: [Synth 8-3491] module 's3_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s3_box.vhd:68' bound to instance 'S3' of component 's3_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:161]
+INFO: [Synth 8-638] synthesizing module 's3_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s3_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's3_box' (6#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s3_box.vhd:74]
+INFO: [Synth 8-3491] module 's4_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s4_box.vhd:68' bound to instance 'S4' of component 's4_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:167]
+INFO: [Synth 8-638] synthesizing module 's4_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s4_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's4_box' (7#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s4_box.vhd:74]
+INFO: [Synth 8-3491] module 's5_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s5_box.vhd:68' bound to instance 'S5' of component 's5_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:173]
+INFO: [Synth 8-638] synthesizing module 's5_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s5_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's5_box' (8#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s5_box.vhd:74]
+INFO: [Synth 8-3491] module 's6_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s6_box.vhd:68' bound to instance 'S6' of component 's6_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:179]
+INFO: [Synth 8-638] synthesizing module 's6_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s6_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's6_box' (9#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s6_box.vhd:74]
+INFO: [Synth 8-3491] module 's7_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s7_box.vhd:68' bound to instance 'S7' of component 's7_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:185]
+INFO: [Synth 8-638] synthesizing module 's7_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s7_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's7_box' (10#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s7_box.vhd:74]
+INFO: [Synth 8-3491] module 's8_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s8_box.vhd:68' bound to instance 'S8' of component 's8_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:191]
+INFO: [Synth 8-638] synthesizing module 's8_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s8_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's8_box' (11#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s8_box.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 's_box' (12#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/s_box.vhd:89]
+INFO: [Synth 8-3491] module 'p_box' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/p_box.vhd:68' bound to instance 'PBOX' of component 'p_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:270]
+INFO: [Synth 8-638] synthesizing module 'p_box' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/p_box.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'p_box' (13#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/p_box.vhd:82]
+INFO: [Synth 8-3491] module 'add_left' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_left.vhd:68' bound to instance 'ADDLEFT' of component 'add_left' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:287]
+INFO: [Synth 8-638] synthesizing module 'add_left' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_left.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'add_left' (14#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/add_left.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'block_top' (15#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/block_top.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'des_top' (16#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_top.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'des_cipher_top' (17#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:90]
+WARNING: [Synth 8-5640] Port 'core_busy' is missing in component declaration [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:108]
+INFO: [Synth 8-3491] module 'des_cipher_top' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:67' bound to instance 'DESCIPHERTOP2' of component 'des_cipher_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:235]
+WARNING: [Synth 8-5640] Port 'core_busy' is missing in component declaration [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:108]
+INFO: [Synth 8-3491] module 'des_cipher_top' declared at '/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_cipher_top.vhd:67' bound to instance 'DESCIPHERTOP3' of component 'des_cipher_top' [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:252]
+INFO: [Synth 8-256] done synthesizing module 'tdes_top' (18#1) [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/tdes_top.vhd:106]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[7]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[15]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[23]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[31]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[39]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[47]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[55]
+WARNING: [Synth 8-3331] design key_schedule has unconnected port key_in[63]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1474.215 ; gain = 141.480 ; free physical = 313221 ; free virtual = 437471
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1474.215 ; gain = 141.480 ; free physical = 313219 ; free virtual = 437463
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1482.215 ; gain = 149.480 ; free physical = 313222 ; free virtual = 437467
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/komal.inayat/Downloads/3des_vhdl/trunk/VHDL/des_top.vhd:199]
+INFO: [Synth 8-802] inferred FSM for state register 'nextstate_reg' in module 'des_top'
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RoundCounter" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 waitkey |                              000 |                              000
+                waitdata |                              001 |                              001
+            initialround |                              010 |                              010
+             repeatround |                              011 |                              011
+              finalround |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'nextstate_reg' using encoding 'sequential' in module 'des_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1498.230 ; gain = 165.496 ; free physical = 313206 ; free virtual = 437451
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 6     
++---XORs : 
+	   2 Input     32 Bit         XORs := 3     
+	   2 Input      6 Bit         XORs := 24    
++---Registers : 
+	               64 Bit    Registers := 13    
+	               48 Bit    Registers := 48    
+	               32 Bit    Registers := 6     
+	                4 Bit    Registers := 6     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 3     
+	   5 Input      4 Bit        Muxes := 6     
+	   5 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 9     
+	   2 Input      2 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 24    
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module tdes_top 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 7     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module key_schedule 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 16    
+	                1 Bit    Registers := 1     
+Module add_key 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      6 Bit         XORs := 8     
+Module add_left 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module des_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 8     
+Module des_cipher_top 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[7]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[15]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[23]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[31]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[39]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[47]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[55]
+WARNING: [Synth 8-3331] design des_cipher_top has unconnected port key_in[63]
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/key_ready_reg' (FDR) to 'DESCIPHERTOP3/KEYSCHEDULE/key_ready_reg'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[8]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[22]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[19]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[5]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[21]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[18]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[15]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[10]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[8]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[22]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[19]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[17]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[21]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[22]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[5]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[20]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[8]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[22]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[2]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[15]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[21]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[10]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[3]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[14]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[17]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[15]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[7]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[23]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[10]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[8]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[22]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[5]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[4]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K13_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[16]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K12_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[12]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K11_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[10]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K10_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K9_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[1]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K8_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[13]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K7_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K6_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[14]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K5_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[11]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K4_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[17]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K3_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[9]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K2_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[15]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K1_reg[23]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[6]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[30]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[34]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K15_reg[30]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[46]'
+INFO: [Synth 8-3886] merging instance 'DESCIPHERTOP1/KEYSCHEDULE/K14_reg[30]' (FDE) to 'DESCIPHERTOP1/KEYSCHEDULE/K16_reg[29]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (DESCIPHERTOP1/DESTOP/core_busy_reg) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (DESCIPHERTOP2/DESTOP/core_busy_reg) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (DESCIPHERTOP3/DESTOP/core_busy_reg) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[7]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[15]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[23]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[31]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[39]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[47]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[55]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey1_reg[63]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[7]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[15]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[23]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[31]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[39]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[47]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[55]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key3_in_internal_reg[63]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[7]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[15]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[23]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[31]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[39]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[47]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[55]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key2_in_internal_reg[63]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[7]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[15]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[23]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[31]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[39]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[47]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[55]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (memkey3_reg[63]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[7]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[15]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[23]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[31]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[39]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[47]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[55]) is unused and will be removed from module tdes_top.
+WARNING: [Synth 8-3332] Sequential element (key1_in_internal_reg[63]) is unused and will be removed from module tdes_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:57 . Memory (MB): peak = 1675.133 ; gain = 342.398 ; free physical = 313091 ; free virtual = 437234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|s1_box      | rom        | 64x4          | LUT            | 
+|s2_box      | rom__1     | 64x4          | LUT            | 
+|s3_box      | rom__2     | 64x4          | LUT            | 
+|s4_box      | rom__3     | 64x4          | LUT            | 
+|s5_box      | rom__4     | 64x4          | LUT            | 
+|s6_box      | rom__5     | 64x4          | LUT            | 
+|s7_box      | rom__6     | 64x4          | LUT            | 
+|s8_box      | rom__7     | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in2      | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in2      | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in1      | 64x4          | LUT            | 
+|block_top   | x_in2      | 64x4          | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:58 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313089 ; free virtual = 437232
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:58 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313061 ; free virtual = 437204
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313025 ; free virtual = 437168
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313048 ; free virtual = 437191
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313048 ; free virtual = 437190
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313048 ; free virtual = 437190
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313047 ; free virtual = 437190
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313047 ; free virtual = 437190
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |   244|
+|4     |LUT3 |   226|
+|5     |LUT4 |   108|
+|6     |LUT5 |    22|
+|7     |LUT6 |   699|
+|8     |FDRE |  1197|
+|9     |IBUF |   237|
+|10    |OBUF |    65|
++------+-----+------+
+
+Report Instance Areas: 
++------+----------------+-----------------+------+
+|      |Instance        |Module           |Cells |
++------+----------------+-----------------+------+
+|1     |top             |                 |  2800|
+|2     |  DESCIPHERTOP1 |des_cipher_top   |   655|
+|3     |    DESTOP      |des_top_5        |   287|
+|4     |      BLOCKTOP  |block_top_7      |    32|
+|5     |    KEYSCHEDULE |key_schedule_6   |   303|
+|6     |  DESCIPHERTOP2 |des_cipher_top_0 |   655|
+|7     |    DESTOP      |des_top_2        |   287|
+|8     |      BLOCKTOP  |block_top_4      |    32|
+|9     |    KEYSCHEDULE |key_schedule_3   |   303|
+|10    |  DESCIPHERTOP3 |des_cipher_top_1 |   657|
+|11    |    DESTOP      |des_top          |   287|
+|12    |      BLOCKTOP  |block_top        |    32|
+|13    |    KEYSCHEDULE |key_schedule     |   305|
++------+----------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313048 ; free virtual = 437191
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 62 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.137 ; gain = 342.402 ; free physical = 313049 ; free virtual = 437192
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:59 . Memory (MB): peak = 1675.141 ; gain = 342.402 ; free physical = 313049 ; free virtual = 437191
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 237 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+172 Infos, 62 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:01:03 . Memory (MB): peak = 1764.160 ; gain = 444.031 ; free physical = 313095 ; free virtual = 437235
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Downloads/3des_vhdl/project_1/project_1.runs/synth_1/tdes_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tdes_top_utilization_synth.rpt -pb tdes_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1788.180 ; gain = 0.000 ; free physical = 313065 ; free virtual = 437206
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  5 12:44:27 2022...
