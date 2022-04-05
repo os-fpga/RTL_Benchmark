@@ -1,2 +1,0 @@
-nolog -all
-run -all
