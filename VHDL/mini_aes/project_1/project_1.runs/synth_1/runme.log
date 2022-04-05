@@ -1,0 +1,624 @@
+
+*** Running vivado
+    with args -log mini_aes.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mini_aes.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source mini_aes.tcl -notrace
+Command: synth_design -top mini_aes -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21003 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1419.582 ; gain = 86.848 ; free physical = 405054 ; free virtual = 469064
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mini_aes' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:47]
+INFO: [Synth 8-3491] module 'io_interface' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/io_interface.vhdl:35' bound to instance 'my_io' of component 'io_interface' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:278]
+INFO: [Synth 8-638] synthesizing module 'io_interface' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/io_interface.vhdl:52]
+INFO: [Synth 8-256] done synthesizing module 'io_interface' (1#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/io_interface.vhdl:52]
+INFO: [Synth 8-3491] module 'bram_block_a' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:34' bound to instance 'sbox1' of component 'bram_block_a' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:294]
+INFO: [Synth 8-638] synthesizing module 'bram_block_a' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:49]
+INFO: [Synth 8-256] done synthesizing module 'bram_block_a' (2#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:49]
+INFO: [Synth 8-3491] module 'bram_block_b' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:34' bound to instance 'sbox2' of component 'bram_block_b' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:306]
+INFO: [Synth 8-638] synthesizing module 'bram_block_b' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:49]
+INFO: [Synth 8-256] done synthesizing module 'bram_block_b' (3#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:49]
+INFO: [Synth 8-3491] module 'mix_column' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mix_column.vhdl:34' bound to instance 'mixcol' of component 'mix_column' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:318]
+INFO: [Synth 8-638] synthesizing module 'mix_column' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mix_column.vhdl:47]
+INFO: [Synth 8-256] done synthesizing module 'mix_column' (4#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mix_column.vhdl:47]
+INFO: [Synth 8-3491] module 'key_scheduler' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:34' bound to instance 'key' of component 'key_scheduler' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:328]
+INFO: [Synth 8-638] synthesizing module 'key_scheduler' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:46]
+INFO: [Synth 8-3491] module 'bram_block_a' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:34' bound to instance 'sbox1' of component 'bram_block_a' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:122]
+INFO: [Synth 8-3491] module 'bram_block_b' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:34' bound to instance 'sbox2' of component 'bram_block_b' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:134]
+INFO: [Synth 8-3491] module 'counter2bit' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/counter2bit.vhdl:34' bound to instance 'rc' of component 'counter2bit' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:146]
+INFO: [Synth 8-638] synthesizing module 'counter2bit' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/counter2bit.vhdl:42]
+INFO: [Synth 8-256] done synthesizing module 'counter2bit' (5#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/counter2bit.vhdl:42]
+WARNING: [Synth 8-614] signal 'key_i' is read in the process but is not in the sensitivity list [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:175]
+INFO: [Synth 8-256] done synthesizing module 'key_scheduler' (6#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/key_scheduler.vhdl:46]
+INFO: [Synth 8-3491] module 'counter2bit' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/counter2bit.vhdl:34' bound to instance 'count2bit' of component 'counter2bit' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:337]
+INFO: [Synth 8-3491] module 'folded_register' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:34' bound to instance 'foldreg' of component 'folded_register' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:344]
+INFO: [Synth 8-638] synthesizing module 'folded_register' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:52]
+INFO: [Synth 8-3491] module 'counter2bit' declared at '/home/users/komal.inayat/Downloads/mini_aes/trunk/source/counter2bit.vhdl:34' bound to instance 'sect' of component 'counter2bit' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:104]
+WARNING: [Synth 8-614] signal 'round0' is read in the process but is not in the sensitivity list [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:113]
+WARNING: [Synth 8-614] signal 'enc_i' is read in the process but is not in the sensitivity list [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:113]
+INFO: [Synth 8-256] done synthesizing module 'folded_register' (7#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/folded_register.vhdl:52]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[7] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[6] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[5] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[4] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[3] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[2] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[1] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_reg[0] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:379]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl1_p_reg[3] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:390]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl3_p_reg[0] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+INFO: [Synth 8-256] done synthesizing module 'mini_aes' (8#1) [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:47]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port we_b_i
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[7]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[6]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[5]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[4]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[3]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[2]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[1]
+WARNING: [Synth 8-3331] design bram_block_b has unconnected port di_b_i[0]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port we_a_i
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[7]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[6]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[5]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[4]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[3]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[2]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[1]
+WARNING: [Synth 8-3331] design bram_block_a has unconnected port di_a_i[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1471.215 ; gain = 138.480 ; free physical = 404937 ; free virtual = 468944
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1471.215 ; gain = 138.480 ; free physical = 404935 ; free virtual = 468943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1479.215 ; gain = 146.480 ; free physical = 404931 ; free virtual = 468938
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element addr_a_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element addr_a_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:110]
+WARNING: [Synth 8-6014] Unused sequential element addr_b_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element addr_b_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:110]
+INFO: [Synth 8-4471] merging register 'key_o_srl3_p_reg[3][31:0]' into 'key_o_srl1_p_reg[0][31:0]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+INFO: [Synth 8-4471] merging register 'key_o_srl3_p_reg[2][31:0]' into 'key_o_srl1_p_reg[1][31:0]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+INFO: [Synth 8-4471] merging register 'key_o_srl3_p_reg[1][31:0]' into 'key_o_srl1_p_reg[2][31:0]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl3_p_reg[3] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl3_p_reg[2] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+WARNING: [Synth 8-6014] Unused sequential element key_o_srl3_p_reg[1] was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:399]
+WARNING: [Synth 8-3936] Found unconnected internal register 'fifo16x8_reg' and it is trimmed from '128' to '96' bits. [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:366]
+WARNING: [Synth 8-327] inferring latch for variable 'fifo16x8o_reg' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:425]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[43]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[42]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[41]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[40]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[39]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[38]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[37]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[36]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[35]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[34]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[33]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[32]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[31]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[30]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[29]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[28]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[27]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[26]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[25]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[24]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[23]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[22]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[21]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[20]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[19]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[18]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[17]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[16]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[15]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[14]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[13]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[12]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[11]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[10]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[9]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[8]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[7]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[6]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[5]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[4]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[3]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[2]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[1]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+WARNING: [Synth 8-327] inferring latch for variable 'key_o_srl3_reg[0]' [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/mini_aes.vhdl:417]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1495.230 ; gain = 162.496 ; free physical = 404876 ; free virtual = 468885
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 3     
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 3     
+	   2 Input      8 Bit         XORs := 13    
+	   4 Input      8 Bit         XORs := 1     
+	   5 Input      8 Bit         XORs := 1     
+	   3 Input      8 Bit         XORs := 2     
+	   2 Input      2 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 24    
++---Registers : 
+	               96 Bit    Registers := 2     
+	               80 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 39    
+	                9 Bit    Registers := 12    
+	                8 Bit    Registers := 85    
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---ROMs : 
+	                              ROMs := 8     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input     96 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     60 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input      9 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 72    
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mini_aes 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 3     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               32 Bit    Registers := 39    
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 8     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module io_interface 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 49    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module bram_block_a 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
++---ROMs : 
+	                              ROMs := 2     
+Module bram_block_b 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
++---ROMs : 
+	                              ROMs := 2     
+Module mix_column 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 8     
+	   4 Input      8 Bit         XORs := 1     
+	   5 Input      8 Bit         XORs := 1     
+	   3 Input      8 Bit         XORs := 2     
+	   2 Input      2 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 24    
+Module counter2bit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module key_scheduler 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 5     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               80 Bit    Registers := 1     
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     96 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 1     
+Module folded_register 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                8 Bit    Registers := 32    
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     60 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 52    
+	   2 Input      4 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element sbox1/addr_a_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element sbox1/addr_a_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:110]
+WARNING: [Synth 8-6014] Unused sequential element sbox2/addr_b_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element sbox2/addr_b_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:110]
+WARNING: [Synth 8-6014] Unused sequential element sbox1/addr_a_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element sbox1/addr_a_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_a.vhdl:110]
+WARNING: [Synth 8-6014] Unused sequential element sbox2/addr_b_1_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:109]
+WARNING: [Synth 8-6014] Unused sequential element sbox2/addr_b_2_reg was removed.  [/home/users/komal.inayat/Downloads/mini_aes/trunk/source/bram_block_b.vhdl:110]
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[8]' (FDC) to 'key/addr_a_2_i_reg[8]'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[8]' (FDC) to 'key/addr_a_2_i_reg[8]'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[8]' (FDC) to 'key/addr_a_1_i_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (key/\addr_a_1_i_reg[8] )
+WARNING: [Synth 8-3332] Sequential element (addr_a_1_i_reg[8]) is unused and will be removed from module key_scheduler.
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[0]_P' (FDP) to 'key/side_opt_reg[3][0]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[0]_C' (FDC) to 'key/side_opt_reg[3][0]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[1]_P' (FDP) to 'key/side_opt_reg[3][1]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[1]_C' (FDC) to 'key/side_opt_reg[3][1]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[2]_P' (FDP) to 'key/side_opt_reg[3][2]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[2]_C' (FDC) to 'key/side_opt_reg[3][2]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[3]_P' (FDP) to 'key/side_opt_reg[3][3]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[3]_C' (FDC) to 'key/side_opt_reg[3][3]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[4]_P' (FDP) to 'key/side_opt_reg[3][4]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[4]_C' (FDC) to 'key/side_opt_reg[3][4]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[5]_P' (FDP) to 'key/side_opt_reg[3][5]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[5]_C' (FDC) to 'key/side_opt_reg[3][5]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[6]_P' (FDP) to 'key/side_opt_reg[3][6]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[6]_C' (FDC) to 'key/side_opt_reg[3][6]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[7]_P' (FDP) to 'key/side_opt_reg[3][7]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_2_i_reg[7]_C' (FDC) to 'key/side_opt_reg[3][7]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[0]_P' (FDP) to 'key/side_opt_reg[0][0]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[0]_C' (FDC) to 'key/side_opt_reg[0][0]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[1]_P' (FDP) to 'key/side_opt_reg[0][1]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[1]_C' (FDC) to 'key/side_opt_reg[0][1]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[2]_P' (FDP) to 'key/side_opt_reg[0][2]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[2]_C' (FDC) to 'key/side_opt_reg[0][2]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[3]_P' (FDP) to 'key/side_opt_reg[0][3]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[3]_C' (FDC) to 'key/side_opt_reg[0][3]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[4]_P' (FDP) to 'key/side_opt_reg[0][4]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[4]_C' (FDC) to 'key/side_opt_reg[0][4]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[5]_P' (FDP) to 'key/side_opt_reg[0][5]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[5]_C' (FDC) to 'key/side_opt_reg[0][5]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[6]_P' (FDP) to 'key/side_opt_reg[0][6]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[6]_C' (FDC) to 'key/side_opt_reg[0][6]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[7]_P' (FDP) to 'key/side_opt_reg[0][7]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_b_1_i_reg[7]_C' (FDC) to 'key/side_opt_reg[0][7]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[0]_P' (FDP) to 'key/side_opt_reg[1][0]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[0]_C' (FDC) to 'key/side_opt_reg[1][0]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[1]_P' (FDP) to 'key/side_opt_reg[1][1]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[1]_C' (FDC) to 'key/side_opt_reg[1][1]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[2]_P' (FDP) to 'key/side_opt_reg[1][2]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[2]_C' (FDC) to 'key/side_opt_reg[1][2]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[3]_P' (FDP) to 'key/side_opt_reg[1][3]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[3]_C' (FDC) to 'key/side_opt_reg[1][3]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[4]_P' (FDP) to 'key/side_opt_reg[1][4]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[4]_C' (FDC) to 'key/side_opt_reg[1][4]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[5]_P' (FDP) to 'key/side_opt_reg[1][5]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[5]_C' (FDC) to 'key/side_opt_reg[1][5]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[6]_P' (FDP) to 'key/side_opt_reg[1][6]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[6]_C' (FDC) to 'key/side_opt_reg[1][6]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[7]_P' (FDP) to 'key/side_opt_reg[1][7]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_2_i_reg[7]_C' (FDC) to 'key/side_opt_reg[1][7]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[0]_P' (FDP) to 'key/side_opt_reg[2][0]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[0]_C' (FDC) to 'key/side_opt_reg[2][0]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[1]_P' (FDP) to 'key/side_opt_reg[2][1]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[1]_C' (FDC) to 'key/side_opt_reg[2][1]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[2]_P' (FDP) to 'key/side_opt_reg[2][2]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[2]_C' (FDC) to 'key/side_opt_reg[2][2]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[3]_P' (FDP) to 'key/side_opt_reg[2][3]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[3]_C' (FDC) to 'key/side_opt_reg[2][3]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[4]_P' (FDP) to 'key/side_opt_reg[2][4]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[4]_C' (FDC) to 'key/side_opt_reg[2][4]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[5]_P' (FDP) to 'key/side_opt_reg[2][5]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[5]_C' (FDC) to 'key/side_opt_reg[2][5]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[6]_P' (FDP) to 'key/side_opt_reg[2][6]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[6]_C' (FDC) to 'key/side_opt_reg[2][6]_C'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[7]_P' (FDP) to 'key/side_opt_reg[2][7]_P'
+INFO: [Synth 8-3886] merging instance 'key/addr_a_1_i_reg[7]_C' (FDC) to 'key/side_opt_reg[2][7]_C'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:01:11 . Memory (MB): peak = 1764.086 ; gain = 431.352 ; free physical = 404590 ; free virtual = 468771
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------+--------------------+---------------+----------------+
+|Module Name   | RTL Object         | Depth x Width | Implemented As | 
++--------------+--------------------+---------------+----------------+
+|bram_block_a  | addr_a_1_reg       | 512x8         | Block RAM      | 
+|bram_block_a  | addr_a_2_reg       | 512x8         | Block RAM      | 
+|bram_block_b  | addr_b_1_reg       | 512x8         | Block RAM      | 
+|bram_block_b  | addr_b_2_reg       | 512x8         | Block RAM      | 
+|key_scheduler | sbox2/addr_b_1_reg | 512x8         | Block RAM      | 
+|key_scheduler | sbox1/addr_a_2_reg | 512x8         | Block RAM      | 
+|key_scheduler | sbox2/addr_b_2_reg | 512x8         | Block RAM      | 
+|key_scheduler | sbox1/addr_a_1_reg | 512x8         | Block RAM      | 
+|mini_aes      | sbox1/addr_a_1_reg | 512x8         | Block RAM      | 
+|mini_aes      | sbox1/addr_a_2_reg | 512x8         | Block RAM      | 
++--------------+--------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance key/i_0/sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/i_1/sbox1/addr_a_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/i_194/sbox2/addr_b_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/i_195/sbox1/addr_a_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/sbox1/addr_a_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_1/sbox2/addr_b_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_2/sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_3/sbox1/addr_a_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:14 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404568 ; free virtual = 468750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[61]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[60]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[57]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[52]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[45]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[44]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[41]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[36]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[29]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[28]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[25]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[20]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[13]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[12]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[9]) is unused and will be removed from module mini_aes.
+WARNING: [Synth 8-3332] Sequential element (foldreg/fifo_addr_reg[4]) is unused and will be removed from module mini_aes.
+INFO: [Synth 8-4480] The timing for the instance key/sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/sbox2/addr_b_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance key/sbox2/addr_b_2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance sbox1/addr_a_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance sbox1/addr_a_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance sbox2/addr_b_1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:01:17 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404494 ; free virtual = 468672
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:18 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404492 ; free virtual = 468671
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:18 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404493 ; free virtual = 468672
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:18 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404495 ; free virtual = 468674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:18 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404495 ; free virtual = 468674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404496 ; free virtual = 468675
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404492 ; free virtual = 468671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|mini_aes    | key/rcon10x8_reg[79] | 7      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|mini_aes    | key/rcon10x8_reg[78] | 6      | 3     | YES          | NO                 | YES               | 3      | 0       | 
+|mini_aes    | key/rcon10x8_reg[77] | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|mini_aes    | key/rcon10x8_reg[76] | 4      | 2     | YES          | NO                 | YES               | 2      | 0       | 
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |LUT1     |     8|
+|3     |LUT2     |   334|
+|4     |LUT3     |   741|
+|5     |LUT4     |    76|
+|6     |LUT5     |   870|
+|7     |LUT6     |  1462|
+|8     |MUXF7    |   492|
+|9     |MUXF8    |   152|
+|10    |RAMB18E1 |     4|
+|11    |SRL16E   |     8|
+|12    |FDCE     |  2112|
+|13    |FDPE     |   453|
+|14    |FDRE     |   106|
+|15    |LD       |  1536|
+|16    |LDC      |   290|
+|17    |IBUF     |    20|
+|18    |OBUF     |     9|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------+----------------+------+
+|      |Instance    |Module          |Cells |
++------+------------+----------------+------+
+|1     |top         |                |  8675|
+|2     |  count2bit |counter2bit     |     5|
+|3     |  foldreg   |folded_register |  3342|
+|4     |    sect    |counter2bit_2   |    45|
+|5     |  key       |key_scheduler   |   732|
+|6     |    rc      |counter2bit_0   |    80|
+|7     |    sbox2   |bram_block_b_1  |    66|
+|8     |  my_io     |io_interface    |   980|
+|9     |  sbox1     |bram_block_a    |   379|
+|10    |  sbox2     |bram_block_b    |   192|
++------+------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404491 ; free virtual = 468670
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 109 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1764.090 ; gain = 431.355 ; free physical = 404495 ; free virtual = 468674
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1764.094 ; gain = 431.355 ; free physical = 404495 ; free virtual = 468674
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2494 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1826 instances were transformed.
+  LD => LDCE: 1536 instances
+  LDC => LDCE: 290 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+123 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:01:23 . Memory (MB): peak = 1820.117 ; gain = 499.988 ; free physical = 404472 ; free virtual = 468643
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Downloads/mini_aes/project_1/project_1.runs/synth_1/mini_aes.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mini_aes_utilization_synth.rpt -pb mini_aes_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.24 . Memory (MB): peak = 1844.133 ; gain = 0.000 ; free physical = 404444 ; free virtual = 468618
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 11:16:52 2022...

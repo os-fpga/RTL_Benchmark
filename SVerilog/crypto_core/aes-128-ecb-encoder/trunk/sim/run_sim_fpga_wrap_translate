@@ -1,0 +1,36 @@
+#!/bin/csh
+
+setenv TOP_DESIGN ./..
+# -- Set current directory for unit
+setenv CURR_DIR $PWD
+cd ../
+setenv UNIT_HOME $PWD
+cd $CURR_DIR
+
+rm -rf ./XRUN_rtl_libs/
+source $UNIT_HOME/tb/vipcat_env_xrun64.csh
+
+setenv XILINX_VIVADO /opt/xilinx/Vivado2017/Vivado/2017.4/
+
+setenv SDF_PATH      $UNIT_HOME/fpga/aes128_ecb/netlist/aes128_ecb_wrap.sdf
+setenv SDF_PATH_UART $UNIT_HOME/fpga/aes128_ecb/netlist/uartlite.sdf
+
+xrun \
++gui \
++libverbose \
++xmaccess+rwc\
+-64bit\
+-sv \
+-uvm \
+-smartorder \
+-LOGfile xrun_fpga_tb.log \
+-incdir ${TOP_DESIGN}/tb\
+-define SDF_PATH='"'${SDF_PATH}'"'\
+-define SDF_PATH_UART='"'${SDF_PATH_UART}'"'\
+-top tb_fpga \
+-top glbl \
++xmtimescale+1ps/1ps \
+-xmlibdirname XRUN_fpga_wrap_translate_libs \
+-f ../sim/fpga_wrap_files_translate.lst 
+
+#-loadvpi $UNIT_HOME/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver/inca.lnx8664.043.pak \

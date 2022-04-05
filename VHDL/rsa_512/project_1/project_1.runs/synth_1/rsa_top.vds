@@ -1,0 +1,1239 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Apr  4 14:04:12 2022
+# Process ID: 36649
+# Current directory: /home/users/komal.inayat/Downloads/rsa_512/project_1/project_1.runs/synth_1
+# Command line: vivado -log rsa_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rsa_top.tcl
+# Log file: /home/users/komal.inayat/Downloads/rsa_512/project_1/project_1.runs/synth_1/rsa_top.vds
+# Journal file: /home/users/komal.inayat/Downloads/rsa_512/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rsa_top.tcl -notrace
+Command: synth_design -top rsa_top -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 38489 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1419.586 ; gain = 86.848 ; free physical = 384962 ; free virtual = 458818
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rsa_top' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:50]
+INFO: [Synth 8-3491] module 'n_c_core' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:28' bound to instance 'n_c1' of component 'n_c_core' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'n_c_core' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'n_c_core' (1#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:37]
+INFO: [Synth 8-3491] module 'montgomery_mult' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:30' bound to instance 'mon_1' of component 'montgomery_mult' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'montgomery_mult' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:47]
+INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_b' of component 'fifo_512_bram' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:131]
+INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_feed' of component 'fifo_256_feedback' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:142]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_first' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:51]
+INFO: [Synth 8-3491] module 'pe_wrapper' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe_wrapper.vhd:30' bound to instance 'mont' of component 'pe_wrapper' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'pe_wrapper' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe_wrapper.vhd:50]
+INFO: [Synth 8-3491] module 'pe' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:30' bound to instance 'pe_0' of component 'pe' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe_wrapper.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'pe' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'pe' (2#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:47]
+INFO: [Synth 8-3491] module 'm_calc' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/m_calc.vhd:30' bound to instance 'mcons_0' of component 'm_calc' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe_wrapper.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'm_calc' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/m_calc.vhd:43]
+WARNING: [Synth 8-614] signal 'mult' is read in the process but is not in the sensitivity list [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/m_calc.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'm_calc' (3#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/m_calc.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'pe_wrapper' (4#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe_wrapper.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'montgomery_step' (5#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:51]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_last' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:175]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-3491] module 'montgomery_step' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_step.vhd:30' bound to instance 'et_i' of component 'montgomery_step' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:193]
+INFO: [Synth 8-256] done synthesizing module 'montgomery_mult' (6#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:47]
+INFO: [Synth 8-3491] module 'montgomery_mult' declared at '/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/montgomery_mult.vhd:30' bound to instance 'mon_2' of component 'montgomery_mult' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:150]
+INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_mon_out' of component 'res_out_fifo' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:164]
+INFO: [Synth 8-637] synthesizing blackbox instance 'exp' of component 'Mem_b' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:174]
+INFO: [Synth 8-637] synthesizing blackbox instance 'n_mod' of component 'Mem_b' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:181]
+INFO: [Synth 8-226] default block is never used [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:306]
+INFO: [Synth 8-256] done synthesizing module 'rsa_top' (7#1) [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/rsa_top.vhd:50]
+WARNING: [Synth 8-3331] design pe_wrapper has unconnected port reset_the_PE
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1464.219 ; gain = 131.480 ; free physical = 384974 ; free virtual = 458831
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1464.219 ; gain = 131.480 ; free physical = 384975 ; free virtual = 458832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1472.219 ; gain = 139.480 ; free physical = 384974 ; free virtual = 458831
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'stateNC_reg' in module 'n_c_core'
+WARNING: [Synth 8-6014] Unused sequential element prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+WARNING: [Synth 8-6014] Unused sequential element sum_res_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/m_calc.vhd:53]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'montgomery_step'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'montgomery_mult'
+INFO: [Synth 8-5544] ROM "next_b_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'rsa_top'
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               stnc_idle |                              000 |                              000
+              stnc_step1 |                              001 |                              001
+              stnc_step2 |                              010 |                              010
+              stnc_step3 |                              011 |                              011
+              stnc_step4 |                              100 |                              100
+                stnc_fin |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'stateNC_reg' using encoding 'sequential' in module 'n_c_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              wait_valid |                              000 |                              000
+                b_stable |                              001 |                              101
+                  prep_m |                              010 |                              100
+                  wait_m |                              011 |                              001
+               mont_proc |                              100 |                              010
+         getting_results |                              101 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'montgomery_step'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              wait_start |                               00 |                               01
+            process_data |                               01 |                               10
+               dump_feed |                               10 |                               11
+               rst_fifos |                               11 |                               00
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'montgomery_mult'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              wait_start |                             0000 |                             0000
+            prepare_data |                             0001 |                             0001
+          wait_constants |                             0010 |                             0010
+       writting_cts_fifo |                             0011 |                             0011
+              transition |                             0100 |                             0111
+       processing_data_0 |                             0101 |                             0100
+       processing_data_1 |                             0110 |                             0101
+            wait_results |                             0111 |                             0110
+        writting_results |                             1000 |                             1001
+              final_mult |                             1001 |                             1010
+           prepare_final |                             1010 |                             1100
+              wait_final |                             1011 |                             1101
+              show_final |                             1100 |                             1011
+            prepare_next |                             1101 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'rsa_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1489.242 ; gain = 156.504 ; free physical = 384919 ; free virtual = 458777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 16    
+	   2 Input     16 Bit       Adders := 20    
+	   2 Input      8 Bit       Adders := 18    
+	   2 Input      6 Bit       Adders := 3     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               48 Bit    Registers := 112   
+	               32 Bit    Registers := 128   
+	               16 Bit    Registers := 107   
+	                8 Bit    Registers := 21    
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 119   
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	  14 Input     32 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 49    
+	   2 Input     16 Bit        Muxes := 86    
+	   4 Input     16 Bit        Muxes := 8     
+	  14 Input     16 Bit        Muxes := 9     
+	   6 Input      8 Bit        Muxes := 16    
+	   2 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 3     
+	  14 Input      6 Bit        Muxes := 2     
+	   8 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 3     
+	  14 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 17    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 164   
+	   2 Input      1 Bit        Muxes := 62    
+	   4 Input      1 Bit        Muxes := 16    
+	  14 Input      1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rsa_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 3     
++---Registers : 
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	  14 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	  14 Input     16 Bit        Muxes := 9     
+	   2 Input      6 Bit        Muxes := 3     
+	  14 Input      6 Bit        Muxes := 2     
+	  14 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 12    
+Module n_c_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   6 Input     16 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+Module pe 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module m_calc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module pe_wrapper 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module montgomery_step 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 7     
+	               32 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 3     
+	   6 Input     16 Bit        Muxes := 3     
+	   6 Input      8 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 10    
+Module montgomery_mult 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 9     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'LSW_M_reg[15:0]' into 'LSW_M_reg[15:0]' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:66]
+INFO: [Synth 8-4471] merging register 't_NC_reg[15:0]' into 't_NC_reg[15:0]' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element LSW_M_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element t_NC_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/n_c.vhd:66]
+DSP Report: Generating DSP plusOp, operation Mode is: (C:0x2)-A2*B2.
+DSP Report: register LSW_M_reg is absorbed into DSP plusOp.
+DSP Report: register t_NC_reg is absorbed into DSP plusOp.
+DSP Report: operator plusOp is absorbed into DSP plusOp.
+DSP Report: operator multOp is absorbed into DSP plusOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+INFO: [Synth 8-4471] merging register 'mont/pe_0/sum_1_reg[31:0]' into 'mont/pe_0/sum_1_reg[31:0]' [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/sum_1_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/s_prev_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/n_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:61]
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/ab_out_reg_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_nj_m_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element mont/pe_0/prod_aj_bi_reg was removed.  [/home/users/komal.inayat/Downloads/rsa_512/trunk/rtl/pe.vhd:70]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+DSP Report: Generating DSP mont/pe_0/prod_aj_bi_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/pe_0/prod_aj_bi_reg is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_aj_bi_reg.
+DSP Report: Generating DSP mont/pe_0/sum_1_reg, operation Mode is: (PCIN+(A:0x0):B+C')'.
+DSP Report: register mont/pe_0/s_prev_reg_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: register mont/pe_0/sum_1_reg is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_1_reg.
+DSP Report: Generating DSP mont/mcons_0/sum_res_reg, operation Mode is: (C+(A*B)')'.
+DSP Report: register mont/mcons_0/sum_res_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: register mont/pe_0/ab_out_reg_reg is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/mcons_0/plusOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/mcons_0/sum_res_reg.
+DSP Report: Generating DSP mont/m_reg, operation Mode is: (A*B)'.
+DSP Report: register mont/m_reg is absorbed into DSP mont/m_reg.
+DSP Report: operator mont/mcons_0/multOp is absorbed into DSP mont/m_reg.
+DSP Report: Generating DSP mont/pe_0/prod_nj_m_reg, operation Mode is: (A2*B)'.
+DSP Report: register mont/pe_0/n_reg_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: register mont/pe_0/prod_nj_m_reg is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: operator mont/pe_0/multOp is absorbed into DSP mont/pe_0/prod_nj_m_reg.
+DSP Report: Generating DSP mont/pe_0/sum_2_reg, operation Mode is: (PCIN+(A:0x0):B+C)'.
+DSP Report: register mont/pe_0/sum_2_reg is absorbed into DSP mont/pe_0/sum_2_reg.
+DSP Report: operator mont/pe_0/plusOp is absorbed into DSP mont/pe_0/sum_2_reg.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (n_c1/\NC_reg[0] )
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[0]' (FDRE) to 'w_numb_reg[5]'
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[1]' (FDRE) to 'w_numb_reg[5]'
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[2]' (FDRE) to 'w_numb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[3]' (FDRE) to 'w_numb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[4]' (FDRE) to 'w_numb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'w_numb_reg[6]' (FDRE) to 'w_numb_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\w_numb_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[15]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[14]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[13]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[12]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[11]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[10]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[9]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[8]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (LSW_M_reg[0]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (NC_reg[0]) is unused and will be removed from module n_c_core.
+WARNING: [Synth 8-3332] Sequential element (count_reg[2]) is unused and will be removed from module montgomery_mult.
+WARNING: [Synth 8-3332] Sequential element (count_reg[1]) is unused and will be removed from module montgomery_mult.
+WARNING: [Synth 8-3332] Sequential element (count_reg[0]) is unused and will be removed from module montgomery_mult.
+WARNING: [Synth 8-3332] Sequential element (w_numb_reg[7]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[15]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[14]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[13]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[12]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[11]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (bsize_reg_reg[10]) is unused and will be removed from module rsa_top.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[31]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[30]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[29]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[28]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[27]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[26]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[25]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[24]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[23]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[22]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[21]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[20]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[19]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[18]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[17]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_first/reg_constant_reg[16]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[31]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[30]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[29]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[28]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[27]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[26]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[25]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[24]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[23]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[22]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[21]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[20]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[19]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[18]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[17]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (et_last/reg_constant_reg[16]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[31]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[30]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[29]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[28]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[27]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[26]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[25]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[24]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[23]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[22]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[21]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[20]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[19]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[18]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[17]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[1].et_i/reg_constant_reg[16]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[31]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[30]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[29]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[28]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[27]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[26]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[25]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[24]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[23]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[22]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[21]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[20]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[19]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[18]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[17]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[2].et_i/reg_constant_reg[16]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[31]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[30]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[29]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[28]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[27]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[26]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[25]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[24]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[23]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[22]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[21]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[20]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[19]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[18]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[17]) is unused and will be removed from module montgomery_mult__1.
+WARNING: [Synth 8-3332] Sequential element (g1[3].et_i/reg_constant_reg[16]) is unused and will be removed from module montgomery_mult__1.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:09 . Memory (MB): peak = 1721.223 ; gain = 388.484 ; free physical = 384452 ; free virtual = 458324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|n_c_core        | (C:0x2)-A2*B2        | 16     | 16     | 2      | -      | 16     | 1    | 1    | 0    | -    | -     | 0    | 0    | 
+|n_c_core        | A*B                  | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|montgomery_step | (PCIN+(A:0x0):B+C')' | 30     | 16     | 16     | -      | -1     | 0    | 0    | 1    | -    | -     | 0    | 1    | 
+|m_calc          | (C+(A*B)')'          | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 1    | 1    | 
+|montgomery_step | (A*B)'               | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (A2*B)'              | 16     | 16     | -      | -      | 32     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|pe              | (PCIN+(A:0x0):B+C)'  | 30     | 16     | 16     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
++----------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:10 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384424 ; free virtual = 458296
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:01:13 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384379 ; free virtual = 458252
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458249
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458249
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384378 ; free virtual = 458251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384378 ; free virtual = 458251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384377 ; free virtual = 458250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458249
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|rsa_top     | mon_1/et_first/reg_input_4_reg[47]   | 5      | 48    | YES          | NO                 | YES               | 48     | 0       | 
+|rsa_top     | mon_1/et_first/reg_out_4_reg[31]     | 5      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|rsa_top     | mon_1/et_last/reg_input_4_reg[47]    | 5      | 32    | YES          | NO                 | YES               | 32     | 0       | 
+|rsa_top     | mon_1/et_last/reg_input_4_reg[31]    | 10     | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|rsa_top     | mon_1/et_last/reg_out_4_reg[31]      | 5      | 32    | YES          | NO                 | YES               | 32     | 0       | 
+|rsa_top     | mon_1/g1[1].et_i/reg_input_4_reg[47] | 5      | 288   | YES          | NO                 | YES               | 288    | 0       | 
+|rsa_top     | mon_1/g1[1].et_i/reg_input_4_reg[31] | 10     | 96    | YES          | NO                 | YES               | 96     | 0       | 
+|rsa_top     | mon_2/et_first/reg_input_4_reg[47]   | 5      | 48    | YES          | NO                 | YES               | 48     | 0       | 
+|rsa_top     | mon_2/et_first/reg_out_4_reg[31]     | 5      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|rsa_top     | mon_2/et_last/reg_input_4_reg[47]    | 5      | 32    | YES          | NO                 | YES               | 32     | 0       | 
+|rsa_top     | mon_2/et_last/reg_input_4_reg[31]    | 10     | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|rsa_top     | mon_2/et_last/reg_out_4_reg[31]      | 5      | 32    | YES          | NO                 | YES               | 32     | 0       | 
+|rsa_top     | mon_2/g1[1].et_i/reg_input_4_reg[47] | 5      | 288   | YES          | NO                 | YES               | 288    | 0       | 
+|rsa_top     | mon_2/g1[1].et_i/reg_input_4_reg[31] | 10     | 96    | YES          | NO                 | YES               | 96     | 0       | 
++------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------+----------+
+|      |BlackBox name     |Instances |
++------+------------------+----------+
+|1     |res_out_fifo      |         1|
+|2     |Mem_b             |         2|
+|3     |fifo_512_bram     |         2|
+|4     |fifo_256_feedback |         2|
++------+------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------+------+
+|      |Cell                        |Count |
++------+----------------------------+------+
+|1     |Mem_b_bbox_4                |     1|
+|2     |Mem_b_bbox_5                |     1|
+|3     |fifo_256_feedback_bbox_2    |     1|
+|4     |fifo_256_feedback_bbox_2__1 |     1|
+|5     |fifo_512_bram_bbox_1        |     1|
+|6     |fifo_512_bram_bbox_1__1     |     1|
+|7     |res_out_fifo_bbox_3         |     1|
+|8     |BUFG                        |     1|
+|9     |CARRY4                      |    19|
+|10    |DSP48E1                     |    98|
+|11    |LUT1                        |    28|
+|12    |LUT2                        |  1184|
+|13    |LUT3                        |   203|
+|14    |LUT4                        |   211|
+|15    |LUT5                        |   629|
+|16    |LUT6                        |   767|
+|17    |SRL16E                      |  1056|
+|18    |FDCE                        |     1|
+|19    |FDRE                        |  3879|
+|20    |IBUF                        |    78|
+|21    |OBUF                        |    17|
++------+----------------------------+------+
+
+Report Instance Areas: 
++------+-----------------+-------------------+------+
+|      |Instance         |Module             |Cells |
++------+-----------------+-------------------+------+
+|1     |top              |                   |  8375|
+|2     |  mon_1          |montgomery_mult    |  4022|
+|3     |    et_first     |montgomery_step_29 |   640|
+|4     |      mont       |pe_wrapper_58      |   161|
+|5     |        mcons_0  |m_calc_59          |    63|
+|6     |        pe_0     |pe_60              |    95|
+|7     |    et_last      |montgomery_step_30 |   520|
+|8     |      mont       |pe_wrapper_55      |    85|
+|9     |        mcons_0  |m_calc_56          |    37|
+|10    |        pe_0     |pe_57              |    45|
+|11    |    \g1[1].et_i  |montgomery_step_31 |   384|
+|12    |      mont       |pe_wrapper_52      |    85|
+|13    |        mcons_0  |m_calc_53          |    37|
+|14    |        pe_0     |pe_54              |    45|
+|15    |    \g1[2].et_i  |montgomery_step_32 |   384|
+|16    |      mont       |pe_wrapper_49      |    84|
+|17    |        mcons_0  |m_calc_50          |    37|
+|18    |        pe_0     |pe_51              |    45|
+|19    |    \g1[3].et_i  |montgomery_step_33 |   386|
+|20    |      mont       |pe_wrapper_46      |    85|
+|21    |        mcons_0  |m_calc_47          |    37|
+|22    |        pe_0     |pe_48              |    45|
+|23    |    \g1[4].et_i  |montgomery_step_34 |   384|
+|24    |      mont       |pe_wrapper_43      |    84|
+|25    |        mcons_0  |m_calc_44          |    37|
+|26    |        pe_0     |pe_45              |    45|
+|27    |    \g1[5].et_i  |montgomery_step_35 |   386|
+|28    |      mont       |pe_wrapper_40      |    85|
+|29    |        mcons_0  |m_calc_41          |    37|
+|30    |        pe_0     |pe_42              |    45|
+|31    |    \g1[6].et_i  |montgomery_step_36 |   385|
+|32    |      mont       |pe_wrapper_37      |    85|
+|33    |        mcons_0  |m_calc_38          |    38|
+|34    |        pe_0     |pe_39              |    45|
+|35    |  mon_2          |montgomery_mult_0  |  3896|
+|36    |    et_first     |montgomery_step    |   545|
+|37    |      mont       |pe_wrapper_26      |   121|
+|38    |        mcons_0  |m_calc_27          |    70|
+|39    |        pe_0     |pe_28              |    47|
+|40    |    et_last      |montgomery_step_1  |   514|
+|41    |      mont       |pe_wrapper_23      |    84|
+|42    |        mcons_0  |m_calc_24          |    37|
+|43    |        pe_0     |pe_25              |    45|
+|44    |    \g1[1].et_i  |montgomery_step_2  |   384|
+|45    |      mont       |pe_wrapper_20      |    84|
+|46    |        mcons_0  |m_calc_21          |    37|
+|47    |        pe_0     |pe_22              |    45|
+|48    |    \g1[2].et_i  |montgomery_step_3  |   385|
+|49    |      mont       |pe_wrapper_17      |    85|
+|50    |        mcons_0  |m_calc_18          |    37|
+|51    |        pe_0     |pe_19              |    45|
+|52    |    \g1[3].et_i  |montgomery_step_4  |   387|
+|53    |      mont       |pe_wrapper_14      |    85|
+|54    |        mcons_0  |m_calc_15          |    37|
+|55    |        pe_0     |pe_16              |    45|
+|56    |    \g1[4].et_i  |montgomery_step_5  |   385|
+|57    |      mont       |pe_wrapper_11      |    84|
+|58    |        mcons_0  |m_calc_12          |    37|
+|59    |        pe_0     |pe_13              |    45|
+|60    |    \g1[5].et_i  |montgomery_step_6  |   384|
+|61    |      mont       |pe_wrapper_8       |    84|
+|62    |        mcons_0  |m_calc_9           |    37|
+|63    |        pe_0     |pe_10              |    45|
+|64    |    \g1[6].et_i  |montgomery_step_7  |   387|
+|65    |      mont       |pe_wrapper         |    86|
+|66    |        mcons_0  |m_calc             |    38|
+|67    |        pe_0     |pe                 |    45|
+|68    |  n_c1           |n_c_core           |    93|
++------+-----------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458249
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 380 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.227 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458248
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:01:14 . Memory (MB): peak = 1721.230 ; gain = 388.488 ; free physical = 384376 ; free virtual = 458248
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 195 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:01:19 . Memory (MB): peak = 1785.250 ; gain = 465.117 ; free physical = 383358 ; free virtual = 457231
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Downloads/rsa_512/project_1/project_1.runs/synth_1/rsa_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rsa_top_utilization_synth.rpt -pb rsa_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.24 . Memory (MB): peak = 1809.270 ; gain = 0.000 ; free physical = 383266 ; free virtual = 457141
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 14:05:44 2022...

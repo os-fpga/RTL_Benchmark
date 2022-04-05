@@ -1,0 +1,32 @@
+#!/bin/csh
+
+setenv TOP_DESIGN ./..
+# -- Set current directory for unit
+setenv CURR_DIR $PWD
+cd ../
+setenv UNIT_HOME $PWD
+setenv PLAIN_TEXT_PATH  ${TOP_DESIGN}/tb/test/README.md
+setenv EXPECTED_ENCR_TEXT_PATH  ${TOP_DESIGN}/tb/test/README_encrypted.md
+setenv OUTPUT_ENCR_TEXT_PATH  ${TOP_DESIGN}/tb/test/README_encrypted_output.md
+
+cd $CURR_DIR
+
+rm -rf ./XRUN_rtl_libs/
+source $UNIT_HOME/tb/vipcat_env_xrun64.csh
+
+xrun \
++gui \
++libverbose \
++xmaccess+rwc\
+-64bit\
+-sv \
+-uvm \
+-smartorder \
+-LOGfile xrun_tb.log \
+-incdir ${TOP_DESIGN}/tb\
+-define PLAIN_TEXT_PATH='"'${PLAIN_TEXT_PATH}'"'\
+-define EXPECTED_ENCR_TEXT_PATH='"'${EXPECTED_ENCR_TEXT_PATH}'"'\
+-define OUTPUT_ENCR_TEXT_PATH='"'${OUTPUT_ENCR_TEXT_PATH}'"'\
++xmtimescale+1ps/1ps \
+-xmlibdirname XRUN_rtl_libs \
+-f ../sim/aes128_files_rtl.lst 

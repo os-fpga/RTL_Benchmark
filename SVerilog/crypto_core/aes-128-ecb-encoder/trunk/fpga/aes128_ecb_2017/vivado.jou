@@ -1,0 +1,100 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jul 30 13:33:37 2020
+# Process ID: 8661
+# Current directory: /home/user/aes128/fpga/aes128_ecb_2017
+# Command line: vivado
+# Log file: /home/user/aes128/fpga/aes128_ecb_2017/vivado.log
+# Journal file: /home/user/aes128/fpga/aes128_ecb_2017/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+disconnect_hw_server localhost:3121
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00ap30t-bpi-x16}] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices -disable_eos_check [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00ap30t-bpi-x16}] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+close_hw
+close_design
+close_project
+open_project /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+close_project
+create_project uart_lb_test /home/user/aes128/fpga/uart_lb_test -part xc7k325tffg900-2
+set_property board_part xilinx.com:kc705:part0:1.5 [current_project]
+close [ open /home/user/aes128/fpga/uart_lb_test/src/top_wrap.v w ]
+add_files /home/user/aes128/fpga/uart_lb_test/src/top_wrap.v
+update_compile_order -fileset sources_1
+file mkdir /home/user/aes128/fpga/uart_lb_test/uart_lb_test.srcs/constrs_1
+close [ open /home/user/aes128/fpga/uart_lb_test/uart_lb_test.srcs/constrs_1/pinout.sdc w ]
+add_files -fileset constrs_1 /home/user/aes128/fpga/uart_lb_test/uart_lb_test.srcs/constrs_1/pinout.sdc
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property SEVERITY {Warning} [get_drc_checks NSTD-1]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+close_project
+open_project /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices] 0] -mem_dev [lindex [get_cfgmem_parts {28f00ap30t-bpi-x16}] 0]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+write_cfgmem  -format mcs -size 128 -interface BPIx16 -loadbit {up 0x00000000 "/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit" } -force -file "/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.mcs"
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.FILES [list "/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.mcs" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.BPI_RS_PINS {none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+startgroup 
+if {![string equal [get_property PROGRAM.HW_CFGMEM_TYPE  [lindex [get_hw_devices xc7k325t_0] 0]] [get_property MEM_TYPE [get_property CFGMEM_PART [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]]]] }  { create_hw_bitstream -hw_device [lindex [get_hw_devices xc7k325t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7k325t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]; }; 
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7k325t_0] 0]]
+endgroup

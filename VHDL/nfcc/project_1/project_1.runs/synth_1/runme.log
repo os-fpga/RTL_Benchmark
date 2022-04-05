@@ -1,0 +1,33 @@
+
+*** Running vivado
+    with args -log snow.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source snow.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source snow.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1320.125 ; gain = 43.016 ; free physical = 394236 ; free virtual = 459199
+Command: synth_design -top snow -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 53656 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 1419.578 ; gain = 86.848 ; free physical = 394392 ; free virtual = 459503
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-944] 0 definitions of operator "+" match here [/home/users/komal.inayat/Downloads/nfcc/trunk/snow/snow.vhdl:160]
+ERROR: [Synth 8-944] 0 definitions of operator "+" match here [/home/users/komal.inayat/Downloads/nfcc/trunk/snow/snow.vhdl:161]
+INFO: [Synth 8-2810] unit phy ignored due to previous errors [/home/users/komal.inayat/Downloads/nfcc/trunk/snow/snow.vhdl:48]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1463.203 ; gain = 130.473 ; free physical = 394692 ; free virtual = 459893
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 11:34:20 2022...

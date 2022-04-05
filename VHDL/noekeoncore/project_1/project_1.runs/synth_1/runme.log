@@ -1,0 +1,364 @@
+
+*** Running vivado
+    with args -log noekeon.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source noekeon.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source noekeon.tcl -notrace
+Command: synth_design -top noekeon -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 42309 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1419.578 ; gain = 86.848 ; free physical = 405150 ; free virtual = 469512
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'noekeon' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:38]
+INFO: [Synth 8-3491] module 'rc_gen' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/rc_gen.vhd:20' bound to instance 'RC_GEN_0' of component 'rc_gen' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:132]
+INFO: [Synth 8-638] synthesizing module 'rc_gen' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/rc_gen.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'rc_gen' (1#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/rc_gen.vhd:27]
+INFO: [Synth 8-3491] module 'round_f' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:20' bound to instance 'ROUND_F_0' of component 'round_f' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'round_f' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:38]
+INFO: [Synth 8-3491] module 'theta' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:20' bound to instance 'THETA_0' of component 'theta' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'theta' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:39]
+INFO: [Synth 8-3491] module 't_m_1' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_1.vhd:20' bound to instance 'T_M_1_0' of component 't_m_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:87]
+INFO: [Synth 8-638] synthesizing module 't_m_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_1.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 't_m_1' (2#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_1.vhd:30]
+INFO: [Synth 8-3491] module 't_m_2' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_2.vhd:20' bound to instance 'T_M_2_0' of component 't_m_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:88]
+INFO: [Synth 8-638] synthesizing module 't_m_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_2.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 't_m_2' (3#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_2.vhd:36]
+INFO: [Synth 8-3491] module 't_m_3' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_3.vhd:20' bound to instance 'T_M_1_1' of component 't_m_3' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:89]
+INFO: [Synth 8-638] synthesizing module 't_m_3' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_3.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 't_m_3' (4#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/t_m_3.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'theta' (5#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:39]
+INFO: [Synth 8-3491] module 'pi_1' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_1.vhd:20' bound to instance 'PI_1_0' of component 'pi_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:132]
+INFO: [Synth 8-638] synthesizing module 'pi_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_1.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'pi_1' (6#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_1.vhd:29]
+INFO: [Synth 8-3491] module 'gamma' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:21' bound to instance 'GAMMA_0' of component 'gamma' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'gamma' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:34]
+INFO: [Synth 8-3491] module 'g_m_1' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_1.vhd:20' bound to instance 'G_M_1_0' of component 'g_m_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'g_m_1' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_1.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'g_m_1' (7#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_1.vhd:28]
+INFO: [Synth 8-3491] module 'g_m_2' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_2.vhd:20' bound to instance 'G_M_2_0' of component 'g_m_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'g_m_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_2.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'g_m_2' (8#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_2.vhd:28]
+INFO: [Synth 8-3491] module 'g_m_3' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_3.vhd:20' bound to instance 'G_M_3_0' of component 'g_m_3' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'g_m_3' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_3.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'g_m_3' (9#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_3.vhd:28]
+INFO: [Synth 8-3491] module 'g_m_4' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_4.vhd:20' bound to instance 'G_M_4_0' of component 'g_m_4' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'g_m_4' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_4.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'g_m_4' (10#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_4.vhd:29]
+INFO: [Synth 8-3491] module 'g_m_5' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_5.vhd:29' bound to instance 'G_M_5_0' of component 'g_m_5' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'g_m_5' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_5.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'g_m_5' (11#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_5.vhd:37]
+INFO: [Synth 8-3491] module 'g_m_6' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_6.vhd:20' bound to instance 'G_M_6_0' of component 'g_m_6' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'g_m_6' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_6.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'g_m_6' (12#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/g_m_6.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'gamma' (13#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/gamma.vhd:34]
+INFO: [Synth 8-3491] module 'pi_2' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_2.vhd:35' bound to instance 'PI_2_0' of component 'pi_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'pi_2' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_2.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'pi_2' (14#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/pi_2.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'round_f' (15#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/round_f.vhd:38]
+INFO: [Synth 8-3491] module 'output_trans' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/output_trans.vhd:20' bound to instance 'OUT_TRANS_0' of component 'output_trans' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'output_trans' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/output_trans.vhd:38]
+INFO: [Synth 8-3491] module 'theta' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:20' bound to instance 'THETA_0' of component 'theta' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/output_trans.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'output_trans' (16#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/output_trans.vhd:38]
+INFO: [Synth 8-3491] module 'theta' declared at '/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/theta.vhd:20' bound to instance 'THETA_DECRYPT_0' of component 'theta' [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:200]
+INFO: [Synth 8-256] done synthesizing module 'noekeon' (17#1) [/home/users/komal.inayat/Downloads/noekeoncore/trunk/rtl/noekeon.vhd:38]
+WARNING: [Synth 8-3331] design t_m_3 has unconnected port clk
+WARNING: [Synth 8-3331] design t_m_2 has unconnected port clk
+WARNING: [Synth 8-3331] design t_m_1 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_6 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_5 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_4 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_3 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_2 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_1 has unconnected port clk
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1464.211 ; gain = 131.480 ; free physical = 405175 ; free virtual = 469537
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1464.211 ; gain = 131.480 ; free physical = 405172 ; free virtual = 469534
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1472.211 ; gain = 139.480 ; free physical = 405167 ; free virtual = 469529
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "rc_s" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1488.227 ; gain = 155.496 ; free physical = 405155 ; free virtual = 469517
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 38    
+	   3 Input     32 Bit         XORs := 6     
+	   4 Input     32 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module noekeon 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+Module rc_gen 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 2     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+Module t_m_1 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 3     
+	   3 Input     32 Bit         XORs := 1     
+Module t_m_2 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 4     
+Module t_m_3 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 3     
+	   3 Input     32 Bit         XORs := 1     
+Module g_m_1 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module g_m_2 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module g_m_4 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input     32 Bit         XORs := 1     
+Module g_m_5 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module g_m_6 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module round_f 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module output_trans 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design t_m_3 has unconnected port clk
+WARNING: [Synth 8-3331] design t_m_2 has unconnected port clk
+WARNING: [Synth 8-3331] design t_m_1 has unconnected port clk
+WARNING: [Synth 8-3331] design g_m_4 has unconnected port clk
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:49 . Memory (MB): peak = 1649.363 ; gain = 316.633 ; free physical = 405026 ; free virtual = 469390
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:49 . Memory (MB): peak = 1649.363 ; gain = 316.633 ; free physical = 405036 ; free virtual = 469400
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:50 . Memory (MB): peak = 1665.371 ; gain = 332.641 ; free physical = 405043 ; free virtual = 469399
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405032 ; free virtual = 469388
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405032 ; free virtual = 469388
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405029 ; free virtual = 469385
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405029 ; free virtual = 469385
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405029 ; free virtual = 469385
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405029 ; free virtual = 469385
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |   105|
+|3     |LUT3 |    98|
+|4     |LUT4 |   146|
+|5     |LUT5 |   268|
+|6     |LUT6 |   272|
+|7     |FDRE |   263|
+|8     |FDSE |     1|
+|9     |IBUF |   259|
+|10    |OBUF |   128|
++------+-----+------+
+
+Report Instance Areas: 
++------+-----------+-------+------+
+|      |Instance   |Module |Cells |
++------+-----------+-------+------+
+|1     |top        |       |  1541|
+|2     |  RC_GEN_0 |rc_gen |   649|
++------+-----------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405029 ; free virtual = 469385
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.375 ; gain = 332.645 ; free physical = 405032 ; free virtual = 469388
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 1665.379 ; gain = 332.645 ; free physical = 405032 ; free virtual = 469388
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 259 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+62 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:54 . Memory (MB): peak = 1756.398 ; gain = 436.273 ; free physical = 405008 ; free virtual = 469364
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Downloads/noekeoncore/project_1/project_1.runs/synth_1/noekeon.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file noekeon_utilization_synth.rpt -pb noekeon_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1780.418 ; gain = 0.000 ; free physical = 404989 ; free virtual = 469346
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 11:27:32 2022...

@@ -1,0 +1,772 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Apr  4 10:55:34 2022
+# Process ID: 32212
+# Current directory: /home/users/komal.inayat/Downloads/iota_pow_vhdl/project_1/project_1.runs/synth_1
+# Command line: vivado -log de1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source de1.tcl
+# Log file: /home/users/komal.inayat/Downloads/iota_pow_vhdl/project_1/project_1.runs/synth_1/de1.vds
+# Journal file: /home/users/komal.inayat/Downloads/iota_pow_vhdl/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source de1.tcl -notrace
+Command: synth_design -top de1 -part xc7a100tfgg676-1 -directive AreaOptimized_high -control_set_opt_threshold 1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 32484 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1419.582 ; gain = 86.848 ; free physical = 412590 ; free virtual = 473982
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'de1' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:116]
+INFO: [Synth 8-3491] module 'pll' declared at '/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/pll.vhd:42' bound to instance 'pll0' of component 'pll' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'pll' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/pll.vhd:54]
+	Parameter clk0_divide_by bound to: 3 - type: integer 
+	Parameter clk0_duty_cycle bound to: 50 - type: integer 
+	Parameter clk0_multiply_by bound to: 13 - type: integer 
+	Parameter clk0_phase_shift bound to: 0 - type: string 
+	Parameter clk1_divide_by bound to: 6 - type: integer 
+	Parameter clk1_duty_cycle bound to: 50 - type: integer 
+	Parameter clk1_multiply_by bound to: 13 - type: integer 
+	Parameter clk1_phase_shift bound to: 0 - type: string 
+	Parameter compensate_clock bound to: CLK0 - type: string 
+	Parameter gate_lock_signal bound to: NO - type: string 
+	Parameter inclk0_input_frequency bound to: 20000 - type: integer 
+	Parameter intended_device_family bound to: Cyclone II - type: string 
+	Parameter invalid_lock_multiplier bound to: 5 - type: integer 
+	Parameter lpm_hint bound to: CBX_MODULE_PREFIX=pll - type: string 
+	Parameter lpm_type bound to: altpll - type: string 
+	Parameter operation_mode bound to: NORMAL - type: string 
+	Parameter port_activeclock bound to: PORT_UNUSED - type: string 
+	Parameter port_areset bound to: PORT_USED - type: string 
+	Parameter port_clkbad0 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkbad1 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkloss bound to: PORT_UNUSED - type: string 
+	Parameter port_clkswitch bound to: PORT_UNUSED - type: string 
+	Parameter port_configupdate bound to: PORT_UNUSED - type: string 
+	Parameter port_fbin bound to: PORT_UNUSED - type: string 
+	Parameter port_inclk0 bound to: PORT_USED - type: string 
+	Parameter port_inclk1 bound to: PORT_UNUSED - type: string 
+	Parameter port_locked bound to: PORT_USED - type: string 
+	Parameter port_pfdena bound to: PORT_UNUSED - type: string 
+	Parameter port_phasecounterselect bound to: PORT_UNUSED - type: string 
+	Parameter port_phasedone bound to: PORT_UNUSED - type: string 
+	Parameter port_phasestep bound to: PORT_UNUSED - type: string 
+	Parameter port_phaseupdown bound to: PORT_UNUSED - type: string 
+	Parameter port_pllena bound to: PORT_UNUSED - type: string 
+	Parameter port_scanaclr bound to: PORT_UNUSED - type: string 
+	Parameter port_scanclk bound to: PORT_UNUSED - type: string 
+	Parameter port_scanclkena bound to: PORT_UNUSED - type: string 
+	Parameter port_scandata bound to: PORT_UNUSED - type: string 
+	Parameter port_scandataout bound to: PORT_UNUSED - type: string 
+	Parameter port_scandone bound to: PORT_UNUSED - type: string 
+	Parameter port_scanread bound to: PORT_UNUSED - type: string 
+	Parameter port_scanwrite bound to: PORT_UNUSED - type: string 
+	Parameter port_clk0 bound to: PORT_USED - type: string 
+	Parameter port_clk1 bound to: PORT_USED - type: string 
+	Parameter port_clk2 bound to: PORT_UNUSED - type: string 
+	Parameter port_clk3 bound to: PORT_UNUSED - type: string 
+	Parameter port_clk4 bound to: PORT_UNUSED - type: string 
+	Parameter port_clk5 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena0 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena1 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena2 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena3 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena4 bound to: PORT_UNUSED - type: string 
+	Parameter port_clkena5 bound to: PORT_UNUSED - type: string 
+	Parameter port_extclk0 bound to: PORT_UNUSED - type: string 
+	Parameter port_extclk1 bound to: PORT_UNUSED - type: string 
+	Parameter port_extclk2 bound to: PORT_UNUSED - type: string 
+	Parameter port_extclk3 bound to: PORT_UNUSED - type: string 
+	Parameter valid_lock_multiplier bound to: 1 - type: integer 
+INFO: [Synth 8-637] synthesizing blackbox instance 'altpll_component' of component 'altpll' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/pll.vhd:147]
+INFO: [Synth 8-256] done synthesizing module 'pll' (1#1) [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/pll.vhd:54]
+INFO: [Synth 8-3491] module 'spi_slave' declared at '/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:32' bound to instance 'spi0' of component 'spi_slave' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'spi_slave' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:52]
+INFO: [Synth 8-226] default block is never used [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:69]
+WARNING: [Synth 8-6014] Unused sequential element iwren_reg was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'spi_slave' (2#1) [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:52]
+INFO: [Synth 8-3491] module 'curl' declared at '/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:32' bound to instance 'curl0' of component 'curl' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:208]
+INFO: [Synth 8-638] synthesizing module 'curl' [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:62]
+	Parameter HASH_LENGTH bound to: 243 - type: integer 
+	Parameter STATE_LENGTH bound to: 729 - type: integer 
+	Parameter NONCE_LENGTH bound to: 81 - type: integer 
+	Parameter NUMBER_OF_ROUNDS bound to: 81 - type: integer 
+	Parameter PARALLEL bound to: 5 - type: integer 
+	Parameter INTERN_NONCE_LENGTH bound to: 32 - type: integer 
+	Parameter BITS_MIN_WEIGHT_MAGINUTE_MAX bound to: 26 - type: integer 
+	Parameter DATA_WIDTH bound to: 9 - type: integer 
+	Parameter NONCE_OFFSET bound to: 162 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element spi_cmd_reg was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:120]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[26] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[25] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[24] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[23] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[22] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[21] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[20] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[19] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_low_reg[18] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:129]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[26] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[25] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[24] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[23] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[22] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[21] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[20] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[19] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element curl_mid_state_high_reg[18] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[728] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[727] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[726] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[725] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[724] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[723] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[722] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[721] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[720] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[719] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[718] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[717] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[716] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[715] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[714] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[713] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[712] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[711] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[710] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[709] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[708] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[707] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[706] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[705] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[704] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[703] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[702] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[701] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[700] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[699] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[698] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[697] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[696] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[695] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[694] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[693] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[692] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[691] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[690] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[689] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[688] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[687] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[686] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[685] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[684] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[683] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[682] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[681] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[680] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[679] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[678] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[677] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[676] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[675] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[674] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[673] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[672] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[671] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[670] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[669] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[668] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[667] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[666] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[665] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[664] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[663] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[662] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[661] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[660] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[659] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[658] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[657] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[656] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[655] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[654] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[653] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[652] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[651] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+WARNING: [Synth 8-6014] Unused sequential element alpha_reg[650] was removed.  [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:207]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'curl' (3#1) [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/curl.vhd:62]
+WARNING: [Synth 8-3848] Net HEX0 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:43]
+WARNING: [Synth 8-3848] Net HEX1 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:44]
+WARNING: [Synth 8-3848] Net HEX2 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:45]
+WARNING: [Synth 8-3848] Net HEX3 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:46]
+WARNING: [Synth 8-3848] Net UART_TXD in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:51]
+WARNING: [Synth 8-3848] Net DRAM_ADDR in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:55]
+WARNING: [Synth 8-3848] Net DRAM_LDQM in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:56]
+WARNING: [Synth 8-3848] Net DRAM_UDQM in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:57]
+WARNING: [Synth 8-3848] Net DRAM_WE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:58]
+WARNING: [Synth 8-3848] Net DRAM_CAS_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:59]
+WARNING: [Synth 8-3848] Net DRAM_RAS_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:60]
+WARNING: [Synth 8-3848] Net DRAM_CS_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:61]
+WARNING: [Synth 8-3848] Net DRAM_BA_0 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:62]
+WARNING: [Synth 8-3848] Net DRAM_BA_1 in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:63]
+WARNING: [Synth 8-3848] Net DRAM_CLK in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:64]
+WARNING: [Synth 8-3848] Net DRAM_CKE in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:65]
+WARNING: [Synth 8-3848] Net FL_ADDR in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:68]
+WARNING: [Synth 8-3848] Net FL_WE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:69]
+WARNING: [Synth 8-3848] Net FL_RST_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:70]
+WARNING: [Synth 8-3848] Net FL_OE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:71]
+WARNING: [Synth 8-3848] Net FL_CE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:72]
+WARNING: [Synth 8-3848] Net SRAM_UB_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:76]
+WARNING: [Synth 8-3848] Net SRAM_LB_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:77]
+WARNING: [Synth 8-3848] Net SRAM_WE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:78]
+WARNING: [Synth 8-3848] Net SRAM_CE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:79]
+WARNING: [Synth 8-3848] Net SRAM_OE_N in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:80]
+WARNING: [Synth 8-3848] Net SD_CLK in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:85]
+WARNING: [Synth 8-3848] Net TDO in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:90]
+WARNING: [Synth 8-3848] Net I2C_SCLK in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:93]
+WARNING: [Synth 8-3848] Net VGA_HS in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:98]
+WARNING: [Synth 8-3848] Net VGA_VS in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:99]
+WARNING: [Synth 8-3848] Net VGA_R in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:100]
+WARNING: [Synth 8-3848] Net VGA_G in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:101]
+WARNING: [Synth 8-3848] Net VGA_B in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:102]
+WARNING: [Synth 8-3848] Net AUD_DACDAT in module/entity de1 does not have driver. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'de1' (4#1) [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:116]
+WARNING: [Synth 8-3917] design de1 has port LEDG[7] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[6] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[5] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[4] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[3] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[2] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[1] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[0] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDR[9] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDR[8] driven by constant 1
+WARNING: [Synth 8-3917] design de1 has port SRAM_ADDR[17] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_BCLK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_XCK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_ADCLRCK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_DACLRCK driven by constant 0
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX0[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX1[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX2[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port HEX3[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port UART_TXD
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[11]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[10]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[9]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[8]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[7]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_ADDR[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_LDQM
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_UDQM
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_WE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_CAS_N
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_RAS_N
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_CS_N
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_BA_0
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_BA_1
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_CLK
+WARNING: [Synth 8-3331] design de1 has unconnected port DRAM_CKE
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[21]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[20]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[19]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[18]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[17]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[16]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[15]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[14]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[13]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[12]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[11]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[10]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[9]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[8]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[7]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_ADDR[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_WE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_RST_N
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_OE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port FL_CE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[16]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[15]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[14]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[13]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[12]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[11]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[10]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[9]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[8]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[7]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[6]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[5]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[4]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[3]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[2]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[1]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_ADDR[0]
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_UB_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_LB_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_WE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_CE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SRAM_OE_N
+WARNING: [Synth 8-3331] design de1 has unconnected port SD_CLK
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1662.926 ; gain = 330.191 ; free physical = 411943 ; free virtual = 473392
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1662.926 ; gain = 330.191 ; free physical = 411939 ; free virtual = 473391
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1682.848 ; gain = 350.113 ; free physical = 411949 ; free virtual = 473401
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'sync_mosi_reg' and it is trimmed from '2' to '1' bits. [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/spi_slave.vhd:75]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'curl'
+INFO: [Synth 8-5546] ROM "min_weight_magnitude" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "spi_data_tx" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "addrptr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[80]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[79]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[78]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[77]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[76]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[75]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[74]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[73]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[72]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[71]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[70]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[69]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[68]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[67]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[66]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[65]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[64]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[63]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[62]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[61]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[60]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[59]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[58]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[57]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[56]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[55]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[54]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[53]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[52]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[51]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[50]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[49]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[48]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[47]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[46]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[45]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[44]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[43]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[42]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[41]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[40]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[39]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[38]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[37]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[36]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[35]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[34]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[33]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[32]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "i_binary_nonce" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "round" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "flag_found" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "flag_running" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "flag_overflow" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "binary_nonce" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "imask" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                         00000001 |                            00000
+                 iSTATE0 |                         00000010 |                            00001
+                 iSTATE5 |                         00000100 |                            01000
+                 iSTATE1 |                         00001000 |                            01010
+                 iSTATE2 |                         00010000 |                            10000
+                 iSTATE3 |                         00100000 |                            10001
+                 iSTATE4 |                         01000000 |                            11110
+                 iSTATE6 |                         10000000 |                            11111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'curl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:06 ; elapsed = 00:01:03 . Memory (MB): peak = 1742.867 ; gain = 410.133 ; free physical = 410391 ; free virtual = 471790
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---XORs : 
+	   2 Input      5 Bit         XORs := 1458  
++---Registers : 
+	               32 Bit    Registers := 5     
+	               26 Bit    Registers := 2     
+	                9 Bit    Registers := 144   
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1460  
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	  12 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 1     
+	  11 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 1458  
+	   6 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 78    
+	  11 Input      1 Bit        Muxes := 75    
+	   8 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module spi_slave 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module curl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---XORs : 
+	   2 Input      5 Bit         XORs := 1458  
++---Registers : 
+	               32 Bit    Registers := 3     
+	               26 Bit    Registers := 2     
+	                9 Bit    Registers := 144   
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1460  
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  12 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 1     
+	  11 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 1458  
+	   2 Input      1 Bit        Muxes := 78    
+	  11 Input      1 Bit        Muxes := 75    
+	   8 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "i_binary_nonce" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[80]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[79]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[78]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[77]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[76]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[75]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[74]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[73]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[72]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[71]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[70]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[69]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[68]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[67]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[66]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[65]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[64]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "curl_mid_state_low_reg[63]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design de1 has port LEDG[7] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[6] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[5] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[4] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[3] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[2] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[1] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDG[0] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDR[9] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port LEDR[8] driven by constant 1
+WARNING: [Synth 8-3917] design de1 has port SRAM_ADDR[17] driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_BCLK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_XCK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_ADCLRCK driven by constant 0
+WARNING: [Synth 8-3917] design de1 has port AUD_DACLRCK driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:22 ; elapsed = 00:04:42 . Memory (MB): peak = 2155.648 ; gain = 822.914 ; free physical = 408376 ; free virtual = 470504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:04:24 ; elapsed = 00:04:44 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408419 ; free virtual = 470550
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:29 ; elapsed = 00:04:50 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408440 ; free virtual = 470568
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6030] Inout pin 'GPIO_0[3]' is read and/or written without using tristate logic. Proper direction of connection may be wrongly inferred. Please use specific direction to avoid any incorrect logic issue [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:31]
+CRITICAL WARNING: [Synth 8-6030] Inout pin 'GPIO_0[2]' is read and/or written without using tristate logic. Proper direction of connection may be wrongly inferred. Please use specific direction to avoid any incorrect logic issue [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:31]
+CRITICAL WARNING: [Synth 8-6030] Inout pin 'GPIO_0[0]' is read and/or written without using tristate logic. Proper direction of connection may be wrongly inferred. Please use specific direction to avoid any incorrect logic issue [/home/users/komal.inayat/Downloads/iota_pow_vhdl/trunk/vhdl_altera_de1/de1.vhd:31]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:31 ; elapsed = 00:04:51 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408425 ; free virtual = 470562
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:31 ; elapsed = 00:04:51 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408424 ; free virtual = 470561
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:31 ; elapsed = 00:04:52 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408425 ; free virtual = 470562
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:31 ; elapsed = 00:04:52 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408425 ; free virtual = 470562
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:31 ; elapsed = 00:04:52 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408428 ; free virtual = 470565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:32 ; elapsed = 00:04:52 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408429 ; free virtual = 470566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |altpll        |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |altpll_bbox_0 |     1|
+|2     |CARRY4        |    23|
+|3     |LUT1          |     1|
+|4     |LUT2          |    55|
+|5     |LUT3          |  1403|
+|6     |LUT4          |    78|
+|7     |LUT5          |  7335|
+|8     |LUT6          |   228|
+|9     |FDRE          |  1566|
+|10    |FDSE          |  7276|
+|11    |IBUF          |     5|
+|12    |OBUF          |    23|
+|13    |OBUFT         |   117|
++------+--------------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          | 18117|
+|2     |  curl0  |curl      | 17701|
+|3     |  pll0   |pll       |     7|
+|4     |  spi0   |spi_slave |   264|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:32 ; elapsed = 00:04:52 . Memory (MB): peak = 2155.652 ; gain = 822.918 ; free physical = 408429 ; free virtual = 470566
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 3 critical warnings and 3487 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:32 ; elapsed = 00:04:56 . Memory (MB): peak = 2159.559 ; gain = 826.824 ; free physical = 410386 ; free virtual = 472524
+Synthesis Optimization Complete : Time (s): cpu = 00:04:32 ; elapsed = 00:04:56 . Memory (MB): peak = 2159.559 ; gain = 826.824 ; free physical = 410386 ; free virtual = 472524
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'de1' is not ideal for floorplanning, since the cellview 'curl' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+133 Infos, 267 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:36 ; elapsed = 00:05:00 . Memory (MB): peak = 2203.676 ; gain = 883.547 ; free physical = 410389 ; free virtual = 472534
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Downloads/iota_pow_vhdl/project_1/project_1.runs/synth_1/de1.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2227.691 ; gain = 24.016 ; free physical = 410387 ; free virtual = 472535
+INFO: [runtcl-4] Executing : report_utilization -file de1_utilization_synth.rpt -pb de1_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2227.691 ; gain = 0.000 ; free physical = 410367 ; free virtual = 472516
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 11:00:49 2022...

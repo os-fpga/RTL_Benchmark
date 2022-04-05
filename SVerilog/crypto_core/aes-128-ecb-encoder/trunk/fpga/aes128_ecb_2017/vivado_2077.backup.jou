@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jul 29 15:27:30 2020
+# Process ID: 2077
+# Current directory: /home/user/aes/fpga/aec128_ecb_2017
+# Command line: vivado
+# Log file: /home/user/aes/fpga/aec128_ecb_2017/vivado.log
+# Journal file: /home/user/aes/fpga/aec128_ecb_2017/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/user/aes/fpga/aec128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+write_cfgmem  -format mcs -size 128 -interface BPIx16 -loadbit {up 0x00000000 "/home/user/aes/fpga/aec128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.bit" } -force -file "/home/user/aes/fpga/aec128_ecb_2017/aes128_ecb.mcs"
+open_hw
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
