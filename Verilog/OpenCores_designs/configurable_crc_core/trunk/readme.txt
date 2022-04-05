@@ -1,3 +1,0 @@
-I konw little of CRC calculation,
-this module is base on https://www.ghsi.de/CRC/index.php?
-I just make it configurable...
