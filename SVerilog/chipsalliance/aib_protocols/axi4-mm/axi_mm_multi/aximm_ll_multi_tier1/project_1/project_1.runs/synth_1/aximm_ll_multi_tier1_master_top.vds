@@ -1,0 +1,602 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Mar  9 12:29:59 2022
+# Process ID: 11237
+# Current directory: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/project_1/project_1.runs/synth_1
+# Command line: vivado -log aximm_ll_multi_tier1_master_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source aximm_ll_multi_tier1_master_top.tcl
+# Log file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/project_1/project_1.runs/synth_1/aximm_ll_multi_tier1_master_top.vds
+# Journal file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source aximm_ll_multi_tier1_master_top.tcl -notrace
+Command: synth_design -top aximm_ll_multi_tier1_master_top -part xc7a100tfgg676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12000 
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:53]
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:54]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1428.957 ; gain = 96.223 ; free physical = 111327 ; free virtual = 375515
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier1_master_top' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_top.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'll_auto_sync' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:29]
+	Parameter MARKER_WIDTH bound to: 1 - type: integer 
+	Parameter PERSISTENT_MARKER bound to: 1'b1 
+	Parameter PERSISTENT_STROBE bound to: 1'b1 
+	Parameter NO_MARKER bound to: 1'b1 
+	Parameter DISABLE_TX_AUTOSYNC bound to: 1'b0 
+	Parameter DISABLE_RX_AUTOSYNC bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'level_delay' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/level_delay.sv:36]
+INFO: [Synth 8-6155] done synthesizing module 'level_delay' (1#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/level_delay.sv:36]
+WARNING: [Synth 8-6014] Unused sequential element delay_z_1st_strobe_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:121]
+WARNING: [Synth 8-6014] Unused sequential element marker_replay_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:151]
+INFO: [Synth 8-6155] done synthesizing module 'll_auto_sync' (2#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'll_transmit' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_transmit.sv:29]
+	Parameter WIDTH bound to: 49 - type: integer 
+	Parameter DEPTH bound to: 8'b00000001 
+	Parameter TX_CRED_SIZE bound to: 3'b001 
+	Parameter ASYMMETRIC_CREDIT bound to: 1'b0 
+	Parameter DEFAULT_TX_CRED bound to: 8'b00001000 
+	Parameter FIFO_COUNT_WID bound to: 1 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'll_tx_ctrl' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_ctrl.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'll_tx_ctrl' (3#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_ctrl.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'll_tx_cred' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:26]
+	Parameter ASYMMETRIC_CREDIT bound to: 1'b0 
+	Parameter TX_CRED_SIZE bound to: 3'b001 
+	Parameter DEFAULT_TX_CRED bound to: 8'b00001000 
+WARNING: [Synth 8-6014] Unused sequential element rx_credit_enc_asym_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:92]
+WARNING: [Synth 8-6014] Unused sequential element txonline_dly2_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:111]
+WARNING: [Synth 8-6014] Unused sequential element tx_coal_tx_credit_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:130]
+WARNING: [Synth 8-6014] Unused sequential element potential_asym_credit_usage_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:146]
+WARNING: [Synth 8-6014] Unused sequential element actual_asym_credit_usage_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:154]
+INFO: [Synth 8-6155] done synthesizing module 'll_tx_cred' (4#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_tx_cred.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_reg' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_reg.sv:44]
+	Parameter FIFO_WIDTH_WID bound to: 49 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00000001 
+	Parameter FIFO_ADDR_WID bound to: 1 - type: integer 
+	Parameter FIFO_COUNT_WID bound to: 1 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 48 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 0 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 0 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_reg' (5#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_reg.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'll_transmit' (6#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_transmit.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'll_transmit__parameterized0' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_transmit.sv:29]
+	Parameter WIDTH bound to: 77 - type: integer 
+	Parameter DEPTH bound to: 8'b00000001 
+	Parameter TX_CRED_SIZE bound to: 3'b001 
+	Parameter ASYMMETRIC_CREDIT bound to: 1'b0 
+	Parameter DEFAULT_TX_CRED bound to: 8'b00001000 
+	Parameter FIFO_COUNT_WID bound to: 1 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_reg__parameterized0' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_reg.sv:44]
+	Parameter FIFO_WIDTH_WID bound to: 77 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00000001 
+	Parameter FIFO_ADDR_WID bound to: 1 - type: integer 
+	Parameter FIFO_COUNT_WID bound to: 1 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 76 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 0 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 0 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_reg__parameterized0' (6#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_reg.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'll_transmit__parameterized0' (6#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_transmit.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'll_receive' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_receive.sv:29]
+	Parameter WIDTH bound to: 71 - type: integer 
+	Parameter DEPTH bound to: 8'b00001000 
+	Parameter FIFO_COUNT_WID bound to: 4 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'll_rx_push' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_rx_push.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'll_rx_push' (7#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_rx_push.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'll_rx_ctrl' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_rx_ctrl.sv:27]
+	Parameter FIFO_COUNT_MSB bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'll_rx_ctrl' (8#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_rx_ctrl.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_ram' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:44]
+	Parameter FIFO_WIDTH_WID bound to: 71 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00001000 
+	Parameter FIFO_ADDR_WID bound to: 3 - type: integer 
+	Parameter FIFO_COUNT_WID bound to: 4 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 70 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 7 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 2 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_mem1r1w' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_mem1r1w.sv:35]
+	Parameter FIFO_WIDTH_WID bound to: 71 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00001000 
+	Parameter FIFO_ADDR_WID bound to: 3 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 70 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 7 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_mem1r1w' (9#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_mem1r1w.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_ram' (10#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'll_receive' (11#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_receive.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'll_receive__parameterized0' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_receive.sv:29]
+	Parameter WIDTH bound to: 6 - type: integer 
+	Parameter DEPTH bound to: 8'b00001000 
+	Parameter FIFO_COUNT_WID bound to: 4 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_ram__parameterized0' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:44]
+	Parameter FIFO_WIDTH_WID bound to: 6 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00001000 
+	Parameter FIFO_ADDR_WID bound to: 3 - type: integer 
+	Parameter FIFO_COUNT_WID bound to: 4 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 5 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 7 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 2 - type: integer 
+	Parameter FIFO_COUNT_MSB bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'syncfifo_mem1r1w__parameterized0' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_mem1r1w.sv:35]
+	Parameter FIFO_WIDTH_WID bound to: 6 - type: integer 
+	Parameter FIFO_DEPTH_WID bound to: 8'b00001000 
+	Parameter FIFO_ADDR_WID bound to: 3 - type: integer 
+	Parameter FIFO_WIDTH_MSB bound to: 5 - type: integer 
+	Parameter FIFO_DEPTH_MSB bound to: 7 - type: integer 
+	Parameter FIFO_ADDR_MSB bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_mem1r1w__parameterized0' (11#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_mem1r1w.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'syncfifo_ram__parameterized0' (11#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'll_receive__parameterized0' (11#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_receive.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier1_master_name' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_name.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier1_master_name' (12#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_name.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier1_master_concat' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_concat.sv:18]
+	Parameter TX_REG_PHY bound to: 1'b0 
+	Parameter RX_REG_PHY bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'rrarb' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/rrarb.sv:33]
+	Parameter REQUESTORS bound to: 3 - type: integer 
+	Parameter REQ_ADDR_WID bound to: 2 - type: integer 
+	Parameter REQ_ADDR_MSB bound to: 1 - type: integer 
+	Parameter NUM_REQ_WID bound to: 3 - type: integer 
+	Parameter NUM_REQ_MSB bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rrarb' (13#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/rrarb.sv:33]
+WARNING: [Synth 8-6014] Unused sequential element tx_phy_flop_0_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_concat.sv:190]
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier1_master_concat' (14#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_concat.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier1_master_top' (15#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/aximm_ll_multi_tier1_master_top.sv:18]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[75]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[74]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[73]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port clk_rd
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rst_rd_n
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_online
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_stb_userbit
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_mrk_userbit[0]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_name has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design ll_tx_cred has unconnected port end_of_txcred_coal
+WARNING: [Synth 8-3331] design ll_tx_cred has unconnected port rx_i_credit[3]
+WARNING: [Synth 8-3331] design ll_tx_cred has unconnected port rx_i_credit[2]
+WARNING: [Synth 8-3331] design ll_tx_cred has unconnected port rx_i_credit[1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1463.090 ; gain = 130.355 ; free physical = 111514 ; free virtual = 375703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1463.090 ; gain = 130.355 ; free physical = 111515 ; free virtual = 375704
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1471.090 ; gain = 138.355 ; free physical = 111515 ; free virtual = 375704
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "memory_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:162]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:152]
+INFO: [Synth 8-5544] ROM "memory_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "memory_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:162]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/syncfifo_ram.sv:152]
+INFO: [Synth 8-5544] ROM "tx_ar_pop_ovrd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_grant_enc_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_aw_pop_ovrd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_w_pop_ovrd" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1487.105 ; gain = 154.371 ; free physical = 111504 ; free virtual = 375694
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 4     
+	   2 Input      1 Bit       Adders := 12    
++---Registers : 
+	               77 Bit    Registers := 1     
+	               71 Bit    Registers := 9     
+	               49 Bit    Registers := 2     
+	                8 Bit    Registers := 9     
+	                6 Bit    Registers := 9     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 52    
++---Muxes : 
+	   4 Input     75 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 18    
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 9     
+	   2 Input      2 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 73    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module level_delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module ll_auto_sync 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module ll_tx_cred 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 6     
+Module syncfifo_reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               49 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+Module ll_transmit 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module syncfifo_reg__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               77 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+Module ll_transmit__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module ll_rx_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module syncfifo_mem1r1w 
+Detailed RTL Component Info : 
++---Registers : 
+	               71 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 8     
+Module syncfifo_ram 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module ll_receive 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module syncfifo_mem1r1w__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 8     
+Module syncfifo_ram__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module ll_receive__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module rrarb 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module aximm_ll_multi_tier1_master_concat 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     75 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[75]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[74]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rx_phy0[73]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port clk_rd
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port rst_rd_n
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_online
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_stb_userbit
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier1_master_concat has unconnected port tx_mrk_userbit[0]
+WARNING: [Synth 8-3331] design ll_transmit__parameterized0 has unconnected port end_of_txcred_coal
+WARNING: [Synth 8-3331] design ll_transmit__parameterized0 has unconnected port rx_i_credit[3]
+WARNING: [Synth 8-3331] design ll_transmit__parameterized0 has unconnected port rx_i_credit[2]
+WARNING: [Synth 8-3331] design ll_transmit__parameterized0 has unconnected port rx_i_credit[1]
+WARNING: [Synth 8-3331] design ll_transmit has unconnected port end_of_txcred_coal
+WARNING: [Synth 8-3331] design ll_transmit has unconnected port rx_i_credit[3]
+WARNING: [Synth 8-3331] design ll_transmit has unconnected port rx_i_credit[2]
+WARNING: [Synth 8-3331] design ll_transmit has unconnected port rx_i_credit[1]
+INFO: [Synth 8-3886] merging instance 'll_transmit_iw/ll_tx_cred_ii/tx_credit_pls1_reg_reg[0]' (FDC) to 'll_transmit_iw/ll_tx_cred_ii/tx_credit_min1_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iw/ll_tx_cred_ii/txonline_dly_reg' (FDC) to 'll_transmit_iaw/ll_tx_cred_ii/txonline_dly_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iaw/ll_tx_cred_ii/tx_credit_pls1_reg_reg[0]' (FDC) to 'll_transmit_iaw/ll_tx_cred_ii/tx_credit_min1_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iaw/ll_tx_cred_ii/txonline_dly_reg' (FDC) to 'll_transmit_iar/ll_tx_cred_ii/txonline_dly_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iar/ll_tx_cred_ii/tx_credit_pls1_reg_reg[0]' (FDC) to 'll_transmit_iar/ll_tx_cred_ii/tx_credit_min1_reg_reg[0]'
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iar/syncfifo_ii/read_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iar/syncfifo_ii/write_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iar/syncfifo_ii/numempty_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iaw/syncfifo_ii/read_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iaw/syncfifo_ii/write_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iaw/syncfifo_ii/numempty_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iw/syncfifo_ii/read_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iw/syncfifo_ii/write_addr_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iw/syncfifo_ii/numempty_reg_reg[0]) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+INFO: [Synth 8-3886] merging instance 'll_receive_ib/rx_underflow_sticky_reg' (FDCE) to 'll_receive_ir/rx_underflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_receive_ir/rx_underflow_sticky_reg' (FDCE) to 'll_transmit_iw/tx_underflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iw/tx_overflow_sticky_reg' (FDCE) to 'll_transmit_iw/tx_underflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iw/tx_underflow_sticky_reg' (FDCE) to 'll_transmit_iaw/tx_overflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iaw/tx_overflow_sticky_reg' (FDCE) to 'll_transmit_iar/tx_underflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iaw/tx_underflow_sticky_reg' (FDCE) to 'll_transmit_iar/tx_underflow_sticky_reg'
+INFO: [Synth 8-3886] merging instance 'll_transmit_iar/tx_overflow_sticky_reg' (FDCE) to 'll_transmit_iar/tx_underflow_sticky_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ll_transmit_iar/tx_underflow_sticky_reg )
+WARNING: [Synth 8-3332] Sequential element (ll_transmit_iar/tx_underflow_sticky_reg) is unused and will be removed from module aximm_ll_multi_tier1_master_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:55 . Memory (MB): peak = 1682.492 ; gain = 349.758 ; free physical = 112053 ; free virtual = 376256
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:56 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112080 ; free virtual = 376282
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:56 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112168 ; free virtual = 376371
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    24|
+|3     |LUT1   |    13|
+|4     |LUT2   |    93|
+|5     |LUT3   |    17|
+|6     |LUT4   |    73|
+|7     |LUT5   |   105|
+|8     |LUT6   |   260|
+|9     |MUXF7  |    77|
+|10    |FDCE   |  1030|
+|11    |FDPE   |    10|
+|12    |IBUF   |   332|
+|13    |OBUF   |   321|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------------------+-----------------------------------+------+
+|      |Instance                             |Module                             |Cells |
++------+-------------------------------------+-----------------------------------+------+
+|1     |top                                  |                                   |  2356|
+|2     |  aximm_ll_multi_tier1_master_concat |aximm_ll_multi_tier1_master_concat |    62|
+|3     |    rrarb_itx                        |rrarb                              |    61|
+|4     |  ll_auto_sync_i                     |ll_auto_sync                       |   194|
+|5     |    level_delay_i_xvalue             |level_delay                        |    62|
+|6     |    level_delay_i_yvalue             |level_delay_5                      |    61|
+|7     |    level_delay_i_zvalue             |level_delay_6                      |    64|
+|8     |  ll_receive_ib                      |ll_receive__parameterized0         |   114|
+|9     |    ll_rx_ctrl_ii                    |ll_rx_ctrl_4                       |     6|
+|10    |    syncfifo_ii                      |syncfifo_ram__parameterized0       |   107|
+|11    |      syncfifo_mem1r1w_i             |syncfifo_mem1r1w__parameterized0   |    83|
+|12    |  ll_receive_ir                      |ll_receive                         |   899|
+|13    |    ll_rx_ctrl_ii                    |ll_rx_ctrl                         |    10|
+|14    |    syncfifo_ii                      |syncfifo_ram                       |   888|
+|15    |      syncfifo_mem1r1w_i             |syncfifo_mem1r1w                   |   863|
+|16    |  ll_transmit_iar                    |ll_transmit                        |   140|
+|17    |    ll_tx_cred_ii                    |ll_tx_cred_2                       |    83|
+|18    |    syncfifo_ii                      |syncfifo_reg_3                     |    57|
+|19    |  ll_transmit_iaw                    |ll_transmit_0                      |   119|
+|20    |    ll_tx_cred_ii                    |ll_tx_cred_1                       |    64|
+|21    |    syncfifo_ii                      |syncfifo_reg                       |    55|
+|22    |  ll_transmit_iw                     |ll_transmit__parameterized0        |   174|
+|23    |    ll_tx_cred_ii                    |ll_tx_cred                         |    65|
+|24    |    syncfifo_ii                      |syncfifo_reg__parameterized0       |   109|
++------+-------------------------------------+-----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112400 ; free virtual = 376602
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.496 ; gain = 349.762 ; free physical = 112401 ; free virtual = 376604
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1682.500 ; gain = 349.762 ; free physical = 112401 ; free virtual = 376604
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 433 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+86 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:01:01 . Memory (MB): peak = 1758.520 ; gain = 438.391 ; free physical = 112328 ; free virtual = 376530
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier1/project_1/project_1.runs/synth_1/aximm_ll_multi_tier1_master_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file aximm_ll_multi_tier1_master_top_utilization_synth.rpt -pb aximm_ll_multi_tier1_master_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.25 . Memory (MB): peak = 1782.539 ; gain = 0.000 ; free physical = 112266 ; free virtual = 376527
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:31:13 2022...
