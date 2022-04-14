@@ -1,21 +1,3 @@
---------------------------------------------------------------------------------
--- Organization:      www.opendsp.pl
--- Engineer:          Jerzy Gbur
---
--- Create Date:    2006-05-13
--- Design Name:    aes
--- Module Name:    aes_pkg
--- Project Name:   aes
--- Target Device:
--- Tool versions:
--- Description:    Package for aes core
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
---------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;

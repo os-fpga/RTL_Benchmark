@@ -1,5 +1,5 @@
  
-set ::env(PROJECT_NAME) aes_decrypt_fpga
+set ::env(PROJECT_NAME) aes_decrypt_fpga_128
 set ::env(DESIGN_TOP) aes_decrypt128
 set ::env(DESIGN_DIR)  RTL_Benchmark/SVerilog/aes_decrypt_fpga/rtl/verilog/aes_decrypt128
 set ::env(TOP_VERILOG) RTL_Benchmark/SVerilog/aes_decrypt_fpga/rtl/verilog/aes_decrypt128/aes_decrypt128.sv
