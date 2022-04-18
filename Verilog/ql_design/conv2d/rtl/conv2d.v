@@ -395,7 +395,7 @@ module conv2d (
 	    reset_bias_address <= 1;
 	 end
 	 
-	 case (fsm_loadacc)
+	 case (fsm_loadacc) // synopsys full_case parallel_case
 	   laIDLE: begin
 	      i_bias_raddr <= 12'h200; // start of bias values
 	      bias_base_addr <= 12'h200;
