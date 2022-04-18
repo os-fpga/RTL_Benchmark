@@ -395,7 +395,7 @@ module conv2d (
 	    reset_bias_address <= 1;
 	 end
 	 
-	 case (fsm_loadacc)
+	 case (fsm_loadacc) // synopsys full_case parallel_case
 	   laIDLE: begin
 	      i_bias_raddr <= 12'h200; // start of bias values
 	      bias_base_addr <= 12'h200;
@@ -524,7 +524,7 @@ module conv2d (
 	 i1_t2_waddr <= i1_adder;
 	 i2_t2_waddr <= i2_adder;
 	 i3_t2_waddr <= i3_adder;
-	 case (fsm_writechannels)
+	 case (fsm_writechannels) // synopsys full_case parallel_case
 	   wcIDLE: begin
 	      result_base <= ext_result_base;
 	      i_tcdm2_waddr <= result_base;
@@ -607,7 +607,7 @@ module conv2d (
 	 end
 	 i_tcdm3_rdata <= tcdm3_rdata;
 
-	 case (fsm_getbias)
+	 case (fsm_getbias) // synopsys full_case parallel_case
 	   gbIDLE: begin
 	      i_bias_waddr <= 11'h200;
 	      filters_complete <= 0;
@@ -650,7 +650,7 @@ module conv2d (
 	 i_tcdm2_rdata <= tcdm2_rdata; // Align data with Valid
 	 
 	 
-	 case (fsm_getfilters)
+	 case (fsm_getfilters) // synopsys full_case parallel_case
 	   gfIDLE: begin
 	      i_filter_waddr <= 0;
 	      filter_space_left <= RAM_DEPTH; 
@@ -842,7 +842,7 @@ module conv2d (
 	    i_pixel_waddr <= i_pixel_waddr + 4;
 	 end
 	 
-	 case (fsm_getpixels)
+	 case (fsm_getpixels) // synopsys full_case parallel_case
 	   gpIDLE: begin
 	      pixels_read <= 0;
 
@@ -1012,7 +1012,7 @@ module conv2d (
 
 	 end // else: !if(rstn == 1'b0)
 	 
-	 case (fsm_conv2d)
+	 case (fsm_conv2d) // synopsys full_case parallel_case
 	   fsm_FRAC1: begin
      	      i_math_mode <= 2'b01;
 	      acc0[23:16] <= acc0[23:16] + {{4{mac0_din[7]}},mac0_din[7:4]};
@@ -1139,7 +1139,7 @@ module conv2d (
 	      fsm_conv2d <=  fsm_SOP;
 	   end //
 	   fsm_SOP: begin
-	      case (i_math_mode)
+	      case (i_math_mode) // synopsys full_case parallel_case
 		 2'b00: i_math_mode <= 2'b10;
 		 2'b01: i_math_mode <= 2'b00;
 		 2'b10: i_math_mode <= 2'b10;

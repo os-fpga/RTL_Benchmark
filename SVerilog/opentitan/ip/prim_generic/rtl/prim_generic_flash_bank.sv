@@ -135,14 +135,13 @@ module prim_generic_flash_bank #(
     .clk_i,
     .rst_ni,
     .clr_i   (1'b0),
-    .wvalid_i(wvalid),
-    .wready_o(ack),
-    .wdata_i (cmd_d),
-    .depth_o (),
-    .full_o (),
-    .rvalid_o(cmd_valid),
-    .rready_i(pop_cmd),
-    .rdata_o (cmd_q)
+    .wvalid(wvalid),
+    .wready(ack),
+    .wdata (cmd_d),
+    .depth (),
+    .rvalid(cmd_valid),
+    .rready(pop_cmd),
+    .rdata (cmd_q)
   );
 
   logic rd_req, prog_req, pg_erase_req, bk_erase_req;
@@ -384,8 +383,7 @@ module prim_generic_flash_bank #(
     .addr_i   (mem_addr),
     .wdata_i  (mem_wdata),
     .wmask_i  ({DataWidth{1'b1}}),
-    .rdata_o  (rd_data_main),
-    .cfg_i    ('0)
+    .rdata_o  (rd_data_main)
   );
 
   for (genvar info_type = 0; info_type < InfoTypes; info_type++) begin : gen_info_types
@@ -408,8 +406,7 @@ module prim_generic_flash_bank #(
       .addr_i   (mem_addr[0 +: InfoAddrW]),
       .wdata_i  (mem_wdata),
       .wmask_i  ({DataWidth{1'b1}}),
-      .rdata_o  (rd_nom_data_info[info_type]),
-      .cfg_i    ('0)
+      .rdata_o  (rd_nom_data_info[info_type])
     );
   end
 
