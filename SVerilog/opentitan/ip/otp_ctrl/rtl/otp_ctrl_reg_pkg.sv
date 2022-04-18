@@ -7,7 +7,7 @@
 package otp_ctrl_reg_pkg;
 
   // Param list
-  parameter int NumSramKeyReqSlots = 2;
+  parameter int NumSramKeyReqSlots = 3;
   parameter int OtpByteAddrWidth = 11;
   parameter int NumErrorEntries = 10;
   parameter int NumDaiWords = 2;
@@ -63,6 +63,8 @@ package otp_ctrl_reg_pkg;
   parameter int RomAlertTimeoutCyclesSize = 16;
   parameter int RomAlertPhaseCyclesOffset = 1300;
   parameter int RomAlertPhaseCyclesSize = 64;
+  parameter int RomWatchdogBiteThresholdCyclesOffset = 1364;
+  parameter int RomWatchdogBiteThresholdCyclesSize = 4;
   parameter int OwnerSwCfgDigestOffset = 1656;
   parameter int OwnerSwCfgDigestSize = 8;
   parameter int HwCfgOffset = 1664;
@@ -125,7 +127,7 @@ package otp_ctrl_reg_pkg;
   // Typedefs for registers for core interface //
   ///////////////////////////////////////////////
 
-  typedef struct packed {
+typedef struct packed {
     struct packed {
       logic        q;
     } otp_operation_done;
@@ -331,49 +333,6 @@ package otp_ctrl_reg_pkg;
   typedef struct packed {
     logic [31:0] d;
   } otp_ctrl_hw2reg_secret2_digest_mreg_t;
-
- ///////////////////////////////////////
-  // Register to internal design logic //
-  ///////////////////////////////////////
-  typedef struct packed {
-    otp_ctrl_reg2hw_intr_state_reg_t intr_state; // [194:193]
-    otp_ctrl_reg2hw_intr_enable_reg_t intr_enable; // [192:191]
-    otp_ctrl_reg2hw_intr_test_reg_t intr_test; // [190:187]
-    otp_ctrl_reg2hw_alert_test_reg_t alert_test; // [186:183]
-    otp_ctrl_reg2hw_direct_access_cmd_reg_t direct_access_cmd; // [182:177]
-    otp_ctrl_reg2hw_direct_access_address_reg_t direct_access_address; // [176:166]
-    otp_ctrl_reg2hw_direct_access_wdata_mreg_t [1:0] direct_access_wdata; // [165:102]
-    otp_ctrl_reg2hw_check_trigger_reg_t check_trigger; // [101:98]
-    otp_ctrl_reg2hw_check_timeout_reg_t check_timeout; // [97:66]
-    otp_ctrl_reg2hw_integrity_check_period_reg_t integrity_check_period; // [65:34]
-    otp_ctrl_reg2hw_consistency_check_period_reg_t consistency_check_period; // [33:2]
-    otp_ctrl_reg2hw_creator_sw_cfg_read_lock_reg_t creator_sw_cfg_read_lock; // [1:1]
-    otp_ctrl_reg2hw_owner_sw_cfg_read_lock_reg_t owner_sw_cfg_read_lock; // [0:0]
-  } otp_ctrl_reg2hw_t;
-
-parameter digest_iv_array_t RndCnstDigestIVDefault = {
-    64'ha5af72c1b813aec4,
-    64'h5d7aacd1db316407,
-    64'hd0ec83b7fe6ae2ae,
-    64'hc2993a0ea64e312d,
-    64'h899aac2ab7d91479
-  };
-  ///////////////////////////////////////
-  // Internal design logic to register //
-  ///////////////////////////////////////
-  typedef struct packed {
-    otp_ctrl_hw2reg_intr_state_reg_t intr_state; // [494:491]
-    otp_ctrl_hw2reg_status_reg_t status; // [490:476]
-    otp_ctrl_hw2reg_err_code_mreg_t [8:0] err_code; // [475:449]
-    otp_ctrl_hw2reg_direct_access_regwen_reg_t direct_access_regwen; // [448:448]
-    otp_ctrl_hw2reg_direct_access_rdata_mreg_t [1:0] direct_access_rdata; // [447:384]
-    otp_ctrl_hw2reg_creator_sw_cfg_digest_mreg_t [1:0] creator_sw_cfg_digest; // [383:320]
-    otp_ctrl_hw2reg_owner_sw_cfg_digest_mreg_t [1:0] owner_sw_cfg_digest; // [319:256]
-    otp_ctrl_hw2reg_hw_cfg_digest_mreg_t [1:0] hw_cfg_digest; // [255:192]
-    otp_ctrl_hw2reg_secret0_digest_mreg_t [1:0] secret0_digest; // [191:128]
-    otp_ctrl_hw2reg_secret1_digest_mreg_t [1:0] secret1_digest; // [127:64]
-    otp_ctrl_hw2reg_secret2_digest_mreg_t [1:0] secret2_digest; // [63:0]
-  } otp_ctrl_hw2reg_t;
 
   // Register -> HW type for core interface
   typedef struct packed {
@@ -611,4 +570,3 @@ parameter digest_iv_array_t RndCnstDigestIVDefault = {
   };
 
 endpackage
-

@@ -165,8 +165,7 @@ module prim_generic_flash #(
     .addr_i(cfg_addr),
     .wdata_i(cfg_wdata),
     .wmask_i({32{1'b1}}),
-    .rdata_o(cfg_rdata),
-    .cfg_i('0)
+    .rdata_o(cfg_rdata)
   );
 
   logic unused_bist_enable;

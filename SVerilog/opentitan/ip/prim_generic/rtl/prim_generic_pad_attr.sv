@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-`include "prim_assert.sv"
 
 module prim_generic_pad_attr
   import prim_pad_wrapper_pkg::*;
@@ -64,8 +63,8 @@ module prim_generic_pad_attr
     end
   end else begin : gen_invalid_config
     // this should throw link warnings in elaboration
-    assert_static_in_generate_config_not_available
-        assert_static_in_generate_config_not_available();
+//    assert_static_in_generate_config_not_available
+  //      assert_static_in_generate_config_not_available();
   end
 
 endmodule : prim_generic_pad_attr

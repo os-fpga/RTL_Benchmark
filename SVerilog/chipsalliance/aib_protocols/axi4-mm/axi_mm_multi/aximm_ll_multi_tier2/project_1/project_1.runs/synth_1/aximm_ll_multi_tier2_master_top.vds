@@ -1,0 +1,402 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Mar  9 12:39:05 2022
+# Process ID: 28416
+# Current directory: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/project_1/project_1.runs/synth_1
+# Command line: vivado -log aximm_ll_multi_tier2_master_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source aximm_ll_multi_tier2_master_top.tcl
+# Log file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/project_1/project_1.runs/synth_1/aximm_ll_multi_tier2_master_top.vds
+# Journal file: /home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source aximm_ll_multi_tier2_master_top.tcl -notrace
+Command: synth_design -top aximm_ll_multi_tier2_master_top -part xc7a100tfgg676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 28791 
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:53]
+WARNING: [Synth 8-2507] parameter declaration becomes local in ll_auto_sync with formal parameter declaration list [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:54]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1428.953 ; gain = 96.223 ; free physical = 111846 ; free virtual = 376153
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier2_master_top' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_top.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'll_auto_sync' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:29]
+	Parameter MARKER_WIDTH bound to: 4 - type: integer 
+	Parameter PERSISTENT_MARKER bound to: 1'b1 
+	Parameter PERSISTENT_STROBE bound to: 1'b1 
+	Parameter NO_MARKER bound to: 1'b1 
+	Parameter DISABLE_TX_AUTOSYNC bound to: 1'b0 
+	Parameter DISABLE_RX_AUTOSYNC bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'level_delay' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/level_delay.sv:36]
+INFO: [Synth 8-6155] done synthesizing module 'level_delay' (1#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/common/rtl/level_delay.sv:36]
+WARNING: [Synth 8-6014] Unused sequential element delay_z_1st_strobe_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:121]
+WARNING: [Synth 8-6014] Unused sequential element marker_replay_reg_reg was removed.  [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:151]
+INFO: [Synth 8-6155] done synthesizing module 'll_auto_sync' (2#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/llink/rtl/ll_auto_sync.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier2_master_name' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_name.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier2_master_name' (3#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_name.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'aximm_ll_multi_tier2_master_concat' [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_concat.sv:18]
+	Parameter TX_REG_PHY bound to: 1'b0 
+	Parameter RX_REG_PHY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier2_master_concat' (4#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_concat.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'aximm_ll_multi_tier2_master_top' (5#1) [/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/aximm_ll_multi_tier2_master_top.sv:18]
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[23] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[22] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[21] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[20] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[17] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[16] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[15] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[14] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[13] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[12] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[11] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[10] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[9] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[8] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[7] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[6] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[5] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[4] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[3] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[2] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[1] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[0] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[23] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[22] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[21] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[20] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[17] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[16] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[15] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[14] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[13] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[12] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[11] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[10] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[9] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[8] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[7] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[6] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[5] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[4] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[3] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[2] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[1] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[0] driven by constant 0
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rx_phy0[316]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rx_phy0[236]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rx_phy0[156]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rx_phy0[76]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port clk_wr
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port clk_rd
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rst_wr_n
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port rst_rd_n
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port tx_online
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_concat has unconnected port tx_stb_userbit
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_name has unconnected port m_gen2_mode
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[7]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[6]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[5]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[4]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[3]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[2]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[1]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1459.211 ; gain = 126.480 ; free physical = 111816 ; free virtual = 376124
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1459.211 ; gain = 126.480 ; free physical = 111815 ; free virtual = 376123
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-1
+INFO: [Device 21-403] Loading part xc7a100tfgg676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.211 ; gain = 134.480 ; free physical = 111814 ; free virtual = 376121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1484.230 ; gain = 151.500 ; free physical = 111806 ; free virtual = 376114
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module level_delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module ll_auto_sync 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_phy0[317] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_phy0[237] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_phy0[157] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_phy0[77] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[26] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[25] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[24] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[23] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[22] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[21] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[20] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[17] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[16] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[15] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[14] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[13] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[12] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[11] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[10] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[9] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[8] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[7] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[6] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[5] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[4] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[3] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[2] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[1] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port tx_tx_debug_status[0] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[31] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[30] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[29] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[28] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[27] driven by constant 0
+WARNING: [Synth 8-3917] design aximm_ll_multi_tier2_master_top has port rx_rx_debug_status[26] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[7]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[6]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[5]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[4]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[3]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[2]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[1]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port init_tx_credit[0]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port rx_phy0[316]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port rx_phy0[236]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port rx_phy0[156]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port rx_phy0[76]
+WARNING: [Synth 8-3331] design aximm_ll_multi_tier2_master_top has unconnected port m_gen2_mode
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:54 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112568 ; free virtual = 376977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:54 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112567 ; free virtual = 376977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:54 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112565 ; free virtual = 376975
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112587 ; free virtual = 376996
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112587 ; free virtual = 376996
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112586 ; free virtual = 376996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112586 ; free virtual = 376996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112586 ; free virtual = 376996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112586 ; free virtual = 376995
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     1|
+|4     |LUT2   |    45|
+|5     |LUT3   |    18|
+|6     |LUT4   |    10|
+|7     |LUT5   |     3|
+|8     |LUT6   |    32|
+|9     |FDCE   |    53|
+|10    |FDPE   |     1|
+|11    |IBUF   |   684|
+|12    |OBUF   |   700|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------+--------------+------+
+|      |Instance                 |Module        |Cells |
++------+-------------------------+--------------+------+
+|1     |top                      |              |  1572|
+|2     |  ll_auto_sync_i         |ll_auto_sync  |   183|
+|3     |    level_delay_i_xvalue |level_delay   |    59|
+|4     |    level_delay_i_yvalue |level_delay_0 |    39|
+|5     |    level_delay_i_zvalue |level_delay_1 |    78|
++------+-------------------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112587 ; free virtual = 376996
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 161 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112590 ; free virtual = 376999
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:55 . Memory (MB): peak = 1612.598 ; gain = 279.867 ; free physical = 112590 ; free virtual = 377000
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 708 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'aximm_ll_multi_tier2_master_top' is not ideal for floorplanning, since the cellview 'aximm_ll_multi_tier2_master_top' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 138 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1749.617 ; gain = 429.492 ; free physical = 112631 ; free virtual = 376985
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/users/komal.inayat/Documents/Task_5/aib-protocols/axi4-mm/axi_mm_multi/aximm_ll_multi_tier2/project_1/project_1.runs/synth_1/aximm_ll_multi_tier2_master_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file aximm_ll_multi_tier2_master_top_utilization_synth.rpt -pb aximm_ll_multi_tier2_master_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1773.637 ; gain = 0.000 ; free physical = 112633 ; free virtual = 376985
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  9 12:40:17 2022...

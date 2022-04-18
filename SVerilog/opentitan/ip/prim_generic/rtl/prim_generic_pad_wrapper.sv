@@ -90,8 +90,8 @@ module prim_generic_pad_wrapper
 
   end else begin : gen_invalid_config
     // this should throw link warnings in elaboration
-    assert_static_in_generate_config_not_available
-        assert_static_in_generate_config_not_available();
+//    assert_static_in_generate_config_not_available
+ //       assert_static_in_generate_config_not_available();
   end
 
 endmodule : prim_generic_pad_wrapper
