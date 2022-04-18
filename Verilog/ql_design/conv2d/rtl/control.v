@@ -125,7 +125,7 @@ module CONTROL(
 	 i_ctl_bwen <= 1'b0;
 	 i_ctl_pfwaddr <= i_addr;
 	 
-	 case (fsm_ctl)
+	 case (fsm_ctl) // synopsys full_case parallel_case
 	   fsm_IDLE: begin
 	      if ((PENABLE == 1) & (PWRITE == 1)) begin
 		 fsm_ctl <= fsm_WRITE;
