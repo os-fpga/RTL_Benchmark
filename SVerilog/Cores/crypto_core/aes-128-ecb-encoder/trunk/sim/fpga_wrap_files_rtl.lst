@@ -1,0 +1,20 @@
++INCDIR+$UNIT_HOME/rtl/aes128/src
+$UNIT_HOME/src/aes128_enc.sv
+$UNIT_HOME/src/wrap/axi_interface.sv
+$UNIT_HOME/src/wrap/system_manager.sv
+
+-f $XILINX_VIVADO//data/secureip/secureip_cell.list.f
+-y $XILINX_VIVADO/data/verilog/src/unisims +libext+.v
+-y $XILINX_VIVADO/data/verilog/src/unimacro +libext+.v
+-y $XILINX_VIVADO/data/verilog/src/retarget +libext+.v
++INCDIR+$XILINX_VIVADO/data/verilog/src/unisims_dr
+
+$XILINX_VIVADO/data/verilog/src/glbl.v
+
+
+$UNIT_HOME/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_sim_netlist.v
+$UNIT_HOME/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_sim_netlist.v
+
+$UNIT_HOME/src/wrap/aes128_ecb_fpga_wrap.sv
+$UNIT_HOME/tb/tb_fpga.sv
+

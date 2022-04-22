@@ -1,0 +1,565 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jul 30 13:52:02 2020
+# Process ID: 9700
+# Current directory: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1
+# Command line: vivado -log aes128_ecb_fpga_wrap.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source aes128_ecb_fpga_wrap.tcl
+# Log file: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/aes128_ecb_fpga_wrap.vds
+# Journal file: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source aes128_ecb_fpga_wrap.tcl -notrace
+Command: synth_design -top aes128_ecb_fpga_wrap -part xc7k325tffg900-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9709 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1279.145 ; gain = 86.996 ; free physical = 1340 ; free virtual = 6471
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'aes128_ecb_fpga_wrap' [/home/user/aes128/src/wrap/aes128_ecb_fpga_wrap.sv:1]
+INFO: [Synth 8-638] synthesizing module 'axi_interface' [/home/user/aes128/src/wrap/axi_interface.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'axi_interface' (0#1) [/home/user/aes128/src/wrap/axi_interface.sv:1]
+INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/realtime/clk_gen_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_gen' (1#1) [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/realtime/clk_gen_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'aes128_enc' [/home/user/aes128/src/aes128_enc.sv:1]
+	Parameter Sbox bound to: 2048'b01100011011111000111011101111011111100100110101101101111110001010011000000000001011001110010101111111110110101111010101101110110110010101000001011001001011111011111101001011001010001111111000010101101110101001010001010101111100111001010010001110010110000001011011111111101100100110010011000110110001111111111011111001100001101001010010111100101111100010111000111011000001100010001010100000100110001110010001111000011000110001001011000000101100110100000011100010010100000001110001011101011001001111011001001110101000010011000001100101100000110100001101101101110010110101010000001010010001110111101011010110011001010011110001100101111100001000101001111010001000000001110110100100000111111001011000101011011011010101100101110111110001110010100101001001100010110001100111111010000111011111010101011111011010000110100110100110011100001010100010111111001000000100111111101010000001111001001111110101000010100011010001101000000100011111001001010011101001110001111010110111100101101101101101000100001000100001111111111110011110100101100110100001100000100111110110001011111100101110100010000010111110001001010011101111110001111010110010001011101000110010111001101100000100000010100111111011100001000100010101010010000100010000100011011101110101110000001010011011110010111100000101111011011111000000011001000111010000010100100100100000110001001000101110011000010110100111010110001100010100100011001010111100100011110011110011111001000001101110110110110001101110101010100111010101001011011000101011011110100111010100110010101111010101011100000100010111010011110000010010100101110000111001010011010110100110001101110100011011101011101000001111101001011101111011000101110001010011100000011111010110101011001100100100000000011111101100000111001100001001101010101011110111001100001101100000100011101100111101110000111111000100110000001000101101001110110011000111010010100100110110001111010000111111010011100111001010101001010001101111110001100101000011000100100001101101111111110011001000010011010000100000110011001001011010000111110110000010101001011101100010110 
+	Parameter Rcon bound to: 320'b00000001000000100000010000001000000100000010000001000000100000000001101100110110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+WARNING: [Synth 8-5856] 3D RAM state_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM round_key_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'aes128_enc' (2#1) [/home/user/aes128/src/aes128_enc.sv:1]
+INFO: [Synth 8-638] synthesizing module 'axi_uartlite_module' [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/realtime/axi_uartlite_module_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'axi_uartlite_module' (3#1) [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/realtime/axi_uartlite_module_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'system_manager' [/home/user/aes128/src/wrap/system_manager.sv:1]
+	Parameter STARTUP_PAUSE_DUTY bound to: 100 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/aes128/src/wrap/system_manager.sv:215]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/aes128/src/wrap/system_manager.sv:336]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/aes128/src/wrap/system_manager.sv:269]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/aes128/src/wrap/system_manager.sv:431]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/aes128/src/wrap/system_manager.sv:480]
+WARNING: [Synth 8-6014] Unused sequential element rd_data_reg_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:161]
+WARNING: [Synth 8-6014] Unused sequential element rx_fifo_full_reg_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:163]
+WARNING: [Synth 8-6014] Unused sequential element tx_fifo_empty_reg_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:164]
+WARNING: [Synth 8-6014] Unused sequential element tx_fifo_full_reg_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:165]
+WARNING: [Synth 8-5788] Register axi_state_reg in module system_manager is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/user/aes128/src/wrap/system_manager.sv:408]
+INFO: [Synth 8-256] done synthesizing module 'system_manager' (4#1) [/home/user/aes128/src/wrap/system_manager.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes128_ecb_fpga_wrap' (5#1) [/home/user/aes128/src/wrap/aes128_ecb_fpga_wrap.sv:1]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[31]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[30]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[29]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[28]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[27]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[26]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[25]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[24]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[23]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[22]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[21]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[20]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[19]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[18]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[17]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[16]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[15]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[14]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[13]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[12]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[11]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[10]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[9]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[8]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1353.676 ; gain = 161.527 ; free physical = 1318 ; free virtual = 6450
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1353.676 ; gain = 161.527 ; free physical = 1327 ; free virtual = 6459
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc] for cell 'clkgen'
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc] for cell 'clkgen'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp3/axi_uartlite_module_in_context.xdc] for cell 'uartlite'
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp3/axi_uartlite_module_in_context.xdc] for cell 'uartlite'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes128_ecb_fpga_wrap_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/aes128_ecb_fpga_wrap_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1735.738 ; gain = 0.000 ; free physical = 1013 ; free virtual = 6145
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:35 . Memory (MB): peak = 1735.738 ; gain = 543.590 ; free physical = 1107 ; free virtual = 6239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:35 . Memory (MB): peak = 1735.738 ; gain = 543.590 ; free physical = 1107 ; free virtual = 6239
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_IN_N. (constraint file  /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_IN_N. (constraint file  /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_IN_P. (constraint file  /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_IN_P. (constraint file  /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/.Xil/Vivado-9700-orme22/dcp2/clk_gen_in_context.xdc, line 6).
+Applied set_property DONT_TOUCH = true for clkgen. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for uartlite. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:35 . Memory (MB): peak = 1735.738 ; gain = 543.590 ; free physical = 1107 ; free virtual = 6239
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "valid_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'm_axi\.wvalid_reg' into 'm_axi\.awvalid_reg' [/home/user/aes128/src/wrap/system_manager.sv:402]
+WARNING: [Synth 8-6014] Unused sequential element m_axi\.wvalid_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:402]
+INFO: [Synth 8-802] inferred FSM for state register 'sys_state_reg' in module 'system_manager'
+INFO: [Synth 8-5545] ROM "startup_pause_complete" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "key_set_complete" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "key_set_complete" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "plain_text_set_in_progress" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_counter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cipher_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "get_stat" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "check_stat" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "sys_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element startup_pause_cnt_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:145]
+INFO: [Synth 8-5545] ROM "startup_pause_complete" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "key_set_complete" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "key_set_complete" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "plain_text_set_in_progress" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_counter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cipher_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "get_stat" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "check_stat" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "sys_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "axi_next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SYS_IDLE |                              000 | 00000000000000000000000000000000
+      INIT_UART_CTRL_REG |                              001 | 00000000000000000000000000000001
+        RD_UART_STAT_REG |                              010 | 00000000000000000000000000000010
+              RD_RX_FIFO |                              011 | 00000000000000000000000000000011
+              WR_TX_FIFO |                              100 | 00000000000000000000000000000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sys_state_reg' using encoding 'sequential' in module 'system_manager'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 1735.738 ; gain = 543.590 ; free physical = 1072 ; free virtual = 6204
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |aes128_enc__GB0           |           1|     32784|
+|2     |aes128_enc__GB1           |           1|      6120|
+|3     |aes128_enc__GB2           |           1|      4699|
+|4     |aes128_enc__GB3           |           1|     10352|
+|5     |aes128_enc__GB4           |           1|     11267|
+|6     |aes128_enc__GB5           |           1|     20400|
+|7     |aes128_ecb_fpga_wrap__GC0 |           1|     21176|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
+	   4 Input      8 Bit         XORs := 8     
+	   2 Input      8 Bit         XORs := 86    
+	   5 Input      8 Bit         XORs := 16    
+	   6 Input      8 Bit         XORs := 8     
+	   3 Input      8 Bit         XORs := 2     
++---Registers : 
+	              128 Bit    Registers := 4     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 34    
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 15    
+	   4 Input    128 Bit        Muxes := 1     
+	   3 Input    128 Bit        Muxes := 1     
+	   5 Input    128 Bit        Muxes := 5     
+	   2 Input     32 Bit        Muxes := 4     
+	   6 Input     32 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 85    
+	   6 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 10    
+	   5 Input      4 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 30    
+	   6 Input      1 Bit        Muxes := 11    
+	   4 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 24    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module aes128_ecb_fpga_wrap 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module aes128_enc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
+	   4 Input      8 Bit         XORs := 8     
+	   2 Input      8 Bit         XORs := 86    
+	   5 Input      8 Bit         XORs := 16    
+	   6 Input      8 Bit         XORs := 8     
+	   3 Input      8 Bit         XORs := 2     
++---Registers : 
+	              128 Bit    Registers := 1     
+	                8 Bit    Registers := 32    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 80    
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+Module system_manager 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 5     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 12    
+	   4 Input    128 Bit        Muxes := 1     
+	   3 Input    128 Bit        Muxes := 1     
+	   5 Input    128 Bit        Muxes := 5     
+	   2 Input     32 Bit        Muxes := 4     
+	   6 Input     32 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
+	   6 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 7     
+	   5 Input      4 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 27    
+	   6 Input      1 Bit        Muxes := 11    
+	   4 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 24    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "startup_pause_complete" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element startup_pause_cnt_reg was removed.  [/home/user/aes128/src/wrap/system_manager.sv:145]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[31]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[30]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[29]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[28]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[27]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[26]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[25]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[24]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[23]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[22]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[21]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[20]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[19]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[18]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[17]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[16]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[15]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[14]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[13]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[12]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[11]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[10]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[9]
+WARNING: [Synth 8-3331] design system_manager has unconnected port m_axi\.rdata[8]
+INFO: [Synth 8-3886] merging instance 'sys_mngr/addr_reg_reg[0]' (FDCE) to 'sys_mngr/addr_reg_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sys_mngr/addr_reg_reg[1] )
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[19]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[18]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[17]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[23]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[22]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[21]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[20]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[29]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[28]' (FDCPE) to 'sys_mngr/axi_state_reg[31]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[31]' (FDCPE) to 'sys_mngr/axi_state_reg[30]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[30]' (FDCPE) to 'sys_mngr/axi_state_reg[27]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[25]' (FDCPE) to 'sys_mngr/axi_state_reg[27]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[24]' (FDCPE) to 'sys_mngr/axi_state_reg[27]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[27]' (FDCPE) to 'sys_mngr/axi_state_reg[26]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[26]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[5]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[3]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[4]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[9]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[8]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[7]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[6]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[14]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[13]' (FDCPE) to 'sys_mngr/axi_state_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[16]' (FDCPE) to 'sys_mngr/axi_state_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[15]' (FDCPE) to 'sys_mngr/axi_state_reg[12]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[12]' (FDCPE) to 'sys_mngr/axi_state_reg[11]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/axi_state_reg[11]' (FDCPE) to 'sys_mngr/axi_state_reg[10]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wstrb_reg[0]' (FDCE) to 'sys_mngr/m_axi\.wstrb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wstrb_reg[1]' (FDCE) to 'sys_mngr/m_axi\.wstrb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wstrb_reg[2]' (FDCE) to 'sys_mngr/m_axi\.wstrb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[8]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[9]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[9]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[10]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[10]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[11]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[11]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[12]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[12]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[13]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[13]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[14]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[14]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[15]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[16]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[16]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[17]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[17]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[18]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[18]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[19]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[19]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[20]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[20]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[21]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[21]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[22]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[22]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[23]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[23]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[24]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[24]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[25]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[25]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[26]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[26]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[27]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[27]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[28]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[28]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[29]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[29]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[30]'
+INFO: [Synth 8-3886] merging instance 'sys_mngr/m_axi\.wdata_reg[30]' (FDC) to 'sys_mngr/m_axi\.wdata_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sys_mngr/m_axi\.wdata_reg[31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:32 . Memory (MB): peak = 1739.660 ; gain = 547.512 ; free physical = 300 ; free virtual = 4155
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |aes128_enc__GB0           |           1|      8259|
+|2     |aes128_enc__GB1           |           1|      1218|
+|3     |aes128_enc__GB2           |           1|      1352|
+|4     |aes128_enc__GB3           |           1|      2182|
+|5     |aes128_enc__GB4           |           1|      2828|
+|6     |aes128_enc__GB5           |           1|      4060|
+|7     |aes128_ecb_fpga_wrap__GC0 |           1|      1924|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clkgen/clk_out1' to pin 'clkgen/bbstub_clk_out1/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clkgen/clk_in1_p' to 'CLK_IN_P'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:01:40 . Memory (MB): peak = 1843.027 ; gain = 650.879 ; free physical = 170 ; free virtual = 4025
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:02:08 . Memory (MB): peak = 2199.262 ; gain = 1007.113 ; free physical = 567 ; free virtual = 4111
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |aes128_ecb_fpga_wrap_GT0 |           1|     21778|
++------+-------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'i_0/sys_mngr/cur_stat_reg_reg[0]' (FDCE) to 'i_0/sys_mngr/rx_fifo_valid_data_reg_reg'
+INFO: [Synth 8-3886] merging instance 'i_0/sys_mngr/m_axi\.wstrb_reg[3]' (FDCE) to 'i_0/sys_mngr/m_axi\.awvalid_reg'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:02:20 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 436 ; free virtual = 3982
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |aes128_ecb_fpga_wrap_GT0 |           1|      4826|
++------+-------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:14 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 436 ; free virtual = 3982
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:14 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 436 ; free virtual = 3982
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 436 ; free virtual = 3982
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 436 ; free virtual = 3982
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 435 ; free virtual = 3980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 435 ; free virtual = 3980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |clk_gen             |         1|
+|2     |axi_uartlite_module |         1|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |axi_uartlite_module |     1|
+|2     |clk_gen             |     1|
+|3     |CARRY4              |     8|
+|4     |LUT1                |     3|
+|5     |LUT2                |   435|
+|6     |LUT3                |   306|
+|7     |LUT4                |   154|
+|8     |LUT5                |   220|
+|9     |LUT6                |  1930|
+|10    |MUXF7               |   637|
+|11    |MUXF8               |   270|
+|12    |FDCE                |   868|
+|13    |FDPE                |     4|
+|14    |LDC                 |     4|
+|15    |IBUF                |     2|
+|16    |OBUF                |     5|
++------+--------------------+------+
+
+Report Instance Areas: 
++------+-----------+---------------+------+
+|      |Instance   |Module         |Cells |
++------+-----------+---------------+------+
+|1     |top        |               |  4891|
+|2     |  enc      |aes128_enc     |  2095|
+|3     |  sys_mngr |system_manager |  2740|
++------+-----------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 435 ; free virtual = 3980
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:02:07 . Memory (MB): peak = 2211.188 ; gain = 636.977 ; free physical = 2600 ; free virtual = 6146
+Synthesis Optimization Complete : Time (s): cpu = 00:01:15 ; elapsed = 00:02:26 . Memory (MB): peak = 2211.188 ; gain = 1019.039 ; free physical = 2603 ; free virtual = 6146
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 921 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  LDC => LDCE: 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+120 Infos, 58 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:02:28 . Memory (MB): peak = 2223.273 ; gain = 1058.230 ; free physical = 2595 ; free virtual = 6139
+INFO: [Common 17-1381] The checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/aes128_ecb_fpga_wrap.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file aes128_ecb_fpga_wrap_utilization_synth.rpt -pb aes128_ecb_fpga_wrap_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.59 . Memory (MB): peak = 2247.285 ; gain = 0.000 ; free physical = 2593 ; free virtual = 6139
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 13:54:39 2020...
