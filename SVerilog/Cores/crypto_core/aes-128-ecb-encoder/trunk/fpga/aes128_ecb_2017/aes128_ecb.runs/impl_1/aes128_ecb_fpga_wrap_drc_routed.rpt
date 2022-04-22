@@ -1,0 +1,67 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Thu Jul 30 13:56:10 2020
+| Host         : orme22 running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_drc -file aes128_ecb_fpga_wrap_drc_routed.rpt -pb aes128_ecb_fpga_wrap_drc_routed.pb -rpx aes128_ecb_fpga_wrap_drc_routed.rpx
+| Design       : aes128_ecb_fpga_wrap
+| Device       : xc7k325tffg900-2
+| Speed File   : -2
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 6
++------------+----------+--------------------+------------+
+| Rule       | Severity | Description        | Violations |
++------------+----------+--------------------+------------+
+| PDRC-153   | Warning  | Gated clock check  | 4          |
+| PORTPROP-2 | Warning  | selectio_diff_term | 2          |
++------------+----------+--------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net sys_mngr/axi_state[0]_P_i_3_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[0]_P_i_3/O, cell sys_mngr/axi_state[0]_P_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net sys_mngr/axi_state[10]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[10]_P_i_2/O, cell sys_mngr/axi_state[10]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net sys_mngr/axi_state[1]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[1]_P_i_2/O, cell sys_mngr/axi_state[1]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net sys_mngr/axi_state[2]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[2]_P_i_2/O, cell sys_mngr/axi_state[2]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PORTPROP-2#1 Warning
+selectio_diff_term  
+The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#2 Warning
+selectio_diff_term  
+The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+
