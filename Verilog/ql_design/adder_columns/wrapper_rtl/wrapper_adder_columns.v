@@ -1,8 +1,8 @@
 //Wrapper Design
 
-parameter size = 49;  /* declare a parameter. default required */
-module wrapper_adder_columns(cout,sum,a,b,cin);
 
+module wrapper_adder_columns(cout,sum,a,b,cin);
+parameter size = 49;  /* declare a parameter. default required */
 input [size*2-1:0]a,b;
 output [size*2-1:0]sum;
 input [1:0]cin;
@@ -15,7 +15,7 @@ endmodule
 
 
 
-module adder_max(cout, sum, a, b, cin);
+module adder_max #(parameter size = 49)(cout, sum, a, b, cin);
 output cout;
 output [size-1:0] sum; 	 // sum uses the size parameter
 input cin;
