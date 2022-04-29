@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="clk_gen_synth_1" LaunchDir="/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/clk_gen_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="axi_uartlite_module_synth_1" LaunchDir="/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/axi_uartlite_module_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="clk_gen_synth_1"/>
+		<Parent Id="axi_uartlite_module_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="route_design">
+		<Parent Id="synth_1"/>
+		<Parent Id="clk_gen_synth_1"/>
+		<Parent Id="axi_uartlite_module_synth_1"/>
+	</Run>
+</Runs>
+

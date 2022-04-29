@@ -1,0 +1,1546 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jul 27 14:17:14 2020
+# Process ID: 17813
+# Current directory: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb
+# Command line: vivado
+# Log file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/vivado.log
+# Journal file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:07 . Memory (MB): peak = 6355.180 ; gain = 112.898 ; free physical = 63973 ; free virtual = 105017
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 911 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+get_clocks: Time (s): cpu = 00:00:17 ; elapsed = 00:00:34 . Memory (MB): peak = 7256.945 ; gain = 597.508 ; free physical = 63177 ; free virtual = 104349
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:49 ; elapsed = 00:01:13 . Memory (MB): peak = 7381.996 ; gain = 1004.809 ; free physical = 63009 ; free virtual = 104187
+close_design
+close [ open /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc w ]
+add_files -fileset constrs_1 /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc
+set_property target_constrs_file /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc [current_fileset -constrset]
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+[Mon Jul 27 14:20:37 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 911 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+set_input_delay -clock [get_clocks [list  [get_clocks -of_objects [get_pins clkgen/inst/mmcm_adv_inst/CLKOUT0]]]] 5.0 [get_ports uart_rx]
+set_output_delay -clock [get_clocks [list  [get_clocks -of_objects [get_pins clkgen/inst/mmcm_adv_inst/CLKOUT0]]]] 5.0 [get_ports -regexp -filter { NAME =~  ".*" && DIRECTION == "OUT" }]
+save_constraints
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+[Mon Jul 27 14:44:36 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.runs/synth_1/runme.log
+[Mon Jul 27 14:44:36 2020] Launched impl_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 911 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp10/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 7427.301 ; gain = 0.000 ; free physical = 59793 ; free virtual = 104050
+Restored from archive | CPU: 0.240000 secs | Memory: 4.186943 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 7427.301 ; gain = 0.000 ; free physical = 59793 ; free virtual = 104050
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+[Mon Jul 27 14:54:52 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.runs/synth_1/runme.log
+[Mon Jul 27 14:54:52 2020] Launched impl_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.runs/impl_1/runme.log
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+refresh_design
+INFO: [Netlist 29-17] Analyzing 911 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/.Xil/Vivado-17813-gigant.modulew.local/dcp13/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.24 . Memory (MB): peak = 7509.332 ; gain = 0.000 ; free physical = 57386 ; free virtual = 102688
+Restored from archive | CPU: 0.260000 secs | Memory: 4.221275 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.24 . Memory (MB): peak = 7509.332 ; gain = 0.000 ; free physical = 57386 ; free virtual = 102688
+refresh_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 7553.523 ; gain = 44.191 ; free physical = 57308 ; free virtual = 102605
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+write_verilog ./netlist/aes128_ecb_wrap.v
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v
+write_sdf ./netlist/aes128_ecb_wrap.sdf
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.sdf
+write_sdf -help
+write_sdf
+
+Description: 
+write_sdf command generates flat sdf delay files for event simulation
+
+Syntax: 
+write_sdf  [-process_corner <arg>] [-cell <arg>] [-rename_top <arg>] [-force]
+           [-mode <arg>] [-quiet] [-verbose] <file>
+
+Usage: 
+  Name               Description
+  ------------------------------
+  [-process_corner]  Specify process corner for which SDF delays are 
+                     required; Values: slow, fast
+                     Default: slow
+  [-cell]            Root of the design to write, e.g. des.subblk.cpu
+                     Default: whole design
+  [-rename_top]      Replace name of top module with custom name e.g. netlist
+                     Default: new top module name
+  [-force]           Overwrite existing SDF file
+  [-mode]            Specify sta (Static Timing Analysis) or timesim (Timing 
+                     Simulation) mode for SDF
+                     Default: timesim
+  [-quiet]           Ignore command errors
+  [-verbose]         Suspend message limits during command execution
+  <file>             File name
+
+Categories: 
+FileIO, Simulation, Timing
+
+Description:
+
+  Writes the timing delays for cells in the design to a Standard Delay Format
+  (SDF) file.
+
+  The output SDF file can be used by the write_verilog command to create
+  Verilog netlists for static timing analysis and timing simulation.
+
+Arguments:
+
+  -process_corner [ fast | slow ] - (Optional) Write delays for a specified
+  process corner. Delays are greater in the slow process corner than in the
+  fast process corner. Valid values are `slow` or `fast`. By default, the SDF
+  file is written for the slow process corner.
+
+  -cell <arg> - (Optional) Write the SDF file from a specific cell of the
+  design hierarchy. The default is to create an SDF file for the whole
+  design.
+
+  -rename_top <arg> - (Optional) Rename the top module in the output SDF file
+  as specified.
+
+  -force - (Optional) Forces the overwrite of an existing SDF file of the
+  same name.
+
+  -mode [ timesim | sta ]- (Optional) Specifies the mode to use when writing
+  the SDF file. Valid values are:
+
+   *  timesim - Output an SDF file to be used for timing simulation. This is
+      the default setting.
+
+   *  sta - Output an SDF file to be used for static timing analysis (STA).
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The file name of the SDF file to write. The SDF file is
+  referenced in the Verilog netlist by the use of the -sdf_anno and -sdf_file
+  arguments of the write_verilog command.
+
+  Note: If the path is not specified as part of the file name, the file will
+  be written into the current working directory, or the directory from which
+  the tool was launched.
+
+Examples:
+
+  The following example writes an SDF file to the specified directory:
+
+    write_sdf C:/Data/FPGA_Design/designOut.sdf
+
+See Also:
+
+   *  write_verilog
+write_sdf ./netlist/uartlite.sdf  -cell uartlite
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/uartlite.sdf
+write_verilog  -help
+write_verilog
+
+Description: 
+Export the current netlist in Verilog format
+
+Syntax: 
+write_verilog  [-cell <arg>] [-mode <arg>] [-lib] [-port_diff_buffers]
+               [-write_all_overrides] [-keep_vcc_gnd] [-rename_top <arg>]
+               [-sdf_anno <arg>] [-sdf_file <arg>] [-force]
+               [-include_xilinx_libs] [-logic_function_stripped] [-quiet]
+               [-verbose] <file>
+
+Returns: 
+the name of the output file or directory
+
+Usage: 
+  Name                        Description
+  ---------------------------------------
+  [-cell]                     Root of the design to write, e.g. 
+                              des.subblk.cpu
+                              Default: whole design
+  [-mode]                     Values: design, pin_planning, synth_stub, sta, 
+                              funcsim, timesim
+                              Default: design
+  [-lib]                      Write each library into a separate file
+  [-port_diff_buffers]        Output differential buffers when writing in 
+                              -port mode
+  [-write_all_overrides]      Write parameter overrides on Xilinx primitives 
+                              even if the override value is the same as the 
+                              default value
+  [-keep_vcc_gnd]             Don't replace VCC/GND instances by literal 
+                              constants on load terminals.  For simulation 
+                              modes only.
+  [-rename_top]               Replace top module name with custom name e.g. 
+                              netlist
+                              Default: new top module name
+  [-sdf_anno]                 Specify if sdf_annotate system task statement 
+                              is generated
+  [-sdf_file]                 Full path to sdf file location
+                              Default: <file>.sdf
+  [-force]                    Overwrite existing file
+  [-include_xilinx_libs]      Include simulation models directly in netlist 
+                              instead of linking to library
+  [-logic_function_stripped]  Convert INIT strings on LUTs & RAMBs to fixed 
+                              values.  Resulting netlist will not behave 
+                              correctly.
+  [-quiet]                    Ignore command errors
+  [-verbose]                  Suspend message limits during command execution
+  <file>                      Which file to write
+
+Categories: 
+FileIO, Simulation
+
+Description:
+
+  Write a Verilog netlist of the current design or from a specific cell of
+  the design to the specified file or directory. The output is a IEEE
+  1364-2001 compliant Verilog HDL file that contains netlist information
+  obtained from the input design files.
+
+  You can output a complete netlist of the design or specific cell, or output
+  a port list for the design, or a Verilog netlist for simulation or static
+  timing analysis.
+
+Arguments:
+
+  -cell <arg> - (Optional) Write the Verilog netlist from a specified cell or
+  block level of the design hierarchy. The output Verilog file or files will
+  only include information contained within the specified cell or module.
+
+  -mode <arg> - (Optional) The mode to use when writing the Verilog file. By
+  default, the Verilog netlist is written for the whole design. Valid mode
+  values are:
+
+   *  design - Output a Verilog netlist for the whole design. This acts as a
+      snapshot of the design, including all post placement, implementation,
+      and routing information in the netlist.
+
+   *  pin_planning - Output only the I/O ports for the top-level of the design.
+
+   *  synth_stub - Output the ports from the top-level of the design for use
+      as a synthesis stub.
+
+   *  sta - Output a Verilog netlist to be used for static timing analysis
+      (STA).
+
+   *  funcsim - Output a Verilog netlist to be used for functional
+      simulation. The output netlist is not suitable for synthesis.
+
+   *  timesim - Output a Verilog netlist to be used for timing simulation.
+      The output netlist is not suitable for synthesis.
+
+  -lib - (Optional) Create a separate Verilog file for each library used by
+  the design.
+
+  Note: The -library option can only be used for simulation. Vivado synthesis
+  will treat all Verilog files as being in the default work library.
+
+  -port_diff_buffers - (Optional) Add the differential pair buffers and
+  internal wires associated with those buffers into the output ports list.
+  This argument is only valid when -mode pin_planning or -mode synth_stub is
+  specified.
+
+  -write_all_overrides [ true | false ] - (Optional) Write parameter
+  overrides, in the design to the Verilog output even if the value of the
+  parameter is the same as the defined primitive default value. If the option
+  is false then parameter values which are equivalent to the primitive
+  defaults are not output to the Verilog file. Setting this option to true
+  will not change the result but makes the output Verilog more verbose.
+
+  -keep_vcc_gnd - (Optional) By default, when writing a nelist for
+  simulation, or from an IP Integrator block design, the Vivado Design Suite
+  replaces VCC and GND primitives, and the nets they drive, with literal
+  constants on each of the loads on the net. The -keep_vcc_gnd option
+  disables this default behavior and preserves the VCC or GND primitives.
+
+  -rename_top <arg> - (Optional) Rename the top module in the output as
+  specified. This option only works with -mode funcsim or -mode timesim to
+  allow the Verilog netlist to plug into top-level simulation test benches.
+
+  -sdf_anno [ true | false ] - (Optional) Add the $sdf_annotate statement to
+  the Verilog netlist. Valid values are true (or 1) and false (or 0). This
+  option only works with -mode timesim, and is set to false by default.
+
+  -sdf_file <arg> - (Optional) The path and filename of the SDF file to use
+  when writing the $sdf_annotate statement into the output Verilog file. When
+  not specified, the SDF file is assumed to have the same name and path as
+  the Verilog output specified by <file>, with a file extension of .sdf. The
+  SDF file must be separately written to the specified file path and name
+  using the write_sdf command.
+
+  -force - (Optional) Overwrite the Verilog files if they already exists.
+
+  -include_xilinx_libs - (Optional) Write the simulation models directly in
+  the output netlist file rather than pointing to the libraries by reference.
+
+  -logic_function_stripped - (Optional) Hides the INIT values for LUTs & RAMs
+  by converting them to fixed values in order to create a netlist for debug
+  purposes that will not behave properly in simulation or synthesis.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The path and filename of the Verilog file to write. The
+  path is optional, but if one is not provided the Verilog file will be
+  written to the current working directory, or the directory from which the
+  Vivado tool was launched.
+
+Examples:
+
+  The following example writes a Verilog simulation netlist file for the
+  whole design to the specified file and path:
+
+    write_verilog C:/Data/my_verilog.v
+
+  In the following example, because the -mode timesim and -sdf_anno options
+  are specified, the $sdf_annotate statement will be added to the Verilog
+  netlist. However, since the -sdf_file option is not specified, the SDF file
+  is assumed to have the same name as the Verilog output file, with an .sdf
+  file extension:
+
+    write_verilog C:/Data/my_verilog.net -mode timesim -sdf_anno true
+
+  Note: The SDF filename written to the $sdf_annotate statement will be
+  my_verilog.sdf.
+
+  In the following example, the functional simulation mode is specified, the
+  option to keep VCC and GND primitives in the output simulation netlist is
+  enabled, and the output file is specified:
+
+    write_verilog -mode funcsim -keep_vcc_gnd out.v
+
+See Also:
+
+   *  write_sdf
+   *  write_vhdl
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim
+ERROR: [Common 17-176] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v]
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v
+write_verilog  -help
+write_verilog
+
+Description: 
+Export the current netlist in Verilog format
+
+Syntax: 
+write_verilog  [-cell <arg>] [-mode <arg>] [-lib] [-port_diff_buffers]
+               [-write_all_overrides] [-keep_vcc_gnd] [-rename_top <arg>]
+               [-sdf_anno <arg>] [-sdf_file <arg>] [-force]
+               [-include_xilinx_libs] [-logic_function_stripped] [-quiet]
+               [-verbose] <file>
+
+Returns: 
+the name of the output file or directory
+
+Usage: 
+  Name                        Description
+  ---------------------------------------
+  [-cell]                     Root of the design to write, e.g. 
+                              des.subblk.cpu
+                              Default: whole design
+  [-mode]                     Values: design, pin_planning, synth_stub, sta, 
+                              funcsim, timesim
+                              Default: design
+  [-lib]                      Write each library into a separate file
+  [-port_diff_buffers]        Output differential buffers when writing in 
+                              -port mode
+  [-write_all_overrides]      Write parameter overrides on Xilinx primitives 
+                              even if the override value is the same as the 
+                              default value
+  [-keep_vcc_gnd]             Don't replace VCC/GND instances by literal 
+                              constants on load terminals.  For simulation 
+                              modes only.
+  [-rename_top]               Replace top module name with custom name e.g. 
+                              netlist
+                              Default: new top module name
+  [-sdf_anno]                 Specify if sdf_annotate system task statement 
+                              is generated
+  [-sdf_file]                 Full path to sdf file location
+                              Default: <file>.sdf
+  [-force]                    Overwrite existing file
+  [-include_xilinx_libs]      Include simulation models directly in netlist 
+                              instead of linking to library
+  [-logic_function_stripped]  Convert INIT strings on LUTs & RAMBs to fixed 
+                              values.  Resulting netlist will not behave 
+                              correctly.
+  [-quiet]                    Ignore command errors
+  [-verbose]                  Suspend message limits during command execution
+  <file>                      Which file to write
+
+Categories: 
+FileIO, Simulation
+
+Description:
+
+  Write a Verilog netlist of the current design or from a specific cell of
+  the design to the specified file or directory. The output is a IEEE
+  1364-2001 compliant Verilog HDL file that contains netlist information
+  obtained from the input design files.
+
+  You can output a complete netlist of the design or specific cell, or output
+  a port list for the design, or a Verilog netlist for simulation or static
+  timing analysis.
+
+Arguments:
+
+  -cell <arg> - (Optional) Write the Verilog netlist from a specified cell or
+  block level of the design hierarchy. The output Verilog file or files will
+  only include information contained within the specified cell or module.
+
+  -mode <arg> - (Optional) The mode to use when writing the Verilog file. By
+  default, the Verilog netlist is written for the whole design. Valid mode
+  values are:
+
+   *  design - Output a Verilog netlist for the whole design. This acts as a
+      snapshot of the design, including all post placement, implementation,
+      and routing information in the netlist.
+
+   *  pin_planning - Output only the I/O ports for the top-level of the design.
+
+   *  synth_stub - Output the ports from the top-level of the design for use
+      as a synthesis stub.
+
+   *  sta - Output a Verilog netlist to be used for static timing analysis
+      (STA).
+
+   *  funcsim - Output a Verilog netlist to be used for functional
+      simulation. The output netlist is not suitable for synthesis.
+
+   *  timesim - Output a Verilog netlist to be used for timing simulation.
+      The output netlist is not suitable for synthesis.
+
+  -lib - (Optional) Create a separate Verilog file for each library used by
+  the design.
+
+  Note: The -library option can only be used for simulation. Vivado synthesis
+  will treat all Verilog files as being in the default work library.
+
+  -port_diff_buffers - (Optional) Add the differential pair buffers and
+  internal wires associated with those buffers into the output ports list.
+  This argument is only valid when -mode pin_planning or -mode synth_stub is
+  specified.
+
+  -write_all_overrides [ true | false ] - (Optional) Write parameter
+  overrides, in the design to the Verilog output even if the value of the
+  parameter is the same as the defined primitive default value. If the option
+  is false then parameter values which are equivalent to the primitive
+  defaults are not output to the Verilog file. Setting this option to true
+  will not change the result but makes the output Verilog more verbose.
+
+  -keep_vcc_gnd - (Optional) By default, when writing a nelist for
+  simulation, or from an IP Integrator block design, the Vivado Design Suite
+  replaces VCC and GND primitives, and the nets they drive, with literal
+  constants on each of the loads on the net. The -keep_vcc_gnd option
+  disables this default behavior and preserves the VCC or GND primitives.
+
+  -rename_top <arg> - (Optional) Rename the top module in the output as
+  specified. This option only works with -mode funcsim or -mode timesim to
+  allow the Verilog netlist to plug into top-level simulation test benches.
+
+  -sdf_anno [ true | false ] - (Optional) Add the $sdf_annotate statement to
+  the Verilog netlist. Valid values are true (or 1) and false (or 0). This
+  option only works with -mode timesim, and is set to false by default.
+
+  -sdf_file <arg> - (Optional) The path and filename of the SDF file to use
+  when writing the $sdf_annotate statement into the output Verilog file. When
+  not specified, the SDF file is assumed to have the same name and path as
+  the Verilog output specified by <file>, with a file extension of .sdf. The
+  SDF file must be separately written to the specified file path and name
+  using the write_sdf command.
+
+  -force - (Optional) Overwrite the Verilog files if they already exists.
+
+  -include_xilinx_libs - (Optional) Write the simulation models directly in
+  the output netlist file rather than pointing to the libraries by reference.
+
+  -logic_function_stripped - (Optional) Hides the INIT values for LUTs & RAMs
+  by converting them to fixed values in order to create a netlist for debug
+  purposes that will not behave properly in simulation or synthesis.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The path and filename of the Verilog file to write. The
+  path is optional, but if one is not provided the Verilog file will be
+  written to the current working directory, or the directory from which the
+  Vivado tool was launched.
+
+Examples:
+
+  The following example writes a Verilog simulation netlist file for the
+  whole design to the specified file and path:
+
+    write_verilog C:/Data/my_verilog.v
+
+  In the following example, because the -mode timesim and -sdf_anno options
+  are specified, the $sdf_annotate statement will be added to the Verilog
+  netlist. However, since the -sdf_file option is not specified, the SDF file
+  is assumed to have the same name as the Verilog output file, with an .sdf
+  file extension:
+
+    write_verilog C:/Data/my_verilog.net -mode timesim -sdf_anno true
+
+  Note: The SDF filename written to the $sdf_annotate statement will be
+  my_verilog.sdf.
+
+  In the following example, the functional simulation mode is specified, the
+  option to keep VCC and GND primitives in the output simulation netlist is
+  enabled, and the output file is specified:
+
+    write_verilog -mode funcsim -keep_vcc_gnd out.v
+
+See Also:
+
+   *  write_sdf
+   *  write_vhdl
+write_sdf -help
+write_sdf
+
+Description: 
+write_sdf command generates flat sdf delay files for event simulation
+
+Syntax: 
+write_sdf  [-process_corner <arg>] [-cell <arg>] [-rename_top <arg>] [-force]
+           [-mode <arg>] [-quiet] [-verbose] <file>
+
+Usage: 
+  Name               Description
+  ------------------------------
+  [-process_corner]  Specify process corner for which SDF delays are 
+                     required; Values: slow, fast
+                     Default: slow
+  [-cell]            Root of the design to write, e.g. des.subblk.cpu
+                     Default: whole design
+  [-rename_top]      Replace name of top module with custom name e.g. netlist
+                     Default: new top module name
+  [-force]           Overwrite existing SDF file
+  [-mode]            Specify sta (Static Timing Analysis) or timesim (Timing 
+                     Simulation) mode for SDF
+                     Default: timesim
+  [-quiet]           Ignore command errors
+  [-verbose]         Suspend message limits during command execution
+  <file>             File name
+
+Categories: 
+FileIO, Simulation, Timing
+
+Description:
+
+  Writes the timing delays for cells in the design to a Standard Delay Format
+  (SDF) file.
+
+  The output SDF file can be used by the write_verilog command to create
+  Verilog netlists for static timing analysis and timing simulation.
+
+Arguments:
+
+  -process_corner [ fast | slow ] - (Optional) Write delays for a specified
+  process corner. Delays are greater in the slow process corner than in the
+  fast process corner. Valid values are `slow` or `fast`. By default, the SDF
+  file is written for the slow process corner.
+
+  -cell <arg> - (Optional) Write the SDF file from a specific cell of the
+  design hierarchy. The default is to create an SDF file for the whole
+  design.
+
+  -rename_top <arg> - (Optional) Rename the top module in the output SDF file
+  as specified.
+
+  -force - (Optional) Forces the overwrite of an existing SDF file of the
+  same name.
+
+  -mode [ timesim | sta ]- (Optional) Specifies the mode to use when writing
+  the SDF file. Valid values are:
+
+   *  timesim - Output an SDF file to be used for timing simulation. This is
+      the default setting.
+
+   *  sta - Output an SDF file to be used for static timing analysis (STA).
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The file name of the SDF file to write. The SDF file is
+  referenced in the Verilog netlist by the use of the -sdf_anno and -sdf_file
+  arguments of the write_verilog command.
+
+  Note: If the path is not specified as part of the file name, the file will
+  be written into the current working directory, or the directory from which
+  the tool was launched.
+
+Examples:
+
+  The following example writes an SDF file to the specified directory:
+
+    write_sdf C:/Data/FPGA_Design/designOut.sdf
+
+See Also:
+
+   *  write_verilog
+write_sdf ./netlist/aes128_ecb_wrap.sdf -mode timesim
+ERROR: [Common 17-176] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [./netlist/aes128_ecb_wrap.sdf]
+write_sdf ./netlist/aes128_ecb_wrap.sdf -mode timesim -force
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.sdf
+write_sdf ./netlist/uartlite.sdf  -cell uartlite -mode timesim -force
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/uartlite.sdf
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force -sdf_file ./netlist/aes128_ecb_wrap.sdf
+WARNING: [Vivado 12-1784] -sdf_file has no effect when sdf_anno is not enabled
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v
+write_verilog  -help
+write_verilog
+
+Description: 
+Export the current netlist in Verilog format
+
+Syntax: 
+write_verilog  [-cell <arg>] [-mode <arg>] [-lib] [-port_diff_buffers]
+               [-write_all_overrides] [-keep_vcc_gnd] [-rename_top <arg>]
+               [-sdf_anno <arg>] [-sdf_file <arg>] [-force]
+               [-include_xilinx_libs] [-logic_function_stripped] [-quiet]
+               [-verbose] <file>
+
+Returns: 
+the name of the output file or directory
+
+Usage: 
+  Name                        Description
+  ---------------------------------------
+  [-cell]                     Root of the design to write, e.g. 
+                              des.subblk.cpu
+                              Default: whole design
+  [-mode]                     Values: design, pin_planning, synth_stub, sta, 
+                              funcsim, timesim
+                              Default: design
+  [-lib]                      Write each library into a separate file
+  [-port_diff_buffers]        Output differential buffers when writing in 
+                              -port mode
+  [-write_all_overrides]      Write parameter overrides on Xilinx primitives 
+                              even if the override value is the same as the 
+                              default value
+  [-keep_vcc_gnd]             Don't replace VCC/GND instances by literal 
+                              constants on load terminals.  For simulation 
+                              modes only.
+  [-rename_top]               Replace top module name with custom name e.g. 
+                              netlist
+                              Default: new top module name
+  [-sdf_anno]                 Specify if sdf_annotate system task statement 
+                              is generated
+  [-sdf_file]                 Full path to sdf file location
+                              Default: <file>.sdf
+  [-force]                    Overwrite existing file
+  [-include_xilinx_libs]      Include simulation models directly in netlist 
+                              instead of linking to library
+  [-logic_function_stripped]  Convert INIT strings on LUTs & RAMBs to fixed 
+                              values.  Resulting netlist will not behave 
+                              correctly.
+  [-quiet]                    Ignore command errors
+  [-verbose]                  Suspend message limits during command execution
+  <file>                      Which file to write
+
+Categories: 
+FileIO, Simulation
+
+Description:
+
+  Write a Verilog netlist of the current design or from a specific cell of
+  the design to the specified file or directory. The output is a IEEE
+  1364-2001 compliant Verilog HDL file that contains netlist information
+  obtained from the input design files.
+
+  You can output a complete netlist of the design or specific cell, or output
+  a port list for the design, or a Verilog netlist for simulation or static
+  timing analysis.
+
+Arguments:
+
+  -cell <arg> - (Optional) Write the Verilog netlist from a specified cell or
+  block level of the design hierarchy. The output Verilog file or files will
+  only include information contained within the specified cell or module.
+
+  -mode <arg> - (Optional) The mode to use when writing the Verilog file. By
+  default, the Verilog netlist is written for the whole design. Valid mode
+  values are:
+
+   *  design - Output a Verilog netlist for the whole design. This acts as a
+      snapshot of the design, including all post placement, implementation,
+      and routing information in the netlist.
+
+   *  pin_planning - Output only the I/O ports for the top-level of the design.
+
+   *  synth_stub - Output the ports from the top-level of the design for use
+      as a synthesis stub.
+
+   *  sta - Output a Verilog netlist to be used for static timing analysis
+      (STA).
+
+   *  funcsim - Output a Verilog netlist to be used for functional
+      simulation. The output netlist is not suitable for synthesis.
+
+   *  timesim - Output a Verilog netlist to be used for timing simulation.
+      The output netlist is not suitable for synthesis.
+
+  -lib - (Optional) Create a separate Verilog file for each library used by
+  the design.
+
+  Note: The -library option can only be used for simulation. Vivado synthesis
+  will treat all Verilog files as being in the default work library.
+
+  -port_diff_buffers - (Optional) Add the differential pair buffers and
+  internal wires associated with those buffers into the output ports list.
+  This argument is only valid when -mode pin_planning or -mode synth_stub is
+  specified.
+
+  -write_all_overrides [ true | false ] - (Optional) Write parameter
+  overrides, in the design to the Verilog output even if the value of the
+  parameter is the same as the defined primitive default value. If the option
+  is false then parameter values which are equivalent to the primitive
+  defaults are not output to the Verilog file. Setting this option to true
+  will not change the result but makes the output Verilog more verbose.
+
+  -keep_vcc_gnd - (Optional) By default, when writing a nelist for
+  simulation, or from an IP Integrator block design, the Vivado Design Suite
+  replaces VCC and GND primitives, and the nets they drive, with literal
+  constants on each of the loads on the net. The -keep_vcc_gnd option
+  disables this default behavior and preserves the VCC or GND primitives.
+
+  -rename_top <arg> - (Optional) Rename the top module in the output as
+  specified. This option only works with -mode funcsim or -mode timesim to
+  allow the Verilog netlist to plug into top-level simulation test benches.
+
+  -sdf_anno [ true | false ] - (Optional) Add the $sdf_annotate statement to
+  the Verilog netlist. Valid values are true (or 1) and false (or 0). This
+  option only works with -mode timesim, and is set to false by default.
+
+  -sdf_file <arg> - (Optional) The path and filename of the SDF file to use
+  when writing the $sdf_annotate statement into the output Verilog file. When
+  not specified, the SDF file is assumed to have the same name and path as
+  the Verilog output specified by <file>, with a file extension of .sdf. The
+  SDF file must be separately written to the specified file path and name
+  using the write_sdf command.
+
+  -force - (Optional) Overwrite the Verilog files if they already exists.
+
+  -include_xilinx_libs - (Optional) Write the simulation models directly in
+  the output netlist file rather than pointing to the libraries by reference.
+
+  -logic_function_stripped - (Optional) Hides the INIT values for LUTs & RAMs
+  by converting them to fixed values in order to create a netlist for debug
+  purposes that will not behave properly in simulation or synthesis.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <file> - (Required) The path and filename of the Verilog file to write. The
+  path is optional, but if one is not provided the Verilog file will be
+  written to the current working directory, or the directory from which the
+  Vivado tool was launched.
+
+Examples:
+
+  The following example writes a Verilog simulation netlist file for the
+  whole design to the specified file and path:
+
+    write_verilog C:/Data/my_verilog.v
+
+  In the following example, because the -mode timesim and -sdf_anno options
+  are specified, the $sdf_annotate statement will be added to the Verilog
+  netlist. However, since the -sdf_file option is not specified, the SDF file
+  is assumed to have the same name as the Verilog output file, with an .sdf
+  file extension:
+
+    write_verilog C:/Data/my_verilog.net -mode timesim -sdf_anno true
+
+  Note: The SDF filename written to the $sdf_annotate statement will be
+  my_verilog.sdf.
+
+  In the following example, the functional simulation mode is specified, the
+  option to keep VCC and GND primitives in the output simulation netlist is
+  enabled, and the output file is specified:
+
+    write_verilog -mode funcsim -keep_vcc_gnd out.v
+
+See Also:
+
+   *  write_sdf
+   *  write_vhdl
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force -sdf_file ./netlist/aes128_ecb_wrap.sdf -sdf_anno 1
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/netlist/aes128_ecb_wrap.v
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/XCELIUMMAIN18.09.005_/bin} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+INFO: [Vivado 12-5496] Finding simulator executables and checking version...
+ERROR: [Vivado 12-3754] Failed to find the 'ies' simulator executable. Make sure to set the 'ies' installation environment and retry this command to compile the libraries for this simulator. For more information on tool setup refer 'ies' user guide.
+Library compilation for 'ies' ignored.
+ERROR: [Common 17-39] 'compile_simlib' failed due to earlier errors.
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/bin} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+INFO: [Vivado 12-5496] Finding simulator executables and checking version...
+ERROR: [Vivado 12-3754] Failed to find the 'ies' simulator executable. Make sure to set the 'ies' installation environment and retry this command to compile the libraries for this simulator. For more information on tool setup refer 'ies' user guide.
+Library compilation for 'ies' ignored.
+ERROR: [Common 17-39] 'compile_simlib' failed due to earlier errors.
+compile_simlib -help
+compile_simlib
+
+Description: 
+Compile simulation libraries
+
+Syntax: 
+compile_simlib  [-directory <arg>] [-family <arg>] [-force] [-language <arg>]
+                [-library <arg>] [-print_library_info <arg>] -simulator <arg>
+                [-simulator_exec_path <arg>] [-source_library_path <arg>]
+                [-no_ip_compile] [-32bit] [-quiet] [-verbose]
+
+Usage: 
+  Name                    Description
+  -----------------------------------
+  [-directory]            Directory path for saving the compiled results
+                          Default: .
+  [-family]               Select device architecture
+                          Default: all
+  [-force]                Overwrite the pre-compiled libraries
+  [-language]             Compile libraries for this language
+                          Default: all
+  [-library]              Select library to compile
+                          Default: all
+  [-print_library_info]   Print Pre-Compiled library information
+  -simulator              Compile libraries for this simulator
+  [-simulator_exec_path]  Use simulator executables from this directory
+  [-source_library_path]  If specified, this directory will be searched for 
+                          the library source files before searching the 
+                          default path(s) found in environment variable 
+                          XILINX_VIVADO for Vivado
+  [-no_ip_compile]        Do not compile IP static files from repository
+  [-32bit]                Perform the 32-bit compilation
+  [-quiet]                Ignore command errors
+  [-verbose]              Suspend message limits during command execution
+
+Categories: 
+Simulation
+
+Description:
+
+  Compile Xilinx simulation libraries for the cells and IP used in the
+  current project, or from a specified directory for use in multiple design
+  projects.
+
+  The Vivado Design Suite provides simulation models as a set of files and
+  libraries that contain the behavioral and timing models for use by the
+  Vivado simulator. The compile_simlib command compiles these libraries for
+  use by third-party simulators prior to design simulation. Libraries must
+  generally be compiled or recompiled with a new software release to update
+  simulation models and to support a new version of a simulator.
+
+  Note: You should rerun the compile_simlib command any time a new third
+  party simulator will be used, or a new Vivado Design Suite version or
+  update is installed.
+
+  When this command is run from a current project, the tool will use the
+  device family, target language, and library settings specified by the
+  project as the default values, rather than the default settings of the
+  command defined below. The default settings can be overridden by specifying
+  the necessary options when the command is run.
+
+  The compile_simlib command uses simulator compilation directives when
+  compiling the simulation libraries. You can edit the default configuration
+  settings using the config_compile_simlib command.
+
+  The command returns information related to the compiled libraries, or an
+  error if it fails.
+
+Arguments:
+
+  -directory <arg> - (Optional) Directory path for saving the compiled
+  library results.
+
+  Note: By default, the libraries are saved in the current working directory
+  in Non-Project mode, and the libraries are saved in
+  "<project>/<project>.cache/compile_simlib" directory in Project mode. Refer
+  to the Vivado Design Suite User Guide: Design Flows Overview (UG892) for
+  more information on Project and Non-Project modes.
+
+  -family <arg> - (Optional) Compile selected libraries to the specified
+  device family. All device families will be generated by default. The
+  following are the device families that can be specified:
+
+   *  all (generate libraries for all device families, the default)
+
+   *  virtexuplus (for Virtex UltraScale+ devices)
+
+   *  virtexu (for Virtex UltraScale devices)
+
+   *  virtex7 (for Virtex-7)
+
+   *  virtex7l (for Virtex-7 Lower Power)
+
+   *  qvirtex7 (for Virtex-7 Defense Grade)
+
+   *  qvirtex7l (for Virtex-7 Lower Power Defense Grade)
+
+   *  kintexuplus (for Kintex UltraScale+ devices)
+
+   *  kintexu (for Kintex UltraScale devices)
+
+   *  kintex7 (for Kintex-7)
+
+   *  kintex7l (for Kintex-7 Lower Power)
+
+   *  qkintex7 (for Kintex-7 Defense Grade)
+
+   *  qkintex7l (for Kintex-7 Lower Power Defense Grade)
+
+   *  artix7 (for Artix-7)
+
+   *  artix7l (for Artix-7 Lower Power)
+
+   *  qartix7 (for Artix-7 Defense Grade)
+
+   *  qartix7l (for Artix-7 Lower Power Defense Grade)
+
+   *  zynquplus (for Zynq UltraScale+ devices)
+
+   *  zynq (for Zynq devices)
+
+   *  azynq (for Zynq Automotive)
+
+   *  qzynq (for Zynq Defense Grade)
+
+  -force - (Optional) Overwrite the current pre-compiled libraries.
+
+  -language [ verilog | vhdl | all ] - (Optional) This option is only needed
+  for use with -no_ip_compile, and will compile base simulation libraries for
+  the specified language. If this option is not specified then the language
+  will be set according to the simulator selected with -simulator. For
+  multi-language simulators both Verilog and VHDL libraries will be compiled.
+
+  Note: By default, compile_simlib compiles simulation libraries for IP, and
+  compiles all languages for the IP.
+
+  -library <arg> - (Optional) Specify the simulation library to compile. As a
+  default, the compile_simlib command will compile all simulation libraries.
+  Valid values are:
+
+   *  all (the default)
+
+   *  unisim
+
+   *  simprim
+
+  To specify multiple libraries, repeat the -lib options for each library.
+  For example:
+
+    .. -library unisim -library simprim ..
+
+  -print_library_info - (Optional) Print the library information for the
+  compiled simulation library.
+
+  -simulator <arg> - (Required) Compile libraries for the specified
+  simulator. Valid simulator values are:
+
+   *  modelsim - Version 10.6b and later
+
+   *  questa - Version 10.6b and later
+
+   *  ies - (Linux only) Version 15.20.028 or later
+
+   *  vcs_mx - (Linux only) Version M-2017.03-SP1 or later
+
+   *  riviera - Version 2017.02 or later
+
+   *  active_hdl - (Windows only) Version 10.4a
+
+  -simulator_exec_path <arg> - (Optional) Specify the directory to locate the
+  third-party compiler and simulator executables. This option is required if
+  the target simulator is not specified in the $PATH or %PATH% environment
+  variable; or to override the path from the $PATH or %PATH% environment
+  variable.
+
+  -source_library_path <arg> - (Optional) If specified, this directory will
+  be searched for the library source files before searching the default
+  path(s) defined by the environment variables ($XILINX or $XILINX_VIVADO).
+
+  Note: Do not use this option unless explicitly instructed to by Xilinx
+  Technical Support.
+
+  -no_ip_compile - (Optional) Disables the compilation of simulation files
+  for IP in the design or the specified repositories. By default, the
+  compile_simlib command compiles the static simulation files for all IP in
+  the IP Catalog, including added user and third-party repositories. Use this
+  option to disable that feature.
+
+  -32bit - (Optional) Perform simulator compilation in 32-bit mode instead of
+  the default 64-bit compilation.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example shows how to compile UNISIM and SIMPRIM libraries for
+  ModelSim (VHDL) for a design using a Virtex-7 device:
+
+    compile_simlib -simulator modelsim -family virtex7 -library unisim \ 
+       -library simprim -language vhdl
+
+See Also:
+
+   *  config_compile_simlib
+   *  export_simulation
+   *  launch_simulation
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+INFO: [Vivado 12-5496] Finding simulator executables and checking version...
+INFO: [Vivado 12-5498] Processing source library information for the selected device family (default:all) ...
+
+Compiling libraries for 'ies' simulator in '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib'
+Creating cds.lib file...
+Creating hdl.var file...
+--> Compiling 'verilog.secureip' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/secureip'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip/.cxl.verilog.secureip.secureip.lin64.log'
+
+compile_simlib[verilog.secureip]: 0 error(s), 0 warning(s), 33.33 % complete
+--> Compiling 'verilog.simprim' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/verilog/src/unisims'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver/.cxl.verilog.simprim.simprims_ver.lin64.log'
+
+compile_simlib[verilog.simprim]: 0 error(s), 0 warning(s), 66.67 % complete
+--> Compiling 'verilog.xpm' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip/xpm'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm/.cxl.verilog.xpm.xpm.lin64.log'
+
+compile_simlib[verilog.xpm]: 0 error(s), 0 warning(s), 100.00 % complete
+Copying setup file 'cds.lib' to '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/cds.lib' ...
+Copying setup file 'hdl.var' to '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/hdl.var' ...
+
+********************************************************************************************
+*                                  COMPILATION SUMMARY                                     *
+*                                                                                          *
+*  Simulator used: ies                                                                     *
+*  Compiled on: Tue Jul 28 09:34:44 2020                                                   *
+*                                                                                          *
+********************************************************************************************
+*  Library                        | Language | Mapped Library Name | Error(s) | Warning(s) *
+*------------------------------------------------------------------------------------------*
+*  secureip                       | verilog  | secureip            | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+*  simprim                        | verilog  | simprims_ver        | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+*  xpm                            | verilog  | xpm                 | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+
+compile_simlib: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 7553.523 ; gain = 0.000 ; free physical = 57968 ; free virtual = 100448
+compile_simlib -help
+compile_simlib
+
+Description: 
+Compile simulation libraries
+
+Syntax: 
+compile_simlib  [-directory <arg>] [-family <arg>] [-force] [-language <arg>]
+                [-library <arg>] [-print_library_info <arg>] -simulator <arg>
+                [-simulator_exec_path <arg>] [-source_library_path <arg>]
+                [-no_ip_compile] [-32bit] [-quiet] [-verbose]
+
+Usage: 
+  Name                    Description
+  -----------------------------------
+  [-directory]            Directory path for saving the compiled results
+                          Default: .
+  [-family]               Select device architecture
+                          Default: all
+  [-force]                Overwrite the pre-compiled libraries
+  [-language]             Compile libraries for this language
+                          Default: all
+  [-library]              Select library to compile
+                          Default: all
+  [-print_library_info]   Print Pre-Compiled library information
+  -simulator              Compile libraries for this simulator
+  [-simulator_exec_path]  Use simulator executables from this directory
+  [-source_library_path]  If specified, this directory will be searched for 
+                          the library source files before searching the 
+                          default path(s) found in environment variable 
+                          XILINX_VIVADO for Vivado
+  [-no_ip_compile]        Do not compile IP static files from repository
+  [-32bit]                Perform the 32-bit compilation
+  [-quiet]                Ignore command errors
+  [-verbose]              Suspend message limits during command execution
+
+Categories: 
+Simulation
+
+Description:
+
+  Compile Xilinx simulation libraries for the cells and IP used in the
+  current project, or from a specified directory for use in multiple design
+  projects.
+
+  The Vivado Design Suite provides simulation models as a set of files and
+  libraries that contain the behavioral and timing models for use by the
+  Vivado simulator. The compile_simlib command compiles these libraries for
+  use by third-party simulators prior to design simulation. Libraries must
+  generally be compiled or recompiled with a new software release to update
+  simulation models and to support a new version of a simulator.
+
+  Note: You should rerun the compile_simlib command any time a new third
+  party simulator will be used, or a new Vivado Design Suite version or
+  update is installed.
+
+  When this command is run from a current project, the tool will use the
+  device family, target language, and library settings specified by the
+  project as the default values, rather than the default settings of the
+  command defined below. The default settings can be overridden by specifying
+  the necessary options when the command is run.
+
+  The compile_simlib command uses simulator compilation directives when
+  compiling the simulation libraries. You can edit the default configuration
+  settings using the config_compile_simlib command.
+
+  The command returns information related to the compiled libraries, or an
+  error if it fails.
+
+Arguments:
+
+  -directory <arg> - (Optional) Directory path for saving the compiled
+  library results.
+
+  Note: By default, the libraries are saved in the current working directory
+  in Non-Project mode, and the libraries are saved in
+  "<project>/<project>.cache/compile_simlib" directory in Project mode. Refer
+  to the Vivado Design Suite User Guide: Design Flows Overview (UG892) for
+  more information on Project and Non-Project modes.
+
+  -family <arg> - (Optional) Compile selected libraries to the specified
+  device family. All device families will be generated by default. The
+  following are the device families that can be specified:
+
+   *  all (generate libraries for all device families, the default)
+
+   *  virtexuplus (for Virtex UltraScale+ devices)
+
+   *  virtexu (for Virtex UltraScale devices)
+
+   *  virtex7 (for Virtex-7)
+
+   *  virtex7l (for Virtex-7 Lower Power)
+
+   *  qvirtex7 (for Virtex-7 Defense Grade)
+
+   *  qvirtex7l (for Virtex-7 Lower Power Defense Grade)
+
+   *  kintexuplus (for Kintex UltraScale+ devices)
+
+   *  kintexu (for Kintex UltraScale devices)
+
+   *  kintex7 (for Kintex-7)
+
+   *  kintex7l (for Kintex-7 Lower Power)
+
+   *  qkintex7 (for Kintex-7 Defense Grade)
+
+   *  qkintex7l (for Kintex-7 Lower Power Defense Grade)
+
+   *  artix7 (for Artix-7)
+
+   *  artix7l (for Artix-7 Lower Power)
+
+   *  qartix7 (for Artix-7 Defense Grade)
+
+   *  qartix7l (for Artix-7 Lower Power Defense Grade)
+
+   *  zynquplus (for Zynq UltraScale+ devices)
+
+   *  zynq (for Zynq devices)
+
+   *  azynq (for Zynq Automotive)
+
+   *  qzynq (for Zynq Defense Grade)
+
+  -force - (Optional) Overwrite the current pre-compiled libraries.
+
+  -language [ verilog | vhdl | all ] - (Optional) This option is only needed
+  for use with -no_ip_compile, and will compile base simulation libraries for
+  the specified language. If this option is not specified then the language
+  will be set according to the simulator selected with -simulator. For
+  multi-language simulators both Verilog and VHDL libraries will be compiled.
+
+  Note: By default, compile_simlib compiles simulation libraries for IP, and
+  compiles all languages for the IP.
+
+  -library <arg> - (Optional) Specify the simulation library to compile. As a
+  default, the compile_simlib command will compile all simulation libraries.
+  Valid values are:
+
+   *  all (the default)
+
+   *  unisim
+
+   *  simprim
+
+  To specify multiple libraries, repeat the -lib options for each library.
+  For example:
+
+    .. -library unisim -library simprim ..
+
+  -print_library_info - (Optional) Print the library information for the
+  compiled simulation library.
+
+  -simulator <arg> - (Required) Compile libraries for the specified
+  simulator. Valid simulator values are:
+
+   *  modelsim - Version 10.6b and later
+
+   *  questa - Version 10.6b and later
+
+   *  ies - (Linux only) Version 15.20.028 or later
+
+   *  vcs_mx - (Linux only) Version M-2017.03-SP1 or later
+
+   *  riviera - Version 2017.02 or later
+
+   *  active_hdl - (Windows only) Version 10.4a
+
+  -simulator_exec_path <arg> - (Optional) Specify the directory to locate the
+  third-party compiler and simulator executables. This option is required if
+  the target simulator is not specified in the $PATH or %PATH% environment
+  variable; or to override the path from the $PATH or %PATH% environment
+  variable.
+
+  -source_library_path <arg> - (Optional) If specified, this directory will
+  be searched for the library source files before searching the default
+  path(s) defined by the environment variables ($XILINX or $XILINX_VIVADO).
+
+  Note: Do not use this option unless explicitly instructed to by Xilinx
+  Technical Support.
+
+  -no_ip_compile - (Optional) Disables the compilation of simulation files
+  for IP in the design or the specified repositories. By default, the
+  compile_simlib command compiles the static simulation files for all IP in
+  the IP Catalog, including added user and third-party repositories. Use this
+  option to disable that feature.
+
+  -32bit - (Optional) Perform simulator compilation in 32-bit mode instead of
+  the default 64-bit compilation.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+Examples:
+
+  The following example shows how to compile UNISIM and SIMPRIM libraries for
+  ModelSim (VHDL) for a design using a Virtex-7 device:
+
+    compile_simlib -simulator modelsim -family virtex7 -library unisim \ 
+       -library simprim -language vhdl
+
+See Also:
+
+   *  config_compile_simlib
+   *  export_simulation
+   *  launch_simulation
+compile_simlib -simulator xrun -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+ERROR: [Vivado 12-2158] Invalid simulator 'xrun' specified for -simulator.
+
+ -simulator <simulator> : Specify the name of the simulator for which the libraries
+                          are to be compiled. The valid simulator names are :-
+
+                  modelsim questasim ies vcs_mx xsim riviera active_hdl
+
+
+Note: Only specific versions of the simulators are supported. Please verify
+      that the selected simulator version satisfies the following requirement(s):
+                  Modelsim/QuestaSim 10.5c and later
+                  IUS 15.20.014 or later
+                  VCS and VCS MX L-2016.06-SP1 or later
+                  Aldec Riviera PRO 2016.10 or later
+
+ERROR: [Common 17-39] 'compile_simlib' failed due to earlier errors.
+compile_simlib -simulator xsim -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+INFO: [Vivado 12-5496] Finding simulator executables and checking version...
+INFO: [Vivado 12-5498] Processing source library information for the selected device family (default:all) ...
+
+Compiling libraries for 'xil_xsim' simulator in '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib'
+Creating xsim.ini file...
+--> Compiling 'verilog.secureip' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/secureip'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip/.cxl.verilog.secureip.secureip.lin64.log'
+
+compile_simlib[verilog.secureip]: 0 error(s), 0 warning(s), 33.33 % complete
+--> Compiling 'verilog.simprim' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/verilog/src/unisims'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver/.cxl.verilog.simprim.simprims_ver.lin64.log'
+
+compile_simlib[verilog.simprim]: 0 error(s), 0 warning(s), 66.67 % complete
+--> Compiling 'verilog.xpm' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip/xpm'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm/.cxl.verilog.xpm.xpm.lin64.log'
+
+compile_simlib[verilog.xpm]: 0 error(s), 0 warning(s), 100.00 % complete
+Copying setup file 'xsim.ini' to '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xsim.ini' ...
+
+********************************************************************************************
+*                                  COMPILATION SUMMARY                                     *
+*                                                                                          *
+*  Simulator used: xil_xsim                                                                *
+*  Compiled on: Tue Jul 28 09:50:01 2020                                                   *
+*                                                                                          *
+********************************************************************************************
+*  Library                        | Language | Mapped Library Name | Error(s) | Warning(s) *
+*------------------------------------------------------------------------------------------*
+*  secureip                       | verilog  | secureip            | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+*  simprim                        | verilog  | simprims_ver        | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+*  xpm                            | verilog  | xpm                 | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+
+compile_simlib: Time (s): cpu = 00:00:25 ; elapsed = 00:00:58 . Memory (MB): peak = 7553.523 ; gain = 0.000 ; free physical = 55321 ; free virtual = 99280
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+INFO: [Vivado 12-5497] IP library compilation is not applicable for 'simprim' components. To compile IPs, specify either 'all' or 'unisim' value with the -library switch.
+INFO: [Vivado 12-5496] Finding simulator executables and checking version...
+INFO: [Vivado 12-5498] Processing source library information for the selected device family (default:all) ...
+
+Compiling libraries for 'ies' simulator in '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib'
+--> Compiling 'verilog.secureip' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/secureip'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/secureip/.cxl.verilog.secureip.secureip.lin64.log'
+
+compile_simlib[verilog.secureip]: 0 error(s), 2 warning(s), 33.33 % complete
+--> Compiling 'verilog.simprim' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/verilog/src/unisims'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/simprims_ver/.cxl.verilog.simprim.simprims_ver.lin64.log'
+
+compile_simlib[verilog.simprim]: 0 error(s), 1 warning(s), 66.67 % complete
+--> Compiling 'verilog.xpm' library...
+    > Source Library = '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip/xpm'
+    > Compiled Path  = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm'
+    > Log File       = '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/xpm/.cxl.verilog.xpm.xpm.lin64.log'
+
+compile_simlib[verilog.xpm]: 0 error(s), 0 warning(s), 100.00 % complete
+Copying setup file 'cds.lib' to '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/cds.lib' ...
+
+********************************************************************************************
+*                                  COMPILATION SUMMARY                                     *
+*                                                                                          *
+*  Simulator used: ies                                                                     *
+*  Compiled on: Tue Jul 28 09:51:19 2020                                                   *
+*                                                                                          *
+********************************************************************************************
+*  Library                        | Language | Mapped Library Name | Error(s) | Warning(s) *
+*------------------------------------------------------------------------------------------*
+*  secureip                       | verilog  | secureip            | 0        | 2          *
+*------------------------------------------------------------------------------------------*
+*  simprim                        | verilog  | simprims_ver        | 0        | 1          *
+*------------------------------------------------------------------------------------------*
+*  xpm                            | verilog  | xpm                 | 0        | 0          *
+*------------------------------------------------------------------------------------------*
+
+compile_simlib: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 7553.523 ; gain = 0.000 ; free physical = 54125 ; free virtual = 98267
+copy_ip -name axi_uartlite_module_sim -dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip [get_ips  axi_uartlite_module]
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'axi_uartlite_module_sim'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'axi_uartlite_module_sim'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'axi_uartlite_module_sim'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'axi_uartlite_module_sim'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'axi_uartlite_module_sim'...
+catch { config_ip_cache -export [get_ips -all axi_uartlite_module_sim] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP axi_uartlite_module_sim, cache-ID = 077a94985ac208e4; cache size = 7.190 MB.
+export_ip_user_files -of_objects [get_files /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci'
+export_simulation -of_objects [get_files /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci] -directory /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files/sim_scripts -ip_user_files_dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files -ipstatic_source_dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/modelsim} {questa=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/questa} {ies=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/ies} {vcs=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/vcs} {riviera=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property used_in_synthesis false [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+set_property used_in_implementation false [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+close_project
+open_project /ssd/v.gulyaev/usb_otg/fpga/vivado_proj/otg_and_dev.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 28 11:48:51 2020...

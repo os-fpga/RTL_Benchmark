@@ -1,0 +1,806 @@
+Release 11.1 - xst L.33 (lin)
+Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aes.prj"
+Input Format                       : vhdl
+
+---- Target Parameters
+Output File Name                   : "../out/aes.ngc"
+Output Format                      : NGC
+Target Device                      : xc5vlx50t-1ff1136
+
+---- Source Options
+Top Module Name                    : aes_top
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Automatic Register Balancing       : NO
+Resource Sharing                   : YES
+
+---- Target Options
+Pack IO Registers into IOBs        : FALSE
+
+---- General Options
+Optimization Goal                  : area
+Optimization Effort                : 2
+Global Optimization                : ALLCLOCKNETS
+RTL Output                         : YES
+
+---- Other Options
+hdl_compilation_order              : USER
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_pkg.vhdl" in Library work.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/mixcol.vhdl" in Library work.
+Architecture rtl of Entity mixcol is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/colmix.vhdl" in Library work.
+Architecture rtl of Entity colmix is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/sbox.vhdl" in Library work.
+Architecture rtl of Entity sbox is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/subsh.vhdl" in Library work.
+Architecture rtl of Entity sboxshr is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/keysched1.vhdl" in Library work.
+Architecture rtl of Entity keysched1 is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/addkey.vhdl" in Library work.
+Architecture rtl of Entity addkey is up to date.
+Compiling vhdl file "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" in Library work.
+Architecture rtl of Entity aes_top is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <aes_top> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <addkey> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <sboxshr> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <colmix> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <keysched1> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <sbox> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <mixcol> in library <work> (architecture <rtl>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <aes_top> in library <work> (Architecture <rtl>).
+WARNING:Xst:753 - "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" line 192: Unconnected output port 'fc3' of component 'addkey'.
+WARNING:Xst:753 - "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" line 192: Unconnected output port 'c0' of component 'addkey'.
+WARNING:Xst:753 - "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" line 192: Unconnected output port 'c1' of component 'addkey'.
+WARNING:Xst:753 - "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" line 192: Unconnected output port 'c2' of component 'addkey'.
+WARNING:Xst:753 - "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl" line 192: Unconnected output port 'c3' of component 'addkey'.
+Entity <aes_top> analyzed. Unit <aes_top> generated.
+
+Analyzing Entity <addkey> in library <work> (Architecture <rtl>).
+Entity <addkey> analyzed. Unit <addkey> generated.
+
+Analyzing Entity <keysched1> in library <work> (Architecture <rtl>).
+Entity <keysched1> analyzed. Unit <keysched1> generated.
+
+Analyzing Entity <sbox> in library <work> (Architecture <rtl>).
+Entity <sbox> analyzed. Unit <sbox> generated.
+
+Analyzing Entity <sboxshr> in library <work> (Architecture <rtl>).
+Entity <sboxshr> analyzed. Unit <sboxshr> generated.
+
+Analyzing Entity <colmix> in library <work> (Architecture <rtl>).
+Entity <colmix> analyzed. Unit <colmix> generated.
+
+Analyzing Entity <mixcol> in library <work> (Architecture <rtl>).
+Entity <mixcol> analyzed. Unit <mixcol> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <sbox>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/sbox.vhdl".
+    Found 256x8-bit ROM for signal <byteout$rom0000> created at line 106.
+    Found 8-bit register for signal <byteout>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <sbox> synthesized.
+
+
+Synthesizing Unit <mixcol>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/mixcol.vhdl".
+    Found 8-bit register for signal <out0>.
+    Found 8-bit register for signal <out1>.
+    Found 8-bit register for signal <out2>.
+    Found 8-bit register for signal <out3>.
+    Found 8-bit xor4 for signal <out0$xor0000> created at line 137.
+    Found 8-bit xor4 for signal <out1$xor0000> created at line 138.
+    Found 8-bit xor4 for signal <out2$xor0000> created at line 139.
+    Found 8-bit xor4 for signal <out3$xor0000> created at line 140.
+    Found 8-bit xor4 for signal <xored>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred  40 Xor(s).
+Unit <mixcol> synthesized.
+
+
+Synthesizing Unit <sboxshr>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/subsh.vhdl".
+    Found 32-bit register for signal <nextkey<0>>.
+    Found 32-bit register for signal <nextkey<1>>.
+    Found 32-bit register for signal <nextkey<2>>.
+    Found 32-bit register for signal <nextkey<3>>.
+    Found 8-bit xor2 for signal <nextkey<0>_0$xor0000> created at line 118.
+    Found 8-bit xor2 for signal <nextkey<0>_1$xor0000> created at line 119.
+    Found 8-bit xor2 for signal <nextkey<0>_2$xor0000> created at line 120.
+    Found 8-bit xor2 for signal <nextkey<0>_3$xor0000> created at line 121.
+    Found 8-bit xor2 for signal <nextkey<1>_0$xor0000> created at line 118.
+    Found 8-bit xor2 for signal <nextkey<1>_1$xor0000> created at line 119.
+    Found 8-bit xor2 for signal <nextkey<1>_2$xor0000> created at line 120.
+    Found 8-bit xor2 for signal <nextkey<1>_3$xor0000> created at line 121.
+    Found 8-bit xor2 for signal <nextkey<2>_0$xor0000> created at line 118.
+    Found 8-bit xor2 for signal <nextkey<2>_1$xor0000> created at line 119.
+    Found 8-bit xor2 for signal <nextkey<2>_2$xor0000> created at line 120.
+    Found 8-bit xor2 for signal <nextkey<2>_3$xor0000> created at line 121.
+    Found 8-bit xor2 for signal <nextkey<3>_0$xor0000> created at line 118.
+    Found 8-bit xor2 for signal <nextkey<3>_1$xor0000> created at line 119.
+    Found 8-bit xor2 for signal <nextkey<3>_2$xor0000> created at line 120.
+    Found 8-bit xor2 for signal <nextkey<3>_3$xor0000> created at line 121.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+Unit <sboxshr> synthesized.
+
+
+Synthesizing Unit <colmix>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/colmix.vhdl".
+    Found 32-bit register for signal <outrkey<0>>.
+    Found 32-bit register for signal <outrkey<1>>.
+    Found 32-bit register for signal <outrkey<2>>.
+    Found 32-bit register for signal <outrkey<3>>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+Unit <colmix> synthesized.
+
+
+Synthesizing Unit <keysched1>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/keysched1.vhdl".
+WARNING:Xst:1780 - Signal <key3> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <key2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <key1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <key0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <c3>.
+    Found 8-bit xor2 for signal <fc3<0>>.
+    Found 32-bit register for signal <c0>.
+    Found 32-bit register for signal <c1>.
+    Found 32-bit register for signal <c2>.
+    Found 8-bit xor2 for signal <c1_0$xor0000> created at line 138.
+    Found 8-bit xor2 for signal <c1_1$xor0000> created at line 138.
+    Found 8-bit xor2 for signal <c1_2$xor0000> created at line 138.
+    Found 8-bit xor2 for signal <c1_3$xor0000> created at line 138.
+    Found 8-bit xor2 for signal <c2_0$xor0000> created at line 139.
+    Found 8-bit xor2 for signal <c2_1$xor0000> created at line 139.
+    Found 8-bit xor2 for signal <c2_2$xor0000> created at line 139.
+    Found 8-bit xor2 for signal <c2_3$xor0000> created at line 139.
+    Found 8-bit xor3 for signal <c3_0$xor0000> created at line 140.
+    Found 8-bit xor3 for signal <c3_1$xor0000> created at line 140.
+    Found 8-bit xor2 for signal <c3_2$xor0000> created at line 140.
+    Found 8-bit xor2 for signal <c3_3$xor0000> created at line 140.
+    Found 8-bit register for signal <rcon_d>.
+    Summary:
+	inferred 136 D-type flip-flop(s).
+	inferred  16 Xor(s).
+Unit <keysched1> synthesized.
+
+
+Synthesizing Unit <addkey>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/addkey.vhdl".
+    Found 32-bit register for signal <dataout<0>>.
+    Found 32-bit register for signal <dataout<1>>.
+    Found 32-bit register for signal <dataout<2>>.
+    Found 32-bit register for signal <dataout<3>>.
+    Found 32-bit xor2 for signal <added<0>>.
+    Found 32-bit xor2 for signal <added<1>>.
+    Found 32-bit xor2 for signal <added<2>>.
+    Found 32-bit xor2 for signal <added<3>>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+Unit <addkey> synthesized.
+
+
+Synthesizing Unit <aes_top>.
+    Related source file is "/home/subhasis/programming/vhdl/aes/pipe/trunk/syn/Xilinx/run/../../../rtl/vhdl/aes_top.vhdl".
+WARNING:Xst:1780 - Signal <textnet_s_m<9><3>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <textnet_s_m<9><2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <textnet_s_m<9><1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <textnet_s_m<9><0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <aes_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 204
+ 256x8-bit ROM                                         : 204
+# Registers                                            : 1015
+ 8-bit register                                        : 1015
+# Xors                                                 : 659
+ 8-bit xor2                                            : 457
+ 8-bit xor3                                            : 22
+ 8-bit xor4                                            : 180
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <step1> is unconnected in block <add_f>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_4> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_0> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_1> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_2> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_3> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_5> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_6> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rcon_d_7> (without init value) has a constant value of 0 in block <step1>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 204
+ 256x8-bit ROM                                         : 204
+# Registers                                            : 8120
+ Flip-Flops                                            : 8120
+# Xors                                                 : 659
+ 8-bit xor2                                            : 457
+ 8-bit xor3                                            : 22
+ 8-bit xor4                                            : 180
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <aes_top> ...
+
+Optimizing unit <sbox> ...
+
+Optimizing unit <mixcol> ...
+
+Optimizing unit <sboxshr> ...
+
+Optimizing unit <colmix> ...
+
+Optimizing unit <keysched1> ...
+
+Optimizing unit <addkey> ...
+WARNING:Xst:1710 - FF/Latch <proc[4].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[4].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[5].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[6].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[7].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[8].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[8].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[8].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[8].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <add_f_1/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <add_f_1/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <add_f_1/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <add_f_1/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[0].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[1].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_3> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[2].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_0> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_1> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_2> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_4> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_5> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_6> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <proc[3].add/step1/rcon_d_7> (without init value) has a constant value of 0 in block <aes_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_0_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_1_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_2_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c0_3_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/rcon_d_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_0_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_1_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_2_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c1_3_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_0_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_1_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_2_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c2_3_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_0_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_1_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_2_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/c3_3_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub3/byteout_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub2/byteout_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub1/byteout_0> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_7> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_6> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_5> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_4> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_3> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_2> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_1> of sequential type is unconnected in block <aes_top>.
+WARNING:Xst:2677 - Node <add_f/step1/sub0/byteout_0> of sequential type is unconnected in block <aes_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <add_f_1/step1/rcon_d_1> in Unit <aes_top> is equivalent to the following 15 FFs/Latches, which will be removed : <add_f_1/step1/rcon_d_2> <add_f_1/step1/rcon_d_4> <add_f_1/step1/rcon_d_5> <proc[0].add/step1/rcon_d_0> <proc[1].add/step1/rcon_d_1> <proc[2].add/step1/rcon_d_2> <proc[3].add/step1/rcon_d_3> <proc[4].add/step1/rcon_d_4> <proc[5].add/step1/rcon_d_5> <proc[6].add/step1/rcon_d_6> <proc[7].add/step1/rcon_d_7> <proc[8].add/step1/rcon_d_0> <proc[8].add/step1/rcon_d_1> <proc[8].add/step1/rcon_d_3> <proc[8].add/step1/rcon_d_4> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 7873
+ Flip-Flops                                            : 7873
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ../out/aes.ngr
+Top Level Output File Name         : ../out/aes.ngc
+Output Format                      : NGC
+Optimization Goal                  : area
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 386
+
+Cell Usage :
+# BELS                             : 16541
+#      LUT2                        : 3052
+#      LUT3                        : 3584
+#      LUT4                        : 320
+#      LUT5                        : 720
+#      LUT6                        : 7048
+#      MUXF7                       : 216
+#      MUXF8                       : 1600
+#      VCC                         : 1
+# FlipFlops/Latches                : 7873
+#      FDC                         : 7873
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 384
+#      IBUF                        : 256
+#      OBUF                        : 128
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx50tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            7873  out of  28800    27%  
+ Number of Slice LUTs:                14724  out of  28800    51%  
+    Number used as Logic:             14724  out of  28800    51%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  15770
+   Number with an unused Flip Flop:    7897  out of  15770    50%  
+   Number with an unused LUT:          1046  out of  15770     6%  
+   Number of fully used LUT-FF pairs:  6827  out of  15770    43%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         386
+ Number of bonded IOBs:                 386  out of    480    80%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_i                              | BUFGP                  | 7873  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst_i                              | BUFGP                  | 7873  |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.614ns (Maximum Frequency: 382.604MHz)
+   Minimum input arrival time before clock: 2.961ns
+   Maximum output required time after clock: 3.259ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_i'
+  Clock period: 2.614ns (frequency: 382.604MHz)
+  Total number of paths / destination ports: 59472 / 7584
+-------------------------------------------------------------------------
+Delay:               2.614ns (Levels of Logic = 3)
+  Source:            proc[8].mix/outrkey<3>_3_0 (FF)
+  Destination:       add_f_1/step1/sub3/byteout_7 (FF)
+  Source Clock:      clk_i rising
+  Destination Clock: clk_i rising
+
+  Data Path: proc[8].mix/outrkey<3>_3_0 to add_f_1/step1/sub3/byteout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             34   0.471   1.197  proc[8].mix/outrkey<3>_3_0 (proc[8].mix/outrkey<3>_3_0)
+     LUT6:I0->O            1   0.094   0.576  add_f_1/step1/sub3_Mrom_byteout_rom00004 (add_f_1/step1/sub3_Mrom_byteout_rom00003)
+     LUT3:I1->O            1   0.094   0.000  add_f_1/step1/sub3_Mrom_byteout_rom0000_f7_0 (add_f_1/step1/sub3_Mrom_byteout_rom0000_f71)
+     MUXF8:I0->O           1   0.182   0.000  add_f_1/step1/sub3_Mrom_byteout_rom0000_f8 (add_f_1/step1/sub3/byteout_rom0000<0>)
+     FDC:D                    -0.018          add_f_1/step1/sub3/byteout_0
+    ----------------------------------------
+    Total                      2.614ns (0.841ns logic, 1.773ns route)
+                                       (32.2% logic, 67.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_i'
+  Total number of paths / destination ports: 1440 / 288
+-------------------------------------------------------------------------
+Offset:              2.961ns (Levels of Logic = 4)
+  Source:            keyblock_i<3><3><0> (PAD)
+  Destination:       proc[0].add/step1/sub3/byteout_7 (FF)
+  Destination Clock: clk_i rising
+
+  Data Path: keyblock_i<3><3><0> to proc[0].add/step1/sub3/byteout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            34   0.818   1.197  keyblock_i_3__3__0_IBUF (keyblock_i_3__3__0_IBUF)
+     LUT6:I0->O            1   0.094   0.576  proc[0].add/step1/sub3_Mrom_byteout_rom00004 (proc[0].add/step1/sub3_Mrom_byteout_rom00003)
+     LUT3:I1->O            1   0.094   0.000  proc[0].add/step1/sub3_Mrom_byteout_rom0000_f7_0 (proc[0].add/step1/sub3_Mrom_byteout_rom0000_f71)
+     MUXF8:I0->O           1   0.182   0.000  proc[0].add/step1/sub3_Mrom_byteout_rom0000_f8 (proc[0].add/step1/sub3/byteout_rom0000<0>)
+     FDC:D                    -0.018          proc[0].add/step1/sub3/byteout_0
+    ----------------------------------------
+    Total                      2.961ns (1.188ns logic, 1.773ns route)
+                                       (40.1% logic, 59.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_i'
+  Total number of paths / destination ports: 128 / 128
+-------------------------------------------------------------------------
+Offset:              3.259ns (Levels of Logic = 1)
+  Source:            add_f/dataout<0>_3_7 (FF)
+  Destination:       ciphertext_o<0><3><7> (PAD)
+  Source Clock:      clk_i rising
+
+  Data Path: add_f/dataout<0>_3_7 to ciphertext_o<0><3><7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.471   0.336  add_f/dataout<0>_3_7 (add_f/dataout<0>_3_7)
+     OBUF:I->O                 2.452          ciphertext_o_0__3__7_OBUF (ciphertext_o<0><3><7>)
+    ----------------------------------------
+    Total                      3.259ns (2.923ns logic, 0.336ns route)
+                                       (89.7% logic, 10.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 200.00 secs
+Total CPU time to Xst completion: 197.33 secs
+ 
+--> 
+
+
+Total memory usage is 242988 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  310 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
