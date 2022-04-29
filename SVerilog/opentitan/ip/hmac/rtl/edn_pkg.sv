@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-
+//`include "entropy_src_pkg.sv"
 package edn_pkg;
   ///////////////////////////
   // Peripheral Interfaces //
