@@ -1,0 +1,29 @@
+#!/bin/csh
+
+setenv TOP_DESIGN ./..
+# -- Set current directory for unit
+setenv CURR_DIR $PWD
+cd ../
+setenv UNIT_HOME $PWD
+cd $CURR_DIR
+
+rm -rf ./XRUN_rtl_libs/
+source $UNIT_HOME/tb/vipcat_env_xrun64.csh
+
+setenv XILINX_VIVADO /opt/xilinx/Vivado2017/Vivado/2017.4/
+
+xrun \
++gui \
++libverbose \
++xmaccess+rwc\
+-64bit\
+-sv \
+-uvm \
+-smartorder \
+-LOGfile xrun_fpga_tb.log \
+-incdir ${TOP_DESIGN}/tb\
+-top tb_fpga \
+-top glbl \
++xmtimescale+1ps/1ps \
+-xmlibdirname XRUN_fpga_wrap_rtl_libs \
+-f ../sim/fpga_wrap_files_rtl.lst 

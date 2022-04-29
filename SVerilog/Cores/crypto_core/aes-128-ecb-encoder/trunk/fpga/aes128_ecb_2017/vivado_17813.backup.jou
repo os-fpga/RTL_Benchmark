@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jul 27 14:17:14 2020
+# Process ID: 17813
+# Current directory: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb
+# Command line: vivado
+# Log file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/vivado.log
+# Journal file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1
+close_design
+close [ open /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc w ]
+add_files -fileset constrs_1 /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc
+set_property target_constrs_file /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/constrs_1/new/timings.xdc [current_fileset -constrset]
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_input_delay -clock [get_clocks [list  [get_clocks -of_objects [get_pins clkgen/inst/mmcm_adv_inst/CLKOUT0]]]] 5.0 [get_ports uart_rx]
+set_output_delay -clock [get_clocks [list  [get_clocks -of_objects [get_pins clkgen/inst/mmcm_adv_inst/CLKOUT0]]]] 5.0 [get_ports -regexp -filter { NAME =~  ".*" && DIRECTION == "OUT" }]
+save_constraints
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+write_verilog ./netlist/aes128_ecb_wrap.v
+write_sdf ./netlist/aes128_ecb_wrap.sdf
+write_sdf -help
+write_sdf ./netlist/uartlite.sdf  -cell uartlite
+write_verilog  -help
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force
+write_verilog  -help
+write_sdf -help
+write_sdf ./netlist/aes128_ecb_wrap.sdf -mode timesim
+write_sdf ./netlist/aes128_ecb_wrap.sdf -mode timesim -force
+write_sdf ./netlist/uartlite.sdf  -cell uartlite -mode timesim -force
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force -sdf_file ./netlist/aes128_ecb_wrap.sdf
+write_verilog  -help
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force -sdf_file ./netlist/aes128_ecb_wrap.sdf -sdf_anno 1
+write_verilog ./netlist/aes128_ecb_wrap.v -mode timesim -force
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/XCELIUMMAIN18.09.005_/bin} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/bin} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+compile_simlib -help
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+compile_simlib -help
+compile_simlib -simulator xrun -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+compile_simlib -simulator xsim -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+compile_simlib -simulator ies -simulator_exec_path {/opt/cad/Cadence/IC6/INCISIV14.10.005_/tools.lnx86/bin/64bit} -family kintex7 -language verilog -library simprim -dir {/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib} -force
+copy_ip -name axi_uartlite_module_sim -dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip [get_ips  axi_uartlite_module]
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+catch { config_ip_cache -export [get_ips -all axi_uartlite_module_sim] }
+export_ip_user_files -of_objects [get_files /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+export_simulation -of_objects [get_files /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci] -directory /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files/sim_scripts -ip_user_files_dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files -ipstatic_source_dir /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/modelsim} {questa=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/questa} {ies=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/ies} {vcs=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/vcs} {riviera=/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property used_in_synthesis false [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+set_property used_in_implementation false [get_files  /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module_sim/axi_uartlite_module_sim.xci]
+close_project
+open_project /ssd/v.gulyaev/usb_otg/fpga/vivado_proj/otg_and_dev.xpr
+update_compile_order -fileset sources_1
