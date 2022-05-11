@@ -1,4 +1,4 @@
-set ::env(PROJECT_NAME) des
+set ::env(PROJECT_NAME) des_gate_level
 set ::env(DESIGN_TOP) des
 set ::env(DESIGN_DIR) RTL_Benchmark/Verilog/Gate_Level_Netlist/des/rtl
 set ::env(TOP_VERILOG) RTL_Benchmark/Verilog/Gate_Level_Netlist/des/rtl/des.v
