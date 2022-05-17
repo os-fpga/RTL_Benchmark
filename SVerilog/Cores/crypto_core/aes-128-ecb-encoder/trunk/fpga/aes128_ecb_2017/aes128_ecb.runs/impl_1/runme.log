@@ -1,0 +1,553 @@
+
+*** Running vivado
+    with args -log aes128_ecb_fpga_wrap.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source aes128_ecb_fpga_wrap.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source aes128_ecb_fpga_wrap.tcl -notrace
+Command: link_design -top aes128_ecb_fpga_wrap -part xc7k325tffg900-2
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 919 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 2076.297 ; gain = 549.656 ; free physical = 2287 ; free virtual = 5864
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 2076.297 ; gain = 911.250 ; free physical = 2295 ; free virtual = 5867
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2116.316 ; gain = 32.016 ; free physical = 2287 ; free virtual = 5859
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 18bd964f5
+
+Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Opt 31-389] Phase Retarget created 10 cells and removed 12 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 18bd964f5
+
+Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 18872f0f7
+
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 18872f0f7
+
+Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 18872f0f7
+
+Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+Ending Logic Optimization Task | Checksum: 18872f0f7
+
+Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 169758e13
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2288 ; free virtual = 5860
+INFO: [Common 17-83] Releasing license: Implementation
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.316 ; gain = 0.000 ; free physical = 2287 ; free virtual = 5860
+INFO: [Common 17-1381] The checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file aes128_ecb_fpga_wrap_drc_opted.rpt -pb aes128_ecb_fpga_wrap_drc_opted.pb -rpx aes128_ecb_fpga_wrap_drc_opted.rpx
+Command: report_drc -file aes128_ecb_fpga_wrap_drc_opted.rpt -pb aes128_ecb_fpga_wrap_drc_opted.pb -rpx aes128_ecb_fpga_wrap_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 4 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2132.320 ; gain = 0.000 ; free physical = 2276 ; free virtual = 5849
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 7ac379e0
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2132.320 ; gain = 0.000 ; free physical = 2276 ; free virtual = 5849
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2132.320 ; gain = 0.000 ; free physical = 2277 ; free virtual = 5850
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: bb646e39
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2132.320 ; gain = 0.000 ; free physical = 2263 ; free virtual = 5840
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 19410c43e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2135.328 ; gain = 3.008 ; free physical = 2251 ; free virtual = 5829
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 19410c43e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2135.328 ; gain = 3.008 ; free physical = 2251 ; free virtual = 5829
+Phase 1 Placer Initialization | Checksum: 19410c43e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2135.328 ; gain = 3.008 ; free physical = 2251 ; free virtual = 5829
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 11f809644
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2220 ; free virtual = 5798
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 11f809644
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2220 ; free virtual = 5798
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1c69181d7
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2218 ; free virtual = 5796
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1fabbf6a3
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2217 ; free virtual = 5795
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1fabbf6a3
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2217 ; free virtual = 5795
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: c1d1a0e3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2209 ; free virtual = 5788
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: ab864e22
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2209 ; free virtual = 5788
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: ab864e22
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2209 ; free virtual = 5788
+Phase 3 Detail Placement | Checksum: ab864e22
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2159.340 ; gain = 27.020 ; free physical = 2209 ; free virtual = 5788
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: f3bc30c8
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 4 CPUs
+INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: f3bc30c8
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2167.332 ; gain = 35.012 ; free physical = 2209 ; free virtual = 5788
+INFO: [Place 30-746] Post Placement Timing Summary WNS=2.507. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 16ccbd4e1
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2167.332 ; gain = 35.012 ; free physical = 2209 ; free virtual = 5788
+Phase 4.1 Post Commit Optimization | Checksum: 16ccbd4e1
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2167.332 ; gain = 35.012 ; free physical = 2209 ; free virtual = 5788
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 16ccbd4e1
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2168.332 ; gain = 36.012 ; free physical = 2216 ; free virtual = 5795
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 16ccbd4e1
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2168.332 ; gain = 36.012 ; free physical = 2216 ; free virtual = 5795
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 14ea6a809
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2168.332 ; gain = 36.012 ; free physical = 2216 ; free virtual = 5795
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14ea6a809
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2168.332 ; gain = 36.012 ; free physical = 2216 ; free virtual = 5795
+Ending Placer Task | Checksum: 5e2c148b
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2168.332 ; gain = 36.012 ; free physical = 2251 ; free virtual = 5830
+INFO: [Common 17-83] Releasing license: Implementation
+48 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 2168.332 ; gain = 36.016 ; free physical = 2251 ; free virtual = 5830
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2168.332 ; gain = 0.000 ; free physical = 2246 ; free virtual = 5829
+INFO: [Common 17-1381] The checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file aes128_ecb_fpga_wrap_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2168.332 ; gain = 0.000 ; free physical = 2227 ; free virtual = 5807
+INFO: [runtcl-4] Executing : report_utilization -file aes128_ecb_fpga_wrap_utilization_placed.rpt -pb aes128_ecb_fpga_wrap_utilization_placed.pb
+report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2168.332 ; gain = 0.000 ; free physical = 2246 ; free virtual = 5826
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file aes128_ecb_fpga_wrap_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2168.332 ; gain = 0.000 ; free physical = 2246 ; free virtual = 5826
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 4 CPUs
+Checksum: PlaceDB: 22a049de ConstDB: 0 ShapeSum: 3b8bcaad RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 10f93e09a
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 2441.629 ; gain = 273.293 ; free physical = 1979 ; free virtual = 5560
+Post Restoration Checksum: NetGraph: f9819b73 NumContArr: 16124527 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 10f93e09a
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 2441.629 ; gain = 273.293 ; free physical = 1980 ; free virtual = 5561
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 10f93e09a
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 2441.629 ; gain = 273.293 ; free physical = 1958 ; free virtual = 5539
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 10f93e09a
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 2441.629 ; gain = 273.293 ; free physical = 1958 ; free virtual = 5539
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 24702e645
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1952 ; free virtual = 5533
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.504  | TNS=0.000  | WHS=-0.153 | THS=-35.083|
+
+Phase 2 Router Initialization | Checksum: 1bcd3ae25
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1949 ; free virtual = 5531
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 27d21dd15
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:23 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1947 ; free virtual = 5528
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 624
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.330  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 10b269bc4
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+Phase 4 Rip-up And Reroute | Checksum: 10b269bc4
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 10b269bc4
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 10b269bc4
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+Phase 5 Delay and Skew Optimization | Checksum: 10b269bc4
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 18b88dfe9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.330  | TNS=0.000  | WHS=0.105  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 18b88dfe9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+Phase 6 Post Hold Fix | Checksum: 18b88dfe9
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1946 ; free virtual = 5528
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.193573 %
+  Global Horizontal Routing Utilization  = 0.230848 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1b8bd5c0d
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1945 ; free virtual = 5526
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1b8bd5c0d
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1944 ; free virtual = 5525
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 178289230
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1944 ; free virtual = 5525
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=2.330  | TNS=0.000  | WHS=0.105  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 178289230
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1945 ; free virtual = 5527
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:24 . Memory (MB): peak = 2467.551 ; gain = 299.215 ; free physical = 1977 ; free virtual = 5559
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+64 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:26 . Memory (MB): peak = 2467.551 ; gain = 299.219 ; free physical = 1974 ; free virtual = 5557
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.50 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2467.551 ; gain = 0.000 ; free physical = 1968 ; free virtual = 5556
+INFO: [Common 17-1381] The checkpoint '/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file aes128_ecb_fpga_wrap_drc_routed.rpt -pb aes128_ecb_fpga_wrap_drc_routed.pb -rpx aes128_ecb_fpga_wrap_drc_routed.rpx
+Command: report_drc -file aes128_ecb_fpga_wrap_drc_routed.rpt -pb aes128_ecb_fpga_wrap_drc_routed.pb -rpx aes128_ecb_fpga_wrap_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file aes128_ecb_fpga_wrap_methodology_drc_routed.rpt -pb aes128_ecb_fpga_wrap_methodology_drc_routed.pb -rpx aes128_ecb_fpga_wrap_methodology_drc_routed.rpx
+Command: report_methodology -file aes128_ecb_fpga_wrap_methodology_drc_routed.rpt -pb aes128_ecb_fpga_wrap_methodology_drc_routed.pb -rpx aes128_ecb_fpga_wrap_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 4 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file aes128_ecb_fpga_wrap_power_routed.rpt -pb aes128_ecb_fpga_wrap_power_summary_routed.pb -rpx aes128_ecb_fpga_wrap_power_routed.rpx
+Command: report_power -file aes128_ecb_fpga_wrap_power_routed.rpt -pb aes128_ecb_fpga_wrap_power_summary_routed.pb -rpx aes128_ecb_fpga_wrap_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+76 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file aes128_ecb_fpga_wrap_route_status.rpt -pb aes128_ecb_fpga_wrap_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file aes128_ecb_fpga_wrap_timing_summary_routed.rpt -rpx aes128_ecb_fpga_wrap_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file aes128_ecb_fpga_wrap_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-545] No incremental reuse to report, no incremental placement and routing data was found.
+INFO: [runtcl-4] Executing : report_clock_utilization -file aes128_ecb_fpga_wrap_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2523.594 ; gain = 0.000 ; free physical = 1955 ; free virtual = 5541
+Command: write_bitstream -force aes128_ecb_fpga_wrap.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[0]_P_i_3_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[0]_P_i_3/O, cell sys_mngr/axi_state[0]_P_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[10]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[10]_P_i_2/O, cell sys_mngr/axi_state[10]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[1]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[1]_P_i_2/O, cell sys_mngr/axi_state[1]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[2]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[2]_P_i_2/O, cell sys_mngr/axi_state[2]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 6 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+WARNING: [Designutils 20-2079] The BITSTREAM.CONFIG.EXTMASTERCCLK_EN property value "DIV-2" will cause the BITSTREAM.CONFIG.CONFIGRATE property value "33" to be ignored.
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./aes128_ecb_fpga_wrap.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+92 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 2849.238 ; gain = 325.645 ; free physical = 1923 ; free virtual = 5520
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 13:56:36 2020...
+
+*** Running vivado
+    with args -log aes128_ecb_fpga_wrap.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source aes128_ecb_fpga_wrap.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source aes128_ecb_fpga_wrap.tcl -notrace
+Command: open_checkpoint aes128_ecb_fpga_wrap_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1163.023 ; gain = 0.000 ; free physical = 2264 ; free virtual = 6195
+INFO: [Netlist 29-17] Analyzing 919 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 2028.965 ; gain = 549.656 ; free physical = 1506 ; free virtual = 5433
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2032.965 ; gain = 4.000 ; free physical = 1502 ; free virtual = 5429
+Restored from archive | CPU: 0.170000 secs | Memory: 4.270599 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2032.965 ; gain = 4.000 ; free physical = 1502 ; free virtual = 5429
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
+open_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:41 . Memory (MB): peak = 2033.965 ; gain = 870.941 ; free physical = 1507 ; free virtual = 5428
+Command: write_bitstream -force aes128_ecb_fpga_wrap.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[0]_P_i_3_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[0]_P_i_3/O, cell sys_mngr/axi_state[0]_P_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[10]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[10]_P_i_2/O, cell sys_mngr/axi_state[10]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[1]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[1]_P_i_2/O, cell sys_mngr/axi_state[1]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[2]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[2]_P_i_2/O, cell sys_mngr/axi_state[2]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 6 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+WARNING: [Designutils 20-2079] The BITSTREAM.CONFIG.EXTMASTERCCLK_EN property value "DIV-2" will cause the BITSTREAM.CONFIG.CONFIGRATE property value "33" to be ignored.
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./aes128_ecb_fpga_wrap.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2589.641 ; gain = 555.676 ; free physical = 1443 ; free virtual = 5370
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 15:32:07 2020...

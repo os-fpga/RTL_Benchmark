@@ -1,0 +1,235 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jul 30 09:54:46 2020
+# Process ID: 28010
+# Current directory: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017
+# Command line: vivado
+# Log file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/vivado.log
+# Journal file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/cad/xilinx/Vivado2017/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 6310.867 ; gain = 89.688 ; free physical = 59919 ; free virtual = 99507
+update_compile_order -fileset sources_1
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+get_clocks: Time (s): cpu = 00:00:20 ; elapsed = 00:00:37 . Memory (MB): peak = 7178.695 ; gain = 594.926 ; free physical = 59179 ; free virtual = 98775
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp0/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.22 . Memory (MB): peak = 7183.691 ; gain = 4.000 ; free physical = 59174 ; free virtual = 98770
+Restored from archive | CPU: 0.220000 secs | Memory: 4.244667 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.22 . Memory (MB): peak = 7183.691 ; gain = 4.000 ; free physical = 59174 ; free virtual = 98770
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:52 ; elapsed = 00:01:17 . Memory (MB): peak = 7467.965 ; gain = 1118.707 ; free physical = 59003 ; free virtual = 98593
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.sdf
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+[Thu Jul 30 10:47:22 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/runme.log
+refresh_design
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 7555.016 ; gain = 14.008 ; free physical = 57616 ; free virtual = 97572
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+ERROR: [Vivado 12-672] Cannot specify -master_clock without specifying -add.
+create_generated_clock -name clk_gen -source [get_pins clkgen/clk_in1_p] -divide_by 2 -add -master_clock [get_clocks CLK_IN_P] [get_pins clkgen/clk_out1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+WARNING: [Vivado 12-627] No clocks matched 'clk_gen'.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks.
+ERROR: [Vivado 12-4739] set_input_delay:No valid object(s) found for '-clock [get_clocks clk_gen]'.
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clk_gen'.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks.
+ERROR: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks clk_gen]'.
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+save_constraints
+ERROR: [Common 17-163] Missing value for option 'objects', please type 'set_input_delay -help' for usage info.
+set_input_delay -clock [get_clocks clk_gen] 1.0 [get_ports uart_rx]
+set_output_delay -clock [get_clocks clk_gen] 1.0 [get_ports uart_tx]
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+[Thu Jul 30 11:04:30 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.dcp' for cell 'clkgen'
+INFO: [Project 1-454] Reading design checkpoint '/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.dcp' for cell 'uartlite'
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen_board.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc] for cell 'clkgen/inst'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module_board.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xdc] for cell 'uartlite/U0'
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/pinout.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/constrs_1/new/timings.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1 -jobs 16
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7560.020 ; gain = 0.000 ; free physical = 57675 ; free virtual = 97641
+[Thu Jul 30 11:09:28 2020] Launched impl_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/runme.log
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp15/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 7560.020 ; gain = 0.000 ; free physical = 57677 ; free virtual = 97659
+Restored from archive | CPU: 0.250000 secs | Memory: 4.245201 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.25 . Memory (MB): peak = 7560.020 ; gain = 0.000 ; free physical = 57677 ; free virtual = 97659
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.sdf
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+[Thu Jul 30 11:46:45 2020] Launched synth_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/synth_1/runme.log
+[Thu Jul 30 11:46:45 2020] Launched impl_1...
+Run output will be captured here: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 920 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/.Xil/Vivado-28010-gigant.modulew.local/dcp18/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.26 . Memory (MB): peak = 7605.039 ; gain = 0.000 ; free physical = 57798 ; free virtual = 97758
+Restored from archive | CPU: 0.260000 secs | Memory: 4.378311 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.26 . Memory (MB): peak = 7605.039 ; gain = 0.000 ; free physical = 57798 ; free virtual = 97758
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf
+/home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/netlist/aes128_ecb_wrap.sdf

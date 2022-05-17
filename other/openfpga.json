@@ -1,0 +1,107 @@
+ 
+{
+    "GENERAL": {
+      "DESIGN_STAGE"    : "yosys",
+      "STRATEGY"        : "performance",
+      "POWER_ANALYSIS"  : false,
+      "SWEEP"           : false 
+    },
+    "OpenFPGA_Commandline_args": {
+        "continue_on_fail"  : false,
+        "debug"             : true,
+        "test_run"          : false,
+        "show_thread_logs"  : true
+    },
+    "SYNTHESIS_PARAM": {
+        "command"   : "synth_rs",
+        "verific"   : true,
+        "synth_ql":{
+            "top"       : "${TOP_MODULE}",
+            "family"    : "qlf_k6n10f",
+            "no_abc_opt": null,
+            "edif"      : null,
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : null,
+            "no_dsp"    : true,
+            "no_adder"  : true,
+            "no_bram"   : true,
+            "no_ff_map" : null
+        },
+        "synth_rs":{
+            "top"       : "${TOP_MODULE}",
+            "tech"      : "generic",
+            "goal"      : "area",
+            "blif"      : "${OUTPUT_BLIF}",
+            "verilog"   : "${OUTPUT_VERILOG}",
+            "no_dsp"    : true,
+            "no_bram"   : true,
+            "effort"     : "medium",
+            "abc"       : null,
+            "cec"       : null
+
+        },
+        "synth":{
+            "top"       : "${TOP_MODULE}",
+            "auto-top"  : null,
+            "flatten"   : true,
+            "encfile"   : null,
+            "lut"       : null,
+            "nofsm"     : null,
+            "noabc"     : null,
+            "noalumacc" : null,
+            "nordff"    : null,
+            "noshare"   : null,
+            "run"       : null,
+            "flowmap"   : null
+        }
+    },
+    "ABC": {
+        "lut"   : "6",
+        "script": null
+    },
+    "Formality":{
+        "Regression": 10,
+        "VERIF_STAGE": ""
+    },
+    "BENCHMARKS": {
+        "cryptosorter_aes_core_cipher_top": {
+            "design":"RTL_Benchmark/other/cryptosorter/trunk/memocodeDesignContest2008/aesCore/verilog/rtl/verilog/aes_cipher_top/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "cryptosorter_aes_inv_cipher_top": {
+            
+            "design":"RTL_Benchmark/other/cryptosorter/trunk/memocodeDesignContest2008/aesCore/verilog/rtl/verilog/aes_inv_cipher_top/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "cryptosorter_aes_rcon": {
+            
+            "design":"RTL_Benchmark/other/cryptosorter/trunk/memocodeDesignContest2008/aesCore/verilog/rtl/verilog/aes_rcon/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "cryptosorter_aesCorePipelined": {
+            
+            "design":"RTL_Benchmark/other/cryptosorter/trunk/memocodeDesignContest2008/aesCorePipelined/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "systemcdes": {
+            "design":"RTL_Benchmark/other/systemcdes/trunk/rtl/verilog/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "systemcmd5": {
+            "design":"RTL_Benchmark/other/systemcmd5/trunk/rtl/verilog/config.tcl",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jul 29 15:17:50 2020
+# Process ID: 3858
+# Current directory: /home/user/aes/fpga/aec128_ecb_2017
+# Command line: vivado
+# Log file: /home/user/aes/fpga/aec128_ecb_2017/vivado.log
+# Journal file: /home/user/aes/fpga/aec128_ecb_2017/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/user/aes/fpga/aec128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+reset_run impl_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+reset_run clk_gen_synth_1
+reset_run axi_uartlite_module_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
