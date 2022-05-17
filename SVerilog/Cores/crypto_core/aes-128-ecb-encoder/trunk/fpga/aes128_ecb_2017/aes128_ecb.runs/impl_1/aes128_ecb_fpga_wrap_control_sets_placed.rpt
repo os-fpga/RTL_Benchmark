@@ -1,0 +1,113 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Thu Jul 30 13:55:42 2020
+| Host         : orme22 running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_control_sets -verbose -file aes128_ecb_fpga_wrap_control_sets_placed.rpt
+| Design       : aes128_ecb_fpga_wrap
+| Device       : xc7k325t
+-------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    45 |
+| Unused register locations in slices containing registers |   192 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              18 |            5 |
+| No           | No                    | Yes                    |             419 |          228 |
+| No           | Yes                   | No                     |              53 |           21 |
+| Yes          | No                    | No                     |               2 |            1 |
+| Yes          | No                    | Yes                    |             453 |          148 |
+| Yes          | Yes                   | No                     |              23 |            7 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+----------------+
+|            Clock Signal           |                                        Enable Signal                                       |                                           Set/Reset Signal                                          | Slice Load Count | Bel Load Count |
++-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+----------------+
+|  sys_mngr/axi_state[0]_P_i_3_n_0  |                                                                                            | sys_mngr/axi_state_reg[0]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  clkgen/inst/clk_out1             | sys_mngr/key_set_complete                                                                  | enc/rst_o_OBUF                                                                                      |                1 |              1 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_state[0]_P_i_1_n_0                                                            | sys_mngr/axi_state[2]_P_i_2_n_0                                                                     |                1 |              1 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_state[0]_P_i_1_n_0                                                            | sys_mngr/axi_state[1]_P_i_2_n_0                                                                     |                1 |              1 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_state[0]_P_i_1_n_0                                                            | sys_mngr/axi_state[0]_P_i_3_n_0                                                                     |                1 |              1 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_state[0]_P_i_1_n_0                                                            | sys_mngr/axi_state[10]_P_i_2_n_0                                                                    |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/axi_state_reg[2]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/axi_state_reg[1]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/axi_state_reg[10]_LDC_i_1_n_0                                                              |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/plain_text_data_valid_o_i_2_n_0                                                            |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/axi_state_reg[0]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  sys_mngr/axi_state[10]_P_i_2_n_0 |                                                                                            | sys_mngr/axi_state_reg[10]_LDC_i_1_n_0                                                              |                1 |              1 |
+|  sys_mngr/axi_state[1]_P_i_2_n_0  |                                                                                            | sys_mngr/axi_state_reg[1]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  sys_mngr/axi_state[2]_P_i_2_n_0  |                                                                                            | sys_mngr/axi_state_reg[2]_LDC_i_1_n_0                                                               |                1 |              1 |
+|  clkgen/inst/clk_out1             |                                                                                            | enc/rst_o_OBUF                                                                                      |                3 |              4 |
+|  clkgen/inst/clk_out1             | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/start2                                      | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_ce_clr                                  |                1 |              4 |
+|  clkgen/inst/clk_out1             | uartlite/U0/UARTLITE_CORE_I/BAUD_RATE_I/en_16x_Baud                                        |                                                                                                     |                2 |              4 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_data_wr_reg[4]_i_1_n_0                                                        | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                2 |              4 |
+|  clkgen/inst/clk_out1             | sys_mngr/data_counter_reg[3]_i_1_n_0                                                       | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                2 |              4 |
+|  clkgen/inst/clk_out1             | sys_mngr/axi_data_wr_reg[7]_i_1_n_0                                                        | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                2 |              5 |
+|  clkgen/inst/clk_out1             |                                                                                            | uartlite/U0/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/SS[0] |                3 |              6 |
+|  clkgen/inst/clk_out1             |                                                                                            | uartlite/U0/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/SS[0] |                2 |              6 |
+|  clkgen/inst/clk_out1             | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/fifo_wr                           |                                                                                                     |                1 |              8 |
+|  clkgen/inst/clk_out1             | uartlite/U0/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/fifo_wr |                                                                                                     |                1 |              8 |
+|  clkgen/inst/clk_out1             | sys_mngr/rx_fifo_valid_data                                                                | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                2 |              8 |
+|  clkgen/inst/clk_out1             | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i                               | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst                                                  |                4 |              9 |
+|  clkgen/inst/clk_out1             |                                                                                            | uartlite/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst                                                  |                3 |              9 |
+|  clkgen/inst/clk_out1             | uartlite/U0/UARTLITE_CORE_I/BAUD_RATE_I/en_16x_Baud                                        | sys_mngr/s_axi_aresetn                                                                              |                2 |             10 |
+|  clkgen/inst/clk_out1             | sys_mngr/m_axi\\.awaddr[3]_i_1_n_0                                                         | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                2 |             11 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |               10 |             16 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/cipher_data_reg_reg[94]_0                                                                  |                9 |             18 |
+|  clkgen/inst/clk_out1             |                                                                                            |                                                                                                     |                5 |             18 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/plain_text_data_o_reg[127]_0                                                               |               15 |             24 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/s_axi_aresetn                                                                              |                9 |             28 |
+|  clkgen/inst/clk_out1             |                                                                                            | sys_mngr/key_o_reg[72]_0                                                                            |               16 |             31 |
+|  clkgen/inst/clk_out1             | sys_mngr/sel                                                                               | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |                8 |             32 |
+|  clkgen/inst/clk_out1             | sys_mngr/cipher_data_reg[127]_i_1_n_0                                                      | sys_mngr/startup_pause_cnt[0]_i_3_n_0                                                               |               13 |             33 |
+|  clkgen/inst/clk_out1             | sys_mngr/plain_text_data_o[127]_i_1_n_0                                                    | sys_mngr/plain_text_data_valid_o_i_2_n_0                                                            |               14 |             48 |
+|  clkgen/inst/clk_out1             | sys_mngr/key_0[127]                                                                        | sys_mngr/plain_text_data_valid_o_i_2_n_0                                                            |               18 |             55 |
+|  clkgen/inst/clk_out1             | sys_mngr/key_0[127]                                                                        | sys_mngr/key_o_reg[72]_0                                                                            |               25 |             73 |
+|  clkgen/inst/clk_out1             | sys_mngr/plain_text_data_o[127]_i_1_n_0                                                    | sys_mngr/plain_text_data_o_reg[127]_0                                                               |               21 |             80 |
+|  clkgen/inst/clk_out1             | sys_mngr/cipher_data_reg[127]_i_1_n_0                                                      | sys_mngr/cipher_data_reg_reg[94]_0                                                                  |               34 |             95 |
+|  clkgen/inst/clk_out1             |                                                                                            | enc/state[2][2][7]_i_2_n_0                                                                          |               64 |            104 |
+|  clkgen/inst/clk_out1             |                                                                                            | enc/round_key[3][3][7]_i_2_n_0                                                                      |               59 |            104 |
+|  clkgen/inst/clk_out1             |                                                                                            | enc/valid_o_i_2_n_0                                                                                 |               47 |            113 |
++-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                    14 |
+| 4      |                     5 |
+| 5      |                     1 |
+| 6      |                     2 |
+| 8      |                     3 |
+| 9      |                     2 |
+| 10     |                     1 |
+| 11     |                     1 |
+| 16+    |                    16 |
++--------+-----------------------+
+
+

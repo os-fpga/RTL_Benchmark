@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jul 30 09:54:46 2020
+# Process ID: 28010
+# Current directory: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017
+# Command line: vivado
+# Log file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/vivado.log
+# Journal file: /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/v.gulyaev/Project/vozhak/trunk/rtl/aes128/fpga/aes128_ecb_2017/aes128_ecb.xpr
+update_compile_order -fileset sources_1
+open_run impl_1
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+close_design
+open_run synth_1 -name synth_1
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+refresh_design
+create_generated_clock -name clk_gen -source [get_pins clkgen/clk_in1_p] -divide_by 2 -add -master_clock [get_clocks CLK_IN_P] [get_pins clkgen/clk_out1]
+save_constraints
+set_input_delay -clock [get_clocks clk_gen] 1.0 [get_ports uart_rx]
+set_output_delay -clock [get_clocks clk_gen] 1.0 [get_ports uart_tx]
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+close_design
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+write_verilog -force -mode timesim ./netlist/aes128_ecb_wrap.v
+write_sdf -force -mode timesim ./netlist/aes128_ecb_wrap.sdf

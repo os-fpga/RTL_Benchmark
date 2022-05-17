@@ -1,0 +1,74 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jul 30 15:31:01 2020
+# Process ID: 15976
+# Current directory: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1
+# Command line: vivado -log aes128_ecb_fpga_wrap.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source aes128_ecb_fpga_wrap.tcl -notrace
+# Log file: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/aes128_ecb_fpga_wrap.vdi
+# Journal file: /home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source aes128_ecb_fpga_wrap.tcl -notrace
+Command: open_checkpoint aes128_ecb_fpga_wrap_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1163.023 ; gain = 0.000 ; free physical = 2264 ; free virtual = 6195
+INFO: [Netlist 29-17] Analyzing 919 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_board.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_board.xdc]
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.srcs/sources_1/ip/clk_gen/clk_gen.xdc:57]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 2028.965 ; gain = 549.656 ; free physical = 1506 ; free virtual = 5433
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap_early.xdc]
+Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap.xdc]
+Finished Parsing XDC File [/home/user/aes128/fpga/aes128_ecb_2017/aes128_ecb.runs/impl_1/.Xil/Vivado-15976-orme22/dcp1/aes128_ecb_fpga_wrap.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2032.965 ; gain = 4.000 ; free physical = 1502 ; free virtual = 5429
+Restored from archive | CPU: 0.170000 secs | Memory: 4.270599 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2032.965 ; gain = 4.000 ; free physical = 1502 ; free virtual = 5429
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
+open_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:41 . Memory (MB): peak = 2033.965 ; gain = 870.941 ; free physical = 1507 ; free virtual = 5428
+Command: write_bitstream -force aes128_ecb_fpga_wrap.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[0]_P_i_3_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[0]_P_i_3/O, cell sys_mngr/axi_state[0]_P_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[10]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[10]_P_i_2/O, cell sys_mngr/axi_state[10]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[1]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[1]_P_i_2/O, cell sys_mngr/axi_state[1]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sys_mngr/axi_state[2]_P_i_2_n_0 is a gated clock net sourced by a combinational pin sys_mngr/axi_state[2]_P_i_2/O, cell sys_mngr/axi_state[2]_P_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+WARNING: [DRC PORTPROP-2] selectio_diff_term: The port CLK_IN_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL15 does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 6 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+WARNING: [Designutils 20-2079] The BITSTREAM.CONFIG.EXTMASTERCCLK_EN property value "DIV-2" will cause the BITSTREAM.CONFIG.CONFIGRATE property value "33" to be ignored.
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./aes128_ecb_fpga_wrap.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2589.641 ; gain = 555.676 ; free physical = 1443 ; free virtual = 5370
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 15:32:07 2020...

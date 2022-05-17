@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="axi_uartlite_module_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1596025316">
+  <File Type="RDS-DCP" Name="axi_uartlite_module.dcp"/>
+  <File Type="PA-TCL" Name="axi_uartlite_module.tcl"/>
+  <File Type="RDS-UTIL-PB" Name="axi_uartlite_module_utilization_synth.pb"/>
+  <File Type="REPORTS-TCL" Name="axi_uartlite_module_reports.tcl"/>
+  <File Type="RDS-RDS" Name="axi_uartlite_module.vds"/>
+  <File Type="RDS-UTIL" Name="axi_uartlite_module_utilization_synth.rpt"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_uartlite_module">
+    <File Path="$PSRCDIR/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="axi_uartlite_module"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_uartlite_module">
+    <File Path="$PSRCDIR/sources_1/ip/axi_uartlite_module/axi_uartlite_module.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="axi_uartlite_module"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
