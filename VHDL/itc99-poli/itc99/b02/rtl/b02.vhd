@@ -23,7 +23,7 @@ begin
     
     begin
         
-        if reset='1' then 
+        if reset='0' then 
            stato:=A;
            u<='0';
         elsif clock'event and clock='1' then
