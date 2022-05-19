@@ -25,6 +25,7 @@ begin
 	variable stato: integer range 7 downto 0;
 
         begin
+        -- modified the polarity to match "dffsre" Genesis polarities and avoid to have fake outlier versus Vivado
         if reset='0' then 
 		stato:=a;
 		outp<='0';
