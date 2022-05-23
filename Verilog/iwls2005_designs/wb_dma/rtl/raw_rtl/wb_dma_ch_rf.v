@@ -414,7 +414,8 @@ always @(posedge clk)
 
 // txsz shadow register
 always @(posedge clk)
-	if(CH_EN & HAVE_ARS)
+	//if(CH_EN & HAVE_ARS)
+	if(CH_EN)
 	   begin
 
 	//	if(ch_txsz_we)	ch_txsz_s <= #1 {wb_rf_din[26:16], wb_rf_din[11:0]};
@@ -427,7 +428,7 @@ always @(posedge clk)
                     end
 	   end
 else
-				ch_txsz_s <= #1 23'b1;
+ch_txsz_s <= #1 23'b1;
 
 // Infinite Size indicator
 always @(posedge clk)
@@ -450,7 +451,8 @@ always @(posedge clk)
 
 // Adr0 shadow register
 always @(posedge clk)
-	if(CH_EN & HAVE_ARS)
+	//if(CH_EN & HAVE_ARS)
+	if(CH_EN)
 	   begin
 //		if(ch_adr0_we)	ch_adr0_s <= #1 wb_rf_din[31:2];
 		if(ch_adr0_we)	ch_adr0_s <= #1 30'b1;
@@ -484,7 +486,8 @@ always @(posedge clk)
 
 // Adr1 shadow register
 always @(posedge clk)
-	if(CH_EN & HAVE_ARS)
+	//if(CH_EN & HAVE_ARS)
+	if(CH_EN)
 	   begin
 		//if(ch_adr1_we)	ch_adr1_s <= #1 wb_rf_din[31:2];
 		if(ch_adr1_we)	ch_adr1_s <= #1 30'b1;
