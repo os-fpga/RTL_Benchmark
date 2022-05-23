@@ -123,12 +123,14 @@ module sha3
 
   // alert signals
   logic round_count_error, msg_count_error;
+  assign msg_count_error=1'b0;
   assign count_error_o =  round_count_error | msg_count_error;
 
   logic sha3_state_error;
   logic keccak_round_state_error;
   logic sha3pad_state_error;
 
+  assign sha3pad_state_error=1'b0;
   assign sparse_fsm_error_o = sha3_state_error | keccak_round_state_error | sha3pad_state_error;
 
   /////////////////

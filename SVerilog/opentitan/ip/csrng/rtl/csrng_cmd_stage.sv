@@ -141,7 +141,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
         cmd_gen_1st_req ? {15'b0,cmd_gen_cnt_last,cmd_stage_shid_i,sfifo_cmd_rdata[11:0]} :
         cmd_arb_mop_o   ? sfifo_cmd_rdata :
         '0;
-
+  assign sfifo_cmd_full=1'b0;
   assign cmd_stage_rdy_o = !sfifo_cmd_full;
 
   assign sfifo_cmd_err =
@@ -151,6 +151,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
 
 
   // state machine controls
+  assign sfifo_cmd_depth='b0;
   assign cmd_fifo_zero = (sfifo_cmd_depth == '0);
   assign cmd_len = sfifo_cmd_rdata[7:4];
 
@@ -248,7 +249,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
   );
 
   assign state_q = state_e'(state_raw_q);
-
+  assign sfifo_genbits_full=1'b0;
   always_comb begin
     state_d = state_q;
     cmd_fifo_pop = 1'b0;

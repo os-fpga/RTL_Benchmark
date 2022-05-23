@@ -552,8 +552,8 @@ architecture BEHAV of b15 is
     CONSTANT StateT2P:      INTEGER := 6;
     CONSTANT StateT2I:      INTEGER := 7;
 
-    SIGNAL EAX: integer;
-    SIGNAL EBX: integer;
+    SIGNAL EAX: integer range 2**31 - 1 downto 0;
+    SIGNAL EBX: integer range 2**31 - 1 downto 0;
 
     SIGNAL rEIP:        integer;
 

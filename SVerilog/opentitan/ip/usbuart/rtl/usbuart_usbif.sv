@@ -93,7 +93,7 @@ module usbuart_usbif (
   logic [19:0]  host_presence_timer;
 
   assign status_device_address_o = dev_addr;
-
+  assign in_ep_acked=1'b0;
   logic  out_ctrl_put, out_ctrl_acked, out_ctrl_rollback;
   logic  in_ctrl_get, in_ctrl_acked, in_ctrl_rollback;
   assign out_ctrl_put      = out_ep_data_put && (out_ep_current == CtrlEp);

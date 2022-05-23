@@ -106,6 +106,7 @@ module tlul_adapter_reg import tlul_pkg::*; #(
   ////////////////////
   // Error Handling //
   ////////////////////
+  assign malformed_meta_err=1'b0;
   assign err_internal = addr_align_err | malformed_meta_err | tl_err ;
 
   // malformed_meta_err

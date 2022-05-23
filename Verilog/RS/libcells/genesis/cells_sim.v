@@ -1,5 +1,10 @@
 // Copyright (C) 2022 RapidSilicon
 //
+module \$_BUF_ (A, Y);
+input A;
+output Y;
+assign Y = A;
+endmodule
 
 module dff(
     output reg Q,

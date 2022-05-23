@@ -63,7 +63,8 @@ module i2c
     .intg_err_o(alerts[0]),
     .devmode_i(1'b1)
   );
-
+  assign cio_scl_o=1'b0;
+  assign cio_scl_en_o=1'b0;
   assign alert_test = {
     reg2hw.alert_test.q &
     reg2hw.alert_test.qe
@@ -85,7 +86,8 @@ module i2c
 
   logic scl_int;
   logic sda_int;
-
+  assign cio_sda_o=1'b0;
+  assign cio_sda_en_o=1'b0;
   i2c_core i2c_core (
     .clk_i,
     .rst_ni,

@@ -247,7 +247,7 @@ module csrng_ctr_drbg_upd #(
     .state_i ( outblk_state_d ),
     .state_o ( outblk_state_raw_q )
   );
-
+ assign sfifo_bencreq_full=1'b0;
   assign outblk_state_q = outblk_state_e'(outblk_state_raw_q);
 
   always_ff @(posedge clk_i or negedge rst_ni)
@@ -288,7 +288,7 @@ module csrng_ctr_drbg_upd #(
     .rready (sfifo_updreq_pop),
     .rdata  (sfifo_updreq_rdata)
   );
-
+  assign sfifo_updreq_full=1'b0;
   assign sfifo_updreq_push = !sfifo_updreq_full && ctr_drbg_upd_req_i;
   assign sfifo_updreq_wdata = {ctr_drbg_upd_key_i,ctr_drbg_upd_v_i,ctr_drbg_upd_pdata_i,
                                ctr_drbg_upd_inst_id_i,ctr_drbg_upd_ccmd_i};
@@ -330,7 +330,7 @@ module csrng_ctr_drbg_upd #(
              interate_ctr_q;
 
   assign interate_ctr_done = (int'(interate_ctr_q) >= SeedLen/BlkLen);
-
+  assign sfifo_pdata_full=1'b0;
   //--------------------------------------------
   // state machine to send values to block_encrypt
   //--------------------------------------------
@@ -441,7 +441,7 @@ module csrng_ctr_drbg_upd #(
     .rready (sfifo_bencack_pop),
     .rdata  (sfifo_bencack_rdata)
   );
-
+  assign sfifo_bencack_full=1'b0;
   assign sfifo_bencack_push = !sfifo_bencack_full && block_encrypt_ack_i;
   assign sfifo_bencack_wdata = {block_encrypt_v_i,block_encrypt_inst_id_i,block_encrypt_ccmd_i};
   assign block_encrypt_rdy_o = !sfifo_bencack_full;
@@ -517,7 +517,7 @@ module csrng_ctr_drbg_upd #(
          (!ctr_drbg_upd_enable_i) ? '0 :
          sfifo_bencack_pop ? sfifo_bencack_ccmd :
          concat_ccmd_q;
-
+  assign sfifo_final_full=1'b0;
   //--------------------------------------------
   // state machine to receive values from block_encrypt
   //--------------------------------------------

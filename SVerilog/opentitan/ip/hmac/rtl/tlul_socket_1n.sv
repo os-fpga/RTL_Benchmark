@@ -118,7 +118,7 @@ module tlul_socket_1n #(
   // Make N copies of 't' request side with modified reqvalid, call
   // them 'u[0]' .. 'u[n-1]'.
 
-  tlul_pkg::tl_h2d_t   tl_u_o [N+1];
+  //tlul_pkg::tl_h2d_t   tl_u_o [N+1];
   tlul_pkg::tl_d2h_t   tl_u_i [N+1];
 
   for (genvar i = 0 ; i < N ; i++) begin : gen_u_o
@@ -132,6 +132,7 @@ module tlul_socket_1n #(
     assign tl_u_o[i].a_address = tl_t_o.a_address;
     assign tl_u_o[i].a_mask    = tl_t_o.a_mask;
     assign tl_u_o[i].a_data    = tl_t_o.a_data;
+    assign tl_u_o[i].a_user.rsvd    = '0;
   end
 
   tlul_pkg::tl_d2h_t tl_t_p ;
@@ -164,7 +165,7 @@ module tlul_socket_1n #(
   assign tl_t_i.d_sink   = tl_t_p.d_sink  ;
   assign tl_t_i.d_data   = tl_t_p.d_data  ;
   assign tl_t_i.d_error  = tl_t_p.d_error ;
-
+  assign tl_t_i.d_user  = '0;
 
   // accept responses from devices when selected if upstream is accepting
   for (genvar i = 0 ; i < N+1 ; i++) begin : gen_u_o_d_ready

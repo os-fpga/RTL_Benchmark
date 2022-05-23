@@ -106,8 +106,9 @@ module tlul_adapter_reg import tlul_pkg::*; #(
   ////////////////////
   // Error Handling //
   ////////////////////
+  assign malformed_meta_err=1'b0;
   assign err_internal = addr_align_err | malformed_meta_err | tl_err ;
-
+  
   // malformed_meta_err
   //    Raised if not supported feature is turned on or user signal has malformed
   // assign malformed_meta_err = (tl_i.a_user.parity_en == 1'b1);

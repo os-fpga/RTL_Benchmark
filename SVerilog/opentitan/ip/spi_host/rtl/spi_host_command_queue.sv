@@ -34,7 +34,7 @@ module spi_host_command_queue #(
   assign error_busy_o   = command_valid_i & command_busy_o;
 
   logic [CmdDepthW-1:0] cmd_depth;
-
+  assign cmd_depth='b1;
   prim_fifo_sync #(
     .Width(spi_host_cmd_pkg::CmdSize),
     .Pass(1),

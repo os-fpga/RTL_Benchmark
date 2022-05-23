@@ -138,7 +138,9 @@ module clkmgr import clkmgr_pkg::*; (
   assign clocks_o.clk_main_secure = clk_main_root;
   assign clocks_o.clk_fixed_timers = clk_fixed_root;
   assign clocks_o.clk_proc_main = clk_main_root;
-
+  assign clocks_o.clk_usb_48mhz_powerup =0;
+  assign clocks_o.clk_main_powerup =0;
+  assign clocks_o.clk_fixed_powerup =0;
   ////////////////////////////////////////////////////
   // Software direct control group
   ////////////////////////////////////////////////////

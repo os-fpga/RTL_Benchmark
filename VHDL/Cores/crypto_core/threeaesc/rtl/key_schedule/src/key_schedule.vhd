@@ -18,6 +18,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.std_logic_ARITH.ALL;
 use IEEE.std_logic_UNSIGNED.ALL;
+library work;
 
 entity key_schedule is
 	port(clk   : in std_logic;
@@ -124,7 +125,7 @@ begin
 	
 	key_ready <= '1' when (count_5 = 1 and start = '1') else '0';
 		
-	S_BOX_DUAL_1: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(7 downto 0), w_3_i_s(15 downto 8),  (others=>'0'), g_sub_3_s, g_sub_0_s);
-	S_BOX_DUAL_2: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(23 downto 16),   w_3_i_s(31 downto 24), (others=>'0'), g_sub_1_s, g_sub_2_s); 
+	--S_BOX_DUAL_1: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(7 downto 0), w_3_i_s(15 downto 8),  (others=>'0'), g_sub_3_s, g_sub_0_s);
+	--S_BOX_DUAL_2: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(23 downto 16),   w_3_i_s(31 downto 24), (others=>'0'), g_sub_1_s, g_sub_2_s); 
 
 end Behavioral;

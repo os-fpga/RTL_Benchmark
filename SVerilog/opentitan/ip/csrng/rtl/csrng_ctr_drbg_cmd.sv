@@ -173,7 +173,7 @@ module csrng_ctr_drbg_cmd import csrng_pkg::*; #(
   assign {cmdreq_key,cmdreq_v,cmdreq_rc,
           cmdreq_entropy_fips,cmdreq_entropy,cmdreq_adata,
           cmdreq_glast,cmdreq_id,cmdreq_ccmd} = sfifo_cmdreq_rdata;
-
+  assign sfifo_cmdreq_full=1'b0;
   assign ctr_drbg_cmd_rdy_o = !sfifo_cmdreq_full;
 
   assign ctr_drbg_cmd_sfifo_cmdreq_err_o =
@@ -262,6 +262,7 @@ module csrng_ctr_drbg_cmd import csrng_pkg::*; #(
           (sfifo_rcstage_pop && !sfifo_rcstage_not_empty),
           (sfifo_rcstage_full && !sfifo_rcstage_not_empty)};
 
+  assign sfifo_keyvrc_full=1'b0;
   assign cmd_upd_rdy_o = sfifo_rcstage_not_empty && !sfifo_keyvrc_full;
 
   //--------------------------------------------

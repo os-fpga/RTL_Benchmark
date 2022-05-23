@@ -58,24 +58,24 @@ module IOBUF (O, IO, I, T);
     wire ts;
 
    // tri0 GTS = glbl.GTS;
-
-    or O1 (ts, GTS, T);
+    tri0 GTS=0
+    or O1 (ts, 1'b0, T);
     bufif0 T1 (IO, I, ts);
 
     buf B1 (O, IO);
 
-    initial begin
-
-        case (IBUF_LOW_PWR)
-
-            "FALSE", "TRUE" : ;
-            default : begin
-                          $display("Attribute Syntax Error : The attribute IBUF_LOW_PWR on IBUF instance %m is set to %s.  Legal values for this attribute are TRUE or FALSE.", IBUF_LOW_PWR);
-                          #1 $finish;
-                      end
-
-        endcase
-    end
+   // initial begin
+//
+   //     case (IBUF_LOW_PWR)
+//
+   //         "FALSE", "TRUE" : ;
+   //         default : begin
+   //                       $display("Attribute Syntax Error : The attribute IBUF_LOW_PWR on IBUF instance %m is set to %s.  Legal values for this attribute are TRUE or FALSE.", IBUF_LOW_PWR);
+   //                       #1 $finish;
+   //                   end
+//
+   //     endcase
+   // end
 
 `ifdef XIL_TIMING
     

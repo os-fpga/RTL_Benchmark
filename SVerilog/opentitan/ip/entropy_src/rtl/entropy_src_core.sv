@@ -589,7 +589,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
   assign hw2reg.fw_ov_rd_data.d = sfifo_observe_rdata;
   assign fw_ov_fifo_wr_pulse = reg2hw.fw_ov_wr_data.qe;
   assign fw_ov_wr_data = reg2hw.fw_ov_wr_data.q;
-
+  //assign en_entropy_src_fw_over='b0;
   assign efuse_es_sw_ov_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_over);
 
   prim_mubi8_sync #(
@@ -683,6 +683,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
 
 
   // set the interrupt sources
+  assign sha3_state_error=1'b0;
   assign event_es_fatal_err = (es_enable_q_fo[1] && (
                                              sfifo_esrng_err_sum ||
                                              sfifo_observe_err_sum ||
@@ -771,6 +772,8 @@ module entropy_src_core import entropy_src_pkg::*; #(
 
 
   // set the debug status reg
+  assign sfifo_esfinal_depth='b0;
+  assign sha3_block_processed=1'b0;
   assign hw2reg.debug_status.entropy_fifo_depth.d = sfifo_esfinal_depth;
   assign hw2reg.debug_status.sha3_fsm.d = sha3_fsm;
   assign hw2reg.debug_status.sha3_block_pr.d = sha3_block_processed;
@@ -816,6 +819,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
   assign sfifo_esrng_pop = es_enable_q_fo[11] && sfifo_esrng_not_empty;
 
   // fifo err
+  assign sfifo_esrng_full=1'b0;
   assign sfifo_esrng_err =
          {(sfifo_esrng_push && sfifo_esrng_full),
          (sfifo_esrng_pop && !sfifo_esrng_not_empty),
@@ -1341,7 +1345,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
 
   // Window wrap condition
   assign health_test_done_pulse = (window_cntr >= health_test_window);
-
+  assign sha3_count_error=1'b0;
   // Summary of counter errors
   assign es_cntr_err =
          (window_cntr_err ||
@@ -2129,7 +2133,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
     .rready   (sfifo_observe_pop)
   );
 
-
+  assign sfifo_observe_depth='b0;
   assign observe_fifo_thresh_met = fw_ov_mode && (observe_fifo_thresh <= sfifo_observe_depth);
 
   // fifo controls
@@ -2439,7 +2443,7 @@ module entropy_src_core import entropy_src_pkg::*; #(
   assign es_data_reg_rd_en = es_enable_q_fo[39] && efuse_es_sw_reg_en && entropy_data_reg_en_pfe;
   assign hw2reg.entropy_data.d = es_data_reg_rd_en ? pfifo_swread_rdata : '0;
   assign sw_es_rd_pulse = es_data_reg_rd_en && reg2hw.entropy_data.re;
-
+  //assign en_entropy_src_fw_read='b1;
   assign efuse_es_sw_reg_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_read);
 
   prim_mubi8_sync #(
