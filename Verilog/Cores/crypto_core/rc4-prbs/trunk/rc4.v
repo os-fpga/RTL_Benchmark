@@ -77,12 +77,12 @@ always @ (posedge clk or posedge rst)
 					key[i] <= password_input;
 					$display ("rc4: key[%d] = %08X",i,password_input);
 					end
-				end
-/*
-for i from 0 to 255
+for (i = 0; i < 255; i=i+1)
     S[i] := i
-endfor
-*/
+				end
+
+
+
 		`KSS_KEYSCHED1:	begin // KSS_KEYSCHED1: Increment counter for S initialization
 				S[i] <= i;
 				if (i == 8'hFF)

@@ -57,7 +57,8 @@ module IOBUF (O, IO, I, T);
 
     wire ts;
 
-   // tri0 GTS = glbl.GTS;
+    //tri0 GTS = glbl.GTS;
+    tri0 GTS = 0;
 
     or O1 (ts, GTS, T);
     bufif0 T1 (IO, I, ts);

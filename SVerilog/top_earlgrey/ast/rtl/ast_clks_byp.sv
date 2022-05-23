@@ -189,7 +189,7 @@ prim_clock_gating  u_clk_ext_usb_ckgt (
 ////////////////////////////////////////
 
 // Sync to local AON clcok
-prim_mubi_pkg::mubi4_t io_clk_byp_req, all_clk_byp_req;
+//prim_mubi_pkg::mubi4_t io_clk_byp_req, all_clk_byp_req;
 logic sw_ext_freq_is_96m;
 
 prim_mubi4_sync #(
@@ -223,11 +223,11 @@ prim_flop_2sync #(
 // Decode logic
 logic sys_clk_byp, usb_clk_byp, aon_clk_byp;
 
-prim_mubi4_dec u_all_byp_sel ( .mubi_i ( all_clk_byp_req ), .mubi_dec_o ( all_clk_byp ) );
-prim_mubi4_dec u_sys_byp_sel ( .mubi_i ( all_clk_byp_req ), .mubi_dec_o ( sys_clk_byp ) );
-prim_mubi4_dec u_io_byp_sel  ( .mubi_i ( io_clk_byp_req ),  .mubi_dec_o ( io_clk_byp ) );
-prim_mubi4_dec u_usb_byp_sel ( .mubi_i ( all_clk_byp_req ), .mubi_dec_o ( usb_clk_byp ) );
-prim_mubi4_dec u_aon_byp_sel ( .mubi_i ( all_clk_byp_req ), .mubi_dec_o ( aon_clk_byp ) );
+prim_mubi4_dec u_all_byp_sel ( .mubi_i ( all_clk_byp_req_i ), .mubi_dec_o ( all_clk_byp ) );
+prim_mubi4_dec u_sys_byp_sel ( .mubi_i ( all_clk_byp_req_i ), .mubi_dec_o ( sys_clk_byp ) );
+prim_mubi4_dec u_io_byp_sel  ( .mubi_i ( io_clk_byp_req_i ),  .mubi_dec_o ( io_clk_byp ) );
+prim_mubi4_dec u_usb_byp_sel ( .mubi_i ( all_clk_byp_req_i ), .mubi_dec_o ( usb_clk_byp ) );
+prim_mubi4_dec u_aon_byp_sel ( .mubi_i ( all_clk_byp_req_i ), .mubi_dec_o ( aon_clk_byp ) );
 
 // De-Glitch selects (decode "noise")
 logic sw_all_clk_byp, sw_sys_clk_byp, sw_io_clk_byp, sw_usb_clk_byp, sw_aon_clk_byp;

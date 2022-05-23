@@ -417,11 +417,17 @@ always @(posedge clk)
 	if(CH_EN & HAVE_ARS)
 	   begin
 
-		if(ch_txsz_we)	ch_txsz_s <= #1 {wb_rf_din[26:16], wb_rf_din[11:0]};
+	//	if(ch_txsz_we)	ch_txsz_s <= #1 {wb_rf_din[26:16], wb_rf_din[11:0]};
+		if(ch_txsz_we)	ch_txsz_s <= #1 23'b0;
 		else
 		if(rest_en & ch_txsz_dewe & de_fetch_descr)
-				ch_txsz_s[11:0] <= #1 de_txsz[11:0];
+                    begin
+	//			ch_txsz_s[11:0] <= #1 de_txsz[11:0];
+				ch_txsz_s <= #1 23'b1;
+                    end
 	   end
+else
+				ch_txsz_s <= #1 23'b1;
 
 // Infinite Size indicator
 always @(posedge clk)
@@ -446,11 +452,16 @@ always @(posedge clk)
 always @(posedge clk)
 	if(CH_EN & HAVE_ARS)
 	   begin
-		if(ch_adr0_we)	ch_adr0_s <= #1 wb_rf_din[31:2];
-		else
+//		if(ch_adr0_we)	ch_adr0_s <= #1 wb_rf_din[31:2];
+		if(ch_adr0_we)	ch_adr0_s <= #1 30'b1;
+
 		if(rest_en & ch_adr0_dewe & de_fetch_descr)
-				ch_adr0_s <= #1 de_adr0[31:2];
+//				ch_adr0_s <= #1 de_adr0[31:2];
+				ch_adr0_s <= #1 30'b1;
 	   end
+else
+				ch_adr0_s <= #1 30'b1;
+
 
 // ---------------------------------------------------
 // AM0
@@ -475,11 +486,15 @@ always @(posedge clk)
 always @(posedge clk)
 	if(CH_EN & HAVE_ARS)
 	   begin
-		if(ch_adr1_we)	ch_adr1_s <= #1 wb_rf_din[31:2];
+		//if(ch_adr1_we)	ch_adr1_s <= #1 wb_rf_din[31:2];
+		if(ch_adr1_we)	ch_adr1_s <= #1 30'b1;
 		else
 		if(rest_en & ch_adr1_dewe & de_fetch_descr)
-				ch_adr1_s <= #1 de_adr1[31:2];
+				//ch_adr1_s <= #1 de_adr1[31:2];
+				ch_adr1_s <= #1 30'b1;
 	   end
+else
+				ch_adr1_s <= #1 30'b1;
 
 // ---------------------------------------------------
 // AM1
