@@ -499,6 +499,7 @@ module edn_core import edn_pkg::*;
          (!edn_enable_fo[15]) ? '0 :
          (cmd_fifo_rst_fo[1] || auto_req_mode_end);
 
+  assign sfifo_rescmd_full = '0;
   assign sfifo_rescmd_err =
          {(sfifo_rescmd_push && sfifo_rescmd_full),
           (sfifo_rescmd_pop && !sfifo_rescmd_not_empty),
@@ -542,6 +543,7 @@ module edn_core import edn_pkg::*;
          (!edn_enable_fo[17]) ? '0 :
          (cmd_fifo_rst_fo[2] || auto_req_mode_end);
 
+  assign sfifo_gencmd_full = '0;
   assign sfifo_gencmd_err =
          {(sfifo_gencmd_push && sfifo_gencmd_full),
           (sfifo_gencmd_pop && !sfifo_gencmd_not_empty),
@@ -596,7 +598,9 @@ module edn_core import edn_pkg::*;
 
   assign max_reqs_cnt_zero = boot_auto_req_dly_q ? 1'b0 : (max_reqs_cnt == '0);
 
+  assign sfifo_rescmd_depth = '0;
 
+  assign sfifo_gencmd_depth = '0;
   assign cmd_fifo_cnt_d =
          (!edn_enable_fo[18]) ? '0 :
          (cmd_fifo_rst_fo[3] || !seq_auto_req_mode) ? '0 :

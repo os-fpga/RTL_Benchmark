@@ -110,7 +110,8 @@ module tlul_adapter_reg import tlul_pkg::*; #(
 
   // malformed_meta_err
   //    Raised if not supported feature is turned on or user signal has malformed
-  // assign malformed_meta_err = (tl_i.a_user.parity_en == 1'b1);
+   //assign malformed_meta_err = (tl_i.a_user.parity_en == 1'b1);
+   assign malformed_meta_err = 1'b0;
 
   // addr_align_err
   //    Raised if addr isn't aligned with the size

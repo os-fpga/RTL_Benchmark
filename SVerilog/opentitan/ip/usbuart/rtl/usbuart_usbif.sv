@@ -96,6 +96,7 @@ module usbuart_usbif (
 
   logic  out_ctrl_put, out_ctrl_acked, out_ctrl_rollback;
   logic  in_ctrl_get, in_ctrl_acked, in_ctrl_rollback;
+  assign in_ep_acked = '0;
   assign out_ctrl_put      = out_ep_data_put && (out_ep_current == CtrlEp);
   assign out_ctrl_acked    = out_ep_acked    && (out_ep_current == CtrlEp);
   assign out_ctrl_rollback = out_ep_rollback && (out_ep_current == CtrlEp);
