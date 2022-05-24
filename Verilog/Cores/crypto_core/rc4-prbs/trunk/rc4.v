@@ -77,8 +77,7 @@ always @ (posedge clk or posedge rst)
 					key[i] <= password_input;
 					$display ("rc4: key[%d] = %08X",i,password_input);
 					end
-for (i = 0; i < 255; i=i+1)
-    S[i] := i
+    					S[i] <= i;
 				end
 
 
