@@ -22,8 +22,8 @@ begin
 	variable stato:integer range 6 downto 0;
     
     begin
-        
-        if reset='1' then 
+        -- modified the polarity to match "dffsre" Genesis polarities and avoid to have fake outlier versus Vivado 
+        if reset='0' then 
            stato:=A;
            u<='0';
         elsif clock'event and clock='1' then
