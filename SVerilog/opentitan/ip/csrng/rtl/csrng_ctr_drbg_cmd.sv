@@ -175,6 +175,7 @@ module csrng_ctr_drbg_cmd import csrng_pkg::*; #(
           cmdreq_glast,cmdreq_id,cmdreq_ccmd} = sfifo_cmdreq_rdata;
 
   assign ctr_drbg_cmd_rdy_o = !sfifo_cmdreq_full;
+  assign sfifo_cmdreq_full = '0;
 
   assign ctr_drbg_cmd_sfifo_cmdreq_err_o =
          {(sfifo_cmdreq_push && sfifo_cmdreq_full),
@@ -250,6 +251,7 @@ module csrng_ctr_drbg_cmd import csrng_pkg::*; #(
   );
 
   assign sfifo_rcstage_push = sfifo_cmdreq_pop;
+  assign sfifo_rcstage_full = '0;
   assign sfifo_rcstage_wdata = {prep_key,prep_v,cmdreq_id,prep_rc,cmdreq_entropy_fips,
                                 cmdreq_adata,cmdreq_glast,cmdreq_ccmd};
   assign sfifo_rcstage_pop = sfifo_rcstage_not_empty && (upd_cmd_ack_i || gen_adata_null_q);
@@ -263,6 +265,7 @@ module csrng_ctr_drbg_cmd import csrng_pkg::*; #(
           (sfifo_rcstage_full && !sfifo_rcstage_not_empty)};
 
   assign cmd_upd_rdy_o = sfifo_rcstage_not_empty && !sfifo_keyvrc_full;
+  assign sfifo_keyvrc_full = '0;
 
   //--------------------------------------------
   // final cmd block processing

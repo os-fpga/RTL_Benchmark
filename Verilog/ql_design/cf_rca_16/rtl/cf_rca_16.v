@@ -677,7 +677,7 @@ cf_rca_16_38 s19 (s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9,
 cf_rca_16_32 s20 (n2, s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9, s19_10, s19_11, s19_12, s19_13, s19_14, s19_15, s19_16, n3, s20_1);
 cf_rca_16_22 s21 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s22_4, n8, n9, n16, s21_1, s21_2, s21_3, s21_4);
 cf_rca_16_29 s22 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s21_1, n15, s22_1, s22_2, s22_3, s22_4);
-//cf_rca_16_5 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_5 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -845,7 +845,7 @@ cf_rca_16_38 s19 (s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9,
 cf_rca_16_32 s20 (n2, s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9, s19_10, s19_11, s19_12, s19_13, s19_14, s19_15, s19_16, n3, s20_1);
 cf_rca_16_22 s21 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s22_4, n8, n9, n16, s21_1, s21_2, s21_3, s21_4);
 cf_rca_16_29 s22 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s21_1, n15, s22_1, s22_2, s22_3, s22_4);
-//cf_rca_16_6 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_6 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1010,7 +1010,7 @@ cf_rca_16_38 s19 (s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9,
 cf_rca_16_32 s20 (n2, s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9, s19_10, s19_11, s19_12, s19_13, s19_14, s19_15, s19_16, n3, s20_1);
 cf_rca_16_22 s21 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s22_4, n8, n9, n16, s21_1, s21_2, s21_3, s21_4);
 cf_rca_16_29 s22 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s21_1, n15, s22_1, s22_2, s22_3, s22_4);
-//cf_rca_16_7 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_7 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1172,7 +1172,7 @@ cf_rca_16_38 s19 (s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9,
 cf_rca_16_32 s20 (n2, s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9, s19_10, s19_11, s19_12, s19_13, s19_14, s19_15, s19_16, n3, s20_1);
 cf_rca_16_22 s21 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s22_4, n8, n9, n16, s21_1, s21_2, s21_3, s21_4);
 cf_rca_16_29 s22 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s21_1, n15, s22_1, s22_2, s22_3, s22_4);
-//cf_rca_16_8 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_8 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1331,7 +1331,7 @@ cf_rca_16_38 s19 (s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9,
 cf_rca_16_32 s20 (n2, s19_1, s19_2, s19_3, s19_4, s19_5, s19_6, s19_7, s19_8, s19_9, s19_10, s19_11, s19_12, s19_13, s19_14, s19_15, s19_16, n3, s20_1);
 cf_rca_16_22 s21 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s22_4, n8, n9, n16, s21_1, s21_2, s21_3, s21_4);
 cf_rca_16_29 s22 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s21_1, n15, s22_1, s22_2, s22_3, s22_4);
-//cf_rca_16_9 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_9 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1487,7 +1487,7 @@ cf_rca_16_22 s19 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s20_4, n8, n
 cf_rca_16_29 s20 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s19_1, n15, s20_1, s20_2, s20_3, s20_4);
 cf_rca_16_38 s21 (s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16);
 cf_rca_16_32 s22 (n2, s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16, n3, s22_1);
-//cf_rca_16_10 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_10 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1640,7 +1640,7 @@ cf_rca_16_22 s19 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s20_4, n8, n
 cf_rca_16_29 s20 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s19_1, n15, s20_1, s20_2, s20_3, s20_4);
 cf_rca_16_38 s21 (s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16);
 cf_rca_16_32 s22 (n2, s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16, n3, s22_1);
-//cf_rca_16_11 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_11 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
@@ -1790,7 +1790,7 @@ cf_rca_16_29 s19 (clock_config_c, clock_main_c, i1, i2, i3, i6, n4, n6, n7, s20_
 cf_rca_16_18 s20 (clock_config_c, clock_main_c, i1, i2, i3, i6, n5, s19_4, n8, n9, n16, s20_1, s20_2, s20_3, s20_4);
 cf_rca_16_38 s21 (s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16);
 cf_rca_16_32 s22 (n2, s21_1, s21_2, s21_3, s21_4, s21_5, s21_6, s21_7, s21_8, s21_9, s21_10, s21_11, s21_12, s21_13, s21_14, s21_15, s21_16, n3, s22_1);
-//cf_rca_16_12 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
+cf_rca_16_12 s23 (clock_config_c, clock_main_c, i1, i2, i3, i4, i5, i6, n11, n12, n13, n14, s23_1, s23_2, s23_3, s23_4);
 assign o4 = n18;
 assign o3 = n17;
 assign o2 = s23_2;
