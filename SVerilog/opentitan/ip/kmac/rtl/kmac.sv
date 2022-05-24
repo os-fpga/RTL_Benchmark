@@ -1021,6 +1021,7 @@ module kmac
     logic entropy_req, entropy_ack, entropy_fips;
     logic [MsgWidth-1:0] entropy_data;
     logic unused_entropy_fips;
+    assign entropy_fips = '0;
     assign unused_entropy_fips = entropy_fips;
 
     // EDN Request

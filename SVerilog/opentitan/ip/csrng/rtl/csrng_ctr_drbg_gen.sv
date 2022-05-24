@@ -282,6 +282,7 @@ module csrng_ctr_drbg_gen import csrng_pkg::*; #(
           genreq_id,genreq_ccmd} = sfifo_genreq_rdata;
 
   assign ctr_drbg_gen_rdy_o = !sfifo_genreq_full;
+  assign sfifo_genreq_full = '0;
 
   assign ctr_drbg_gen_sfifo_ggenreq_err_o =
          {(sfifo_genreq_push && sfifo_genreq_full),
@@ -401,6 +402,7 @@ module csrng_ctr_drbg_gen import csrng_pkg::*; #(
   assign sfifo_adstage_pop = sfifo_adstage_not_empty && sfifo_bencack_pop;
   assign {adstage_key,adstage_v,adstage_rc,adstage_fips,adstage_glast} = sfifo_adstage_rdata;
 
+assign sfifo_adstage_full = '0;
   assign ctr_drbg_gen_sfifo_gadstage_err_o =
          {(sfifo_adstage_push && sfifo_adstage_full),
           (sfifo_adstage_pop && !sfifo_adstage_not_empty),
@@ -454,10 +456,11 @@ module csrng_ctr_drbg_gen import csrng_pkg::*; #(
 
   assign bencack_ccmd_modified = (block_encrypt_ccmd_i == GENB) ? GENU : INV;
 
+  assign sfifo_bencack_full = '0;
   assign sfifo_bencack_push = !sfifo_bencack_full && block_encrypt_ack_i;
   assign sfifo_bencack_wdata = {block_encrypt_v_i,block_encrypt_inst_id_i,bencack_ccmd_modified};
   assign block_encrypt_rdy_o = !sfifo_bencack_full;
-
+  assign sfifo_rcstage_full = '0;
   assign sfifo_bencack_pop = !sfifo_rcstage_full && sfifo_bencack_not_empty &&
                              (upd_gen_rdy_i || !adstage_glast);
 
@@ -520,6 +523,7 @@ module csrng_ctr_drbg_gen import csrng_pkg::*; #(
           (sfifo_rcstage_pop && !sfifo_rcstage_not_empty),
           (sfifo_rcstage_full && !sfifo_rcstage_not_empty)};
 
+  assign sfifo_genbits_full = '0;
   assign gen_upd_rdy_o = sfifo_rcstage_not_empty && !sfifo_genbits_full;
 
 

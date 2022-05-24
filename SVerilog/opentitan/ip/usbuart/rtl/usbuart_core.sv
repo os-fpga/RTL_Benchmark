@@ -229,6 +229,8 @@ module usbuart_core (
   logic usb_tx_se0;
   logic usb_tx_oe;
 
+  assign usb_rx_se0 = '0;
+
   usbuart_usbif usbuart_usbif (
     .clk_48mhz_i (clk_usb_48mhz_i),
     .rst_ni      (rst_usb_48mhz_ni & cio_usb_sense_i), // TODO: This is not a safe way to create a
