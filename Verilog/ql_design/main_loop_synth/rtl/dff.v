@@ -1,4 +1,4 @@
-module dff(
+module ql_dff(
     output reg Q,
     input D,
     (* clkbuf_sink *)
