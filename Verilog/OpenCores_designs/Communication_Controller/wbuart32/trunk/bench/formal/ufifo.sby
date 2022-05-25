@@ -1,0 +1,12 @@
+[options]
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal -DUFIFO ufifo.v
+prep -top ufifo
+
+[files]
+../../rtl/ufifo.v
