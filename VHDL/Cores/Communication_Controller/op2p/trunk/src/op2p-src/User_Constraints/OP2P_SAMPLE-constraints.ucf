@@ -1,0 +1,57 @@
+##################################################################################
+## S6BF_board pinout and constraints
+## 
+#################################################################################
+CONFIG PART = xc6slx45t-fgg484-2;
+
+#  Required ISE settings: Synthesis-KeepHierarchy=Yes, Translate-AllowUnmatched_XX_Constraints=Yes
+#  If there are timingerrors we still might want to procees to be able to analyze the violation
+#  details. For this, we have to set the windows env.variable XIL_TIMING_ALLOW_IMPOSSIBLE to 1.
+########OVERRIDE ISE TIMING ERRORS: ##########
+
+PIN "BUFG_inst_25mhzin.O" CLOCK_DEDICATED_ROUTE = "FALSE";
+
+
+
+############################# AURORA INTERFACE IP ################################
+## THIS: Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified
+## WILL HAVE TO BE REPLACED TO YOUR PROJECT'S APPROPRIATE SOURCE/PATH.
+## HE LOC VALUES MIGHT HAVE TO BE REPLACED TOO...
+
+# Reference clock constraint for GTP
+# GT REFCLK 
+INST "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/IBUFDS_i" LOC = BUFDS_X2Y2;
+NET "GTPD1_P" LOC = A12;
+NET "GTPD1_N" LOC = B12;
+
+NET "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i" TNM_NET = "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i";
+TIMESPEC TS_Inst_s6bfip_op2p_Inst_op2p_exmpl_des_modified_gtpclkout_i = PERIOD "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i" 75 MHz HIGH 50 %;
+
+NET "GTPD1_P" TNM_NET = "GTPD1_P";
+TIMESPEC TS_GTPD1_P = PERIOD "GTPD1_P" 13.333 ns HIGH 50 %;
+
+#FORCE BUFIO2 PLACEMENT, TO PREVENT RESOURCE CONFLICT
+INST "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/BUFIO2_i" LOC = BUFIO2_X4Y28;
+
+
+
+
+# ###################### CONSTRAINT EDITOR WIZARD GENERATED #######################
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/14
+NET "x25m_clkin_pin" TNM_NET = "x25m_clkin_pin";
+TIMESPEC TS_x25m_clkin_pin = PERIOD "x25m_clkin_pin" 25 MHz HIGH 50 %;
+
+
+## ###################### PIN LOCATIONS: ######################
+INST "Inst_s6bfip_aurora/Inst_op2p_exmpl_des_modified/op2p_module_i/gtp_wrapper_i/GTP_TILE_INST/gtpa1_dual_i" LOC = GTPA1_DUAL_X1Y0;
+NET "op2p_TXP[0]" LOC = B14;
+NET "op2p_RXP[0]" LOC = D13;
+NET "op2p_TXP[1]" LOC = B16;
+NET "op2p_RXN[0]" LOC = C13;
+NET "op2p_TXN[0]" LOC = A14;
+NET "op2p_TXN[1]" LOC = A16;
+NET "op2p_RXP[1]" LOC = D15;
+NET "op2p_RXN[1]" LOC = C15;
+
+
+

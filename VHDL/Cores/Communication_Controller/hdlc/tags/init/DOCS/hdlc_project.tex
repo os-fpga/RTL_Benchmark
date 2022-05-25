@@ -1,0 +1,239 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fancyheadings}
+\usepackage{lastpage}
+\pagestyle{fancy}
+
+%% defined commands
+\newcommand{\openhw}{\mbox{\textbf{\textit{OpenHW}}}}
+\newcommand{\opendesign}{\mbox{\textbf{\textit{OpenDesign}}}}
+\newcommand{\openipcore}{\mbox{\textbf{\textit{OpenIPCore}}}}
+\newcommand{\opencores}{\mbox{\textbf{\textit{OpenCores}}}}
+
+%% addcomment command: Author name: Comments
+\newcommand{\addcomment}[2]{\rule{1ex}{1ex} \emph{Comment by \textbf{#1}: #2 }\rule{1ex}{1ex}}
+
+%% addauthor command: Author name : List of changes: date: contact address
+\newcommand{\addauthor}[4]{#1 & #2 & #3 & #4 \\ \hline}
+
+
+
+%% Optional suffix or prefix
+\newcommand{\prefix}[1]{[\textit{#1\_}]}
+\newcommand{\suffix}[1]{[\textit{\_#1}]}
+
+
+%% Must define Project Name
+%% Must define Author Name
+
+\author{Jamil Khatib}
+\title{HDLC controller core}
+
+
+
+%% Hyphenation list %%
+\hyphenation{OpenIP OpenIPCore OpenHW OpenDesign OpenCores ISP CPLD FPGA CAD VHDL hard-ware soft-ware DSP ASIC}
+
+
+%%Headers & footers
+\lhead{\uppercase\rightmark}
+\chead{}
+\rhead{\bfseries \opencores Project}
+\lfoot{HDLC controller}
+\cfoot{}
+\rfoot{\thepage~ of \pageref{LastPage}}
+\setlength{\headrulewidth}{0.4pt}
+\setlength{\footrulewidth}{0.4pt}
+
+%% begin Document
+\begin{document}
+%% Cover page
+\maketitle
+
+\begin{center}(C) Copyright 2001 Jamil Khatib.\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+
+%%Table of contents page
+\tableofcontents
+
+\newpage
+
+\section{List of authors and changes}
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Name & Changes & Date & Contact address\\
+\hline
+\hline 
+
+\addauthor{Jamil Khatib}{Initial release}{9-1-2001}{khatib@ieee.org}
+%% use add author command here
+
+
+\end{tabular}
+
+\newpage
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Project Definition}
+
+\subsection{Introduction}
+HDLC protocol is used as a data link of most of the current communication systems like ISDN, Frame Relay, Ethernet \dots HDLC is a family of protocols that varies in address size, control field and FCS.
+
+%\subsection{Definition}
+
+\subsection{Objectives}
+The aim of this project is to develop the basic HDLC functionalities to be used by many communication systems.
+
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Specifications}
+
+\subsection{System Specification}
+\begin{itemize}
+\item 1. 8 bit parallel back-end interface
+\item 2. Use external RX and TX clocks
+\item 3. Start and end of frame pattern generation
+\item 4. Start and end of frame pattern checking
+\item 5. Idle pattern generation and detection (all ones)
+\item 5. a)  Idle pattern is assumed only after the end of a frame which is signaled by an abort signal
+\item 6. Zero insertion
+\item 7. Abort pattern generation and checking
+\item 8. Address insertion and detection by software
+\item 9. CRC generation and checking (Optional, external, since CRC-16 or CRC-32 can be used )
+\item 10. FIFO buffers and synchronization (External)
+\item 11. Byte aligned data (if data is not aligned to 8-bits extra random bits are inserted)
+\item 12. Q.921 compliant
+\end{itemize}
+
+\subsection{External Interfaces}
+
+\subsubsection{Receive Channel}
+
+
+\begin{tabular}{|l|l|l|}
+\hline
+Signal name& Direction& Description\\
+\hline
+\hline
+Serial Interface & & \\
+\hline
+\hline
+RxClk & Input & Receive Clock\\
+Rx & Input& Receive Data\\
+\hline
+\hline
+Back-end Interface & &\\
+\hline
+\hline
+RxD[7:0]& Output& Receive data bus\\
+Valid Frame& Output& Valid Frame indication during all frame bytes transfer\\
+Frame Error& Output& Error in the received data (lost bits)\\
+Aborted& Output& Aborted Frame\\
+Read& input& Read byte\\
+Ready& Output& Valid data exists\\
+\hline
+\end{tabular}
+
+\subsubsection{Back-end interface mapping to Wishbone SoC bus}
+
+\begin{tabular}{|l|l|}
+\hline
+Signal Name& Wishbone signal\\
+\hline
+\hline
+Master Configuration connected to FIFO&\\
+\hline
+Data[7:0]& DAT\_O[7:0]\\
+ValidFrame& STB\_O\\
+ReadByte& ACK\_I and not RTY\_I\\
+ready& WE\_O\\
+FrameERR& TAG\_O[0]\\
+Aborted& TAG\_O[1]\\
+\hline
+Slave FIFO(two-clock domain FIFO)&\\
+\hline
+Data[7:0]& DAT\_I[7:0]\\
+Chip Select& STB\_I\\
+STB\_I& ACK\_O\\
+FullFlag& RTY\_O\\
+Write& WE\_I\\
+\hline
+Slave Configuration &\\
+\hline
+Data[7:0]& DAT\_O[7:0]\\
+ValidFrame& TAG\_O[0]\\
+ReadByte& WE\_I\\
+Ready& RTY\_O\\
+Always active& ACK\_O\\
+FrameERR& TAG\_O[1]\\
+Aborted& TAG\_O[0]\\
+\hline
+\end{tabular}
+
+
+\subsubsection{Transmit Channel}
+
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Internal Blocks}
+
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Design description}
+
+\subsection{Design notes}
+\subsection{Timing}
+\subsection{Diagrams}
+
+
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Testing and verifications}
+
+
+\begin{tabular}{|l|l|l|}
+\hline
+Requirement & Test method & Validation method \\
+\hline
+\hline
+Interface timing & &\\
+\hline
+& & \\
+\hline
+\hline
+Functionality & & \\
+\hline
+\end{tabular}
+\subsection{Simulation and Test benches}
+
+\subsection{Verification techniques and algorithms}
+
+\subsection{Test plans}
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Implementations}
+
+\subsection{Scripts, files and any other information}
+
+\subsection{Design conventions and coding styles}
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{Reviews and comments}
+
+%%- New section -%%
+%%------------------------------------------%%
+\section{References}
+
+
+\end{document}
