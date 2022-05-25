@@ -591,7 +591,8 @@ module entropy_src_core import entropy_src_pkg::*; #(
   assign fw_ov_fifo_wr_pulse = reg2hw.fw_ov_wr_data.qe;
   assign fw_ov_wr_data = reg2hw.fw_ov_wr_data.q;
 
-  assign efuse_es_sw_ov_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_over);
+  //assign efuse_es_sw_ov_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_over);
+  assign efuse_es_sw_ov_en = '0;
 
   prim_mubi8_sync #(
     .NumCopies(1),
@@ -599,8 +600,8 @@ module entropy_src_core import entropy_src_pkg::*; #(
   ) u_prim_mubi8_sync_es_fw_over (
     .clk_i,
     .rst_ni,
-    .mubi_i(otp_en_entropy_src_fw_over_i),
-    .mubi_o(en_entropy_src_fw_over)
+    .mubi_i(otp_en_entropy_src_fw_over_i)
+    //.mubi_o(en_entropy_src_fw_over)
   );
 
   assign entropy_src_rng_o.rng_enable = es_enable_q_fo[0];
@@ -2449,7 +2450,8 @@ module entropy_src_core import entropy_src_pkg::*; #(
   assign hw2reg.entropy_data.d = es_data_reg_rd_en ? pfifo_swread_rdata : '0;
   assign sw_es_rd_pulse = es_data_reg_rd_en && reg2hw.entropy_data.re;
 
-  assign efuse_es_sw_reg_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_read);
+  //assign efuse_es_sw_reg_en = prim_mubi_pkg::mubi8_test_true_strict(en_entropy_src_fw_read);
+  assign efuse_es_sw_reg_en = '0;
 
   prim_mubi8_sync #(
     .NumCopies(1),
@@ -2457,8 +2459,8 @@ module entropy_src_core import entropy_src_pkg::*; #(
   ) u_prim_mubi8_sync_es_fw_read (
     .clk_i,
     .rst_ni,
-    .mubi_i(otp_en_entropy_src_fw_read_i),
-    .mubi_o(en_entropy_src_fw_read)
+    .mubi_i(otp_en_entropy_src_fw_read_i)
+    //.mubi_o(en_entropy_src_fw_read)
   );
 
   //--------------------------------------------
