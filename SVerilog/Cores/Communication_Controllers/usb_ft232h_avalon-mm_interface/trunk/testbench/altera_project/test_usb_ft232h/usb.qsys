@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element usb_ft232h_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="EP4CE22E22C8" />
+ <parameter name="deviceFamily" value="Cyclone IV E" />
+ <parameter name="deviceSpeedGrade" value="8" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="test_usb_ft232h.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="avalon_slave"
+   internal="usb_ft232h_0.avalon_slave"
+   type="avalon"
+   dir="end">
+  <port name="address_i" internal="address_i" />
+  <port name="read_i" internal="read_i" />
+  <port name="write_i" internal="write_i" />
+  <port name="writedata_i" internal="writedata_i" />
+  <port name="readdata_o" internal="readdata_o" />
+  <port name="waitrequest_o" internal="waitrequest_o" />
+  <port name="readdatavalid_o" internal="readdatavalid_o" />
+ </interface>
+ <interface
+   name="clock_sink"
+   internal="usb_ft232h_0.clock_sink"
+   type="clock"
+   dir="end">
+  <port name="clk_i" internal="clk_i" />
+ </interface>
+ <interface name="ft232h" internal="usb_ft232h_0.ft232h" type="conduit" dir="end">
+  <port name="usb_clk_i" internal="usb_clk_i" />
+  <port name="usb_rxf_n_i" internal="usb_rxf_n_i" />
+  <port name="usb_oe_n_o" internal="usb_oe_n_o" />
+  <port name="usb_wr_n_o" internal="usb_wr_n_o" />
+  <port name="usb_rd_n_o" internal="usb_rd_n_o" />
+  <port name="usb_data_io" internal="usb_data_io" />
+  <port name="usb_txe_n_i" internal="usb_txe_n_i" />
+ </interface>
+ <interface
+   name="reset_sink"
+   internal="usb_ft232h_0.reset_sink"
+   type="reset"
+   dir="end">
+  <port name="reset_i" internal="reset_i" />
+ </interface>
+ <module
+   name="usb_ft232h_0"
+   kind="usb_ft232h"
+   version="1.5"
+   enabled="1"
+   autoexport="1">
+  <parameter name="AVALON_READ_LATENCY" value="1" />
+  <parameter name="AVALON_WRITE_LATENCY" value="1" />
+  <parameter name="FIFOS_DELAYPIPE" value="3" />
+  <parameter name="RX_FIFO_NUMWORDS" value="2048" />
+  <parameter name="RX_FIFO_WIDTHU" value="11" />
+  <parameter name="TX_FIFO_NUMWORDS" value="2048" />
+  <parameter name="TX_FIFO_WIDTHU" value="11" />
+  <parameter name="USB_READ_LATENCY" value="1" />
+  <parameter name="USB_WRITE_LATENCY" value="1" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>
