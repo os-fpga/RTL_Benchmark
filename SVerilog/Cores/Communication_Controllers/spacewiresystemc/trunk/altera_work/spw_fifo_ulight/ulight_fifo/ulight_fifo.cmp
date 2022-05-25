@@ -1,0 +1,47 @@
+	component ulight_fifo is
+		port (
+			auto_start_external_connection_export           : out   std_logic;                                        -- export
+			clk_clk                                         : in    std_logic                     := 'X';             -- clk
+			clock_sel_external_connection_export            : out   std_logic_vector(2 downto 0);                     -- export
+			counter_rx_fifo_external_connection_export      : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- export
+			counter_tx_fifo_external_connection_export      : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- export
+			data_flag_rx_external_connection_export         : in    std_logic_vector(8 downto 0)  := (others => 'X'); -- export
+			data_info_external_connection_export            : in    std_logic_vector(13 downto 0) := (others => 'X'); -- export
+			data_read_en_rx_external_connection_export      : out   std_logic;                                        -- export
+			fifo_empty_rx_status_external_connection_export : in    std_logic                     := 'X';             -- export
+			fifo_empty_tx_status_external_connection_export : in    std_logic                     := 'X';             -- export
+			fifo_full_rx_status_external_connection_export  : in    std_logic                     := 'X';             -- export
+			fifo_full_tx_status_external_connection_export  : in    std_logic                     := 'X';             -- export
+			fsm_info_external_connection_export             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- export
+			led_pio_test_external_connection_export         : out   std_logic_vector(4 downto 0);                     -- export
+			link_disable_external_connection_export         : out   std_logic;                                        -- export
+			link_start_external_connection_export           : out   std_logic;                                        -- export
+			memory_mem_a                                    : out   std_logic_vector(12 downto 0);                    -- mem_a
+			memory_mem_ba                                   : out   std_logic_vector(2 downto 0);                     -- mem_ba
+			memory_mem_ck                                   : out   std_logic;                                        -- mem_ck
+			memory_mem_ck_n                                 : out   std_logic;                                        -- mem_ck_n
+			memory_mem_cke                                  : out   std_logic;                                        -- mem_cke
+			memory_mem_cs_n                                 : out   std_logic;                                        -- mem_cs_n
+			memory_mem_ras_n                                : out   std_logic;                                        -- mem_ras_n
+			memory_mem_cas_n                                : out   std_logic;                                        -- mem_cas_n
+			memory_mem_we_n                                 : out   std_logic;                                        -- mem_we_n
+			memory_mem_reset_n                              : out   std_logic;                                        -- mem_reset_n
+			memory_mem_dq                                   : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- mem_dq
+			memory_mem_dqs                                  : inout std_logic                     := 'X';             -- mem_dqs
+			memory_mem_dqs_n                                : inout std_logic                     := 'X';             -- mem_dqs_n
+			memory_mem_odt                                  : out   std_logic;                                        -- mem_odt
+			memory_mem_dm                                   : out   std_logic;                                        -- mem_dm
+			memory_oct_rzqin                                : in    std_logic                     := 'X';             -- oct_rzqin
+			pll_0_locked_export                             : out   std_logic;                                        -- export
+			pll_0_outclk0_clk                               : out   std_logic;                                        -- clk
+			reset_reset_n                                   : in    std_logic                     := 'X';             -- reset_n
+			timecode_ready_rx_external_connection_export    : in    std_logic                     := 'X';             -- export
+			timecode_rx_external_connection_export          : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- export
+			timecode_tx_data_external_connection_export     : out   std_logic_vector(7 downto 0);                     -- export
+			timecode_tx_enable_external_connection_export   : out   std_logic;                                        -- export
+			timecode_tx_ready_external_connection_export    : in    std_logic                     := 'X';             -- export
+			write_data_fifo_tx_external_connection_export   : out   std_logic_vector(8 downto 0);                     -- export
+			write_en_tx_external_connection_export          : out   std_logic                                         -- export
+		);
+	end component ulight_fifo;
+
