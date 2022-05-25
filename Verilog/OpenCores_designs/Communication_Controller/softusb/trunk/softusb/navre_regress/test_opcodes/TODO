@@ -1,0 +1,95 @@
+The following opcodes need test cases written (pseudonyms in parens don't need
+to be done). Basically, if there is an avr_op_*() function in decoder.c, then
+there should be a test module written.
+
+done	ADC  (ROL)
+done	ADD  (LSL)
+done	ADIW
+done	AND  (TST)
+done	ANDI (CBR)
+done	ASR
+done	BCLR (CL{C,Z,N,V,S,H,T,I})
+done	BLD
+done	BRBC (BRNE, BRCC, BRSH, BRPL, BRGE, BRHC, BRTC, BRVC, BRID)
+done	BRBS (BREQ, BRCS, BRLO, BRMI, BRLT, BRHS, BRTS, BRVS, BRIE)
+done	BSET (SE{C,Z,N,V,S,H,T,I})
+done	BST
+unsup	CALL
+unsup	CBI
+done	COM
+done	CP
+done	CPC
+done	CPI
+done	CPSE
+done	DEC
+unsup	EICALL
+unsup	EIJMP
+unsup	ELPM_Z
+unsup	ELPM_Z_incr
+unsup	ELPM
+done	EOR  (CLR)
+unsup	ESPM
+unsup	FMUL
+unsup	FMULS
+unsup	FMULSU
+done	ICALL
+done	IJMP
+	IN       --- heavily dependent on io functionality (yuck!)
+done	INC
+unsup	JMP
+done	LDD_Y
+done	LDD_Z
+done	LDI  (SER)
+done	LDS
+done	LD_X
+done	LD_X_decr
+done	LD_X_incr
+done	LD_Y_decr
+done	LD_Y_incr
+done	LD_Z_incr
+done	LD_Z_decr
+unsup	LPM_Z
+done	LPM
+unsup	LPM_Z_incr
+done	LSR
+done	MOV
+unsup	MOVW
+unsup	MUL
+unsup	MULS
+unsup	MULSU
+done	NEG
+done	NOP
+done	OR
+done	ORI  (SBR)
+	OUT       --- heavily dependent on io functionality (yuck!)
+done	POP
+done	PUSH
+done	RCALL
+done	RET
+done	RETI
+done	RJMP
+done	ROR
+done	SBC
+done	SBCI
+unsup	SBI
+unsup	SBIC
+unsup	SBIS
+done	SBIW
+done	SBRC
+done	SBRS
+unsup	SLEEP
+unsup	SPM
+done	STD_Y
+done	STD_Z
+done	STS
+done	ST_X
+done	ST_X_decr
+done	ST_X_incr
+done	ST_Y_decr
+done	ST_Y_incr
+done	ST_Z_decr
+done	ST_Z_incr
+done	SUB
+done	SUBI
+done	SWAP
+unsup	WDR
