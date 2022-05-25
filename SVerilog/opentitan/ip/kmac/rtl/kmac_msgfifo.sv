@@ -95,6 +95,8 @@ module kmac_msgfifo
   logic packer_flush_done;
   logic msgfifo_flush_done;
 
+  assign fifo_full_o = '0;
+
   prim_packer #(
     .InW          (OutWidth),
     .OutW         (OutWidth),

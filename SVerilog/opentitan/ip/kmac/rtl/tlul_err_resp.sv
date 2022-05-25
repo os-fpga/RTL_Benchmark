@@ -27,7 +27,7 @@ module tlul_err_resp (
     end else if (tl_h_i.a_valid && tl_h_o.a_ready) begin
       err_req_pending <= 1'b1;
       err_source      <= tl_h_i.a_source;
-     // err_opcode      <= tl_h_i.a_opcode;
+      //err_opcode      <= tl_h_i.a_opcode;
       err_size        <= tl_h_i.a_size;
     end else if (!err_rsp_pending) begin
       err_req_pending <= 1'b0;
@@ -40,8 +40,11 @@ module tlul_err_resp (
   assign tl_h_o.d_source = err_source;
   assign tl_h_o.d_sink   = '0;
   assign tl_h_o.d_param  = '0;
+  assign tl_h_o.d_user.rsp_intg = '0;
+  assign tl_h_o.d_user.data_intg = '0;
   assign tl_h_o.d_size   = err_size;
   //assign tl_h_o.d_opcode = (err_opcode == tlul_pkg::Get) ? AccessAckData : AccessAck;
+  assign tl_h_o.d_opcode = AccessAck;
   assign tl_h_o.d_error  = 1'b1;
 
   always_ff @(posedge clk_i or negedge rst_ni) begin
