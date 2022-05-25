@@ -86,6 +86,11 @@ module tri_mode_ethernet_mac_0_example_design_clocks
     .IB (clk_in_n));
 
   // route clkin1 through a BUFGCE for the MMCM reset generation logic
+
+
+
+
+
   BUFGCE bufg_clkin1 (.I(clkin1), .CE  (1'b1), .O(clkin1_bufg));
 
   // detect a falling edge on dcm_locked (after resyncing to this domain)
