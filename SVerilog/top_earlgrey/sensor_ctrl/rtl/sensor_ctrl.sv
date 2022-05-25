@@ -180,6 +180,7 @@ module sensor_ctrl
   ) u_prim_recov_alert_sender (
     .clk_i,
     .rst_ni,
+    .alert_i('0),
     .alert_rx_i(alert_rx_i[RecovAlert]),
     .alert_tx_o(alert_tx_o[RecovAlert])
   );
@@ -189,6 +190,7 @@ module sensor_ctrl
   ) u_prim_fatal_alert_sender (
     .clk_i,
     .rst_ni,
+    .alert_i('0),
     .alert_rx_i(alert_rx_i[FatalAlert]),
     .alert_tx_o(alert_tx_o[FatalAlert])
   );

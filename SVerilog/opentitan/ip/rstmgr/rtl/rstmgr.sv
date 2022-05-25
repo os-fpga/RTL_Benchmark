@@ -137,6 +137,9 @@ module rstmgr
   rstmgr_ctrl u_lc_src (
     .clk_i,
     .rst_ni(local_rst_n),
+    .scanmode_i('0),
+    .scan_rst_ni('1),
+
     .rst_req_i(pwr_i.rst_lc_req),
     .rst_parent_ni({PowerDomains{1'b1}}),
     .rst_no(rst_lc_src_n)
@@ -146,6 +149,9 @@ module rstmgr
   rstmgr_ctrl u_sys_src (
     .clk_i,
     .rst_ni(local_rst_n),
+    .scanmode_i('0),
+    .scan_rst_ni('1),
+
     .rst_req_i(pwr_i.rst_sys_req | {PowerDomains{ndm_req_valid}}),
     .rst_parent_ni(rst_lc_src_n),
     .rst_no(rst_sys_src_n)
