@@ -201,6 +201,10 @@ module usbuart_usbif (
 
     .dev_addr_i                 (dev_addr),
 
+    .usb_dp_i('1),
+    .usb_dn_i('1),
+    .cfg_rx_differential_i('1),
+
     // out endpoint interfaces
     .out_ep_current_o           (out_ep_current),
     .out_ep_data_put_o          (out_ep_data_put),

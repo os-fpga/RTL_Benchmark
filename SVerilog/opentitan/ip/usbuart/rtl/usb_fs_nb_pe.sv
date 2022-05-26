@@ -148,6 +148,8 @@ module usb_fs_nb_pe #(
 
     .data_toggle_clear_i   (data_toggle_clear_i),
 
+    .in_ep_enabled_i('1),
+
     // rx path
     .rx_pkt_start_i        (rx_pkt_start),
     .rx_pkt_end_i          (rx_pkt_end),
@@ -173,6 +175,9 @@ module usb_fs_nb_pe #(
     .rst_ni                 (rst_ni),
     .link_reset_i           (link_reset_i),
     .dev_addr_i             (dev_addr_i),
+
+    .out_ep_control_i('0),
+    .out_ep_enabled_i('1),
 
     // endpoint interface
     .out_ep_current_o       (out_ep_current_o),

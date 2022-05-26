@@ -64,6 +64,11 @@ module i2c
     .devmode_i(1'b1)
   );
 
+  assign cio_sda_o = '0;
+  assign cio_sda_en_o = '0;
+  assign cio_scl_o = '0;
+  assign cio_scl_en_o = '0;
+
   assign alert_test = {
     reg2hw.alert_test.q &
     reg2hw.alert_test.qe

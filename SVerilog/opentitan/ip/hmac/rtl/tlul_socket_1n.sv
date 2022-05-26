@@ -203,6 +203,7 @@ module tlul_socket_1n #(
   assign tl_u_o[N].a_address   = tl_t_o.a_address;
   assign tl_u_o[N].a_mask      = tl_t_o.a_mask;
   assign tl_u_o[N].a_data      = tl_t_o.a_data;
+  assign tl_u_o[N].a_user      = tl_t_o.a_user;
   tlul_err_resp err_resp (
     .clk_i      (clk_i),
     .rst_ni     (rst_ni),
