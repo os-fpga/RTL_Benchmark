@@ -156,11 +156,15 @@ module usbdev_iomux
     cio_usb_dn_o           = 1'b0;
     cio_usb_dp_o           = 1'b0;
 
-    if (sys_reg2hw_drive_i.en.q) begin
+    //if (sys_reg2hw_drive_i.en.q) begin
+    if (1) begin
       // Override from registers
-      cio_usb_dp_o           = sys_reg2hw_drive_i.dp_o.q;
-      cio_usb_dn_o           = sys_reg2hw_drive_i.dn_o.q;
-      cio_usb_dp_pullup_en_o = sys_reg2hw_drive_i.dp_pullup_en_o.q;
+      //cio_usb_dp_o           = sys_reg2hw_drive_i.dp_o.q;
+      cio_usb_dp_o           = '1;
+      //cio_usb_dn_o           = sys_reg2hw_drive_i.dn_o.q;
+      cio_usb_dn_o           = '0;
+      //cio_usb_dp_pullup_en_o = sys_reg2hw_drive_i.dp_pullup_en_o.q;
+      cio_usb_dp_pullup_en_o = '0;
       cio_usb_dn_pullup_en_o = sys_reg2hw_drive_i.dn_pullup_en_o.q;
       cio_usb_tx_mode_se_o   = sys_reg2hw_drive_i.tx_mode_se_o.q;
       cio_usb_suspend_o      = sys_reg2hw_drive_i.suspend_o.q;
@@ -215,8 +219,10 @@ module usbdev_iomux
     .NoFpgaBufG(1)
   ) i_mux_tx_oe (
     .clk0_i (usb_tx_oe_i),
-    .clk1_i (sys_reg2hw_drive_i.oe_o.q),
-    .sel_i  (sys_reg2hw_drive_i.en.q),
+    //.clk1_i (sys_reg2hw_drive_i.oe_o.q),
+    .clk1_i (sys_reg2hw_drive_i.d_o.q),
+    //.sel_i  (sys_reg2hw_drive_i.en.q),
+    .sel_i  ('0),
     .clk_o  (cio_usb_oe_o)
   );
 

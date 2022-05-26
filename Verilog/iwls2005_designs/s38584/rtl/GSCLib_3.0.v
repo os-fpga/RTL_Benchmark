@@ -338,9 +338,13 @@ input  RN ;
 input  SN ;
 output Q ;
 output QN ;
-//reg NOTIFIER ;
-wire NOTIFIER ;
-assign NOTIFIER = 1'b0;
+reg NOTIFIER ;
+
+      always @(posedge CK)
+       if (RN) NOTIFIER <= 0;
+       else 
+            NOTIFIER<=1;
+
    not (I0_CLEAR, RN);
    not (I0_SET, SN);
    mdff df1 (NET0131_, D_, CK, I0_SET, I0_CLEAR, NOTIFIER);
@@ -419,9 +423,9 @@ input  CK ;
 input  D ;
 output Q ;
 output QN ;
-//reg NOTIFIER ;
-wire NOTIFIER ;
-assign NOTIFIER = 1'b0;
+reg NOTIFIER ;
+      always @(posedge CK)
+            NOTIFIER<=1;
 
    mdff df1 (P0001, D, CK, 1'B0, 1'B0, NOTIFIER);
    not (P0000, P0001);
@@ -975,10 +979,11 @@ input  SI ;
 input  SN ;
 output Q ;
 output QN ;
-//reg NOTIFIER ;
-wire NOTIFIER ;
-assign NOTIFIER = 1'b0;
-
+reg NOTIFIER ;
+      always @(posedge CK)
+       if (RN) NOTIFIER <= 0;
+       else 
+            NOTIFIER<=1;
    mmux2 m2 (I0_D, D, SI, SE);
    not (I0_CLEAR, RN);
    not (I0_SET, SN);

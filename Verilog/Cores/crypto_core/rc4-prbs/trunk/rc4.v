@@ -54,6 +54,7 @@ reg [3:0] KSState;
 reg [7:0] i; // Counter
 reg [7:0] j;
 reg [7:0] K;
+reg [8:0] m;
 
 always @ (posedge clk or posedge rst)
 	begin
@@ -63,6 +64,9 @@ always @ (posedge clk or posedge rst)
 		KSState <= `KSS_KEYREAD;
 		output_ready <= 0;
 		j <= 0; 
+                for (m = 0; m < 257; m = m + 1) begin
+                    S[m] <= 8'h00;
+                end 
 		end
 	else
 	case (KSState)	
