@@ -1,0 +1,255 @@
+#============================================================================= 
+#  TITRE : TOP_FPGACOSIL2
+#  DESCRIPTION : 
+#        Fichier de contrainte du FPGA Concentrateur SIL2 
+#  FICHIER :        top_fpgacosil2.ucf
+#=============================================================================
+#  CREATION 
+#  DATE	      AUTEUR	PROJET	REVISION 
+#  10/04/2014	DRA	   SATURN	V1.0 
+#=============================================================================
+#  HISTORIQUE  DES  MODIFICATIONS :
+#  DATE	      AUTEUR	PROJET	REVISION 
+#=============================================================================
+#-----------------------------
+# definition des timings
+#-----------------------------
+NET "clk_24" TNM_NET = "clk_24";
+TIMESPEC TS_clk_24 = PERIOD "clk_24" 35 ns HIGH 50 %;
+NET "inst_pcieif/s6_pcie_v1_4_i/gt_refclk_out[0]" TNM_NET = "inst_pcieif/s6_pcie_v1_4_i/gt_refclk_out<0>";
+TIMESPEC TS_inst_pcieif_s6_pcie_v1_4_i_gt_refclk_out_0_ = PERIOD "inst_pcieif/s6_pcie_v1_4_i/gt_refclk_out<0>" 10 ns HIGH 50 %;
+
+TIMEGRP "pmp_dat" OFFSET = IN 12.5 ns VALID 36 ns BEFORE "pmwr" FALLING;
+INST "pmd[0]" TNM = "pmp_dat";
+INST "pmd[1]" TNM = "pmp_dat";
+INST "pmd[2]" TNM = "pmp_dat";
+INST "pmd[3]" TNM = "pmp_dat";
+INST "pmd[4]" TNM = "pmp_dat";
+INST "pmd[5]" TNM = "pmp_dat";
+INST "pmd[6]" TNM = "pmp_dat";
+INST "pmd[7]" TNM = "pmp_dat";
+
+TIMEGRP "pmp_add" OFFSET = IN 12.5 ns VALID 36 ns BEFORE "pmall" RISING;
+INST "pmd[0]" TNM = "pmp_add";
+INST "pmd[1]" TNM = "pmp_add";
+INST "pmd[2]" TNM = "pmp_add";
+INST "pmd[3]" TNM = "pmp_add";
+INST "pmd[4]" TNM = "pmp_add";
+INST "pmd[5]" TNM = "pmp_add";
+INST "pmd[6]" TNM = "pmp_add";
+
+#-----------------------------
+# Definition du pinning
+#-----------------------------
+INST "inst_pcieif/s6_pcie_v1_4_i/GT_i/tile0_gtpa1_dual_wrapper_i/gtpa1_dual_i" LOC = GTPA1_DUAL_X0Y0;
+NET "cclk" LOC = R15;
+NET "cdehigh_5vid" LOC = D17;
+NET "cdehigh_5vls1" LOC = C17;
+NET "cdehigh_5vls2" LOC = F14;
+NET "cdehigh_5vlsm2" LOC = H12;
+NET "cdehigh_5vcan" LOC = E16;
+NET "cdelow_5vid" LOC = G14;
+NET "cdelow_5vls1" LOC = F16;
+NET "cdelow_5vls2" LOC = C18;
+NET "cdelow_5vlsm2" LOC = D18;
+NET "cdelow_5vcan" LOC = G13;
+NET "clk_24" LOC = G11;
+NET "clk_25" LOC = K3;
+NET "cso_b" LOC = V3;
+NET "din_miso" LOC = R13;
+NET "interrupt" LOC = V13;
+NET "led_confok" LOC = P12;
+NET "led_fail" LOC = U13;
+NET "led_run" LOC = P15;
+NET "ls485_de1" LOC = E18;
+NET "ls485_de2" LOC = F18;
+NET "ls485_ren1" LOC = K12;
+NET "ls485_ren2" LOC = H13;
+NET "ls485_rx1" LOC = K13;
+NET "ls485_rx2" LOC = H14;
+NET "ls485_tx1" LOC = F17;
+NET "ls485_tx2" LOC = H15;
+NET "mosi" LOC = T13;
+NET "pci_clk_p" LOC = B8;
+NET "pci_clk_n" LOC = A8;
+NET "pci_exp_rxn" LOC = C5;
+NET "pci_exp_rxp" LOC = D5;
+NET "pci_exp_txn" LOC = A4;
+NET "pci_exp_txp" LOC = B4;
+NET "pci_rstn" LOC = J13;
+NET "pci_spare" LOC = K15;
+NET "pci_waken" LOC = K14;
+NET "pic_rx" LOC = P18;
+NET "pic_sck" LOC = L15;
+NET "pic_sdi" LOC = H17;
+NET "pic_sdo" LOC = L16;
+NET "pic_spare[0]" LOC = L18;
+NET "pic_spare[1]" LOC = M16;
+NET "pic_spare[2]" LOC = M18;
+NET "pic_spare[3]" LOC = N17;
+NET "pic_ssn" LOC = H18;
+NET "pic_tx" LOC = P17;
+NET "pmalh" LOC = V9;
+NET "pmall" LOC = T9;
+NET "pmd[0]" LOC = P8;
+NET "pmd[1]" LOC = N7;
+NET "pmd[2]" LOC = V7;
+NET "pmd[3]" LOC = U7;
+NET "pmd[4]" LOC = V8;
+NET "pmd[5]" LOC = U8;
+NET "pmd[6]" LOC = N8;
+NET "pmd[7]" LOC = M8;
+NET "pmrd" LOC = T6;
+NET "pmwr" LOC = T8;
+NET "power_rstn" LOC = T18;
+NET "prog_b" LOC = J1;
+NET "rst_fpgan" LOC = J18;
+NET "rst_n" LOC = K18;
+NET "rst_switchn" LOC = U18;
+NET "scl" LOC = F6;
+NET "sda" LOC = F5;
+NET "spare[0]" LOC = U2;
+NET "spare[1]" LOC = U1;
+NET "spare[2]" LOC = T2;
+NET "spare[3]" LOC = T1;
+NET "spare[4]" LOC = P2;
+NET "spare[5]" LOC = P1;
+NET "spare[6]" LOC = N2;
+NET "spare[7]" LOC = N1;
+NET "tp[22]" LOC = B3;
+NET "tp[23]" LOC = E6;
+NET "tp[24]" LOC = A3;
+NET "tp[25]" LOC = F7;
+NET "tp[26]" LOC = G8;
+NET "tp[27]" LOC = G9;
+NET "tp[28]" LOC = E8;
+NET "uc_pmacs1" LOC = E3;
+NET "uc_pmacs2" LOC = H5;
+NET "uc_pmalh" LOC = H4;
+NET "uc_pmall" LOC = K5;
+NET "uc_pmd[0]" LOC = F2;
+NET "uc_pmd[1]" LOC = J6;
+NET "uc_pmd[2]" LOC = J7;
+NET "uc_pmd[3]" LOC = G1;
+NET "uc_pmd[4]" LOC = G3;
+NET "uc_pmd[5]" LOC = K6;
+NET "uc_pmd[6]" LOC = L7;
+NET "uc_pmd[7]" LOC = H3;
+NET "uc_pmrd" LOC = F1;
+NET "uc_pmwr" LOC = L5;
+NET "uc_sck" LOC = F4;
+NET "uc_sdi" LOC = D1;
+NET "uc_sdo" LOC = D2;
+NET "uc_ssn" LOC = F3;
+NET "wp_flashn" LOC = H1;
+
+#-----------------------------
+# Definition des niveaux électriques
+#-----------------------------
+NET "cclk" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vid" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vls1" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vls2" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vlsm2" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vcan" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vid" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vls1" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vls2" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vlsm2" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vcan" IOSTANDARD = LVCMOS33;
+NET "clk_24" IOSTANDARD = LVCMOS33;
+NET "clk_25" IOSTANDARD = LVCMOS33;
+NET "cso_b" IOSTANDARD = LVCMOS33;
+NET "din_miso" IOSTANDARD = LVCMOS33;
+NET "interrupt" IOSTANDARD = LVCMOS33;
+NET "led_confok" IOSTANDARD = LVCMOS33;
+NET "led_fail" IOSTANDARD = LVCMOS33;
+NET "led_run" IOSTANDARD = LVCMOS33;
+NET "ls485_de1" IOSTANDARD = LVCMOS33;
+NET "ls485_de2" IOSTANDARD = LVCMOS33;
+NET "ls485_ren1" IOSTANDARD = LVCMOS33;
+NET "ls485_ren2" IOSTANDARD = LVCMOS33;
+NET "ls485_rx1" IOSTANDARD = LVCMOS33;
+NET "ls485_rx2" IOSTANDARD = LVCMOS33;
+NET "ls485_tx1" IOSTANDARD = LVCMOS33;
+NET "ls485_tx2" IOSTANDARD = LVCMOS33;
+NET "mosi" IOSTANDARD = LVCMOS33;
+NET "pci_clk_p" IOSTANDARD = LVCMOS33;
+NET "pci_exp_rxp" IOSTANDARD = LVCMOS33;
+NET "pci_exp_txp" IOSTANDARD = LVCMOS33;
+NET "pci_rstn" IOSTANDARD = LVCMOS33;
+NET "pci_spare" IOSTANDARD = LVCMOS33;
+NET "pci_waken" IOSTANDARD = LVCMOS33;
+NET "pic_rx" IOSTANDARD = LVCMOS33;
+NET "pic_sck" IOSTANDARD = LVCMOS33;
+NET "pic_sdi" IOSTANDARD = LVCMOS33;
+NET "pic_sdo" IOSTANDARD = LVCMOS33;
+NET "pic_spare[0]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[1]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[2]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[3]" IOSTANDARD = LVCMOS33;
+NET "pic_ssn" IOSTANDARD = LVCMOS33;
+NET "pic_tx" IOSTANDARD = LVCMOS33;
+NET "pmalh" IOSTANDARD = LVCMOS33;
+NET "pmall" IOSTANDARD = LVCMOS33;
+NET "pmd[0]" IOSTANDARD = LVCMOS33;
+NET "pmd[1]" IOSTANDARD = LVCMOS33;
+NET "pmd[2]" IOSTANDARD = LVCMOS33;
+NET "pmd[3]" IOSTANDARD = LVCMOS33;
+NET "pmd[4]" IOSTANDARD = LVCMOS33;
+NET "pmd[5]" IOSTANDARD = LVCMOS33;
+NET "pmd[6]" IOSTANDARD = LVCMOS33;
+NET "pmd[7]" IOSTANDARD = LVCMOS33;
+NET "pmrd" IOSTANDARD = LVCMOS33;
+NET "pmwr" IOSTANDARD = LVCMOS33;
+NET "power_rstn" IOSTANDARD = LVCMOS33;
+NET "prog_b" IOSTANDARD = LVCMOS33;
+NET "rst_fpgan" IOSTANDARD = LVCMOS33;
+NET "rst_n" IOSTANDARD = LVCMOS33;
+NET "rst_switchn" IOSTANDARD = LVCMOS33;
+NET "scl" IOSTANDARD = LVCMOS33;
+NET "sda" IOSTANDARD = LVCMOS33;
+NET "spare[0]" IOSTANDARD = LVCMOS33;
+NET "spare[1]" IOSTANDARD = LVCMOS33;
+NET "spare[2]" IOSTANDARD = LVCMOS33;
+NET "spare[3]" IOSTANDARD = LVCMOS33;
+NET "spare[4]" IOSTANDARD = LVCMOS33;
+NET "spare[5]" IOSTANDARD = LVCMOS33;
+NET "spare[6]" IOSTANDARD = LVCMOS33;
+NET "spare[7]" IOSTANDARD = LVCMOS33;
+NET "tp[22]" IOSTANDARD = LVCMOS33;
+NET "tp[23]" IOSTANDARD = LVCMOS33;
+NET "tp[24]" IOSTANDARD = LVCMOS33;
+NET "tp[25]" IOSTANDARD = LVCMOS33;
+NET "tp[26]" IOSTANDARD = LVCMOS33;
+NET "tp[27]" IOSTANDARD = LVCMOS33;
+NET "tp[28]" IOSTANDARD = LVCMOS33;
+NET "uc_pmacs1" IOSTANDARD = LVCMOS33;
+NET "uc_pmacs2" IOSTANDARD = LVCMOS33;
+NET "uc_pmalh" IOSTANDARD = LVCMOS33;
+NET "uc_pmall" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[0]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[1]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[2]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[3]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[4]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[5]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[6]" IOSTANDARD = LVCMOS33;
+NET "uc_pmd[7]" IOSTANDARD = LVCMOS33;
+NET "uc_pmrd" IOSTANDARD = LVCMOS33;
+NET "uc_pmwr" IOSTANDARD = LVCMOS33;
+NET "uc_sck" IOSTANDARD = LVCMOS33;
+NET "uc_sdi" IOSTANDARD = LVCMOS33;
+NET "uc_sdo" IOSTANDARD = LVCMOS33;
+NET "uc_ssn" IOSTANDARD = LVCMOS33;
+NET "wp_flashn" IOSTANDARD = LVCMOS33;
+
+# Definition slew rate pour améliorer les performances de l'interface PMP
+NET "pmd[0]" SLEW = FAST;
+NET "pmd[1]" SLEW = FAST;
+NET "pmd[2]" SLEW = FAST;
+NET "pmd[3]" SLEW = FAST;
+NET "pmd[4]" SLEW = FAST;
+NET "pmd[5]" SLEW = FAST;
+NET "pmd[6]" SLEW = FAST;
+NET "pmd[7]" SLEW = FAST;

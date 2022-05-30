@@ -1,0 +1,23 @@
+[tasks]
+prf
+cvr
+
+[options]
+prf: mode prove
+prf: depth 4
+cvr: mode cover
+cvr: depth 32
+
+[engines]
+smtbmc
+
+[script]
+read -formal -D WBARBITER wbarbiter.v
+read -formal -D WBARBITER fwb_slave.v
+read -formal -D WBARBITER fwb_master.v
+prep -top wbarbiter
+
+[files]
+../../rtl/wbarbiter.v
+fwb_slave.v
+fwb_master.v

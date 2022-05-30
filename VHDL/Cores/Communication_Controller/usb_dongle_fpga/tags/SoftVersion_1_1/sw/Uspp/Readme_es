@@ -1,0 +1,199 @@
+                            USPP Library
+
+		 Universal Serial Port Python Library	
+	(Librería en Python para el acceso universal al puerto serie)
+
+              Copyright 2006 Isaac Barona <ibarona@gmail.com>
+
+
+Contenidos
+----------
+ 1. Introducción
+ 2. Motivación
+ 3. Dónde encontrar la librería
+ 4. Características
+ 5. Pre-requisitos
+ 6. Utilización y documentación
+ 7. Dónde funciona
+ 8. Problemas pendientes
+ 9. Tareas pendientes
+10. Portado a otras plataformas
+11. Licencia
+12. Autor
+13. Versión 
+
+
+1. Introducción
+---------------
+
+La librería USPP es un módulo desarrollado en Python para el acceso
+multiplataforma al puerto serie. En el momento, sólo funciona en Linux
+Windows y MacOS, pero como está escrita completamente en Python 
+(no es únicamente un recubrimiento en Python de una librería desarrollada 
+en C/C++) espero que pueda ser ampliada para que soporte otras plataformas.
+
+
+2. Motivación
+-------------
+
+A mí me gusta mucho hacer pequeños cacharros electrónicos con 
+microcontroladores, especialmente aquellos que pueden ser conectados a
+un ordenador para enviar y recibir datos.
+Hace un par de meses descubrí Python y realmente me encantó.
+Empezé a jugar con él y ví que podía utilizarlo para hacer prototipos
+de protocolos de comunicación entre el ordenador y los microcontroladores 
+de manera mucho más fácil y rápida que utilizando C (que era el lenguaje
+que solía utilizar). Al mismo tiempo, estaba interesado en poder utilizar
+los desarrollos bajo diferentes arquitecturas.
+Empezé a buscar en la red módulos de Python que accedieran al puerto serie
+y encontré los siguientes:
+
+	* win32comport_demo que viene junto a la extensión win32.
+	* Módulo win32comm de wheineman@uconect.net.
+	* Sio Module de Roger Rurnham (rburnham@cri-inc.com)
+	* pyxal (Python X10 Abstraction Layer) de Les Smithson 
+	  (lsmithson@open-networks.co.uk)
+
+pero no eran multiplataforma, eran únicamente un recubrimiento de una librería
+propietaria o eran simples ejemplos de acceso al puerto serie bajo una 
+determinada plataforma.
+Por estas razones, y también por supuesto, por aprender más Python, decidí
+empezar este proyecto. Por supuesto, he utilizado los módulos indicados
+anteriormente como referencia para realizar mi librería y por tanto, me
+creo en la obligación de felicitar a sus autores por su excelente trabajo y
+por haberlo compartido con los demás.
+
+Espero que disfrutes utilizándo el módulo uspp tanto como yo lo 
+he hecho haciéndolo.
+
+
+3. Dónde encontrar la librería
+------------------------------
+
+Puedes encontrarla en:
+ * http://ibarona.googlepages.com/uspp
+ * http://www.telefonica.net/web/babur
+
+como un fichero tar.gz o como un fichero .zip.
+
+
+4. Características
+------------------
+
+Este módulo tiene las siguientes características destacadas:
+
+	- acceso de alto nivel al puerto serie bajo diversas plataformas.
+	- autodetecta la plataforma en la que se está ejecutando y 
+	  carga las clases adecuadas para esa plataforma.
+	- Orientado a objetos.
+	- Las operaciones sobre el puerto serie tienen la misma semántica
+	  que las operaciones sobre objetos de tipo fichero.
+	- permite utilizar el puerto serie con diferentes velocidades y
+	  características.
+	- permite la utilización del puerto bajo dos modos de funcionamiento:
+	  RS-232 y RS-485 (de momento, sólo RS-232). En modo 485 la 
+	  comunicación es half-duplex y se utiliza la línea RTS para controlar 
+	  la dirección de la transferencia.
+	- lecturas en modo bloqueante, no bloqueante o con timeout.
+
+
+5. Pre-requisitos
+----------------
+
+Se necesita los siguiente para utilizar la librería:
+
+	- Python 2.1 o superior
+	- En windows los módulos win32
+
+
+6. Utilización y documentación
+------------------------------
+
+Únicamente tienes que importar en tu programa el módulo uspp y automáticamente
+él se encarga de cargar las clases adecuadas para la plataforma en la que
+se está ejecutando el programa.
+
+Lo primero de todo, tendrás que crear un objeto de tipo SerialPort con las
+características que desees. Si no se genera ninguna excepción del tipo
+SerialPortException, puedes utilizar los métodos de lectura y escritura
+del objeto para leer y escribir en el puerto serie.
+
+Ejemplo:
+
+>>> from uspp import *
+>>> tty=SerialPort("COM2", 1000, 9600)  
+>>> # Abre el puerto serie COM2 a 9600 bps y con un timeout de 1 segundo.
+>>> tty.write("a")  # Envía el carácter 'a' al puerto serie.
+>>> # Ahora suponemos que recibimos el string 'abc'
+>>> tty.inWaiting()
+3
+>>> tty.read()
+'a'
+>>> tty.inWaiting()
+2
+>>> tty.read(2)
+'bc'
+
+
+La documentación de las diferentes clases y métodos que componen el módulo
+puede encontrarse en el string de documentación del módulo uspp.
+
+
+7. Dónde funciona 
+-----------------
+
+La librería ha sido probada en una máquina con Windows 95, Windows XP y
+Windows 2000 con Python 2.1+ y en un Linux (con el kernel 2.0.34) con Python
+2.1+.
+
+
+8. Problemas pendientes 
+-----------------------
+
+
+
+
+9. Tareas pendientes
+--------------------
+
+Esta es la lista de tareas pendientes:
+
+	- implementar el modo RS-485.
+	- portar la librería a otras plataformas de forma que sea 
+	  realmente multiplataforma.
+
+
+10. Portado a otras plataformas
+-------------------------------
+
+Si quieres portar la librería a otras plataformas sólo tienes que seguir
+los siguientes pasos:
+
+* Crear un nuevo fichero en python llamado SerialPort_XXX.py en el que
+implementes las mismas clases y métodos públicos que aparecen en los 
+módulos SerialPort_win y SerialPort_linux.
+* Añadir la nueva plataforma en el fichero uspp.py.
+
+
+11. Licencia
+------------
+
+Este código se libera bajo la licencia "LGPL" que puedes encontrar en 
+http://www.gnu.org/copyleft/lesser.html o en el fichero lesser.txt que 
+acompaña a la librería.
+Si utilizas este software estaría muy agradecido de saberlo.
+
+
+12. Autor
+---------
+
+Esta librería ha sido creada por Isaac Barona Martínez <ibarona@gmail.com>.
+
+
+13. Versión
+----------
+
+0.1 - 01/09/2001
+0.2 - 13/05/2003
+1.0 - 24/02/2006
+

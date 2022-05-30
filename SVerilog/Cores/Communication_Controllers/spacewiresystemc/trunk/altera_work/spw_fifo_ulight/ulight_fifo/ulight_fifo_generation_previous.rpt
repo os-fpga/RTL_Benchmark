@@ -1,0 +1,265 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo.qsys --block-symbol-file --output-directory=/home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading spw_fifo_ulight/ulight_fifo.qsys
+Progress: Reading input file
+Progress: Adding auto_start [altera_avalon_pio 17.0]
+Progress: Parameterizing module auto_start
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_sel [altera_avalon_pio 17.0]
+Progress: Parameterizing module clock_sel
+Progress: Adding counter_rx_fifo [altera_avalon_pio 17.0]
+Progress: Parameterizing module counter_rx_fifo
+Progress: Adding counter_tx_fifo [altera_avalon_pio 17.0]
+Progress: Parameterizing module counter_tx_fifo
+Progress: Adding data_flag_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_flag_rx
+Progress: Adding data_info [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_info
+Progress: Adding data_read_en_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_read_en_rx
+Progress: Adding fifo_empty_rx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_empty_rx_status
+Progress: Adding fifo_empty_tx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_empty_tx_status
+Progress: Adding fifo_full_rx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_full_rx_status
+Progress: Adding fifo_full_tx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_full_tx_status
+Progress: Adding fsm_info [altera_avalon_pio 17.0]
+Progress: Parameterizing module fsm_info
+Progress: Adding hps_0 [altera_hps 17.0]
+Progress: Parameterizing module hps_0
+Progress: Adding led_pio_test [altera_avalon_pio 17.0]
+Progress: Parameterizing module led_pio_test
+Progress: Adding link_disable [altera_avalon_pio 17.0]
+Progress: Parameterizing module link_disable
+Progress: Adding link_start [altera_avalon_pio 17.0]
+Progress: Parameterizing module link_start
+Progress: Adding pll_0 [altera_pll 17.0]
+Progress: Parameterizing module pll_0
+Progress: Adding timecode_ready_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_ready_rx
+Progress: Adding timecode_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_rx
+Progress: Adding timecode_tx_data [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_data
+Progress: Adding timecode_tx_enable [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_enable
+Progress: Adding timecode_tx_ready [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_ready
+Progress: Adding write_data_fifo_tx [altera_avalon_pio 17.0]
+Progress: Parameterizing module write_data_fifo_tx
+Progress: Adding write_en_tx [altera_avalon_pio 17.0]
+Progress: Parameterizing module write_en_tx
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ulight_fifo.counter_rx_fifo: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.counter_tx_fifo: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.data_flag_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.data_info: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_empty_rx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_empty_tx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_full_rx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_full_tx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fsm_info: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.hps_0: HPS Main PLL counter settings: n = 0  m = 36
+Info: ulight_fifo.hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Warning: ulight_fifo.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: ulight_fifo.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Warning: ulight_fifo.hps_0: ODT is disabled. Enabling ODT (Mode Register 1) may improve signal integrity
+Warning: ulight_fifo.hps_0: set_interface_assignment: Interface "hps_io" does not exist
+Info: ulight_fifo.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: ulight_fifo.pll_0: 'refclk1' is not the same frequency as 'refclk'. You must run Timequest at both frequencies to ensure timing closure
+Warning: ulight_fifo.pll_0: The period difference between refclk and refclk1 is greater than 20%, automatic clock loss detection will not work
+Info: ulight_fifo.pll_0: Able to implement PLL with user settings
+Warning: ulight_fifo.pll_0.refclk1: Signal refclk1 has unknown type refclk1
+Info: ulight_fifo.timecode_ready_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.timecode_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.timecode_tx_ready: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo.qsys --synthesis=VERILOG --output-directory=/home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo/synthesis --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading spw_fifo_ulight/ulight_fifo.qsys
+Progress: Reading input file
+Progress: Adding auto_start [altera_avalon_pio 17.0]
+Progress: Parameterizing module auto_start
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_sel [altera_avalon_pio 17.0]
+Progress: Parameterizing module clock_sel
+Progress: Adding counter_rx_fifo [altera_avalon_pio 17.0]
+Progress: Parameterizing module counter_rx_fifo
+Progress: Adding counter_tx_fifo [altera_avalon_pio 17.0]
+Progress: Parameterizing module counter_tx_fifo
+Progress: Adding data_flag_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_flag_rx
+Progress: Adding data_info [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_info
+Progress: Adding data_read_en_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module data_read_en_rx
+Progress: Adding fifo_empty_rx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_empty_rx_status
+Progress: Adding fifo_empty_tx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_empty_tx_status
+Progress: Adding fifo_full_rx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_full_rx_status
+Progress: Adding fifo_full_tx_status [altera_avalon_pio 17.0]
+Progress: Parameterizing module fifo_full_tx_status
+Progress: Adding fsm_info [altera_avalon_pio 17.0]
+Progress: Parameterizing module fsm_info
+Progress: Adding hps_0 [altera_hps 17.0]
+Progress: Parameterizing module hps_0
+Progress: Adding led_pio_test [altera_avalon_pio 17.0]
+Progress: Parameterizing module led_pio_test
+Progress: Adding link_disable [altera_avalon_pio 17.0]
+Progress: Parameterizing module link_disable
+Progress: Adding link_start [altera_avalon_pio 17.0]
+Progress: Parameterizing module link_start
+Progress: Adding pll_0 [altera_pll 17.0]
+Progress: Parameterizing module pll_0
+Progress: Adding timecode_ready_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_ready_rx
+Progress: Adding timecode_rx [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_rx
+Progress: Adding timecode_tx_data [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_data
+Progress: Adding timecode_tx_enable [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_enable
+Progress: Adding timecode_tx_ready [altera_avalon_pio 17.0]
+Progress: Parameterizing module timecode_tx_ready
+Progress: Adding write_data_fifo_tx [altera_avalon_pio 17.0]
+Progress: Parameterizing module write_data_fifo_tx
+Progress: Adding write_en_tx [altera_avalon_pio 17.0]
+Progress: Parameterizing module write_en_tx
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ulight_fifo.counter_rx_fifo: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.counter_tx_fifo: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.data_flag_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.data_info: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_empty_rx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_empty_tx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_full_rx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fifo_full_tx_status: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.fsm_info: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.hps_0: HPS Main PLL counter settings: n = 0  m = 36
+Info: ulight_fifo.hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Warning: ulight_fifo.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: ulight_fifo.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Warning: ulight_fifo.hps_0: ODT is disabled. Enabling ODT (Mode Register 1) may improve signal integrity
+Warning: ulight_fifo.hps_0: set_interface_assignment: Interface "hps_io" does not exist
+Info: ulight_fifo.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: ulight_fifo.pll_0: 'refclk1' is not the same frequency as 'refclk'. You must run Timequest at both frequencies to ensure timing closure
+Warning: ulight_fifo.pll_0: The period difference between refclk and refclk1 is greater than 20%, automatic clock loss detection will not work
+Info: ulight_fifo.pll_0: Able to implement PLL with user settings
+Warning: ulight_fifo.pll_0.refclk1: Signal refclk1 has unknown type refclk1
+Info: ulight_fifo.timecode_ready_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.timecode_rx: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo.timecode_tx_ready: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ulight_fifo: Generating ulight_fifo "ulight_fifo" for QUARTUS_SYNTH
+Warning: ulight_fifo: "No matching role found for clk_0:clk:clk_out (clk)"
+Warning: ulight_fifo: "No matching role found for pll_0:refclk1:refclk1 (refclk1)"
+Info: auto_start: Starting RTL generation for module 'ulight_fifo_auto_start'
+Info: auto_start:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_auto_start --dir=/tmp/alt7485_7332943204255753946.dir/0002_auto_start_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0002_auto_start_gen//ulight_fifo_auto_start_component_configuration.pl  --do_build_sim=0  ]
+Info: auto_start: Done RTL generation for module 'ulight_fifo_auto_start'
+Info: auto_start: "ulight_fifo" instantiated altera_avalon_pio "auto_start"
+Info: clock_sel: Starting RTL generation for module 'ulight_fifo_clock_sel'
+Info: clock_sel:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_clock_sel --dir=/tmp/alt7485_7332943204255753946.dir/0003_clock_sel_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0003_clock_sel_gen//ulight_fifo_clock_sel_component_configuration.pl  --do_build_sim=0  ]
+Info: clock_sel: Done RTL generation for module 'ulight_fifo_clock_sel'
+Info: clock_sel: "ulight_fifo" instantiated altera_avalon_pio "clock_sel"
+Info: counter_rx_fifo: Starting RTL generation for module 'ulight_fifo_counter_rx_fifo'
+Info: counter_rx_fifo:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_counter_rx_fifo --dir=/tmp/alt7485_7332943204255753946.dir/0004_counter_rx_fifo_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0004_counter_rx_fifo_gen//ulight_fifo_counter_rx_fifo_component_configuration.pl  --do_build_sim=0  ]
+Info: counter_rx_fifo: Done RTL generation for module 'ulight_fifo_counter_rx_fifo'
+Info: counter_rx_fifo: "ulight_fifo" instantiated altera_avalon_pio "counter_rx_fifo"
+Info: data_flag_rx: Starting RTL generation for module 'ulight_fifo_data_flag_rx'
+Info: data_flag_rx:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_data_flag_rx --dir=/tmp/alt7485_7332943204255753946.dir/0005_data_flag_rx_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0005_data_flag_rx_gen//ulight_fifo_data_flag_rx_component_configuration.pl  --do_build_sim=0  ]
+Info: data_flag_rx: Done RTL generation for module 'ulight_fifo_data_flag_rx'
+Info: data_flag_rx: "ulight_fifo" instantiated altera_avalon_pio "data_flag_rx"
+Info: data_info: Starting RTL generation for module 'ulight_fifo_data_info'
+Info: data_info:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_data_info --dir=/tmp/alt7485_7332943204255753946.dir/0006_data_info_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0006_data_info_gen//ulight_fifo_data_info_component_configuration.pl  --do_build_sim=0  ]
+Info: data_info: Done RTL generation for module 'ulight_fifo_data_info'
+Info: data_info: "ulight_fifo" instantiated altera_avalon_pio "data_info"
+Info: fifo_empty_rx_status: Starting RTL generation for module 'ulight_fifo_fifo_empty_rx_status'
+Info: fifo_empty_rx_status:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_fifo_empty_rx_status --dir=/tmp/alt7485_7332943204255753946.dir/0007_fifo_empty_rx_status_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0007_fifo_empty_rx_status_gen//ulight_fifo_fifo_empty_rx_status_component_configuration.pl  --do_build_sim=0  ]
+Info: fifo_empty_rx_status: Done RTL generation for module 'ulight_fifo_fifo_empty_rx_status'
+Info: fifo_empty_rx_status: "ulight_fifo" instantiated altera_avalon_pio "fifo_empty_rx_status"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 36
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Warning: hps_0: ODT is disabled. Enabling ODT (Mode Register 1) may improve signal integrity
+Warning: hps_0: set_interface_assignment: Interface "hps_io" does not exist
+Info: hps_0: "ulight_fifo" instantiated altera_hps "hps_0"
+Info: led_pio_test: Starting RTL generation for module 'ulight_fifo_led_pio_test'
+Info: led_pio_test:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_led_pio_test --dir=/tmp/alt7485_7332943204255753946.dir/0008_led_pio_test_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0008_led_pio_test_gen//ulight_fifo_led_pio_test_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio_test: Done RTL generation for module 'ulight_fifo_led_pio_test'
+Info: led_pio_test: "ulight_fifo" instantiated altera_avalon_pio "led_pio_test"
+Info: pll_0: "ulight_fifo" instantiated altera_pll "pll_0"
+Info: timecode_rx: Starting RTL generation for module 'ulight_fifo_timecode_rx'
+Info: timecode_rx:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_timecode_rx --dir=/tmp/alt7485_7332943204255753946.dir/0010_timecode_rx_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0010_timecode_rx_gen//ulight_fifo_timecode_rx_component_configuration.pl  --do_build_sim=0  ]
+Info: timecode_rx: Done RTL generation for module 'ulight_fifo_timecode_rx'
+Info: timecode_rx: "ulight_fifo" instantiated altera_avalon_pio "timecode_rx"
+Info: timecode_tx_data: Starting RTL generation for module 'ulight_fifo_timecode_tx_data'
+Info: timecode_tx_data:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_timecode_tx_data --dir=/tmp/alt7485_7332943204255753946.dir/0011_timecode_tx_data_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0011_timecode_tx_data_gen//ulight_fifo_timecode_tx_data_component_configuration.pl  --do_build_sim=0  ]
+Info: timecode_tx_data: Done RTL generation for module 'ulight_fifo_timecode_tx_data'
+Info: timecode_tx_data: "ulight_fifo" instantiated altera_avalon_pio "timecode_tx_data"
+Info: write_data_fifo_tx: Starting RTL generation for module 'ulight_fifo_write_data_fifo_tx'
+Info: write_data_fifo_tx:   Generation command is [exec /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/bin/perl -I /home/felipe/intelFPGA_lite/17.0/quartus/linux64/perl/lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/europa -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin/perl_lib -I /home/felipe/intelFPGA_lite/17.0/quartus/sopc_builder/bin -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/felipe/intelFPGA_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ulight_fifo_write_data_fifo_tx --dir=/tmp/alt7485_7332943204255753946.dir/0012_write_data_fifo_tx_gen/ --quartus_dir=/home/felipe/intelFPGA_lite/17.0/quartus --verilog --config=/tmp/alt7485_7332943204255753946.dir/0012_write_data_fifo_tx_gen//ulight_fifo_write_data_fifo_tx_component_configuration.pl  --do_build_sim=0  ]
+Info: write_data_fifo_tx: Done RTL generation for module 'ulight_fifo_write_data_fifo_tx'
+Info: write_data_fifo_tx: "ulight_fifo" instantiated altera_avalon_pio "write_data_fifo_tx"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_013: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_014: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_015: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_016: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_017: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_018: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_019: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_020: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_021: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "ulight_fifo" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "ulight_fifo" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: led_pio_test_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "led_pio_test_s1_translator"
+Info: hps_0_h2f_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_axi_master_agent"
+Info: led_pio_test_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "led_pio_test_s1_agent"
+Info: led_pio_test_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "led_pio_test_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_axi_master_wr_limiter"
+Info: Reusing file /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: led_pio_test_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "led_pio_test_s1_burst_adapter"
+Info: Reusing file /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/felipe/Documentos/verilog_projects/SPW_SC/TESTSTRESS/spw_fifo_ulight/ulight_fifo/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: ulight_fifo: Done "ulight_fifo" with 32 modules, 89 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
