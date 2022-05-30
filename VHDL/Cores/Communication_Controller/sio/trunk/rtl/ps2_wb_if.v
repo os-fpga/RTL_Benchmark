@@ -150,31 +150,31 @@ begin
         wb_dat_i_sampled <= #1 wb_dat_i[31:16] ;
 end
 
-`ifdef PS2_AUX
-output wb_intb_o ;
-reg    wb_intb_o ;
-
-input  [7:0]    rx_aux_data_i ;
-input           rx_aux_data_ready_i ;
-output          rx_aux_read_o ;
-output [7:0]    tx_aux_data_o ;
-output          tx_aux_write_o ;
-input           tx_aux_write_ack_i ;
-input           ps2_aux_clk_i ;
-output          inhibit_aux_if_o ;
-reg             inhibit_aux_if_o ;
-reg             aux_output_buffer_full ;
-reg             aux_input_buffer_full ;
-reg             interrupt2 ;
-reg             enable2    ;
-assign          tx_aux_data_o  = output_buffer ;
-assign          tx_aux_write_o = aux_output_buffer_full ;
-`else
-wire aux_input_buffer_full  = 1'b0 ;
-wire aux_output_buffer_full = 1'b0 ;
-wire interrupt2             = 1'b0 ;
-wire enable2                = 1'b1 ;
-`endif
+//   `ifdef PS2_AUX
+//   output wb_intb_o ;
+//   reg    wb_intb_o ;
+//   
+//   input  [7:0]    rx_aux_data_i ;
+//   input           rx_aux_data_ready_i ;
+//   output          rx_aux_read_o ;
+//   output [7:0]    tx_aux_data_o ;
+//   output          tx_aux_write_o ;
+//   input           tx_aux_write_ack_i ;
+//   input           ps2_aux_clk_i ;
+//   output          inhibit_aux_if_o ;
+//   reg             inhibit_aux_if_o ;
+//   reg             aux_output_buffer_full ;
+//   reg             aux_input_buffer_full ;
+//   reg             interrupt2 ;
+//   reg             enable2    ;
+//   assign          tx_aux_data_o  = output_buffer ;
+//   assign          tx_aux_write_o = aux_output_buffer_full ;
+//   `else
+//   wire aux_input_buffer_full  = 1'b0 ;
+//   wire aux_output_buffer_full = 1'b0 ;
+//   wire interrupt2             = 1'b0 ;
+//   wire enable2                = 1'b1 ;
+//   `endif
 
 assign tx_kbd_data_o = output_buffer ;
 
