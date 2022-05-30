@@ -96,6 +96,8 @@ module X_FF (O, CE, CLK, I, RST, SET);
   wire RST_dly, SET_dly;
 
   buf O1 (O, o_reg);
+
+
     
   not (ni, I_dly);
   not (nrst, RST_dly);
@@ -133,7 +135,7 @@ module X_FF (O, CE, CLK, I, RST, SET);
   always @(o_out)
       o_reg = o_out;
     
-  ffsrce (o_out, CLK_dly, I_dly, CE_dly, set_int, rst_int, notifier1);
+  //ffsrce (o_out, CLK_dly, I_dly, CE_dly, set_int, rst_int, notifier1);
 
   specify
 
