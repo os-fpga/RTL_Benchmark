@@ -199,7 +199,7 @@ module ge_1000baseX #(
 `ifdef MODEL_TECH
  `define GMII_REG_0_RESET {8'h19, 8'h40}
 `else
- `define GMII_REG_0_RESET {8'h11, h40}
+ `define GMII_REG_0_RESET {8'h11, 8'h40}
 `endif
    
    //////////////////////////////////////////////////////////////////////////////
@@ -303,14 +303,14 @@ module ge_1000baseX #(
    //////////////////////////////////////////////////////////////////////////////
    
    // Read operations
-   assign gmii_reg_rd = (gmii_reg_addr == `GMII_BASIC_CTRL)       ? gmii_reg_0  :
-			(gmii_reg_addr == `GMII_BASIC_STATUS)     ? gmii_reg_1  :
-			(gmii_reg_addr == `GMII_PHY_ID1)          ? gmii_reg_2  :
-			(gmii_reg_addr == `GMII_PHY_ID2)          ? gmii_reg_3  :
-			(gmii_reg_addr == `GMII_AN_ADV)           ? gmii_reg_4  :
-			(gmii_reg_addr == `GMII_AN_LP_ADV)        ? gmii_reg_5  :
-			(gmii_reg_addr == `GMII_AN_EXPANSION)     ? gmii_reg_6  :
-			(gmii_reg_addr == `GMII_AN_NP)            ? gmii_reg_7  :       
+   assign gmii_reg_rd = (gmii_reg_addr == 'd00)       ? gmii_reg_0  :
+			(gmii_reg_addr == 'd02)     ? gmii_reg_1  :
+			(gmii_reg_addr == 'd04)          ? gmii_reg_2  :
+			(gmii_reg_addr == 'd06)          ? gmii_reg_3  :
+			(gmii_reg_addr == 'd08)           ? gmii_reg_4  :
+			(gmii_reg_addr == 'd10)        ? gmii_reg_5  :
+			(gmii_reg_addr == 'd12)     ? gmii_reg_6  :
+			(gmii_reg_addr == 'd14)            ? gmii_reg_7  :       
 			(gmii_reg_addr == `GMII_AN_LP_NP)         ? gmii_reg_8  : 5'b00000;
    
    // Write operations
@@ -326,9 +326,9 @@ module ge_1000baseX #(
 	 begin
 	    case (gmii_reg_addr)
 	      
-	      `GMII_BASIC_CTRL       : gmii_reg_0  <= gmii_reg_wr;
-	      `GMII_AN_ADV           : gmii_reg_4  <= gmii_reg_wr;
-	      `GMII_AN_NP            : gmii_reg_7  <= gmii_reg_wr; 
+	      'd00       : gmii_reg_0  <= gmii_reg_wr;
+	      'd08           : gmii_reg_4  <= gmii_reg_wr;
+	      'd14            : gmii_reg_7  <= gmii_reg_wr; 
 	    endcase 
 	 end
        else

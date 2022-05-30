@@ -52,6 +52,7 @@
 task host_write_reg;
 input [7:0] addr;
 input [31:0] data;
+input sclk;
 
 
 begin

@@ -20,7 +20,5 @@ module tone_440_rom( addr, q );
   
   assign q = ram[addr];
 
-  initial
-    $readmemh( "../../../../i2s_to_wb/scilab/tone_roms/tone_440_at_48000sps_rom.txt", ram );
 
 endmodule

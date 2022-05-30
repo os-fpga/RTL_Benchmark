@@ -61,7 +61,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library lpm;
-use lpm.lpm_components.all;
+--use lpm.lpm_components.all;
 
 entity dpram is
    generic (DATA_WIDTH : positive;

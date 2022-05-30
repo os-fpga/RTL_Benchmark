@@ -75,8 +75,8 @@ module DlatchPos(Reset,Clk,Din,Q);
 			Q=Din;
 endmodule
 module I2CStart(Clk,SCL,SDA,Start,ResetPON);
-        input   Clk,SCL,SDA,ResetPON;
-        output  Start;
+        input   Clk,SCL,SDA;
+        output  Start,ResetPON;
         reg	[1:0]	StState_reg,StNext_state;
         wire    Clk,Start,Reset,SCL,SDA;
         reg     RstStart,ResetPON;
@@ -123,8 +123,8 @@ always @(StState_reg or Clk)
  			
 endmodule
 module I2CStop(Clk,SCL,SDA,Stop,ResetPON);
-        input   Clk,SCL,SDA,ResetPON;
-        output  Stop;
+        input   Clk,SCL,SDA;
+        output  Stop,ResetPON;
         reg	[1:0]	SpState_reg,SpNext_state;
         wire    Clk,Stop,Reset,SCL,SDA;
         reg     RstStop,ResetPON;
@@ -171,9 +171,9 @@ always @(SpState_reg or Clk)
  			
 endmodule
 module I2C(Clk,SCL,SDA,Start,Stop,ResetPON);
-        input   Clk,SCL,SDA,ResetPON;
-        output  Start,Stop;
-        reg     SCL,SDA,ResetPON;
+        input   Clk;
+        output  Start,Stop,SCL,SDA,ResetPON;
+        reg     SCL,SDA;
         wire    Clk;
 I2CStop   mod1(Clk,SCL,SDA,Stop,ResetPON);
 I2CStart  mod2(Clk,SCL,SDA,Start,ResetPON);
@@ -239,7 +239,7 @@ output[7:0]     Dout;
 output[14:0]    Current_addr;
 output  	Oe,Ce,We,ACK;
 reg             Oe,Ce,We; 
-reg             RstByteRdy,ByteRdyOut,ACK;
+reg             RstByteRdy,ACK;
 wire            Din1,Rst;
 reg[7:0]        Dout;
 reg[14:0]  	Current_addr,Next_addr;

@@ -405,7 +405,7 @@ OOB_control OOB_control_i
 
 SATA_GTX_DUAL #
     (
-        .WRAPPER_SIM_GTXRESET_SPEEDUP (0),
+        .WRAPPER_SIM_GTXRESET_SPEEDUP (0)
     )
     sata_gtx_dual_i
     (

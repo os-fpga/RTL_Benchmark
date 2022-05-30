@@ -99,8 +99,8 @@ begin
     CLOCK: process
     begin
         clk <= '0';
-        wait for cycle/2;
-        clk <= '1';
+      wait for cycle/2;
+       clk <= '1';
         wait for cycle/2;
     end process;
 

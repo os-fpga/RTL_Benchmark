@@ -56,6 +56,22 @@
 // 
 //
 //////////////////////////////////////////////////////////////////////
+
+
+
+
+module IOBUF (O, IO, I, OEN);
+  input I,OEN;
+  output O;
+  inout IO;
+  assign IO = OEN ? I : 1'bz;
+  assign I = IO;
+endmodule
+
+
+
+
+
 module manage_registers(mgmt_clk, rxclk, txclk, reset, mgmt_opcode, mgmt_addr, mgmt_wr_data, mgmt_rd_data, mgmt_miim_sel, mgmt_req, 
 mgmt_miim_rdy, rxStatRegPlus, txStatRegPlus, cfgRxRegData, cfgTxRegData, mdio_opcode, mdio_data_out, mdio_data_in, mdio_in_valid,
 mgmt_config, mdio_out_valid);
@@ -189,18 +205,19 @@ always@(posedge mgmt_clk or posedge reset)begin
               else
                 state <=#TP STAT_OPERATE;
           end
-          CONFIG_OPERATE: begin
-              if(mgmt_req & mgmt_miim_sel) //during operation on configuration registers, 
-                                           //other request can be responsed. because such 
-	                                   //operations only take one cycle time.  
-		state <=#TP MDIO_OPERATE
-   	      else if(~mgmt_miim_sel & mgmt_req & ~mgmt_addr[9]) 
-	        state <=#TP STAT_OPERATE;
-	      else if(~mgmt_miim_sel & mgmt_addr[9])
-	        state <=#TP CONFIG_OPERATE;
-	     else
-     	        state <=#TP IDLE;
-          end
+        //  CONFIG_OPERATE: begin
+        //      if(mgmt_req & mgmt_miim_sel)
+		//		state <=#TP MDIO_OPERATE
+		//	  else
+     	//        state <=#TP IDLE;
+
+
+//   	      else if(~mgmt_miim_sel & mgmt_req & ~mgmt_addr) 
+//	        state <=#TP STAT_OPERATE;
+//	      else if(~mgmt_miim_sel & mgmt_addr[9])
+//	        state <=#TP CONFIG_OPERATE;
+	    
+       //   end
       endcase
    end
 end	

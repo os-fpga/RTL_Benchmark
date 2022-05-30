@@ -274,8 +274,8 @@ always @(posedge wb_clk_i or posedge wb_rst_i)
 	       we_ack <= 1;
 	    end  
 	 
-	 if (status_reg[0])
-	    int_busy <=  0; 
+	// if (status_reg[0])
+	//    int_busy <=  0; 
 	  
 	//wb_ack_o =   wb_cyc_i & wb_stb_i & ~wb_ack_o & int_ack; 
 end

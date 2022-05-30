@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "E:/uart_block/hdl/iseProject/testUart_communication_block_isim_beh.exe" -prj "E:/uart_block/hdl/iseProject/testUart_communication_block_beh.prj" "work.testUart_communication_block" 

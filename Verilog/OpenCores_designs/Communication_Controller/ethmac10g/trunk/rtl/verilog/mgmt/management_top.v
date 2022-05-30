@@ -78,7 +78,7 @@ wire[25:0] mdio_data_out;
 wire[15:0] mdio_data_in;
 wire[31:0] mgmt_config;
 
-IOBUF mdio_gen(.I(mdio_o), .O(mdio_i), .T(mdio_t), .IO(mdio));
+IOBUF mdio_gen(.I(mdio_o), .O(mdio_i), .IO(mdio));
 
 /////////////////////////////////////////////////////
 // Read&Write Logic for Config&Statistics Registers

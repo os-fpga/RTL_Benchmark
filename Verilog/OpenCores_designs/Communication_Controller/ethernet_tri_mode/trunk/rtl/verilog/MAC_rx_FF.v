@@ -572,11 +572,11 @@ always @ (posedge Clk_SYS or posedge Reset)
 	else if (!Packet_number_add_edge&&Packet_number_sub&&Packet_number_inFF!=0)
         Packet_number_inFF      <=Packet_number_inFF - 1;
 
-always @ (posedge Clk_SYS or posedge Reset)                                                         
-    if (Reset)                                                                                      
-        Fifo_data_count     <=0;                                                                    
-    else                                                                                            
-        Fifo_data_count     <=Add_wr_ungray[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]-Add_rd[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]; 
+//  always @ (posedge Clk_SYS or posedge Reset)                                                         
+//      if (Reset)                                                                                      
+//          Fifo_data_count     <=0;                                                                    
+//      else                                                                                            
+//          Fifo_data_count     <= Add_wr_ungray[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]-Add_rd[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]; 
 
 always @ (posedge Clk_SYS or posedge Reset)                                                         
     if (Reset) 
@@ -717,7 +717,7 @@ always @ (posedge Clk_SYS or posedge Reset)
 
 //******************************************************************************
 
-duram #(36,`MAC_RX_FF_DEPTH,"M4K") U_duram(          
+duram  U_duram(          
 .data_a         (Din        ), 
 .wren_a         (Wr_en      ), 
 .address_a      (Add_wr     ), 

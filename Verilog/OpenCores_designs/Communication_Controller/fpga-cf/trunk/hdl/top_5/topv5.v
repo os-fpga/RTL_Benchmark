@@ -374,3 +374,46 @@ assign LEDnext = ch2_out_data;
 
 
 endmodule
+
+
+
+
+
+
+module IBUF(
+    output O,
+    (* iopad_external_pin *)
+    input I);
+  parameter IOSTANDARD = "default";
+  parameter IBUF_LOW_PWR = 0;
+  assign O = I;
+  specify
+    (I => O) = 0;
+  endspecify
+endmodule
+
+
+
+module BUFG(
+    (* clkbuf_driver *)
+    output O,
+    input I);
+  assign O = I;
+  specify
+    // https://github.com/SymbiFlow/prjxray-db/blob/4bc6385ab300b1819848371f508185f57b649a0e/artix7/timings/CLK_BUFG_TOP_R.sdf#L11
+    (I => O) = 96;
+  endspecify
+endmodule
+
+
+
+module IBUFG(
+    output O,
+    (* iopad_external_pin *)
+    input I);
+  parameter CAPACITANCE = "DONT_CARE";
+  parameter IBUF_DELAY_VALUE = "0";
+  parameter IBUF_LOW_PWR = "TRUE";
+  parameter IOSTANDARD = "DEFAULT";
+  assign O = I;
+endmodule

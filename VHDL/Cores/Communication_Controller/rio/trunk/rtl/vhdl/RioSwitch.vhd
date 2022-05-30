@@ -57,13 +57,14 @@ use work.rio_common.all;
 -------------------------------------------------------------------------------
 entity RioSwitch is
   generic(
-    SWITCH_PORTS : natural range 3 to 255 := 4;
-    DEVICE_IDENTITY : std_logic_vector(15 downto 0);
-    DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-    DEVICE_REV : std_logic_vector(31 downto 0);
-    ASSY_IDENTITY : std_logic_vector(15 downto 0);
-    ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-    ASSY_REV : std_logic_vector(15 downto 0));
+    SWITCH_PORTS : natural range 3 to 255 := 4
+ --   4 : std_logic_vector(15 downto 0);
+ --   DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+ --   DEVICE_REV : std_logic_vector(31 downto 0);
+ --   ASSY_IDENTITY : std_logic_vector(15 downto 0);
+ --   ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+ --   ASSY_REV : std_logic_vector(15 downto 0)
+ );
   port(
     clk : in std_logic;
     areset_n : in std_logic;
@@ -152,13 +153,14 @@ architecture RioSwitchImpl of RioSwitch is
   
   component SwitchPortMaintenance is
     generic(
-      SWITCH_PORTS : natural range 0 to 255;
-      DEVICE_IDENTITY : std_logic_vector(15 downto 0);
-      DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-      DEVICE_REV : std_logic_vector(31 downto 0);
-      ASSY_IDENTITY : std_logic_vector(15 downto 0);
-      ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-      ASSY_REV : std_logic_vector(15 downto 0));
+      SWITCH_PORTS : natural range 0 to 255
+  --    DEVICE_IDENTITY : std_logic_vector(15 downto 0);
+  --    DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+  --    DEVICE_REV : std_logic_vector(31 downto 0);
+  --    ASSY_IDENTITY : std_logic_vector(15 downto 0);
+  --    ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+  --    ASSY_REV : std_logic_vector(15 downto 0)
+  );
     port(
       clk : in std_logic;
       areset_n : in std_logic;
@@ -336,14 +338,15 @@ begin
   -- Maintenance port instantiation.
   -----------------------------------------------------------------------------
   MaintenancePort: SwitchPortMaintenance
-    generic map(
-      SWITCH_PORTS=>SWITCH_PORTS,
-      DEVICE_IDENTITY=>DEVICE_IDENTITY,
-      DEVICE_VENDOR_IDENTITY=>DEVICE_VENDOR_IDENTITY,
-      DEVICE_REV=>DEVICE_REV,
-      ASSY_IDENTITY=>ASSY_IDENTITY,
-      ASSY_VENDOR_IDENTITY=>ASSY_VENDOR_IDENTITY,
-      ASSY_REV=>ASSY_REV)
+  --  generic map(
+  --    SWITCH_PORTS=>SWITCH_PORTS
+  ----    DEVICE_IDENTITY=>DEVICE_IDENTITY,
+  ----    DEVICE_VENDOR_IDENTITY=>DEVICE_VENDOR_IDENTITY,
+  -- --   DEVICE_REV=>DEVICE_REV,
+  ----    ASSY_IDENTITY=>ASSY_IDENTITY,
+  ----    ASSY_VENDOR_IDENTITY=>ASSY_VENDOR_IDENTITY,
+  ----    ASSY_REV=>ASSY_REV)
+  --);
     port map(
       clk=>clk, areset_n=>areset_n, 
       lookupStb_i=>slaveLookupStb, lookupAddr_i=>slaveLookupAddr,
@@ -815,13 +818,14 @@ use work.rio_common.all;
 -------------------------------------------------------------------------------
 entity SwitchPortMaintenance is
   generic(
-    SWITCH_PORTS : natural range 0 to 255;
-    DEVICE_IDENTITY : std_logic_vector(15 downto 0);
-    DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-    DEVICE_REV : std_logic_vector(31 downto 0);
-    ASSY_IDENTITY : std_logic_vector(15 downto 0);
-    ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
-    ASSY_REV : std_logic_vector(15 downto 0));
+    SWITCH_PORTS : natural range 0 to 255
+ --   DEVICE_IDENTITY : std_logic_vector(15 downto 0);
+  --  DEVICE_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+  --  DEVICE_REV : std_logic_vector(31 downto 0);
+  --  ASSY_IDENTITY : std_logic_vector(15 downto 0);
+  --  ASSY_VENDOR_IDENTITY : std_logic_vector(15 downto 0);
+  --  ASSY_REV : std_logic_vector(15 downto 0)
+  );
   port(
     clk : in std_logic;
     areset_n : in std_logic;
@@ -1888,31 +1892,31 @@ begin
               -- Device Identity CAR. Read-only.
               -----------------------------------------------------------------
 
-              configDataReadInternal(31 downto 16) <= DEVICE_IDENTITY;
-              configDataReadInternal(15 downto 0) <= DEVICE_VENDOR_IDENTITY;
+            --  configDataReadInternal(31 downto 16) <= 4;
+          --    configDataReadInternal(15 downto 0) <= DEVICE_VENDOR_IDENTITY;
               
             when x"000004" =>
               -----------------------------------------------------------------
               -- Device Information CAR. Read-only.
               -----------------------------------------------------------------
 
-              configDataReadInternal(31 downto 0) <= DEVICE_REV;
+           --   configDataReadInternal(31 downto 0) <= DEVICE_REV;
               
             when x"000008" =>
               -----------------------------------------------------------------
               -- Assembly Identity CAR. Read-only.
               -----------------------------------------------------------------
 
-              configDataReadInternal(31 downto 16) <= ASSY_IDENTITY;
-              configDataReadInternal(15 downto 0) <= ASSY_VENDOR_IDENTITY;
+           --   configDataReadInternal(31 downto 16) <= ASSY_IDENTITY;
+           --   configDataReadInternal(15 downto 0) <= ASSY_VENDOR_IDENTITY;
               
             when x"00000c" =>
               -----------------------------------------------------------------
               -- Assembly Informaiton CAR. Read-only.
               -----------------------------------------------------------------
 
-              configDataReadInternal(31 downto 16) <= ASSY_REV;
-              configDataReadInternal(15 downto 0) <= x"0100";
+            --  configDataReadInternal(31 downto 16) <= ASSY_REV;
+            --  configDataReadInternal(15 downto 0) <= x"0100";
               
             when x"000010" =>
               -----------------------------------------------------------------

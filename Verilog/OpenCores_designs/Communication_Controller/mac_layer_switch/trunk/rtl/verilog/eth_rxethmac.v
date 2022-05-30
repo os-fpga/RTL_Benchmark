@@ -516,23 +516,23 @@ begin
            begin
            StartCalc[1]<= (ByteCnt[15:0] > 16'h17) & StartCalc[0] ;
            end
-       else
-         StartCalc[1:0] <= 2'h0;   
+    //   else
+    //     StartCalc[1:0] <= 2'h0;   
          
-   if (ByteCnt[15:0]-16'h17== 16'd20)
-       begin
-         CSready <= 1'b1;
-         CheckSum[15:0] <= ~(Sum[15:0]+Sum[31:16]);
-       end
+   //    if (ByteCnt[15:0]-16'h17== 16'd20)
+   //        begin
+   //          CSready <= 1'b1;
+   //          CheckSum[15:0] <= ~(Sum[15:0]+Sum[31:16]);
+   //        end
        
    end
 
- always @ (negedge Divided_4_clk)
- begin
-      if (&StartCalc)
-        Sum[31:0]<= Sum[31:0] + {prev_latched_Rx1[7:0] , RxData[7:0]};
-      
-  end
+ // always @ (negedge Divided_4_clk)
+ // begin
+ //      if (&StartCalc)
+ //        Sum[31:0]<= Sum[31:0] + {prev_latched_Rx1[7:0] , RxData[7:0]};
+ //      
+ //  end
 
   
 

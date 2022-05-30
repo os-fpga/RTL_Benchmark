@@ -100,7 +100,7 @@ begin
             ----- debug -----
             do_transfer_o => m_do_transfer_o,
             wren_o => m_wren_o,
-            wren_ack_o => m_wren_ack_o,
+       --     wren_ack_o => m_wren_ack_o,
             rx_bit_reg_o => m_rx_bit_reg_o,
             state_dbg_o => m_state_dbg_o,
             core_clk_o => m_core_clk_o,
@@ -126,9 +126,9 @@ begin
             do_o => s_do_o,
             ----- debug -----
             do_transfer_o => s_do_transfer_o,
-            wren_o => s_wren_o,
-            wren_ack_o => s_wren_ack_o,
-            rx_bit_reg_o => s_rx_bit_reg_o,
+           wren_o => s_wren_o,
+       --     wren_ack_o => s_wren_ack_o,
+       --     rx_bit_reg_o => s_rx_bit_reg_o,
             state_dbg_o => s_state_dbg_o
 --            sh_reg_dbg_o => s_sh_reg_dbg_o
         );

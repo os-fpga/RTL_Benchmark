@@ -49,19 +49,21 @@ wire [8:0] fifo_in = {fifo_eof, fifo_hi, fifo_lo};
 reg fifo_we;
 wire full;
 
-asfifo #(
-	.data_width(9),
-	.address_width(7)
-) fifo (
-	.data_out(fifo_out),
+asfifo 
+ #(
+ 	.DATA_WIDTH(9),
+ 	.ADDRESS_WIDTH(7)
+ ) 
+fifo (
+	.dout(fifo_out),
 	.empty(empty),
-	.read_en(ack),
-	.clk_read(sys_clk),
+	.rd_en(ack),
+	.rd_clk(sys_clk),
 
-	.data_in(fifo_in),
+	.din(fifo_in),
 	.full(full),
-	.write_en(fifo_we),
-	.clk_write(phy_rx_clk),
+	.wr_en(fifo_we),
+	.wr_clk(phy_rx_clk),
 	
 	.rst(rx_rst)
 );

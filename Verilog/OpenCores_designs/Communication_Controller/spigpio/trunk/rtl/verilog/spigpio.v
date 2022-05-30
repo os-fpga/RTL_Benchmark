@@ -88,7 +88,7 @@ module spigpio(clk, cs, sr_in, gpioin, gpioout, sr_out);
 	assign addr = sr[14:8];
 	assign data = sr[7:0];
 
-	always@(posedge clk or posedge cs)
+	always@(posedge clk)
 	begin
 		if (cs == 1'b0)
 		begin 

@@ -327,81 +327,81 @@ module enetplatform
     // Instantiate the EMAC Wrapper with LL FIFO 
     // (v5_emac_v1_6_locallink.v) 
     //------------------------------------------------------------------------
-    v5_emac_v1_6_locallink v5_emac_ll
-    (
-    // EMAC0 Clocking
-    // 125MHz clock output from transceiver
-    .CLK125_OUT                          (clk125_o),
-    // 125MHz clock input from BUFG
-    .CLK125                              (clk125),
-    // Tri-speed clock output from EMAC0
-    .CLIENT_CLK_OUT_0                    (client_clk_0_o),
-    // EMAC0 Tri-speed clock input from BUFG
-    .CLIENT_CLK_0                        (client_clk_0),
-
-    // Local link Receiver Interface - EMAC0
-    .RX_LL_CLOCK_0                       (ll_clk_0_i),
-    .RX_LL_RESET_0                       (ll_reset_0_i),
-    .RX_LL_DATA_0                        (rx_ll_data_0_i),
-    .RX_LL_SOF_N_0                       (rx_ll_sof_n_0_i),
-    .RX_LL_EOF_N_0                       (rx_ll_eof_n_0_i),
-    .RX_LL_SRC_RDY_N_0                   (rx_ll_src_rdy_n_0_i),
-    .RX_LL_DST_RDY_N_0                   (rx_ll_dst_rdy_n_0_i),
-    .RX_LL_FIFO_STATUS_0                 (),
-
-    // Unused Receiver signals - EMAC0
-    .EMAC0CLIENTRXDVLD                   (),
-    .EMAC0CLIENTRXFRAMEDROP              (),
-    .EMAC0CLIENTRXSTATS                  (),
-    .EMAC0CLIENTRXSTATSVLD               (),
-    .EMAC0CLIENTRXSTATSBYTEVLD           (),
-
-    // Local link Transmitter Interface - EMAC0
-    .TX_LL_CLOCK_0                       (ll_clk_0_i),
-    .TX_LL_RESET_0                       (ll_reset_0_i),
-    .TX_LL_DATA_0                        (tx_ll_data_0_i),
-    .TX_LL_SOF_N_0                       (tx_ll_sof_n_0_i),
-    .TX_LL_EOF_N_0                       (tx_ll_eof_n_0_i),
-    .TX_LL_SRC_RDY_N_0                   (tx_ll_src_rdy_n_0_i),
-    .TX_LL_DST_RDY_N_0                   (tx_ll_dst_rdy_n_0_i),
-
-    // Unused Transmitter signals - EMAC0
-    .CLIENTEMAC0TXIFGDELAY               (8'h00),
-    .EMAC0CLIENTTXSTATS                  (),
-    .EMAC0CLIENTTXSTATSVLD               (),
-    .EMAC0CLIENTTXSTATSBYTEVLD           (),
-
-    // MAC Control Interface - EMAC0
-    .CLIENTEMAC0PAUSEREQ                 (1'b0),
-    .CLIENTEMAC0PAUSEVAL                 (16'h0000),
-
-    //EMAC-MGT link status
-    .EMAC0CLIENTSYNCACQSTATUS            (GTP_READY),
-    .EMAC0ANINTERRUPT                    (),
-
-
-
-    // SGMII Interface - EMAC0
-    .TXP_0                               (TXP_0),
-    .TXN_0                               (TXN_0),
-    .RXP_0                               (RXP_0),
-    .RXN_0                               (RXN_0),
-    .PHYAD_0                             (5'b00010),
-    .RESETDONE_0                         (resetdone_0_i),
-
-    // unused transceiver
-    .TXN_1_UNUSED                        (),
-    .TXP_1_UNUSED                        (),
-    .RXN_1_UNUSED                        (1'b1),
-    .RXP_1_UNUSED                        (1'b0),
-
-    // SGMII MGT Clock buffer inputs 
-    .CLK_DS                              (clk_ds), 
-    .GTRESET                             (gtreset), 
-
-    // Asynchronous Reset Input
-    .RESET                               (reset_i)
-	 );
+    //v5_emac_v1_6_locallink v5_emac_ll
+    //(
+    //// EMAC0 Clocking
+    //// 125MHz clock output from transceiver
+    //.CLK125_OUT                          (clk125_o),
+    //// 125MHz clock input from BUFG
+    //.CLK125                              (clk125),
+    //// Tri-speed clock output from EMAC0
+    //.CLIENT_CLK_OUT_0                    (client_clk_0_o),
+    //// EMAC0 Tri-speed clock input from BUFG
+    //.CLIENT_CLK_0                        (client_clk_0),
+//
+    //// Local link Receiver Interface - EMAC0
+    //.RX_LL_CLOCK_0                       (ll_clk_0_i),
+    //.RX_LL_RESET_0                       (ll_reset_0_i),
+    //.RX_LL_DATA_0                        (rx_ll_data_0_i),
+    //.RX_LL_SOF_N_0                       (rx_ll_sof_n_0_i),
+    //.RX_LL_EOF_N_0                       (rx_ll_eof_n_0_i),
+    //.RX_LL_SRC_RDY_N_0                   (rx_ll_src_rdy_n_0_i),
+    //.RX_LL_DST_RDY_N_0                   (rx_ll_dst_rdy_n_0_i),
+    //.RX_LL_FIFO_STATUS_0                 (),
+//
+    //// Unused Receiver signals - EMAC0
+    //.EMAC0CLIENTRXDVLD                   (),
+    //.EMAC0CLIENTRXFRAMEDROP              (),
+    //.EMAC0CLIENTRXSTATS                  (),
+    //.EMAC0CLIENTRXSTATSVLD               (),
+    //.EMAC0CLIENTRXSTATSBYTEVLD           (),
+//
+    //// Local link Transmitter Interface - EMAC0
+    //.TX_LL_CLOCK_0                       (ll_clk_0_i),
+    //.TX_LL_RESET_0                       (ll_reset_0_i),
+    //.TX_LL_DATA_0                        (tx_ll_data_0_i),
+    //.TX_LL_SOF_N_0                       (tx_ll_sof_n_0_i),
+    //.TX_LL_EOF_N_0                       (tx_ll_eof_n_0_i),
+    //.TX_LL_SRC_RDY_N_0                   (tx_ll_src_rdy_n_0_i),
+    //.TX_LL_DST_RDY_N_0                   (tx_ll_dst_rdy_n_0_i),
+//
+    //// Unused Transmitter signals - EMAC0
+    //.CLIENTEMAC0TXIFGDELAY               (8'h00),
+    //.EMAC0CLIENTTXSTATS                  (),
+    //.EMAC0CLIENTTXSTATSVLD               (),
+    //.EMAC0CLIENTTXSTATSBYTEVLD           (),
+//
+    //// MAC Control Interface - EMAC0
+    //.CLIENTEMAC0PAUSEREQ                 (1'b0),
+    //.CLIENTEMAC0PAUSEVAL                 (16'h0000),
+//
+    ////EMAC-MGT link status
+    //.EMAC0CLIENTSYNCACQSTATUS            (GTP_READY),
+    //.EMAC0ANINTERRUPT                    (),
+//
+//
+//
+    //// SGMII Interface - EMAC0
+    //.TXP_0                               (TXP_0),
+    //.TXN_0                               (TXN_0),
+    //.RXP_0                               (RXP_0),
+    //.RXN_0                               (RXN_0),
+    //.PHYAD_0                             (5'b00010),
+    //.RESETDONE_0                         (resetdone_0_i),
+//
+    //// unused transceiver
+    //.TXN_1_UNUSED                        (),
+    //.TXP_1_UNUSED                        (),
+    //.RXN_1_UNUSED                        (1'b1),
+    //.RXP_1_UNUSED                        (1'b0),
+//
+    //// SGMII MGT Clock buffer inputs 
+    //.CLK_DS                              (clk_ds), 
+    //.GTRESET                             (gtreset), 
+//
+    //// Asynchronous Reset Input
+    //.RESET                               (reset_i)
+//	 )//;
 
     //-------------------------------------------------------------------
     //  Instatiate the address swapping module

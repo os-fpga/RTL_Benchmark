@@ -58,7 +58,9 @@ output                  coe_pcmi;
 input                   coe_pcmo;
 output                  coe_reset_n;
 output                  coe_mute;
-output   wire           coe_linsel = 1'b0;  // linear mode
+output            coe_linsel;  // linear mode
+
+wire                    coe_linsel= 1'b0;
 
 reg                     enable_r;
 reg                     loopback_r;

@@ -201,8 +201,6 @@ assign HF = Cnt[addr] | Cnt[(addr - 1)];
 //  Dual-Port Synchronous RAM
 //
 
-initial
-  $readmemh(init, RAM, 0, (depth - 1));
 
 always @(posedge Clk)
 begin

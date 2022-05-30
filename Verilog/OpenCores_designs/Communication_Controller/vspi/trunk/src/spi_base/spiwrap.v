@@ -56,39 +56,39 @@ always @(posedge SysClk) begin
   end
 end
 
-buffermem spiMemTx (
-  .clka(SysClk), // input clkb
-  .ena(1'b1), // input enb
-  .wea(1'b0), // input [0 : 0] web
-  .addra(spi_addr), // input [11 : 0] addrb
-  .dina(8'h00), // input [7 : 0] dinb
-  .douta(spi_data), // output [7 : 0] doutb
-  .clkb(SysClk), // input clka 
-  .enb(1'b1), // input ena
-  .web(initMem), // input [0 : 0] wea
-  .addrb(initMemAddr), // input [9 : 0] addra
-  .dinb(initMemData), // input [31 : 0] dina
-  .doutb(douta_dummy) // output [31 : 0] douta
-);
+//buffermem spiMemTx (
+//  .clka(SysClk), // input clkb
+//  .ena(1'b1), // input enb
+//  .wea(1'b0), // input [0 : 0] web
+//  .addra(spi_addr), // input [11 : 0] addrb
+//  .dina(8'h00), // input [7 : 0] dinb
+//  .douta(spi_data), // output [7 : 0] doutb
+//  .clkb(SysClk), // input clka 
+//  .enb(1'b1), // input ena
+//  .web(initMem), // input [0 : 0] wea
+//  .addrb(initMemAddr), // input [9 : 0] addra
+//  .dinb(initMemData), // input [31 : 0] dina
+//  .doutb(douta_dummy) // output [31 : 0] douta
+//);
 
 wire        spi_rcMem_we;
 wire [11:0] spi_rcMem_addr; 
 wire [ 7:0] spi_rcMem_data;
 wire [ 7:0] debug_out;
 wire [ 7:0] spi_rcMem_doutb_dummy;
-buffermem spiMemRc (
-  .clka(SysClk),
-  .ena(1'b1),
-  .wea(spi_rcMem_we),
-  .addra(spi_rcMem_addr),
-  .dina(spi_rcMem_data),
-  .douta(spi_rcMem_doutb_dummy),
-  .clkb(SysClk),
-  .enb(1'b1),
-  .web(1'b0),
-  .addrb(10'h001),
-  .doutb(rcMem_douta)
-);
+//   buffermem spiMemRc (
+//     .clka(SysClk),
+//     .ena(1'b1),
+//     .wea(spi_rcMem_we),
+//     .addra(spi_rcMem_addr),
+//     .dina(spi_rcMem_data),
+//     .douta(spi_rcMem_doutb_dummy),
+//     .clkb(SysClk),
+//     .enb(1'b1),
+//     .web(1'b0),
+//     .addrb(10'h001),
+//     .doutb(rcMem_douta)
+//   );
 
 spiifc mySpiIfc (
   .Reset(Reset),

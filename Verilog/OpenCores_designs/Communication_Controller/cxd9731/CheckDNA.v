@@ -91,12 +91,12 @@ wire	K_WINDOW;				// wire key window
 
 ///////////////////////////////////////////////////////////////
 
-multi_16 inst_multi_16 (
-	.ce(multi_ce),
-	.clk(clk4),
-	.a(multi_a), // Bus [15 : 0] 
-	.b(multi_b), // Bus [15 : 0] 
-	.p(multi_p)); // Bus [15 : 0] 
+//multi_16 inst_multi_16 (
+//	.ce(multi_ce),
+//	.clk(clk4),
+//	.a(multi_a), // Bus [15 : 0] 
+//	.b(multi_b), // Bus [15 : 0] 
+//	.p(multi_p)); // Bus [15 : 0] 
 
 // Server1104 = algorithm
 //Multi_A = XOR_REG(	DNA_64(18,24) + DNA_64(26,28) + DNA_64(30,32) + DNA_64(33,39)),

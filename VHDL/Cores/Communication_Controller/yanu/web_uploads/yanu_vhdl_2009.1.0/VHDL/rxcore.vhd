@@ -31,7 +31,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library altera_mf;
-use altera_mf.altera_mf_components.all;
+--use altera_mf.altera_mf_components.all;
 
 -- asynchronous RX core entity
 entity rxcore is

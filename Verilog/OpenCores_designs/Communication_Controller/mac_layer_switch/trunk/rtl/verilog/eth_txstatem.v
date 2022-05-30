@@ -192,10 +192,10 @@ assign DeferIndication = StateIdle & CarrierSense;
 
 initial StateTraffic=0;
 
-always @ (posedge TxStartFrm)
-begin
-    StateTraffic =1;
-end
+//  always @ (posedge TxStartFrm)
+//  begin
+//      StateTraffic =1;
+//  end
 always @ (negedge TxEndFrm)
 begin
      StateTraffic=0;

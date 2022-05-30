@@ -27,15 +27,15 @@ module i2crepeater(reset, system_clk, master_scl, master_sda, slave_scl, slave_s
 	assign sda_direction_tap = (sda_direction == MISO) ? 1 : 0;
 	
 	// States
-	enum { IDLE, ADDRESS, RWBIT, SLAVEACK, MASTERACK, DATATOSLAVE, DATAFROMSLAVE } State;
+	//enum { IDLE, ADDRESS, RWBIT, SLAVEACK, MASTERACK, DATATOSLAVE, DATAFROMSLAVE } State;
 	
 	// Just pass the clock through from master to slave.
 	assign slave_scl = master_scl;
 
 	
 	// Assignment of I/O.
-	assign slave_sda = (sda_direction == MOSI) ? master_sda : 'z;
-	assign master_sda = (sda_direction == MISO) ? slave_sda : 'z;
+	assign slave_sda = (sda_direction == MOSI) ? master_sda : 1'bz;
+	assign master_sda = (sda_direction == MISO) ? slave_sda : 1'bz;
 
 
 	// Sample the SDA and SCL lines to do start and stop detection
