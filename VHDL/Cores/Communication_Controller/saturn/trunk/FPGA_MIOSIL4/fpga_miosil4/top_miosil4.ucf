@@ -1,0 +1,164 @@
+#============================================================================= 
+#  TITRE : TOP_MIOSIL2
+#  DESCRIPTION : 
+#        Fichier de contrainte du FPGA top_miosil2 
+#  FICHIER :        top_miosil2.ucf
+#=============================================================================
+#  CREATION 
+#  DATE	      AUTEUR	PROJET	REVISION 
+#  10/04/2014	DRA	   SATURN	V1.0 
+#=============================================================================
+#  HISTORIQUE  DES  MODIFICATIONS :
+#  DATE	      AUTEUR	PROJET	REVISION 
+#=============================================================================
+#-----------------------------
+# definition des timings
+#-----------------------------
+#Clock à 24MHZ
+NET "clk_24" TNM_NET = "clk_24";
+TIMESPEC TS_clk_24 = PERIOD "clk_24" 35 ns HIGH 50 %;
+#clock sclk1 à 25MHz
+NET "pic_sclk1" TNM_NET = "pic_sclk1";
+TIMESPEC TS_pic_sclk1 = PERIOD "pic_sclk1" 35 ns HIGH 50 %;
+#clock sclk2 à 25MHz
+NET "pic_sclk2" TNM_NET = "pic_sclk2";
+TIMESPEC TS_pic_sclk2 = PERIOD "pic_sclk2" 35 ns HIGH 50 %;
+# Cross clocking entre sclk et clk_96
+NET "clk_96" TNM_NET = "clk_96";
+TIMESPEC TS_cross_domain1 = FROM "pic_sclk1" TO "clk_96" 12 ns;
+TIMESPEC TS_cross_domain2 = FROM "pic_sclk2" TO "clk_96" 12 ns;
+# Setup et Hold pour l'interface SPI 1
+TIMEGRP "spi_grp1" OFFSET = IN 15 ns VALID 15 ns BEFORE "pic_sclk1" RISING;
+INST "pic_sdo1" TNM = "spi_grp1";
+NET "pic_sdi1" OFFSET = OUT 10 ns AFTER "pic_sclk1" FALLING;
+# Setup et Hold pour l'interface SPI 2
+TIMEGRP "spi_grp2" OFFSET = IN 15 ns VALID 15 ns BEFORE "pic_sclk2" FALLING;
+INST "pic_sdo2" TNM = "spi_grp2";
+NET "pic_sdi2" OFFSET = OUT 10 ns AFTER "pic_sclk2" FALLING;
+
+#-----------------------------
+# Valeurs d'inititalisation
+#-----------------------------
+# Commande des MOSFET des alims isolées. Forçage à '0' à la config car pas de reset sur ce process
+INST "cde_high" INIT = 1'b0;
+INST "cde_low" INIT = 1'b0;
+
+#-----------------------------
+# Definition du pinning
+#-----------------------------
+NET "cclk" LOC = P70;
+NET "cde_diag1" LOC = P102;
+NET "cde_diag2" LOC = P101;
+NET "cdehigh_5vid" LOC = P105;
+NET "cdehigh_5vls1" LOC = P100;
+NET "cdehigh_5vls2" LOC = P98;
+NET "cdelow_5vid" LOC = P104;
+NET "cdelow_5vls1" LOC = P99;
+NET "cdelow_5vls2" LOC = P97;
+NET "clk_24" LOC = P88;
+NET "cso_b" LOC = P38;
+NET "din_miso" LOC = P65;
+NET "led_confok" LOC = P79;
+NET "led_fail" LOC = P75;
+NET "led_run" LOC = P78;
+NET "ls485_de1" LOC = P142;
+NET "ls485_de2" LOC = P134;
+NET "ls485_ren1" LOC = P141;
+NET "ls485_ren2" LOC = P133;
+NET "ls485_rx1" LOC = P140;
+NET "ls485_rx2" LOC = P132;
+NET "ls485_tx1" LOC = P139;
+NET "ls485_tx2" LOC = P131;
+NET "mosi" LOC = P64;
+NET "pic_rx1" LOC = P33;
+NET "pic_rx2" LOC = P2;
+NET "pic_sclk1" LOC = P14;
+NET "pic_sclk2" LOC = P23;
+NET "pic_sdi1" LOC = P10;
+NET "pic_sdi2" LOC = P17;
+NET "pic_sdo1" LOC = P12;
+NET "pic_sdo2" LOC = P22;
+NET "pic_spare[0]" LOC = P29;
+NET "pic_spare[1]" LOC = P27;
+NET "pic_spare[2]" LOC = P26;
+NET "pic_spare[3]" LOC = P24;
+NET "pic_ssn1" LOC = P11;
+NET "pic_ssn2" LOC = P21;
+NET "pic_tx1" LOC = P34;
+NET "pic_tx2" LOC = P1;
+NET "power_rstn" LOC = P50;
+NET "prog_b" LOC = P40;
+NET "rst_fpgan" LOC = P84;
+NET "rst_n" LOC = P85;
+NET "spare[0]" LOC = P119;
+NET "spare[1]" LOC = P118;
+NET "spare[2]" LOC = P117;
+NET "spare[3]" LOC = P116;
+NET "spare[4]" LOC = P115;
+NET "spare[5]" LOC = P114;
+NET "spare[6]" LOC = P112;
+NET "spare[7]" LOC = P111;
+NET "tp10" LOC = P126;
+NET "tp11" LOC = P123;
+NET "tp9" LOC = P82;
+NET "wp_flashn" LOC = P80;
+
+#-----------------------------
+# Definition des niveaux électriques
+#-----------------------------
+NET "cclk" IOSTANDARD = LVCMOS33;
+NET "cde_diag1" IOSTANDARD = LVCMOS33;
+NET "cde_diag2" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vid" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vls1" IOSTANDARD = LVCMOS33;
+NET "cdehigh_5vls2" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vid" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vls1" IOSTANDARD = LVCMOS33;
+NET "cdelow_5vls2" IOSTANDARD = LVCMOS33;
+NET "clk_24" IOSTANDARD = LVCMOS33;
+NET "cso_b" IOSTANDARD = LVCMOS33;
+NET "din_miso" IOSTANDARD = LVCMOS33;
+NET "led_confok" IOSTANDARD = LVCMOS33;
+NET "led_fail" IOSTANDARD = LVCMOS33;
+NET "led_run" IOSTANDARD = LVCMOS33;
+NET "ls485_de1" IOSTANDARD = LVCMOS33;
+NET "ls485_de2" IOSTANDARD = LVCMOS33;
+NET "ls485_ren1" IOSTANDARD = LVCMOS33;
+NET "ls485_ren2" IOSTANDARD = LVCMOS33;
+NET "ls485_rx1" IOSTANDARD = LVCMOS33;
+NET "ls485_rx2" IOSTANDARD = LVCMOS33;
+NET "ls485_tx1" IOSTANDARD = LVCMOS33;
+NET "ls485_tx2" IOSTANDARD = LVCMOS33;
+NET "mosi" IOSTANDARD = LVCMOS33;
+NET "pic_rx1" IOSTANDARD = LVCMOS33;
+NET "pic_sclk1" IOSTANDARD = LVCMOS33;
+NET "pic_sdi1" IOSTANDARD = LVCMOS33;
+NET "pic_sdo1" IOSTANDARD = LVCMOS33;
+NET "pic_rx2" IOSTANDARD = LVCMOS33;
+NET "pic_sclk2" IOSTANDARD = LVCMOS33;
+NET "pic_sdi2" IOSTANDARD = LVCMOS33;
+NET "pic_sdo2" IOSTANDARD = LVCMOS33;
+NET "pic_spare[0]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[1]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[2]" IOSTANDARD = LVCMOS33;
+NET "pic_spare[3]" IOSTANDARD = LVCMOS33;
+NET "pic_ssn1" IOSTANDARD = LVCMOS33;
+NET "pic_tx1" IOSTANDARD = LVCMOS33;
+NET "pic_ssn2" IOSTANDARD = LVCMOS33;
+NET "pic_tx2" IOSTANDARD = LVCMOS33;
+NET "power_rstn" IOSTANDARD = LVCMOS33;
+NET "prog_b" IOSTANDARD = LVCMOS33;
+NET "rst_fpgan" IOSTANDARD = LVCMOS33;
+NET "rst_n" IOSTANDARD = LVCMOS33;
+NET "spare[0]" IOSTANDARD = LVCMOS33;
+NET "spare[1]" IOSTANDARD = LVCMOS33;
+NET "spare[2]" IOSTANDARD = LVCMOS33;
+NET "spare[3]" IOSTANDARD = LVCMOS33;
+NET "spare[4]" IOSTANDARD = LVCMOS33;
+NET "spare[5]" IOSTANDARD = LVCMOS33;
+NET "spare[6]" IOSTANDARD = LVCMOS33;
+NET "spare[7]" IOSTANDARD = LVCMOS33;
+NET "tp11" IOSTANDARD = LVCMOS33;
+NET "tp10" IOSTANDARD = LVCMOS33;
+NET "tp9" IOSTANDARD = LVCMOS33;
+NET "wp_flashn" IOSTANDARD = LVCMOS33;

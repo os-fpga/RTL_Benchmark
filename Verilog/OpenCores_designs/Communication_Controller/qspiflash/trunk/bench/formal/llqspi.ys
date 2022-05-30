@@ -1,0 +1,5 @@
+read_verilog -DLLQSPI_TOP -formal ../../rtl/llqspi.v
+prep -top llqspi -nordff
+opt clean
+clk2fflogic
+write_smt2 -wires llqspi.smt2

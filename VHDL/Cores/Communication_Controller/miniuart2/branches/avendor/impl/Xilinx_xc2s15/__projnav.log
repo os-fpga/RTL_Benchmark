@@ -1,0 +1,617 @@
+ISE Auto-Make Log File
+-----------------------
+
+Updating: Analyze Post-Place & Route Static Timing (Timing Analyzer)
+
+Starting: 'exewrap -tapkeep -mode pipe -tcl -command e:/ise/data/projnav/_filesAllClean.tcl _XSTClean.rsp 0'
+
+
+Creating TCL Process
+Cleaning Up Project
+Finished cleaning up project
+Done: completed successfully.
+
+Starting: 'exewrap -mode pipe -tapkeep -command e:/ise/bin/nt/xst.exe -ifn uart.xst -ofn uart.syr'
+
+
+Starting: 'e:/ise/bin/nt/xst.exe -ifn uart.xst -ofn uart.syr '
+
+
+Release 4.2i - xst E.35
+Copyright (c) 1995-2001 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to .
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter overwrite set to YES
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.45 s | Elapsed : 0.00 / 0.00 s
+ 
+--> =========================================================================
+---- Source Parameters
+Input Format                       : VHDL
+Input File Name                    : uart.prj
+
+---- Target Parameters
+Target Device                      : xc2s15-cs144-6
+Output File Name                   : uart
+Output Format                      : NGC
+Target Technology                  : spartan2
+
+---- Source Options
+Entity Name                        : uart
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Flip-Flop Type                 : D
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Complex Clock Enable Extraction    : YES
+ROM Extraction                     : Yes
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+Add Generic Clock Buffer(BUFG)     : 4
+Global Maximum Fanout              : 100
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+Speed Grade                        : 6
+
+---- General Options
+Optimization Criterion             : Speed
+Optimization Effort                : 1
+Check Attribute Syntax             : YES
+Keep Hierarchy                     : No
+Global Optimization                : AllClockNets
+Write Timing Constraints           : No
+
+=========================================================================
+
+Compiling vhdl file J:/impl/../rtl/vhdl/utils.vhd in Library work.
+Entity <synchroniser> (Architecture <behaviour>) compiled.
+Entity <counter> (Architecture <behaviour>) compiled.
+Compiling vhdl file J:/impl/../rtl/vhdl/Txunit.vhd in Library work.
+Entity <txunit> (Architecture <behaviour>) compiled.
+Compiling vhdl file J:/impl/../rtl/vhdl/Rxunit.vhd in Library work.
+Entity <rxunit> (Architecture <behaviour>) compiled.
+Compiling vhdl file J:/impl/../rtl/vhdl/miniuart.vhd in Library work.
+Entity <uart> (Architecture <behaviour>) compiled.
+
+Analyzing Entity <uart> (Architecture <behaviour>).
+Entity <uart> analyzed. Unit <uart> generated.
+
+Analyzing generic Entity <counter> (Architecture <behaviour>).
+	count = 130
+Entity <counter> analyzed. Unit <counter> generated.
+
+Analyzing generic Entity <counter> (Architecture <behaviour>).
+	count = 4
+Entity <counter> analyzed. Unit <counter0> generated.
+
+Analyzing Entity <txunit> (Architecture <behaviour>).
+Entity <txunit> analyzed. Unit <txunit> generated.
+
+Analyzing Entity <rxunit> (Architecture <behaviour>).
+Entity <rxunit> analyzed. Unit <rxunit> generated.
+
+Analyzing Entity <synchroniser> (Architecture <behaviour>).
+Entity <synchroniser> analyzed. Unit <synchroniser> generated.
+
+
+Synthesizing Unit <synchroniser>.
+    Related source file is J:/impl/../rtl/vhdl/utils.vhd.
+    Found 1-bit register for signal <c1a>.
+    Found 1-bit register for signal <c1s>.
+    Found 1-bit register for signal <r>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <synchroniser> synthesized.
+
+
+Synthesizing Unit <rxunit>.
+    Related source file is J:/impl/../rtl/vhdl/Rxunit.vhd.
+    Found 1-bit register for signal <rxav>.
+    Found 8-bit register for signal <datao>.
+    Found 2-bit adder for signal <$n0002> created at line 91.
+    Found 4-bit adder for signal <$n0018> created at line 85.
+    Found 4-bit comparator greatequal for signal <$n0038> created at line 81.
+    Found 4-bit register for signal <bitpos>.
+    Found 8-bit register for signal <rreg>.
+    Found 1-bit register for signal <rregl>.
+    Found 2-bit register for signal <samplecnt>.
+    Summary:
+	inferred  24 D-type flip-flop(s).
+	inferred   2 Adder/Subtracter(s).
+	inferred   1 Comparator(s).
+Unit <rxunit> synthesized.
+
+
+Synthesizing Unit <txunit>.
+    Related source file is J:/impl/../rtl/vhdl/Txunit.vhd.
+    Found 1-bit register for signal <txd>.
+    Found 4-bit adder for signal <$n0012> created at line 92.
+    Found 4-bit register for signal <bitpos>.
+    Found 8-bit register for signal <tbuff>.
+    Found 1-bit register for signal <tbufl>.
+    Found 8-bit register for signal <treg>.
+    Summary:
+	inferred  22 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <txunit> synthesized.
+
+
+Synthesizing Unit <counter0>.
+    Related source file is J:/impl/../rtl/vhdl/utils.vhd.
+    Found 1-bit register for signal <o>.
+    Found 2-bit down counter for signal <cnt>.
+WARNING:Xst:647 - Input <reset> is never used.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <counter0> synthesized.
+
+
+Synthesizing Unit <counter>.
+    Related source file is J:/impl/../rtl/vhdl/utils.vhd.
+    Found 1-bit register for signal <o>.
+    Found 8-bit down counter for signal <cnt>.
+WARNING:Xst:647 - Input <reset> is never used.
+WARNING:Xst:647 - Input <ce> is never used.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <counter> synthesized.
+
+
+Synthesizing Unit <uart>.
+    Related source file is J:/impl/../rtl/vhdl/miniuart.vhd.
+WARNING:Xst:646 - Signal <sig0> is assigned but never used.
+WARNING:Xst:646 - Signal <sig1> is assigned but never used.
+    Found 1-bit register for signal <loada>.
+    Found 1-bit register for signal <reada>.
+    Found 8-bit register for signal <txdata>.
+    Summary:
+	inferred  10 D-type flip-flop(s).
+Unit <uart> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                        : 26
+  4-bit register                   : 2
+  2-bit register                   : 1
+  8-bit register                   : 4
+  1-bit register                   : 19
+# Counters                         : 2
+  2-bit down counter               : 1
+  8-bit down counter               : 1
+# Adders/Subtractors               : 3
+  2-bit adder                      : 1
+  4-bit adder                      : 2
+# Comparators                      : 1
+  4-bit comparator greatequal      : 1
+
+=========================================================================
+
+
+Starting low level synthesis...
+Optimizing unit <counter> ...
+
+Optimizing unit <rxunit> ...
+
+Optimizing unit <txunit> ...
+
+Optimizing unit <uart> ...
+
+Building and optimizing final netlist ...
+
+FlipFlop uart_rxunit_rxav has been replicated 1 time(s) to handle iob=true attribute.
+=========================================================================
+Final Results
+Top Level Output File Name         : uart
+Output Format                      : NGC
+Optimization Criterion             : Speed
+Target Technology                  : spartan2
+Keep Hierarchy                     : No
+Macro Generator                    : macro+
+
+Macro Statistics
+# Registers                        : 35
+  4-bit register                   : 2
+  8-bit register                   : 4
+  2-bit register                   : 2
+  1-bit register                   : 27
+# Adders/Subtractors               : 3
+  4-bit adder                      : 2
+  8-bit subtractor                 : 1
+
+Design Statistics
+# IOs                              : 28
+
+Cell Usage :
+# BELS                             : 153
+#      GND                         : 1
+#      LUT1                        : 13
+#      LUT1_D                      : 2
+#      LUT1_L                      : 3
+#      LUT2                        : 21
+#      LUT3                        : 24
+#      LUT3_L                      : 2
+#      LUT4                        : 51
+#      LUT4_D                      : 2
+#      LUT4_L                      : 2
+#      MUXCY                       : 13
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 14
+# FlipFlops/Latches                : 72
+#      FDC                         : 4
+#      FDCE                        : 10
+#      FDE                         : 40
+#      FDPE                        : 1
+#      FDR                         : 11
+#      FDRE                        : 2
+#      FDS                         : 2
+#      FDSE                        : 2
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 26
+#      IBUF                        : 14
+#      OBUF                        : 12
+=========================================================================
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+uart_rxunit_rregl:Q                | NONE                   | 3     |
+br_clk_i                           | BUFGP                  | 59    |
+loada:Q                            | NONE                   | 1     |
+wb_clk_i                           | BUFGP                  | 10    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 9.318ns (Maximum Frequency: 107.319MHz)
+   Minimum input arrival time before clock: 8.430ns
+   Maximum output required time after clock: 10.658ns
+   Maximum combinational path delay: 9.098ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'br_clk_i'
+Delay:               9.318ns (Levels of Logic = 6)
+  Source:            uart_rxunit_bitpos_0
+  Destination:       uart_rxunit_bitpos_2
+  Source Clock:      br_clk_i rising
+  Destination Clock: br_clk_i rising
+
+  Data Path: uart_rxunit_bitpos_0 to uart_rxunit_bitpos_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    FDCE:C->Q             22   1.085   2.970  uart_rxunit_bitpos_0 (uart_rxunit_bitpos_0)
+    LUT1_D:I0->LO          1   0.549   0.000  uart_rxunit_Madd__n0018_inst_lut2_0 (N3009)
+    MUXCY:S->O             1   0.659   0.000  uart_rxunit_Madd__n0018_inst_cy_0 (uart_rxunit_Madd__n0018_inst_cy_0)
+    MUXCY:CI->O            1   0.042   0.000  uart_rxunit_Madd__n0018_inst_cy_1 (uart_rxunit_Madd__n0018_inst_cy_1)
+    XORCY:CI->O            1   0.420   1.035  uart_rxunit_Madd__n0018_inst_sum_2 (uart_rxunit_N181)
+    LUT4:I3->O             1   0.549   1.035  uart_rxunit_I_10_LUT_53 (uart_rxunit_N183)
+    LUT4_L:I0->LO          1   0.549   0.000  uart_rxunit_I__n0005_2 (uart_rxunit_N201)
+    FDCE:D                     0.425          uart_rxunit_bitpos_2
+    ----------------------------------------
+    Total                      9.318ns (4.278ns logic, 5.040ns route)
+                                       (45.9% logic, 54.1% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'br_clk_i'
+Offset:              8.430ns (Levels of Logic = 3)
+  Source:            wb_rst_i
+  Destination:       uart_txunit_treg_5
+  Destination Clock: br_clk_i rising
+
+  Data Path: wb_rst_i to uart_txunit_treg_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    IBUF:I->O             19   0.776   2.790  wb_rst_i_IBUF (wb_rst_i_IBUF)
+    LUT4:I3->O             1   0.549   1.035  uart_txunit_I_1_LUT_11 (N2973)
+    LUT4:I3->O             8   0.549   1.845  uart_txunit_I__n0009 (uart_txunit_N83)
+    FDE:CE                     0.886          uart_txunit_treg_5
+    ----------------------------------------
+    Total                      8.430ns (2.760ns logic, 5.670ns route)
+                                       (32.7% logic, 67.3% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'br_clk_i'
+Offset:              10.658ns (Levels of Logic = 3)
+  Source:            uart_txunit_tbufl
+  Destination:       wb_dat_o_0
+  Source Clock:      br_clk_i rising
+
+  Data Path: uart_txunit_tbufl to wb_dat_o_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    FDCE:C->Q              5   1.085   1.566  uart_txunit_tbufl (uart_txunit_tbufl)
+    LUT2:I1->O             2   0.549   1.206  uart_txunit_I_busy (N64)
+    LUT4:I2->O             1   0.549   1.035  I_wb_dat_o_0 (wb_dat_o_0_OBUF)
+    OBUF:I->O                  4.668          wb_dat_o_0_OBUF (wb_dat_o_0)
+    ----------------------------------------
+    Total                     10.658ns (6.851ns logic, 3.807ns route)
+                                       (64.3% logic, 35.7% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default path analysis
+Delay:               9.098ns (Levels of Logic = 3)
+  Source:            wb_adr_i_1
+  Destination:       wb_dat_o_0
+
+  Data Path: wb_adr_i_1 to wb_dat_o_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    IBUF:I->O             11   0.776   2.070  wb_adr_i_1_IBUF (wb_adr_i_1_IBUF)
+    LUT4:I0->O             1   0.549   1.035  I_wb_dat_o_0 (wb_dat_o_0_OBUF)
+    OBUF:I->O                  4.668          wb_dat_o_0_OBUF (wb_dat_o_0)
+    ----------------------------------------
+    Total                      9.098ns (5.993ns logic, 3.105ns route)
+                                       (65.9% logic, 34.1% route)
+
+=========================================================================
+CPU : 9.22 / 9.67 s | Elapsed : 10.00 / 10.00 s
+ 
+--> 
+EXEWRAP detected that program 'e:/ise/bin/nt/xst.exe' completed successfully.
+
+Done: completed successfully.
+
+Starting: 'exewrap @__ednTOngd_exewrap.rsp'
+
+
+Starting: 'ngdbuild -f __ngdbuild.rsp '
+
+
+Release 4.2i - ngdbuild E.35
+Copyright (c) 1995-2001 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -dd j:/impl/_ngo -nt timestamp -p xc2s15-cs144-6 uart.ngc
+uart.ngd 
+
+Reading NGO file "J:/impl/uart.ngc" ...
+Reading component libraries for design expansion...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Writing NGD file "uart.ngd" ...
+
+Writing NGDBUILD log file "uart.bld"...
+
+NGDBUILD done.
+EXEWRAP detected that program 'ngdbuild' completed successfully.
+
+Done: completed successfully.
+
+Starting: 'exewrap @_ngdTOnc1_exewrap.rsp'
+
+
+Creating TCL Process
+Starting: 'map -f _map.rsp'
+
+
+Release 4.2i - Map E.35
+Copyright (c) 1995-2001 Xilinx, Inc.  All rights reserved.
+Using target part "2s15cs144-6".
+Removing unused or disabled logic...
+Running cover...
+Writing file uart.ngm...
+Running directed packing...
+Running delay-based packing...
+Running related packing...
+Writing design file "uart.ncd"...
+
+Design Summary:
+   Number of errors:      0
+   Number of warnings:    0
+   Number of Slices:                 83 out of    192   43%
+   Number of Slices containing
+      unrelated logic:                0 out of     83    0%
+   Number of Slice Flip Flops:       63 out of    384   16%
+   Total Number 4 input LUTs:       115 out of    384   29%
+      Number used as LUTs:                        110
+      Number used as a route-thru:                  5
+   Number of bonded IOBs:            26 out of     86   30%
+      IOB Flip Flops:                               9
+   Number of GCLKs:                   2 out of      4   50%
+   Number of GCLKIOBs:                2 out of      4   50%
+Total equivalent gate count for design:  1,329
+Additional JTAG gate count for IOBs:  1,344
+
+Mapping completed.
+See MAP report file "uart.mrp" for details.
+Tcl e:/ise/data/projnav/_map.tcl detected that program 'map -f _map.rsp' completed successfully.
+
+Done: completed successfully.
+
+Starting: 'exewrap @_nc1TOncd_exewrap.rsp'
+
+
+Creating TCL Process
+Found _prepar.rsp
+Starting: 'par -f _par.rsp'
+
+
+Release 4.2i - Par E.35
+Copyright (c) 1995-2001 Xilinx, Inc.  All rights reserved.
+
+
+WARNING:Par:69 - Option "-xe" overrides some effects of "-ol".
+
+
+Constraints file: uart.pcf
+
+Loading design for application par from file par_temp.ncd.
+   "uart" is an NCD, version 2.37, device xc2s15, package cs144, speed -6
+Loading device for application par from file '2s15.nph' in environment e:/ise.
+Device speed data version:  PRELIMINARY 1.23 2001-12-19.
+
+
+Resolving physical constraints.
+Finished resolving physical constraints.
+
+Device utilization summary:
+
+   Number of External GCLKIOBs         2 out of 4      50%
+   Number of External IOBs            26 out of 86     30%
+      Number of LOCed External IOBs    0 out of 26      0%
+
+   Number of SLICEs                   83 out of 192    43%
+
+   Number of GCLKs                     2 out of 4      50%
+
+
+
+Overall effort level (-ol):   2 (set by user)
+Placer effort level (-pl):    2 (set by user)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    2 (set by user)
+Extra effort level (-xe):     0 (set by user)
+
+Starting initial Placement phase. REAL time: 0 secs 
+Finished initial Placement phase. REAL time: 0 secs 
+Starting the placer. REAL time: 0 secs 
+Placement pass 1 ....
+Placer score = 7875
+Placement pass 2 ...............
+Placer score = 7375
+Optimizing ... 
+Placer score = 6385
+Placer score = 5890
+Placer completed in real time: 0 secs 
+
+Dumping design to file uart.ncd.
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 1 secs 
+
+0 connection(s) routed; 522 unrouted active, 4 unrouted PWR/GND.
+Starting router resource preassignment
+Completed router resource preassignment. REAL time: 0 secs 
+Starting iterative routing. 
+Routing active signals.
+.....
+End of iteration 1 
+526 successful; 0 unrouted; (0) REAL time: 0 secs 
+Constraints are met. 
+Total REAL time: 2 secs 
+Total CPU  time: 1 secs 
+End of route.  526 routed (100.00%); 0 unrouted.
+No errors found. 
+Completely routed. 
+
+This design was run without timing constraints.  It is likely that much better
+circuit performance can be obtained by trying either or both of the following:
+
+  - Enabling the Delay Based Cleanup router pass, if not already enabled
+  - Supplying timing constraints in the input design
+
+
+Total REAL time to Router completion: 2 secs 
+Total CPU time to Router completion: 1 secs 
+
+Generating PAR statistics.
+Dumping design to file uart.ncd.
+
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion: 1 secs 
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+
+PAR done.
+Tcl e:/ise/data/projnav/_par.tcl detected that program 'par -f _par.rsp' completed successfully.
+
+PAR completed successfully
+Done: completed successfully.
+
+Launching: 'exewrap -tcl -command __launchTA.tcl'
+
+
+
+ISE Auto-Make Log File
+-----------------------
+
+Starting: 'jhdparse @Rxunit.jp'
+
+
+JHDPARSE - VHDL/Verilog Parser.
+ISE 4.1i Copyright(c) 1999-2001 Xilinx, Inc.  All rights reserved. 
+
+Scanning    j:/rtl/vhdl/Rxunit.vhd
+Scanning    j:/rtl/vhdl/Rxunit.vhd
+Writing Rxunit.jhd.
+
+JHDPARSE complete -    0 errors,    0 warnings.
+
+Done: completed successfully.
+
+Starting: 'jhdparse @Txunit.jp'
+
+
+
+Starting: 'jhdparse @utils.jp'
+
+
+JHDPARSE - VHDL/Verilog Parser.
+ISE 4.1i Copyright(c) 1999-2001 Xilinx, Inc.  All rights reserved. 
+
+Scanning    j:/rtl/vhdl/utils.vhd
+Scanning    j:/rtl/vhdl/utils.vhd
+j:/rtl/vhdl/utils.vhd(47) library IEEE,STD;
+                                         ^
+Warning 0008: Unable to open library std.
+Writing utils.jhd.
+
+JHDPARSE complete -    0 errors,    1 warning.
+
+Done: completed successfully.
+
+Starting: 'jhdparse @miniuart.jp'
+
+
+

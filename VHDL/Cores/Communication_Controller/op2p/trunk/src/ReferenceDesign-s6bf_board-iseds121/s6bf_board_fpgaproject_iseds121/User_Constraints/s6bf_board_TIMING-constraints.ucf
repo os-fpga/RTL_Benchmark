@@ -1,0 +1,433 @@
+##################################################################################
+## S6BF_board pinout and constraints
+## 
+#################################################################################
+CONFIG PART = xc6slx45t-fgg484-2;
+
+#  Required ISE settings: Synthesis-KeepHierarchy=Yes, Translate-AllowUnmatched_XX_Constraints=Yes
+#  If there are timingerrors we still might want to procees to be able to analyze the violation
+#  details. For this, we have to set the windows env.variable XIL_TIMING_ALLOW_IMPOSSIBLE to 1.
+########OVERRIDE ISE TIMING ERRORS: ##########
+#to avoid error message on ADC reference clock output:
+PIN "Inst_s6bfip_adc/inst_pll_for_adc/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = "FALSE";
+#ref clock to bufg routing:
+#NET "x25m_clkin" CLOCK_DEDICATED_ROUTE = "FALSE";
+#PIN "BUFG_inst.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "BUFG_inst_25mhzin.O" CLOCK_DEDICATED_ROUTE = "FALSE";
+PIN "Inst_s6bfip_dsp/pll_dsp_refclk_x/BUFG_inst_dsprefclkout.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+############################# SOME USER CONSTRAINTS ##############################
+#  TO MAKE THESE CONSTRAINTS WORK, SET THE "KEEP HIERARCHY" OPTION IN THE 
+#  SYSNTHESIS PREFERENCES TO BE ENABLED.
+# ##### CLOCKS #####
+#adcif_wb_clk_o 50mhz
+#NET "adcif_wb_clk_o" TNM_NET = "adcif_wb_clk_o";
+#NET "Inst_s6bfip_adc/adcif_wb_clk_o" TNM_NET = "adcif_wb_clk_o";
+#TIMESPEC TS_adcif_wb_clk_o = PERIOD "adcif_wb_clk_o" 20 ns HIGH 50 %;
+#NET "Inst_s6bfip_adc/adcif_wb_clk_o" PERIOD = 20 ns HIGH 50%;
+#NET "adcif_wb_clk_o" TNM_NET = "adcif_wb_clk_o_group";
+#TIMESPEC TS_adcif_wb_clk_o = PERIOD "adcif_wb_clk_o" 20 ns HIGH 50%;
+#x25m_clkin 25mhz
+#NET "x25m_clkin" TNM_NET = "x25m_clkin";
+#NET "x25m_clkin" TNM_NET = "x25m_clkin";
+#TIMESPEC TS_x25m_clkin = PERIOD "x25m_clkin" 40 ns HIGH 50%;
+#NET "x25m_clkin" PERIOD = 4.0 ns HIGH 50%;
+#auroraif_wb_clk_o 62.5mhz
+#NET "auroraif_wb_clk_o" TNM_NET = "auroraif_wb_clk_o";
+#NET "Inst_s6bfip_aurora/auroraif_wb_clk_o" TNM_NET = "auroraif_wb_clk_o";
+#NET "Inst_s6bfip_aurora/auroraif_wb_clk_o" PERIOD = 4.0 ns HIGH 50%;
+#pcie_bar0_wb_clk_o 62.5mhz
+#NET "pcie_bar0_wb_clk_o" TNM_NET = "pcie_bar0_wb_clk_o";
+#NET "Inst_s6bfip_pcie/pcie_bar0_wb_clk_o" TNM_NET = "pcie_bar0_wb_clk_o";
+#NET "Inst_s6bfip_pcie/pcie_bar0_wb_clk_o" PERIOD = 15 ns HIGH 50%;
+
+
+
+########################## DSP Interface IO constraints ##########################
+#dsp_ioclk F_MAX=70Mhz, set by DSP firmware.
+#DSP datasheet parameters: t_isu=5ns, t_ih=0.8ns, t_osu=6ns, t_oh=0.3ns.
+#PCB design rules: l_clk<41mm, 57mm<l_data,71.5mm (0.4...0.5ns).
+#
+#this also drives dspif_wb_clk_o to the memco
+NET "dsp_ioclk" TNM_NET = "dsp_ioclk";
+TIMESPEC TS_dsp_ioclk = PERIOD "dsp_ioclk" 14.28 ns HIGH 50 %;
+
+#PIN GROUP:
+#some ports had to be removed: "dsp_ams_n(3)" , "dsp_ams_n(...)" 
+TIMEGRP "DSP_IO" = PADS(
+"dsp_ams_n(0)" 
+"dsp_data(15)" 
+"dsp_data(14)" 
+"dsp_data(13)" 
+"dsp_data(12)" 
+"dsp_data(11)" 
+"dsp_data(10)" 
+"dsp_data(9)" 
+"dsp_data(8)" 
+"dsp_data(7)" 
+"dsp_data(6)" 
+"dsp_data(5)" 
+"dsp_data(4)" 
+"dsp_data(3)" 
+"dsp_data(2)" 
+"dsp_data(1)" 
+"dsp_data(0)" 
+"dsp_abe_n(1)" 
+"dsp_abe_n(0)" 
+"dsp_awe_n" 
+"dsp_aoe_n" 
+"dsp_ardy" 
+"dsp_addr(1)" 
+"dsp_addr(2)" 
+"dsp_addr(3)" 
+"dsp_addr(4)" 
+"dsp_addr(5)" 
+"dsp_addr(6)" 
+"dsp_addr(7)" 
+"dsp_addr(8)" 
+"dsp_addr(9)" 
+"dsp_addr(10)" 
+"dsp_addr(11)" 
+"dsp_addr(12)" 
+"dsp_addr(13)" 
+"dsp_addr(14)" 
+"dsp_addr(15)" 
+"dsp_addr(16)" 
+"dsp_addr(17)" 
+"dsp_addr(18)" 
+"dsp_addr(19)" 
+"dsp_addr(20)" 
+"dsp_addr(21)" 
+"dsp_addr(22)" 
+"dsp_addr(23)" 
+"dsp_addr(24)" 
+"dsp_addr(25)" 
+);
+#"dsp_hostif_data(7)" 
+#"dsp_hostif_data(6)" 
+#"dsp_hostif_data(5)" 
+#"dsp_hostif_data(4)" 
+#"dsp_hostif_data(3)" 
+#"dsp_hostif_data(2)" 
+#"dsp_hostif_data(1)" 
+#"dsp_hostif_data(0)" 
+#"dsp_hostif_addr(0)" 
+#"dsp_hostif_addr(1)" 
+#"dsp_hostif_wr_n" 
+#"dsp_hostif_ce_n" 
+#"dsp_hostif_rd_n" 
+#"dsp_hostif_ack" 
+#);
+#
+#INPUT CONSTRAINT ON PIN GROUP:
+#limit on input setup time:
+TIMEGRP "DSP_IO" OFFSET = IN 5.7 ns VALID 14.28 ns BEFORE "dsp_ioclk" RISING;
+#output constraint, limit on output setup time
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/18
+TIMEGRP "DSP_IO" OFFSET = OUT 9.1 ns AFTER "dsp_ioclk" RISING;
+#
+#
+INST "Inst_s6bfip_dsp/dsp_data_0" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_1" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_2" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_3" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_4" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_5" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_6" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_7" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_8" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_9" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_10" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_11" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_12" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_13" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_14" IOB =TRUE;
+INST "Inst_s6bfip_dsp/dsp_data_15" IOB =TRUE;
+#
+#INST "Inst_s6bfip_dsp/dsp_ams_n_3" IOB =TRUE;
+#
+NET "dsp_aoe_n" TNM_NET = "dsp_aoe_n";
+#
+#
+
+
+######################## ADC Interface IO CONSTRAINTS: ###########################
+#
+#?????????????????????????? HOW DO WE CONSTRAIN IOLOGIC AND DIFF INPUTS???????
+#
+# ADC output timing: Clock is center-aligned with data. Data is valid:
+#  min 1ns before clock edge, min 0.35ns after clock edge. PCB desgn rule: t_sk<6ps.
+#CLK_OUT200M in ADC 200mhz
+#NET "CLK_OUT200M" TNM_NET = "CLK_OUT200M";
+#NET "Inst_s6bfip_adc/CLK_OUT200M" TNM_NET = "CLK_OUT200M";
+#TIMESPEC TS_CLK_OUT200M = PERIOD "CLK_OUT200M" 5 ns HIGH 50 %;
+#NET "Inst_s6bfip_adc/CLK_OUT200M" PERIOD = 5 ns HIGH 50%;
+#parallel_clk in ADC, 200mhz
+#NET "local_adc_parallel_clk" TNM_NET = "local_adc_parallel_clk";
+#NET "Inst_s6bfip_adc/local_adc_parallel_clk" TNM_NET = "local_adc_parallel_clk";
+#TIMESPEC TS_local_adc_parallel_clk = PERIOD "local_adc_parallel_clk" 5 ns HIGH 50 %;
+#NET "Inst_s6bfip_adc/local_adc_parallel_clk" PERIOD = 5 ns HIGH 50%;
+#io clock for adc, 200mhz:
+#NET "inst_adc/clk_in_int" TNM_NET = "clk_in_int";
+#TIMESPEC TS_clk_in_int = PERIOD "clk_in_int" 5 ns HIGH 50 %;
+#NET "inst_adc/clk_in_int" PERIOD = 5 ns HIGH 50%;
+#NET "ADC_CLK_IN_P" TNM_NET = "ADC_CLK_IN";
+#TIMESPEC TS_ADC_CLK_IN = PERIOD "ADC_CLK_IN" 5 ns HIGH 50 %;
+#
+##the constraints: (max t_xx)
+## input setup:
+#TIMEGRP "ADC_DATA" OFFSET = IN 1 ns BEFORE "ADC_CLK_IN";
+## input hold:
+##TIMEGRP "ADC_DATA" OFFSET = IN 1 ns AFTER "ADC_CLK_IN";
+## output setup:
+#TIMEGRP "ADC_DATA" OFFSET = OUT 1 ns AFTER "ADC_CLK_IN";
+## output hold:
+##TIMEGRP "ADC_DATA" OFFSET = OUT 0 ns BEFORE "ADC_CLK_IN";
+#
+##INPUT CONSTRAINT ON PIN GROUP:
+#OFFSET = IN 1 ns VALID 1 ns BEFORE "ADC_CLK_IN" TIMEGRP "ADC_DATA";
+#
+#
+INST "ADC_CLK_REFOUT_N" TNM = "ADC_REFERENCE_CLK_OUT";
+INST "ADC_CLK_REFOUT_P" TNM = "ADC_REFERENCE_CLK_OUT";
+#
+#PIN GROUP:
+TIMEGRP ADC_DATAINGRP =   PADS("ADC_DATA_IN_N[0]" :
+        "ADC_DATA_IN_N[1]" :
+        "ADC_DATA_IN_N[2]" :
+        "ADC_DATA_IN_N[3]" :
+        "ADC_DATA_IN_N[4]" :
+        "ADC_DATA_IN_N[5]" :
+        "ADC_DATA_IN_P[0]" :
+        "ADC_DATA_IN_P[1]" :
+        "ADC_DATA_IN_P[2]" :
+        "ADC_DATA_IN_P[3]" :
+        "ADC_DATA_IN_P[4]" :
+        "ADC_DATA_IN_P[5]");
+#
+INST "ADC_DATA_IN_N[0]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_N[1]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_N[2]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_N[3]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_N[4]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_N[5]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[0]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[1]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[2]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[3]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[4]" TNM = "ADC_DATA_GROUP";
+INST "ADC_DATA_IN_P[5]" TNM = "ADC_DATA_GROUP";
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/15
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/15
+##OFFSET = IN 0.8 ns VALID 2.5 ns BEFORE "ADC_CLK_IN_P" RISING;
+##OFFSET = IN 0.8 ns VALID 2.5 ns BEFORE "ADC_CLK_IN_P" FALLING;
+#
+NET "ADC_CLK_REFOUT_P" MAXDELAY = 30 ns;
+NET "ADC_CLK_REFOUT_P" MAXSKEW = 0.5 ns;
+NET "ADC_CLK_REFOUT_N" MAXDELAY = 30 ns;
+NET "ADC_CLK_REFOUT_N" MAXSKEW = 0.5 ns;
+#
+TIMESPEC TS_adcif_wb_clk_o = PERIOD "adcif_wb_clk_o" 50 MHz HIGH 50 %;
+NET "Inst_s6bfip_adc/adcif_wb_clk_o_local" TNM_NET = "Inst_s6bfip_adc/adcif_wb_clk_o_local";
+TIMESPEC TS_Inst_s6bfip_adc_adcif_wb_clk_o_local = PERIOD "Inst_s6bfip_adc/adcif_wb_clk_o_local" 50 MHz HIGH 50 %;
+#
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/12
+NET "adcif_wb_clk_o" TNM_NET = "adcif_wb_clk_o";
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/12
+NET "ADC_CLK_IN_P" TNM_NET = "ADC_CLK_IN_P";
+TIMESPEC TS_ADC_CLK_IN_P = PERIOD "ADC_CLK_IN_P" 5 ns HIGH 50 % INPUT_JITTER 100 ps;
+#
+#MANUAL BUFIO2 PLACEMENT###
+# PlanAhead Generated physical constraints 
+INST "Inst_s6bfip_adc/inst_adc/bufio2_inv_inst" LOC = BUFIO2_X1Y6;
+INST "Inst_s6bfip_adc/inst_adc/bufio2_inst" LOC = BUFIO2_X1Y7;
+#
+#
+############################# AURORA INTERFACE IP ################################
+# Reference clock constraint for GTP
+###NET GTPD1_left_i PERIOD = 10.0 ns HIGH 50%;
+# User Clock Contraint: the value is selected based on the line rate (2500Mbps) of the module
+#125MHz, parallel bus
+####NET "user_clk_i" TNM_NET = USER_CLK;
+####TIMESPEC TS_user_clk_i = PERIOD "USER_CLK" 8 ns HIGH 50 %;
+# Sync Clock Constraint
+######NET sync_clk_i PERIOD = 4.0 ns HIGH 50%;
+#reference clock, from board? onboard clk feedback
+#or make it internal, from bufpll. 1oomhz is expected.
+# GT REFCLK 
+INST "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/IBUFDS_i" LOC = BUFDS_X2Y2;
+NET "GTPD1_P" LOC = A12;
+NET "GTPD1_N" LOC = B12;
+#NET "GTPD1_P" LOC = A12;
+#NET "GTPD1_N" LOC = B12;
+# 50MHz board Clock Constraint  
+#NET "reset_logic_i/init_clk_i" TNM_NET = INIT_CLK;
+###### No cross clock domain analysis. Domains are not related ############## 
+###TIMESPEC TS_TIG1 = FROM "INIT_CLK" TO "USER_CLK" TIG ;
+###NET frame_check_i/* TIG;
+#INST aurora_module_i/gtp_wrapper_i/gtp_tile_inst/gtpa1_dual_i LOC=GTPA1_DUAL_X1Y0;
+#
+NET "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i" TNM_NET = "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i";
+TIMESPEC TS_Inst_s6bfip_op2p_Inst_op2p_exmpl_des_modified_gtpclkout_i = PERIOD "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/gtpclkout_i" 75 MHz HIGH 50 %;
+#
+NET "GTPD1_P" TNM_NET = "GTPD1_P";
+TIMESPEC TS_GTPD1_P = PERIOD "GTPD1_P" 13.333 ns HIGH 50 %;
+#
+#FORCE BUFIO2 PLACEMENT, TO PREVENT RESOURCE CONFLICT
+INST "Inst_s6bfip_aurora/Inst_aurora_exmpl_des_modified/BUFIO2_i" LOC = BUFIO2_X4Y28;
+#
+#
+################################ PCIE EP IP #####################################
+#
+# SYS reset (input) signal.  The sys_reset_n signal should be
+# obtained from the PCI Express interface if possible.  For
+# slot based form factors, a system reset signal is usually
+# present on the connector.  For cable based form factors, a
+# system reset signal may not be available.  In this case, the
+# system reset signal must be generated locally by some form of
+# supervisory circuit.  You may change the IOSTANDARD and LOC
+# to suit your requirements and VCCO voltage banking rules.
+#
+#NET sys_reset_n      LOC = XXX  | IOSTANDARD = LVCMOS25 | PULLUP | NODELAY;
+# SYS clock 125 or 250 MHz (input) signal. The sys_clk_p and sys_clk_n
+# signals are the PCI Express reference clock. Spartan-6 GTP
+# Transceiver architecture requires the use of dedicated clock
+# resources (FPGA input pins) associated with each GTP Transceiver Tile.
+# To use these pins an IBUFDS primitive (refclk_ibuf) is
+# instantiated in the example design.
+# Please refer to the Spartan-6 GTP Transceiver User Guide
+# for guidelines regarding clock resource selection.
+#
+INST "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/IBUFDS_inst" LOC = BUFDS_X1Y2;
+NET "sys_clk_p" LOC = A10;
+NET "sys_clk_n" LOC = B10;
+#NET "sys_clk_p" LOC = A10;
+#NET "sys_clk_n" LOC = B10;
+#
+# Transceiver instance placement.  This constraint selects the
+# transceiver to be used, which also dictates the pinout for the
+# transmit and receive differential pairs.  Please refer to the
+# Spartan-6 GTP Transceiver User Guide for more
+# information.
+#
+# PCIe Lane 0
+#INST pcie_i/mgt/GT_i/tile0_gtpa1_dual_wrapper_i/gtpa1_dual_i LOC = GTPA1_DUAL_X0Y0;
+INST "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/inst_pcie/mgt/GT_i/tile0_gtpa1_dual_wrapper_i/gtpa1_dual_i" LOC = GTPA1_DUAL_X0Y0;
+NET "pci_exp_txn" LOC = A6;
+NET "pci_exp_rxp" LOC = D7;
+NET "pci_exp_rxn" LOC = C7;
+NET "pci_exp_txp" LOC = B6;
+#NET "pci_exp_rxp" LOC = D7;
+#NET "pci_exp_rxn" LOC = C7;
+#NET "pci_exp_txn" LOC = A6;
+#NET "pci_exp_txp" LOC = B6;
+#
+# Ignore timing on asynchronous signals.
+#
+NET "sys_reset_n" TIG;
+#
+# Timing requirements and related constraints.
+#
+###NET sys_clk_c PERIOD = 10ns;
+#NET pcie_i/gt_refclk_out TNM_NET = GT_REFCLK_OUT;
+#TIMESPEC TS_GT_REFCLK_OUT = PERIOD GT_REFCLK_OUT 8ns HIGH 50 % ;
+#
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/14
+TIMESPEC TS_Inst_s6bfip_pcie_Inst_xilinx_pcie2wb_inst_pcie_gt_refclk_out = PERIOD "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/inst_pcie/gt_refclk_out" 10 ns HIGH 50 %;
+#
+NET "sys_clk_n" TNM_NET = "sys_clk_n";
+NET "sys_clk_p" TNM_NET = "sys_clk_p";
+TIMESPEC TS_sys_clk_p = PERIOD "sys_clk_p" 10 ns HIGH 50 %;
+NET "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/inst_pcie/gt_refclk_out" TNM_NET = "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/inst_pcie/gt_refclk_out";
+#
+#FORCE BUFIO2 PLACEMENT, TO PREVENT RESOURCE CONFLICT
+INST "Inst_s6bfip_pcie/Inst_xilinx_pcie2wb/inst_pcie/gt_refclk_bufio2" LOC = BUFIO2_X2Y28;
+#
+#
+
+
+########################### MEMORY CONTROLLER IP ################################
+# VCC AUX VOLTAGE 
+CONFIG VCCAUX  = 2.5;
+## Memory Controller 3                               
+## Memory Device: DDR2_SDRAM->H5PS5162FFR-S6C-fromelpida 
+## Frequency: 250 MHz
+## Time Period: 4000 ps
+## Clock constraints                                                        
+#
+############################################################################
+#
+# Timing Ignore constraints for paths crossing the clock domain 
+############################################################################
+#
+#NET "memc?_wrapper_inst/memc?_mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
+#
+#NET "c?_pll_lock" TIG;
+#############################################################################
+##
+# Clock constraints                                                        
+#
+############################################################################
+#
+#NET "memc3_infrastructure_inst/sys_clk_ibufg" TNM_NET = "SYS_CLK3";
+#TIMESPEC "TS_SYS_CLK3" = PERIOD "SYS_CLK3"  4  ns HIGH 50 %;
+#############################################################################
+NET "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/ioi_drp_clk" TNM_NET = "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/ioi_drp_clk";
+TIMESPEC TS_Inst_s6bfip_memory_Inst_memco_memc3_wrapper_inst_memc3_mcb_raw_wrapper_inst_ioi_drp_clk = PERIOD "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/ioi_drp_clk" 500 MHz HIGH 50 %;
+#
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/14
+NET "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/c3_pll_lock" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/memc3_infrastructure_inst/powerup_pll_locked" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/memc3_infrastructure_inst/powerup_pll_locked_glue_set" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mshreg_PLL_LOCK_R2" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/PLL_LOCK_R2" TIG;
+NET "Inst_s6bfip_memory/Inst_memco/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/syn_uiclk_pll_lock" TIG;
+#
+#
+#FORCE BUFIO2 PLACEMENT, TO PREVENT RESOURCE CONFLICT
+#INST "Inst_s6bfip_memory/Inst_memco/memc3_infrastructure_inst/SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_4" LOC = BUFIO2_X0Y22;
+#.
+#
+#
+#
+#
+#
+#
+#
+#
+#.
+# ###################### CONSTRAINT EDITOR WIZARD GENERATED #######################
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/11/14
+NET "x25m_clkin_pin" TNM_NET = "x25m_clkin_pin";
+TIMESPEC TS_x25m_clkin_pin = PERIOD "x25m_clkin_pin" 25 MHz HIGH 50 %;
+
+
+
+
+
+# FLOORPLAN CONSTRAINTS: ######################################################
+#INST "Inst_s6bfip_adc" AREA_GROUP = "adc_pblock";
+#AREA_GROUP "adc_pblock" RANGE=SLICE_X12Y0:SLICE_X53Y12, SLICE_X4Y2:SLICE_X11Y12;
+#AREA_GROUP "adc_pblock" RANGE=DSP48_X0Y0:DSP48_X1Y2;
+#AREA_GROUP "adc_pblock" RANGE=RAMB16_X1Y0:RAMB16_X2Y4;
+#AREA_GROUP "adc_pblock" RANGE=RAMB8_X1Y0:RAMB8_X2Y5;
+#INST "Inst_s6bfip_aurora" AREA_GROUP = "op2p_pblock";
+#AREA_GROUP "op2p_pblock" RANGE=SLICE_X30Y46:SLICE_X55Y125;
+#AREA_GROUP "op2p_pblock" RANGE=DSP48_X1Y12:DSP48_X1Y27;
+#AREA_GROUP "op2p_pblock" RANGE=RAMB16_X2Y24:RAMB16_X2Y54;
+#AREA_GROUP "op2p_pblock" RANGE=RAMB8_X2Y24:RAMB8_X2Y55;
+#INST "Inst_s6bfip_pcie" AREA_GROUP = "pcie_pblock";
+#AREA_GROUP "pcie_pblock" RANGE=SLICE_X4Y46:SLICE_X29Y125;
+#AREA_GROUP "pcie_pblock" RANGE=DSP48_X0Y12:DSP48_X0Y29;
+#AREA_GROUP "pcie_pblock" RANGE=RAMB16_X1Y24:RAMB16_X1Y46;
+#AREA_GROUP "pcie_pblock" RANGE=RAMB8_X1Y24:RAMB8_X1Y47;
+#INST "Inst_s6bfip_dsp" AREA_GROUP = "pblock_dspio";
+#AREA_GROUP "pblock_dspio" RANGE=SLICE_X56Y2:SLICE_X59Y125;
+#AREA_GROUP "pblock_dspio" RANGE=RAMB16_X3Y0:RAMB16_X3Y62;
+#AREA_GROUP "pblock_dspio" RANGE=RAMB8_X3Y0:RAMB8_X3Y63;
+#Created by Constraints Editor (xc6slx45t-fgg484-2) - 2010/12/04
+
+#ignore timing on the locally generated sys_reset signal:
+NET "sys_reset_n_local" TIG;
+
