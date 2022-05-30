@@ -47,12 +47,12 @@ CheckDNA inst_CheckDNA (
 
 // Inst as block ROM
 // begin
-RAM inst_RAM (
-	.clka(clk4),
-	.addra(addra),
-	.ena(SR_ena),					// 1 serial register
-	.regcea(SR_reg),
-	.douta(douta));
+//RAM inst_RAM (
+//	.clka(clk4),
+//	.addra(addra),
+//	.ena(SR_ena),					// 1 serial register
+//	.regcea(SR_reg),
+//	.douta(douta));
 // end of block ROM
 
 // Inst as block RAM

@@ -329,10 +329,6 @@ assign inport_addr = inport_reg;
 //
 integer file;
 
-initial
-begin
-	file = $fopen("outframe.hex");
-end
 
 always @(posedge clk)
 begin

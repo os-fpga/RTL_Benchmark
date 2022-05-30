@@ -487,7 +487,7 @@ module x7_main
 
    rs irq_latch[15:0] (.Q(irq), .S(irq_mask & irq_in), .R({16{ctrl_RST}} | irq_clr), .C(clk));
    // assign FPGA_IRQN = ~|(irq_mask & irq_in);    // IRQ pulse for each event
-   assign MMC_IRQN_o = ~|irq;        // latched IRQ
+  // assign MMC_IRQN_o = ~|irq;        // latched IRQ
 
    // Apply default values to unused signals
    assign CH_GATE_o[2] = 1'bZ;
@@ -548,22 +548,22 @@ module x7_main
   wire         mmc_cmd_dir_err;
   wire         mmc_cmd_stop_err;
 
-  sd_card_cmd_rx mmc_rx1
-  (
-    // Asynchronous reset
-    .sys_rst_n(RESETN_i),
-    // SD/MMC card command signals
-    .sd_clk_i(MMC_CLK_i),
-    .sd_cmd_i(MMC_CMD_io),
-    // Command outputs
-    .cmd_raw_o(mmc_cmd_raw),
-    .cmd_index_o(),
-    .cmd_arg_o(),
-    .cmd_done_o(mmc_cmd_done),
-    .crc_err_o(mmc_cmd_crc_err),
-    .dir_err_o(mmc_cmd_dir_err),
-    .stop_err_o(mmc_cmd_stop_err)
-  );
+  //   sd_card_cmd_rx mmc_rx1
+  //   (
+  //     // Asynchronous reset
+  //     .sys_rst_n(RESETN_i),
+  //     // SD/MMC card command signals
+  //     .sd_clk_i(MMC_CLK_i),
+  //     .sd_cmd_i(MMC_CMD_io),
+  //     // Command outputs
+  //     .cmd_raw_o(mmc_cmd_raw),
+  //     .cmd_index_o(),
+  //     .cmd_arg_o(),
+  //     .cmd_done_o(mmc_cmd_done),
+  //     .crc_err_o(mmc_cmd_crc_err),
+  //     .dir_err_o(mmc_cmd_dir_err),
+  //     .stop_err_o(mmc_cmd_stop_err)
+  //   );
 
   // MMC card emulator
   wire         mmc_cmd;
@@ -606,59 +606,59 @@ module x7_main
 
   assign MMC_DAT_io = mmc_dat_choice3;
 
-  sd_card_emulator #(
-    .USE_R4_RESPONSE      (1),    // Fast I/O read/write (app specific)
-    .USE_R5_RESPONSE      (0),    // Interrupt Request Mode
-    .EXT_CSD_INIT_FILE    ("ext_csd_init.txt"), // Initial contents of EXT_CSD
-    .OCR_USE_DUAL_VOLTAGE (1),
-    .OCR_USE_SECTOR_MODE  (0),
-    .CID_MID              (),     // Manufacturer ID
-    .CID_OID              (),     // OEM ID
-    .CID_CBX              (),     // 0=Card, 1=BGA, 2=Package On Package
-    .CID_PNM              (),     // Product Name, 6 ASCII chars
-    .CID_PRV              (),     // Product Rev (2 BCD digits, e.g. 6.2=0x62)
-    .CID_PSN              (),     // Product serial number
-    .CID_MDT              (),     // Manufacture Date (Jan=1, 1997=0, e.g. Apr. 2000=0x43)
-    .DEF_STAT             (),     // Read Write, R_0
-    .CSD_WORD_3           (),     // Read only
-    .CSD_WORD_2           (),     // Read only
-    .CSD_WORD_1           (),     // Read only
-    .CSD_WORD_0           (),     // (31:16) is read only, (15:0) is R_1 default (R/W)
-    .DEF_R_Z              ()      // Value returned for nonexistent registers
-  ) mmc_card_0 (
-
-    // Asynchronous reset
-    .sys_rst_n(RESETN_i),
-    .sys_clk(clk200),
-
-    // Bus interface
-    .adr_i(4'b0),
-    .sel_i(1'b0),
-    .we_i(1'b0),
-    .dat_i(32'b0),
-    .dat_o(),
-    .ack_o(),
-
-    // SD/MMC card command signals
-    .sd_clk_i     (MMC_CLK_i),
-    .sd_cmd_i     (MMC_CMD_io),
-    .sd_cmd_o     (mmc_cmd),
-    .sd_cmd_drv_o (mmc_cmd_drv),
-    .sd_od_mode_o (mmc_od_mode),  // open drain mode, applies to sd_cmd_o and sd_dat_o
-    .sd_dat_i     (MMC_DAT_io),
-    .sd_dat_o     (mmc_dat),
-    .sd_dat_drv_o (mmc_dat_drv),
-    .sd_dat_siz_o (mmc_dat_siz),
-
-    // Data FIFO interface
-    .buf_adr_o    (card_fifo_adr),
-    .buf_dat_o    (card_fifo_dat_wr),
-    .buf_dat_we_o (card_fifo_we),
-    .buf_dat_i    (card_fifo_dat_rd),
-    .buf_dat_rd_o (card_fifo_rd),
-    // Card busy indicator
-    .busy_i       (1'b0)
-  );
+ // sd_card_emulator #(
+ //   .USE_R4_RESPONSE      (1),    // Fast I/O read/write (app specific)
+ //   .USE_R5_RESPONSE      (0),    // Interrupt Request Mode
+ //   .EXT_CSD_INIT_FILE    ("ext_csd_init.txt"), // Initial contents of EXT_CSD
+ //   .OCR_USE_DUAL_VOLTAGE (1),
+ //   .OCR_USE_SECTOR_MODE  (0),
+ //   .CID_MID              (),     // Manufacturer ID
+ //   .CID_OID              (),     // OEM ID
+ //   .CID_CBX              (),     // 0=Card, 1=BGA, 2=Package On Package
+ //   .CID_PNM              (),     // Product Name, 6 ASCII chars
+ //   .CID_PRV              (),     // Product Rev (2 BCD digits, e.g. 6.2=0x62)
+ //   .CID_PSN              (),     // Product serial number
+ //   .CID_MDT              (),     // Manufacture Date (Jan=1, 1997=0, e.g. Apr. 2000=0x43)
+ //   .DEF_STAT             (),     // Read Write, R_0
+ //   .CSD_WORD_3           (),     // Read only
+ //   .CSD_WORD_2           (),     // Read only
+ //   .CSD_WORD_1           (),     // Read only
+ //   .CSD_WORD_0           (),     // (31:16) is read only, (15:0) is R_1 default (R/W)
+ //   .DEF_R_Z              ()      // Value returned for nonexistent registers
+ // ) mmc_card_0 (
+//
+ //   // Asynchronous reset
+ //   .sys_rst_n(RESETN_i),
+ //   .sys_clk(clk200),
+//
+ //   // Bus interface
+ //   .adr_i(4'b0),
+ //   .sel_i(1'b0),
+ //   .we_i(1'b0),
+ //   .dat_i(32'b0),
+ //   .dat_o(),
+ //   .ack_o(),
+//
+ //   // SD/MMC card command signals
+ //   .sd_clk_i     (MMC_CLK_i),
+ //   .sd_cmd_i     (MMC_CMD_io),
+ //   .sd_cmd_o     (mmc_cmd),
+ //   .sd_cmd_drv_o (mmc_cmd_drv),
+ //   .sd_od_mode_o (mmc_od_mode),  // open drain mode, applies to sd_cmd_o and sd_dat_o
+ //   .sd_dat_i     (MMC_DAT_io),
+ //   .sd_dat_o     (mmc_dat),
+ //   .sd_dat_drv_o (mmc_dat_drv),
+ //   .sd_dat_siz_o (mmc_dat_siz),
+//
+ //   // Data FIFO interface
+ //   .buf_adr_o    (card_fifo_adr),
+ //   .buf_dat_o    (card_fifo_dat_wr),
+ //   .buf_dat_we_o (card_fifo_we),
+ //   .buf_dat_i    (card_fifo_dat_rd),
+ //   .buf_dat_rd_o (card_fifo_rd),
+ //   // Card busy indicator
+ //   .busy_i       (1'b0)
+ // );
 
 
 endmodule

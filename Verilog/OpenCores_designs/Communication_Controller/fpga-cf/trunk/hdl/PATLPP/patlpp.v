@@ -327,40 +327,9 @@ assign inport_addr = inport_reg;
 
 // Simulation Code -----------------------------------------------------------
 //
-integer file;
 
-initial
-begin
-	file = $fopen("outframe.hex");
-end
 
-always @(posedge clk)
-begin
-	if (data_mux_s == 2 || op_1_s == 1)
-	begin
-		$display("Read from Reg %d: %h", reg_addr, reg_data_out);
-	end
-	if (reg_wen)
-	begin
-		$display("Written to Reg %d: %h", reg_addr, reg_data_in);
-	end
-	if (srst)
-		$display("Reset Occured");
-	if (out_src_rdy && out_dst_rdy)
-	begin
-		$display("Output to Port %d: %h", outport_addr, out_data);
-		if (outport_addr == 0)
-			$fdisplay(file, "%h", out_data);
-	end
-	if (in_src_rdy && in_dst_rdy)
-	begin
-		$display("Input From Port %d: %h", inport_addr, in_data);
-	end
-	if (data_mux_s == 5)
-	begin
-		$display("ALU Function: %d on Op0: %d and Op1: %d", alu_op, op_0_s, op_1_s);
-	end
-end
+
 
 
 endmodule 

@@ -47,9 +47,26 @@
 //
  
 // synopsys translate_off
-`include "timescale.v"
+//`include "timescale.v"
 // synopsys translate_on
-`include "SPORT_defines.v"
+//`include "SPORT_defines.v"
+
+
+
+`define SPORT_ADDR 6'h01
+`define SPORT_ADDR_MASK 6'h20
+
+`define WB_CNFG_RX `SPORT_ADDR+1
+`define WB_CNFG_TX `SPORT_ADDR+2
+
+`define RESET 3'h0
+`define IDLE  3'h1
+`define FS    3'h3
+`define RX    3'h2
+`define TX    3'h2
+`define SPORT_FIFODEPTH 10
+`define WB_ADDR_WIDTH 6
+
 
 //pulling in data bus width from SPORT_defines file
 `ifdef SPORT_WIDTH64

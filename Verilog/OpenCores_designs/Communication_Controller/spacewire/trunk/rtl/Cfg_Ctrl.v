@@ -9,7 +9,7 @@
 //
 
 /*synthesize translate_off*/
-`include "timescale.v"
+//`include "timescale.v"
 /*synthesize translate_on */
 `define reset  1	               // WISHBONE standard reset
 `define XIL_BRAM	    			   // Use Xilinx block RAM
@@ -20,7 +20,7 @@
 module Cfg_Ctrl  #(parameter DW=32,AW=32, IO_PORTNUM=16, CFG_AW=4, IO_DW=10, EXT_DW=9)
 ( 
 // interface with SpW I/O ports, External port
-                  output [PORTNUM-1:0] rd_IBUF_o,    // Note write to SpW IO port FIFO is performed by "switch core"
+                  output [IO_PORTNUM-1:0] rd_IBUF_o,    // Note write to SpW IO port FIFO is performed by "switch core"
                  `ifdef TOOL_NOTSUP_PORT_ARRAY                  
 					   input [IO_DW-1:0]	SpW_D0_i, SpW_D1_i, SpW_D2_i, SpW_D3_i,
 						                  SpW_D4_i, SpW_D5_i, SpW_D6_i, SpW_D7_i,
@@ -28,10 +28,10 @@ module Cfg_Ctrl  #(parameter DW=32,AW=32, IO_PORTNUM=16, CFG_AW=4, IO_DW=10, EXT
 												SpW_D12_i,SpW_D13_i,SpW_D14_i,SpW_D15_i,
  
                  `else
-                  input [IO_DW-1:0] SpW_D_i [0:PORTNUM-1],
+                  input [IO_DW-1:0] SpW_D_i [0:IO_PORTNUM-1],
 					  `endif
-					   input [PORTNUM-1:0] empty_IBUF_i,  // empty flag of SpW input interface buffer(fifo)
-						input [PORTNUM-1:0] full_OBUF_i,	  // full flag of SpW output interface buffer(fifo) 
+					   input [IO_PORTNUM-1:0] empty_IBUF_i,  // empty flag of SpW input interface buffer(fifo)
+						input [IO_PORTNUM-1:0] full_OBUF_i,	  // full flag of SpW output interface buffer(fifo) 
 						
 						output [EXT_DW-1:0] EXT_data_o,
 						output we_EXTport_o,
@@ -59,31 +59,13 @@ module Cfg_Ctrl  #(parameter DW=32,AW=32, IO_PORTNUM=16, CFG_AW=4, IO_DW=10, EXT
 				  parameter EEP         = 9'b1_0000_0001;   		          // {p,1'b1,8'b0000_0001}
 				  parameter HEADS_Cargo = 9'b0_xxxx_xxxx;                 // {p,1'b0,1-byte data } 
 				// commands  
-              parameter CMD_WRITE   =; 
-				  parameter CMD_REQ_ID  =; 
+       //       parameter CMD_WRITE   =; 
+		//		  parameter CMD_REQ_ID  =; 
 
               parameter STATENUM = 8;
 				  parameter RESET           = 'b0000_0001;
 				  parameter IDLE            = 'b0000_0010;
 				  parameter RCV_CMD         = 'b0000_0100;
-				  parameter  
-
-////////////////////////////
-// Registers(Control, status)
-//
-
-`include "RegSWR.v"
-
-////////////////////////////
-// Command & Reply
-//
-reg [7:0] cmd [0:13];
-reg [7:0] rpy [0:11];
-
-always @(posedge gclk)																	
-
+		
 
 endmodule
-
-`undef reset 
-`undef TOOL_NOTSUP_PORT_ARRAY

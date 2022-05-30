@@ -702,20 +702,20 @@ begin
 		detect_start_sig<=1'b0;
 end
 
-always@(posedge sda_in or posedge detect_start)
-begin
-
-	if(rst || h_rst)
-		detect_stop_sig<=1'b0;
-	else if(detect_start)
-		detect_stop_sig<=1'b0;
-	else if(scl_in)
-		detect_stop_sig<=1'b1;
-	//else if(detect_start)
-		//detect_stop_sig<=1'b0;
-	else
-		detect_stop_sig<=1'b0;
-end
+// always@(posedge sda_in or posedge detect_start)
+// begin
+// 
+// 	if(rst || h_rst)
+// 		detect_stop_sig<=1'b0;
+// 	else if(detect_start)
+// 		detect_stop_sig<=1'b0;
+// 	else if(scl_in)
+// 		detect_stop_sig<=1'b1;
+// 	//else if(detect_start)
+// 		//detect_stop_sig<=1'b0;
+// 	else
+// 		detect_stop_sig<=1'b0;
+// end
 
 //generate a delay version of byte_trans signal
 //This will be used for detecting falling edge of byte_trans
@@ -743,10 +743,10 @@ begin
 		byte_trans_sig<=1'b0;
 	else if(halt_rst)
 		byte_trans_sig <= 1'b0;
-	else if(bit_cnt == 8'b0000_1000)		
-		byte_trans_sig<=1'b1;
-	else if(halt_rst || core_rst)			// after core_rst negate byte_trans bit
-		byte_trans_sig<=1'b0;
+//	else if(bit_cnt == 8'b00001000)		
+//		byte_trans_sig<=1'b1;
+//	else if(halt_rst || core_rst)			// after core_rst negate byte_trans bit
+//		byte_trans_sig<=1'b0;
 end
 
 //bus_busy
@@ -776,8 +776,8 @@ begin
 	if(rst)				//Removing h_rst
 	slave_addressed_sig<=1'b0;
 	//else if(scl_main_state == scl_ack_address)
-	else if(byte_trans)
-	slave_addressed_sig<=addr_match;
+	//else if(byte_trans)
+	//slave_addressed_sig<=addr_match;
 	else
 	slave_addressed_sig<=slave_addressed;
 	//slave_addressed_sig<= 1'b0;
@@ -1076,29 +1076,29 @@ end
 	//core is in master mode and a generate strat condition has detected while bus is busy 
 	//or a stop conditioin has been detected when not requested
 	//or a repeate start has been detected when in slave mode.
-
-always@(posedge clk or posedge rst or posedge core_rst or posedge h_rst)
-begin
-	if(rst || h_rst)
-		arb_lost_sig<=1'b0;
-	else
-	begin
-		if(arb_rst)
-		arb_lost_sig<=1'b0;
-		else if(master_slave)
-		begin
-			if((arbitration_lost)||(bus_busy && gen_start))		
-				arb_lost_sig<=1'b1;
-		end
-	
-		else if(rep_start)
-			arb_lost_sig<=1'b1;
-		//else if(core_rst && master_slave)
-			//arb_lost_sig<=1'b0;
-		else
-			arb_lost_sig<=1'b0;
-	end
-end
+//    
+//    always@(posedge clk or posedge rst or posedge core_rst or posedge h_rst)
+//    begin
+//    	if(rst || h_rst)
+//    		arb_lost_sig<=1'b0;
+//    	else
+//    	begin
+//    		if(arb_rst)
+//    		arb_lost_sig<=1'b0;
+//    		else if(master_slave)
+//    		begin
+//    			if((arbitration_lost)||(bus_busy && gen_start))		
+//    				arb_lost_sig<=1'b1;
+//    		end
+//    	
+//    		else if(rep_start)
+//    			arb_lost_sig<=1'b1;
+//    		//else if(core_rst && master_slave)
+//    			//arb_lost_sig<=1'b0;
+//    		else
+//    			arb_lost_sig<=1'b0;
+//    	end
+//    end
 
 always@(posedge clk or posedge rst or posedge h_rst)
 begin

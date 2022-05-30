@@ -33,7 +33,7 @@ module gpio (
    parameter INPUT_WIDTH = 4;
    parameter ADDR_WIDTH = 3;
    
-   inout [  BIDIR_WIDTH - 1: 0] bidir_port;
+   
    input [  INPUT_WIDTH - 1: 0 ] input_port;   
    output [  1: 0] 	readdata;
    input [  ADDR_WIDTH - 1: 0] 	address;
@@ -41,6 +41,12 @@ module gpio (
    input 		reset_n;
    input 		write_n;
    input [  1: 0] 	writedata;
+
+
+   inout [  BIDIR_WIDTH - 1: 0] bidir_port;
+
+
+   
 
    wire [ (BIDIR_WIDTH + INPUT_WIDTH) - 1: 0]      data_in; 
    reg [  BIDIR_WIDTH - 1: 0] 	bidir_port;

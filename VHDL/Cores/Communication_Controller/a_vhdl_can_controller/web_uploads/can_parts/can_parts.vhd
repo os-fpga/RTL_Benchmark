@@ -6393,10 +6393,10 @@ BEGIN
          send_ack => send_ack,
          node_error_passive => node_error_passive);   
    
-   xhdl_148 <= rx_err_cnt_dummy & rx_err_cnt(7 DOWNTO 0);
-   rx_err_cnt_dummy <= xhdl_148(8);
+ --  xhdl_148 <= rx_err_cnt_dummy & rx_err_cnt(7 DOWNTO 0);
+  rx_err_cnt_dummy <= xhdl_148(8);
    rx_err_cnt(7 DOWNTO 0) <= xhdl_148(7 DOWNTO 0);
-   xhdl_150 <= tx_err_cnt_dummy & tx_err_cnt(7 DOWNTO 0);
+ --  xhdl_150 <= tx_err_cnt_dummy & tx_err_cnt(7 DOWNTO 0);
    tx_err_cnt_dummy <= xhdl_150(8);
    tx_err_cnt(7 DOWNTO 0) <= xhdl_150(7 DOWNTO 0);
    

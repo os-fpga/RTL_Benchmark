@@ -12,15 +12,15 @@
 /*****************************************************************************/
 
 
-`include "eth_phy_defines.v"
-`include "wb_model_defines.v"
-`include "tb_eth_defines.v"
-`include "ethmac_defines.v"
-`include "timescale.v"
-`include "iba_modules.v"
-`include "dcp_modules.v"
-`include "dpq_modules.v"
-`include "plu_moduls.v"
+//`include "eth_phy_defines.v"
+//`include "wb_model_defines.v"
+//`include "tb_eth_defines.v"
+//`include "ethmac_defines.v"
+//`include "timescale.v"
+//`include "iba_modules.v"
+//`include "dcp_modules.v"
+//`include "dpq_modules.v"
+//`include "plu_moduls.v"
 //`include "Xbar_modules.v"
 
 
@@ -317,7 +317,8 @@ module plu (reset,clk , pi1,pi2,pi3,pi4,pi5,pi6, po1, po2,po3, po4,po5, po6, Dw1
                         start_addr3,start_length3,T_q3,transmit_done3,adr_valid3,
                         start_addr4,start_length4,T_q4,transmit_done4,adr_valid4,
                         start_addr5,start_length5,T_q5,transmit_done5,adr_valid5,
-                        start_addr6,start_length6,T_q6,transmit_done6,adr_valid6);
+                        start_addr6,start_length6,T_q6,transmit_done6,adr_valid6,
+                        T_q7,T_q8,start_length7,start_length8);
    
        input reset, clk;
        input [31:0] start_addr1,start_addr2,start_addr3,start_addr4,start_addr5,start_addr6;//from dcp
@@ -343,12 +344,12 @@ module plu (reset,clk , pi1,pi2,pi3,pi4,pi5,pi6, po1, po2,po3, po4,po5, po6, Dw1
    endmodule
 
 
-   module Xbar(reset,clk,T_q1,Data_i1,Data_o1,xbar2plu_start_pack_1,xbar2plu_end_pack_1,   //  iba2xbar_start_pack_1,iba2xbar_end_pack_1,
-                         T_q2,Data_i2,Data_o2,xbar2plu_start_pack_2,xbar2plu_end_pack_2,   //  iba2xbar_start_pack_2,iba2xbar_end_pack_2,
-                         T_q3,Data_i3,Data_o3,xbar2plu_start_pack_3,xbar2plu_end_pack_3,   //  iba2xbar_start_pack_3,iba2xbar_end_pack_3,
-                         T_q4,Data_i4,Data_o4,xbar2plu_start_pack_4,xbar2plu_end_pack_4,   //  iba2xbar_start_pack_4,iba2xbar_end_pack_4,
-                         T_q5,Data_i5,Data_o5,xbar2plu_start_pack_5,xbar2plu_end_pack_5,   //  iba2xbar_start_pack_5,iba2xbar_end_pack_5,
-                         T_q6,Data_i6,Data_o6,xbar2plu_start_pack_6,xbar2plu_end_pack_6);  //  iba2xbar_start_pack_6,iba2xbar_end_pack_6,
+   module Xbar(reset,clk,T_q1,Data_i1,Data_o1,xbar2plu_start_pack_1,xbar2plu_end_pack_1,     iba2xbar_start_pack_1,iba2xbar_end_pack_1,
+                         T_q2,Data_i2,Data_o2,xbar2plu_start_pack_2,xbar2plu_end_pack_2,     iba2xbar_start_pack_2,iba2xbar_end_pack_2,
+                         T_q3,Data_i3,Data_o3,xbar2plu_start_pack_3,xbar2plu_end_pack_3,     iba2xbar_start_pack_3,iba2xbar_end_pack_3,
+                         T_q4,Data_i4,Data_o4,xbar2plu_start_pack_4,xbar2plu_end_pack_4,     iba2xbar_start_pack_4,iba2xbar_end_pack_4,
+                         T_q5,Data_i5,Data_o5,xbar2plu_start_pack_5,xbar2plu_end_pack_5,     iba2xbar_start_pack_5,iba2xbar_end_pack_5,
+                         T_q6,Data_i6,Data_o6,xbar2plu_start_pack_6,xbar2plu_end_pack_6, iba2xbar_start_pack_6,iba2xbar_end_pack_6);  //  ,
 
      input reset,clk;
      input [7:0]    T_q1,T_q2,T_q3,T_q4,T_q5,T_q6;

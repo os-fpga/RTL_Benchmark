@@ -16,6 +16,7 @@
 --  - Write your own device-top level file, instantiating/connecting the LPC and SIO.
 -- Address range:
 --  - COM1: 3F8-3FFh
+-- - 
 --  - COM2: 2F8-2FFh
 --  - COM3: 3E8-3EFh
 --  - COM4: 2E8-2EFh

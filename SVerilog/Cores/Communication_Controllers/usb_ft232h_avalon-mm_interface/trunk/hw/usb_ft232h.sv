@@ -116,69 +116,69 @@ ft232h_fifos_interface ffi (
 
 
 
-dcfifo  txfifo (
-        .aclr      ( reset_i ),
-        .data      ( txf_wrdata ),
-        .rdclk     ( txf_rdclk ),
-        .rdreq     ( txf_rdreq ),
-        .wrclk     ( txf_wrclk ),
-        .wrreq     ( txf_wrreq ),
-        .q         ( txf_rddata ),
-        .rdempty   ( txf_rdempty ),
-        .wrfull    ( txf_wrfull ),
-        .wrusedw   ( txf_wrusedw ),
-        .eccstatus (),
-        .rdfull    (),
-        .rdusedw   (),
-        .wrempty   ());
-  defparam
-    txfifo.intended_device_family = "Cyclone IV E",
-    txfifo.lpm_numwords = TX_FIFO_NUMWORDS,
-    txfifo.lpm_showahead = "OFF",
-    txfifo.lpm_type = "dcfifo",
-    txfifo.lpm_width = 8,
-    txfifo.lpm_widthu = TX_FIFO_WIDTHU,
-    txfifo.overflow_checking = "ON",
-    txfifo.rdsync_delaypipe = FIFOS_DELAYPIPE,
-    txfifo.read_aclr_synch = "ON",
-    txfifo.underflow_checking = "ON",
-    txfifo.use_eab = "ON",
-    txfifo.write_aclr_synch = "ON",
-    txfifo.wrsync_delaypipe = FIFOS_DELAYPIPE;
-
-
-dcfifo rxfifo (
-        .aclr      ( reset_i ),
-        .data      ( rxf_wrdata ),
-        .rdclk     ( rxf_rdclk ),
-        .rdreq     ( rxf_rdreq ),
-        .wrclk     ( rxf_wrclk ),
-        .wrreq     ( rxf_wrreq ),
-        .q         ( rxf_rddata ),
-        .rdempty   ( rxf_rdempty ),
-        .wrfull    ( rxf_wrfull ),
-        .wrusedw   (),
-        .eccstatus (),
-        .rdfull    ( rxf_rdfull ),
-        .rdusedw   ( rxf_rdusedw ),
-        .wrempty   ());
-  defparam
-    rxfifo.intended_device_family = "Cyclone IV E",
-    rxfifo.lpm_numwords = RX_FIFO_NUMWORDS,
-    rxfifo.lpm_showahead = "OFF",
-    rxfifo.lpm_type = "dcfifo",
-    rxfifo.lpm_width = 8,
-    rxfifo.lpm_widthu = RX_FIFO_WIDTHU,
-    rxfifo.overflow_checking = "ON",
-    rxfifo.rdsync_delaypipe = FIFOS_DELAYPIPE,
-    rxfifo.read_aclr_synch = "ON",
-    rxfifo.underflow_checking = "ON",
-    rxfifo.use_eab = "ON",
-    rxfifo.write_aclr_synch = "ON",
-    rxfifo.wrsync_delaypipe = FIFOS_DELAYPIPE;
-
-
-
+//dcfifo  txfifo (
+//        .aclr      ( reset_i ),
+//        .data      ( txf_wrdata ),
+//        .rdclk     ( txf_rdclk ),
+//        .rdreq     ( txf_rdreq ),
+//        .wrclk     ( txf_wrclk ),
+//        .wrreq     ( txf_wrreq ),
+//        .q         ( txf_rddata ),
+//        .rdempty   ( txf_rdempty ),
+//        .wrfull    ( txf_wrfull ),
+//        .wrusedw   ( txf_wrusedw ),
+//        .eccstatus (),
+//        .rdfull    (),
+//        .rdusedw   (),
+//        .wrempty   ());
+//  defparam
+//    txfifo.intended_device_family = "Cyclone IV E",
+//    txfifo.lpm_numwords = TX_FIFO_NUMWORDS,
+//    txfifo.lpm_showahead = "OFF",
+//    txfifo.lpm_type = "dcfifo",
+//    txfifo.lpm_width = 8,
+//    txfifo.lpm_widthu = TX_FIFO_WIDTHU,
+//    txfifo.overflow_checking = "ON",
+//    txfifo.rdsync_delaypipe = FIFOS_DELAYPIPE,
+//    txfifo.read_aclr_synch = "ON",
+//    txfifo.underflow_checking = "ON",
+//    txfifo.use_eab = "ON",
+//    txfifo.write_aclr_synch = "ON",
+//    txfifo.wrsync_delaypipe = FIFOS_DELAYPIPE;
+//
+//
+//dcfifo rxfifo (
+//        .aclr      ( reset_i ),
+//        .data      ( rxf_wrdata ),
+//        .rdclk     ( rxf_rdclk ),
+//        .rdreq     ( rxf_rdreq ),
+//        .wrclk     ( rxf_wrclk ),
+//        .wrreq     ( rxf_wrreq ),
+//        .q         ( rxf_rddata ),
+//        .rdempty   ( rxf_rdempty ),
+//        .wrfull    ( rxf_wrfull ),
+//        .wrusedw   (),
+//        .eccstatus (),
+//        .rdfull    ( rxf_rdfull ),
+//        .rdusedw   ( rxf_rdusedw ),
+//        .wrempty   ());
+//  defparam
+//    rxfifo.intended_device_family = "Cyclone IV E",
+//    rxfifo.lpm_numwords = RX_FIFO_NUMWORDS,
+//    rxfifo.lpm_showahead = "OFF",
+//    rxfifo.lpm_type = "dcfifo",
+//    rxfifo.lpm_width = 8,
+//    rxfifo.lpm_widthu = RX_FIFO_WIDTHU,
+//    rxfifo.overflow_checking = "ON",
+//    rxfifo.rdsync_delaypipe = FIFOS_DELAYPIPE,
+//    rxfifo.read_aclr_synch = "ON",
+//    rxfifo.underflow_checking = "ON",
+//    rxfifo.use_eab = "ON",
+//    rxfifo.write_aclr_synch = "ON",
+//    rxfifo.wrsync_delaypipe = FIFOS_DELAYPIPE;
+//
+//
+//
 usb_fifos_avalon_mm_interface ufai (
   .reset_i          (reset_i),
   .clk_i            (clk_i),

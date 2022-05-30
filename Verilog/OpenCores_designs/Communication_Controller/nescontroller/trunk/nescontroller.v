@@ -38,7 +38,9 @@ module nescontroller (
 	output nes_clk;
 	input nes_data0, nes_data1;
 	output [7:0] q0, q1;
-	output busy = (frame != STATE_IDLE);
+	output busy;
+
+	wire    busy= (frame != STATE_IDLE);
 
 	// states for state-machine
 	parameter STATE_IDLE		= 3'd0;

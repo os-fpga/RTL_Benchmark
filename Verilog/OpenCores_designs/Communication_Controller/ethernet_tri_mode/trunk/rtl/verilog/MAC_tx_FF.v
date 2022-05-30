@@ -422,13 +422,11 @@ always @ (posedge Clk_SYS or posedge Reset)
 
 
 
-always @ (posedge Clk_SYS or posedge Reset)
-    if (Reset)
-        Fifo_data_count     <=0;
-    else if (FullDuplex)
-        Fifo_data_count     <=Add_wr[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]-Add_rd_ungray[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5];
-    else
-        Fifo_data_count     <=Add_wr[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]-Add_rd_reg_dl1[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]; //for half duplex backoff requirement
+//always @ (posedge Clk_SYS or posedge Reset)
+//    if (Reset)
+//        Fifo_data_count     <=0;
+//    else
+//        Fifo_data_count     <=Add_wr[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]-Add_rd_reg_dl1[`MAC_RX_FF_DEPTH-1:`MAC_RX_FF_DEPTH-5]; //for half duplex backoff requirement
         
 
 always @ (posedge Clk_SYS or posedge Reset)
@@ -766,7 +764,7 @@ always @ (posedge Clk_MAC)
         $display("mac_tx_FF meet error status at time :%t",$time);
         end
 
-//gen Fifo_eop aligned to last valid data byte¡£            
+//gen Fifo_eop aligned to last valid data byteï¿½ï¿½            
 always @ (Current_state_MAC or Dout_eop)
     if (((Current_state_MAC==MAC_byte0&&Dout_BE==2'b00||
         Current_state_MAC==MAC_byte1&&Dout_BE==2'b11||
@@ -778,7 +776,7 @@ always @ (Current_state_MAC or Dout_eop)
 //******************************************************************************
 //******************************************************************************
 
-duram #(36,`MAC_TX_FF_DEPTH,"M4K") U_duram(           
+duram  U_duram(           
 .data_a         (Din        ), 
 .wren_a         (Wr_en      ), 
 .address_a      (Add_wr     ), 

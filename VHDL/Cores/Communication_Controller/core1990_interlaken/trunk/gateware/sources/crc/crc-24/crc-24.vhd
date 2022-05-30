@@ -46,7 +46,7 @@ architecture rtl of CRC_24 is
     end function ToIndirectInitVal;
     
     constant Poly: Std_Logic_Vector(CRC_Width-1 downto 0) := G_Poly;
-    constant InitVal: Std_Logic_Vector(CRC_Width-1 downto 0) := G_InitVal;
+ //   constant InitVal: Std_Logic_Vector(CRC_Width-1 downto 0) := G_InitVal;
     
     constant InDirectInitVal: std_logic_vector(CRC_Width-1 downto 0):=ToIndirectInitVal(InitVal, CRC_Width, Poly);
     signal Reg_s : std_logic_vector(CRC_Width-1 downto 0);  

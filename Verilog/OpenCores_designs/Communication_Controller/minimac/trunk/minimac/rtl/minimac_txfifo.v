@@ -41,21 +41,25 @@ always @(posedge sys_clk) begin
 end
 
 asfifo #(
-	.data_width(8),
-	.address_width(7)
+	.DATA_WIDTH(8),
+	.ADDRESS_WIDTH(7)
 ) fifo (
-	.data_out(fifo_out),
+	.dout(fifo_out),
 	.empty(fifo_empty),
-	.read_en(fifo_read),
-	.clk_read(phy_tx_clk),
+	.rd_en(fifo_read),
+	.rd_clk(phy_tx_clk),
 
-	.data_in(data),
+	.din(data),
 	.full(full),
-	.write_en(stb),
-	.clk_write(sys_clk),
+	.wr_en(stb),
+	.wr_clk(sys_clk),
 
 	.rst(tx_rst)
 );
+
+
+
+
 
 reg can_tx1;
 reg can_tx2;

@@ -4,4 +4,3 @@ set ::env(DESIGN_DIR) RTL_Benchmark/VHDL/Cores/Communication_Controller/a_vhdl_c
 set ::env(TOP_VERILOG) RTL_Benchmark/VHDL/Cores/Communication_Controller/a_vhdl_can_controller/web_uploads/can_parts/can_parts.vhd
 set ::env(CLOCK_COUNT) 1
 set ::env(DOMAIN) controller
-

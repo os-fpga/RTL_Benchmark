@@ -362,11 +362,11 @@ initial begin
  Divided_2_clk=0;
  end
  assign  TxEndFrmOut_uc = TxBufferEmpty & StateLeftinQ;
- 
-   always @(posedge TxStartFrmIn)
-    begin
-          Divided_2_clk=1;
-        end
+ //
+ //  always @(posedge TxStartFrmIn)
+ //   begin
+ //         Divided_2_clk=1;
+ //       end
    always@ (posedge MTxClk)
    begin
        Divided_2_clk <=  MTxClk^Divided_2_clk;
@@ -429,7 +429,7 @@ initial begin
                  end
              if (StateCount & PreNib15State >= 8)
                    begin
-                   ByteCnt = ByteCnt+1;
+                   ByteCnt <= ByteCnt+1;
                    write_fifo <= 1;
                    end
                 else   begin

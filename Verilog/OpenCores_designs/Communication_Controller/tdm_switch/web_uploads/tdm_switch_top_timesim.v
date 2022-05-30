@@ -2003,7 +2003,7 @@ module tdm_switch_top (
     .RSTB(\c_mem/RSTB_INTNOT ),
     .WEA(\c_mem/LOGIC_ZERO ),
     .WEB(\c_mem/WEB_INTNOT ),
-    .GSR(GSR),
+
     .ADDRA({c_mem_addr_cnt[4], c_mem_addr_cnt[3], c_mem_addr_cnt[2], c_mem_addr_cnt[1], c_mem_addr_cnt[0], frame_cnt[2], frame_cnt_1_1, frame_cnt[0]})
 ,
     .ADDRB({mpi_addr_7_IBUF, mpi_addr_6_IBUF, mpi_addr_5_IBUF, mpi_addr_4_IBUF, mpi_addr_3_IBUF, mpi_addr_2_IBUF, mpi_addr_1_IBUF, mpi_addr_0_IBUF}),

@@ -112,10 +112,10 @@ wire  [31:0]        cfg_datain                    ; // data for transfer
 wire  [31:0]        cfg_dataout                   ; // data for received
 wire                hware_op_done                 ; // operation done
 
-spi_if  u_spi_if
+xspi_if  u_spi_if
           (
-          . clk                         (clk                          ), 
-          . reset_n                     (reset_n                      ),
+  //        . sclk                         (clk                          ), 
+   //       . reset_n                     (reset_n                      ),
 
            // towards ctrl i/f
           . sck_pe                      (sck_pe                       ),
@@ -166,7 +166,7 @@ spi_ctl  u_spi_ctrl
 
 
 
-spi_cfg u_cfg (
+xspi_cfg u_cfg (
 
           . mclk                        (clk                          ),
           . reset_n                     (reset_n                      ),

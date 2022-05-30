@@ -62,7 +62,8 @@ use ieee.std_logic_1164.all;
 use work.tx_package.all;
 
 entity tx_spdif is
-   generic (DATA_WIDTH    : integer range 16 to 32;
+   generic (
+      -- 4    : integer range 16 to 32;
             ADDR_WIDTH    : integer range 8 to 64;
             USER_DATA_BUF : integer range 0 to 1;
             CH_STAT_BUF   : integer range 0 to 1);
@@ -77,9 +78,9 @@ entity tx_spdif is
       wb_bte_i   : in  std_logic_vector(1 downto 0);
       wb_cti_i   : in  std_logic_vector(2 downto 0);
       wb_adr_i   : in  std_logic_vector(ADDR_WIDTH - 1 downto 0);
-      wb_dat_i   : in  std_logic_vector(DATA_WIDTH -1 downto 0);
+      wb_dat_i   : in  std_logic_vector(4 -1 downto 0);
       wb_ack_o   : out std_logic;
-      wb_dat_o   : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+      wb_dat_o   : out std_logic_vector(4 - 1 downto 0);
       -- Interrupt line
       tx_int_o   : out std_logic;
       -- SPDIF output signal
@@ -88,24 +89,24 @@ end tx_spdif;
 
 architecture rtl of tx_spdif is
 
-   signal data_out, version_dout                                : std_logic_vector(DATA_WIDTH - 1 downto 0);
+   signal data_out, version_dout                                : std_logic_vector(4 - 1 downto 0);
    signal version_rd                                            : std_logic;
    signal config_rd, config_wr, status_rd                       : std_logic;
-   signal config_dout, status_dout                              : std_logic_vector(DATA_WIDTH - 1 downto 0);
-   signal config_bits                                           : std_logic_vector(DATA_WIDTH - 1 downto 0);
-   signal intmask_bits, intmask_dout                            : std_logic_vector(DATA_WIDTH - 1 downto 0);
+   signal config_dout, status_dout                              : std_logic_vector(4 - 1 downto 0);
+   signal config_bits                                           : std_logic_vector(4 - 1 downto 0);
+   signal intmask_bits, intmask_dout                            : std_logic_vector(4 - 1 downto 0);
    signal intmask_rd, intmask_wr                                : std_logic;
-   signal intstat_dout, intstat_events                          : std_logic_vector(DATA_WIDTH - 1 downto 0);
+   signal intstat_dout, intstat_events                          : std_logic_vector(4 - 1 downto 0);
    signal intstat_rd, intstat_wr                                : std_logic;
    signal evt_hsbf, evt_lsbf                                    : std_logic;
    signal evt_hcsbf, evt_lcsbf                                  : std_logic;
-   signal chstat_dout, chstat_bits                              : std_logic_vector(DATA_WIDTH - 1 downto 0);
+   signal chstat_dout, chstat_bits                              : std_logic_vector(4 - 1 downto 0);
    signal chstat_rd, chstat_wr                                  : std_logic;
    signal chstat_freq                                           : std_logic_vector(1 downto 0);
    signal chstat_gstat, chstat_preem, chstat_copy, chstat_audio : std_logic;
    signal mem_wr, mem_rd, ch_status_wr, user_data_wr            : std_logic;
    signal sample_addr                                           : std_logic_vector(ADDR_WIDTH - 2 downto 0);
-   signal sample_data                                           : std_logic_vector(DATA_WIDTH - 1 downto 0);
+   signal sample_data                                           : std_logic_vector(4 - 1 downto 0);
    signal conf_mode                                             : std_logic_vector(3 downto 0);
    signal conf_ratio                                            : std_logic_vector(7 downto 0);
    signal conf_udaten, conf_chsten                              : std_logic_vector(1 downto 0);
@@ -121,10 +122,10 @@ begin
                when wb_adr_i(ADDR_WIDTH - 1) = '0' else (others => '0');
 
 -- Wishbone bus cycle decoder
-   WB : tx_wb_decoder
-      generic map (
-         DATA_WIDTH => DATA_WIDTH,
-         ADDR_WIDTH => ADDR_WIDTH)
+ --  WB : tx_wb_decoder
+ --    generic map (
+ --      
+ --       ADDR_WIDTH => ADDR_WIDTH)
       port map (
          wb_clk_i     => wb_clk_i,
          wb_rst_i     => wb_rst_i,
@@ -154,7 +155,7 @@ begin
 -- TxVersion - Version register
    VER : tx_ver_reg
       generic map (
-         DATA_WIDTH    => DATA_WIDTH,
+         4    => 4,
          ADDR_WIDTH    => ADDR_WIDTH,
          USER_DATA_BUF => USER_DATA_BUF,
          CH_STAT_BUF   => CH_STAT_BUF)
@@ -163,10 +164,10 @@ begin
          ver_dout => version_dout);
 
 -- TxConfig - Configuration register
-   CG32 : if DATA_WIDTH = 32 generate
+   CG32 : if 4 = 32 generate
       CONF : gen_control_reg
          generic map (
-            DATA_WIDTH      => 32,
+            4      => 32,
             ACTIVE_BIT_MASK => "11101111111111110000111100000000")
          port map (
             clk       => wb_clk_i,
@@ -178,10 +179,10 @@ begin
             ctrl_bits => config_bits);
       conf_mode(3 downto 0) <= config_bits(23 downto 20);
    end generate CG32;
-   CG16 : if DATA_WIDTH = 16 generate
+   CG16 : if 4 = 16 generate
       CONF : gen_control_reg
          generic map (
-            DATA_WIDTH      => 16,
+            4      => 16,
             ACTIVE_BIT_MASK => "1110111111111111")
          port map (
             clk       => wb_clk_i,
@@ -211,10 +212,10 @@ begin
    conf_txen   <= config_bits(0);
 
 -- TxChStat - channel status control register
-   CS32 : if DATA_WIDTH = 32 generate
+   CS32 : if 4 = 32 generate
       CHST : gen_control_reg
          generic map (
-            DATA_WIDTH      => 32,
+            4      => 32,
             ACTIVE_BIT_MASK => "11111111000000000000000000000000")
          port map (
             clk       => wb_clk_i,
@@ -225,10 +226,10 @@ begin
             ctrl_dout => chstat_dout,
             ctrl_bits => chstat_bits);
    end generate CS32;
-   CS16 : if DATA_WIDTH = 16 generate
+   CS16 : if 4 = 16 generate
       CHST : gen_control_reg
          generic map (
-            DATA_WIDTH      => 16,
+            4      => 16,
             ACTIVE_BIT_MASK => "1111111100000000")
          port map (
             clk       => wb_clk_i,
@@ -246,10 +247,10 @@ begin
    chstat_audio            <= chstat_bits(0);
 
 -- TxIntMask - interrupt mask register
-   IM32 : if DATA_WIDTH = 32 generate
+   IM32 : if 4 = 32 generate
       IMASK : gen_control_reg
          generic map (
-            DATA_WIDTH      => 32,
+            4      => 32,
             ACTIVE_BIT_MASK => "01111000000000000000000000000000")
          port map (
             clk       => wb_clk_i,
@@ -260,10 +261,10 @@ begin
             ctrl_dout => intmask_dout,
             ctrl_bits => intmask_bits);
    end generate IM32;
-   IM16 : if DATA_WIDTH = 16 generate
+   IM16 : if 4 = 16 generate
       IMASK : gen_control_reg
          generic map (
-            DATA_WIDTH      => 16,
+            4      => 16,
             ACTIVE_BIT_MASK => "0111100000000000")
          port map (
             clk       => wb_clk_i,
@@ -278,7 +279,7 @@ begin
 -- TxIntStat - interrupt status register
    ISTAT : gen_event_reg
       generic map (
-         DATA_WIDTH => DATA_WIDTH)
+         4 => 4)
       port map (
          clk      => wb_clk_i,
          rst      => wb_rst_i,
@@ -295,17 +296,17 @@ begin
    intstat_events(2)                       <= evt_hsbf;  -- higher sampel buffer empty
    intstat_events(3)                       <= evt_lcsbf;  -- lower ch.stat/user data buf empty
    intstat_events(4)                       <= evt_hcsbf;  -- higher ch.stat7user data buf empty
-   intstat_events(DATA_WIDTH - 1 downto 5) <= (others => '0');
+   intstat_events(4 - 1 downto 5) <= (others => '0');
 
 -- Sample buffer memory
    MEM : dpram
       generic map (
-         DATA_WIDTH => DATA_WIDTH,
+         4 => 4,
          RAM_WIDTH  => ADDR_WIDTH - 1)
       port map (
          clk     => wb_clk_i,
          rst     => wb_rst_i,
-         din     => wb_dat_i(DATA_WIDTH - 1 downto 0),
+         din     => wb_dat_i(4 - 1 downto 0),
          wr_en   => mem_wr,
          rd_en   => mem_rd,
          wr_addr => wb_adr_i(ADDR_WIDTH - 2 downto 0),
@@ -338,7 +339,7 @@ begin
 
 -- Transmit encoder
    TENC : tx_encoder
-      generic map (DATA_WIDTH => DATA_WIDTH,
+      generic map (4 => 4,
                    ADDR_WIDTH => ADDR_WIDTH) 
       port map (
          wb_clk_i     => wb_clk_i,

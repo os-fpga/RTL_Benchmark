@@ -168,15 +168,14 @@ use work.rio_common.all;
 -- Entity for RioSerial.
 -------------------------------------------------------------------------------
 entity RioSerial is
-  generic(
-    TIMEOUT_WIDTH : natural);
+
   port(
     -- System signals.
     clk : in std_logic;
     areset_n : in std_logic;
 
     -- Status signals for maintenance operations.
-    portLinkTimeout_i : in std_logic_vector(TIMEOUT_WIDTH-1 downto 0);
+    portLinkTimeout_i : in std_logic_vector(4-1 downto 0);
     linkInitialized_o : out std_logic;
     inputPortEnable_i : in std_logic;
     outputPortEnable_i : in std_logic;
@@ -244,13 +243,12 @@ architecture RioSerialImpl of RioSerial is
   end component;
   
   component RioTransmitter is
-    generic(
-      TIMEOUT_WIDTH : natural);
+
     port(
       clk : in std_logic;
       areset_n : in std_logic;
 
-      portLinkTimeout_i : in std_logic_vector(TIMEOUT_WIDTH-1 downto 0);
+      portLinkTimeout_i : in std_logic_vector(4-1 downto 0);
       portEnable_i : in std_logic;
       
       localAckIdWrite_i : in std_logic;
@@ -360,8 +358,7 @@ begin
   -----------------------------------------------------------------------------
   
   Transmitter: RioTransmitter
-    generic map(
-      TIMEOUT_WIDTH=>TIMEOUT_WIDTH)
+  
     port map(
       clk=>clk, areset_n=>areset_n,
       portLinkTimeout_i=>portLinkTimeout_i,
@@ -458,15 +455,14 @@ use work.rio_common.all;
 -- Entity for RioTransmitter.
 -------------------------------------------------------------------------------
 entity RioTransmitter is
-  generic(
-    TIMEOUT_WIDTH : natural);
+
   port(
     -- System signals.
     clk : in std_logic;
     areset_n : in std_logic;
 
     -- Status signals used for maintenance.
-    portLinkTimeout_i : in std_logic_vector(TIMEOUT_WIDTH-1 downto 0);
+    portLinkTimeout_i : in std_logic_vector(4-1 downto 0);
     portEnable_i : in std_logic;
 
     -- Support for localAckIdCSR.
@@ -581,14 +577,14 @@ architecture RioTransmitterImpl of RioTransmitter is
   signal crcCalculated : std_logic_vector(4 downto 0);
 
   signal timeoutWrite : std_logic;
-  signal timeoutCounter : unsigned(TIMEOUT_WIDTH downto 0);
-  signal timeoutFrame : unsigned(TIMEOUT_WIDTH downto 0);
-  signal timeoutElapsed : unsigned(TIMEOUT_WIDTH downto 0);
-  signal timeoutDelta : unsigned(TIMEOUT_WIDTH downto 0);
+  signal timeoutCounter : unsigned(4 downto 0);
+  signal timeoutFrame : unsigned(4 downto 0);
+  signal timeoutElapsed : unsigned(4 downto 0);
+  signal timeoutDelta : unsigned(4 downto 0);
   signal timeoutExpired : std_logic;
 
   signal timeoutAddress : std_logic_vector(4 downto 0);
-  signal timeoutMemoryOut : std_logic_vector(TIMEOUT_WIDTH downto 0);
+  signal timeoutMemoryOut : std_logic_vector(4 downto 0);
   
 begin
 
@@ -644,11 +640,11 @@ begin
 
   timeoutElapsed <= timeoutCounter - timeoutFrame;
   timeoutDelta <= unsigned('0' & portLinkTimeout_i) - timeoutElapsed;
-  timeoutExpired <= timeoutDelta(TIMEOUT_WIDTH);
+  timeoutExpired <= timeoutDelta(4);
   
   timeoutFrame <= unsigned(timeoutMemoryOut);
   TimeoutMemory: MemorySimpleDualPortAsync
-    generic map(ADDRESS_WIDTH=>5, DATA_WIDTH=>TIMEOUT_WIDTH+1, INIT_VALUE=>'0')
+    generic map(ADDRESS_WIDTH=>5, DATA_WIDTH=>4+1, INIT_VALUE=>'0')
     port map(
       clkA_i=>clk, enableA_i=>timeoutWrite,
       addressA_i=>timeoutAddress, dataA_i=>std_logic_vector(timeoutCounter),

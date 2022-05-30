@@ -172,19 +172,19 @@ pipeline read_pipe_inst (
     read_pipe_inst.LATENCY = READ_LATENCY;
     
     
-lpm_decode LPM_DECODE_component (
-  .clock (clk_i),
-  .data (address_pipe),
-  .eq (address_decode),
-  .aclr (),
-  .clken (ad_clken),
-  .enable (ad_en)
-  );
-  defparam
-    LPM_DECODE_component.lpm_decodes = 6,
-    LPM_DECODE_component.lpm_pipeline = 1,
-    LPM_DECODE_component.lpm_type = "LPM_DECODE",
-    LPM_DECODE_component.lpm_width = 3;
+//lpm_decode LPM_DECODE_component (
+//  .clock (clk_i),
+//  .data (address_pipe),
+//  .eq (address_decode),
+//  .aclr (),
+//  .clken (ad_clken),
+//  .enable (ad_en)
+//  );
+//  defparam
+//    LPM_DECODE_component.lpm_decodes = 6,
+//    LPM_DECODE_component.lpm_pipeline = 1,
+//    LPM_DECODE_component.lpm_type = "LPM_DECODE",
+//    LPM_DECODE_component.lpm_width = 3;
 
 
 
@@ -299,24 +299,24 @@ assign write_waitrequest = ~write_ready;
 
 
 
-lpm_compare LPM_COMPARE_component (
-  .clken (1'b1),
-  .clock (clk_i),
-  .dataa (address_i),
-  .datab (write_data_addr),
-  .aeb (write_data_request),
-  .aclr (reset_i),
-  .agb (),
-  .ageb (),
-  .alb (),
-  .aleb (),
-  .aneb ());
-  defparam
-    LPM_COMPARE_component.lpm_hint = "ONE_INPUT_IS_CONSTANT=YES",
-    LPM_COMPARE_component.lpm_pipeline = 1,
-    LPM_COMPARE_component.lpm_representation = "UNSIGNED",
-    LPM_COMPARE_component.lpm_type = "LPM_COMPARE",
-    LPM_COMPARE_component.lpm_width = 3;
+//lpm_compare LPM_COMPARE_component (
+//  .clken (1'b1),
+//  .clock (clk_i),
+//  .dataa (address_i),
+//  .datab (write_data_addr),
+//  .aeb (write_data_request),
+//  .aclr (reset_i),
+//  .agb (),
+//  .ageb (),
+//  .alb (),
+//  .aleb (),
+//  .aneb ());
+//  defparam
+//    LPM_COMPARE_component.lpm_hint = "ONE_INPUT_IS_CONSTANT=YES",
+//    LPM_COMPARE_component.lpm_pipeline = 1,
+//    LPM_COMPARE_component.lpm_representation = "UNSIGNED",
+//    LPM_COMPARE_component.lpm_type = "LPM_COMPARE",
+//    LPM_COMPARE_component.lpm_width = 3;
 
 
 pipeline write_pipe_inst (

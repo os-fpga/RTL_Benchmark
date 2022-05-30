@@ -43,12 +43,12 @@ module RxCoreSpec(
     output reg endOfRx,
     output reg run,					//rx is definitely started, one of the three flag will be set
     output reg startBit,				//rx is started, but we don't know yet if real rx or just a glitch
-	 input [CLOCK_PER_BIT_WIDTH-1:0] clocksPerBit,			
-	 input stopBit2,//0: 1 stop bit, 1: 2 stop bits
-	 input ackFlags,
-	 input serialIn,
-    input clk,
-    input nReset
+	 input wire [CLOCK_PER_BIT_WIDTH-1:0] clocksPerBit,			
+	 input wire stopBit2,//0: 1 stop bit, 1: 2 stop bits
+	 input wire ackFlags,
+	 input wire serialIn,
+    input wire clk,
+    input wire nReset
     );
 parameter CLK_PERIOD = 10;//should be %2
 //parameters to override
