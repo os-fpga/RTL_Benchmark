@@ -1,1 +1,0 @@
-vsim -gui work.testbench_top work.testcase_1
