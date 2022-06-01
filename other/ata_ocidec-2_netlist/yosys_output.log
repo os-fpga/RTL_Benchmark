@@ -1,0 +1,3782 @@
+/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/yosys yosys.ys
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys-Verific 0.0.28
+ Yosys 0.16+65 (git sha1 03bd62bb8, gcc 9.1.0 -fPIC -Os)
+
+
+-- Executing script file `yosys.ys' --
+echo on
+
+yosys> verific -vlog-incdir /home/users/ayyaz.ahmed/Documents/new_work/orignal_yosys/Gap-Analysis/RTL_Benchmark/Verilog/OpenCores_designs/ata_ocidec-2/
+
+1. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Mar22_SW_Release, released at Fri Apr  1 00:31:54 2022.
+
+yosys> verific -vlog2k ./benchmark/atahost_controller.v ./benchmark/atahost_pio_actrl.v ./benchmark/atahost_pio_tctrl.v ./benchmark/atahost_top.v ./benchmark/atahost_wb_slave.v ./benchmark/ro_cnt.v ./benchmark/ud_cnt.v
+
+2. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Mar22_SW_Release, released at Fri Apr  1 00:31:54 2022.
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/atahost_controller.v'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/atahost_pio_actrl.v'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/atahost_pio_tctrl.v'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/atahost_top.v'
+VERIFIC-INFO [VERI-2561] ./benchmark/atahost_top.v:182: undeclared symbol 'PIOsel', assumed default net type 'wire'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/atahost_wb_slave.v'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/ro_cnt.v'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file './benchmark/ud_cnt.v'
+
+yosys> verific -import atahost_top
+
+3. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Mar22_SW_Release, released at Fri Apr  1 00:31:54 2022.
+Adding Verilog module 'atahost_top' to elaboration queue.
+Running hier_tree::Elaborate().
+VERIFIC-INFO [VERI-1018] ./benchmark/atahost_top.v:69: compiling module 'atahost_top'
+VERIFIC-INFO [VERI-1018] ./benchmark/atahost_wb_slave.v:52: compiling module 'atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:241: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:265: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:266: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:270: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:271: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:274: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:297: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:298: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:302: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:303: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:307: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:308: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:330: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:331: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:332: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:333: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:337: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:338: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:339: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:340: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:344: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:345: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:346: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:347: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:354: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:355: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:356: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:357: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:361: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:362: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:363: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:364: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:368: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:369: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:370: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:371: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:378: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:379: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:380: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:381: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:385: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:386: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:387: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:388: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:392: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:393: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:394: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:395: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:402: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:403: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:404: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:408: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:409: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:410: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:414: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:415: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:416: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:423: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:424: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:425: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:429: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:430: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:431: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:435: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:436: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_wb_slave.v:437: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/atahost_controller.v:58: compiling module 'atahost_controller'
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:167: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:168: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:170: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:171: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:178: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:179: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:180: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:181: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:182: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:183: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:184: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:185: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:189: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:190: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:191: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:192: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:193: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:194: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:195: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:196: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:200: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:201: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:202: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:203: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:205: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:206: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:207: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:208: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:215: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:221: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:222: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:226: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:227: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:231: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:232: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/atahost_pio_actrl.v:51: compiling module 'atahost_pio_actrl'
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:138: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:139: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:140: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:141: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:142: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:148: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:149: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:150: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:151: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:152: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:156: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:157: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:158: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:159: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:160: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:164: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:165: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:166: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:167: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_actrl.v:168: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/atahost_pio_tctrl.v:91: compiling module 'atahost_pio_tctrl'
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:156: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:157: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:161: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:162: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:166: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:167: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ro_cnt.v:62: compiling module 'ro_cnt(ID=6)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ud_cnt.v:60: compiling module 'ud_cnt(RESD=6)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:96: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:189: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:190: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:191: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:195: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:196: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:197: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:201: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:202: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:203: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ro_cnt.v:62: compiling module 'ro_cnt(ID=28)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ud_cnt.v:60: compiling module 'ud_cnt(RESD=28)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:96: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:223: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:225: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:227: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_pio_tctrl.v:233: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ro_cnt.v:62: compiling module 'ro_cnt(ID=2)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ud_cnt.v:60: compiling module 'ud_cnt(RESD=2)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:96: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ro_cnt.v:62: compiling module 'ro_cnt(ID=23)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ro_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-INFO [VERI-1018] ./benchmark/ud_cnt.v:60: compiling module 'ud_cnt(RESD=23)'
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:90: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:92: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:94: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/ud_cnt.v:96: delay control is not supported for synthesis
+VERIFIC-WARNING [VERI-2371] ./benchmark/atahost_controller.v:274: delay control is not supported for synthesis
+Importing module atahost_top.
+Importing module atahost_controller.
+Importing module atahost_pio_actrl.
+Importing module atahost_pio_tctrl.
+Importing module atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0).
+Importing module ro_cnt(ID=2).
+Importing module ro_cnt(ID=23).
+Importing module ro_cnt(ID=28).
+Importing module ro_cnt(ID=6).
+Importing module ud_cnt(RESD=2).
+Importing module ud_cnt(RESD=23).
+Importing module ud_cnt(RESD=28).
+Importing module ud_cnt(RESD=6).
+
+yosys> read_verilog -lib -specify -nomem2reg +/rapidsilicon/common/cells_sim.v +/rapidsilicon/genesis/cells_sim.v
+
+4. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/cells_sim.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\dffsre'.
+Generating RTLIL representation for module `\dffnsre'.
+Generating RTLIL representation for module `\latchsre'.
+Generating RTLIL representation for module `\latchnsre'.
+Generating RTLIL representation for module `\io_scff'.
+Generating RTLIL representation for module `\scff'.
+Generating RTLIL representation for module `\sh_dff'.
+Generating RTLIL representation for module `\adder_carry'.
+Generating RTLIL representation for module `\sdffr'.
+Generating RTLIL representation for module `\sdffs'.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Generating RTLIL representation for module `\TDP36K'.
+Generating RTLIL representation for module `\RS_DSP1'.
+Generating RTLIL representation for module `\RS_DSP2'.
+Generating RTLIL representation for module `\dsp_t1_sim'.
+Generating RTLIL representation for module `\dsp_t1_20x18x64'.
+Generating RTLIL representation for module `\dsp_t1_10x9x32'.
+Successfully finished Verilog frontend.
+
+yosys> hierarchy -check -top atahost_top
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \atahost_top
+Used module:     \atahost_controller
+Used module:         \atahost_pio_actrl
+Used module:             \atahost_pio_tctrl
+Used module:                 \ro_cnt(ID=23)
+Used module:                     \ud_cnt(RESD=23)
+Used module:                 \ro_cnt(ID=2)
+Used module:                     \ud_cnt(RESD=2)
+Used module:                 \ro_cnt(ID=28)
+Used module:                     \ud_cnt(RESD=28)
+Used module:                 \ro_cnt(ID=6)
+Used module:                     \ud_cnt(RESD=6)
+Used module:     \atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0)
+
+6.2. Analyzing design hierarchy..
+Top module:  \atahost_top
+Used module:     \atahost_controller
+Used module:         \atahost_pio_actrl
+Used module:             \atahost_pio_tctrl
+Used module:                 \ro_cnt(ID=23)
+Used module:                     \ud_cnt(RESD=23)
+Used module:                 \ro_cnt(ID=2)
+Used module:                     \ud_cnt(RESD=2)
+Used module:                 \ro_cnt(ID=28)
+Used module:                     \ud_cnt(RESD=28)
+Used module:                 \ro_cnt(ID=6)
+Used module:                     \ud_cnt(RESD=6)
+Used module:     \atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0)
+Removed 0 unused modules.
+
+yosys> proc
+
+7. Executing PROC pass (convert processes to netlists).
+
+yosys> proc_clean
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+yosys> proc_rmdead
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+yosys> proc_prune
+
+7.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+yosys> proc_init
+
+7.4. Executing PROC_INIT pass (extract init attributes).
+
+yosys> proc_arst
+
+7.5. Executing PROC_ARST pass (detect async resets in processes).
+
+yosys> proc_mux
+
+7.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+yosys> proc_dlatch
+
+7.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+yosys> proc_dff
+
+7.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+yosys> proc_memwr
+
+7.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+yosys> proc_clean
+
+7.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+yosys> opt_expr -keepdc
+
+7.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ud_cnt(RESD=6).
+<suppressed ~2 debug messages>
+Optimizing module ud_cnt(RESD=28).
+<suppressed ~2 debug messages>
+Optimizing module ud_cnt(RESD=23).
+<suppressed ~2 debug messages>
+Optimizing module ud_cnt(RESD=2).
+<suppressed ~2 debug messages>
+Optimizing module ro_cnt(ID=6).
+<suppressed ~1 debug messages>
+Optimizing module ro_cnt(ID=28).
+<suppressed ~1 debug messages>
+Optimizing module ro_cnt(ID=23).
+<suppressed ~1 debug messages>
+Optimizing module ro_cnt(ID=2).
+<suppressed ~1 debug messages>
+Optimizing module atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0).
+<suppressed ~28 debug messages>
+Optimizing module atahost_pio_tctrl.
+<suppressed ~10 debug messages>
+Optimizing module atahost_pio_actrl.
+Optimizing module atahost_controller.
+<suppressed ~12 debug messages>
+Optimizing module atahost_top.
+
+yosys> flatten
+
+8. Executing FLATTEN pass (flatten design).
+Deleting now unused module ud_cnt(RESD=6).
+Deleting now unused module ud_cnt(RESD=28).
+Deleting now unused module ud_cnt(RESD=23).
+Deleting now unused module ud_cnt(RESD=2).
+Deleting now unused module ro_cnt(ID=6).
+Deleting now unused module ro_cnt(ID=28).
+Deleting now unused module ro_cnt(ID=23).
+Deleting now unused module ro_cnt(ID=2).
+Deleting now unused module atahost_wb_slave(DeviceId=4'b010,DMA_mode0_Tm=0,DMA_mode0_Td=0,DMA_mode0_Teoc=0).
+Deleting now unused module atahost_pio_tctrl.
+Deleting now unused module atahost_pio_actrl.
+Deleting now unused module atahost_controller.
+<suppressed ~12 debug messages>
+
+yosys> tribuf -logic
+
+9. Executing TRIBUF pass.
+
+yosys> deminout
+
+10. Executing DEMINOUT pass (demote inout ports to input or output).
+
+yosys> opt_expr
+
+11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~10 debug messages>
+
+yosys> opt_clean
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 19 unused cells and 1001 unused wires.
+<suppressed ~147 debug messages>
+
+yosys> check
+
+13. Executing CHECK pass (checking for obvious problems).
+Checking module atahost_top...
+Found and reported 0 problems.
+
+yosys> opt -nodffe -nosdff
+
+14. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~4 debug messages>
+
+yosys> opt_merge -nomux
+
+14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+yosys> opt_muxtree
+
+14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+yosys> opt_reduce
+
+14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+    New ctrl vector for $pmux cell $flatten\u0.$verific$select_314$./benchmark/atahost_wb_slave.v:476$1322: { $flatten\u0.$verific$n37$1024 $flatten\u0.$verific$n41$1026 $flatten\u0.$verific$n45$1028 $flatten\u0.$verific$n49$1030 $flatten\u0.$verific$n53$1032 $flatten\u0.$verific$n57$1034 $flatten\u0.$verific$n61$1036 }
+  Optimizing cells in module \atahost_top.
+Performed a total of 1 changes.
+
+yosys> opt_merge
+
+14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -nodffe -nosdff
+
+14.6. Executing OPT_DFF pass (perform DFF optimizations).
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$Qi_reg$./benchmark/ud_cnt.v:96$1589 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.$verific$rci_reg$./benchmark/ro_cnt.v:94$1432 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev1_Tm_reg$./benchmark/atahost_wb_slave.v:438$1308 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$Qi_reg$./benchmark/ud_cnt.v:96$1618 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.$verific$rci_reg$./benchmark/ro_cnt.v:94$1477 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev1_Teoc_reg$./benchmark/atahost_wb_slave.v:438$1310 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$Qi_reg$./benchmark/ud_cnt.v:96$1560 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.$verific$rci_reg$./benchmark/ro_cnt.v:94$1387 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev1_Td_reg$./benchmark/atahost_wb_slave.v:438$1309 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev0_Tm_reg$./benchmark/atahost_wb_slave.v:417$1299 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$Qi_reg$./benchmark/ud_cnt.v:96$1531 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.$verific$rci_reg$./benchmark/ro_cnt.v:94$1342 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev0_Teoc_reg$./benchmark/atahost_wb_slave.v:417$1301 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$DMA_dev0_Td_reg$./benchmark/atahost_wb_slave.v:417$1300 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$oe_reg$./benchmark/atahost_pio_tctrl.v:204$945 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$hold_go_reg$./benchmark/atahost_pio_tctrl.v:168$906 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$hT2done_reg$./benchmark/atahost_pio_tctrl.v:227$964 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$busy_reg$./benchmark/atahost_pio_tctrl.v:168$905 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$DIOW_reg$./benchmark/atahost_pio_tctrl.v:204$944 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.\PIO_access_control.\PIO_timing_controller.$verific$DIOR_reg$./benchmark/atahost_pio_tctrl.v:204$943 ($aldff) from module atahost_top.
+Removing never-active async load on $flatten\u1.\PIO_access_control.$verific$q_reg$./benchmark/atahost_pio_actrl.v:129$756 ($aldff) from module atahost_top.
+Removing never-active async load on $flatten\u1.\PIO_access_control.$verific$Teoc_reg$./benchmark/atahost_pio_actrl.v:170$793 ($aldff) from module atahost_top.
+Removing never-active async load on $flatten\u1.\PIO_access_control.$verific$T4_reg$./benchmark/atahost_pio_actrl.v:170$792 ($aldff) from module atahost_top.
+Removing never-active async load on $flatten\u1.\PIO_access_control.$verific$T2_reg$./benchmark/atahost_pio_actrl.v:170$791 ($aldff) from module atahost_top.
+Removing never-active async load on $flatten\u1.\PIO_access_control.$verific$T1_reg$./benchmark/atahost_pio_actrl.v:170$790 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$CtrlReg_reg$./benchmark/atahost_wb_slave.v:274$1220 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$dPIOreq_reg$./benchmark/atahost_controller.v:233$554 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$RESETn_reg$./benchmark/atahost_controller.v:209$531 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$PIOgo_reg$./benchmark/atahost_controller.v:233$555 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$DIOWn_reg$./benchmark/atahost_controller.v:209$533 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$DIORn_reg$./benchmark/atahost_controller.v:209$532 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$DDoe_reg$./benchmark/atahost_controller.v:209$538 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$DDo_reg$./benchmark/atahost_controller.v:209$537 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$DA_reg$./benchmark/atahost_controller.v:209$534 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$CS1n_reg$./benchmark/atahost_controller.v:209$536 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u1.$verific$CS0n_reg$./benchmark/atahost_controller.v:209$535 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$inti_reg$./benchmark/atahost_wb_slave.v:309$1245 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$dirq_reg$./benchmark/atahost_wb_slave.v:309$1246 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport1_Teoc_reg$./benchmark/atahost_wb_slave.v:396$1291 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport1_T4_reg$./benchmark/atahost_wb_slave.v:396$1290 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport1_T2_reg$./benchmark/atahost_wb_slave.v:396$1289 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport1_T1_reg$./benchmark/atahost_wb_slave.v:396$1288 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport0_Teoc_reg$./benchmark/atahost_wb_slave.v:372$1279 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport0_T4_reg$./benchmark/atahost_wb_slave.v:372$1278 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport0_T2_reg$./benchmark/atahost_wb_slave.v:372$1277 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_dport0_T1_reg$./benchmark/atahost_wb_slave.v:372$1276 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_cmdport_Teoc_reg$./benchmark/atahost_wb_slave.v:348$1267 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_cmdport_T4_reg$./benchmark/atahost_wb_slave.v:348$1266 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_cmdport_T2_reg$./benchmark/atahost_wb_slave.v:348$1265 ($aldff) from module atahost_top.
+Changing const-value async load to async reset on $flatten\u0.$verific$PIO_cmdport_T1_reg$./benchmark/atahost_wb_slave.v:348$1264 ($aldff) from module atahost_top.
+
+yosys> opt_clean
+
+14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 3 unused cells and 9 unused wires.
+<suppressed ~4 debug messages>
+
+yosys> opt_expr
+
+14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+yosys> opt_reduce
+
+14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -nodffe -nosdff
+
+14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+14.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> fsm -encoding binary
+
+15. Executing FSM pass (extract and optimize FSM).
+
+yosys> fsm_detect
+
+15.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+yosys> fsm_extract
+
+15.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+yosys> fsm_opt
+
+15.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+yosys> opt_clean
+
+15.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> fsm_opt
+
+15.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+yosys> fsm_recode -encoding binary
+
+15.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+yosys> fsm_info
+
+15.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+yosys> fsm_map
+
+15.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+yosys> opt -sat
+
+16. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge -nomux
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~55 debug messages>
+
+yosys> opt_reduce
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -sat
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u1.\PIO_access_control.$verific$q_reg$./benchmark/atahost_pio_actrl.v:129$756 ($dff) from module atahost_top (D = \dd_pad_i, Q = \u1.PIO_access_control.q).
+Adding EN signal on $flatten\u1.$verific$SelDev_reg$./benchmark/atahost_controller.v:215$544 ($dff) from module atahost_top (D = \wb_dat_i [4], Q = \u1.SelDev).
+Adding EN signal on $flatten\u0.$verific$store_pp_full_reg$./benchmark/atahost_wb_slave.v:241$1188 ($dff) from module atahost_top (D = 1'0, Q = \u0.store_pp_full).
+Adding EN signal on $flatten\u0.$verific$PIO_dport1_Teoc_reg$./benchmark/atahost_wb_slave.v:396$1291 ($adff) from module atahost_top (D = $flatten\u0.$verific$n946$1140, Q = \u0.PIO_dport1_Teoc).
+Adding EN signal on $flatten\u0.$verific$PIO_dport1_T4_reg$./benchmark/atahost_wb_slave.v:396$1290 ($adff) from module atahost_top (D = $flatten\u0.$verific$n937$1139, Q = \u0.PIO_dport1_T4).
+Adding EN signal on $flatten\u0.$verific$PIO_dport1_T2_reg$./benchmark/atahost_wb_slave.v:396$1289 ($adff) from module atahost_top (D = $flatten\u0.$verific$n928$1138, Q = \u0.PIO_dport1_T2).
+Adding EN signal on $flatten\u0.$verific$PIO_dport1_T1_reg$./benchmark/atahost_wb_slave.v:396$1288 ($adff) from module atahost_top (D = $flatten\u0.$verific$n919$1137, Q = \u0.PIO_dport1_T1).
+Adding EN signal on $flatten\u0.$verific$PIO_dport0_Teoc_reg$./benchmark/atahost_wb_slave.v:372$1279 ($adff) from module atahost_top (D = $flatten\u0.$verific$n727$1132, Q = \u0.PIO_dport0_Teoc).
+Adding EN signal on $flatten\u0.$verific$PIO_dport0_T4_reg$./benchmark/atahost_wb_slave.v:372$1278 ($adff) from module atahost_top (D = $flatten\u0.$verific$n718$1131, Q = \u0.PIO_dport0_T4).
+Adding EN signal on $flatten\u0.$verific$PIO_dport0_T2_reg$./benchmark/atahost_wb_slave.v:372$1277 ($adff) from module atahost_top (D = $flatten\u0.$verific$n709$1130, Q = \u0.PIO_dport0_T2).
+Adding EN signal on $flatten\u0.$verific$PIO_dport0_T1_reg$./benchmark/atahost_wb_slave.v:372$1276 ($adff) from module atahost_top (D = $flatten\u0.$verific$n700$1129, Q = \u0.PIO_dport0_T1).
+Adding EN signal on $flatten\u0.$verific$PIO_cmdport_Teoc_reg$./benchmark/atahost_wb_slave.v:348$1267 ($adff) from module atahost_top (D = $flatten\u0.$verific$n508$1124, Q = \u0.PIO_cmdport_Teoc).
+Adding EN signal on $flatten\u0.$verific$PIO_cmdport_T4_reg$./benchmark/atahost_wb_slave.v:348$1266 ($adff) from module atahost_top (D = $flatten\u0.$verific$n499$1123, Q = \u0.PIO_cmdport_T4).
+Adding EN signal on $flatten\u0.$verific$PIO_cmdport_T2_reg$./benchmark/atahost_wb_slave.v:348$1265 ($adff) from module atahost_top (D = $flatten\u0.$verific$n490$1122, Q = \u0.PIO_cmdport_T2).
+Adding EN signal on $flatten\u0.$verific$PIO_cmdport_T1_reg$./benchmark/atahost_wb_slave.v:348$1264 ($adff) from module atahost_top (D = $flatten\u0.$verific$n481$1121, Q = \u0.PIO_cmdport_T1).
+Adding EN signal on $flatten\u0.$verific$DMA_dev1_Tm_reg$./benchmark/atahost_wb_slave.v:438$1308 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1267$1151, Q = \u0.DMA_dev1_Tm).
+Adding EN signal on $flatten\u0.$verific$DMA_dev1_Teoc_reg$./benchmark/atahost_wb_slave.v:438$1310 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1285$1153, Q = \u0.DMA_dev1_Teoc).
+Adding EN signal on $flatten\u0.$verific$DMA_dev1_Td_reg$./benchmark/atahost_wb_slave.v:438$1309 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1276$1152, Q = \u0.DMA_dev1_Td).
+Adding EN signal on $flatten\u0.$verific$DMA_dev0_Tm_reg$./benchmark/atahost_wb_slave.v:417$1299 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1102$1145, Q = \u0.DMA_dev0_Tm).
+Adding EN signal on $flatten\u0.$verific$DMA_dev0_Teoc_reg$./benchmark/atahost_wb_slave.v:417$1301 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1120$1147, Q = \u0.DMA_dev0_Teoc).
+Adding EN signal on $flatten\u0.$verific$DMA_dev0_Td_reg$./benchmark/atahost_wb_slave.v:417$1300 ($adff) from module atahost_top (D = $flatten\u0.$verific$n1111$1146, Q = \u0.DMA_dev0_Td).
+Adding EN signal on $flatten\u0.$verific$CtrlReg_reg$./benchmark/atahost_wb_slave.v:274$1220 ($adff) from module atahost_top (D = $flatten\u0.$verific$n199$1108, Q = \u0.CtrlReg).
+Setting constant 0-bit at position 0 on $auto$ff.cc:262:slice$1623 ($dffe) from module atahost_top.
+
+yosys> opt_clean
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+yosys> opt_expr
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~21 debug messages>
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+yosys> opt_reduce
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+yosys> opt_dff -sat
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 15 unused wires.
+<suppressed ~1 debug messages>
+
+yosys> opt_expr
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+16.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+16.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+yosys> opt_reduce
+
+16.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+16.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -sat
+
+16.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+16.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+16.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+16.23. Finished OPT passes. (There is nothing left to do.)
+
+yosys> wreduce -keepdc
+
+17. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_60$./benchmark/atahost_wb_slave.v:256$1211 ($eq).
+Removed top 1 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_56$./benchmark/atahost_wb_slave.v:255$1208 ($eq).
+Removed top 1 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_52$./benchmark/atahost_wb_slave.v:254$1205 ($eq).
+Removed top 2 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_48$./benchmark/atahost_wb_slave.v:253$1202 ($eq).
+Removed top 2 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_44$./benchmark/atahost_wb_slave.v:252$1199 ($eq).
+Removed top 3 bits (of 4) from port B of cell atahost_top.$flatten\u0.$verific$equal_40$./benchmark/atahost_wb_slave.v:251$1196 ($eq).
+Removed top 1 bits (of 9) from port A of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1579 ($sub).
+Removed top 8 bits (of 9) from port B of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1579 ($sub).
+Removed top 1 bits (of 9) from port A of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1608 ($sub).
+Removed top 8 bits (of 9) from port B of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1608 ($sub).
+Removed top 1 bits (of 9) from port A of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1521 ($sub).
+Removed top 8 bits (of 9) from port B of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1521 ($sub).
+Removed top 1 bits (of 9) from port A of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1550 ($sub).
+Removed top 8 bits (of 9) from port B of cell atahost_top.$flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1550 ($sub).
+
+yosys> peepopt
+
+18. Executing PEEPOPT pass (run peephole optimizers).
+
+yosys> pmuxtree
+
+19. Executing PMUXTREE pass.
+
+yosys> opt_clean
+
+20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 2 unused cells and 3 unused wires.
+<suppressed ~3 debug messages>
+
+yosys> stat
+
+21. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                501
+   Number of wire bits:           2214
+   Number of public wires:         328
+   Number of public wire bits:    1384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     $adff                          26
+     $adffe                         19
+     $and                           43
+     $dff                           11
+     $dffe                           2
+     $eq                             6
+     $logic_not                      1
+     $mux                           92
+     $not                           25
+     $or                            17
+     $reduce_and                     2
+     $reduce_bool                    6
+     $reduce_or                      2
+     $sub                            4
+
+
+yosys> wreduce t:$mul
+
+22. Executing WREDUCE pass (reducing word size of cells).
+
+yosys> rs_dsp_macc
+
+23. Executing RS_DSP_MACC pass.
+
+yosys> techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=20 -D DSP_B_MAXWIDTH=18 -D DSP_A_MINWIDTH=11 -D DSP_B_MINWIDTH=10 -D DSP_NAME=$__RS_MUL20X18
+
+24. Executing TECHMAP pass (map to technology primitives).
+
+24.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+24.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+yosys> chtype -set $mul t:$__soft_mul
+
+yosys> techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=10 -D DSP_B_MAXWIDTH=9 -D DSP_A_MINWIDTH=4 -D DSP_B_MINWIDTH=4 -D DSP_NAME=$__RS_MUL10X9
+
+25. Executing TECHMAP pass (map to technology primitives).
+
+25.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+25.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+yosys> chtype -set $mul t:$__soft_mul
+
+yosys> techmap -map +/rapidsilicon/genesis/dsp_map.v
+
+26. Executing TECHMAP pass (map to technology primitives).
+
+26.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/dsp_map.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Generating RTLIL representation for module `\$__RS_MUL10X9'.
+Successfully finished Verilog frontend.
+
+26.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+yosys> rs_dsp_simd
+
+27. Executing RS_DSP_SIMD pass.
+
+yosys> techmap -map +/rapidsilicon/genesis/dsp_final_map.v
+
+28. Executing TECHMAP pass (map to technology primitives).
+
+28.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/dsp_final_map.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64'.
+Generating RTLIL representation for module `\dsp_t1_10x9x32'.
+Successfully finished Verilog frontend.
+
+28.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+yosys> alumacc
+
+29. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module atahost_top:
+  creating $macc model for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1521 ($sub).
+  creating $macc model for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1550 ($sub).
+  creating $macc model for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1608 ($sub).
+  creating $macc model for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1579 ($sub).
+  creating $alu model for $macc $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1579.
+  creating $alu model for $macc $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1608.
+  creating $alu model for $macc $flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1550.
+  creating $alu model for $macc $flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1521.
+  creating $alu cell for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\dhold_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1521: $auto$alumacc.cc:485:replace_alu$1705
+  creating $alu cell for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\eoc_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1550: $auto$alumacc.cc:485:replace_alu$1708
+  creating $alu cell for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t1_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1608: $auto$alumacc.cc:485:replace_alu$1711
+  creating $alu cell for $flatten\u1.\PIO_access_control.\PIO_timing_controller.\t2_cnt.\cnt.$verific$sub_4$./benchmark/ud_cnt.v:85$1579: $auto$alumacc.cc:485:replace_alu$1714
+  created 4 $alu and 0 $macc cells.
+
+yosys> opt
+
+30. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge -nomux
+
+30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~52 debug messages>
+
+yosys> opt_reduce
+
+30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+30.9. Finished OPT passes. (There is nothing left to do.)
+
+yosys> stat
+
+31. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                509
+   Number of wire bits:           2286
+   Number of public wires:         328
+   Number of public wire bits:    1384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     $adff                          26
+     $adffe                         19
+     $alu                            4
+     $and                           43
+     $dff                           11
+     $dffe                           2
+     $eq                             6
+     $logic_not                      1
+     $mux                           92
+     $not                           25
+     $or                            17
+     $reduce_and                     2
+     $reduce_bool                    6
+     $reduce_or                      2
+
+
+yosys> memory -nomap
+
+32. Executing MEMORY pass.
+
+yosys> opt_mem
+
+32.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+yosys> opt_mem_priority
+
+32.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+yosys> opt_mem_feedback
+
+32.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+yosys> memory_dff
+
+32.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+yosys> opt_clean
+
+32.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> memory_share
+
+32.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+yosys> opt_mem_widen
+
+32.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+yosys> opt_clean
+
+32.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> memory_collect
+
+32.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+yosys> stat
+
+33. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                509
+   Number of wire bits:           2286
+   Number of public wires:         328
+   Number of public wire bits:    1384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     $adff                          26
+     $adffe                         19
+     $alu                            4
+     $and                           43
+     $dff                           11
+     $dffe                           2
+     $eq                             6
+     $logic_not                      1
+     $mux                           92
+     $not                           25
+     $or                            17
+     $reduce_and                     2
+     $reduce_bool                    6
+     $reduce_or                      2
+
+
+yosys> opt_clean
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> memory_bram -rules +/rapidsilicon/genesis/brams.txt
+
+35. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+
+yosys> techmap -map +/rapidsilicon/genesis/brams_map.v
+
+36. Executing TECHMAP pass (map to technology primitives).
+
+36.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/brams_map.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/brams_map.v:236: Warning: Range [2:0] select out of bounds on signal `\DOP': Setting 1 MSB bits to undef.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+36.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+yosys> stat
+
+37. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                509
+   Number of wire bits:           2286
+   Number of public wires:         328
+   Number of public wire bits:    1384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                256
+     $adff                          26
+     $adffe                         19
+     $alu                            4
+     $and                           43
+     $dff                           11
+     $dffe                           2
+     $eq                             6
+     $logic_not                      1
+     $mux                           92
+     $not                           25
+     $or                            17
+     $reduce_and                     2
+     $reduce_bool                    6
+     $reduce_or                      2
+
+
+yosys> techmap -map +/techmap.v -map +/rapidsilicon/genesis/arith_map.v
+
+38. Executing TECHMAP pass (map to technology primitives).
+
+38.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+38.2. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/arith_map.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+38.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$6c5a061ccbfae69f9a9e0a87d94e999fceba205a\_80_rs_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~394 debug messages>
+
+yosys> stat
+
+39. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                636
+   Number of wire bits:           2856
+   Number of public wires:         328
+   Number of public wire bits:    1384
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1426
+     $_AND_                         47
+     $_DFFE_PN0P_                  145
+     $_DFFE_PN1P_                   31
+     $_DFFE_PP_                     17
+     $_DFF_PN0_                     57
+     $_DFF_PN1_                     14
+     $_DFF_P_                       39
+     $_MUX_                        855
+     $_NOT_                         68
+     $_OR_                          49
+     $_XOR_                         68
+     adder_carry                    36
+
+
+yosys> opt
+
+40. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+40.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~284 debug messages>
+
+yosys> opt_merge -nomux
+
+40.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+yosys> opt_muxtree
+
+40.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+40.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+40.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+40.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+40.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 1 unused cells and 152 unused wires.
+<suppressed ~6 debug messages>
+
+yosys> opt_expr
+
+40.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+40.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+40.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+40.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+40.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+40.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+40.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+40.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+40.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> opt -fast -full
+
+41. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr -full
+
+41.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~223 debug messages>
+
+yosys> opt_merge
+
+41.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~447 debug messages>
+Removed a total of 149 cells.
+
+yosys> opt_dff
+
+41.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+41.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 31 unused wires.
+<suppressed ~1 debug messages>
+
+41.5. Finished fast OPT passes.
+
+yosys> memory_map
+
+42. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+yosys> opt -full
+
+43. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr -full
+
+43.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge -nomux
+
+43.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+43.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce -full
+
+43.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+43.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_share
+
+43.6. Executing OPT_SHARE pass.
+
+yosys> opt_dff
+
+43.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+43.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr -full
+
+43.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+43.10. Finished OPT passes. (There is nothing left to do.)
+
+yosys> abc -dff
+
+44. Executing ABC pass (technology mapping using ABC).
+
+44.1. Summary of detected clock domains:
+  148 cells in clk=\wb_clk_i, en={ }, arst={ }, srst={ }
+  6 cells in clk=\wb_clk_i, en=$flatten\u1.$verific$n162$468, arst={ }, srst={ }
+  265 cells in clk=\wb_clk_i, en={ }, arst=!\arst_i, srst={ }
+  115 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1649, arst=!\arst_i, srst={ }
+  65 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1637, arst=!\arst_i, srst={ }
+  84 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1625, arst=!\arst_i, srst={ }
+  77 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1679, arst=!\arst_i, srst={ }
+  51 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1670, arst=!\arst_i, srst={ }
+  34 cells in clk=\wb_clk_i, en=$auto$opt_dff.cc:194:make_patterns_logic$1661, arst=!\arst_i, srst={ }
+  134 cells in clk=\wb_clk_i, en=\u1.PIO_access_control.PIO_timing_controller.dstrb, arst={ }, srst={ }
+
+44.2. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i
+Extracted 148 gates and 285 wires to a netlist network with 136 inputs and 59 outputs.
+
+44.2.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 39 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.2.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       38
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               MUX cells:       65
+ABC RESULTS:               AND cells:       10
+ABC RESULTS:            ANDNOT cells:       22
+ABC RESULTS:               BUF cells:        4
+ABC RESULTS:        internal signals:       90
+ABC RESULTS:           input signals:      136
+ABC RESULTS:          output signals:       59
+Removing temp directory.
+
+44.3. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $flatten\u1.$verific$n162$468
+Extracted 6 gates and 11 wires to a netlist network with 5 inputs and 4 outputs.
+
+44.3.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 1 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.3.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:        1
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               BUF cells:        1
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+44.4. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, asynchronously reset by !\arst_i
+Extracted 229 gates and 300 wires to a netlist network with 70 inputs and 110 outputs.
+
+44.4.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.4.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       71
+ABC RESULTS:               NOT cells:       37
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:              XNOR cells:        3
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:       14
+ABC RESULTS:                OR cells:       14
+ABC RESULTS:               AND cells:       14
+ABC RESULTS:               BUF cells:       50
+ABC RESULTS:            ANDNOT cells:       68
+ABC RESULTS:        internal signals:      120
+ABC RESULTS:           input signals:       70
+ABC RESULTS:          output signals:      110
+Removing temp directory.
+
+44.5. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1649, asynchronously reset by !\arst_i
+Extracted 115 gates and 187 wires to a netlist network with 71 inputs and 114 outputs.
+
+44.5.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.5.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOR cells:        7
+ABC RESULTS:               NOT cells:       22
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:               MUX cells:       32
+ABC RESULTS:               AND cells:       31
+ABC RESULTS:            ANDNOT cells:       14
+ABC RESULTS:               BUF cells:       37
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:       71
+ABC RESULTS:          output signals:      114
+Removing temp directory.
+
+44.6. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1637, asynchronously reset by !\arst_i
+Extracted 65 gates and 130 wires to a netlist network with 65 inputs and 61 outputs.
+
+44.6.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.6.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       20
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:                OR cells:        3
+ABC RESULTS:               MUX cells:       24
+ABC RESULTS:               BUF cells:       44
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:       65
+ABC RESULTS:          output signals:       61
+Removing temp directory.
+
+44.7. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1625, asynchronously reset by !\arst_i
+Extracted 84 gates and 162 wires to a netlist network with 77 inputs and 75 outputs.
+
+44.7.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.7.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOR cells:        4
+ABC RESULTS:               NOT cells:       21
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:       40
+ABC RESULTS:               BUF cells:       36
+ABC RESULTS:            ANDNOT cells:        8
+ABC RESULTS:        internal signals:       10
+ABC RESULTS:           input signals:       77
+ABC RESULTS:          output signals:       75
+Removing temp directory.
+
+44.8. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1679, asynchronously reset by !\arst_i
+Extracted 77 gates and 118 wires to a netlist network with 40 inputs and 41 outputs.
+
+44.8.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.8.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:               AND cells:       35
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               BUF cells:       33
+ABC RESULTS:        internal signals:       37
+ABC RESULTS:           input signals:       40
+ABC RESULTS:          output signals:       41
+Removing temp directory.
+
+44.9. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1670, asynchronously reset by !\arst_i
+Extracted 51 gates and 98 wires to a netlist network with 46 inputs and 33 outputs.
+
+44.9.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.9.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               MUX cells:       16
+ABC RESULTS:            ANDNOT cells:        8
+ABC RESULTS:               BUF cells:       28
+ABC RESULTS:        internal signals:       19
+ABC RESULTS:           input signals:       46
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+
+44.10. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $auto$opt_dff.cc:194:make_patterns_logic$1661, asynchronously reset by !\arst_i
+Extracted 34 gates and 70 wires to a netlist network with 36 inputs and 25 outputs.
+
+44.10.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.10.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:        8
+ABC RESULTS:               BUF cells:       40
+ABC RESULTS:        internal signals:        9
+ABC RESULTS:           input signals:       36
+ABC RESULTS:          output signals:       25
+Removing temp directory.
+
+44.11. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3349$lo32
+Extracted 134 gates and 279 wires to a netlist network with 144 inputs and 33 outputs.
+
+44.11.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 16 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+44.11.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       16
+ABC RESULTS:               NOR cells:       16
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:             ORNOT cells:       21
+ABC RESULTS:                OR cells:       12
+ABC RESULTS:              NAND cells:       28
+ABC RESULTS:            ANDNOT cells:       17
+ABC RESULTS:               MUX cells:       70
+ABC RESULTS:               BUF cells:       16
+ABC RESULTS:        internal signals:      102
+ABC RESULTS:           input signals:      144
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+
+yosys> abc -dff
+
+45. Executing ABC pass (technology mapping using ABC).
+
+45.1. Summary of detected clock domains:
+  7 cells in clk=\wb_clk_i, en=$abc$3499$flatten\u1.$verific$n162$468, arst={ }, srst={ }
+  60 cells in clk=\wb_clk_i, en=$abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, arst=!\arst_i, srst={ }
+  101 cells in clk=\wb_clk_i, en=$abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, arst=!\arst_i, srst={ }
+  88 cells in clk=\wb_clk_i, en=$abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, arst=!\arst_i, srst={ }
+  124 cells in clk=\wb_clk_i, en=$abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, arst=!\arst_i, srst={ }
+  250 cells in clk=\wb_clk_i, en={ }, arst=!\arst_i, srst={ }
+  117 cells in clk=\wb_clk_i, en=$abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, arst=!\arst_i, srst={ }
+  38 cells in clk=\wb_clk_i, en=$abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, arst=!\arst_i, srst={ }
+  132 cells in clk=\wb_clk_i, en={ }, arst={ }, srst={ }
+  199 cells in clk=\wb_clk_i, en=$abc$3349$lo32, arst={ }, srst={ }
+
+45.2. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3499$flatten\u1.$verific$n162$468
+Extracted 7 gates and 12 wires to a netlist network with 5 inputs and 4 outputs.
+
+45.2.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 1 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.2.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:        1
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:               BUF cells:        1
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+45.3. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, asynchronously reset by !\arst_i
+Extracted 60 gates and 110 wires to a netlist network with 50 inputs and 36 outputs.
+
+45.3.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.3.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               MUX cells:       19
+ABC RESULTS:               BUF cells:       18
+ABC RESULTS:            ANDNOT cells:       18
+ABC RESULTS:        internal signals:       24
+ABC RESULTS:           input signals:       50
+ABC RESULTS:          output signals:       36
+Removing temp directory.
+
+45.4. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, asynchronously reset by !\arst_i
+Extracted 101 gates and 175 wires to a netlist network with 74 inputs and 67 outputs.
+
+45.4.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.4.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       17
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               MUX cells:       35
+ABC RESULTS:            ANDNOT cells:        8
+ABC RESULTS:               BUF cells:       27
+ABC RESULTS:               NOR cells:        9
+ABC RESULTS:        internal signals:       34
+ABC RESULTS:           input signals:       74
+ABC RESULTS:          output signals:       67
+Removing temp directory.
+
+45.5. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, asynchronously reset by !\arst_i
+Extracted 88 gates and 147 wires to a netlist network with 59 inputs and 57 outputs.
+
+45.5.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.5.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       20
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:       20
+ABC RESULTS:            ANDNOT cells:        9
+ABC RESULTS:               BUF cells:       39
+ABC RESULTS:        internal signals:       31
+ABC RESULTS:           input signals:       59
+ABC RESULTS:          output signals:       57
+Removing temp directory.
+
+45.6. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, asynchronously reset by !\arst_i
+Extracted 124 gates and 195 wires to a netlist network with 71 inputs and 90 outputs.
+
+45.6.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.6.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       14
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               MUX cells:       32
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:               BUF cells:       23
+ABC RESULTS:               NOR cells:       13
+ABC RESULTS:            ANDNOT cells:       17
+ABC RESULTS:        internal signals:       34
+ABC RESULTS:           input signals:       71
+ABC RESULTS:          output signals:       90
+Removing temp directory.
+
+45.7. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, asynchronously reset by !\arst_i
+Extracted 216 gates and 284 wires to a netlist network with 68 inputs and 95 outputs.
+
+45.7.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.7.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       71
+ABC RESULTS:               NOT cells:       37
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:              XNOR cells:        3
+ABC RESULTS:               AND cells:       14
+ABC RESULTS:                OR cells:       14
+ABC RESULTS:             ORNOT cells:        3
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:       15
+ABC RESULTS:            ANDNOT cells:       52
+ABC RESULTS:               BUF cells:       50
+ABC RESULTS:        internal signals:      121
+ABC RESULTS:           input signals:       68
+ABC RESULTS:          output signals:       95
+Removing temp directory.
+
+45.8. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, asynchronously reset by !\arst_i
+Extracted 117 gates and 191 wires to a netlist network with 74 inputs and 79 outputs.
+
+45.8.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.8.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:               AND cells:       37
+ABC RESULTS:               NOR cells:       19
+ABC RESULTS:               BUF cells:       25
+ABC RESULTS:            ANDNOT cells:       32
+ABC RESULTS:        internal signals:       38
+ABC RESULTS:           input signals:       74
+ABC RESULTS:          output signals:       79
+Removing temp directory.
+
+45.9. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, asynchronously reset by !\arst_i
+Extracted 38 gates and 71 wires to a netlist network with 33 inputs and 32 outputs.
+
+45.9.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.9.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:        5
+ABC RESULTS:               BUF cells:       36
+ABC RESULTS:            ANDNOT cells:       14
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:       33
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+45.10. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i
+Extracted 130 gates and 243 wires to a netlist network with 113 inputs and 50 outputs.
+
+45.10.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 38 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.10.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       38
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               AND cells:        8
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               MUX cells:       60
+ABC RESULTS:            ANDNOT cells:        5
+ABC RESULTS:               BUF cells:       25
+ABC RESULTS:        internal signals:       80
+ABC RESULTS:           input signals:      113
+ABC RESULTS:          output signals:       50
+Removing temp directory.
+
+45.11. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$5734$lo26
+Extracted 199 gates and 361 wires to a netlist network with 162 inputs and 47 outputs.
+
+45.11.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 16 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+45.11.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       16
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:                OR cells:       19
+ABC RESULTS:             ORNOT cells:       17
+ABC RESULTS:              NAND cells:       25
+ABC RESULTS:               AND cells:       30
+ABC RESULTS:               MUX cells:       68
+ABC RESULTS:               BUF cells:       16
+ABC RESULTS:        internal signals:      152
+ABC RESULTS:           input signals:      162
+ABC RESULTS:          output signals:       47
+Removing temp directory.
+
+yosys> abc -dff
+
+46. Executing ABC pass (technology mapping using ABC).
+
+46.1. Summary of detected clock domains:
+  5 cells in clk=\wb_clk_i, en=$abc$4728$abc$3499$flatten\u1.$verific$n162$468, arst={ }, srst={ }
+  69 cells in clk=\wb_clk_i, en=$abc$4736$abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, arst=!\arst_i, srst={ }
+  104 cells in clk=\wb_clk_i, en=$abc$4822$abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, arst=!\arst_i, srst={ }
+  107 cells in clk=\wb_clk_i, en=$abc$4955$abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, arst=!\arst_i, srst={ }
+  102 cells in clk=\wb_clk_i, en=$abc$5079$abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, arst=!\arst_i, srst={ }
+  36 cells in clk=\wb_clk_i, en=$abc$5652$abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, arst=!\arst_i, srst={ }
+  251 cells in clk=\wb_clk_i, en={ }, arst=!\arst_i, srst={ }
+  94 cells in clk=\wb_clk_i, en=$abc$5502$abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, arst=!\arst_i, srst={ }
+  168 cells in clk=\wb_clk_i, en={ }, arst={ }, srst={ }
+  201 cells in clk=\wb_clk_i, en=$abc$5734$lo26, arst={ }, srst={ }
+
+46.2. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4728$abc$3499$flatten\u1.$verific$n162$468
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 3 outputs.
+
+46.2.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 1 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.2.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:               BUF cells:        1
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+46.3. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4736$abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, asynchronously reset by !\arst_i
+Extracted 69 gates and 124 wires to a netlist network with 55 inputs and 33 outputs.
+
+46.3.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.3.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               MUX cells:       24
+ABC RESULTS:            ANDNOT cells:       19
+ABC RESULTS:               BUF cells:        9
+ABC RESULTS:        internal signals:       36
+ABC RESULTS:           input signals:       55
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+
+46.4. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4822$abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, asynchronously reset by !\arst_i
+Extracted 104 gates and 176 wires to a netlist network with 72 inputs and 64 outputs.
+
+46.4.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.4.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       10
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               MUX cells:       33
+ABC RESULTS:               BUF cells:       26
+ABC RESULTS:               NOR cells:        9
+ABC RESULTS:            ANDNOT cells:       16
+ABC RESULTS:        internal signals:       40
+ABC RESULTS:           input signals:       72
+ABC RESULTS:          output signals:       64
+Removing temp directory.
+
+46.5. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4955$abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, asynchronously reset by !\arst_i
+Extracted 107 gates and 179 wires to a netlist network with 72 inputs and 72 outputs.
+
+46.5.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.5.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:       32
+ABC RESULTS:               NOR cells:       12
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:               BUF cells:       24
+ABC RESULTS:        internal signals:       35
+ABC RESULTS:           input signals:       72
+ABC RESULTS:          output signals:       72
+Removing temp directory.
+
+46.6. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$5079$abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, asynchronously reset by !\arst_i
+Extracted 102 gates and 151 wires to a netlist network with 49 inputs and 68 outputs.
+
+46.6.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.6.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               MUX cells:       10
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:            ANDNOT cells:       12
+ABC RESULTS:               BUF cells:       33
+ABC RESULTS:               NOR cells:       11
+ABC RESULTS:        internal signals:       34
+ABC RESULTS:           input signals:       49
+ABC RESULTS:          output signals:       68
+Removing temp directory.
+
+46.7. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$5652$abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, asynchronously reset by !\arst_i
+Extracted 36 gates and 63 wires to a netlist network with 27 inputs and 27 outputs.
+
+46.7.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.7.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:            ANDNOT cells:       11
+ABC RESULTS:               BUF cells:       39
+ABC RESULTS:        internal signals:        9
+ABC RESULTS:           input signals:       27
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+46.8. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, asynchronously reset by !\arst_i
+Extracted 217 gates and 285 wires to a netlist network with 68 inputs and 95 outputs.
+
+46.8.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.8.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       71
+ABC RESULTS:               NOT cells:       37
+ABC RESULTS:              XNOR cells:        3
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:              NAND cells:        7
+ABC RESULTS:                OR cells:       14
+ABC RESULTS:               AND cells:       15
+ABC RESULTS:               NOR cells:       14
+ABC RESULTS:            ANDNOT cells:       50
+ABC RESULTS:               BUF cells:       50
+ABC RESULTS:        internal signals:      122
+ABC RESULTS:           input signals:       68
+ABC RESULTS:          output signals:       95
+Removing temp directory.
+
+46.9. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$5502$abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, asynchronously reset by !\arst_i
+Extracted 94 gates and 134 wires to a netlist network with 40 inputs and 48 outputs.
+
+46.9.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.9.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:               AND cells:       34
+ABC RESULTS:               NOR cells:        4
+ABC RESULTS:               BUF cells:       14
+ABC RESULTS:            ANDNOT cells:       28
+ABC RESULTS:        internal signals:       46
+ABC RESULTS:           input signals:       40
+ABC RESULTS:          output signals:       48
+Removing temp directory.
+
+46.10. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i
+Extracted 166 gates and 323 wires to a netlist network with 157 inputs and 77 outputs.
+
+46.10.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 38 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.10.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       38
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:               NOR cells:       15
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               AND cells:       10
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               MUX cells:       72
+ABC RESULTS:               BUF cells:       11
+ABC RESULTS:            ANDNOT cells:       22
+ABC RESULTS:        internal signals:       89
+ABC RESULTS:           input signals:      157
+ABC RESULTS:          output signals:       77
+Removing temp directory.
+
+46.11. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$7053$lo27
+Extracted 201 gates and 363 wires to a netlist network with 162 inputs and 47 outputs.
+
+46.11.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 16 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.11.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       16
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:                OR cells:       19
+ABC RESULTS:               MUX cells:       68
+ABC RESULTS:             ORNOT cells:       17
+ABC RESULTS:              NAND cells:       25
+ABC RESULTS:               AND cells:       30
+ABC RESULTS:               BUF cells:       16
+ABC RESULTS:        internal signals:      154
+ABC RESULTS:           input signals:      162
+ABC RESULTS:          output signals:       47
+Removing temp directory.
+
+yosys> opt_ffinv
+
+47. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+yosys> opt -sat
+
+48. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+48.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~24 debug messages>
+
+yosys> opt_merge -nomux
+
+48.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~330 debug messages>
+Removed a total of 110 cells.
+
+yosys> opt_muxtree
+
+48.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+48.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+48.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -sat
+
+48.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+48.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 1 unused cells and 5619 unused wires.
+<suppressed ~88 debug messages>
+
+yosys> opt_expr
+
+48.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+48.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+48.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+48.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+48.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -sat
+
+48.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+48.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+48.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+48.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> abc -dff
+
+49. Executing ABC pass (technology mapping using ABC).
+
+49.1. Summary of detected clock domains:
+  208 cells in clk=\wb_clk_i, en=\u1.PIO_access_control.PIO_timing_controller.dstrb, arst={ }, srst={ }
+  167 cells in clk=\wb_clk_i, en={ }, arst={ }, srst={ }
+  112 cells in clk=\wb_clk_i, en=$abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, arst=!\arst_i, srst={ }
+  237 cells in clk=\wb_clk_i, en={ }, arst=!\arst_i, srst={ }
+  50 cells in clk=\wb_clk_i, en=$abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, arst=!\arst_i, srst={ }
+  99 cells in clk=\wb_clk_i, en=$abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, arst=!\arst_i, srst={ }
+  70 cells in clk=\wb_clk_i, en=$abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, arst=!\arst_i, srst={ }
+  66 cells in clk=\wb_clk_i, en=$abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, arst=!\arst_i, srst={ }
+  28 cells in clk=\wb_clk_i, en=$abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, arst=!\arst_i, srst={ }
+  5 cells in clk=\wb_clk_i, en=$abc$3499$flatten\u1.$verific$n162$468, arst={ }, srst={ }
+
+49.2. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by \u1.PIO_access_control.PIO_timing_controller.dstrb
+Extracted 208 gates and 376 wires to a netlist network with 168 inputs and 47 outputs.
+
+49.2.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 16 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.2.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       16
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:               NOR cells:        5
+ABC RESULTS:                OR cells:       23
+ABC RESULTS:               MUX cells:       59
+ABC RESULTS:             ORNOT cells:       26
+ABC RESULTS:              NAND cells:       49
+ABC RESULTS:               AND cells:       29
+ABC RESULTS:               BUF cells:       16
+ABC RESULTS:        internal signals:      161
+ABC RESULTS:           input signals:      168
+ABC RESULTS:          output signals:       47
+Removing temp directory.
+
+49.3. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i
+Extracted 167 gates and 328 wires to a netlist network with 161 inputs and 72 outputs.
+
+49.3.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 38 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.3.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       38
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:               NOR cells:       15
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               AND cells:        9
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               MUX cells:       74
+ABC RESULTS:               BUF cells:        4
+ABC RESULTS:            ANDNOT cells:       23
+ABC RESULTS:        internal signals:       95
+ABC RESULTS:           input signals:      161
+ABC RESULTS:          output signals:       72
+Removing temp directory.
+
+49.4. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4242$auto$opt_dff.cc:194:make_patterns_logic$1679, asynchronously reset by !\arst_i
+Extracted 112 gates and 154 wires to a netlist network with 42 inputs and 73 outputs.
+
+49.4.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.4.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        4
+ABC RESULTS:               MUX cells:        2
+ABC RESULTS:               AND cells:       37
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:            ANDNOT cells:       63
+ABC RESULTS:        internal signals:       39
+ABC RESULTS:           input signals:       42
+ABC RESULTS:          output signals:       73
+Removing temp directory.
+
+49.5. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, asynchronously reset by !\arst_i
+Extracted 201 gates and 271 wires to a netlist network with 70 inputs and 95 outputs.
+
+49.5.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.5.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       70
+ABC RESULTS:               NOT cells:       36
+ABC RESULTS:              XNOR cells:        3
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:             ORNOT cells:        3
+ABC RESULTS:                OR cells:       12
+ABC RESULTS:               AND cells:       12
+ABC RESULTS:               NOR cells:       13
+ABC RESULTS:              NAND cells:       10
+ABC RESULTS:            ANDNOT cells:       37
+ABC RESULTS:               BUF cells:       66
+ABC RESULTS:        internal signals:      106
+ABC RESULTS:           input signals:       70
+ABC RESULTS:          output signals:       95
+Removing temp directory.
+
+49.6. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4435$auto$opt_dff.cc:194:make_patterns_logic$1661, asynchronously reset by !\arst_i
+Extracted 50 gates and 101 wires to a netlist network with 51 inputs and 25 outputs.
+
+49.6.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.6.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:       24
+ABC RESULTS:               BUF cells:       24
+ABC RESULTS:        internal signals:       25
+ABC RESULTS:           input signals:       51
+ABC RESULTS:          output signals:       25
+Removing temp directory.
+
+49.7. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3789$auto$opt_dff.cc:194:make_patterns_logic$1649, asynchronously reset by !\arst_i
+Extracted 99 gates and 159 wires to a netlist network with 60 inputs and 88 outputs.
+
+49.7.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.7.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       10
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:               AND cells:       21
+ABC RESULTS:               MUX cells:       22
+ABC RESULTS:               NOR cells:       21
+ABC RESULTS:               BUF cells:       44
+ABC RESULTS:        internal signals:       11
+ABC RESULTS:           input signals:       60
+ABC RESULTS:          output signals:       88
+Removing temp directory.
+
+49.8. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3969$auto$opt_dff.cc:194:make_patterns_logic$1637, asynchronously reset by !\arst_i
+Extracted 70 gates and 132 wires to a netlist network with 62 inputs and 58 outputs.
+
+49.8.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.8.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:               MUX cells:       22
+ABC RESULTS:               BUF cells:       54
+ABC RESULTS:        internal signals:       12
+ABC RESULTS:           input signals:       62
+ABC RESULTS:          output signals:       58
+Removing temp directory.
+
+49.9. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4097$auto$opt_dff.cc:194:make_patterns_logic$1625, asynchronously reset by !\arst_i
+Extracted 66 gates and 124 wires to a netlist network with 58 inputs and 55 outputs.
+
+49.9.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.9.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       32
+ABC RESULTS:               NOT cells:       10
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               MUX cells:       22
+ABC RESULTS:               BUF cells:       54
+ABC RESULTS:        internal signals:       11
+ABC RESULTS:           input signals:       58
+ABC RESULTS:          output signals:       55
+Removing temp directory.
+
+49.10. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$4352$auto$opt_dff.cc:194:make_patterns_logic$1670, asynchronously reset by !\arst_i
+Extracted 28 gates and 57 wires to a netlist network with 29 inputs and 27 outputs.
+
+49.10.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.10.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:       24
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               BUF cells:       48
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:       29
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+49.11. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \wb_clk_i, enabled by $abc$3499$flatten\u1.$verific$n162$468
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 4 outputs.
+
+49.11.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: 1 registers in this network have don't-care init values.
+ABC: The don't-care are assumed to be 0. The result may not verify.
+ABC: Use command "print_latch" to see the init values of registers.
+ABC: Use command "zero" to convert or "init" to change the values.
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+49.11.2. Re-integrating ABC results.
+ABC RESULTS:               DFF cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               BUF cells:        2
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+yosys> opt_ffinv
+
+50. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+yosys> abc -script /home/users/ayyaz.ahmed/Documents/new_work/orignal_yosys/Gap-Analysis/scripts/tools_auto_scripts/openfpga/abc_tmp.scr
+
+51. Executing ABC pass (technology mapping using ABC).
+
+51.1. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Extracted 765 gates and 1120 wires to a netlist network with 355 inputs and 247 outputs.
+
+51.1.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + source /home/users/ayyaz.ahmed/Documents/new_work/orignal_yosys/Gap-Analysis/scripts/tools_auto_scripts/openfpga/abc_tmp.scr 
+ABC: netlist  : i/o =    355/    247  and =    1136  lev =   11 (3.66)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    266  edge =    1136  lev =    4 (1.51)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1207  lev =   11 (3.75)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    264  edge =    1112  lev =    5 (1.61)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1157  lev =   10 (3.49)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    263  edge =    1137  lev =    4 (1.52)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1108  lev =    9 (3.18)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1104  lev =   10 (3.42)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    247  edge =    1072  lev =    4 (1.48)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1107  lev =   10 (3.47)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    247  edge =    1075  lev =    4 (1.47)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1107  lev =   10 (3.47)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    247  edge =    1075  lev =    4 (1.47)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1107  lev =   10 (3.47)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    247  edge =    1075  lev =    4 (1.47)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1292  lev =   10 (3.26)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    252  edge =    1119  lev =    4 (1.48)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1126  lev =   10 (3.47)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1073  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1123  lev =   10 (3.42)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1073  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1129  lev =   10 (3.48)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1073  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1129  lev =   10 (3.48)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1073  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1108  lev =    9 (3.18)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1108  lev =    9 (3.18)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.46)  mem = 0.01 MB
+ABC: netlist  : i/o =    355/    247  and =    1107  lev =   10 (3.47)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.46)  mem = 0.01 MB
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+51.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      316
+ABC RESULTS:        internal signals:      518
+ABC RESULTS:           input signals:      355
+ABC RESULTS:          output signals:      247
+Removing temp directory.
+
+yosys> opt
+
+52. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+52.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge -nomux
+
+52.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+52.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+52.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+52.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+52.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+52.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 3130 unused wires.
+<suppressed ~10 debug messages>
+
+yosys> opt_expr
+
+52.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+52.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+52.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+52.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+52.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+52.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+52.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+52.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+52.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> opt_ffinv
+
+53. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 4 inverters.
+
+yosys> stat
+
+54. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                676
+   Number of wire bits:           1615
+   Number of public wires:         229
+   Number of public wire bits:    1100
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                608
+     $_DFFE_PN0P_                  176
+     $_DFFE_PP_                     17
+     $_DFF_PN0_                     66
+     $_DFF_PN1_                      4
+     $_DFF_P_                       38
+     $lut                          271
+     adder_carry                    36
+
+
+yosys> shregmap -minlen 8 -maxlen 20
+
+55. Executing SHREGMAP pass (map shift registers).
+Converted 0 dff cells into 0 shift registers.
+
+yosys> dfflegalize -cell $_DFF_?_ 0 -cell $_DFF_???_ 0 -cell $_DFFE_????_ 0 -cell $_DFFSR_???_ 0 -cell $_DFFSRE_????_ 0 -cell $_DLATCHSR_PPP_ 0
+
+56. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+yosys> write_verilog -noattr -nohex atahost_top_after_dfflegalize_output_verilog.v
+
+57. Executing Verilog backend.
+
+yosys> bmuxmap
+
+57.1. Executing BMUXMAP pass.
+
+yosys> demuxmap
+
+57.2. Executing DEMUXMAP pass.
+
+yosys> clean_zerowidth
+Dumping module `\atahost_top'.
+
+yosys> stat
+
+58. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                676
+   Number of wire bits:           1615
+   Number of public wires:         229
+   Number of public wire bits:    1100
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                608
+     $_DFFE_PN0P_                  176
+     $_DFFE_PP0P_                   17
+     $_DFF_PN0_                     66
+     $_DFF_PN1_                      4
+     $_DFF_P_                       38
+     $lut                          271
+     adder_carry                    36
+
+
+yosys> techmap -map +/techmap.v -map +/rapidsilicon/genesis/ffs_map.v
+
+59. Executing TECHMAP pass (map to technology primitives).
+
+59.1. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+59.2. Executing Verilog-2005 frontend: /home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/ffs_map.v
+Parsing Verilog input from `/home/users/eda_tools/opensource/yosys_verifc/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFFSR_PPP_'.
+Generating RTLIL representation for module `\$_DFFSR_PNP_'.
+Generating RTLIL representation for module `\$_DFFSR_PNN_'.
+Generating RTLIL representation for module `\$_DFFSR_PPN_'.
+Generating RTLIL representation for module `\$_DFFSR_NPP_'.
+Generating RTLIL representation for module `\$_DFFSR_NNP_'.
+Generating RTLIL representation for module `\$_DFFSR_NNN_'.
+Generating RTLIL representation for module `\$_DFFSR_NPN_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPPP_'.
+Generating RTLIL representation for module `\$_DFFSRE_PNPP_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPNP_'.
+Generating RTLIL representation for module `\$_DFFSRE_PNNP_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPPN_'.
+Generating RTLIL representation for module `\$_DFFSRE_PNPN_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPNN_'.
+Generating RTLIL representation for module `\$_DFFSRE_PNNN_'.
+Generating RTLIL representation for module `\$_DLATCHSR_PPP_'.
+Generating RTLIL representation for module `\$_DLATCHSR_NPP_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$_DFFSRE_NPPP_'.
+Generating RTLIL representation for module `\$_DFFSRE_NNPP_'.
+Generating RTLIL representation for module `\$_DFFSRE_NPNP_'.
+Generating RTLIL representation for module `\$_DFFSRE_NNNP_'.
+Generating RTLIL representation for module `\$_DFFSRE_NPPN_'.
+Generating RTLIL representation for module `\$_DFFSRE_NNPN_'.
+Generating RTLIL representation for module `\$_DFFSRE_NPNN_'.
+Generating RTLIL representation for module `\$_DFFSRE_NNNN_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Successfully finished Verilog frontend.
+
+59.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+Using template \$_DFFE_PN0P_ for cells of type $_DFFE_PN0P_.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_DFFE_PP0P_ for cells of type $_DFFE_PP0P_.
+Using template \$_DFF_PN0_ for cells of type $_DFF_PN0_.
+Using template \$_DFF_PN1_ for cells of type $_DFF_PN1_.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~725 debug messages>
+
+yosys> write_verilog -noattr -nohex atahost_top_after_techmap_output_verilog.v
+
+60. Executing Verilog backend.
+
+yosys> bmuxmap
+
+60.1. Executing BMUXMAP pass.
+
+yosys> demuxmap
+
+60.2. Executing DEMUXMAP pass.
+
+yosys> clean_zerowidth
+Dumping module `\atahost_top'.
+
+yosys> opt_expr -mux_undef
+
+61. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~6128 debug messages>
+
+yosys> simplemap
+
+62. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+yosys> opt_expr
+
+63. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+<suppressed ~1554 debug messages>
+Removed a total of 518 cells.
+
+yosys> opt_dff -nodffe -nosdff
+
+65. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 1918 unused wires.
+<suppressed ~1 debug messages>
+
+yosys> opt -nodffe -nosdff
+
+67. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+67.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+<suppressed ~176 debug messages>
+
+yosys> opt_merge -nomux
+
+67.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+67.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+67.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+67.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -nodffe -nosdff
+
+67.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+67.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 63 unused wires.
+<suppressed ~1 debug messages>
+
+yosys> opt_expr
+
+67.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+67.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+67.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+67.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+67.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff -nodffe -nosdff
+
+67.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+67.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+67.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+67.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> abc -script /home/users/ayyaz.ahmed/Documents/new_work/orignal_yosys/Gap-Analysis/scripts/tools_auto_scripts/openfpga/abc_tmp.scr
+
+68. Executing ABC pass (technology mapping using ABC).
+
+68.1. Extracting gate netlist of module `\atahost_top' to `<abc-temp-dir>/input.blif'..
+Extracted 874 gates and 1227 wires to a netlist network with 351 inputs and 202 outputs.
+
+68.1.1. Executing ABC.
+Running ABC command: /home/users/ayyaz.ahmed/Documents/verificbase/yosys_verific_rs/build/logic_synthesis-rs/bin/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + source /home/users/ayyaz.ahmed/Documents/new_work/orignal_yosys/Gap-Analysis/scripts/tools_auto_scripts/openfpga/abc_tmp.scr 
+ABC: netlist  : i/o =    351/    202  and =    1107  lev =   11 (4.10)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.58)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1103  lev =   11 (4.11)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1072  lev =    5 (1.65)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1099  lev =   11 (4.08)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1069  lev =    5 (1.66)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1101  lev =    9 (3.65)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1069  lev =    5 (1.66)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1103  lev =   11 (4.08)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    249  edge =    1072  lev =    4 (1.74)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1099  lev =   10 (4.05)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1071  lev =    4 (1.62)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1099  lev =   10 (4.05)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1071  lev =    4 (1.62)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1099  lev =   10 (4.05)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1071  lev =    4 (1.62)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1311  lev =    8 (3.79)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    261  edge =    1127  lev =    4 (1.64)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1135  lev =   11 (4.13)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1073  lev =    5 (1.75)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1134  lev =   11 (4.13)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1074  lev =    5 (1.75)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1134  lev =   11 (4.13)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1073  lev =    5 (1.75)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1134  lev =   11 (4.13)  mem = 0.04 MB
+ABC: Mapping (K=6)  :  lut =    248  edge =    1073  lev =    5 (1.75)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1107  lev =   11 (4.10)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.58)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1107  lev =   11 (4.10)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.58)  mem = 0.01 MB
+ABC: netlist  : i/o =    351/    202  and =    1107  lev =   11 (4.11)  mem = 0.03 MB
+ABC: Mapping (K=6)  :  lut =    246  edge =    1074  lev =    4 (1.58)  mem = 0.01 MB
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+68.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      271
+ABC RESULTS:        internal signals:      674
+ABC RESULTS:           input signals:      351
+ABC RESULTS:          output signals:      202
+Removing temp directory.
+
+yosys> opt
+
+69. Executing OPT pass (performing simple optimizations).
+
+yosys> opt_expr
+
+69.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+yosys> opt_merge -nomux
+
+69.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_muxtree
+
+69.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+69.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+69.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+69.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+69.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 1120 unused wires.
+<suppressed ~1 debug messages>
+
+yosys> opt_expr
+
+69.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+69.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+yosys> opt_muxtree
+
+69.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \atahost_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+yosys> opt_reduce
+
+69.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \atahost_top.
+Performed a total of 0 changes.
+
+yosys> opt_merge
+
+69.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\atahost_top'.
+Removed a total of 0 cells.
+
+yosys> opt_dff
+
+69.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+yosys> opt_clean
+
+69.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+
+yosys> opt_expr
+
+69.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module atahost_top.
+
+69.16. Finished OPT passes. (There is nothing left to do.)
+
+yosys> hierarchy -check
+
+70. Executing HIERARCHY pass (managing design hierarchy).
+
+70.1. Analyzing design hierarchy..
+Top module:  \atahost_top
+
+70.2. Analyzing design hierarchy..
+Top module:  \atahost_top
+Removed 0 unused modules.
+
+yosys> stat
+
+71. Printing statistics.
+
+=== atahost_top ===
+
+   Number of wires:                672
+   Number of wire bits:           1611
+   Number of public wires:         229
+   Number of public wire bits:    1100
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                608
+     $lut                          271
+     adder_carry                    36
+     dffsre                        301
+
+
+yosys> opt_clean -purge
+
+72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \atahost_top..
+Removed 0 unused cells and 186 unused wires.
+<suppressed ~186 debug messages>
+
+yosys> write_blif atahost_top_yosys_out.blif
+
+73. Executing BLIF backend.
+
+yosys> write_verilog -noattr -nohex atahost_top_output_verilog.v
+
+74. Executing Verilog backend.
+
+yosys> bmuxmap
+
+74.1. Executing BMUXMAP pass.
+
+yosys> demuxmap
+
+74.2. Executing DEMUXMAP pass.
+
+yosys> clean_zerowidth
+Dumping module `\atahost_top'.
+
+Warnings: 149 unique messages, 170 total
+End of script. Logfile hash: aab4c2a272, CPU: user 5.76s system 0.20s, MEM: 37.44 MB peak
+Yosys 0.16+65 (git sha1 03bd62bb8, gcc 9.1.0 -fPIC -Os)
+Time spent: 66% 6x abc (9 sec), 9% 31x opt_expr (1 sec), ...
+0
