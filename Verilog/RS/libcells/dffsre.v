@@ -1,3 +1,9 @@
+module \$_BUF_ (A, Y);
+input A;
+output Y;
+assign Y = A;
+endmodule
+
 module \$_TBUF_ (A, E, Y);
 input A, E;
 output Y;
@@ -89,6 +95,12 @@ module latchsre (
             Q <= 1'b1;
         else if (E && G) 
             Q <= D;
+endmodule
+
+module \$_BUF_ (A, Y);
+input A;
+output Y;
+assign Y = A;
 endmodule
 
 module latchnsre (
