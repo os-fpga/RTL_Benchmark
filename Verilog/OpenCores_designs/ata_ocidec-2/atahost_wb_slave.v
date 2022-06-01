@@ -443,7 +443,7 @@ module atahost_wb_slave (
 	reg [31:0] Q;
 
 	// generate acknowledge signal
-	assign ack_o = PIOack | CONsel; // | DMAack; // since DMAack is derived from CONsel this is OK
+	assign ack_o = PIOack | CONsel| DMAack; // since DMAack is derived from CONsel this is OK
 
 	// generate error signal
 	assign err_o = cyc_i & stb_i & berr;
