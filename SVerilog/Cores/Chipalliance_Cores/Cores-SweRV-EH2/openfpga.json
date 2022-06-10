@@ -1,0 +1,78 @@
+ 
+{
+  
+    "BENCHMARKS": {
+        "dbg_eh2": {
+            "status": "active",
+            "top": "eh2_dbg",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/dbg/eh2_dbg.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "clk",
+                    "Clock2": "free_clk",
+                    "Clock3": "clk_override"
+                }
+            },
+        "dec_eh2": {
+            "status": "active",
+            "top": "eh2_dec",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/dec/eh2_dec.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "clk",
+                    "Clock2": "free_clk",
+                    "Clock3": "free_l2clk",
+                    "Clock4": "active_thread_l2clk"
+                }
+            },
+        "dmi_eh2": {
+            "status": "active",
+            "top": "dmi_wrapper",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/dmi/dmi_wrapper.v",                    
+                "CLOCK_DATA": {
+                    "Clock1": "tck",
+                "Clock2": "core_clk"
+                }
+            },
+        "exu_eh2": {
+            "status": "active",
+            "top": "eh2_exu",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/exu/eh2_exu.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "clk",
+                    "Clock2": "active_thread_l2clk",
+                    "Clock3":"clk_override"
+                }
+            },
+        "ifu_eh2": {
+            "status": "active",
+            "top": "eh2_ifu",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/exu/eh2_exu.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "clk",
+                    "Clock2": "active_thread_l2clk",
+                    "Clock3":"clk_override",
+                    "Clock4":"active_clk"
+                }
+            },
+        "lsu_eh2": {
+            "status": "active",
+            "top": "eh2_lsu",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/lsu/eh2_lsu.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "clk",
+                    "Clock2": "active_thread_l2clk",
+                    "Clock3":"clk_override",
+                    "Clock4":"active_clk",
+                    "Clock5":"free_clk"
+                }
+            },
+        "eh2_core": {
+            "status": "active",
+            "top": "eh2_swerv",
+                "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EH2/design/Core/eh2_swerv.sv",                    
+                "CLOCK_DATA": {
+                    "Clock1": "jtag_tck",
+                    "Clock2": "clk"
+                }
+            }
+    }
+}
