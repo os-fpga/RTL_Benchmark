@@ -1,0 +1,101 @@
+ 
+{
+   
+"BENCHMARKS": {
+    "el2_dbg": {
+        "status": "active",
+        "top": "el2_dbg",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/dbg/el2_dbg.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "clk_override"
+            }
+        },
+    "el2_dec": {
+        "status": "active",
+        "top": "el2_dec",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/dec/el2_dec.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "active_clk",
+                "Clock4": "free_l2clk"
+            }
+        },
+    "dmi_el2": {
+        "status": "active",
+        "top": "dmi_wrapper",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/dmi/dmi_wrapper.v",                    
+            "CLOCK_DATA": {
+                "Clock1": "tck",
+                "Clock2": "core_clk"
+            }
+        },
+    "el2_exu": {
+        "status": "active",
+        "top": "el2_exu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/exu/el2_exu.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },          
+    "el2_ifu": {
+        "status": "active",
+        "top": "el2_ifu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/ifu/el2_ifu.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "free_l2clk",
+                "Clock2": "active_clk",
+                "Clock3": "clk"
+            }
+        },
+    "el2_lsu": {
+        "status": "active",
+        "top": "el2_lsu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/lsu/el2_lsu.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "active_clk",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+    "Core_Swerv_EL2": {
+        "status": "active",
+        "top": "el2_swerv",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/Core/el2_swerv.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "jtag_tck",
+                "Clock2": "clk"
+            }
+        },
+    "EL2_ahb_to_axi4": {
+        "status": "active",
+        "top": "ahb_to_axi4",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/lib/ahb_to_axi4/ahb_to_axi4.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "bus_clk_en",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+    "EL2_axi4_to_ahb": {
+        "status": "active",
+        "top": "axi4_to_ahb",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/lib/axi4_to_ahb/axi4_to_ahb.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "bus_clk_en",
+                "Clock3": "clk_override",
+                "Clock4": "clk"
+            }
+        },
+    "EL2_mem_lib": {
+        "status": "active",
+        "top": "el2_ram",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/Chipalliance_Cores/Cores-SweRV-EL2/design/lib/el2_ram/mem_lib.sv",                    
+            "CLOCK_DATA": {
+                "Clock1": "CLK"
+            }
+        }
+    }
+}
