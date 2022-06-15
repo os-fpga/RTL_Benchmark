@@ -4,7 +4,7 @@
 //
 // Description: I2C top level wrapper file
 
-module i2c
+module i2c_fix
   import i2c_reg_pkg::*;
 #(
   parameter logic [NumAlerts-1:0] AlertAsyncOn = {NumAlerts{1'b1}}
@@ -19,6 +19,8 @@ module i2c
   // Alerts
   input  prim_alert_pkg::alert_rx_t [NumAlerts-1:0] alert_rx_i,
   output prim_alert_pkg::alert_tx_t [NumAlerts-1:0] alert_tx_o,
+
+  input i2c_reg2hw_t reg2hw_i,
 
   // Generic IO
   input                     cio_scl_i,
@@ -94,7 +96,7 @@ module i2c
   i2c_core i2c_core (
     .clk_i,
     .rst_ni,
-    .reg2hw,
+    .reg2hw(reg2hw_i),
     .hw2reg,
 
     .scl_i(cio_scl_i),
