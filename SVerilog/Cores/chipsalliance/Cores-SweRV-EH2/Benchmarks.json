@@ -1,26 +1,30 @@
  
 {
+    
     "BENCHMARKS": {
-        "Core_Swerv_EH2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/Core/config.tcl",
-            
+        "EH2_Core_Swerv": {
+            "status": "inactive",
+            "top": "eh2_swerv",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/Core/eh2_swerv.sv",
             "CLOCK_DATA": {
                 "Clock1": "jtag_tck",
                 "Clock2": "clk"
             }
         },
-        "dbg_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dbg/config.tcl",
-            
+        "EH2_dbg": {
+            "status": "inactive",
+            "top": "eh2_dbg",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dbg/eh2_dbg.sv",
             "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "free_clk",
                 "Clock3": "clk_override"
             }
         },
-        "dec_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dec/config.tcl",
-            
+        "EH2_dec": {
+            "status": "inactive",
+            "top": "eh2_dec",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dec/eh2_dec.sv",
             "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "free_clk",
@@ -28,26 +32,29 @@
                 "Clock4": "active_thread_l2clk"
             }
         },
-        "dmi_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dmi/config.tcl",
-            
+        "EH2_dmi": {
+            "status": "inactive",
+            "top": "dmi_wrapper",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dmi/dmi_wrapper.v",
             "CLOCK_DATA": {
-                "Clock1": "tck",
-                "Clock2": "core_clk"
+                    "Clock1": "tck",
+                    "Clock2": "core_clk"
             }
         },
-        "exu_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/exu/config.tcl",
-            
+        "EH2_exu": {
+            "status": "inactive",
+            "top": "eh2_exu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/exu/eh2_exu.sv",
             "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "active_thread_l2clk",
                 "Clock3":"clk_override"
             }
         },
-        "ifu_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/ifu/config.tcl",
-            
+        "EH2_ifu": {
+            "status": "inactive",
+            "top": "eh2_ifu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/ifu/eh2_ifu.sv",
             "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "active_thread_l2clk",
@@ -55,9 +62,10 @@
                 "Clock4":"active_clk"
             }
         },
-        "lsu_eh2": {
-            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/lsu/config.tcl",
-            
+        "EH2_lsu": {
+            "status": "inactive",
+            "top": "eh2_lsu",
+            "top_rtl_file":  "RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/lsu/eh2_lsu.sv",
             "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "active_thread_l2clk",
