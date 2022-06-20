@@ -1,0 +1,17 @@
+\section{Conclusion}
+
+To conclude this document it took a while to really take form, it describes a trajectory on understanding how a point-to-point protocol works and then start a survey to find one suited best for specific applications. While the author himself had no experience on any of these protocols or even how point-to-point protocols function, many research proved there are some great features and ideas developed into these protocols.\\
+
+After the explanation of point-to-point protocols and the survey of the available variants, this document has proven that the Interlaken protocol is the best suited point-to-point protocol available according to the requirements it had to meet. It is royalty-free and provides excellent bandwidth accompanied by many important features.\\
+
+The Interlaken protocol has been described extensively to completely understand how it works and how a possible implementation could be developed. After this many days/weeks have gone into developing the VHDL code to implement the correct hardware that behaved as expected according to the Interlaken Protocol Definition.\\
+
+In the end it can be said this was a success. Not all features of the Interlaken protocol are included but basic communication including framing, scrambling, encoding and generating/verifying CRC has proven to be a success. The 10 Gbps target has been reached and far higher lane rates are possible with faster transceivers. While flow control still has to be implemented, the basics are already there. Unfortunately the protocol has only been developed on a Xilinx FPGA meaning it lacks the specific parts to work with an Altera/Intel FPGA product because their transceiver are different. However most parts have been kept as much vendor independent as possible which results in many of the hardware should also be implementable on FPGA's of other vendors.\\
+
+During this project an Interlaken variant Core1990 was born. The result can be found on OpenCores and hopefully this way of sharing the design will promote it's dissemination and broad adoption. It has been developed with the terms free and open source in mind. This makes it easier for others to see how the protocol works and where improvements are possible.\\
+
+Still a lot of improvements could be developed like the inclusion of correctly functioning flow control. There is also room for some more testing and especially to ensure it's robustness. The core still has to be tested communicating with a real certified Interlaken machine guaranteeing this really matches the Interlaken protocol as intended. Since the protocol is meant to be vendor independent, it still has to be tested on other devices like Altera/Intel FPGA, Microsemi and Lattice.\\
+
+This hopefully is the first step of many, introducing the Interlaken protocol open source for anyone requiring high speed data transfer without high costs or constantly paying royalties.
+
+\newpage

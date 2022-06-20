@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+--
+-- Title       : Project structure
+-- Design      : fp24fftk
+-- Author      : Kapitanov
+-- Company     :
+--
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--		(c) Copyright 2015 										
+--		Kapitanov.                                          				 
+--		All rights reserved.                                                 
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+---- The hierarchy of folders ----
+
+-- FFT			: FFT and IFFT top logic
+-- fp24_delay		: delay lines package (short, medium, long)
+-- fp24_init		: logic for Twiddle extraction
+-- fp24_dpram_inbuf	: input buffer for FFT logic (1k-64k points)
+-- fp24_dpram_ofbuf	: support function buffer (for example in "Pulse compression" processing)
+-- fp24_op		: floating point arithmetic (add, sub, mult, fix2fp, fp2fix)
+-- sp24_op		: some useful logic (full-adder, extended multipliers)
+-- fp24_twiddle		: butterflies DIT/DIF, coefficients extraction
+-- fp24_core_v6		: xilinx corelibs shift registers*
+
+---- * Xilinx CoreGEN files will be replaced by own logic in the next versions
+---- * Xilinx CoreGEN files don't inlude in the project
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+---- Software for testing**: ----
+
+-- Aldec Active-HDL 9.3: https://www.aldec.com/
+-- Xilinx ISE 14.7: http://www.xilinx.com/
+-- Visual studio 2012 : https://www.visualstudio.com/
+-- MathCAD 13: http://www.ptc.com/product/mathcad
+
+---- Aldec Active-HDL used to testing all fp24fftk project.
+---- Xilinx ISE used for synthesis and implementation.
+---- Visual studio used to generate some test signals and to comapare an output RTL data with the "golden data".
+---- MathCAD used to visualize signals representation (in the time and frequency domains).
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+---- Addition information:
+-- This project also contains some files to self-testing.
+
+-- tb: testbench file
+-- log: 3 files for writing/reading in/out testbench
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+
+

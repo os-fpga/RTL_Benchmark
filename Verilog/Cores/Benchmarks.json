@@ -1,7 +1,28 @@
 {
     "BENCHMARKS": {
+        "cortex_m0p_mtb": {
+            "status": "active",
+            "top": "CORTEXM0PLUSINTEGRATIONCS",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/cortex_m0p_mtb/rtl/CORTEXM0PLUSINTEGRATIONCS.v",
+           "CLOCK_DATA": {
+                "Clock1": "FCLK",
+                "Clock2": "SCLK",
+                "Clock3": "HCLK",
+                "Clock4": "DCLK"
+            }
+        },
         "oc54x": {
-            "design":"RTL_Benchmark/Verilog/Cores/oc54x/rtl/config.tcl",
+            "status": "active",
+            "top": "oc54_cpu",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/oc54x/rtl/oc54x.v",
+           "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "rs_decoder": {
+            "status": "active",
+            "top": "oc54_cpu",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/oc54x/rtl/oc54x.v",
            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
