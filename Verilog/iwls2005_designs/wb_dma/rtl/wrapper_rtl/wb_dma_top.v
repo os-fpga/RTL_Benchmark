@@ -337,8 +337,11 @@ wire	[30:0]	dma_rest;
 
 wire	[31:0]	tmp_gnd = 32'h0;
 
+assign dma_req[30:ch_count] = 32'h0;
 assign dma_req[ch_count-1:0] = dma_req_i;
+assign dma_nd[30:ch_count] = 32'h0;
 assign dma_nd[ch_count-1:0] = dma_nd_i;
+assign dma_rest[30:ch_count] = 32'h0;
 assign dma_rest[ch_count-1:0] = dma_rest_i;
 assign dma_ack_o = {tmp_gnd[31-ch_count:0], dma_ack[ch_count-1:0]};
 

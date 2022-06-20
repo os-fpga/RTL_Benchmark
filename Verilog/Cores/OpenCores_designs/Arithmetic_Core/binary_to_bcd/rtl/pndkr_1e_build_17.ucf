@@ -1,0 +1,188 @@
+# This is a location constraints file for use with the PNDKR-1E FPGA board.
+# The PNDKR-1E was designed by John Clayton
+# 
+# Author of this file: John Clayton
+# Update: Jan. 6, 2003
+#
+# NOTE: To add a pullup resistor to any pin, use the following syntax:
+#NET "f<0>" PULLUP;
+
+# Port A
+NET "A<0>" LOC = "P191";
+NET "A<1>" LOC = "P189";
+NET "A<2>" LOC = "P188";
+NET "A<3>" LOC = "P187";
+NET "A<4>" LOC = "P181";
+NET "A<5>" LOC = "P180";
+NET "A<6>" LOC = "P179";
+NET "A<7>" LOC = "P178";
+#NET "A<8>"  LOC = "P175";
+#NET "A<9>"  LOC = "P176";
+#NET "A<10>" LOC = "P173";
+#NET "A<11>" LOC = "P174";
+NET "A<0>" PULLUP;
+NET "A<1>" PULLUP;
+NET "A<2>" PULLUP;
+NET "A<3>" PULLUP;
+NET "A<4>" PULLUP;
+NET "A<5>" PULLUP;
+NET "A<6>" PULLUP;
+NET "A<7>" PULLUP;
+#NET "A<8>"  PULLUP;
+#NET "A<9>"  PULLUP;
+#NET "A<10>" PULLUP;
+#NET "A<11>" PULLUP;
+
+# Port B (RS232 serial interface)
+NET "rs232_0_o" LOC = "P168";
+NET "rs232_0_i" LOC = "P169";
+NET "rs232_1_o" LOC = "P167";
+NET "rs232_1_i" LOC = "P166";
+
+# Port C (LCD panel drive in first version PNDKR board)
+NET  "C<0>" LOC = "P165";  # red[3]
+NET  "C<1>" LOC = "P164";  # red[2]
+NET  "C<2>" LOC = "P163";  # red[1]
+NET  "C<3>" LOC = "P162";  # red[0]
+NET  "C<4>" LOC = "P161";  # green[3]
+NET  "C<5>" LOC = "P160";  # green[2]
+NET  "C<6>" LOC = "P154";  # green[1]
+NET  "C<7>" LOC = "P152";  # green[0]
+NET  "C<8>" LOC = "P151";  # blue[3]
+NET  "C<9>" LOC = "P150";  # blue[2]
+NET "C<10>" LOC = "P149";  # blue[1]
+NET "C<11>" LOC = "P148";  # blue[0]
+NET "C<12>" LOC = "P147";  # lcd clk (16 - 25 MHz)
+NET "C<13>" LOC = "P146";  # lcd sync
+NET "C<14>" LOC = "P145";  # backlight on
+NET "C<15>" LOC = "P141";  # backlight bright
+
+# Port D
+NET  "D<0>" LOC = "P111";
+NET  "D<1>" LOC = "P110";
+NET  "D<2>" LOC = "P109";
+NET  "D<3>" LOC = "P108";
+NET  "D<4>" LOC = "P107";
+NET  "D<5>" LOC = "P102";
+NET  "D<6>" LOC = "P101";
+NET  "D<7>" LOC = "P100";
+NET  "D<8>" LOC = "P99";
+NET  "D<9>" LOC = "P98";
+NET "D<10>" LOC = "P97";
+NET "D<11>" LOC = "P96";
+NET "D<12>" LOC = "P95";
+NET "D<13>" LOC = "P94";
+NET "D<14>" LOC = "P93";
+NET "D<15>" LOC = "P89";
+NET "D<16>" LOC = "P88";
+NET "D<17>" LOC = "P87";
+NET "D<18>" LOC = "P86";
+NET "D<19>" LOC = "P84";
+NET "D<20>" LOC = "P83";
+NET "D<21>" LOC = "P82";
+NET "D<22>" LOC = "P81";
+NET "D<23>" LOC = "P75";
+NET "D<24>" LOC = "P74";
+NET "D<25>" LOC = "P73";
+NET "D<26>" LOC = "P71";
+NET "D<27>" LOC = "P70";
+NET "D<28>" LOC = "P69";
+NET "D<29>" LOC = "P68";
+NET "D<30>" LOC = "P64";
+NET "D<31>" LOC = "P63";
+NET "D<32>" LOC = "P62";
+NET "D<33>" LOC = "P61";
+NET "D<34>" LOC = "P60";
+NET "D<35>" LOC = "P59";
+NET "D<36>" LOC = "P58";
+NET "D<37>" LOC = "P57";
+NET "D<38>" LOC = "P56";
+NET "D<39>" LOC = "P55";
+NET "D<40>" LOC = "P112";
+NET "D<41>" LOC = "P113";
+NET "D<42>" LOC = "P114";
+NET "D<43>" LOC = "P115";
+NET "D<44>" LOC = "P116";
+NET "D<45>" LOC = "P120";
+NET "D<46>" LOC = "P121";
+NET "D<47>" LOC = "P122";
+
+
+# Port E
+NET  "E<0>" LOC = "P49";
+NET  "E<1>" LOC = "P48";
+NET  "E<2>" LOC = "P47";
+NET  "E<3>" LOC = "P46";
+NET  "E<4>" LOC = "P45";
+NET  "E<5>" LOC = "P44";
+NET  "E<6>" LOC = "P43";
+NET  "E<7>" LOC = "P42";
+NET  "E<8>" LOC = "P41";
+NET  "E<9>" LOC = "P40";
+NET "E<10>" LOC = "P36";
+NET "E<11>" LOC = "P35";
+NET "E<12>" LOC = "P34";
+NET "E<13>" LOC = "P33";
+NET "E<14>" LOC = "P31";
+NET "E<15>" LOC = "P30";
+NET "E<16>" LOC = "P29";
+NET "E<17>" LOC = "P27";
+
+# Port F
+NET  "F<0>" LOC = "P24";
+NET  "F<1>" LOC = "P23";
+NET  "F<2>" LOC = "P22";
+NET  "F<3>" LOC = "P21";
+NET  "F<4>" LOC = "P20";
+NET  "F<5>" LOC = "P18";
+NET  "F<6>" LOC = "P17";
+NET  "F<7>" LOC = "P16";
+NET  "F<8>" LOC = "P15";
+NET  "F<9>" LOC = "P11";
+NET "F<10>" LOC = "P10";
+NET "F<11>" LOC = "P9";
+NET "F<12>" LOC = "P8";
+NET "F<13>" LOC = "P7";
+NET "F<14>" LOC = "P6";
+NET "F<15>" LOC = "P5";
+NET "F<16>" LOC = "P4";
+NET "F<17>" LOC = "P3";
+
+# "Extra Pads" (located near FPGA on first version PNDKR board)
+NET  "extra<0>" LOC = "P123";
+NET  "extra<1>" LOC = "P125";
+NET  "extra<2>" LOC = "P126";
+NET  "extra<3>" LOC = "P127";
+NET  "extra<4>" LOC = "P129";
+NET  "extra<5>" LOC = "P132";
+NET  "extra<6>" LOC = "P133";
+NET  "extra<7>" LOC = "P134";
+NET  "extra<8>" LOC = "P135";
+NET  "extra<9>" LOC = "P136";
+NET "extra<10>" LOC = "P138";
+NET "extra<11>" LOC = "P139";
+NET "extra<12>" LOC = "P140";
+
+# User switches
+NET "switch<0>" LOC = "P198"; # closest to LEDs (marked 4)
+NET "switch<1>" LOC = "P194";
+NET "switch<2>" LOC = "P193";
+NET "switch<3>" LOC = "P192"; # farthest from LEDs (marked 1)
+NET "switch<0>" PULLUP;
+NET "switch<1>" PULLUP;
+NET "switch<2>" PULLUP;
+NET "switch<3>" PULLUP;
+
+# User LEDs
+NET "led<0>" LOC = "P206"; # (lsb) = farthest from switches
+NET "led<1>" LOC = "P205";
+NET "led<2>" LOC = "P204";
+NET "led<3>" LOC = "P203";
+NET "led<4>" LOC = "P202";
+NET "led<5>" LOC = "P201";
+NET "led<6>" LOC = "P200";
+NET "led<7>" LOC = "P199"; # (msb) = closest to switches
+
+# Clock inputs
+NET "clk_0" LOC = "P80";  # Front oscillator (metal can through hole)
+#NET "clk_1" LOC = "P77";  # Back oscillator (surface mount)

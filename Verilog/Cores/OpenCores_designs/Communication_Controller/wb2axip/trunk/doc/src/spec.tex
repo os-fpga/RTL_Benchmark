@@ -1,0 +1,178 @@
+\documentclass{gqtekspec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Filename: 	spec.tex
+%%
+%% Project:	Pipelined Wishbone to AXI coverter
+%%
+%% Purpose:	This document is a LaTeX description describing how to build
+%%		a specification document for the cores within this Pipelined
+%%	WB2AXI repository.
+%%
+%% Creator:	Dan Gisselquist, Ph.D.
+%%		Gisselquist Technology, LLC
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Copyright (C) 2018, Gisselquist Technology, LLC
+%%
+%% This program is free software (firmware): you can redistribute it and/or
+%% modify it under the terms of  the GNU General Public License as published
+%% by the Free Software Foundation, either version 3 of the License, or (at
+%% your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful, but WITHOUT
+%% ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+%% for more details.
+%%
+%% You should have received a copy of the GNU General Public License along
+%% with this program.  (It's in the $(ROOT)/doc directory, run make with no
+%% target there if the PDF file isn't present.)  If not, see
+%% <http://www.gnu.org/licenses/> for a copy.
+%%
+%% License:	GPL, v3, as defined and found on www.gnu.org,
+%%		http://www.gnu.org/licenses/gpl.html
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+\usepackage{import}
+\usepackage{bytefield}
+\project{Wishbone to AXI}
+\title{Specification}
+\author{Dan Gisselquist, Ph.D.}
+\email{zipcpu (at) gmail.com}
+\revision{Rev.~0.1}
+\begin{document}
+\pagestyle{gqtekspecplain}
+\titlepage
+\begin{license}
+Copyright (C) \theyear\today, Gisselquist Technology, LLC
+
+This project is free software (firmware): you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.
+
+Some files within this repository have been released under the GNU Lesser
+General Public License.  These components may be separated from this repository,
+and redistributed or modified under the terms of the Lesser GNU
+Public License, again as published by the Free Software Foundation,
+either vversion 3 of the License or (at your option) any later
+version.  These files will identified as such in their headers.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details, or the GNU Lesser General Public License as appropriate.
+
+You should have received a copy of both the GNU General Public License as
+well as the GNU Lesser General Public License along with this repository.
+(They are both in the \$(ROOT)/doc directory.  Run make with no target there
+if the PDF files are not present.)  If not, see If not, see
+\texttt{http://www.gnu.org/licenses/} for a copy.
+\end{license}
+\begin{revisionhistory}
+0.0 & 9/6/2016 & D. Gisselquist & First draft\\\hline
+\end{revisionhistory}
+% Revision History
+% Table of Contents, named Contents
+\tableofcontents
+\listoffigures
+\listoftables
+\begin{preface}
+The wishbone to AXI controller is born of necessity.  As long as Xilinx's
+proprietary IP makes it difficult to access memory, providing only access
+via the proprietary AXI bus, some conversion will be necessary for anyone
+who wishes to use a wishbone interface.
+
+A special shout out and thanks go to Stephan Wallentowitz, for his first
+draft of such a converter, and to Olofk for encouraging me to write this
+initial core.
+
+The project has since grown into a general purpose set of both bus bridges
+and formal bus properties, to include support for Wishbone, AXI-lite, and
+Avalon busses.  The full AXI implementation, together with the bridges
+between full AXI and other busses, remains a work in progress.
+\end{preface}
+
+\chapter{Introduction}\label{ch:intro}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%
+% Introduction
+%
+% This section contains the introduction to the core, describing both its
+% use and its features.
+%
+
+
+% What is old
+% What does the old lack?
+% What is new
+% What does the new have that the old lacks
+% What performance gain can be expected?
+
+\chapter{Architecture}\label{ch:arch}
+
+% This section describes the architecture of the block.  A block level diagram
+% should be included describing the top level of the design.
+
+\chapter{Operation}\label{ch:ops}
+
+% This section describes the operation of the core.  Specific sequences, such
+% as startup sequences, as well as the modes and states of the block should be
+% described.
+%
+
+\chapter{Clocks}\label{ch:clocks}
+
+% This section specifies all of the clocks.  All clocks, clock domain passes
+% and the clock relations should be described.
+
+% Name | Source |    Rates (MHz)    | Remarks | Description
+%               | Max|Min|Resolution|
+
+\chapter{Wishbone Datasheet}\label{ch:wishbone}
+\begin{table}[htbp]
+\begin{center}
+\begin{wishboneds}
+Revision level of wishbone & WB B4 spec \\\hline
+Type of interface & Slave, Read/Write, pipeline reads supported \\\hline
+Port size & Various and configurable \\\hline
+Port granularity & 8--bit \\\hline
+Maximum Operand Size & Various and configurable\\\hline
+Data transfer ordering & (Preserved) \\\hline
+Clock constraints & None.\\\hline
+Signal Names & \begin{tabular}{ll}
+		Signal Name & Wishbone Equivalent \\\hline
+		{\tt i\_wb\_clk}	& {\tt CLK\_I} \\
+		{\tt i\_wb\_cyc}	& {\tt CYC\_I} \\
+		{\tt i\_wb\_stb}	& {\tt STB\_I} \\
+		{\tt i\_wb\_we}		& {\tt WE\_I} \\
+		{\tt i\_wb\_addr}	& {\tt ADR\_I} \\
+		{\tt i\_wb\_sel}	& {\tt SEL\_I} \\
+		{\tt i\_wb\_data}	& {\tt DAT\_I} \\
+		{\tt o\_wb\_ack}	& {\tt ACK\_O} \\
+		{\tt o\_wb\_stall}	& {\tt STALL\_O} \\
+		{\tt o\_wb\_data}	& {\tt DAT\_O}
+		\end{tabular}\\\hline
+\end{wishboneds}
+\caption{Wishbone Datasheet}\label{tbl:wishbone}
+\end{center}\end{table}
+
+\chapter{I/O Ports}\label{ch:ioports}
+
+% This section specifies all of the core IO ports
+
+% Appendices
+% A. May be added to outline different specifications.  (??)
+
+
+% Index
+\end{document}
+
+

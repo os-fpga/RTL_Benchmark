@@ -96,6 +96,7 @@ module usbuart_usbif (
 
   logic  out_ctrl_put, out_ctrl_acked, out_ctrl_rollback;
   logic  in_ctrl_get, in_ctrl_acked, in_ctrl_rollback;
+  assign in_ep_acked = '0;
   assign out_ctrl_put      = out_ep_data_put && (out_ep_current == CtrlEp);
   assign out_ctrl_acked    = out_ep_acked    && (out_ep_current == CtrlEp);
   assign out_ctrl_rollback = out_ep_rollback && (out_ep_current == CtrlEp);
@@ -199,6 +200,10 @@ module usbuart_usbif (
     .data_toggle_clear_i        (2'b0),
 
     .dev_addr_i                 (dev_addr),
+
+    .usb_dp_i('1),
+    .usb_dn_i('1),
+    .cfg_rx_differential_i('1),
 
     // out endpoint interfaces
     .out_ep_current_o           (out_ep_current),

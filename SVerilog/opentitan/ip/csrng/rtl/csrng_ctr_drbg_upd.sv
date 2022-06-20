@@ -302,6 +302,8 @@ module csrng_ctr_drbg_upd #(
          (sfifo_updreq_pop && !sfifo_updreq_not_empty),
          (sfifo_updreq_full && !sfifo_updreq_not_empty)};
 
+ assign sfifo_updreq_full = '0;
+
   //--------------------------------------------
   // prepare value for block_encrypt step
   //--------------------------------------------
@@ -415,6 +417,7 @@ module csrng_ctr_drbg_upd #(
   assign block_encrypt_v_o = sfifo_bencreq_v;
   assign block_encrypt_inst_id_o = sfifo_bencreq_inst_id;
   assign block_encrypt_ccmd_o = sfifo_bencreq_ccmd;
+  assign sfifo_bencreq_full = '0;
 
   assign ctr_drbg_upd_sfifo_bencreq_err_o =
          {(sfifo_bencreq_push && sfifo_bencreq_full),
@@ -447,6 +450,7 @@ module csrng_ctr_drbg_upd #(
   assign block_encrypt_rdy_o = !sfifo_bencack_full;
 
   assign {sfifo_bencack_v,sfifo_bencack_inst_id,sfifo_bencack_ccmd} = sfifo_bencack_rdata;
+  assign sfifo_bencack_full = '0;
 
   assign ctr_drbg_upd_sfifo_bencack_err_o =
          {(sfifo_bencack_push && sfifo_bencack_full),
@@ -478,6 +482,7 @@ module csrng_ctr_drbg_upd #(
 
   assign sfifo_pdata_v = sfifo_pdata_rdata;
 
+  assign sfifo_pdata_full = '0;
   assign ctr_drbg_upd_sfifo_pdata_err_o =
          {(sfifo_pdata_push && sfifo_pdata_full),
           (sfifo_pdata_pop && !sfifo_pdata_not_empty),
@@ -596,7 +601,7 @@ module csrng_ctr_drbg_upd #(
   assign ctr_drbg_upd_inst_id_o = sfifo_final_inst_id;
   assign ctr_drbg_upd_key_o = sfifo_final_key;
   assign ctr_drbg_upd_v_o = sfifo_final_v;
-
+  assign sfifo_final_full = '0;
   assign ctr_drbg_upd_sfifo_final_err_o =
          {(sfifo_final_push && sfifo_final_full),
           (sfifo_final_pop && !sfifo_final_not_empty),

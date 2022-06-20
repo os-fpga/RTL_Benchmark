@@ -1,0 +1,59 @@
+
+#  Verilog implementation of the iso7816-3 smartcard interface.
+#  Copyright (C) 2003 Blaise Gassend <blaise at gassend dot com>
+#  
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
+#  USA.
+
+set -tmpdir .
+set -overwrite YES
+run
+-ifmt VERILOG
+-top iso7816
+-p xc2s200-pq208-5
+-ifn iso7816.prj
+-opt_mode Speed
+-opt_level 1
+#-check_attribute_syntax YES
+-keep_hierarchy YES
+-glob_opt AllClockNets
+-write_timing_constraints yes
+-fsm_extract YES -fsm_encoding Auto
+#-fsm_fftype D
+-mux_extract YES
+-resource_sharing YES
+-complex_clken YES
+-rom_extract Yes
+-ram_extract Yes
+-ram_style Auto
+-mux_style Auto
+-decoder_extract YES
+-priority_extract YES
+-shreg_extract YES
+-shift_extract YES
+-xor_collapse YES
+-iobuf YES
+-equivalent_register_removal YES
+-bufg 4
+-max_fanout 100
+-incremental_synthesis NO
+-register_duplication YES
+-register_balancing YES
+-move_first_stage YES
+-move_last_stage YES
+-slice_packing YES
+-iob auto
+-ofn iso7816
+-ofmt NGC

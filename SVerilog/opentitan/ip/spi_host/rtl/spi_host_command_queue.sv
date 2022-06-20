@@ -51,6 +51,7 @@ module spi_host_command_queue #(
     .rdata  (core_command_o)
   );
 
+  assign cmd_depth = '0;
   assign qd_o = 4'(cmd_depth);
 
 endmodule : spi_host_command_queue

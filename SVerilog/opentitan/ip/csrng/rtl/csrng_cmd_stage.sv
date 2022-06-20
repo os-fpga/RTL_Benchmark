@@ -89,7 +89,6 @@ module csrng_cmd_stage import csrng_pkg::*; #(
   logic                    cmd_gen_flag_q, cmd_gen_flag_d;
   logic [11:0]             cmd_gen_cmd_q, cmd_gen_cmd_d;
 
-
   always_ff @(posedge clk_i or negedge rst_ni)
     if (!rst_ni) begin
       cmd_ack_q       <= '0;
@@ -107,6 +106,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
 
   assign  cmd_stage_sfifo_cmd_err_o = sfifo_cmd_err;
   assign  cmd_stage_sfifo_genbits_err_o = sfifo_genbits_err;
+  assign                        sfifo_genbits_full = '0;
 
   //---------------------------------------------------------
   // capture the transfer length of data behind the command
@@ -142,6 +142,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
         cmd_arb_mop_o   ? sfifo_cmd_rdata :
         '0;
 
+  assign sfifo_cmd_full = '0;
   assign cmd_stage_rdy_o = !sfifo_cmd_full;
 
   assign sfifo_cmd_err =
@@ -151,6 +152,7 @@ module csrng_cmd_stage import csrng_pkg::*; #(
 
 
   // state machine controls
+assign sfifo_cmd_depth = '0;
   assign cmd_fifo_zero = (sfifo_cmd_depth == '0);
   assign cmd_len = sfifo_cmd_rdata[7:4];
 

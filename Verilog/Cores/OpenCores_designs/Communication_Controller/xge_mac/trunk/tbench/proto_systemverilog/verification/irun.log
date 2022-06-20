@@ -1,0 +1,28 @@
+irun: 09.20-p007: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+TOOL:	irun	09.20-p007: Started on Sep 19, 2012 at 22:53:06 PDT
+irun
+	../scenarios/compile/testcase.sv
+file: ../scenarios/compile/testcase.sv
+`include "../../verification/include.sv"
+                                       |
+ncvlog: *E,COFILX (../scenarios/compile/testcase.sv,15|39): cannot open include file '../../verification/include.sv'.
+`include "../../verification/packet.sv"
+                                      |
+ncvlog: *E,COFILX (../scenarios/compile/testcase.sv,16|38): cannot open include file '../../verification/packet.sv'.
+`include "../../verification/driver.sv"
+                                      |
+ncvlog: *E,COFILX (../scenarios/compile/testcase.sv,17|38): cannot open include file '../../verification/driver.sv'.
+`include "../../verification/monitor.sv"
+                                       |
+ncvlog: *E,COFILX (../scenarios/compile/testcase.sv,18|39): cannot open include file '../../verification/monitor.sv'.
+`include "../../verification/env.sv"
+                                   |
+ncvlog: *E,COFILX (../scenarios/compile/testcase.sv,19|35): cannot open include file '../../verification/env.sv'.
+   env envLoopBack;
+                 |
+ncvlog: *E,ILLPDL (../scenarios/compile/testcase.sv,34|17): Mixing of ansi & non-ansi style port declaration is not legal.
+	program worklib.testcase:sv
+		errors: 1, warnings: 0
+ncvlog: *F,NOTOPL: no top-level unit found, must have recursive instances.
+irun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 2).
+TOOL:	irun	09.20-p007: Exiting on Sep 19, 2012 at 22:53:06 PDT  (total: 00:00:00)

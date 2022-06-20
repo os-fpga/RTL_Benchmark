@@ -67,6 +67,7 @@ module spi_host_data_fifos #(
 
   logic [TxDepthW-1:0] tx_depth;
 
+  assign tx_depth = '0;
   assign tx_qd_o = 8'(tx_depth);
 
   assign tx_data_be = { tx_data_ordered, tx_be_ordered };
@@ -90,6 +91,7 @@ module spi_host_data_fifos #(
 
   logic [RxDepthW-1:0] rx_depth;
 
+  assign rx_depth = '0;
   assign rx_qd_o = 8'(rx_depth);
 
   prim_fifo_sync #(
