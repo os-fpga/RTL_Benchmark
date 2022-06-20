@@ -1,0 +1,70 @@
+ 
+{
+    "BENCHMARKS": {
+        "Core_Swerv_EH2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/Core/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "jtag_tck",
+                "Clock2": "clk"
+            }
+        },
+        "dbg_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dbg/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "clk_override"
+            }
+        },
+        "dec_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dec/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "free_clk",
+                "Clock3": "free_l2clk",
+                "Clock4": "active_thread_l2clk"
+            }
+        },
+        "dmi_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/dmi/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "tck",
+                "Clock2": "core_clk"
+            }
+        },
+        "exu_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/exu/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "active_thread_l2clk",
+                "Clock3":"clk_override"
+            }
+        },
+        "ifu_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/ifu/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "active_thread_l2clk",
+                "Clock3":"clk_override",
+                "Clock4":"active_clk"
+            }
+        },
+        "lsu_eh2": {
+            "design":"RTL_Benchmark/SVerilog/Cores/chipsalliance/Cores-SweRV-EH2/design/lsu/config.tcl",
+            
+            "CLOCK_DATA": {
+                "Clock1": "clk",
+                "Clock2": "active_thread_l2clk",
+                "Clock3":"clk_override",
+                "Clock4":"active_clk",
+                "Clock5":"free_clk"
+            }
+        }
+    }
+}
