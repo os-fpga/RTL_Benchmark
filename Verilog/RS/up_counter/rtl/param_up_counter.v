@@ -8,14 +8,17 @@
 `define size 5
 `endif
 
-module param_up_counter (clk_counter, q_counter, rst_counter);
+module param_up_counter (clock0, q_counter, rst_counter);
 
-    input clk_counter;
+    input clock0;
     input rst_counter;
+    input clk1;
+    input clk2;
+    input clk3;
     output [`size-1:0] q_counter;
     reg [`size-1:0] q_counter;
 
-    always @ (posedge clk_counter)
+    always @ (posedge clock0)
     begin
         if(rst_counter)
 		q_counter <= 'b00000000;
