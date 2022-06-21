@@ -1,45 +1,6 @@
  
 {
-    "GENERAL": {
-      "DESIGN_STAGE"    : "yosys",
-      "STRATEGY"        : "performance",
-      "POWER_ANALYSIS"  : false,
-      "SWEEP"           : true 
-    },
-    "SYNTHESIS_PARAM": {
-        "command"   : "synth_ql",
-        "verific"   : true,
-        "synth_ql":{
-            "top"       : "${TOP_MODULE}",
-            "family"    : "qlf_k6n10f",
-            "no_abc_opt": null,
-            "edif"      : null,
-            "blif"      : "${OUTPUT_BLIF}",
-            "verilog"   : null,
-            "no_dsp"    : true,
-            "no_adder"  : true,
-            "no_bram"   : true,
-            "no_ff_map" : null
-        },
-        "synth":{
-            "top"       : "${TOP_MODULE}",
-            "auto-top"  : null,
-            "flatten"   : true,
-            "encfile"   : null,
-            "lut"       : null,
-            "nofsm"     : null,
-            "noabc"     : null,
-            "noalumacc" : null,
-            "nordff"    : null,
-            "noshare"   : null,
-            "run"       : null,
-            "flowmap"   : null
-        }
-    },
-    "ABC": {
-        "lut"   : "6",
-        "script": null
-    },
+    
     "BENCHMARKS": {
         "adc_ctrl": {
             "design":"RTL_Benchmark/SVerilog/opentitan/ip/adc_ctrl/rtl/config.tcl",
