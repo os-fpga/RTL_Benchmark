@@ -1,20 +1,77 @@
 {
     "BENCHMARKS": {
-        "aes": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/aes/wrapper_rtl/config.tcl",
+        "ac97": {
+            "status": "inactive",
+            "top": "ac97_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/ac97/rtl/verilog/ac97_top.v",
+           "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "bit_clk_pad_i"
+            }
+        },
+        "aes_iwls2005": {
+            "status": "inactive",
+            "top": "aes_cipher_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/ac97/rtl/verilog/ac97_top.v",
+           "CLOCK_DATA": {
+                "Clock1": "clock"
+            }
+        },
+        "des_area_opt": {
+            "status": "inactive",
+            "top": "des_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/des/rtl/verilog/area_opt/des_top.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
-        "dma": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/dma/wrapper_rtl/config.tcl",
+        "des_perf_opt": {
+            "status": "inactive",
+            "top": "des_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/des/rtl/verilog/perf_opt/des_top.v",
+           "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "dma_iwls2005": {
+            "status": "inactive",
+            "top": "dma_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/dma/rtl/dma_top.v",
            "CLOCK_DATA": {
                 "Clock1": "HCLK"
             }
         },
+        "ethernet_mac": {
+            "status": "inactive",
+            "top": "eth_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/ethernet_mac/rtl/ethernet_mac.v",
+            "CLOCK_DATA": {
+                "Clock1": "wb_clk_i",
+                "Clock2": "mtx_clk_pad_i",
+                "Clock3": "mrx_clk_pad_i"
+            }
+        },
+        "fpu": {
+            "status": "inactive",
+            "top": "fpu",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/fpu/rtl/fpu.v",
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "i2c_master": {
+            "status": "inactive",
+            "top": "i2c_master",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/i2c_master/rtl/i2c_master.v",
+            "CLOCK_DATA": {
+                "Clock1": "wb_clk_i"
+            }
+        },
         "leon3mp": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/leon3mp/rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "i2c_master",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/leon3mp/rtl/leon3mp.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "etx_clk",
                 "Clock3": "erx_clk",
@@ -22,137 +79,127 @@
             }
         },
         "mc": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/mc/rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "mc_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/mc/rtl/mc_top.v",
+            "CLOCK_DATA": {
+                "Clock1": "clk_i",
+                "Clock2": "mc_clk_i"
+            }
+        },
+        "mem_ctl": {
+            "status": "inactive",
+            "top": "mc",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/mem_ctl/rtl/verilog/mem_ctl.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk_i",
                 "Clock2": "mc_clk_i"
             }
         },
         "s38584": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/s38584/rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "s38584",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/s38584/rtl/s38584.v",
+            "CLOCK_DATA": {
                 "Clock1": "blif_clk_net"
             }
         },
-        "fpu": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/fpu/rtl/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk"
-            }
-        },
-        "ac97": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/ac97/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk_i",
-                "Clock2": "bit_clk_pad_i"
-            }
-        },
-        "i2c_master": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/i2c_master/rtl/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "wb_clk_i"
-            }
-        },
         "sasc": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/sasc/rtl/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk"
-            }
-        },
-        "vga_lcd": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/vga_lcd/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "wb_clk_i",
-                "Clock2": "clk_p_i"
-            }
-        },
-        "tv80s": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/tv80s/rtl/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk"
-            }
-        },
-        "area_opt": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/des/rtl/verilog/area_opt/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "pclk"
-            }
-        },
-        "perf_opt": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/des/rtl/verilog/perf_opt/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk"
-            }
-        },
-        "systemCdes": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/systemCdes/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "s38584",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/sasc/rtl/sasc.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
         "simple_gpio": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/simple_gpio/rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "simple_gpio",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/simple_gpio/rtl/simple_gpio.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
         },
         "simple_spi": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/simple_spi/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "simple_spi_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/simple_spi/rtl/verilog/simple_spi_top.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
         },
         "spi": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/spi/rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "spi_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/spi/rtl/spi_top.v",
+            "CLOCK_DATA": {
                 "Clock1": "wb_clk_i"
             }
         },
         "ss_pcm": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/ss_pcm/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "pcm_slv",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/ss_pcm/rtl/verilog/ss_pcm.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk",
                 "Clock2": "pcm_clk_i"
             }
         },
+        "systemCdes": {
+            "status": "inactive",
+            "top": "des_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/systemCdes/rtl/verilog/wb_descontroller_top.v",
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "tv80s": {
+            "status": "inactive",
+            "top": "tv80s_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/vga_lcd/rtl/verilog/vga_lcd_top.v",
+            "CLOCK_DATA": {
+                "Clock1": "clk"
+            }
+        },
+        "usbf_top": {
+            "status": "inactive",
+            "top": "usbf_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/usbf_top/usbf_top.v",
+            "CLOCK_DATA": {
+                "Clock1": "clk_i"
+            }
+        },
+        "vga_lcd": {
+            "status": "inactive",
+            "top": "vga_enh_top",
+            "top_rtl_file":  "RTL_Benchmark/controller/vga_lcd/rtl/verilog/vga_lcd_top.v",
+            "CLOCK_DATA": {
+                "Clock1": "wb_clk_i",
+                "Clock2": "clk_p_i"
+            }
+        },
         "wb_conmax": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/wb_conmax/rtl/wrapper_rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "wrapper_top",
+            "top_rtl_file":  "RTL_Benchmark/interface/wb_conmax/rtl/wrapper_rtl/wrapper_top.sv",
+            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
         },
         "wb_dma": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/wb_dma/rtl/wrapper_rtl/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "dma_wrapper_top",
+            "top_rtl_file":  "RTL_Benchmark/interface/wb_dma/rtl/wrapper_rtl/dma_wrapper_top.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
         },
         "wbif_68k": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/wbif_68k/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
+            "status": "inactive",
+            "top": "dragonball_wbmaster_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/iwls2005_designs/wbif_68k/rtl/verilog/dragonball_wbmaster_top.v",
+            "CLOCK_DATA": {
                 "Clock1": "clk"
-            }
-        },
-        "ethernet_mac": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/ethernet_mac/rtl/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "wb_clk_i",
-                "Clock2": "mtx_clk_pad_i",
-                "Clock3": "mrx_clk_pad_i"
-            }
-        },
-        "mem_ctl": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/mem_ctl/rtl/verilog/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk_i",
-                "Clock2": "mc_clk_i"
-            }
-        },
-        "usbf": {
-            "design":"RTL_Benchmark/Verilog/iwls2005_designs/usbf/config.tcl",
-           "CLOCK_DATA": {
-                "Clock1": "clk_i",
-                "Clock2": "phy_clk_pad_i"
             }
         }
     }
