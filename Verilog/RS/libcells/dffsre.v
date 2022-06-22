@@ -127,7 +127,7 @@ module adder_carry(
     assign cout = p ? cin : g;
 
 endmodule
-
+/*
 module \$alu (A, B, CI, BI, X, Y, CO);
 
 parameter A_SIGNED = 0;
@@ -176,7 +176,7 @@ generate
 endgenerate
 
 endmodule
-
+*/
 // ************************************************************************ //
 module \$mem_v2 (RD_CLK, RD_EN, RD_ARST, RD_SRST, RD_ADDR, RD_DATA, WR_CLK, WR_EN, WR_ADDR, WR_DATA);
 
@@ -564,10 +564,6 @@ module dsp_t1_sim # (
 
 // FIXME: The version of Icarus Verilog from Conda seems not to recognize the
 // $error macro. Disable this sanity check for now because of that.
-`ifndef __ICARUS__
-    if (NBITS_ACC < NBITS_A + NBITS_B)
-        $error("NBITS_ACC must be > NBITS_A + NBITS_B");
-`endif
 
     // Input registers
     reg  [NBITS_A-1:0]  r_a;
@@ -584,7 +580,7 @@ module dsp_t1_sim # (
     reg         r_rnd;
     reg [NBITS_ACC-1:0] acc;
 
-    initial begin
+   /* initial begin
         r_a          <= 0;
         r_b          <= 0;
 
@@ -598,7 +594,7 @@ module dsp_t1_sim # (
         r_load_acc   <= 0;
         r_sat        <= 0;
         r_rnd        <= 0;
-    end
+    end */
 
     always @(posedge clock_i or posedge s_reset) begin
         if (s_reset) begin

@@ -31,8 +31,7 @@ entity dual_mem is
 end dual_mem;  
 
 architecture rtl of dual_mem is 
-  type ram_type is array (N_ADDR - 1  downto 0)  
-        of std_logic_vector (DATA_LENGTH - 1 downto 0);  
+  type ram_type is array (N_ADDR - 1  downto 0) of std_logic_vector (DATA_LENGTH - 1 downto 0);  
   signal RAM : ram_type;  
   signal read_a : std_logic_vector(ADDR_LENGTH - 1 downto 0);  
   signal read_dpra : std_logic_vector(ADDR_LENGTH - 1 downto 0);  

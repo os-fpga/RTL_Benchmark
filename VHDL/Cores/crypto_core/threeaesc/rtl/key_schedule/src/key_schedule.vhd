@@ -78,15 +78,17 @@ begin
 	end process mod_10_cnt;
 
 	gen_sub_keys : process(clk, rst, start, count_5, count_10, load)
-		variable w_0_i_tmp_old : std_logic_vector(31 downto 0) := (others => '0');
-		variable w_1_i_tmp_old : std_logic_vector(31 downto 0) := (others => '0');
-		variable w_2_i_tmp_old : std_logic_vector(31 downto 0) := (others => '0');
-		variable w_3_i_tmp_old : std_logic_vector(31 downto 0) := (others => '0');
+		variable w_0_i_tmp_old : std_logic_vector(31 downto 0) ;
+		variable w_1_i_tmp_old : std_logic_vector(31 downto 0) ;
+		variable w_2_i_tmp_old : std_logic_vector(31 downto 0) ;
+		variable w_3_i_tmp_old : std_logic_vector(31 downto 0) ;
 
-		variable tmp_0 : std_logic_vector(31 downto 0) := (others => '0');
-		variable tmp_1 : std_logic_vector(31 downto 0) := (others => '0');
-		variable tmp_2 : std_logic_vector(31 downto 0) := (others => '0');
-		variable tmp_3 : std_logic_vector(31 downto 0) := (others => '0');
+		variable tmp_0 : std_logic_vector(31 downto 0) ;
+		variable tmp_1 : std_logic_vector(31 downto 0) ;
+		variable tmp_2 : std_logic_vector(31 downto 0) ;
+		variable tmp_3 : std_logic_vector(31 downto 0) ;
+
+
 	begin
 		if rising_edge(clk) then
 			if (rst = '1') then
@@ -94,6 +96,17 @@ begin
 				w_1_i_tmp_old := (others => '0');
 				w_2_i_tmp_old := (others => '0');
 				w_3_i_tmp_old := (others => '0');
+
+		        tmp_0 := (others => '0') ;
+		        tmp_1 := (others => '0') ;
+		        tmp_2 := (others => '0') ;
+		        tmp_3 := (others => '0') ;
+
+		        --g_sub_0_s   <= (others => '0');
+		        --g_sub_1_s   <= (others => '0');
+		        --g_sub_2_s   <= (others => '0');
+		        --g_sub_3_s   <= (others => '0');
+
 			elsif (load = '1') then
 				w_0_i_tmp_old := key_in(31 downto 0);
 				w_1_i_tmp_old := key_in(63 downto 32);
@@ -124,7 +137,7 @@ begin
 	
 	key_ready <= '1' when (count_5 = 1 and start = '1') else '0';
 		
-	S_BOX_DUAL_1: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(7 downto 0), w_3_i_s(15 downto 8),  (others=>'0'), g_sub_3_s, g_sub_0_s);
-	S_BOX_DUAL_2: entity work.dual_mem(rtl) port map (clk, '0', w_3_i_s(23 downto 16),   w_3_i_s(31 downto 24), (others=>'0'), g_sub_1_s, g_sub_2_s); 
+	S_BOX_DUAL_1: entity work.dual_mem(rtl) port map (clk, '1', w_3_i_s(7 downto 0), w_3_i_s(15 downto 8),  (others=>'0'), g_sub_3_s, g_sub_0_s);
+	S_BOX_DUAL_2: entity work.dual_mem(rtl) port map (clk, '1', w_3_i_s(23 downto 16),   w_3_i_s(31 downto 24), (others=>'0'), g_sub_1_s, g_sub_2_s); 
 
 end Behavioral;
