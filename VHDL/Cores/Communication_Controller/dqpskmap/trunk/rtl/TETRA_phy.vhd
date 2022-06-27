@@ -87,7 +87,7 @@ begin
 	tetra_diffPhaseEncoder_output_0 <= tetra_diffPhaseEncoder_output_0_tmp;
 	tetra_diffPhaseEncoder_output_1 <= tetra_diffPhaseEncoder_output_1_tmp;
 	
-	delay_biPolarEncoder_1: process(tetra_clk_18_KHz, tetra_valid_input)
+	delay_biPolarEncoder_1: process(tetra_clk_18_KHz, tetra_valid_input,tetra_clk_36_KHz)
 		variable valid_input_diffPhaseEncoder_v : std_logic := '0';
 	begin
 		if falling_edge(tetra_clk_36_KHz) then
@@ -97,7 +97,7 @@ begin
 		valid_input_diffPhaseEncoder_1_s <= valid_input_diffPhaseEncoder_v;
 	end process;
 
-	delay_biPolarEncoder_2: process(tetra_clk_18_KHz, tetra_valid_input, valid_input_diffPhaseEncoder_1_s)
+	delay_biPolarEncoder_2: process(tetra_clk_18_KHz, tetra_valid_input, valid_input_diffPhaseEncoder_1_s,tetra_clk_36_KHz)
 		variable valid_input_diffPhaseEncoder_v : std_logic := '0';
 	begin
 		if falling_edge(tetra_clk_36_KHz) then

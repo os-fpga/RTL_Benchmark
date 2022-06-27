@@ -33,7 +33,7 @@ architecture Behavioral of diffPhaseDecoder is
 
 begin
 
-	phase_decoder: process(clk_18_KHz, en, i_k, q_k)
+	phase_decoder: process(clk_18_KHz, en, i_k, q_k,rst)
 		variable i_k_old : signed(7 downto 0) := (others=>'0');
 		variable q_k_old : signed(7 downto 0) := (others=>'0');
 		variable a_k_tmp : signed(15 downto 0) := (others=>'0');

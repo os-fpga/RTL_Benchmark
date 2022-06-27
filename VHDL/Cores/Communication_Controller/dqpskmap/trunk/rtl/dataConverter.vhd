@@ -32,7 +32,7 @@ architecture Behavioral of dataConverter is
 	signal s_reg_s : std_logic_vector(1 downto 0);
 begin
 	
-	shift_reg: process(clk_36_KHz, rst, bit_stream_input)
+	shift_reg: process(clk_36_KHz, rst, bit_stream_input,valid_input)
 		variable s_reg_v : std_logic_vector(1 downto 0) := (others=>'0');
 	begin
 		if rst = '1' then
