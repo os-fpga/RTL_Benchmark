@@ -1,0 +1,23 @@
+[tasks]
+prf
+cvr
+
+[options]
+prf: mode prove
+prf: depth 5
+cvr: mode cover
+cvr: depth 40
+
+[engines]
+smtbmc
+
+[script]
+read -formal -D AXILWR2WBSP axilwr2wbsp.v
+read -formal -D AXILWR2WBSP faxil_slave.v
+read -formal -D AXILWR2WBSP fwb_master.v
+prep -top axilwr2wbsp
+
+[files]
+../../rtl/axilwr2wbsp.v
+faxil_slave.v
+fwb_master.v

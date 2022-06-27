@@ -1,37 +1,60 @@
 {
     "BENCHMARKS": {
+        "cortex_m0p_mtb": {
+            "status": "active",
+            "top": "CORTEXM0PLUSINTEGRATIONCS",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/cortex_m0p_mtb/rtl/CORTEXM0PLUSINTEGRATIONCS.v",
+           "CLOCK_DATA": {
+                "Clock1": "FCLK",
+                "Clock2": "SCLK",
+                "Clock3": "HCLK",
+                "Clock4": "DCLK"
+            }
+        },
         "oc54x": {
-            "design":"RTL_Benchmark/Verilog/Cores/oc54x/rtl/config.tcl",
+            "status": "active",
+            "top": "oc54_cpu",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/oc54x/rtl/oc54x.v",
            "CLOCK_DATA": {
                 "Clock1": "clk_i"
             }
         },
         "rs_decoder": {
-            "design":"RTL_Benchmark/Verilog/Cores/rs_decoder/rtl/config.tcl",
+            "status": "active",
+            "top": "RS_dec_top",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/rs_decoder/rtl/rs_decoder_top.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
         "serv_core": {
-            "design":"RTL_Benchmark/Verilog/Cores/serv/rtl/config.tcl",
+            "status": "active",
+            "top": "serv_synth_wrapper",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/SERV/rtl/serv_synth_wrapper.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
         "TinyRISCV": {
-            "design":"RTL_Benchmark/Verilog/Cores/TinyRISCV/rtl/config.tcl",
+            "status": "active",
+            "top": "tinyriscv",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/TinyRISCV/rtl/tinyriscv.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
         "VexRiscv_full": {
-            "design":"RTL_Benchmark/Verilog/Cores/Vexrisc_full/rtl/config.tcl",
+            "status": "active",
+            "top": "VexRiscv",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/VexRiscv_full/rtl/VexRiscv.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
         },
-        "VexRiscv_small": {
-            "design":"RTL_Benchmark/Verilog/Cores/Vexrisc_small/rtl/config.tcl",
+        "Vexrisc_small": {
+            "status": "active",
+            "top": "VexRiscv",
+            "top_rtl_file":  "RTL_Benchmark/Verilog/Cores/Vexrisc_small/rtl/VexRiscv.v",
            "CLOCK_DATA": {
                 "Clock1": "clk"
             }
