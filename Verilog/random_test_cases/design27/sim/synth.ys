@@ -1,0 +1,17 @@
+plugin -i synth-rs
+echo on
+verific -vlog-incdir /home/users/zaheer.ahmad/Downloads/Compiler_Validation/random_test_generator_v1/random_generated_designs/design6/rtl
+verific -sv /home/users/zaheer.ahmad/Downloads/Compiler_Validation/random_test_generator_v1/random_generated_designs/design6/rtl/design6_5_7_top.v
+verific -import -all design6_5_7_top
+
+synth_rs \
+    -top design6_5_7_top \
+    -tech genesis \
+    -goal area \
+    -verilog design6_5_7_top_netlist.v \
+    -no_dsp \
+    -no_bram \
+    -effort medium
+    
+write_blif accumulator.blif
+write_verilog -noattr -nohex design6_5_7_top_netlist.v
