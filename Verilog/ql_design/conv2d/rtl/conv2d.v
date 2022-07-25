@@ -116,13 +116,13 @@ module conv2d (
             acc4[18:1]   or
             acc5[18:1]   
             ) begin
-    casez({fract_select,pixel_select})
+    casez({fract_select,pixel_select}) // synopsys full_case parallel_case
       4'b0000     : mult1_oper <= {4{pixel_rdata[31:24]}};
       4'b0001     : mult1_oper <= {4{pixel_rdata[23:16]}};  
       4'b0010     : mult1_oper <= {4{pixel_rdata[15:8]}}; 
       4'b0011     : mult1_oper <= {4{pixel_rdata[7:0]}};
       4'b01??     : begin
-        case (shift[1:0])
+        case (shift[1:0]) // synopsys full_case parallel_case
           1: begin 
             mult1_oper[31:16] <= acc0[16:1];
             mult1_oper[15:0] <= acc1[16:1];
@@ -141,7 +141,7 @@ module conv2d (
         //mult1_oper[15:0]  <= acc1 >> shift; //scale1;
         end
       4'b10??     : begin
-	     	case (shift[1:0])
+	     	case (shift[1:0]) // synopsys full_case parallel_case
           1: begin 
             mult1_oper[31:16] <= acc4[16:1];
             mult1_oper[15:0] <= acc5[16:1];
@@ -174,13 +174,13 @@ module conv2d (
             acc6[18:1]   or
             acc7[18:1]   
             ) begin
-    casez({fract_select,pixel_select})
+    casez({fract_select,pixel_select}) // synopsys full_case parallel_case
       4'b0000     : mult2_oper <= {4{pixel_rdata[31:24]}}; 
 	    4'b0001     : mult2_oper <= {4{pixel_rdata[23:16]}};  
 	    4'b0010     : mult2_oper <= {4{pixel_rdata[15:8]}}; 
 	    4'b0011     : mult2_oper <= {4{pixel_rdata[7:0]}}; 
 	    4'b01??     : begin 
-        case (shift[1:0])
+        case (shift[1:0]) // synopsys full_case parallel_case
           1: begin 
             mult2_oper[31:16] <= acc2[16:1];
             mult2_oper[15:0] <= acc3[16:1];
@@ -401,95 +401,95 @@ module conv2d (
 	      bias_base_addr <= 12'h200;
 	      
 	      if (start2d == 1) begin
-		 fsm_loadacc <= laWAIT;
+		 			fsm_loadacc <= laWAIT;
 	      end
 	   end
 	   laWAIT: begin
 	      if (load_more_filters == 1) begin
-		 bias_base_addr <= bias_base_addr + (filters_loaded << 2);
-		 i_bias_raddr <= bias_base_addr + (filters_loaded << 2);
+		 			bias_base_addr <= bias_base_addr + (filters_loaded << 2);
+		 			i_bias_raddr <= bias_base_addr + (filters_loaded << 2);
 	      end
 	      else if (reset_bias_address) begin
-		 i_bias_raddr <= bias_base_addr;
-		 reset_bias_address <= 0;
+		 			i_bias_raddr <= bias_base_addr;
+		 			reset_bias_address <= 0;
 	      end
 	      if (load_ext_acc) begin
-		 fsm_loadacc <= laST1;
-		 i_bias_raddr <= i_bias_raddr + 4;
+		 			fsm_loadacc <= laST1;
+		 			i_bias_raddr <= i_bias_raddr + 4;
 	      end
 	      else if (copy_acc) begin
-		 bias0 <= acc0;
-		 bias1 <= acc1;
-		 bias2 <= acc2;
-		 bias3 <= acc3;
-		 bias4 <= acc4;
-		 bias5 <= acc5;
-		 bias6 <= acc6;
-		 bias7 <= acc7;
+		 			bias0 <= acc0;
+		 			bias1 <= acc1;
+		 			bias2 <= acc2;
+		 			bias3 <= acc3;
+		 			bias4 <= acc4;
+		 			bias5 <= acc5;
+		 			bias6 <= acc6;
+		 			bias7 <= acc7;
 	      end
 	      if (done2d == 1) begin
-		 fsm_loadacc <= laIDLE;
+		 			fsm_loadacc <= laIDLE;
 	      end
 	   end
 	   laST1: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias0 <= bias_rdata[23:0];
-//	      scale0 <= bias_rdata[27:24];
+	      // scale0 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST2;
 	   end
 	   laST2: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias1 <= bias_rdata[23:0];
-//	      scale1 <= bias_rdata[27:24];
+	      // scale1 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST3;
 	   end
 	   laST3: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias2 <= bias_rdata[23:0];
-//	      scale2 <= bias_rdata[27:24];
+	      // scale2 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST4;
 	   end
 	   laST4: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias3 <= bias_rdata[23:0];
-//	      scale3 <= bias_rdata[27:24];
+	      // scale3 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST5;
 	   end
 	   laST5: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias4 <= bias_rdata[23:0];
-//	      scale4 <= bias_rdata[27:24];
+	      // scale4 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST6;
 	   end
 	   laST6: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias5 <= bias_rdata[23:0];
-//	      scale5 <= bias_rdata[27:24];
+	      // scale5 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST7;
 	   end
 	   laST7: begin
 	      i_bias_raddr <= i_bias_raddr + 4;
 	      bias6 <= bias_rdata[23:0];
-//	      scale6 <= bias_rdata[27:24];
+	      // scale6 <= bias_rdata[27:24];
 	      
 	      fsm_loadacc <= laST8;
 	   end
 	   laST8: begin
-//	      i_bias_raddr <= i_bias_raddr + 4;
+	      // i_bias_raddr <= i_bias_raddr + 4;
 	      bias7 <= bias_rdata[23:0];
-	      	      if (reset_bias_address) begin
-		 i_bias_raddr <= 12'h200;
-		 reset_bias_address <= 0;
+	      if (reset_bias_address) begin
+		 			i_bias_raddr <= 12'h200;
+		 			reset_bias_address <= 0;
 	      end
 	      fsm_loadacc <= laWAIT;
-//	      scale7 <= bias_rdata[27:24];
-//	      fsm_loadacc <= laST9;
+	      //scale7 <= bias_rdata[27:24];
+	      //fsm_loadacc <= laST9;
 	   end
 /*
 	   laST9: begin
@@ -524,61 +524,59 @@ module conv2d (
 	 i1_t2_waddr <= i1_ksa;
 	 i2_t2_waddr <= i2_ksa;
 	 i3_t2_waddr <= i3_ksa;
-	 case (fsm_writechannels)
+	 case (fsm_writechannels) // synopsys full_case parallel_case
 	   wcIDLE: begin
 	      result_base <= ext_result_base;
 	      i_tcdm2_waddr <= result_base;
 	      if (write2 == 1)
-		fsm_writechannels <= wcSTART1;
-	   end
+					fsm_writechannels <= wcSTART1;
+	   		end
 	   wcWAIT: begin
 	      if (load_more_filters == 1) begin
 	      	 i_tcdm2_waddr <= i1_t2_waddr; // result_base + filters_loaded;
-		 result_base <= i1_t2_waddr; //result_base + filters_loaded;
+		 				result_base <= i1_t2_waddr; //result_base + filters_loaded;
 	      end
 	      else if (load_more_pixels == 1)
-		add_stride <= filter_stride + 4;
-	      if (write2 == 1) begin
-		 fsm_writechannels <= wcSTART1;
-	      end
-	 end // case: wcWAIT
+					add_stride <= filter_stride + 4;
+	      	if (write2 == 1) begin
+		 				fsm_writechannels <= wcSTART1;
+	      	end
+	 		end // case: wcWAIT
 	   wcSTART1:
 	     fsm_writechannels <= wcSTART2;
 	   
 	   wcSTART2: begin
 	      i_tcdm2_wdata <= {sat04,sat15,sat26,sat37};
 	      fsm_writechannels <= wcSTART3;
-	   end
-	   
+	   end	   
 	   wcSTART3: begin
 	      wdata2 <= {sat04,sat15,sat26,sat37};
 	      i_tcdm2_wreq <= 1;
 	      fsm_writechannels <= wcWRITE1;
 	   end
-
 	   wcWAIT1: begin
 	      if (i_tcdm2_rreq == 0) begin
-		 i_tcdm2_wreq <= 1;
-		 fsm_writechannels <= wcWRITE1;
+		 			i_tcdm2_wreq <= 1;
+		 			fsm_writechannels <= wcWRITE1;
 	      end
 	   end
 	   wcWRITE1: begin
 	      if (tcdm2_gnt && i_tcdm2_wreq) begin
-		 i_tcdm2_wreq <= 0;
-		 i_tcdm2_wdata <= wdata2;
+		 			i_tcdm2_wreq <= 0;
+		 			i_tcdm2_wdata <= wdata2;
 	      end
 	      if (tcdm2_valid == 1) begin
-		 i_tcdm2_waddr <= i2_t2_waddr; //i_tcdm2_waddr + 4;
-		 if (i_tcdm2_rreq == 0) begin
+		 			i_tcdm2_waddr <= i2_t2_waddr; //i_tcdm2_waddr + 4;
+		 			if (i_tcdm2_rreq == 0) begin
 		    i_tcdm2_wreq <= 1;
 		    fsm_writechannels <= wcWRITE2;
-		 end
-		 else begin
+		 		end
+		 	else begin
 		    i_tcdm2_wreq <= 0;
 		    fsm_writechannels <= wcWAIT2;
-                 end
-	      end
-	   end // case: wcWRITE1
+        end
+	    end
+	  end // case: wcWRITE1
 	   wcWAIT2: begin
 	      if (i_tcdm2_rreq == 0) begin
 		 i_tcdm2_wreq <= 1;
@@ -607,7 +605,7 @@ module conv2d (
 	 end
 	 i_tcdm3_rdata <= tcdm3_rdata;
 
-	 case (fsm_getbias)
+	 case (fsm_getbias) // synopsys full_case parallel_case
 	   gbIDLE: begin
 	      i_bias_waddr <= 11'h200;
 	      filters_complete <= 0;
@@ -650,7 +648,7 @@ module conv2d (
 	 i_tcdm2_rdata <= tcdm2_rdata; // Align data with Valid
 	 
 	 
-	 case (fsm_getfilters)
+	 case (fsm_getfilters) // synopsys full_case parallel_case
 	   gfIDLE: begin
 	      i_filter_waddr <= 0;
 	      filter_space_left <= RAM_DEPTH; 
@@ -759,7 +757,6 @@ module conv2d (
 		 end // else: !if((filter_channels + 1) == channels)
 	      end // if (i_tcdm2_raddr[2] == 1)
 	   end // case: gfLOAD
-
 	   gfDONE: begin
 	      if (running) begin
 		 filter_start <= 0;
@@ -842,7 +839,7 @@ module conv2d (
 	    i_pixel_waddr <= i_pixel_waddr + 4;
 	 end
 	 
-	 case (fsm_getpixels)
+	 case (fsm_getpixels) // synopsys full_case parallel_case
 	   gpIDLE: begin
 	      pixels_read <= 0;
 
@@ -1012,7 +1009,7 @@ module conv2d (
 
 	 end // else: !if(rstn == 1'b0)
 	 
-	 case (fsm_conv2d)
+	 case (fsm_conv2d) // synopsys full_case parallel_case
 	   fsm_FRAC1: begin
      	      i_math_mode <= 2'b01;
 	      acc0[23:16] <= acc0[23:16] + {{4{mac0_din[7]}},mac0_din[7:4]};
@@ -1063,11 +1060,9 @@ module conv2d (
 	   fsm_FRAC3: begin
 	      fsm_conv2d <= fsm_FRAC4;
 	   end
-
 	   fsm_FRAC4: begin
 	      fsm_conv2d <= fsm_NEXT;
-	   end
-	   
+	   end	   
 	   fsm_NEXT: begin
 	      write2 <= 1;  // write 8 filter results via tcdm
 	      i_mult1_coef <= {quant,quant}; //{fract4,fract5};
@@ -1122,9 +1117,7 @@ module conv2d (
 //	      i_math_mode <= 2'b10;
 	      i_outsel <= 0;
 	      end // else: !if(filter_reload)
-	   end // case: fsm_WAIT2
-	   
-	   
+	   end // case: fsm_WAIT2	   	   
 	   fsm_SOP1: begin
 	      acc0[23:16] <= acc0[23:16] + {{4{mac0_din[7]}},mac0_din[7:4]};
 	      acc1[23:16] <= acc1[23:16] + {{4{mac1_din[7]}},mac1_din[7:4]};
