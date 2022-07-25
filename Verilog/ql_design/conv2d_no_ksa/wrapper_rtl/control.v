@@ -125,7 +125,7 @@ module CONTROL(
 	 i_ctl_bwen <= 1'b0;
 	 i_ctl_pfwaddr <= i_addr;
 	 
-	 case (fsm_ctl)
+	 case (fsm_ctl) // synopsys full_case parallel_case
 	   fsm_IDLE: begin
 	      if ((PENABLE == 1) & (PWRITE == 1)) begin
 		 fsm_ctl <= fsm_WRITE;
@@ -142,7 +142,7 @@ module CONTROL(
 	   fsm_WRITE: begin
 	      i_ready <= 0;
 	      fsm_ctl <= fsm_IDLE;
-	      case (PADDR)
+	      case (PADDR) // synopsys full_case parallel_case
 		7'h0: ctl <= PWDATA;  // 0x0
 		7'h1: i_width <= PWDATA[8:0]; // 0x4
 		7'h2: i_height <= PWDATA[8:0]; // 0x8
@@ -186,7 +186,7 @@ module CONTROL(
 	   end // case: fsm_WRITE
 	   fsm_READ: begin
 	      i_ready <= 1;
-	      case (PADDR)
+	      case (PADDR) // synopsys full_case parallel_case
 		7'h00: i_dataout <= {31'b0,ctl};  //0x0
 		7'h01: i_dataout <= {22'h0,i_width};//0x4
 		7'h02: i_dataout <= {23'h0,i_height};//0x8

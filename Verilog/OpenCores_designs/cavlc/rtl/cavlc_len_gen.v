@@ -67,7 +67,7 @@ reg [4:0] len_comb;         //number of bits comsumed by cavlc in a cycle
 // len_comb
 //------------------------
 always @ (*)
-case (1'b1) //synthesis parallel_case
+case (1'b1) //synopsys full_case parallel_case
     cavlc_state[`cavlc_read_total_coeffs_bit]  : len_comb <= len_read_total_coeffs_comb;
     cavlc_state[`cavlc_read_t1s_flags_bit],  
     cavlc_state[`cavlc_read_level_prefix_bit],
