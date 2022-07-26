@@ -37,7 +37,6 @@
 
 //2011-8-7 18:57    initial revision
 
-
 module cavlc_fsm
 (
     clk,
@@ -92,7 +91,7 @@ if (!rst_n) begin
     valid <= 0;
 end
 else if (ena)
-case(state)
+case(state) //synopsys full_case parallel_case
     `cavlc_idle_s : begin
         if (start) begin
             state <= `cavlc_read_total_coeffs_s;
