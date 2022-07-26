@@ -31,7 +31,7 @@ module mux_4x1 (
 	
 endmodule 
 	
-module mux_2x1 (
+	module mux_2x1 (
 	input [31:0] a,
 	input [31:0] b,
 	input sel,
