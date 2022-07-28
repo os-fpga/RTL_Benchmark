@@ -1,0 +1,40 @@
+ncxlmode: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncxlmode	11.10-s021: Started on Aug 01, 2014 at 10:53:39 IST
+ncxlmode
+	test.sv
+	-l
+	sim.log
+file: test.sv
+	module worklib.assert_immediate:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.assert_immediate:sv <0x6f249755>
+			streams:   3, words:  2802
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		         Instances  Unique
+		Modules:         1       1
+		Registers:       5       5
+		Always blocks:   2       2
+		Initial blocks:  1       1
+		Assertions:      1       1
+	Writing initial simulation snapshot: worklib.assert_immediate:sv
+Loading snapshot worklib.assert_immediate:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+Seems to be working as expected
+Seems to be working as expected
+ncsim: *E,ASRTST (./test.sv,31): (time 14 NS) Assertion assert_immediate.CHECK_REQ_WHEN_GNT has failed
+assert failed at time 13
+ncsim: *E,ASRTST (./test.sv,31): (time 16 NS) Assertion assert_immediate.CHECK_REQ_WHEN_GNT has failed
+assert failed at time 15
+Seems to be working as expected
+Seems to be working as expected
+Simulation complete via $finish(1) at time 20 NS + 0
+./test.sv:17   #4 $finish;
+ncsim> exit
+TOOL:	ncxlmode	11.10-s021: Exiting on Aug 01, 2014 at 10:53:39 IST  (total: 00:00:00)

@@ -1,0 +1,21 @@
+
+1. To login the other machine, with display setting, use -Y along with ssh
+    ssh -Y blrc08
+
+2. How to get the full file name in a directory
+   find $PWD
+
+3.  How to search a file name including subdirectory
+   find . -name <file name>
+   Example-1: find . -name img2_jtag_pack.vhd
+   Example-2: find /home/me/subdir -name "abc*"
+
+4. How to exclude a file name in search
+   find . ! -name <file name>
+   Example-1: find . !  -name img2_jtag_pack.vhd
+   Example-2: find /home/me/subdir  ! -name ".*"
+
+5. To watch the regression status periodically
+  cho  "################## Rx Chain Regression ##################" > regression_rx.rpt
+  xterm -e "watch -n 2 cat regression_rx.rpt" &
+

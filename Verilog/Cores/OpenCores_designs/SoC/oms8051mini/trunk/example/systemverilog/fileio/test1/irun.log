@@ -1,0 +1,72 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 20, 2014 at 11:07:10 IST
+irun
+	top.sv
+Recompiling... reason: file './top.sv' is newer than expected.
+	expected: Wed Aug 20 11:03:29 2014
+	actual:   Wed Aug 20 11:07:07 2014
+file: top.sv
+       $sscanf(iString,"%h",inData);
+             |
+ncvlog: *W,NOSYST (top.sv,35|13): System function '$sscanf' invoked as a task. Return value will be ignored.
+	module worklib.top:sv
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.top:sv <0x23a54e78>
+			streams:   7, words:  7750
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 1       1
+		Registers:              12      12
+		Initial blocks:          8       8
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+Starting Testing
+Row:          1 String: 00000000000000; String Length :           0 Hex Data: 00000000000000
+          3 000           3 000           3 000           3 000           2 00 Row:          2 String: 00000000000003; String Length :           0 Hex Data: 00000000000003
+          3 000           3 000           3 000           3 000           2 03 Row:          3 String: 00000000000006; String Length :           0 Hex Data: 00000000000006
+          3 000           3 000           3 000           3 000           2 06 Row:          4 String: 00000000000009; String Length :           0 Hex Data: 00000000000009
+          3 000           3 000           3 000           3 000           2 09 Row:          5 String: 0000000000010c; String Length :           0 Hex Data: 0000000000010c
+          3 000           3 000           3 000           3 001           2 0c Row:          6 String: 0000010000010f; String Length :           0 Hex Data: 0000010000010f
+          3 000           3 001           3 000           3 001           2 0f Row:          7 String: 00000100000212; String Length :           0 Hex Data: 00000100000212
+          3 000           3 001           3 000           3 002           2 12 Row:          8 String: fff002ffe00200; String Length :           0 Hex Data: fff002ffe00200
+          3 fff           3 002           3 ffe           3 002           2 00 Row:          9 String: ffe002ffe00403; String Length :           0 Hex Data: ffe002ffe00403
+          3 ffe           3 002           3 ffe           3 004           2 03 Row:         10 String: ffe004ffd00506; String Length :           0 Hex Data: ffe004ffd00506
+          3 ffe           3 004           3 ffd           3 005           2 06 Row:         11 String: ffd005ffc00609; String Length :           0 Hex Data: ffd005ffc00609
+          3 ffd           3 005           3 ffc           3 006           2 09 Row:         12 String: ffc006ffb0060c; String Length :           0 Hex Data: ffc006ffb0060c
+          3 ffc           3 006           3 ffb           3 006           2 0c Row:         13 String: ffb006ffa0070f; String Length :           0 Hex Data: ffb006ffa0070f
+          3 ffb           3 006           3 ffa           3 007           2 0f Row:         14 String: ffa007ff800812; String Length :           0 Hex Data: ffa007ff800812
+          3 ffa           3 007           3 ff8           3 008           2 12 Row:         15 String: ff600aff400d00; String Length :           0 Hex Data: ff600aff400d00
+          3 ff6           3 00a           3 ff4           3 00d           2 00 Row:         16 String: ff400dff101103; String Length :           0 Hex Data: ff400dff101103
+          3 ff4           3 00d           3 ff1           3 011           2 03 Row:         17 String: ff1011fee01406; String Length :           0 Hex Data: ff1011fee01406
+          3 ff1           3 011           3 fee           3 014           2 06 Row:         18 String: fee014feb01709; String Length :           0 Hex Data: fee014feb01709
+          3 fee           3 014           3 feb           3 017           2 09 Row:         19 String: feb017fe701a0c; String Length :           0 Hex Data: feb017fe701a0c
+          3 feb           3 017           3 fe7           3 01a           2 0c Row:         20 String: fe701afe301e0f; String Length :           0 Hex Data: fe701afe301e0f
+          3 fe7           3 01a           3 fe3           3 01e           2 0f Row:         21 String: fe301efdf02212; String Length :           0 Hex Data: fe301efdf02212
+          3 fe3           3 01e           3 fdf           3 022           2 12 Row:         22 String: fda026fd602b00; String Length :           0 Hex Data: fda026fd602b00
+          3 fda           3 026           3 fd6           3 02b           2 00 Row:         23 String: fd602bfd103103; String Length :           0 Hex Data: fd602bfd103103
+          3 fd6           3 02b           3 fd1           3 031           2 03 Row:         24 String: fd1031fcc03606; String Length :           0 Hex Data: fd1031fcc03606
+          3 fd1           3 031           3 fcc           3 036           2 06 Row:         25 String: fcc036fc503c09; String Length :           0 Hex Data: fcc036fc503c09
+          3 fcc           3 036           3 fc5           3 03c           2 09 Row:         26 String: fc503cfbe0410d; String Length :           0 Hex Data: fc503cfbe0410d
+          3 fc5           3 03c           3 fbe           3 041           2 0d Row:         27 String: fbe041fb704711; String Length :           0 Hex Data: fbe041fb704711
+          3 fbe           3 041           3 fb7           3 047           2 11 Row:         28 String: fb004dfa905300; String Length :           0 Hex Data: fb004dfa905300
+          3 fb0           3 04d           3 fa9           3 053           2 00 Row:         29 String: fa9053fa205904; String Length :           0 Hex Data: fa9053fa205904
+          3 fa9           3 053           3 fa2           3 059           2 04 Row:         30 String: fa2059f9a05f08; String Length :           0 Hex Data: fa2059f9a05f08
+          3 fa2           3 059           3 f9a           3 05f           2 08 Row:         31 String: f9a05ff920650b; String Length :           0 Hex Data: f9a05ff920650b
+          3 f9a           3 05f           3 f92           3 065           2 0b Row:         32 String: f92065f8a06b0f; String Length :           0 Hex Data: f92065f8a06b0f
+          3 f92           3 065           3 f8a           3 06b           2 0f Row:         33 String: f8a06bf8206f13; String Length :           0 Hex Data: f8a06bf8206f13
+          3 f8a           3 06b           3 f82           3 06f           2 13 Row:         34 String: f7a073f7207601; String Length :           0 Hex Data: f7a073f7207601
+          3 f7a           3 073           3 f72           3 076           2 01 Simulation complete via $finish(1) at time 200 NS + 0
+./top.sv:53   $finish;
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 20, 2014 at 11:07:11 IST  (total: 00:00:01)

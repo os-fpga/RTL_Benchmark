@@ -1,0 +1,38 @@
+irun(64): 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun(64)	11.10-s021: Started on Nov 27, 2016 at 19:37:08 IST
+irun
+	-64bit
+	-R
+	+access+rcw
+	+DUMP
+	+INTERNAL_ROM
+	-l ../log/run.log
+
+   User defined plus("+") options:
+	+DUMP
+	+INTERNAL_ROM
+
+Loading snapshot worklib.tb_top:v .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+i : 02
+i : 00
+i : 08
+i : 12
+i : 01
+i : 1f
+i : 80
+i : fe
+i : 75
+i : 81
+NOTE : Load memory with Initial delivery content
+NOTE : Initial Load End
+--> Dumpping the design
+NOTE: COMMUNICATION (RE)STARTED
+################################
+TEST STATUS : PASSED 
+################################
+Simulation complete via $finish(1) at time 184536 NS + 0
+../tb/tb_top.v:371       $finish;
+ncsim> exit
+TOOL:	irun(64)	11.10-s021: Exiting on Nov 27, 2016 at 19:37:13 IST  (total: 00:00:05)

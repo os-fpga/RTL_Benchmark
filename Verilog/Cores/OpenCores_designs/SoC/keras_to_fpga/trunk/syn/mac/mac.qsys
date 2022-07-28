@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element fpdsp_block_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="10AS016C3U19E2LG" />
+ <parameter name="deviceFamily" value="Arria 10" />
+ <parameter name="deviceSpeedGrade" value="2" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="mac.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="accumulate"
+   internal="fpdsp_block_0.accumulate"
+   type="conduit"
+   dir="end">
+  <port name="accumulate" internal="accumulate" />
+ </interface>
+ <interface name="aclr" internal="fpdsp_block_0.aclr" type="conduit" dir="end">
+  <port name="aclr" internal="aclr" />
+ </interface>
+ <interface name="ay" internal="fpdsp_block_0.ay" type="conduit" dir="end">
+  <port name="ay" internal="ay" />
+ </interface>
+ <interface name="az" internal="fpdsp_block_0.az" type="conduit" dir="end">
+  <port name="az" internal="az" />
+ </interface>
+ <interface name="clk" internal="fpdsp_block_0.clk" type="conduit" dir="end">
+  <port name="clk" internal="clk" />
+ </interface>
+ <interface name="ena" internal="fpdsp_block_0.ena" type="conduit" dir="end">
+  <port name="ena" internal="ena" />
+ </interface>
+ <interface
+   name="result"
+   internal="fpdsp_block_0.result"
+   type="conduit"
+   dir="end">
+  <port name="result" internal="result" />
+ </interface>
+ <module
+   name="fpdsp_block_0"
+   kind="altera_fpdsp_block"
+   version="17.1"
+   enabled="1"
+   autoexport="1">
+  <parameter name="OPERATION" value="sp_mult_acc" />
+  <parameter name="VIEW" value="Register Enables" />
+  <parameter name="accum_adder_clock" value="NONE" />
+  <parameter name="accum_pipeline_clock" value="NONE" />
+  <parameter name="accumulate_clock" value="0" />
+  <parameter name="adder_input_2_clock" value="NONE" />
+  <parameter name="adder_input_clock" value="0" />
+  <parameter name="adder_subtract" value="false" />
+  <parameter name="ax_chainin_pl_clock" value="0" />
+  <parameter name="ax_clock" value="0" />
+  <parameter name="ay_clock" value="0" />
+  <parameter name="az_clock" value="0" />
+  <parameter name="chain_mux" value="0" />
+  <parameter name="chain_out_mux" value="0" />
+  <parameter name="design_env" value="NATIVE" />
+  <parameter name="mult_pipeline_clock" value="NONE" />
+  <parameter name="output_clock" value="0" />
+  <parameter name="single_clear" value="false" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

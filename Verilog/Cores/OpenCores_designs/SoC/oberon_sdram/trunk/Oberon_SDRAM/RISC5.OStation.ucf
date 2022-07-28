@@ -1,0 +1,142 @@
+# OberonStation rev. B onwards  PDR 03.10.2015
+#
+#PCI power clamp diode needed for PS/2 inputs
+#crudely remove bank clashes by setting global IOSTANDARD
+NET "*" IOSTANDARD=PCI33_3;
+CONFIG VCCAUX=3.3;
+
+NET "OSCIN" LOC=AB12;
+NET "OSCIN" TNM_NET = "osc";
+TIMESPEC "TS_osc" = PERIOD "osc" 16.667ns;
+
+NET "TxD" LOC = "D1";
+NET "RxD" LOC = "D2" ;
+
+# map spare btns to Aux port below serial
+NET "btn[0]" LOC = "G1" |PULLDOWN; #AUX0
+NET "btn[1]" LOC = "F1" |PULLDOWN; #AUX1
+NET "btn[2]" LOC = "F2" |PULLDOWN; #AUX2
+#NET "AUX[3]"   LOC=E1; #unused
+#NET "AUX[4]"   LOC=E3; #unused
+NET "btn[3]" LOC = "B4" |PULLDOWN;  #reset
+
+#map (inverted!) switches sw0..2,7 to jumpers J0..2,3
+NET "swi[0]" LOC = "Y9" |PULLUP;  #J0
+NET "swi[1]" LOC = "AA8" |PULLUP; #J1
+NET "swi[2]" LOC = "Y7" |PULLUP;  #J2
+NET "swi[3]" LOC = "Y5" |PULLUP;  #"J4" (not labeled)
+NET "swi[4]" LOC = "U5" |PULLUP; #not connected
+NET "swi[5]" LOC = "W6" |PULLUP; #not connected
+NET "swi[6]" LOC = "V14" |PULLUP; #not connected
+NET "swi[7]" LOC = "AA6" |PULLUP; #J3
+
+NET "leds[0]" LOC = "Y18"; 
+NET "leds[1]" LOC = "AA17"; 
+NET "leds[2]" LOC = "AA15"; 
+NET "leds[3]" LOC = "Y15"; 
+NET "leds[4]" LOC = "AA14"; 
+NET "leds[5]" LOC = "Y13"; 
+NET "leds[6]" LOC = "Y11"; 
+NET "leds[7]" LOC = "AA10"; 
+
+# SRAM
+NET "SRce0"  LOC=A16;
+NET "SRce1"  LOC=B6;
+NET "SRwe0"  LOC=G20;
+NET "SRwe1"  LOC=F22;
+NET "SRoe0"  LOC=C14;
+NET "SRoe1"  LOC=A5;
+NET "SRbe[0]"  LOC=C16;
+NET "SRbe[1]"  LOC=B15;
+NET "SRbe[2]"  LOC=A6;
+NET "SRbe[3]"  LOC=C5;
+NET "SRadr[0]"  LOC=A11;
+NET "SRadr[1]"  LOC=A12;
+NET "SRadr[2]"  LOC=A13;
+NET "SRadr[3]"  LOC=A14;
+NET "SRadr[4]"  LOC=A15;
+NET "SRadr[5]"  LOC=G22;
+NET "SRadr[6]"  LOC=H22;
+NET "SRadr[7]"  LOC=J22;
+NET "SRadr[8]"  LOC=K22;
+NET "SRadr[9]"  LOC=L22;
+NET "SRadr[10]" LOC=M22;
+NET "SRadr[11]" LOC=L21;
+NET "SRadr[12]" LOC=J21;
+NET "SRadr[13]" LOC=J20;
+NET "SRadr[14]" LOC=H21;
+NET "SRadr[15]" LOC=B13;
+NET "SRadr[16]" LOC=C12;
+NET "SRadr[17]" LOC=B11;
+NET "SRdat[0]"  LOC=A17;
+NET "SRdat[1]"  LOC=A18;
+NET "SRdat[2]"  LOC=A19;
+NET "SRdat[3]"  LOC=A20;
+NET "SRdat[4]"  LOC=C21;
+NET "SRdat[5]"  LOC=D21;
+NET "SRdat[6]"  LOC=E20;
+NET "SRdat[7]"  LOC=F21;
+NET "SRdat[8]"  LOC=E22;
+NET "SRdat[9]"  LOC=D22;
+NET "SRdat[10]" LOC=C22;
+NET "SRdat[11]" LOC=B22;
+NET "SRdat[12]" LOC=B20;
+NET "SRdat[13]" LOC=B19;
+NET "SRdat[14]" LOC=C18;
+NET "SRdat[15]" LOC=B17;
+NET "SRdat[16]" LOC=C10;
+NET "SRdat[17]" LOC=B9;
+NET "SRdat[18]" LOC=B8;
+NET "SRdat[19]" LOC=C7;
+NET "SRdat[20]" LOC=N22; 
+NET "SRdat[21]" LOC=P20;
+NET "SRdat[22]" LOC=N21;
+NET "SRdat[23]" LOC=M20;
+NET "SRdat[24]" LOC=T20;
+NET "SRdat[25]" LOC=R22;
+NET "SRdat[26]" LOC=R21;
+NET "SRdat[27]" LOC=P22;
+NET "SRdat[28]" LOC=A10;
+NET "SRdat[29]" LOC=A9;
+NET "SRdat[30]" LOC=A8;
+NET "SRdat[31]" LOC=A7;
+
+# VGA
+NET "Hsync"  LOC = "AB21";
+NET "Vsync"  LOC = "AA21";
+NET "RGB[0]" LOC = "T22"; #RED-560
+NET "RGB[1]" LOC = "U22"; #GRN-560
+NET "RGB[2]" LOC = "V22"; #BLU-560
+NET "RGB[3]" LOC = "W22"; #RED-270
+NET "RGB[4]" LOC = "Y22"; #GRN-270
+NET "RGB[5]" LOC = "Y21"; #BLU-270
+
+# keyboard - IOSTANDARD *must* be PCI to enable Spartan-3A power clamp diode
+NET "PS2C" LOC = "W21" |PULLUP; # pin 5
+NET "PS2D" LOC = "W20" |PULLUP; # pin 1
+
+# PS/2 mouse - IOSTANDARD *must* be PCI to enable Spartan-3A power clamp diode
+NET "msclk" LOC = "U21" |PULLUP;  # pin 5
+NET "msdat" LOC = "V20" |PULLUP;  # pin 1
+
+# SD-Card, Net overlaid on PMOD2 (C/D) connector
+NET "MOSI[0]" LOC = "AB19";
+NET "MOSI[1]" LOC = "L3"; #PMODC[1]
+NET "SCLK[0]" LOC = "AA19";
+NET "SCLK[1]" LOC = "M2"; #PMODD[1]
+NET "SS[0]"   LOC = "AA20";
+NET "SS[1]"   LOC = "N3"; #PMODC[0], PMOD2 outside, bottom to top
+NET "MISO[0]" LOC = "AB18" |PULLUP;
+NET "MISO[1]" LOC = "K2" |PULLUP; #PMODD[2]
+NET "NEN" LOC = "P2";  #PMODD[0], PMOD2 inside, bottom to top
+#NET "SDSENSE" LOC = "AB20" |PULLUP; #sense wire, grounded on insertion
+
+# general-purpose I/O port
+NET "gpio[0]" LOC = "C2"; #PMODA[0], PMOD1 outside, left to right
+NET "gpio[1]" LOC = "C1"; #PMODA[1]
+NET "gpio[2]" LOC = "B2"; #PMODA[2]
+NET "gpio[3]" LOC = "B3"; #PMODA[3]
+NET "gpio[4]" LOC = "B1"; #PMODB[0], PMOD1 inside, left to right
+NET "gpio[5]" LOC = "A2"; #PMODB[1]
+NET "gpio[6]" LOC = "A3"; #PMODB[2]
+NET "gpio[7]" LOC = "A4"; #PMODB[3]

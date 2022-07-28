@@ -1,0 +1,37 @@
+ncxlmode: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncxlmode	11.10-s021: Started on Aug 01, 2014 at 13:00:02 IST
+ncxlmode
+	+access+rcw
+	test.sv
+	-l
+	sim.log
+Loading snapshot worklib.concurrent_assertion_tb:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+                        |
+ncsim: *E,ASRTST (./test.sv,27): (time 1245 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (2 cycles, starting 1239 NS)
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+      |
+ncsim: *E,ASRTST (./test.sv,27): (time 1245 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (1 cycles, starting 1245 NS)
+@1245ns Assertion Failed
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+      |
+ncsim: *E,ASRTST (./test.sv,27): (time 1251 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (1 cycles, starting 1251 NS)
+@1251ns Assertion Failed
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+      |
+ncsim: *E,ASRTST (./test.sv,27): (time 1257 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (1 cycles, starting 1257 NS)
+@1257ns Assertion Failed
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+      |
+ncsim: *E,ASRTST (./test.sv,27): (time 1263 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (1 cycles, starting 1263 NS)
+@1263ns Assertion Failed
+ (req & ~gnt) ##1 (~req & gnt) ##1 (~req & ~gnt) ;
+      |
+ncsim: *E,ASRTST (./test.sv,27): (time 1269 NS) Assertion concurrent_assertion_tb.dut.req_gnt_assert has failed (1 cycles, starting 1269 NS)
+@1269ns Assertion Failed
+Simulation complete via $finish(1) at time 1879 NS + 0
+./test.sv:58   #10 $finish;
+ncsim> exit
+TOOL:	ncxlmode	11.10-s021: Exiting on Aug 01, 2014 at 13:00:03 IST  (total: 00:00:01)

@@ -1,0 +1,26 @@
+// Block-RAM Memory Map file PDR 6.1.14
+//
+// To avoid re-synthesis if only the initial contents of block RAM changes, 
+// but without constraining the BRAM to a particular location.
+//
+//  1. To "Other Ngdbuild Command Line Options" in ISE Translate properties,
+//     add "-bm prom.bmm" (advanced property)
+//
+//  (Synthesis will now generate prom_bd.bmm with location information)
+//
+//  2. To "Other Bitgen Command Line Options" in ISE Generate Programming
+//     file properties, add "-bd prom.mem" (advanced property)
+//
+//  Now, whenever only prom.mem changes, either:
+//    just re-run "Generate Programming File"
+//
+//  or, even quicker, run something like the following (Linux example):
+//    data2mem -bm prom_bd.bmm -bd prom.mem -bt RISC5Top.bit -o b tmp.bit \
+//      && mv tmp.bit RISC5Top.bit
+
+ADDRESS_SPACE ram_ctrl RAMB16 [0x00000000:0x000007FF]
+BUS_BLOCK
+  riscx/PM/Mrom__varindex0000 [31:0];
+END_BUS_BLOCK;
+END_ADDRESS_SPACE;
+

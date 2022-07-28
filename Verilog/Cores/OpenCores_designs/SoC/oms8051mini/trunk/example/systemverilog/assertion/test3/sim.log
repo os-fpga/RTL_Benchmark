@@ -1,0 +1,39 @@
+ncxlmode: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncxlmode	11.10-s021: Started on Aug 01, 2014 at 13:11:44 IST
+ncxlmode
+	+access+rcw
+	test.sv
+	-l
+	sim.log
+file: test.sv
+	module worklib.repetition_assertion:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.repetition_assertion:sv <0x08c92930>
+			streams:  13, words:  8753
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		          Instances  Unique
+		Modules:          1       1
+		Registers:       17      17
+		Always blocks:    9       9
+		Initial blocks:   7       7
+		Assertions:       2       2
+	Writing initial simulation snapshot: worklib.repetition_assertion:sv
+Loading snapshot worklib.repetition_assertion:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+  req ##1 busy [*3] ##1 gnt;
+                          |
+ncsim: *E,ASRTST (./test.sv,41): (time 23 NS) Assertion repetition_assertion.cool_way_assert has failed (5 cycles, starting 15 NS)
+  req ##1 busy ##1 busy ##1 busy ##1 gnt;
+                                       |
+ncsim: *E,ASRTST (./test.sv,40): (time 23 NS) Assertion repetition_assertion.boring_way_assert has failed (5 cycles, starting 15 NS)
+Simulation complete via $finish(1) at time 55 NS + 0
+./test.sv:70   #30 $finish;
+ncsim> exit
+TOOL:	ncxlmode	11.10-s021: Exiting on Aug 01, 2014 at 13:11:45 IST  (total: 00:00:01)

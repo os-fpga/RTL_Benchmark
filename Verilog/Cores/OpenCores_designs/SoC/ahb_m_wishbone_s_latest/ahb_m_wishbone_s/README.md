@@ -1,0 +1,1 @@
+This ip core provides a simple robust interface between AHB-LITE master & WISHBONE salve. Tested in an arm based SoC with the sdram controller 8/16/32 from openCores. FPGA proven with intel/altera cyclone 10.

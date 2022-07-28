@@ -1,0 +1,38 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 18, 2014 at 12:24:51 IST
+irun
+	dpi.c
+	dpi.sv
+Recompiling... reason: file './dpi.sv' is newer than expected.
+	expected: Mon Aug 18 12:23:41 2014
+	actual:   Mon Aug 18 12:24:48 2014
+file: dpi.sv
+	module worklib.Bus:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		Bus
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Bus:sv <0x0aca4c3d>
+			streams:   2, words:  1741
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		          Instances  Unique
+		Modules:          1       1
+		Registers:       12      10
+		Initial blocks:   2       2
+	Writing initial simulation snapshot: worklib.Bus:sv
+Loading snapshot worklib.Bus:sv .................... Done
+ERROR:          SYSTF       WRNMARG
+         Wrong number of argument passed to $fgets, should have 2 arguments.
+        ./dpi.sv, 28: $fgets(InString,100,TvTxPtr)
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+
+At SV: Input:          10 Output :          11
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 18, 2014 at 12:24:52 IST  (total: 00:00:01)

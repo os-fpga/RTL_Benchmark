@@ -1,0 +1,28 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 06, 2014 at 13:31:43 IST
+irun
+	dpi.c
+	dpi.sv
+$CDSROOT = /tools/INCISIV111
+$TESTDIR = /home/dinesha/example/systemverilog/dpi/test3
+
+TOOL:	ncsc	11.10-s021
+ncsc cc parameters: 
+	$CDSROOT/tools/cdsgcc/gcc/4.4/bin/gcc
+	-I$CDSROOT/tools/include
+	-I$CDSROOT/tools/inca/include-DNCSC
+	-c
+	-x c -m32  -Wall 
+
+ncsc: compiling $TESTDIR/dpi.c
+
+
+building library run.so
+
+Loading snapshot worklib.Bus:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+At SV: Input:          10 Output :          11
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 06, 2014 at 13:32:17 IST  (total: 00:00:34)

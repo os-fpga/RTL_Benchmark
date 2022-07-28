@@ -1,0 +1,142 @@
+#!/bin/csh -f
+#
+# test all programs w
+#
+  
+  
+set COV   = "0"
+set failedm = 0;
+set failedi = 0;
+set failedx = 0;
+set all_testsm = 0;
+set all_testsi = 0;
+set all_testsx = 0;
+
+set misc_tests=(spi_test_1)
+set risc_int_tests=(uart_lb fib divmul sort gcd cast xram i2cm_burst_wrrd)
+
+
+echo " Compiling with cadence tools - irun "
+
+if (${COV} == 0) then 
+     set VERILOG     = "irun -64bit -sv -elaborate +access+rcw +nospecify +define+SFLASH_SDPUP -V93 -define S75"
+     set ELAB        = "irun -64bit -R +access+rcw"
+     echo " Compiling with IES without coverage"
+ else
+     set VERILOG     = "irun  -64bit -sv -elaborate +access+rcw +define+SFLASH_SDPUP +nospecify -V93 -define S75 -covfile cov_options.ccf -covoverwrite"
+     set ELAB        = "irun -64bit -R +access+rcw -covfile cov_options.ccf -covoverwrite"
+     echo " Compiling with IES with coverage"
+
+ endif
+
+
+$VERILOG -f filelist_top.f -l ../log/complie.log
+
+
+if ($status != 0) then
+  echo "#### Compile : FAILED"
+  echo ""
+  cat ../log/complie.log
+  exit
+else
+  echo "#### Compile : PASSED"
+endif
+
+
+echo ""
+echo "###########################################"
+echo " Runing test programs "
+echo "###########################################"
+
+set i = 0;
+        echo "###########################################"
+foreach misc_test ($misc_tests)
+	@ i += 1;
+	#echo ""
+	#echo "### Running test ${i}: ${misc_test}"
+
+	if (${misc_test} == "uart_test_1") then
+	   \cp ../testcase/dat/uart_lb.dat ./dat/oc8051_xrom.in
+        endif
+
+        $ELAB +DUMP +${misc_test} +INTERNAL_ROM -l ../log/run.log
+	if ($status != 0) then
+	  cat ../log/run.log
+	  exit
+	else if (`tail -100 ../log/run.log | grep PASSED` == "") then
+	  echo "### test ${i}: ${misc_test} --> FAILED"
+          @ failedm += 1;
+          @ all_testsm += 1;
+        else
+	  echo "### test ${i}: ${misc_test} --> PASSED"
+          @ all_testsm += 1;
+	endif
+  
+        mv ../log/run.log ../log/${misc_test}.log
+
+
+end
+    echo "###########################################"
+
+echo ""
+echo ""
+echo "###########################################"
+echo "### tesing 8051 programs from internal rom"
+echo "###########################################"
+
+set i = 0;
+        echo "###########################################"
+foreach risc_int_test ($risc_int_tests)
+	@ i += 1;
+	#echo ""
+
+	\cp ../testcase/dat/${risc_int_test}.dat ./dat/oc8051_xrom.in
+        $ELAB +DUMP +${risc_int_test} +INTERNAL_ROM -l ../log/run.log
+	if ($status != 0) then
+	  cat ../log/run.log
+	  exit
+	else if (`tail ../log/run.log | grep PASSED` == "") then
+	  echo "### test ${i}: ${risc_int_test} --> FAILED"
+          @ failedi += 1;
+          @ all_testsi += 1;
+        else
+	  echo "### test ${i}: ${risc_int_test} --> PASSED"
+          @ all_testsi += 1;
+	endif
+        mv ../log/run.log ../log/int_${risc_int_test}.log
+
+end
+        echo "###########################################"
+
+set i = 0;
+echo ""
+echo "###########################################"
+echo "###  Test Logs                            "
+foreach misc_test ($misc_tests)
+	  @ i += 1;
+   if (`tail ../log/${misc_test}.log | grep PASSED` == "") then
+     echo "   test ${i}: ../log/${misc_test}.log --> FAILED"
+  else
+      echo "   test ${i}: ../log/${misc_test}.log --> PASSED"
+  endif
+
+end
+
+foreach risc_int_test ($risc_int_tests)
+   @ i += 1;
+   if (`tail ../log/int_${risc_int_test}.log | grep PASSED` == "") then
+     echo "   test ${i}: ../log/int_${risc_int_test}.log --> FAILED"
+   else
+      echo "   test ${i}: ../log/int_${risc_int_test}.log --> PASSED"
+  endif
+end
+    echo "###########################################"
+
+echo ""
+echo "###########################################"
+echo "###  Test Summary                          "
+echo "### "
+echo "### Failed $failedm of $all_testsm misc tests"
+echo "### Failed $failedi of $all_testsi internal rom tests"
+echo "###########################################"
+

@@ -1,0 +1,48 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 06, 2014 at 12:58:21 IST
+irun
+	dpi.c
+	dpi.sv
+file: dpi.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+ncsc_run: *N,TBDEP: Test will be regenerated due to changes in
+          command line ld_test options
+$CDSROOT = /tools/INCISIV111
+$TESTDIR = /home/dinesha/example/systemverilog/dpi/test1
+
+TOOL:	ncsc	11.10-s021
+ncsc cc parameters: 
+	$CDSROOT/tools/cdsgcc/gcc/4.4/bin/gcc
+	-I$CDSROOT/tools/include
+	-I$CDSROOT/tools/inca/include-DNCSC
+	-c
+	-x c -m32  -Wall 
+
+ncsc: compiling $TESTDIR/dpi.c
+
+
+building library run.so
+
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.top:sv <0x25120a01>
+			streams:   1, words:   857
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		         Instances  Unique
+		Modules:         1       1
+		Registers:       1       -
+		Initial blocks:  1       1
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 06, 2014 at 12:58:27 IST  (total: 00:00:06)

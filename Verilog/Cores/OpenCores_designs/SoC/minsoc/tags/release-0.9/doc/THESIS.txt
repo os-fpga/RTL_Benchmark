@@ -1,0 +1,25 @@
+HELP, MY THESIS PROJECT ON OPENRISC IS PENDING
+"I want to know how the OpenRisc processor is implemented internally. So, for example, how the simplest commands(like add, multiply) are executed inside it."
+
+This is not the first time I see this question lately. The best you can do is check or1200 specification on or1200 page of the OpenRISC project. However, this will not explain to you how the instructions are implemented, neither does the architecture manual found under Architecture of OpenRISC project. They only give you an understanding of the design and its global picture.
+
+To understand the implementation details, you have to read the source. You will be mostly interested in or1200_alu.v, though or1200_cpu.v and or1200_ctrl.v might be important to have the bigger picture.
+
+However, in order to do so, you have to understand HDL very well, so please go first to the following links:
+
+Learning HDL:
+Verilog tutorial: http://www.asic-world.com/verilog/veritut.html
+Coding parallelism: http://en.wikibooks.org/wiki/Microprocessor_Design/Add_and_Subtract_Blocks
+
+Another very good tutorial but for VHDL, this will help you understand basic coding techniques in HDL:
+http://www.vhdl-online.de/tutorial/
+
+Then you have to read the available documentation of OpenRISC:
+First, architectural manual: http://opencores.org/svnget,or1k?file=/trunk/docs/openrisc_arch.pdf
+Then or1200 implementation specification: http://opencores.org/svnget,or1k?file=/trunk/or1200/doc/openrisc1200_spec.pdf
+Possibly the supplementary programmer's reference manual (specially if you want to include new instructions): http://opencores.org/svnget,or1k?file=/trunk/or1200/doc/openrisc1200_spec.pdf
+
+Finally you can go to the sources.
+
+Good luck and enjoy your time,
+Raul Fajardo

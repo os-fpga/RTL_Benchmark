@@ -509,9 +509,10 @@ localparam ICACHE_DATA_DEPTH=1;
                  assign wb_packeddout[k]   =   wb_packeddout_pre[k] ;                                                                                                                                 \
                  assign ic_bank_way_clken_final[k]   =  |ic_bank_way_clken[k];                                                                                                                        \
              end
-localparam ICACHE_ECC=1;
+
 localparam ICACHE_DATA_DEPTH = 13;
 localparam ICACHE_BYPASS_ENABLE =1;
+localparam ICACHE_ECC =1;
  // generate IC DATA PACKED SRAMS for 2/4 ways
   for (genvar k=0; k<2; k++) begin: BANKS_WAY   // 16B subbank
      if (ICACHE_ECC) begin : ECC1
@@ -701,7 +702,7 @@ localparam ICACHE_BYPASS_ENABLE =1;
 
    assign ic_rd_hit_q[4-1:0] = ic_debug_rd_en_ff ? ic_debug_rd_way_en_ff[4-1:0] : ic_rd_hit[4-1:0] ;
 
-//localparam ICACHE_ECC=1;
+localparam ICACHE_ECC=1;
  if ( ICACHE_ECC == 1) begin : ECC1_MUX
    assign ic_bank_wr_data[1][70:0] = ic_wr_data[1][70:0];
    assign ic_bank_wr_data[0][70:0] = ic_wr_data[0][70:0];
@@ -942,6 +943,7 @@ import eh2_pkg::*;
                                           );
 
    localparam PAD_BITS = 21 - (32 - 5);  // sizing for a max tag width.
+   localparam ICACHE_ECC =1;
 
    // tags
    assign  ic_debug_rd_way_en[4-1:0] =  {4{ic_debug_rd_en & ic_debug_tag_array}} & ic_debug_way[4-1:0] ;
@@ -1577,7 +1579,7 @@ any_addr_match = '0;
    end // block: ECC0
 end // block: PACKED_1
 
-localparam ICACHE_ECC=1;
+
    always_comb begin : tag_rd_out
       ictag_debug_rd_data[25:0] = '0;
       for ( int j=0; j<4; j++) begin: debug_rd_out

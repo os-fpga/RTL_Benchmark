@@ -1,0 +1,274 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+BUSY	define.h	7;"	d
+CACHE	router.h	/^typedef struct CACHE{$/;"	s
+CC	Makefile	/^CC		= g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS	= -Wall -g $/;"	m
+CORE	packet_header.h	19;"	d
+CORE_ADDRESS	router.h	15;"	d
+CORE_H	core.h	2;"	d
+DEFINE_H	define.h	5;"	d
+DELAY	define.h	12;"	d
+EAST	packet_header.h	21;"	d
+EAST_ADDRESS	router.h	17;"	d
+EMPTY	define.h	10;"	d
+FAIL	define.h	16;"	d
+FIFO1	core.h	10;"	d
+FIFO2	core.h	11;"	d
+FIFO3	core.h	12;"	d
+FIFO_DEEP	define.h	13;"	d
+FIFO_H	fifo.h	2;"	d
+FIFO_STAGE	define.h	14;"	d
+FIFO_TB_H	top.h	19;"	d
+FLIT_DST	packet_header.h	13;"	d
+FLIT_SIZE	packet_header.h	11;"	d
+FLIT_TYPE	packet_header.h	12;"	d
+FULL	define.h	9;"	d
+HEAD_FLIT	packet_header.h	/^typedef struct HEAD_FLIT{$/;"	s
+IDLE	define.h	8;"	d
+INC_DIRS	Makefile	/^INC_DIRS	= -I$(SYSTEMC)\/include $/;"	m
+LIBS	Makefile	/^LIBS 	= -lsystemc$/;"	m
+LIB_DIRS	Makefile	/^LIB_DIRS	= -L$(SYSTEMC)\/lib-linux$/;"	m
+NOC_INFO	define.h	/^typedef struct NOC_INFO{$/;"	s
+NORTH	packet_header.h	22;"	d
+NORTH_ADDRESS	router.h	18;"	d
+OBJECTS	Makefile	/^OBJECTS = fifo.o \\$/;"	m
+PACKET_HEADER_H	packet_header.h	2;"	d
+PKT_SIZE	packet_header.h	14;"	d
+RE	router.h	13;"	d
+READ_ADDRESS	router.h	22;"	d
+ROUTER_H	router.h	2;"	d
+SC_CTOR	core.h	/^	SC_CTOR(core){$/;"	f	class:core
+SC_CTOR	fifo.h	/^	SC_CTOR(virtual_fifo):fifo(FIFO_DEEP), fifo1(FIFO_DEEP), fifo2(FIFO_DEEP){$/;"	f	class:virtual_fifo
+SC_CTOR	tile.h	/^	SC_CTOR(tile){$/;"	f	class:tile
+SOUTH	packet_header.h	23;"	d
+SOUTH_ADDRESS	router.h	19;"	d
+SUCCEED	define.h	17;"	d
+SYSTEMC	Makefile	/^SYSTEMC		= \/usr\/local\/systemc\/systemc-2.2.0$/;"	m
+TARGET	Makefile	/^TARGET = onoc$/;"	m
+TILE_TB_H	tile.h	19;"	d
+WE	router.h	12;"	d
+WEST	packet_header.h	20;"	d
+WEST_ADDRESS	router.h	16;"	d
+WRITE_ADDRESS	router.h	21;"	d
+ac	core.h	/^	sc_uint<8>			ac;				\/\/address counter.$/;"	m	class:core
+body_filt	packet_header.h	/^typedef struct body_filt{$/;"	s
+c_data_in	router.h	/^	sc_in<bool>			c_data_in;      \/\/core input data port.$/;"	m	class:router
+c_data_out	router.h	/^	sc_out<bool>		c_data_out;     \/\/core output data port.$/;"	m	class:router
+c_empty	router.h	/^	sc_in<sc_uint<3> >	c_empty;        \/\/State of FIFO is full.$/;"	m	class:router
+c_fifo_to_router_sel	router.h	/^	sc_out<sc_uint<2> >	c_fifo_to_router_sel;	\/\/north select signal.$/;"	m	class:router
+c_full	router.h	/^	sc_in<sc_uint<3> >	c_full;         \/\/State of FIFO is empty.$/;"	m	class:router
+c_raddress	router.h	/^	sc_uint<8>			c_raddress;$/;"	m	class:router
+c_read_en	router.h	/^	sc_event			c_read_en;$/;"	m	class:router
+c_read_n	router.h	/^	sc_out<bool>		c_read_n;       \/\/core input data control pin.$/;"	m	class:router
+c_receive_data	router.cc	/^void router :: c_receive_data(){$/;"	f	class:router
+c_router_to_fifo_sel	router.h	/^	sc_out<sc_uint<2> >	c_router_to_fifo_sel;	\/\/north select signal.$/;"	m	class:router
+c_transfer_data	router.cc	/^void router :: c_transfer_data(){$/;"	f	class:router
+c_waddress	router.h	/^	sc_uint<8>			c_waddress;$/;"	m	class:router
+c_write_en	router.h	/^	sc_event			c_write_en;$/;"	m	class:router
+c_write_n	router.h	/^	sc_out<bool>		c_write_n;      \/\/core output data control pin.$/;"	m	class:router
+cache	router.h	/^	CACHE				cache[50];				\/\/MSB 2bit: flag space, rest 16bits: data space.$/;"	m	class:router
+clk	core.h	/^	sc_in<bool>		clk;				\/\/input clock signal.$/;"	m	class:core
+clk	router.h	/^	sc_in<bool>			clk;$/;"	m	class:router
+clk	tile.h	/^	sc_in<bool>					clk;$/;"	m	class:tile
+clk	top.h	/^	sc_in<bool>					clk;$/;"	m	class:top
+column_num	define.h	/^	unsigned int column_num;$/;"	m	struct:NOC_INFO
+conn_type	packet_header.h	/^	unsigned conn_type	: 1;		\/\/'1' is optical interconnects and '0' is electrical interconnects.$/;"	m	struct:HEAD_FLIT
+core	core.h	/^class core : public sc_module{$/;"	c
+core_empty	tile.h	/^	sc_signal<sc_uint<3> >		core_empty;					\/\/State of FIFO is full.$/;"	m	class:tile
+core_full	tile.h	/^	sc_signal<sc_uint<3> >		core_full;					\/\/State of FIFO is empty.$/;"	m	class:tile
+core_handle	core.cc	/^void core :: core_handle()$/;"	f	class:core
+core_to_fifo_read_n	tile.h	/^	sc_signal<bool>				core_to_fifo_read_n;		\/\/Input data control pin.$/;"	m	class:tile
+core_to_fifo_sel	core.h	/^	sc_out<sc_uint<2> > core_to_fifo_sel;	\/\/fifo select signal when transfer data. $/;"	m	class:core
+core_to_fifo_write_n	tile.h	/^	sc_signal<bool>				core_to_fifo_write_n;		\/\/Output data control pin a.$/;"	m	class:tile
+core_to_router_fifo	tile.h	/^	virtual_fifo *core_to_router_fifo;$/;"	m	class:tile
+ct	router.h	/^	unsigned ct		: 1;		\/\/Complete flag.$/;"	m	struct:CACHE
+data	packet_header.h	/^	unsigned data		: 15;$/;"	m	struct:body_filt
+data	packet_header.h	/^	unsigned short *data;$/;"	m	struct:packet
+data	router.h	/^	unsigned data	: 16;		\/\/Data.$/;"	m	struct:CACHE
+data_core_to_fifo	tile.h	/^	sc_signal<bool>				data_core_to_fifo;		\/\/transfer data from core to fifo.$/;"	m	class:tile
+data_fifo_to_core	tile.h	/^	sc_signal<bool>				data_fifo_to_core;		\/\/transfer data from fifo to core.$/;"	m	class:tile
+data_fifo_to_router	tile.h	/^	sc_signal<bool>				data_fifo_to_router;	\/\/transfer data from fifo to router.$/;"	m	class:tile
+data_in	core.h	/^	sc_in<bool>         data_in;		\/\/core output data port.$/;"	m	class:core
+data_in	fifo.h	/^	sc_in<bool>			data_in;		\/\/Input data port.$/;"	m	class:virtual_fifo
+data_in	top.h	/^	sc_signal<bool>				data_in;    \/\/Input data port.$/;"	m	class:top
+data_out	core.h	/^	sc_out<bool>        data_out;		\/\/core input data port.$/;"	m	class:core
+data_out	fifo.h	/^	sc_out<bool>		data_out;		\/\/Output data port.$/;"	m	class:virtual_fifo
+data_out	top.h	/^	sc_signal<bool>				data_out;	\/\/Output data port.$/;"	m	class:top
+data_router_to_fifo	tile.h	/^	sc_signal<bool>				data_router_to_fifo;	\/\/transfer data from router to fifo.$/;"	m	class:tile
+dr	router.h	/^	unsigned dr		: 3;		\/\/Direction.$/;"	m	struct:CACHE
+dst_addr	packet_header.h	/^	unsigned dst_addr	: 6;		\/\/Destination address 2^6 = 64 address,so that is 64 tiles.$/;"	m	struct:HEAD_FLIT
+e_data_in	router.h	/^	sc_in<bool>			e_data_in;		\/\/east input data port.$/;"	m	class:router
+e_data_in	tile.h	/^	sc_signal<bool>				e_data_in;$/;"	m	class:tile
+e_data_out	router.h	/^	sc_out<bool>		e_data_out;		\/\/east output data port.$/;"	m	class:router
+e_data_out	tile.h	/^	sc_signal<bool>				e_data_out;$/;"	m	class:tile
+e_empty	router.h	/^	sc_in<sc_uint<3> >	e_empty;		\/\/State of FIFO is full.$/;"	m	class:router
+e_empty	tile.h	/^	sc_signal<sc_uint<3> >		e_empty;        \/\/State of FIFO is full.$/;"	m	class:tile
+e_fifo_to_router_sel	router.h	/^	sc_out<sc_uint<2> >	e_fifo_to_router_sel;	\/\/east select signal.$/;"	m	class:router
+e_fifo_to_router_sel	tile.h	/^	sc_signal<sc_uint<2> >		e_fifo_to_router_sel;   \/\/west select signal.$/;"	m	class:tile
+e_full	router.h	/^	sc_in<sc_uint<3> >	e_full;			\/\/State of FIFO is empty.$/;"	m	class:router
+e_full	tile.h	/^	sc_signal<sc_uint<3> >		e_full;         \/\/State of FIFO is empty.$/;"	m	class:tile
+e_raddress	router.h	/^	sc_uint<8>			e_raddress;$/;"	m	class:router
+e_read_en	router.h	/^	sc_event			e_read_en;$/;"	m	class:router
+e_read_n	router.h	/^	sc_out<bool>		e_read_n;		\/\/right input data control pin.$/;"	m	class:router
+e_read_n	tile.h	/^	sc_signal<bool>				e_read_n;       \/\/left input data control pin.$/;"	m	class:tile
+e_receive_data	router.cc	/^void router :: e_receive_data(){$/;"	f	class:router
+e_router_to_fifo_sel	router.h	/^	sc_out<sc_uint<2> >	e_router_to_fifo_sel;	\/\/east select signal.$/;"	m	class:router
+e_router_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		e_router_to_fifo_sel;   \/\/west select signal.$/;"	m	class:tile
+e_transfer_data	router.cc	/^void router :: e_transfer_data(){$/;"	f	class:router
+e_waddress	router.h	/^	sc_uint<8>			e_waddress;$/;"	m	class:router
+e_write_en	router.h	/^	sc_event			e_write_en;$/;"	m	class:router
+e_write_n	router.h	/^	sc_out<bool>		e_write_n;		\/\/right output data control pin.$/;"	m	class:router
+e_write_n	tile.h	/^	sc_signal<bool>				e_write_n;              \/\/left output data control pin.$/;"	m	class:tile
+empty	core.h	/^	sc_in<sc_uint<3> >  empty;			\/\/State of FIFO is full.$/;"	m	class:core
+empty	fifo.h	/^	sc_out<sc_uint<3> >	empty;			\/\/State of FIFO is full.$/;"	m	class:virtual_fifo
+empty	top.h	/^	sc_signal<sc_uint<3> >		empty;		\/\/State of FIFO is full.$/;"	m	class:top
+fc	router.h	/^	sc_uint<FIFO_DEEP>	fc;$/;"	m	class:router
+fifo	fifo.h	/^	sc_fifo<bool>	fifo, fifo1, fifo2;$/;"	m	class:virtual_fifo
+fifo1	fifo.h	/^	sc_fifo<bool>	fifo, fifo1, fifo2;$/;"	m	class:virtual_fifo
+fifo2	fifo.h	/^	sc_fifo<bool>	fifo, fifo1, fifo2;$/;"	m	class:virtual_fifo
+fifo_to_core_sel	core.h	/^	sc_out<sc_uint<2> > fifo_to_core_sel;	\/\/fifo select signal when receive data.$/;"	m	class:core
+fifo_to_router	router.cc	/^bool router :: fifo_to_router(sc_uint<3> sel, sc_uint<8> *address, sc_uint<8> addr, $/;"	f	class:router
+fifo_to_x_sel	fifo.h	/^	sc_in<sc_uint<2> >	fifo_to_x_sel;		\/\/Fifo select signal when transfer data.$/;"	m	class:virtual_fifo
+fn	router.h	/^	unsigned fn		: 2;		\/\/Fifo number.$/;"	m	struct:CACHE
+full	core.h	/^	sc_in<sc_uint<3> >  full;			\/\/State of FIFO is empty.$/;"	m	class:core
+full	fifo.h	/^	sc_out<sc_uint<3> >	full;			\/\/State of FIFO is empty.$/;"	m	class:virtual_fifo
+full	top.h	/^	sc_signal<sc_uint<3> >		full;		\/\/State of FIFO is empty.$/;"	m	class:top
+head	packet_header.h	/^	HEAD_FLIT head;$/;"	m	struct:packet
+header_decoder	router.cc	/^void router :: header_decoder(sc_uint<8> addr){$/;"	f	class:router
+ip_core	tile.h	/^	core *ip_core;$/;"	m	class:tile
+ip_core	top.h	/^	core ip_core;$/;"	m	class:top
+memory	core.h	/^	sc_uint<FIFO_DEEP>	memory[100];$/;"	m	class:core
+n_data_in	router.h	/^	sc_in<bool>			n_data_in;		\/\/north nput data port.$/;"	m	class:router
+n_data_in	tile.h	/^	sc_signal<bool>				n_data_in;$/;"	m	class:tile
+n_data_out	router.h	/^	sc_out<bool>		n_data_out;		\/\/north output data port.$/;"	m	class:router
+n_data_out	tile.h	/^	sc_signal<bool>				n_data_out;$/;"	m	class:tile
+n_empty	router.h	/^	sc_in<sc_uint<3> >	n_empty;        \/\/State of FIFO is full.$/;"	m	class:router
+n_empty	tile.h	/^	sc_signal<sc_uint<3> >		n_empty;        \/\/State of FIFO is full.$/;"	m	class:tile
+n_fifo_to_router_sel	router.h	/^	sc_out<sc_uint<2> >	n_fifo_to_router_sel;	\/\/north select signal.$/;"	m	class:router
+n_fifo_to_router_sel	tile.h	/^	sc_signal<sc_uint<2> >		n_fifo_to_router_sel;   \/\/west select signal.$/;"	m	class:tile
+n_full	router.h	/^	sc_in<sc_uint<3> >	n_full;         \/\/State of FIFO is empty.$/;"	m	class:router
+n_full	tile.h	/^	sc_signal<sc_uint<3> >		n_full;         \/\/State of FIFO is empty.$/;"	m	class:tile
+n_raddress	router.h	/^	sc_uint<8>			n_raddress;$/;"	m	class:router
+n_read_en	router.h	/^	sc_event			n_read_en;$/;"	m	class:router
+n_read_n	router.h	/^	sc_out<bool>		n_read_n;       \/\/north input data control pin.$/;"	m	class:router
+n_read_n	tile.h	/^	sc_signal<bool>				n_read_n;       \/\/left input data control pin.$/;"	m	class:tile
+n_receive_data	router.cc	/^void router :: n_receive_data(){$/;"	f	class:router
+n_router_to_fifo_sel	router.h	/^	sc_out<sc_uint<2> >	n_router_to_fifo_sel;	\/\/north select signal.$/;"	m	class:router
+n_router_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		n_router_to_fifo_sel;   \/\/west select signal.$/;"	m	class:tile
+n_transfer_data	router.cc	/^void router :: n_transfer_data(){$/;"	f	class:router
+n_waddress	router.h	/^	sc_uint<8>			n_waddress;$/;"	m	class:router
+n_write_en	router.h	/^	sc_event			n_write_en;$/;"	m	class:router
+n_write_n	router.h	/^	sc_out<bool>		n_write_n;		\/\/north output data control pin.$/;"	m	class:router
+n_write_n	tile.h	/^	sc_signal<bool>				n_write_n;              \/\/left output data control pin.$/;"	m	class:tile
+packet	packet_header.h	/^typedef struct packet{$/;"	s
+pkt_size	packet_header.h	/^	unsigned pkt_size	: 3;		\/\/The number of flits. 2^4 = 16 Bytes.$/;"	m	struct:HEAD_FLIT
+raddress	core.h	/^	sc_uint<8>			raddress;$/;"	m	class:core
+read_data	core.cc	/^bool core :: read_data(sc_uint<3> sel, sc_uint<8> addr)$/;"	f	class:core
+read_en	core.h	/^	sc_event			read_en;$/;"	m	class:core
+read_n	core.h	/^	sc_out<bool>        read_n;			\/\/core input data control pin.$/;"	m	class:core
+read_n	fifo.h	/^	sc_in<bool>			read_n;				\/\/Input data control pin.$/;"	m	class:virtual_fifo
+read_n	top.h	/^	sc_signal<bool>				read_n;		\/\/Input data control pin.$/;"	m	class:top
+rec_fifo	top.h	/^	virtual_fifo rec_fifo;$/;"	m	class:top
+rec_sel	top.h	/^	sc_signal<sc_uint<2> >		rec_sel;    \/\/Select fifo.$/;"	m	class:top
+receive_data	core.cc	/^void core :: receive_data()$/;"	f	class:core
+receive_data	router.cc	/^void router :: receive_data(sc_in<bool> *data_in, sc_out<bool> *read_n, sc_event *read_en, $/;"	f	class:router
+receive_fifo	fifo.cc	/^void virtual_fifo::receive_fifo()$/;"	f	class:virtual_fifo
+receiver	router.h	/^	sc_event			receiver;$/;"	m	class:router
+receiver_handle	router.cc	/^void router :: receiver_handle(){$/;"	f	class:router
+reset_n	router.h	/^	sc_in<bool>			reset_n;$/;"	m	class:router
+router	router.h	/^	router(sc_module_name nm, int id, int column_num, int row_num): sc_module(nm){$/;"	f	class:router
+router	router.h	/^class router : public sc_module{$/;"	c
+router_empty	tile.h	/^	sc_signal<sc_uint<3> >		router_empty;				\/\/State of FIFO is full.$/;"	m	class:tile
+router_fabric	tile.h	/^	router *router_fabric;$/;"	m	class:tile
+router_full	tile.h	/^	sc_signal<sc_uint<3> >		router_full;				\/\/State of FIFO is empty.$/;"	m	class:tile
+router_handle	router.cc	/^void router :: router_handle()$/;"	f	class:router
+router_id	router.h	/^	sc_uint<6>			router_id;$/;"	m	class:router
+router_to_core_fifo	tile.h	/^	virtual_fifo *router_to_core_fifo;$/;"	m	class:tile
+router_to_fifo	router.cc	/^bool router :: router_to_fifo(sc_uint<3> sel, sc_uint<8> *address, sc_uint<8> addr, $/;"	f	class:router
+router_to_fifo_read_n	tile.h	/^	sc_signal<bool>				router_to_fifo_read_n;		\/\/Input data control pin.$/;"	m	class:tile
+router_to_fifo_write_n	tile.h	/^	sc_signal<bool>				router_to_fifo_write_n;		\/\/Output data control pin a.$/;"	m	class:tile
+row_num	define.h	/^	unsigned int row_num;$/;"	m	struct:NOC_INFO
+rst	core.h	/^	sc_in<bool>		rst;				\/\/reset signal.$/;"	m	class:core
+rst	tile.h	/^	sc_signal<bool>				rst;$/;"	m	class:tile
+rst	top.h	/^	sc_signal<bool>				rst;$/;"	m	class:top
+s_data_in	router.h	/^	sc_in<bool>			s_data_in;      \/\/south input data port.$/;"	m	class:router
+s_data_in	tile.h	/^	sc_signal<bool>				s_data_in;$/;"	m	class:tile
+s_data_out	router.h	/^	sc_out<bool>		s_data_out;		\/\/south output data port.$/;"	m	class:router
+s_data_out	tile.h	/^	sc_signal<bool>				s_data_out;$/;"	m	class:tile
+s_empty	router.h	/^	sc_in<sc_uint<3> >	s_empty;        \/\/State of FIFO is full.$/;"	m	class:router
+s_empty	tile.h	/^	sc_signal<sc_uint<3> >		s_empty;        \/\/State of FIFO is full.$/;"	m	class:tile
+s_fifo_to_router_sel	router.h	/^	sc_out<sc_uint<2> >	s_fifo_to_router_sel;	\/\/north select signal.$/;"	m	class:router
+s_fifo_to_router_sel	tile.h	/^	sc_signal<sc_uint<2> >		s_fifo_to_router_sel;   \/\/west select signal.$/;"	m	class:tile
+s_full	router.h	/^	sc_in<sc_uint<3> >	s_full;         \/\/State of FIFO is empty.$/;"	m	class:router
+s_full	tile.h	/^	sc_signal<sc_uint<3> >		s_full;         \/\/State of FIFO is empty.$/;"	m	class:tile
+s_raddress	router.h	/^	sc_uint<8>			s_raddress;$/;"	m	class:router
+s_read_en	router.h	/^	sc_event			s_read_en;$/;"	m	class:router
+s_read_n	router.h	/^	sc_out<bool>		s_read_n;       \/\/south input data control pin.$/;"	m	class:router
+s_read_n	tile.h	/^	sc_signal<bool>				s_read_n;       \/\/left input data control pin.$/;"	m	class:tile
+s_receive_data	router.cc	/^void router :: s_receive_data(){$/;"	f	class:router
+s_router_to_fifo_sel	router.h	/^	sc_out<sc_uint<2> >	s_router_to_fifo_sel;	\/\/north select signal.$/;"	m	class:router
+s_router_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		s_router_to_fifo_sel;   \/\/west select signal.$/;"	m	class:tile
+s_transfer_data	router.cc	/^void router :: s_transfer_data(){$/;"	f	class:router
+s_waddress	router.h	/^	sc_uint<8>			s_waddress;$/;"	m	class:router
+s_write_en	router.h	/^	sc_event			s_write_en;$/;"	m	class:router
+s_write_n	router.h	/^	sc_out<bool>		s_write_n;      \/\/south output data control pin.$/;"	m	class:router
+s_write_n	tile.h	/^	sc_signal<bool>				s_write_n;              \/\/left output data control pin.$/;"	m	class:tile
+sc_debug	core.h	/^	sc_event			sc_debug;$/;"	m	class:core
+sc_main	noc.cc	/^int sc_main(int argc, char *argv[])$/;"	f
+sel_fifo	core.h	/^	sc_uint<3>			sel_fifo;$/;"	m	class:core
+sequence	packet_header.h	/^	unsigned sequence	: 4;		\/\/The sequence of flits.$/;"	m	struct:HEAD_FLIT
+switch_table	router.h	/^	sc_uint<15>			switch_table[15];		\/\/switching table.$/;"	m	class:router
+tile	tile.h	/^class tile: public sc_module{$/;"	c
+tile_id	define.h	/^	unsigned char tile_id;$/;"	m	struct:NOC_INFO
+top	top.h	/^	top(sc_module_name nm):sc_module(nm), ip_core("ip_core"), rec_fifo("rec_fifo"){$/;"	f	class:top
+top	top.h	/^class top: public sc_module{$/;"	c
+tr_sel	top.h	/^	sc_signal<sc_uint<2> >		tr_sel;$/;"	m	class:top
+transfer_data	core.cc	/^void core :: transfer_data()$/;"	f	class:core
+transfer_data	router.cc	/^void router :: transfer_data(sc_out<bool> *data_out, sc_out<bool> *write_n, sc_event *write_en,$/;"	f	class:router
+transfer_fifo	fifo.cc	/^void virtual_fifo::transfer_fifo()$/;"	f	class:virtual_fifo
+transmitter	router.h	/^	sc_event			transmitter;$/;"	m	class:router
+transmitter_handle	router.cc	/^void router :: transmitter_handle(){$/;"	f	class:router
+type	packet_header.h	/^	unsigned type		: 1;$/;"	m	struct:body_filt
+type	packet_header.h	/^	unsigned type		: 2;		\/\/'0' is header flit, '1' is body flit, and '2' is tail flit.$/;"	m	struct:HEAD_FLIT
+virtual_fifo	fifo.h	/^class virtual_fifo : public sc_module{$/;"	c
+w_data_in	router.h	/^	sc_in<bool>			w_data_in;		\/\/west input data port.$/;"	m	class:router
+w_data_in	tile.h	/^	sc_signal<bool>				w_data_in;$/;"	m	class:tile
+w_data_out	router.h	/^	sc_out<bool>		w_data_out;		\/\/west output data port.$/;"	m	class:router
+w_data_out	tile.h	/^	sc_signal<bool>				w_data_out;$/;"	m	class:tile
+w_empty	router.h	/^	sc_in<sc_uint<3> >	w_empty;        \/\/State of FIFO is full.$/;"	m	class:router
+w_empty	tile.h	/^	sc_signal<sc_uint<3> >		w_empty;        \/\/State of FIFO is full.$/;"	m	class:tile
+w_fifo_to_router_sel	router.h	/^	sc_out<sc_uint<2> >	w_fifo_to_router_sel;	\/\/west select signal.$/;"	m	class:router
+w_fifo_to_router_sel	tile.h	/^	sc_signal<sc_uint<2> >		w_fifo_to_router_sel;   \/\/west select signal.$/;"	m	class:tile
+w_full	router.h	/^	sc_in<sc_uint<3> >	w_full;         \/\/State of FIFO is empty.$/;"	m	class:router
+w_full	tile.h	/^	sc_signal<sc_uint<3> >		w_full;         \/\/State of FIFO is empty.$/;"	m	class:tile
+w_raddress	router.h	/^	sc_uint<8>			w_raddress;$/;"	m	class:router
+w_read_en	router.h	/^	sc_event			w_read_en;$/;"	m	class:router
+w_read_n	router.h	/^	sc_out<bool>		w_read_n;		\/\/left input data control pin.$/;"	m	class:router
+w_read_n	tile.h	/^	sc_signal<bool>				w_read_n;       \/\/left input data control pin.$/;"	m	class:tile
+w_receive_data	router.cc	/^void router :: w_receive_data(){$/;"	f	class:router
+w_router_to_fifo_sel	router.h	/^	sc_out<sc_uint<2> >	w_router_to_fifo_sel;	\/\/west select signal.$/;"	m	class:router
+w_router_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		w_router_to_fifo_sel;   \/\/west select signal.$/;"	m	class:tile
+w_transfer_data	router.cc	/^void router :: w_transfer_data(){$/;"	f	class:router
+w_waddress	router.h	/^	sc_uint<8>			w_waddress;$/;"	m	class:router
+w_write_en	router.h	/^	sc_event			w_write_en;$/;"	m	class:router
+w_write_n	router.h	/^	sc_out<bool>		w_write_n;				\/\/left output data control pin.$/;"	m	class:router
+w_write_n	tile.h	/^	sc_signal<bool>				w_write_n;              \/\/left output data control pin.$/;"	m	class:tile
+waddress	core.h	/^	sc_uint<8>			waddress;$/;"	m	class:core
+wcore_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		wcore_to_fifo_sel;			\/\/to read data to fifo between core and fifo.$/;"	m	class:tile
+wfifo_to_core_sel	tile.h	/^	sc_signal<sc_uint<2> >		wfifo_to_core_sel;			\/\/to write data to fifo between core and fifo.$/;"	m	class:tile
+wfifo_to_router_sel	tile.h	/^	sc_signal<sc_uint<2> >		wfifo_to_router_sel;		\/\/to read data to fifo between fifo and router.$/;"	m	class:tile
+wr	router.h	/^	unsigned wr		: 1;		\/\/Write\/Read.$/;"	m	struct:CACHE
+write_data	core.cc	/^bool core :: write_data(sc_uint<3> sel, sc_uint<8> addr)$/;"	f	class:core
+write_en	core.h	/^	sc_event			write_en;$/;"	m	class:core
+write_n	core.h	/^	sc_out<bool>        write_n;		\/\/core output data control pin.$/;"	m	class:core
+write_n	fifo.h	/^	sc_in<bool>			write_n;			\/\/Output data control pin a.$/;"	m	class:virtual_fifo
+write_n	top.h	/^	sc_signal<bool>				write_n;	\/\/Output data control pin a.$/;"	m	class:top
+wrouter_to_fifo_sel	tile.h	/^	sc_signal<sc_uint<2> >		wrouter_to_fifo_sel;		\/\/to write data to fifo between fifo and router.$/;"	m	class:tile
+x_num	router.h	/^	sc_uint<6>			x_num;$/;"	m	class:router
+x_to_fifo_sel	fifo.h	/^	sc_in<sc_uint<2> >	x_to_fifo_sel;		\/\/Fifo select signal when receive data.$/;"	m	class:virtual_fifo
+y_num	router.h	/^	sc_uint<6>			y_num;$/;"	m	class:router

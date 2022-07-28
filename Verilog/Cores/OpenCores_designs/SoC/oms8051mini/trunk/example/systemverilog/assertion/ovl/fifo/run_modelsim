@@ -1,0 +1,21 @@
+#!/bin/csh -f
+
+if(! -e work) then
+   vlib work
+else
+   \rm -rf work
+   vlib work
+endif
+
+#####################################################################################
+# CHANGE these line to the appropriate command for your simulator
+#####################################################################################
+set VERILOG     = "vlog -work work +acc-rn +notimingchecks +nospecify +incdir+/tools/questasim/10.2b/questa_sim/verilog_src/std_ovl "
+set ELAB        = "vsim -do run.do -c fifo_tb +notimingchecks +nospecify "
+echo " Compiling with questsim "
+
+
+$VERILOG  syn_fifo_assert.v fifo_tb.v ram_dp_ar_aw.v
+$ELAB -voptargs="+acc-npr" -l ../run.sim.log
+
+ 

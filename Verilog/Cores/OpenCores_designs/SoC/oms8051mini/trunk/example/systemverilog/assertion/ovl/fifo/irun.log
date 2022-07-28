@@ -1,0 +1,111 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 08, 2014 at 12:26:32 IST
+irun
+	fifo_tb.v
+	ram_dp_ar_aw.v
+	syn_fifo_assert.v
+	+incdir+../std_ovl/
+	-y ../std_ovl/
+	+notimingchecks
+	+nospecify
+file: fifo_tb.v
+	module worklib.fifo_tb:v
+		errors: 0, warnings: 0
+file: ram_dp_ar_aw.v
+	module worklib.ram_dp_ar_aw:v
+		errors: 0, warnings: 0
+file: syn_fifo_assert.v
+	module worklib.assert_fifo_index:vlib
+		errors: 0, warnings: 0
+	module worklib.assert_always:vlib
+		errors: 0, warnings: 0
+	module worklib.assert_never:vlib
+		errors: 0, warnings: 0
+	module worklib.assert_increment:vlib
+		errors: 0, warnings: 0
+	module worklib.syn_fifo:v
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOU: Library "../std_ovl/" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		fifo_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.assert_always:vlib <0x28e7f6e4>
+			streams:  12, words:  4811
+		worklib.assert_fifo_index:vlib <0x43df550e>
+			streams:  17, words:  6669
+		worklib.assert_increment:vlib <0x7377a130>
+			streams:  16, words:  5594
+		worklib.assert_never:vlib <0x4a4ba4b2>
+			streams:  12, words:  4811
+		worklib.fifo_tb:v <0x241a9e72>
+			streams:   7, words:  6217
+		worklib.ram_dp_ar_aw:v <0x6ed586d3>
+			streams:   9, words:  2573
+		worklib.syn_fifo:v <0x52fefc94>
+			streams:  13, words:  2833
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              7       7
+		Resolved nets:        0       1
+		Registers:           67      67
+		Scalar wires:        27       -
+		Vectored wires:       8       -
+		Always blocks:       19      19
+		Initial blocks:      16      16
+		Cont. assignments:    6      11
+		Pseudo assignments:   9       9
+	Writing initial simulation snapshot: worklib.fifo_tb:v
+Loading snapshot worklib.fifo_tb:v .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+OVL_NOTE: V2.5: ASSERT_FIFO_INDEX initialized @ fifo_tb.fifo.no_over_under_flow.ovl_init_msg_t Severity: 1, Message: my_module_err
+OVL_NOTE: V2.5: ASSERT_ALWAYS initialized @ fifo_tb.fifo.no_full_write.ovl_init_msg_t Severity: 1, Message: fifo_full_write
+OVL_NOTE: V2.5: ASSERT_NEVER initialized @ fifo_tb.fifo.no_empty_read.ovl_init_msg_t Severity: 1, Message: fifo_empty_read
+OVL_NOTE: V2.5: ASSERT_INCREMENT initialized @ fifo_tb.fifo.write_count.ovl_init_msg_t Severity: 1, Message: Write_Pointer_Error
+0 wr:0 wr_data:00 rd:0 rd_data:xx
+       OVL_ERROR : ASSERT_INCREMENT : Write_Pointer_Error : test_expr contains X or Z : severity 1 : time 1 : fifo_tb.fifo.write_count.ovl_error_t
+       OVL_ERROR : ASSERT_INCREMENT : Write_Pointer_Error : test_expr contains X or Z : severity 1 : time 3 : fifo_tb.fifo.write_count.ovl_error_t
+       OVL_ERROR : ASSERT_INCREMENT : Write_Pointer_Error : test_expr contains X or Z : severity 1 : time 5 : fifo_tb.fifo.write_count.ovl_error_t
+5 wr:0 wr_data:00 rd:0 rd_data:00
+10 wr:1 wr_data:00 rd:0 rd_data:00
+12 wr:1 wr_data:01 rd:0 rd_data:00
+14 wr:1 wr_data:02 rd:0 rd_data:00
+16 wr:1 wr_data:03 rd:0 rd_data:00
+18 wr:1 wr_data:04 rd:0 rd_data:00
+20 wr:1 wr_data:05 rd:0 rd_data:00
+22 wr:1 wr_data:06 rd:0 rd_data:00
+24 wr:1 wr_data:07 rd:0 rd_data:00
+       OVL_ERROR : ASSERT_ALWAYS : fifo_full_write : Test expression is FALSE : severity 1 : time 25 : fifo_tb.fifo.no_full_write.ovl_error_t
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo overflow detected : severity 1 : time 25 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+26 wr:1 wr_data:08 rd:0 rd_data:00
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo overflow detected : severity 1 : time 27 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+28 wr:1 wr_data:09 rd:0 rd_data:00
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo overflow detected : severity 1 : time 29 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+30 wr:0 wr_data:09 rd:0 rd_data:00
+32 wr:0 wr_data:09 rd:1 rd_data:00
+33 wr:0 wr_data:09 rd:1 rd_data:08
+35 wr:0 wr_data:09 rd:1 rd_data:09
+39 wr:0 wr_data:09 rd:1 rd_data:03
+41 wr:0 wr_data:09 rd:1 rd_data:04
+43 wr:0 wr_data:09 rd:1 rd_data:05
+45 wr:0 wr_data:09 rd:1 rd_data:06
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo underflow detected : severity 1 : time 47 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+47 wr:0 wr_data:09 rd:1 rd_data:07
+       OVL_ERROR : ASSERT_NEVER : fifo_empty_read : Test expression is not FALSE : severity 1 : time 49 : fifo_tb.fifo.no_empty_read.ovl_error_t
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo underflow detected : severity 1 : time 49 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+49 wr:0 wr_data:09 rd:1 rd_data:08
+       OVL_ERROR : ASSERT_NEVER : fifo_empty_read : Test expression is not FALSE : severity 1 : time 51 : fifo_tb.fifo.no_empty_read.ovl_error_t
+       OVL_ERROR : ASSERT_FIFO_INDEX : my_module_err : Fifo underflow detected : severity 1 : time 51 : fifo_tb.fifo.no_over_under_flow.ovl_error_t
+51 wr:0 wr_data:09 rd:1 rd_data:09
+52 wr:0 wr_data:09 rd:0 rd_data:09
+Simulation complete via $finish(1) at time 152 NS + 0
+./fifo_tb.v:37   #100 $finish;
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 08, 2014 at 12:26:35 IST  (total: 00:00:03)

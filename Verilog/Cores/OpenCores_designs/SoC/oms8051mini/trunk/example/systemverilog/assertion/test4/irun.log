@@ -1,0 +1,49 @@
+irun: 11.10-s021: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s021: Started on Aug 01, 2014 at 13:22:44 IST
+irun
+	test.sv
+file: test.sv
+	module worklib.goto_assertion:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		goto_assertion
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.goto_assertion:sv <0x3dbabe39>
+			streams:  14, words:  7844
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		          Instances  Unique
+		Modules:          1       1
+		Registers:       19      19
+		Always blocks:    9       9
+		Initial blocks:   7       7
+		Assertions:       2       2
+	Writing initial simulation snapshot: worklib.goto_assertion:sv
+Loading snapshot worklib.goto_assertion:sv .................... Done
+ncsim> source /tools/INCISIV111/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,SHMPAAX: some objects excluded from $shm_probe due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./dump.v, line = 6, pos = 13
+           Scope: goto_assertion
+            Time: 0 FS + 0
+
+  req ##1 (busy [->3]) ##1 gnt;
+    |
+ncsim: *E,ASRTST (./test.sv,37): (time 5 NS) Assertion goto_assertion.cool_way_assert has failed (2 cycles, starting 3 NS)
+  req ##1 ((!busy ##1 busy) [*3]) ##1 gnt;
+    |
+ncsim: *E,ASRTST (./test.sv,36): (time 5 NS) Assertion goto_assertion.boring_way_assert has failed (2 cycles, starting 3 NS)
+  req ##1 (busy [->3]) ##1 gnt;
+    |
+ncsim: *E,ASRTST (./test.sv,37): (time 63 NS) Assertion goto_assertion.cool_way_assert has failed (2 cycles, starting 61 NS)
+  req ##1 ((!busy ##1 busy) [*3]) ##1 gnt;
+    |
+ncsim: *E,ASRTST (./test.sv,36): (time 63 NS) Assertion goto_assertion.boring_way_assert has failed (2 cycles, starting 61 NS)
+Simulation complete via $finish(1) at time 107 NS + 0
+./test.sv:49   #30 $finish;
+ncsim> exit
+TOOL:	irun	11.10-s021: Exiting on Aug 01, 2014 at 13:22:46 IST  (total: 00:00:02)

@@ -1,0 +1,24 @@
+===== STEPS =====
+
+A. Install Cable Drivers:
+	- Edit the cable-install.sh file and set the variable ISE_PATH to the directory
+	  where you have installed ISE (that directory must contain a directory ISE_DS).
+	- Run the script: ./cable-install.sh
+	- When finished type lsusb and you should get a line similar to
+	  "Bus 001 Device 005: ID 03fd:0008 Xilinx, Inc." where the ID
+	  should be as shown (03fd:0008).
+	- You should be able to run IMPACT and see the devices in the JTAG chain.
+
+B. Install GNU Toolchain for OR:
+	- Edit the toolchain-install.sh file and set the variables DIR_TO_INSTALL and
+	  KERNEL_ARCH as explained in the file.
+	- Run the script: ./toolchain-install.sh
+	- When finished you should be able to run or32-elf-gdb in a new terminal.
+
+C. Install minsoc:
+	- Edit the minsoc-install.sh file and the variable DIR_TO_INSTALL.
+	- Run the script: ./minsoc-install.sh
+	- When finished you should have a working copy of minsoc project in the
+	  specified directory.
+
+Hope it works!

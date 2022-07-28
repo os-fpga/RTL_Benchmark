@@ -1,0 +1,7 @@
+#!/bin/csh
+
+if(! -e work) then
+   vlib work
+endif
+
+vlog -work work +define+SFLASH_SPDUP -sv -f filelist_top.f
