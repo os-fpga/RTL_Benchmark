@@ -4948,7 +4948,7 @@ dual_port_ram u_dual_port_ram(
 .addr1(addr0),
 .we1(we0_coalesced),
 .data1(d0),
-.out1(q0),
+//.out1(q0),
 .addr2(addr1),
 .we2(we1_coalesced),
 .data2(d1),
