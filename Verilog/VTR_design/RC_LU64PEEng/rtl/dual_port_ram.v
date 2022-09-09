@@ -7,7 +7,7 @@
 
 `timescale 1ps/1ps
 
-`define MEM_MAXADDR PPP
+`define MEM_MAXADDR 126
 `define MEM_MAXDATA 36
 
 // depth and data may need to be splited
@@ -20,7 +20,7 @@ module dual_port_ram(clk, we1, we2, addr1, addr2, data1, data2, out1, out2);
     input [ADDR_WIDTH-1:0] addr1, addr2;
     input [DATA_WIDTH-1:0] data1, data2;
 
-    output reg [DATA_WIDTH-1:0] out1, out2;
+    output wire [DATA_WIDTH-1:0] out1, out2;
 
     genvar i;
 	generate 
@@ -30,9 +30,11 @@ module dual_port_ram(clk, we1, we2, addr1, addr2, data1, data2, out1, out2);
 			
             wire [ADDR_WIDTH-2:0] new_addr1 = addr1[ADDR_WIDTH-2:0];
             wire [ADDR_WIDTH-2:0] new_addr2 = addr2[ADDR_WIDTH-2:0];
+            wire [ADDR_WIDTH-2:0] addr;
 
             wire [DATA_WIDTH-1:0] out1_h, out1_l;
             wire [DATA_WIDTH-1:0] out2_h, out2_l;
+            
 
 
             defparam uut_h.ADDR_WIDTH = ADDR_WIDTH-1;
@@ -64,7 +66,8 @@ module dual_port_ram(clk, we1, we2, addr1, addr2, data1, data2, out1, out2);
             );
 
             reg additional_bit;
-            always @(posedge clk) additional_bit <= addr[ADDR_WIDTH-1];
+            always @(posedge clk) 
+            additional_bit <= addr[ADDR_WIDTH-1];
             assign out1 = (additional_bit) ? out1_h : out1_l;
             assign out2 = (additional_bit) ? out2_h : out2_l;
 
