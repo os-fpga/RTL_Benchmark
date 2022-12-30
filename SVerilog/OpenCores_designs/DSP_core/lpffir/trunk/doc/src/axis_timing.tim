@@ -1,0 +1,394 @@
+Timing Analyzer Settings 
+     Version:           0.991
+     Time_Scale:        1.0E-9
+     Time_Per_Division: 64
+     Number_Divisions:  160
+     Start_Time:        0
+     End_Time:          750
+Part_Constraint
+     Name:               thold
+     Min_Constraint:     4.0
+     Max_Constraint:     4.0
+     Description:        Example hold constraint
+Part_Constraint_End
+Part_Constraint
+     Name:               tsetup
+     Min_Constraint:     10.0
+     Max_Constraint:     10.0
+     Description:        Example setup constraint
+Part_Constraint_End
+Jitter_Margin
+     Name:               p1jitter
+     Plus_Margin:        1.0
+     Minus_Margin:       1.0
+     Description:        Example part jitter
+Jitter_Margin_End
+Jitter_Margin
+     Name:               p2jitter
+     Plus_Margin:        0.5
+     Minus_Margin:       0.5
+     Description:        Example part jitter
+Jitter_Margin_End
+Digital_Clock
+     Position:          1
+     Name:              aclk_i
+     Frequency:         1.0E7
+     Duty_Cycle:        50
+     Start_Delay:       0.0
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Input
+Digital_Clock_End
+Digital_Signal
+     Position:          2
+     Name:              rx_tlast_i
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Input
+     Sync_Clock:        aclk_i
+          Edge
+              Min:             556.211
+              Max:             556.211
+              State:            H
+          Edge_End
+          Edge
+              Min:             656.211
+              Max:             656.211
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Signal
+     Position:          3
+     Name:              rx_tvalid_i
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Input
+     Sync_Clock:        aclk_i
+          Edge
+              Min:             53.311
+              Max:             172.471
+              State:            H
+          Edge_End
+          Edge
+              Min:             453.981
+              Max:             453.981
+              State:            L
+          Edge_End
+          Edge
+              Min:             557.201
+              Max:             557.201
+              State:            H
+          Edge_End
+          Edge
+              Min:             657.201
+              Max:             657.201
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Signal
+     Position:          4
+     Name:              rx_tready_o
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Output
+     Sync_Clock:        aclk_i
+          Edge
+              Min:             98.781
+              Max:             98.781
+              State:            H
+          Edge_End
+          Edge
+              Min:             157.201
+              Max:             157.201
+              State:            L
+          Edge_End
+          Edge
+              Min:             257.201
+              Max:             257.201
+              State:            H
+          Edge_End
+          Edge
+              Min:             868.401
+              Max:             868.401
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Bus
+     Position:          5
+     Name:              rx_tdata_i[15:0]
+     Start_State:       X
+     State_Format:      Text
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Input
+     Sync_Clock:        aclk_i
+          Edge
+              Min:             53.151
+              Max:             53.151
+              State:            DI1
+          Edge_End
+          Edge
+              Min:             156.031
+              Max:             156.031
+              State:            DI2
+          Edge_End
+          Edge
+              Min:             357.731
+              Max:             357.731
+              State:            DI3
+          Edge_End
+          Edge
+              Min:             453.121
+              Max:             453.121
+              State:            X
+          Edge_End
+          Edge
+              Min:             557.731
+              Max:             557.731
+              State:            DI4
+          Edge_End
+          Edge
+              Min:             657.731
+              Max:             657.731
+              State:            X
+          Edge_End
+          Edge
+              Min:             880.091
+              Max:             880.091
+              State:            Z
+          Edge_End
+Digital_Bus_End
+Digital_Signal
+     Position:          6
+     Name:              tx_tlast_o
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Output
+          Edge
+              Min:             556.211
+              Max:             556.211
+              State:            H
+          Edge_End
+          Edge
+              Min:             656.211
+              Max:             656.211
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Signal
+     Position:          7
+     Name:              tx_tvalid_o
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Output
+          Edge
+              Min:             53.311
+              Max:             53.311
+              State:            H
+          Edge_End
+          Edge
+              Min:             453.981
+              Max:             453.981
+              State:            L
+          Edge_End
+          Edge
+              Min:             557.201
+              Max:             557.201
+              State:            H
+          Edge_End
+          Edge
+              Min:             657.201
+              Max:             657.201
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Signal
+     Position:          8
+     Name:              tx_tready_i
+     Start_State:       L
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Input
+          Edge
+              Min:             98.781
+              Max:             98.781
+              State:            H
+          Edge_End
+          Edge
+              Min:             157.201
+              Max:             157.201
+              State:            L
+          Edge_End
+          Edge
+              Min:             257.201
+              Max:             257.201
+              State:            H
+          Edge_End
+          Edge
+              Min:             868.401
+              Max:             868.401
+              State:            L
+          Edge_End
+Digital_Signal_End
+Digital_Bus
+     Position:          9
+     Name:              tx_tdata_o[15:0]
+     Start_State:       X
+     State_Format:      Text
+     Rise_Time:         5.0
+     Fall_Time:         5.0
+     IO_Type:           Output
+          Edge
+              Min:             53.151
+              Max:             53.151
+              State:            DO1
+          Edge_End
+          Edge
+              Min:             156.031
+              Max:             156.031
+              State:            DO2
+          Edge_End
+          Edge
+              Min:             357.731
+              Max:             357.731
+              State:            DO3
+          Edge_End
+          Edge
+              Min:             453.121
+              Max:             453.121
+              State:            X
+          Edge_End
+          Edge
+              Min:             557.731
+              Max:             557.731
+              State:            DO4
+          Edge_End
+          Edge
+              Min:             657.731
+              Max:             657.731
+              State:            X
+          Edge_End
+          Edge
+              Min:             880.091
+              Max:             880.091
+              State:            Z
+          Edge_End
+Digital_Bus_End
+StateBar
+     State_Name:        C2
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           5
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C3
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           7
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C1
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           3
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C4
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           9
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C5
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           11
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C6
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           13
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C7
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           15
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
+StateBar
+     State_Name:        C0
+     Line_Type:         Dashed
+     Edge_Position:     50
+     State_Color:       #000000
+     Font_Name:         Dialog
+     Font_Style:        0
+     Font_Size:         12
+     Signal_Type:       DigitalClock
+     Signal_Name:       aclk_i
+     Edge_At:           1
+     OffsetX:           0
+     OffsetY:           0
+StateBar_End
