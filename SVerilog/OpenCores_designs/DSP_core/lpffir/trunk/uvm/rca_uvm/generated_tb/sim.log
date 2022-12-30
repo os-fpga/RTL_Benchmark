@@ -1,0 +1,547 @@
+[2019-03-19 17:50:29 EDT] EU_INC_PATH=`perl /playground_lib/easier_uvm_gen/easier_uvm_gen.pl -x inc_path`  ; EU_DUT_SOURCE_PATH=`perl /playground_lib/easier_uvm_gen/easier_uvm_gen.pl -x dut_source_path` ; EU_PROJECT=`perl /playground_lib/easier_uvm_gen/easier_uvm_gen.pl -x project`  ; EU_REGMODEL_FILE=`perl /playground_lib/easier_uvm_gen/easier_uvm_gen.pl -x regmodel_file` ; mkdir $EU_INC_PATH ; mv rca_driver_inc.sv rca_monitor_inc.sv  $EU_INC_PATH ; mkdir $EU_DUT_SOURCE_PATH ; mv design.sv  $EU_DUT_SOURCE_PATH ; if [ -f $EU_INC_PATH/$EU_REGMODEL_FILE ]; then cp $EU_INC_PATH/$EU_REGMODEL_FILE . ; fi; perl /playground_lib/easier_uvm_gen/easier_uvm_gen.pl -s ../../playground_lib/uvm_syoscb/src -c  rca.tpl ; cd $EU_PROJECT  && cd sim ; chmod 755 compile_vcs.sh ; source ./compile_vcs.sh ; cd /home/runner
+Easier UVM Code Generator version 2016-04-18-EP
+Copying dut files to            generated_tb/dut
+Copying include files to        generated_tb/tb/include
+Generating testbench in         generated_tb/tb
+Generating simulator scripts in generated_tb/sim
+Generated hierarchy of envs and agents:
+  m_rca_agent
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'CentOS Linux release 7.1.1503 (Core) ' is not supported on
+  'x86_64' officially, assuming linux compatibility by default. Set
+  VCS_ARCH_OVERRIDE to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.13.0-71-generic' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+			 Chronologic VCS (TM)
+	 Version J-2014.12-SP1-1 -- Tue Mar 19 21:50:31 2019
+	       Copyright (c) 1991-2014 by Synopsys Inc.
+			 ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_version_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_global_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_message_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_phase_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_object_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_printer_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_tlm_defines.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_imps.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_tlm_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_sequence_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_callback_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_reg_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/macros/uvm_deprecated_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_hdl.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_svcmd_dpi.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_regex.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_coreservice.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_version.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_object_globals.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_misc.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_object.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_pool.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_queue.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_factory.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_registry.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_spell_chkr.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_resource.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_resource_specializations.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_resource_db.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_config_db.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_printer.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_comparer.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_packer.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_links.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_tr_database.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_tr_stream.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_recorder.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_event_callback.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_event.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_barrier.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_callback.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_callback.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_report_message.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_report_catcher.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_report_server.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_report_handler.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_report_object.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_transaction.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_phase.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_domain.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_bottomup_phase.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_topdown_phase.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_task_phase.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_common_phases.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_runtime_phases.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_component.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_root.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_component.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_objection.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_heartbeat.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_globals.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_cmdline_processor.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_traversal.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/base/uvm_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_set_get_dap_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_simple_lock_dap.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_get_to_lock_dap.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_set_before_get_dap.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/dap/uvm_dap.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_ifs.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_sqr_ifs.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/base/uvm_port_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_imps.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_imps.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_ports.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_exports.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_analysis_port.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_fifo_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_fifos.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm_req_rsp.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_sqr_connections.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_pair.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_policies.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_in_order_comparator.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_algorithmic_comparator.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_random_stimulus.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_subscriber.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_monitor.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_driver.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_push_driver.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_scoreboard.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_agent.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_env.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_test.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/comps/uvm_comps.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequence_item.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequencer_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequencer_analysis_fifo.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequencer_param_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequencer.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_push_sequencer.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequence_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequence.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequence_library.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_sequence_builtin.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/seq/uvm_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_defines.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_time.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_generic_payload.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_ifs.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_imps.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_ports.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_exports.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_sockets_base.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2_sockets.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_item.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_adapter.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_predictor.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_sequence.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_cbs.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_backdoor.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_field.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_vreg_field.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_indirect.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_fifo.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_file.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_mem_mam.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_vreg.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_mem.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_map.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_block.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_hw_reset_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_bit_bash_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_mem_walk_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_mem_access_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_access_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_mem_shared_access_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_mem_built_in_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/reg/snps_uvm_reg_bank.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Back to file '/apps/vcsmx/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing design file '../dut/design.sv'
+Parsing design file '../tb/rca/sv/rca_pkg.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_trans.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_config.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_driver.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_monitor.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_sequencer.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_coverage.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_agent.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing included file '../tb/rca/sv/rca_seq_lib.sv'.
+Back to file '../tb/rca/sv/rca_pkg.sv'.
+Parsing design file '../tb/rca/sv/rca_if.sv'
+Parsing design file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_cfg_pl.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_cfg.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_item.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_queue_iterator_base.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_queue_iterator_std.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_queue.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_queue_std.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_compare_base.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_compare.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_compare_ooo.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_compare_io.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_compare_iop.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_report_catcher.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb_subscriber.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing included file '../../../../playground_lib/uvm_syoscb/src/cl_syoscb.svh'.
+Back to file '../../../../playground_lib/uvm_syoscb/src/pk_syoscb.sv'.
+Parsing design file '../tb/top/sv/top_pkg.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '../tb/top/sv/top_pkg.sv'.
+Parsing included file '../tb/top/sv/top_config.sv'.
+Back to file '../tb/top/sv/top_pkg.sv'.
+Parsing included file '../tb/top/sv/top_seq_lib.sv'.
+Back to file '../tb/top/sv/top_pkg.sv'.
+Parsing included file '../tb/top/sv/top_env.sv'.
+Back to file '../tb/top/sv/top_pkg.sv'.
+Parsing design file '../tb/top_test/sv/top_test_pkg.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '../tb/top_test/sv/top_test_pkg.sv'.
+Parsing included file '../tb/top_test/sv/top_test.sv'.
+Back to file '../tb/top_test/sv/top_test_pkg.sv'.
+Parsing design file '../tb/top_tb/sv/top_th.sv'
+Parsing design file '../tb/top_tb/sv/top_tb.sv'
+Parsing included file '/apps/vcsmx/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '../tb/top_tb/sv/top_tb.sv'.
+Top Level Modules:
+       top_tb
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+12 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package _vcs_DPI_package
+recompiling package uvm_pkg
+recompiling module fa
+recompiling module rca
+recompiling package rca_pkg
+recompiling module rca_if
+recompiling package pk_syoscb
+recompiling package top_pkg
+recompiling package top_test_pkg
+recompiling module top_tb
+All of 12 modules done
+rm -f _csrc*.so linux_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
+g++ -w  -pipe -m32 -DVCSMX -O -I/apps/vcsmx/include    -c /apps/vcsmx/etc/uvm-1.2/dpi/uvm_dpi.cc
+ld -m elf_i386 -shared  -o .//../simv.daidir//_csrc0.so amcQwB.o
+rm -f _csrc0.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv  -m32 -m32   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  /apps/vcsmx/linux/lib/vpdlogstub.o uvm_dpi.o    _631_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so    rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /apps/vcsmx/linux/lib/libzerosoft_rt_stubs.so /apps/vcsmx/linux/lib/libvirsim.so /apps/vcsmx/linux/lib/liberrorinf.so /apps/vcsmx/linux/lib/libsnpsmalloc.so    /apps/vcsmx/linux/lib/libvcsnew.so /apps/vcsmx/linux/lib/libuclinative.so   -Wl,-whole-archive /apps/vcsmx/linux/lib/libvcsucli.so -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o    /apps/vcsmx/linux/lib/vcs_save_restore_new.o /apps/vcsmx/linux/lib/ctype-stubs_32.a -ldl  -lc -lm -lpthread -ldl
+../simv up to date
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version J-2014.12-SP1-1; Runtime version J-2014.12-SP1-1;  Mar 19 21:50 2019
+UVM_INFO /apps/vcsmx/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES]
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test top_test...
+
+Note-[FCICIO] Instance coverage is ON
+/home/runner/generated_tb/sim/../tb/rca/sv/rca_coverage.sv, 32
+rca_pkg, "rca_pkg::rca_coverage::m_cov"
+  Instance coverage is set (option.per_instance = 1) for covergroup
+  'rca_pkg::rca_coverage::m_cov'
+
+  Covergroup Instance: top_tb.me.obj.m_cov
+  Design hierarchy: rca_pkg
+
+UVM_INFO ../tb/top/sv/top_env.sv(99) @ 0: uvm_test_top.m_env [top_env] Information printed from top_env::end_of_elaboration_phase method
+UVM_INFO ../tb/top/sv/top_env.sv(100) @ 0: uvm_test_top.m_env [top_env] Verbosity threshold is         200
+UVM_INFO /apps/vcsmx/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               top_test                -     @344
+  m_env                    top_env                 -     @357
+    m_rca_agent            rca_agent               -     @373
+      analysis_port        uvm_analysis_port       -     @382
+      m_driver             rca_driver              -     @432
+	rsp_port           uvm_analysis_port       -     @451
+	seq_item_port      uvm_seq_item_pull_port  -     @441
+      m_monitor            rca_monitor             -     @412
+	analysis_port      uvm_analysis_port       -     @421
+      m_sequencer          uvm_sequencer           -     @461
+	rsp_export         uvm_analysis_export     -     @470
+	seq_item_export    uvm_seq_item_pull_imp   -     @588
+	arbitration_queue  array                   0     -
+	lock_queue         array                   0     -
+	num_last_reqs      integral                32    'd1
+	num_last_rsps      integral                32    'd1
+    m_rca_coverage         rca_coverage            -     @392
+      analysis_imp         uvm_analysis_imp        -     @401
+--------------------------------------------------------------
+
+UVM_INFO /apps/vcsmx/etc/uvm-1.2/base/uvm_factory.svh(1645) @ 0: reporter [UVM/FACTORY/PRINT]
+#### Factory Configuration (*)
+
+  No instance or type overrides are registered with this factory
+
+All types registered with the factory: 76 total
+  Type Name
+  ---------
+  cl_syoscb
+  cl_syoscb_cfg
+  cl_syoscb_cfg_pl
+  cl_syoscb_compare
+  cl_syoscb_compare_base
+  cl_syoscb_compare_io
+  cl_syoscb_compare_iop
+  cl_syoscb_compare_ooo
+  cl_syoscb_item
+  cl_syoscb_queue
+  cl_syoscb_queue_iterator_base
+  cl_syoscb_queue_iterator_std
+  cl_syoscb_queue_std
+  cl_syoscb_subscriber
+  rca_agent
+  rca_coverage
+  rca_default_seq
+  rca_driver
+  rca_monitor
+  snps_uvm_reg_bank_group
+  snps_uvm_reg_map
+  top_default_seq
+  top_env
+  top_test
+  trans
+(*) Types with no associated type name will be printed as <unknown>
+
+####
+
+
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 10000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(1) + b(0) + ci(0) = co(0) and s(1)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 30000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(4) + b(0) + ci(1) = co(0) and s(5)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 50000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(4) + b(4) + ci(0) = co(0) and s(8)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 70000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(3) + b(2) + ci(0) = co(0) and s(5)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 90000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(0) + b(4) + ci(0) = co(0) and s(4)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 110000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(4) + b(1) + ci(1) = co(0) and s(6)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 130000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(4) + b(4) + ci(0) = co(0) and s(8)
+UVM_INFO ../tb/rca/sv/rca_monitor.sv(71) @ 150000: uvm_test_top.m_env.m_rca_agent.m_monitor [rca_monitor] a(1) + b(1) + ci(1) = co(0) and s(3)
+UVM_INFO /apps/vcsmx/etc/uvm-1.2/base/uvm_objection.svh(1270) @ 150000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/rca/sv/rca_coverage.sv(93) @ 150000: uvm_test_top.m_env.m_rca_coverage [rca_coverage] Coverage score = 30.9%
+UVM_INFO /apps/vcsmx/etc/uvm-1.2/base/uvm_report_server.svh(847) @ 150000: reporter [UVM/REPORT/SERVER]
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   16
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/FACTORY/PRINT]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[rca_coverage]     1
+[rca_monitor]     8
+[top_env]     2
+
+$finish called from file "/apps/vcsmx/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               150000
+	   V C S   S i m u l a t i o n   R e p o r t
+Time: 150000 ps
+CPU Time:      0.380 seconds;       Data structure size:   0.2Mb

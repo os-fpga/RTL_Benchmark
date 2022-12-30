@@ -1,0 +1,80 @@
+
+Easier UVM Code Generator version 2016-04-18-EP (Send feedback to info@doulos.com)
+
+Parsing cmdline ...
+
+num args is 3
+Code generation will continue if critical warnings are issued
+pnum_c: 2
+Searching for regmodel flag
+Searching for prefix
+Searching for common template
+Searching for Syosil scoreboard path
+syosil_scoreboard_src_path: ../../playground_lib/uvm_syoscb/src
+pnum_s: 0
+Searching for templates
+T_List:  rca.tpl
+List: rca.tpl
+Parsing common : common.tpl ...
+
+dut_top: rca
+top_default_seq_count = 8
+prefix for top-level names: top
+$regmodel = 0
+
+Parsing Templates ...
+
+Reading[1]: rca.tpl
+agent_name: agent_name = rca
+trans_item= trans
+trans_var: rand logic [15:0] input1;
+trans_var: rand logic [15:0] input2;
+trans_var: rand logic carryinput;
+trans_var: logic carryoutput;
+trans_var: logic [15:0] sum;
+trans_var: constraint c_addr_a { 0 <= input1; input1 < 5; }
+trans_var: constraint c_addr_b { 0 <= input2; input2 < 5; }
+if_port = logic [15:0] a;
+if_port = logic [15:0] b;
+if_port = logic ci;
+if_port = logic co;
+if_port = logic [15:0] s;
+if_port = logic clk;
+env_clock_list: rca clk
+clist[0]: rca
+clist[1]: clk
+driver_inc = rca_driver_inc.sv inline
+clist[0]: rca
+clist[1]: clk
+monitor_inc = rca_monitor_inc.sv inline
+clist[0]: rca
+clist[1]: clk
+dir: generated_tb/tb/rca
+Writing code to files
+AGENT-ITEM: trans
+var_decl=rand logic [15:0] input1;
+stripped_decl=rand logic    input1;
+VARIABLE type = logic, var = input1
+var_decl=rand logic [15:0] input2;
+stripped_decl=rand logic    input2;
+VARIABLE type = logic, var = input2
+var_decl=rand logic carryinput;
+stripped_decl=rand logic carryinput;
+VARIABLE type = logic, var = carryinput
+var_decl=logic carryoutput;
+stripped_decl=logic carryoutput;
+VARIABLE type = logic, var = carryoutput
+var_decl=logic [15:0] sum;
+stripped_decl=logic    sum;
+VARIABLE type = logic, var = sum
+var_decl=constraint c_addr_a { 0 <= input1; input1 < 5; }
+Found constraint constraint c_addr_a { 0 <= input1; input1 < 5; }
+var_decl=constraint c_addr_b { 0 <= input2; input2 < 5; }
+Found constraint constraint c_addr_b { 0 <= input2; input2 < 5; }
+top env agents = rca
+Generating testbench in generated_tb/tb
+Writing ports for interface rca_if_0
+Generating simulator scripts in generated_tb/sim
+env_list=, agent_list=rca,
+env_list=, agent_list=rca,
+Code Generation complete
