@@ -1,0 +1,23 @@
+ 
+# Yosys synthesis script for ram_true_dp_512x32
+# Read source files
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-692/ram_true_dp_512x32.sv
+verific -import ram_true_dp_512x32
+
+
+# Technology mapping
+hierarchy -top ram_true_dp_512x32
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis -top ram_true_dp_512x32 -de -goal delay         -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename ram_true_dp_512x32_post_synth.v
+write_blif ram_true_dp_512x32_post_synth.blif
+
+  
