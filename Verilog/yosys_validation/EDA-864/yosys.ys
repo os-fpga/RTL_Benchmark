@@ -1,0 +1,23 @@
+ 
+# Yosys synthesis script for rams_sp_re_we_rf_1024x32
+# Read source files
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-864/rams_sp_re_we_rf_1024x32.sv
+verific -import rams_sp_re_we_rf_1024x32
+
+
+# Technology mapping
+hierarchy -top rams_sp_re_we_rf_1024x32
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -top rams_sp_re_we_rf_1024x32 -de -goal delay -carry no        -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename rams_sp_re_we_rf_1024x32_post_synth.v
+write_blif rams_sp_re_we_rf_1024x32_post_synth.blif
+
+  
