@@ -1,0 +1,23 @@
+ 
+# Yosys synthesis script for ram_pipeline
+# Read source files
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-678/ram_pipeline.v
+verific -import ram_pipeline
+
+
+# Technology mapping
+hierarchy -top ram_pipeline
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis -top ram_pipeline -de -goal delay         -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename ram_pipeline_post_synth.v
+write_blif ram_pipeline_post_synth.blif
+
+  

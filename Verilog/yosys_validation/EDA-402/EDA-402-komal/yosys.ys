@@ -1,0 +1,22 @@
+ 
+# Yosys synthesis script for Log2highacc
+# Read source files
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-402/EDA-402-komal/Log2highacc.sv
+verific -import Log2highacc
+
+
+# Technology mapping
+hierarchy -top Log2highacc
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis2 -top Log2highacc -de -goal delay -de_max_threads -1   
+
+# Clean and output blif
+write_blif Log2highacc_post_synth.blif
+write_verilog -noexpr -nodec -norename Log2highacc_post_synth.v
+write_edif Log2highacc_post_synth.edif
+  
