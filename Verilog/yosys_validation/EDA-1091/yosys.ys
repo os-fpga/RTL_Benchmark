@@ -1,0 +1,24 @@
+ 
+# Yosys synthesis script for aes_256_sr_top
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir 
+verific -vlog-libdir 
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1091/aes_256_sr_top.sv
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1091/aes_256.sv
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1091/round.sv
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1091/table.sv
+verific -import aes_256_sr_top
+
+# Technology mapping
+hierarchy -top aes_256_sr_top
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -top aes_256_sr_top -de  -no_simplify
+
+write_verilog -noexpr -nodec -norename aes_256_sr_top_post_synth.v
+write_blif aes_256_sr_top_post_synth.blif
+
+  

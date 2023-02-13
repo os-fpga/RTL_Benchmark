@@ -1,0 +1,24 @@
+ 
+# Yosys synthesis script for rams_sp_reg_addr_readmem_512x8
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1090/512x8/rams_sp_reg_addr_readmem_512x8.sv
+verific -import rams_sp_reg_addr_readmem_512x8
+
+
+# Technology mapping
+hierarchy -top rams_sp_reg_addr_readmem_512x8
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -top rams_sp_reg_addr_readmem_512x8 -de -goal delay  -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename rams_sp_reg_addr_readmem_512x8_post_synth.v
+write_blif rams_sp_reg_addr_readmem_512x8_post_synth.blif
+
+  
