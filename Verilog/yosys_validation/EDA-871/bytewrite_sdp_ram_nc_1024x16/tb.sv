@@ -2,7 +2,7 @@
 module co_sim_bytewrite_sdp_ram_nc;
     //--------------------------------------------------------------------------
     parameter NUM_COL = 4; // 4 columns of 1 byte each make : 32 bits
-    parameter COL_WIDTH = 7; //1 byte
+    parameter COL_WIDTH = 4; //1 byte
     parameter ADDR_WIDTH = 10; // Addr Width in bits : 2 *ADDR_WIDTH = RAM Depth ---> 2^10 = 1024
     parameter DATA_WIDTH = NUM_COL*COL_WIDTH; // Data Width in bits
     //--------------------------------------------------------------------------
@@ -17,8 +17,8 @@ module co_sim_bytewrite_sdp_ram_nc;
     integer mismatch=0;
     reg [6:0]cycle, i;
 
-    bytewrite_sdp_ram_nc_1024x28 golden(.*);
-    bytewrite_sdp_ram_nc_post_synth netlist(.*, .dout(dout_net));
+    bytewrite_sdp_ram_nc_1024x16 golden(.*);
+    bytewrite_sdp_ram_nc_1024x16_post_synth netlist(.*, .dout(dout_net));
 
 
     always #10 clk = ~clk;
