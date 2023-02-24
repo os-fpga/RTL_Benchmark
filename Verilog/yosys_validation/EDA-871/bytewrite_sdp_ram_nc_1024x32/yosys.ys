@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for bytewrite_sdp_ram_nc
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-871/bytewrite_sdp_ram_nc_1024x32/bytewrite_sdp_ram_nc_1024x32.v
+verific -import bytewrite_sdp_ram_nc_1024x32
+
+
+# Technology mapping
+hierarchy -top bytewrite_sdp_ram_nc_1024x32
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v bytewrite_sdp_ram_nc_post_synth.v
+write_blif bytewrite_sdp_ram_nc_post_synth.blif
+
+  
