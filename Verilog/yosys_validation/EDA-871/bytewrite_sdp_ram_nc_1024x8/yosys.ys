@@ -2,10 +2,12 @@
 # Yosys synthesis script for bytewrite_sdp_ram_nc
 # Read source files
 read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k /nfs_scratch/scratch/Vorak/lilit/workplace/latest/raptor/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-871/bytewrite_sdp_ram_nc_1024x8/bytewrite_sdp_ram_nc_1024x8.v
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-871/bytewrite_sdp_ram_nc_1024x8/bytewrite_sdp_ram_nc_1024x8.v
 verific -import bytewrite_sdp_ram_nc_1024x8
 
 
