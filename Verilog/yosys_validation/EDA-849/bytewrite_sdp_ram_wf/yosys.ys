@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for bytewrite_sdp_ram_wf
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-849/bytewrite_sdp_ram_wf/
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-849/bytewrite_sdp_ram_wf/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-849/bytewrite_sdp_ram_wf/bytewrite_sdp_ram_wf.sv
+verific -import bytewrite_sdp_ram_wf
+
+
+# Technology mapping
+hierarchy -top bytewrite_sdp_ram_wf
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -top bytewrite_sdp_ram_wf -de -goal delay -carry no        -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename bytewrite_sdp_ram_wf_post_synth.v
+write_blif bytewrite_sdp_ram_wf_post_synth.blif
+
+  
