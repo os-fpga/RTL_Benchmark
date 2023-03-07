@@ -1,2 +1,0 @@
-CFLAGS=-O0 -fPIC -std=c++14 -m64 -I. -Iinclude ${FLEXNOC_CFLAGS}
-LDFLAGS=-m64 -fPIC -std=c++14 ${FLEXNOC_LDFLAGS} ${FLEXNOC_RPATH}
