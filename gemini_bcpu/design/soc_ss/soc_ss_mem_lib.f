@@ -1,0 +1,16 @@
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_best.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_bestzero.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ffg.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ffgnp125.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_leak.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_mbist.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ssg0c.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ssg125c.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ssgn40c.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ssgnpn40c.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ttth.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_typ.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_typ85crv.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_worst.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_worstn40c.lib
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_worstzero.lib

@@ -1,0 +1,46 @@
+--- ../isa/rv64mi/breakpoint.S	2019-07-23 17:32:35.353098000 +0800
++++ breakpoint.S	2019-07-23 17:34:11.901023000 +0800
+@@ -21,12 +21,23 @@
+   csrr a1, tselect
+   bne x0, a1, pass
+ 
++  # Make sure there's a breakpoint there.
++  csrr a0, tdata1
++  srli a0, a0, (__riscv_xlen - 4)
++  beq  a0, a1, pass
++
+   la a2, 1f
+   csrw tdata2, a2
++  # set tcontrol.mte
++  li a0, 8
++  csrw 0x7a5, a0
+   li a0, (2 << (__riscv_xlen - 4)) | MCONTROL_M | MCONTROL_EXECUTE
+   csrw tdata1, a0
+   # Skip if breakpoint type is unsupported.
+   csrr a1, tdata1
++  # Ignore MASKMAX in WARL test
++  li a3, ~(0x3f << (__riscv_xlen - 11))
++  and a1, a1, a3
+   bne a0, a1, 2f
+   .align 2
+ 1:
+@@ -44,6 +55,9 @@
+   csrw tdata1, a0
+   # Skip if breakpoint type is unsupported.
+   csrr a1, tdata1
++  # Ignore MASKMAX in WARL test
++  li a3, ~(0x3f << (__riscv_xlen - 11))
++  and a1, a1, a3
+   bne a0, a1, 2f
+   la a2, data1
+   csrw tdata2, a2
+@@ -63,6 +77,9 @@
+   csrw tdata1, a0
+   # Skip if breakpoint type is unsupported.
+   csrr a1, tdata1
++  # Ignore MASKMAX in WARL test
++  li a3, ~(0x3f << (__riscv_xlen - 11))
++  and a1, a1, a3
+   bne a0, a1, 2f
+ 
+   # Trap handler should skip this instruction.

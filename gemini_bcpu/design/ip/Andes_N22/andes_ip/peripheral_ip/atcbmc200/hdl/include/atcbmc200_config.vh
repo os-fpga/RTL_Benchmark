@@ -1,0 +1,435 @@
+`ifdef ATCBMC200_CONFIG_VH
+`else
+`define ATCBMC200_CONFIG_VH
+
+
+// ================================================================
+// Configurable Items of ATCBMC200
+// ================================================================
+
+//-------------------------------------------------
+// Address Mapping Mode
+//-------------------------------------------------
+//`define ATCBMC200_ADDR_WIDTH_24
+
+//-------------------------------------------------
+// Data Width
+//-------------------------------------------------
+//`define ATCBMC200_DATA_WIDTH_256
+//`define ATCBMC200_DATA_WIDTH_128
+//`define ATCBMC200_DATA_WIDTH_64
+
+//-------------------------------------------------
+// Other Feature
+//-------------------------------------------------
+//`define ATCBMC200_EXT_ENABLE
+//`define ATCBMC200_PRIORITY_DECODE
+
+//-------------------------------------------------
+// AHB Master Ports
+//-------------------------------------------------
+`define ATCBMC200_AHB_MST0
+`define ATCBMC200_AHB_MST1
+`define ATCBMC200_AHB_MST2
+//`define ATCBMC200_AHB_MST3
+//`define ATCBMC200_AHB_MST4
+//`define ATCBMC200_AHB_MST5
+//`define ATCBMC200_AHB_MST6
+//`define ATCBMC200_AHB_MST7
+//`define ATCBMC200_AHB_MST8
+//`define ATCBMC200_AHB_MST9
+//`define ATCBMC200_AHB_MST10
+//`define ATCBMC200_AHB_MST11
+//`define ATCBMC200_AHB_MST12
+//`define ATCBMC200_AHB_MST13
+//`define ATCBMC200_AHB_MST14
+//`define ATCBMC200_AHB_MST15
+
+
+//-------------------------------------------------
+// AHB Slave Ports
+//-------------------------------------------------
+`define ATCBMC200_AHB_SLV0
+`define ATCBMC200_AHB_SLV1
+`define ATCBMC200_AHB_SLV2
+`define ATCBMC200_AHB_SLV3
+//`define ATCBMC200_AHB_SLV4
+//`define ATCBMC200_AHB_SLV5
+//`define ATCBMC200_AHB_SLV6
+//`define ATCBMC200_AHB_SLV7
+//`define ATCBMC200_AHB_SLV8
+//`define ATCBMC200_AHB_SLV9
+//`define ATCBMC200_AHB_SLV10
+`define ATCBMC200_AHB_SLV11
+//`define ATCBMC200_AHB_SLV12
+//`define ATCBMC200_AHB_SLV13
+//`define ATCBMC200_AHB_SLV14
+`define ATCBMC200_AHB_SLV15
+
+//-------------------------------------------------
+// AHB Slave Base & Space Size
+//-------------------------------------------------
+`ifdef ATCBMC200_ADDR_WIDTH_24
+  `define ATCBMC200_AHB_SLV0_BASE  24'h00_0000
+  `define ATCBMC200_AHB_SLV1_BASE  24'h10_0000
+  `define ATCBMC200_AHB_SLV2_BASE  24'h20_0000
+  `define ATCBMC200_AHB_SLV3_BASE  24'h30_0000
+  `define ATCBMC200_AHB_SLV4_BASE  24'h40_0000
+  `define ATCBMC200_AHB_SLV5_BASE  24'h50_0000
+  `define ATCBMC200_AHB_SLV6_BASE  24'h60_0000
+  `define ATCBMC200_AHB_SLV7_BASE  24'h70_0000
+  `define ATCBMC200_AHB_SLV8_BASE  24'h80_0000
+  `define ATCBMC200_AHB_SLV9_BASE  24'h90_0000
+  `define ATCBMC200_AHB_SLV10_BASE 24'ha0_0000
+  `define ATCBMC200_AHB_SLV11_BASE 24'hb0_0000
+  `define ATCBMC200_AHB_SLV12_BASE 24'hc0_0000
+  `define ATCBMC200_AHB_SLV13_BASE 24'hd0_0000
+  `define ATCBMC200_AHB_SLV14_BASE 24'he0_0000
+  `define ATCBMC200_AHB_SLV15_BASE 24'hf0_0000
+`else // ATCBMC200_ADDR_WIDTH_24
+  `define ATCBMC200_AHB_SLV0_BASE  32'h0000_0000
+  `define ATCBMC200_AHB_SLV1_BASE  32'h0010_0000
+  `define ATCBMC200_AHB_SLV2_BASE  32'h0020_0000
+  `define ATCBMC200_AHB_SLV3_BASE  32'h0040_0000
+  `define ATCBMC200_AHB_SLV4_BASE  32'h0070_0000
+  `define ATCBMC200_AHB_SLV5_BASE  32'h0080_0000
+  `define ATCBMC200_AHB_SLV6_BASE  32'h0090_0000
+  `define ATCBMC200_AHB_SLV7_BASE  32'h00a0_0000
+  `define ATCBMC200_AHB_SLV8_BASE  32'h00b0_0000
+  `define ATCBMC200_AHB_SLV9_BASE  32'h00c0_0000
+  `define ATCBMC200_AHB_SLV10_BASE 32'h00d0_0000
+  `define ATCBMC200_AHB_SLV11_BASE 32'h00e0_0000
+  `define ATCBMC200_AHB_SLV12_BASE 32'h00f0_0000
+  `define ATCBMC200_AHB_SLV13_BASE 32'h0100_0000
+  `define ATCBMC200_AHB_SLV14_BASE 32'h0110_0000
+  `define ATCBMC200_AHB_SLV15_BASE 32'h0120_0000
+`endif // ATCBMC200_ADDR_WIDTH_24
+
+`define ATCBMC200_AHB_SLV1_SIZE  4'h1
+`define ATCBMC200_AHB_SLV2_SIZE  4'h2
+`define ATCBMC200_AHB_SLV3_SIZE  4'h3
+`define ATCBMC200_AHB_SLV4_SIZE  4'h0
+`define ATCBMC200_AHB_SLV5_SIZE  4'h0
+`define ATCBMC200_AHB_SLV6_SIZE  4'h0
+`define ATCBMC200_AHB_SLV7_SIZE  4'h0
+`define ATCBMC200_AHB_SLV8_SIZE  4'h0
+`define ATCBMC200_AHB_SLV9_SIZE  4'h0
+`define ATCBMC200_AHB_SLV10_SIZE 4'h0
+`define ATCBMC200_AHB_SLV11_SIZE 4'h1
+`define ATCBMC200_AHB_SLV12_SIZE 4'h0
+`define ATCBMC200_AHB_SLV13_SIZE 4'h0
+`define ATCBMC200_AHB_SLV14_SIZE 4'h0
+`define ATCBMC200_AHB_SLV15_SIZE 4'h1
+
+//-------------------------------------------------
+// AHB Master & Slave Ports Connectivity
+//-------------------------------------------------
+`ifdef ATCBMC200_AHB_MST0
+    `define ATCBMC200_MST0_SLV0
+    `define ATCBMC200_MST0_SLV1
+    `define ATCBMC200_MST0_SLV2
+    `define ATCBMC200_MST0_SLV3
+    //`define ATCBMC200_MST0_SLV4
+    //`define ATCBMC200_MST0_SLV5
+    //`define ATCBMC200_MST0_SLV6
+    //`define ATCBMC200_MST0_SLV7
+    //`define ATCBMC200_MST0_SLV8
+    //`define ATCBMC200_MST0_SLV9
+    //`define ATCBMC200_MST0_SLV10
+    `define ATCBMC200_MST0_SLV11
+    //`define ATCBMC200_MST0_SLV12
+    //`define ATCBMC200_MST0_SLV13
+    //`define ATCBMC200_MST0_SLV14
+    `define ATCBMC200_MST0_SLV15
+`endif //ATCBMC200_AHB_MST0
+
+`ifdef ATCBMC200_AHB_MST1
+  `define ATCBMC200_MST1_SLV0
+  `define ATCBMC200_MST1_SLV1
+  `define ATCBMC200_MST1_SLV2
+  `define ATCBMC200_MST1_SLV3
+  //`define ATCBMC200_MST1_SLV4
+  //`define ATCBMC200_MST1_SLV5
+  //`define ATCBMC200_MST1_SLV6
+  //`define ATCBMC200_MST1_SLV7
+  //`define ATCBMC200_MST1_SLV8
+  //`define ATCBMC200_MST1_SLV9
+  //`define ATCBMC200_MST1_SLV10
+  //`define ATCBMC200_MST1_SLV11
+  //`define ATCBMC200_MST1_SLV12
+  //`define ATCBMC200_MST1_SLV13
+  //`define ATCBMC200_MST1_SLV14
+  `define ATCBMC200_MST1_SLV15
+`endif // ATCBMC200_AHB_MST1
+
+// VPERL_BEGIN
+// $MST_NUM = 16;
+// $SLV_NUM = 16;
+//
+// for($i = 2; $i < $MST_NUM; ++$i) {
+//: `ifdef ATCBMC200_AHB_MST${i}
+// for($j = 0; $j < $SLV_NUM; ++$j) {
+//:   //`define ATCBMC200_MST${i}_SLV${j}
+// }
+//: `endif // ATCBMC200_AHB_MST${i}
+// }
+// VPERL_END
+
+// VPERL_GENERATED_BEGIN
+`ifdef ATCBMC200_AHB_MST2
+  `define ATCBMC200_MST2_SLV0
+  //`define ATCBMC200_MST2_SLV1
+  //`define ATCBMC200_MST2_SLV2
+  //`define ATCBMC200_MST2_SLV3
+  //`define ATCBMC200_MST2_SLV4
+  //`define ATCBMC200_MST2_SLV5
+  //`define ATCBMC200_MST2_SLV6
+  //`define ATCBMC200_MST2_SLV7
+  //`define ATCBMC200_MST2_SLV8
+  //`define ATCBMC200_MST2_SLV9
+  //`define ATCBMC200_MST2_SLV10
+  //`define ATCBMC200_MST2_SLV11
+  //`define ATCBMC200_MST2_SLV12
+  //`define ATCBMC200_MST2_SLV13
+  //`define ATCBMC200_MST2_SLV14
+  `define ATCBMC200_MST2_SLV15
+`endif // ATCBMC200_AHB_MST2
+`ifdef ATCBMC200_AHB_MST3
+  //`define ATCBMC200_MST3_SLV0
+  //`define ATCBMC200_MST3_SLV1
+  //`define ATCBMC200_MST3_SLV2
+  //`define ATCBMC200_MST3_SLV3
+  //`define ATCBMC200_MST3_SLV4
+  //`define ATCBMC200_MST3_SLV5
+  //`define ATCBMC200_MST3_SLV6
+  //`define ATCBMC200_MST3_SLV7
+  //`define ATCBMC200_MST3_SLV8
+  //`define ATCBMC200_MST3_SLV9
+  //`define ATCBMC200_MST3_SLV10
+  //`define ATCBMC200_MST3_SLV11
+  //`define ATCBMC200_MST3_SLV12
+  //`define ATCBMC200_MST3_SLV13
+  //`define ATCBMC200_MST3_SLV14
+  //`define ATCBMC200_MST3_SLV15
+`endif // ATCBMC200_AHB_MST3
+`ifdef ATCBMC200_AHB_MST4
+  //`define ATCBMC200_MST4_SLV0
+  //`define ATCBMC200_MST4_SLV1
+  //`define ATCBMC200_MST4_SLV2
+  //`define ATCBMC200_MST4_SLV3
+  //`define ATCBMC200_MST4_SLV4
+  //`define ATCBMC200_MST4_SLV5
+  //`define ATCBMC200_MST4_SLV6
+  //`define ATCBMC200_MST4_SLV7
+  //`define ATCBMC200_MST4_SLV8
+  //`define ATCBMC200_MST4_SLV9
+  //`define ATCBMC200_MST4_SLV10
+  //`define ATCBMC200_MST4_SLV11
+  //`define ATCBMC200_MST4_SLV12
+  //`define ATCBMC200_MST4_SLV13
+  //`define ATCBMC200_MST4_SLV14
+  //`define ATCBMC200_MST4_SLV15
+`endif // ATCBMC200_AHB_MST4
+`ifdef ATCBMC200_AHB_MST5
+  //`define ATCBMC200_MST5_SLV0
+  //`define ATCBMC200_MST5_SLV1
+  //`define ATCBMC200_MST5_SLV2
+  //`define ATCBMC200_MST5_SLV3
+  //`define ATCBMC200_MST5_SLV4
+  //`define ATCBMC200_MST5_SLV5
+  //`define ATCBMC200_MST5_SLV6
+  //`define ATCBMC200_MST5_SLV7
+  //`define ATCBMC200_MST5_SLV8
+  //`define ATCBMC200_MST5_SLV9
+  //`define ATCBMC200_MST5_SLV10
+  //`define ATCBMC200_MST5_SLV11
+  //`define ATCBMC200_MST5_SLV12
+  //`define ATCBMC200_MST5_SLV13
+  //`define ATCBMC200_MST5_SLV14
+  //`define ATCBMC200_MST5_SLV15
+`endif // ATCBMC200_AHB_MST5
+`ifdef ATCBMC200_AHB_MST6
+  //`define ATCBMC200_MST6_SLV0
+  //`define ATCBMC200_MST6_SLV1
+  //`define ATCBMC200_MST6_SLV2
+  //`define ATCBMC200_MST6_SLV3
+  //`define ATCBMC200_MST6_SLV4
+  //`define ATCBMC200_MST6_SLV5
+  //`define ATCBMC200_MST6_SLV6
+  //`define ATCBMC200_MST6_SLV7
+  //`define ATCBMC200_MST6_SLV8
+  //`define ATCBMC200_MST6_SLV9
+  //`define ATCBMC200_MST6_SLV10
+  //`define ATCBMC200_MST6_SLV11
+  //`define ATCBMC200_MST6_SLV12
+  //`define ATCBMC200_MST6_SLV13
+  //`define ATCBMC200_MST6_SLV14
+  //`define ATCBMC200_MST6_SLV15
+`endif // ATCBMC200_AHB_MST6
+`ifdef ATCBMC200_AHB_MST7
+  //`define ATCBMC200_MST7_SLV0
+  //`define ATCBMC200_MST7_SLV1
+  //`define ATCBMC200_MST7_SLV2
+  //`define ATCBMC200_MST7_SLV3
+  //`define ATCBMC200_MST7_SLV4
+  //`define ATCBMC200_MST7_SLV5
+  //`define ATCBMC200_MST7_SLV6
+  //`define ATCBMC200_MST7_SLV7
+  //`define ATCBMC200_MST7_SLV8
+  //`define ATCBMC200_MST7_SLV9
+  //`define ATCBMC200_MST7_SLV10
+  //`define ATCBMC200_MST7_SLV11
+  //`define ATCBMC200_MST7_SLV12
+  //`define ATCBMC200_MST7_SLV13
+  //`define ATCBMC200_MST7_SLV14
+  //`define ATCBMC200_MST7_SLV15
+`endif // ATCBMC200_AHB_MST7
+`ifdef ATCBMC200_AHB_MST8
+  //`define ATCBMC200_MST8_SLV0
+  //`define ATCBMC200_MST8_SLV1
+  //`define ATCBMC200_MST8_SLV2
+  //`define ATCBMC200_MST8_SLV3
+  //`define ATCBMC200_MST8_SLV4
+  //`define ATCBMC200_MST8_SLV5
+  //`define ATCBMC200_MST8_SLV6
+  //`define ATCBMC200_MST8_SLV7
+  //`define ATCBMC200_MST8_SLV8
+  //`define ATCBMC200_MST8_SLV9
+  //`define ATCBMC200_MST8_SLV10
+  //`define ATCBMC200_MST8_SLV11
+  //`define ATCBMC200_MST8_SLV12
+  //`define ATCBMC200_MST8_SLV13
+  //`define ATCBMC200_MST8_SLV14
+  //`define ATCBMC200_MST8_SLV15
+`endif // ATCBMC200_AHB_MST8
+`ifdef ATCBMC200_AHB_MST9
+  //`define ATCBMC200_MST9_SLV0
+  //`define ATCBMC200_MST9_SLV1
+  //`define ATCBMC200_MST9_SLV2
+  //`define ATCBMC200_MST9_SLV3
+  //`define ATCBMC200_MST9_SLV4
+  //`define ATCBMC200_MST9_SLV5
+  //`define ATCBMC200_MST9_SLV6
+  //`define ATCBMC200_MST9_SLV7
+  //`define ATCBMC200_MST9_SLV8
+  //`define ATCBMC200_MST9_SLV9
+  //`define ATCBMC200_MST9_SLV10
+  //`define ATCBMC200_MST9_SLV11
+  //`define ATCBMC200_MST9_SLV12
+  //`define ATCBMC200_MST9_SLV13
+  //`define ATCBMC200_MST9_SLV14
+  //`define ATCBMC200_MST9_SLV15
+`endif // ATCBMC200_AHB_MST9
+`ifdef ATCBMC200_AHB_MST10
+  //`define ATCBMC200_MST10_SLV0
+  //`define ATCBMC200_MST10_SLV1
+  //`define ATCBMC200_MST10_SLV2
+  //`define ATCBMC200_MST10_SLV3
+  //`define ATCBMC200_MST10_SLV4
+  //`define ATCBMC200_MST10_SLV5
+  //`define ATCBMC200_MST10_SLV6
+  //`define ATCBMC200_MST10_SLV7
+  //`define ATCBMC200_MST10_SLV8
+  //`define ATCBMC200_MST10_SLV9
+  //`define ATCBMC200_MST10_SLV10
+  //`define ATCBMC200_MST10_SLV11
+  //`define ATCBMC200_MST10_SLV12
+  //`define ATCBMC200_MST10_SLV13
+  //`define ATCBMC200_MST10_SLV14
+  //`define ATCBMC200_MST10_SLV15
+`endif // ATCBMC200_AHB_MST10
+`ifdef ATCBMC200_AHB_MST11
+  //`define ATCBMC200_MST11_SLV0
+  //`define ATCBMC200_MST11_SLV1
+  //`define ATCBMC200_MST11_SLV2
+  //`define ATCBMC200_MST11_SLV3
+  //`define ATCBMC200_MST11_SLV4
+  //`define ATCBMC200_MST11_SLV5
+  //`define ATCBMC200_MST11_SLV6
+  //`define ATCBMC200_MST11_SLV7
+  //`define ATCBMC200_MST11_SLV8
+  //`define ATCBMC200_MST11_SLV9
+  //`define ATCBMC200_MST11_SLV10
+  //`define ATCBMC200_MST11_SLV11
+  //`define ATCBMC200_MST11_SLV12
+  //`define ATCBMC200_MST11_SLV13
+  //`define ATCBMC200_MST11_SLV14
+  //`define ATCBMC200_MST11_SLV15
+`endif // ATCBMC200_AHB_MST11
+`ifdef ATCBMC200_AHB_MST12
+  //`define ATCBMC200_MST12_SLV0
+  //`define ATCBMC200_MST12_SLV1
+  //`define ATCBMC200_MST12_SLV2
+  //`define ATCBMC200_MST12_SLV3
+  //`define ATCBMC200_MST12_SLV4
+  //`define ATCBMC200_MST12_SLV5
+  //`define ATCBMC200_MST12_SLV6
+  //`define ATCBMC200_MST12_SLV7
+  //`define ATCBMC200_MST12_SLV8
+  //`define ATCBMC200_MST12_SLV9
+  //`define ATCBMC200_MST12_SLV10
+  //`define ATCBMC200_MST12_SLV11
+  //`define ATCBMC200_MST12_SLV12
+  //`define ATCBMC200_MST12_SLV13
+  //`define ATCBMC200_MST12_SLV14
+  //`define ATCBMC200_MST12_SLV15
+`endif // ATCBMC200_AHB_MST12
+`ifdef ATCBMC200_AHB_MST13
+  //`define ATCBMC200_MST13_SLV0
+  //`define ATCBMC200_MST13_SLV1
+  //`define ATCBMC200_MST13_SLV2
+  //`define ATCBMC200_MST13_SLV3
+  //`define ATCBMC200_MST13_SLV4
+  //`define ATCBMC200_MST13_SLV5
+  //`define ATCBMC200_MST13_SLV6
+  //`define ATCBMC200_MST13_SLV7
+  //`define ATCBMC200_MST13_SLV8
+  //`define ATCBMC200_MST13_SLV9
+  //`define ATCBMC200_MST13_SLV10
+  //`define ATCBMC200_MST13_SLV11
+  //`define ATCBMC200_MST13_SLV12
+  //`define ATCBMC200_MST13_SLV13
+  //`define ATCBMC200_MST13_SLV14
+  //`define ATCBMC200_MST13_SLV15
+`endif // ATCBMC200_AHB_MST13
+`ifdef ATCBMC200_AHB_MST14
+  //`define ATCBMC200_MST14_SLV0
+  //`define ATCBMC200_MST14_SLV1
+  //`define ATCBMC200_MST14_SLV2
+  //`define ATCBMC200_MST14_SLV3
+  //`define ATCBMC200_MST14_SLV4
+  //`define ATCBMC200_MST14_SLV5
+  //`define ATCBMC200_MST14_SLV6
+  //`define ATCBMC200_MST14_SLV7
+  //`define ATCBMC200_MST14_SLV8
+  //`define ATCBMC200_MST14_SLV9
+  //`define ATCBMC200_MST14_SLV10
+  //`define ATCBMC200_MST14_SLV11
+  //`define ATCBMC200_MST14_SLV12
+  //`define ATCBMC200_MST14_SLV13
+  //`define ATCBMC200_MST14_SLV14
+  //`define ATCBMC200_MST14_SLV15
+`endif // ATCBMC200_AHB_MST14
+`ifdef ATCBMC200_AHB_MST15
+  //`define ATCBMC200_MST15_SLV0
+  //`define ATCBMC200_MST15_SLV1
+  //`define ATCBMC200_MST15_SLV2
+  //`define ATCBMC200_MST15_SLV3
+  //`define ATCBMC200_MST15_SLV4
+  //`define ATCBMC200_MST15_SLV5
+  //`define ATCBMC200_MST15_SLV6
+  //`define ATCBMC200_MST15_SLV7
+  //`define ATCBMC200_MST15_SLV8
+  //`define ATCBMC200_MST15_SLV9
+  //`define ATCBMC200_MST15_SLV10
+  //`define ATCBMC200_MST15_SLV11
+  //`define ATCBMC200_MST15_SLV12
+  //`define ATCBMC200_MST15_SLV13
+  //`define ATCBMC200_MST15_SLV14
+  //`define ATCBMC200_MST15_SLV15
+`endif // ATCBMC200_AHB_MST15
+// VPERL_GENERATED_END
+
+`endif // ATCBMC200_CONFIG_VH
+
+

@@ -1,0 +1,10 @@
+/cygdrive/c/work/gemini/gemini/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd.lef
+/cygdrive/c/work/gemini/gemini/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ant.lef
+/home/gdavydov/git/gemini/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd.lef
+/home/gdavydov/git/gemini/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ant.lef
+$ABS_PATH_GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd.lef
+$ABS_PATH_GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ant.lef
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd.lef
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ant.lef
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd.lef
+$GEMINI/design/ip/Andes_N22/../../../lib/mem/dti_sp_tm16fcll_8192x32_16byw2x_m_shd/dti_sp_tm16fcll_8192x32_16byw2x_m_shd_ant.lef

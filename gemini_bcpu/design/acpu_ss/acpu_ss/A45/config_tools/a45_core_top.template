@@ -1,0 +1,4280 @@
+// Copyright (C) 2022, Andes Technology Corp. Confidential Proprietary
+
+
+`include "config.inc"
+`include "global.inc"
+
+
+
+module a45_core_top (
+`ifdef NDS_IO_SLAVEPORT_COMMON_X2
+	  slv1_araddr,
+	  slv1_arburst,
+	  slv1_arcache,
+	  slv1_arid,
+	  slv1_arlen,
+	  slv1_arlock,
+	  slv1_arprot,
+	  slv1_arready,
+	  slv1_arsize,
+	  slv1_aruser,
+	  slv1_arvalid,
+	  slv1_awaddr,
+	  slv1_awburst,
+	  slv1_awcache,
+	  slv1_awid,
+	  slv1_awlen,
+	  slv1_awlock,
+	  slv1_awprot,
+	  slv1_awready,
+	  slv1_awsize,
+	  slv1_awuser,
+	  slv1_awvalid,
+	  slv1_bid,
+	  slv1_bready,
+	  slv1_bresp,
+	  slv1_bvalid,
+	  slv1_rdata,
+	  slv1_reset_n,
+	  slv1_rid,
+	  slv1_rlast,
+	  slv1_rready,
+	  slv1_rresp,
+	  slv1_rvalid,
+	  slv1_wdata,
+	  slv1_wlast,
+	  slv1_wready,
+	  slv1_wstrb,
+	  slv1_wvalid,
+`endif
+`ifdef NDS_IO_LM
+	  lm_local_int,
+	  lm_clk,
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC
+	  slv_clk_en,
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC
+	  slv_clk,
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC_X2
+	  slv1_clk_en,
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC_X2
+	  slv1_clk,
+`endif
+`ifdef NDS_IO_BIU_AXI_ASYNC
+	  bus_clk,
+`endif
+`ifdef NDS_IO_BIU_AXI_SYNC
+	  bus_clk_en,
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X2
+	  d_araddr,
+	  d_arburst,
+	  d_arcache,
+	  d_arid,
+	  d_arlen,
+	  d_arlock,
+	  d_arprot,
+	  d_arready,
+	  d_arsize,
+	  d_arvalid,
+	  d_awaddr,
+	  d_awburst,
+	  d_awcache,
+	  d_awid,
+	  d_awlen,
+	  d_awlock,
+	  d_awprot,
+	  d_awready,
+	  d_awsize,
+	  d_awvalid,
+	  d_bid,
+	  d_bready,
+	  d_bresp,
+	  d_bvalid,
+	  d_rdata,
+	  d_rid,
+	  d_rlast,
+	  d_rready,
+	  d_rresp,
+	  d_rvalid,
+	  d_wdata,
+	  d_wlast,
+	  d_wready,
+	  d_wstrb,
+	  d_wvalid,
+	  i_araddr,
+	  i_arburst,
+	  i_arcache,
+	  i_arid,
+	  i_arlen,
+	  i_arlock,
+	  i_arprot,
+	  i_arready,
+	  i_arsize,
+	  i_arvalid,
+	  i_awaddr,
+	  i_awburst,
+	  i_awcache,
+	  i_awid,
+	  i_awlen,
+	  i_awlock,
+	  i_awprot,
+	  i_awready,
+	  i_awsize,
+	  i_awvalid,
+	  i_bid,
+	  i_bready,
+	  i_bresp,
+	  i_bvalid,
+	  i_rdata,
+	  i_rid,
+	  i_rlast,
+	  i_rready,
+	  i_rresp,
+	  i_rvalid,
+	  i_wdata,
+	  i_wlast,
+	  i_wready,
+	  i_wstrb,
+	  i_wvalid,
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X1
+	  araddr,
+	  arburst,
+	  arcache,
+	  arid,
+	  arlen,
+	  arlock,
+	  arprot,
+	  arready,
+	  arsize,
+	  arvalid,
+	  awaddr,
+	  awburst,
+	  awcache,
+	  awid,
+	  awlen,
+	  awlock,
+	  awprot,
+	  awready,
+	  awsize,
+	  awvalid,
+	  bid,
+	  bready,
+	  bresp,
+	  bvalid,
+	  rdata,
+	  rid,
+	  rlast,
+	  rready,
+	  rresp,
+	  rvalid,
+	  wdata,
+	  wlast,
+	  wready,
+	  wstrb,
+	  wvalid,
+`endif
+`ifdef NDS_IO_SLAVEPORT_COMMON_X1
+	  slv_araddr,
+	  slv_arburst,
+	  slv_arcache,
+	  slv_arid,
+	  slv_arlen,
+	  slv_arlock,
+	  slv_arprot,
+	  slv_arready,
+	  slv_arsize,
+	  slv_aruser,
+	  slv_arvalid,
+	  slv_awaddr,
+	  slv_awburst,
+	  slv_awcache,
+	  slv_awid,
+	  slv_awlen,
+	  slv_awlock,
+	  slv_awprot,
+	  slv_awready,
+	  slv_awsize,
+	  slv_awuser,
+	  slv_awvalid,
+	  slv_bid,
+	  slv_bready,
+	  slv_bresp,
+	  slv_bvalid,
+	  slv_rdata,
+	  slv_rid,
+	  slv_rlast,
+	  slv_rready,
+	  slv_rresp,
+	  slv_rvalid,
+	  slv_wdata,
+	  slv_wlast,
+	  slv_wready,
+	  slv_wstrb,
+	  slv_wvalid,
+	  slv_reset_n,
+`endif
+`ifdef NDS_IO_LM_RESET
+	  lm_reset_n,
+`endif
+`ifdef NDS_IO_ILM_TL_UL
+	  ilm_a_addr,
+	  ilm_a_data,
+	  ilm_a_mask,
+	  ilm_a_opcode,
+	  ilm_a_parity0,
+	  ilm_a_parity1,
+	  ilm_a_ready,
+	  ilm_a_size,
+	  ilm_a_user,
+	  ilm_a_valid,
+	  ilm_d_data,
+	  ilm_d_denied,
+	  ilm_d_parity0,
+	  ilm_d_parity1,
+	  ilm_d_ready,
+	  ilm_d_valid,
+`endif
+`ifdef NDS_IO_DLM_TL_UL
+	  dlm_a_addr,
+	  dlm_a_data,
+	  dlm_a_mask,
+	  dlm_a_opcode,
+	  dlm_a_parity,
+	  dlm_a_ready,
+	  dlm_a_size,
+	  dlm_a_user,
+	  dlm_a_valid,
+	  dlm_d_data,
+	  dlm_d_denied,
+	  dlm_d_parity,
+	  dlm_d_ready,
+	  dlm_d_valid,
+`endif
+`ifdef NDS_IO_ICACHE0
+	  icache_disable_init,
+`endif
+`ifdef NDS_IO_DCACHE0
+	  dcache_disable_init,
+`endif
+`ifdef NDS_IO_PROBING
+	  core_current_pc,
+	  core_gpr_index,
+	  core_selected_gpr_value,
+`endif
+`ifdef NDS_IO_SEIP
+	  seip,
+	  seiack,
+	  seiid,
+`endif
+`ifdef NDS_IO_UEIP
+	  ueip,
+	  ueiack,
+	  ueiid,
+`endif
+`ifdef NDS_IO_DEBUG
+	  debugint,
+	  resethaltreq,
+	  hart_unavail,
+	  hart_halted,
+	  hart_under_reset,
+	  stoptime,
+`endif
+`ifdef NDS_IO_TRACE_INSTR_GEN1
+	  gen1_trace_enabled,
+	  gen1_trace_ivalid,
+	  gen1_trace_iexception,
+	  gen1_trace_interrupt,
+	  gen1_trace_cause,
+	  gen1_trace_priv,
+	  gen1_trace_tval,
+	  gen1_trace_instr,
+	  gen1_trace_iaddr,
+`endif
+`ifdef NDS_IO_TRACE_INSTR
+	  trace_cause,
+	  trace_enabled,
+	  trace_halted,
+	  trace_iaddr,
+	  trace_ilastsize,
+	  trace_iretire,
+	  trace_itype,
+	  trace_priv,
+	  trace_reset,
+	  trace_trigger,
+	  trace_tval,
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_IN
+	  btb0_ctrl_in,
+	  btb1_ctrl_in,
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_OUT
+	  btb0_ctrl_out,
+	  btb1_ctrl_out,
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_IN
+	  dcache_data0_ctrl_in,
+	  dcache_data1_ctrl_in,
+	  dcache_data2_ctrl_in,
+	  dcache_data3_ctrl_in,
+	  dcache_tag0_ctrl_in,
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+	  dcache_data0_ctrl_out,
+	  dcache_data1_ctrl_out,
+	  dcache_data2_ctrl_out,
+	  dcache_data3_ctrl_out,
+	  dcache_tag0_ctrl_out,
+`endif
+`ifdef NDS_IO_DCACHE1_CTRL_IN
+	  dcache_tag1_ctrl_in,
+`endif
+`ifdef NDS_IO_DCACHE1_CTRL_OUT
+	  dcache_tag1_ctrl_out,
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_IN
+	  dcache_tag2_ctrl_in,
+	  dcache_tag3_ctrl_in,
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_OUT
+	  dcache_tag2_ctrl_out,
+	  dcache_tag3_ctrl_out,
+`endif
+`ifdef NDS_IO_DLM_RAM0_CTRL_IN
+	  dlm_ctrl_in,
+`endif
+`ifdef NDS_IO_DLM_RAM0_CTRL_OUT
+	  dlm_ctrl_out,
+`endif
+`ifdef NDS_IO_DLM_RAM1_CTRL_IN
+	  dlm1_ctrl_in,
+`endif
+`ifdef NDS_IO_DLM_RAM1_CTRL_OUT
+	  dlm1_ctrl_out,
+`endif
+`ifdef NDS_IO_DLM_RAM2_CTRL_IN
+	  dlm2_ctrl_in,
+`endif
+`ifdef NDS_IO_DLM_RAM2_CTRL_OUT
+	  dlm2_ctrl_out,
+`endif
+`ifdef NDS_IO_DLM_RAM3_CTRL_IN
+	  dlm3_ctrl_in,
+`endif
+`ifdef NDS_IO_DLM_RAM3_CTRL_OUT
+	  dlm3_ctrl_out,
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_IN
+	  icache_data0_ctrl_in,
+	  icache_data1_ctrl_in,
+	  icache_data2_ctrl_in,
+	  icache_data3_ctrl_in,
+	  icache_data4_ctrl_in,
+	  icache_data5_ctrl_in,
+	  icache_data6_ctrl_in,
+	  icache_data7_ctrl_in,
+	  icache_tag0_ctrl_in,
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+	  icache_data0_ctrl_out,
+	  icache_data1_ctrl_out,
+	  icache_data2_ctrl_out,
+	  icache_data3_ctrl_out,
+	  icache_data4_ctrl_out,
+	  icache_data5_ctrl_out,
+	  icache_data6_ctrl_out,
+	  icache_data7_ctrl_out,
+	  icache_tag0_ctrl_out,
+`endif
+`ifdef NDS_IO_ICACHE1_CTRL_IN
+	  icache_tag1_ctrl_in,
+`endif
+`ifdef NDS_IO_ICACHE1_CTRL_OUT
+	  icache_tag1_ctrl_out,
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_IN
+	  icache_tag2_ctrl_in,
+	  icache_tag3_ctrl_in,
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_OUT
+	  icache_tag2_ctrl_out,
+	  icache_tag3_ctrl_out,
+`endif
+`ifdef NDS_IO_ILM_RAM0_CTRL_IN
+	  ilm0_ctrl_in,
+`endif
+`ifdef NDS_IO_ILM_RAM0_CTRL_OUT
+	  ilm0_ctrl_out,
+`endif
+`ifdef NDS_IO_ILM_RAM1_CTRL_IN
+	  ilm1_ctrl_in,
+`endif
+`ifdef NDS_IO_ILM_RAM1_CTRL_OUT
+	  ilm1_ctrl_out,
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+	  stlb0_ctrl_in,
+	  stlb1_ctrl_in,
+	  stlb2_ctrl_in,
+	  stlb3_ctrl_in,
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+	  stlb0_ctrl_out,
+	  stlb1_ctrl_out,
+	  stlb2_ctrl_out,
+	  stlb3_ctrl_out,
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+	  stlb_data0_ctrl_in,
+	  stlb_data1_ctrl_in,
+	  stlb_data2_ctrl_in,
+	  stlb_data3_ctrl_in,
+	  stlb_tag0_ctrl_in,
+	  stlb_tag1_ctrl_in,
+	  stlb_tag2_ctrl_in,
+	  stlb_tag3_ctrl_in,
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+	  stlb_data0_ctrl_out,
+	  stlb_data1_ctrl_out,
+	  stlb_data2_ctrl_out,
+	  stlb_data3_ctrl_out,
+	  stlb_tag0_ctrl_out,
+	  stlb_tag1_ctrl_out,
+	  stlb_tag2_ctrl_out,
+	  stlb_tag3_ctrl_out,
+`endif
+	  hart_id,
+	  core_clk,
+	  core_reset_n,
+	  test_mode,
+	  scan_enable,
+	  core_wfi_mode,
+	  reset_vector,
+	  nmi,
+	  meip,
+	  meiack,
+	  meiid,
+	  mtip,
+	  msip
+);
+
+parameter ILM_BASE                     = `NDS_ILM_BASE;
+parameter DLM_BASE                     = `NDS_DLM_BASE;
+parameter DEBUG_VEC                    = `NDS_DEBUG_VEC;
+parameter DEVICE_REGION0_BASE		= `NDS_DEVICE_REGION0_BASE;
+parameter DEVICE_REGION0_MASK		= `NDS_DEVICE_REGION0_MASK;
+parameter DEVICE_REGION1_BASE		= `NDS_DEVICE_REGION1_BASE;
+parameter DEVICE_REGION1_MASK		= `NDS_DEVICE_REGION1_MASK;
+parameter DEVICE_REGION2_BASE		= `NDS_DEVICE_REGION2_BASE;
+parameter DEVICE_REGION2_MASK		= `NDS_DEVICE_REGION2_MASK;
+parameter DEVICE_REGION3_BASE		= `NDS_DEVICE_REGION3_BASE;
+parameter DEVICE_REGION3_MASK		= `NDS_DEVICE_REGION3_MASK;
+parameter DEVICE_REGION4_BASE		= `NDS_DEVICE_REGION4_BASE;
+parameter DEVICE_REGION4_MASK		= `NDS_DEVICE_REGION4_MASK;
+parameter DEVICE_REGION5_BASE		= `NDS_DEVICE_REGION5_BASE;
+parameter DEVICE_REGION5_MASK		= `NDS_DEVICE_REGION5_MASK;
+parameter DEVICE_REGION6_BASE		= `NDS_DEVICE_REGION6_BASE;
+parameter DEVICE_REGION6_MASK		= `NDS_DEVICE_REGION6_MASK;
+parameter DEVICE_REGION7_BASE		= `NDS_DEVICE_REGION7_BASE;
+parameter DEVICE_REGION7_MASK		= `NDS_DEVICE_REGION7_MASK;
+parameter WRITETHROUGH_REGION0_BASE	= `NDS_WRITETHROUGH_REGION0_BASE;
+parameter WRITETHROUGH_REGION0_MASK	= `NDS_WRITETHROUGH_REGION0_MASK;
+parameter WRITETHROUGH_REGION1_BASE	= `NDS_WRITETHROUGH_REGION1_BASE;
+parameter WRITETHROUGH_REGION1_MASK	= `NDS_WRITETHROUGH_REGION1_MASK;
+parameter WRITETHROUGH_REGION2_BASE	= `NDS_WRITETHROUGH_REGION2_BASE;
+parameter WRITETHROUGH_REGION2_MASK	= `NDS_WRITETHROUGH_REGION2_MASK;
+parameter WRITETHROUGH_REGION3_BASE	= `NDS_WRITETHROUGH_REGION3_BASE;
+parameter WRITETHROUGH_REGION3_MASK	= `NDS_WRITETHROUGH_REGION3_MASK;
+parameter WRITETHROUGH_REGION4_BASE	= `NDS_WRITETHROUGH_REGION4_BASE;
+parameter WRITETHROUGH_REGION4_MASK	= `NDS_WRITETHROUGH_REGION4_MASK;
+parameter WRITETHROUGH_REGION5_BASE	= `NDS_WRITETHROUGH_REGION5_BASE;
+parameter WRITETHROUGH_REGION5_MASK	= `NDS_WRITETHROUGH_REGION5_MASK;
+parameter WRITETHROUGH_REGION6_BASE	= `NDS_WRITETHROUGH_REGION6_BASE;
+parameter WRITETHROUGH_REGION6_MASK	= `NDS_WRITETHROUGH_REGION6_MASK;
+parameter WRITETHROUGH_REGION7_BASE	= `NDS_WRITETHROUGH_REGION7_BASE;
+parameter WRITETHROUGH_REGION7_MASK	= `NDS_WRITETHROUGH_REGION7_MASK;
+parameter LOCALINT_SLPECC		= `NDS_LOCALINT_SLPECC;
+parameter LOCALINT_SBE			= `NDS_LOCALINT_SBE;
+parameter LOCALINT_HPMINT		= `NDS_LOCALINT_HPMINT;
+parameter L2_CLK_SYNC_STAGE            = `NDS_CORE_TO_L2_SYNC_STAGE;
+parameter CORE_CLK_SYNC_STAGE          = `NDS_L2_TO_CORE_SYNC_STAGE;
+
+localparam CPUID                   = `NDS_CPUID;
+localparam MIMPID                  = `NDS_CPU_MIMPID;
+localparam ACE_SUPPORT_INT	= `NDS_ACE_SUPPORT_INT;
+localparam BFLOAT16_SUPPORT_INT	= `NDS_BFLOAT16_SUPPORT_INT;
+localparam BIU_PATH_X2_INT	= `NDS_BIU_PATH_X2_INT;
+localparam BRANCH_PREDICTION_INT	= `NDS_BRANCH_PREDICTION_INT;
+localparam CLUSTER_SUPPORT_INT	= `NDS_CLUSTER_SUPPORT_INT;
+localparam CODENSE_SUPPORT_INT	= `NDS_CODENSE_SUPPORT_INT;
+localparam DCACHE_ECC_TYPE_INT	= `NDS_DCACHE_ECC_TYPE_INT;
+localparam DCACHE_LRU_INT	= `NDS_DCACHE_LRU_INT;
+localparam DCACHE_PREFETCH_SUPPORT_INT	= `NDS_DCACHE_PREFETCH_SUPPORT_INT;
+localparam DEBUG_SUPPORT_INT	= `NDS_DEBUG_SUPPORT_INT;
+localparam DLM_ECC_TYPE_INT	= `NDS_DLM_ECC_TYPE_INT;
+localparam DSP_SUPPORT_INT	= `NDS_DSP_SUPPORT_INT;
+localparam FENCE_FLUSH_DCACHE_INT	= `NDS_FENCE_FLUSH_DCACHE_INT;
+localparam FP16_SUPPORT_INT	= `NDS_FP16_SUPPORT_INT;
+localparam FPU_TYPE_INT	= `NDS_FPU_TYPE_INT;
+localparam ICACHE_ECC_TYPE_INT	= `NDS_ICACHE_ECC_TYPE_INT;
+localparam ICACHE_FIRST_WORD_FIRST_INT	= `NDS_ICACHE_FIRST_WORD_FIRST_INT;
+localparam ICACHE_LRU_INT	= `NDS_ICACHE_LRU_INT;
+localparam ILM_ECC_TYPE_INT	= `NDS_ILM_ECC_TYPE_INT;
+localparam ISA_BASE_INT	= `NDS_ISA_BASE_INT;
+localparam LM_ENABLE_CTRL_INT	= `NDS_LM_ENABLE_CTRL_INT;
+localparam LM_INTERFACE_INT	= `NDS_LM_INTERFACE_INT;
+localparam MMU_SCHEME_INT	= `NDS_MMU_SCHEME_INT;
+localparam MULTIPLIER_INT	= `NDS_MULTIPLIER_INT;
+localparam PC_GPR_PROBING_SUPPORT_INT	= `NDS_PC_GPR_PROBING_SUPPORT_INT;
+localparam PERFORMANCE_MONITOR_INT	= `NDS_PERFORMANCE_MONITOR_INT;
+localparam POWERBRAKE_SUPPORT_INT	= `NDS_POWERBRAKE_SUPPORT_INT;
+localparam RVA_SUPPORT_INT	= `NDS_RVA_SUPPORT_INT;
+localparam RVB_SUPPORT_INT	= `NDS_RVB_SUPPORT_INT;
+localparam RVC_SUPPORT_INT	= `NDS_RVC_SUPPORT_INT;
+localparam RVN_SUPPORT_INT	= `NDS_RVN_SUPPORT_INT;
+localparam RVV_SUPPORT_INT	= `NDS_RVV_SUPPORT_INT;
+localparam SLAVE_PORT_SUPPORT_INT	= `NDS_SLAVE_PORT_SUPPORT_INT;
+localparam STACKSAFE_SUPPORT_INT	= `NDS_STACKSAFE_SUPPORT_INT;
+localparam TRACE_INTERFACE_INT	= `NDS_TRACE_INTERFACE_INT;
+localparam UNALIGNED_ACCESS_INT	= `NDS_UNALIGNED_ACCESS_INT;
+localparam VECTOR_PLIC_SUPPORT_INT	= `NDS_VECTOR_PLIC_SUPPORT_INT;
+localparam WRITE_AROUND_SUPPORT_INT	= `NDS_WRITE_AROUND_SUPPORT_INT;
+localparam PUSHPOP_TYPE            = `NDS_PUSHPOP_TYPE;
+localparam SLAVE_PORT_ID_WIDTH     = `NDS_SLAVE_PORT_ID_WIDTH;
+localparam SLAVE_PORT_DATA_WIDTH	= `NDS_SLAVE_PORT_DATA_WIDTH;
+`ifdef NDS_IO_SLAVEPORT_COMMON_X2
+localparam SLAVE_PORT_SOURCE_NUM	= 2;
+`else
+localparam SLAVE_PORT_SOURCE_NUM	= 1;
+`endif
+localparam SLAVE_PORT_ASYNC_SUPPORT = `NDS_SLAVE_PORT_ASYNC_SUPPORT;
+localparam NUM_PRIVILEGE_LEVELS	= `NDS_NUM_PRIVILEGE_LEVELS;
+localparam NUM_DLM_BANKS		= `NDS_NUM_DLM_BANKS;
+localparam ITLB_ENTRIES            = `NDS_ITLB_ENTRIES;
+localparam DTLB_ENTRIES            = `NDS_DTLB_ENTRIES;
+localparam STLB_ENTRIES            = `NDS_STLB_ENTRIES;
+localparam STLB_SP_ENTRIES         = `NDS_STLB_SP_ENTRIES;
+localparam STLB_ECC_TYPE		= `NDS_STLB_ECC_TYPE;
+localparam STLB_RAM_AW		= `NDS_STLB_RAM_AW;
+localparam STLB_RAM_DW		= `NDS_STLB_RAM_DW;
+localparam STLB_TAG_RAM_DW		= `NDS_STLB_TAG_RAM_DW;
+localparam STLB_DATA_RAM_DW	= `NDS_STLB_DATA_RAM_DW;
+localparam TL_SINK_WIDTH           = `NDS_TL_SINK_WIDTH;
+localparam L2_SOURCE_WIDTH         = `NDS_L2_SOURCE_WIDTH;
+localparam L2_ADDR_WIDTH		= `NDS_BIU_ADDR_WIDTH;
+localparam L2_DATA_WIDTH		= `NDS_L2_DATA_WIDTH;
+localparam L2C_CACHE_SIZE_KB	= `NDS_L2C_CACHE_SIZE_KB;
+localparam L2C_REG_BASE            = `NDS_L2C_REG_BASE;
+localparam IOCP_NUM		= `NDS_IOCP_NUM;
+localparam NCORE_CLUSTER		= `NDS_NCORE_CLUSTER;
+localparam CORE_BRG_TYPE           = `NDS_CORE_BRG_TYPE;
+localparam CORE_BRG_ASYNC          = (CORE_BRG_TYPE == 2) ? 1 : 0;
+localparam CORE_BRG_REG            = (CORE_BRG_TYPE != 0) ? 1 : 0;
+localparam BIU_ASYNC_SUPPORT   	= `NDS_BIU_ASYNC_SUPPORT;
+localparam BIU_ADDR_WIDTH		= `NDS_BIU_ADDR_WIDTH;
+localparam PALEN			= `NDS_BIU_ADDR_WIDTH;
+localparam BIU_DATA_WIDTH		= `NDS_BIU_DATA_WIDTH;
+localparam BIU_ID_WIDTH		= `NDS_BIU_ID_WIDTH;
+localparam PMP_ENTRIES             = `NDS_PMP_ENTRIES;
+localparam PMP_GRANULARITY         = `NDS_PMP_GRANULARITY;
+localparam PMA_ENTRIES             = `NDS_PMA_ENTRIES;
+localparam ILM_SIZE_KB		= `NDS_ILM_SIZE_KB;
+localparam ILM_RAM_AW		= `NDS_ILM_RAM_AW;
+localparam ILM_RAM_DW		= `NDS_ILM_RAM_DW;
+localparam ILM_RAM_BWEW		= `NDS_ILM_RAM_BWEW;
+localparam ILM_WAIT_CYCLE		= `NDS_ILM_WAIT_CYCLE;
+localparam DLM_SIZE_KB		= `NDS_DLM_SIZE_KB;
+localparam DLM_RAM_AW		= `NDS_DLM_RAM_AW;
+localparam DLM_RAM_DW		= `NDS_DLM_RAM_DW;
+localparam DLM_RAM_BWEW		= `NDS_DLM_RAM_BWEW;
+localparam DLM_WAIT_CYCLE		= `NDS_DLM_WAIT_CYCLE;
+localparam CACHE_LINE_SIZE		= `NDS_CACHE_LINE_SIZE;
+localparam ICACHE_SIZE_KB		= `NDS_ICACHE_SIZE_KB;
+localparam ICACHE_WAY		= `NDS_ICACHE_WAY;
+localparam ICACHE_TAG_RAM_AW	= `NDS_ICACHE_TAG_RAM_AW;
+localparam ICACHE_TAG_RAM_DW	= `NDS_ICACHE_TAG_RAM_DW;
+localparam ICACHE_DATA_RAM_AW	= `NDS_ICACHE_DATA_RAM_AW;
+localparam ICACHE_DATA_RAM_DW	= `NDS_ICACHE_DATA_RAM_DW;
+localparam DCACHE_SIZE_KB		= `NDS_DCACHE_SIZE_KB;
+localparam DCACHE_WAY		= `NDS_DCACHE_WAY;
+localparam MSHR_DEPTH              = `NDS_MSHR_DEPTH;
+localparam DCACHE_TAG_RAM_AW	= `NDS_DCACHE_TAG_RAM_AW;
+localparam DCACHE_TAG_RAM_DW	= `NDS_DCACHE_TAG_RAM_DW;
+localparam DCACHE_DATA_RAM_AW	= `NDS_DCACHE_DATA_RAM_AW;
+localparam DCACHE_DATA_RAM_DW	= `NDS_DCACHE_DATA_RAM_DW;
+localparam DCACHE_DATA_RAM_BWEW    = `NDS_DCACHE_DATA_RAM_BWEW;
+localparam DCACHE_WPT_RAM_AW       = `NDS_DCACHE_WPT_RAM_AW;
+localparam DCACHE_WPT_RAM_DW       = `NDS_DCACHE_WPT_RAM_DW;
+localparam DCACHE_WPT_RAM_BWEW     = `NDS_DCACHE_WPT_RAM_BWEW;
+localparam CM_SUPPORT_INT          = `NDS_CM_SUPPORT_INT;
+localparam WPT_SUPPORT             = (`NDS_L2C_CACHE_SIZE_KB != 0);
+localparam VLEN                    = `NDS_VLEN;
+localparam NUM_TRIGGER		= `NDS_NUM_TRIGGER;
+localparam VALEN			= `NDS_VALEN;
+localparam XLEN                    = `NDS_XLEN;
+
+`ifdef NDS_IO_SLAVEPORT_COMMON_X2
+input                          [(BIU_ADDR_WIDTH-1):0] slv1_araddr;
+input                                           [1:0] slv1_arburst;
+input                                           [3:0] slv1_arcache;
+input                     [(SLAVE_PORT_ID_WIDTH-1):0] slv1_arid;
+input                                           [7:0] slv1_arlen;
+input                                                 slv1_arlock;
+input                                           [2:0] slv1_arprot;
+output                                                slv1_arready;
+input                                           [2:0] slv1_arsize;
+input                                                 slv1_aruser;
+input                                                 slv1_arvalid;
+input                          [(BIU_ADDR_WIDTH-1):0] slv1_awaddr;
+input                                           [1:0] slv1_awburst;
+input                                           [3:0] slv1_awcache;
+input                     [(SLAVE_PORT_ID_WIDTH-1):0] slv1_awid;
+input                                           [7:0] slv1_awlen;
+input                                                 slv1_awlock;
+input                                           [2:0] slv1_awprot;
+output                                                slv1_awready;
+input                                           [2:0] slv1_awsize;
+input                                                 slv1_awuser;
+input                                                 slv1_awvalid;
+output                    [(SLAVE_PORT_ID_WIDTH-1):0] slv1_bid;
+input                                                 slv1_bready;
+output                                          [1:0] slv1_bresp;
+output                                                slv1_bvalid;
+output                  [(SLAVE_PORT_DATA_WIDTH-1):0] slv1_rdata;
+input                                                 slv1_reset_n;
+output                    [(SLAVE_PORT_ID_WIDTH-1):0] slv1_rid;
+output                                                slv1_rlast;
+input                                                 slv1_rready;
+output                                          [1:0] slv1_rresp;
+output                                                slv1_rvalid;
+input                   [(SLAVE_PORT_DATA_WIDTH-1):0] slv1_wdata;
+input                                                 slv1_wlast;
+output                                                slv1_wready;
+input               [((SLAVE_PORT_DATA_WIDTH/8)-1):0] slv1_wstrb;
+input                                                 slv1_wvalid;
+`endif
+`ifdef NDS_IO_LM
+output                                                lm_local_int;
+input                                                 lm_clk;
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC
+input                                                 slv_clk_en;
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC
+input                                                 slv_clk;
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC_X2
+input                                                 slv1_clk_en;
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC_X2
+input                                                 slv1_clk;
+`endif
+`ifdef NDS_IO_BIU_AXI_ASYNC
+input                                                 bus_clk;
+`endif
+`ifdef NDS_IO_BIU_AXI_SYNC
+input                                                 bus_clk_en;
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X2
+output                         [(BIU_ADDR_WIDTH-1):0] d_araddr;
+output                                          [1:0] d_arburst;
+output                                          [3:0] d_arcache;
+output                           [(BIU_ID_WIDTH-1):0] d_arid;
+output                                          [7:0] d_arlen;
+output                                                d_arlock;
+output                                          [2:0] d_arprot;
+input                                                 d_arready;
+output                                          [2:0] d_arsize;
+output                                                d_arvalid;
+output                         [(BIU_ADDR_WIDTH-1):0] d_awaddr;
+output                                          [1:0] d_awburst;
+output                                          [3:0] d_awcache;
+output                           [(BIU_ID_WIDTH-1):0] d_awid;
+output                                          [7:0] d_awlen;
+output                                                d_awlock;
+output                                          [2:0] d_awprot;
+input                                                 d_awready;
+output                                          [2:0] d_awsize;
+output                                                d_awvalid;
+input                            [(BIU_ID_WIDTH-1):0] d_bid;
+output                                                d_bready;
+input                                           [1:0] d_bresp;
+input                                                 d_bvalid;
+input                          [(BIU_DATA_WIDTH-1):0] d_rdata;
+input                            [(BIU_ID_WIDTH-1):0] d_rid;
+input                                                 d_rlast;
+output                                                d_rready;
+input                                           [1:0] d_rresp;
+input                                                 d_rvalid;
+output                         [(BIU_DATA_WIDTH-1):0] d_wdata;
+output                                                d_wlast;
+input                                                 d_wready;
+output                       [(BIU_DATA_WIDTH/8)-1:0] d_wstrb;
+output                                                d_wvalid;
+output                         [(BIU_ADDR_WIDTH-1):0] i_araddr;
+output                                          [1:0] i_arburst;
+output                                          [3:0] i_arcache;
+output                           [(BIU_ID_WIDTH-1):0] i_arid;
+output                                          [7:0] i_arlen;
+output                                                i_arlock;
+output                                          [2:0] i_arprot;
+input                                                 i_arready;
+output                                          [2:0] i_arsize;
+output                                                i_arvalid;
+output                         [(BIU_ADDR_WIDTH-1):0] i_awaddr;
+output                                          [1:0] i_awburst;
+output                                          [3:0] i_awcache;
+output                           [(BIU_ID_WIDTH-1):0] i_awid;
+output                                          [7:0] i_awlen;
+output                                                i_awlock;
+output                                          [2:0] i_awprot;
+input                                                 i_awready;
+output                                          [2:0] i_awsize;
+output                                                i_awvalid;
+input                            [(BIU_ID_WIDTH-1):0] i_bid;
+output                                                i_bready;
+input                                           [1:0] i_bresp;
+input                                                 i_bvalid;
+input                          [(BIU_DATA_WIDTH-1):0] i_rdata;
+input                            [(BIU_ID_WIDTH-1):0] i_rid;
+input                                                 i_rlast;
+output                                                i_rready;
+input                                           [1:0] i_rresp;
+input                                                 i_rvalid;
+output                         [(BIU_DATA_WIDTH-1):0] i_wdata;
+output                                                i_wlast;
+input                                                 i_wready;
+output                       [(BIU_DATA_WIDTH/8)-1:0] i_wstrb;
+output                                                i_wvalid;
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X1
+output                         [(BIU_ADDR_WIDTH-1):0] araddr;
+output                                          [1:0] arburst;
+output                                          [3:0] arcache;
+output                           [(BIU_ID_WIDTH-1):0] arid;
+output                                          [7:0] arlen;
+output                                                arlock;
+output                                          [2:0] arprot;
+input                                                 arready;
+output                                          [2:0] arsize;
+output                                                arvalid;
+output                         [(BIU_ADDR_WIDTH-1):0] awaddr;
+output                                          [1:0] awburst;
+output                                          [3:0] awcache;
+output                           [(BIU_ID_WIDTH-1):0] awid;
+output                                          [7:0] awlen;
+output                                                awlock;
+output                                          [2:0] awprot;
+input                                                 awready;
+output                                          [2:0] awsize;
+output                                                awvalid;
+input                            [(BIU_ID_WIDTH-1):0] bid;
+output                                                bready;
+input                                           [1:0] bresp;
+input                                                 bvalid;
+input                          [(BIU_DATA_WIDTH-1):0] rdata;
+input                            [(BIU_ID_WIDTH-1):0] rid;
+input                                                 rlast;
+output                                                rready;
+input                                           [1:0] rresp;
+input                                                 rvalid;
+output                         [(BIU_DATA_WIDTH-1):0] wdata;
+output                                                wlast;
+input                                                 wready;
+output                       [(BIU_DATA_WIDTH/8)-1:0] wstrb;
+output                                                wvalid;
+`endif
+`ifdef NDS_IO_SLAVEPORT_COMMON_X1
+input                          [(BIU_ADDR_WIDTH-1):0] slv_araddr;
+input                                           [1:0] slv_arburst;
+input                                           [3:0] slv_arcache;
+input                     [(SLAVE_PORT_ID_WIDTH-1):0] slv_arid;
+input                                           [7:0] slv_arlen;
+input                                                 slv_arlock;
+input                                           [2:0] slv_arprot;
+output                                                slv_arready;
+input                                           [2:0] slv_arsize;
+input                                                 slv_aruser;
+input                                                 slv_arvalid;
+input                          [(BIU_ADDR_WIDTH-1):0] slv_awaddr;
+input                                           [1:0] slv_awburst;
+input                                           [3:0] slv_awcache;
+input                     [(SLAVE_PORT_ID_WIDTH-1):0] slv_awid;
+input                                           [7:0] slv_awlen;
+input                                                 slv_awlock;
+input                                           [2:0] slv_awprot;
+output                                                slv_awready;
+input                                           [2:0] slv_awsize;
+input                                                 slv_awuser;
+input                                                 slv_awvalid;
+output                    [(SLAVE_PORT_ID_WIDTH-1):0] slv_bid;
+input                                                 slv_bready;
+output                                          [1:0] slv_bresp;
+output                                                slv_bvalid;
+output                  [(SLAVE_PORT_DATA_WIDTH-1):0] slv_rdata;
+output                    [(SLAVE_PORT_ID_WIDTH-1):0] slv_rid;
+output                                                slv_rlast;
+input                                                 slv_rready;
+output                                          [1:0] slv_rresp;
+output                                                slv_rvalid;
+input                   [(SLAVE_PORT_DATA_WIDTH-1):0] slv_wdata;
+input                                                 slv_wlast;
+output                                                slv_wready;
+input               [((SLAVE_PORT_DATA_WIDTH/8)-1):0] slv_wstrb;
+input                                                 slv_wvalid;
+input                                                 slv_reset_n;
+`endif
+`ifdef NDS_IO_LM_RESET
+output                                                lm_reset_n;
+`endif
+`ifdef NDS_IO_ILM_TL_UL
+output                               [ILM_RAM_AW+2:3] ilm_a_addr;
+output                                         [63:0] ilm_a_data;
+output                                          [7:0] ilm_a_mask;
+output                                          [2:0] ilm_a_opcode;
+output                                          [7:0] ilm_a_parity0;
+output                                          [7:0] ilm_a_parity1;
+input                                                 ilm_a_ready;
+output                                          [2:0] ilm_a_size;
+output                                          [1:0] ilm_a_user;
+output                                                ilm_a_valid;
+input                                          [63:0] ilm_d_data;
+input                                                 ilm_d_denied;
+input                                           [7:0] ilm_d_parity0;
+input                                           [7:0] ilm_d_parity1;
+output                                                ilm_d_ready;
+input                                                 ilm_d_valid;
+`endif
+`ifdef NDS_IO_DLM_TL_UL
+output                  [`NDS_DLM_AMSB:`NDS_DLM_ALSB] dlm_a_addr;
+output                              [(`NDS_XLEN-1):0] dlm_a_data;
+output                            [(`NDS_XLEN/8)-1:0] dlm_a_mask;
+output                                          [2:0] dlm_a_opcode;
+output                                          [7:0] dlm_a_parity;
+input                                                 dlm_a_ready;
+output                                          [2:0] dlm_a_size;
+output                                          [1:0] dlm_a_user;
+output                                                dlm_a_valid;
+input                               [(`NDS_XLEN-1):0] dlm_d_data;
+input                                                 dlm_d_denied;
+input                                           [7:0] dlm_d_parity;
+output                                                dlm_d_ready;
+input                                                 dlm_d_valid;
+`endif
+`ifdef NDS_IO_ICACHE0
+input                                                 icache_disable_init;
+`endif
+`ifdef NDS_IO_DCACHE0
+input                                                 dcache_disable_init;
+`endif
+`ifdef NDS_IO_PROBING
+output                           [((`NDS_VALEN)-1):0] core_current_pc;
+input                                          [12:0] core_gpr_index;
+output                            [((`NDS_XLEN)-1):0] core_selected_gpr_value;
+`endif
+`ifdef NDS_IO_SEIP
+input                                                 seip;
+output                                                seiack;
+input                                           [9:0] seiid;
+`endif
+`ifdef NDS_IO_UEIP
+input                                                 ueip;
+output                                                ueiack;
+input                                           [9:0] ueiid;
+`endif
+`ifdef NDS_IO_DEBUG
+input                                                 debugint;
+input                                                 resethaltreq;
+output                                                hart_unavail;
+output                                                hart_halted;
+output                                                hart_under_reset;
+output                                                stoptime;
+`endif
+`ifdef NDS_IO_TRACE_INSTR_GEN1
+input                                                 gen1_trace_enabled;
+output                                          [1:0] gen1_trace_ivalid;
+output                                          [1:0] gen1_trace_iexception;
+output                                          [1:0] gen1_trace_interrupt;
+output                                         [19:0] gen1_trace_cause;
+output                                          [3:0] gen1_trace_priv;
+output                            [(`NDS_XLEN)*2-1:0] gen1_trace_tval;
+output                                         [63:0] gen1_trace_instr;
+output                           [(`NDS_VALEN)*2-1:0] gen1_trace_iaddr;
+`endif
+`ifdef NDS_IO_TRACE_INSTR
+output                                          [9:0] trace_cause;
+input                                                 trace_enabled;
+output                                                trace_halted;
+output                           [2*(`NDS_VALEN)-1:0] trace_iaddr;
+output                                          [1:0] trace_ilastsize;
+output                                          [3:0] trace_iretire;
+output                                          [7:0] trace_itype;
+output                                          [1:0] trace_priv;
+output                                                trace_reset;
+output                                          [5:0] trace_trigger;
+output                            [((`NDS_XLEN)-1):0] trace_tval;
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_IN
+input                [`NDS_BTB_RAM_CTRL_IN_WIDTH-1:0] btb0_ctrl_in;
+input                [`NDS_BTB_RAM_CTRL_IN_WIDTH-1:0] btb1_ctrl_in;
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_OUT
+output              [`NDS_BTB_RAM_CTRL_OUT_WIDTH-1:0] btb0_ctrl_out;
+output              [`NDS_BTB_RAM_CTRL_OUT_WIDTH-1:0] btb1_ctrl_out;
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_IN
+input        [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] dcache_data0_ctrl_in;
+input        [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] dcache_data1_ctrl_in;
+input        [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] dcache_data2_ctrl_in;
+input        [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] dcache_data3_ctrl_in;
+input         [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] dcache_tag0_ctrl_in;
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+output      [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] dcache_data0_ctrl_out;
+output      [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] dcache_data1_ctrl_out;
+output      [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] dcache_data2_ctrl_out;
+output      [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] dcache_data3_ctrl_out;
+output       [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] dcache_tag0_ctrl_out;
+`endif
+`ifdef NDS_IO_DCACHE1_CTRL_IN
+input         [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] dcache_tag1_ctrl_in;
+`endif
+`ifdef NDS_IO_DCACHE1_CTRL_OUT
+output       [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] dcache_tag1_ctrl_out;
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_IN
+input         [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] dcache_tag2_ctrl_in;
+input         [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] dcache_tag3_ctrl_in;
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_OUT
+output       [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] dcache_tag2_ctrl_out;
+output       [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] dcache_tag3_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM0_CTRL_IN
+input                [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] dlm_ctrl_in;
+`endif
+`ifdef NDS_IO_DLM_RAM0_CTRL_OUT
+output              [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] dlm_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM1_CTRL_IN
+input                [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] dlm1_ctrl_in;
+`endif
+`ifdef NDS_IO_DLM_RAM1_CTRL_OUT
+output              [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] dlm1_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM2_CTRL_IN
+input                [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] dlm2_ctrl_in;
+`endif
+`ifdef NDS_IO_DLM_RAM2_CTRL_OUT
+output              [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] dlm2_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM3_CTRL_IN
+input                [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] dlm3_ctrl_in;
+`endif
+`ifdef NDS_IO_DLM_RAM3_CTRL_OUT
+output              [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] dlm3_ctrl_out;
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_IN
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data0_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data1_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data2_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data3_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data4_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data5_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data6_ctrl_in;
+input        [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] icache_data7_ctrl_in;
+input         [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] icache_tag0_ctrl_in;
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data0_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data1_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data2_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data3_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data4_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data5_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data6_ctrl_out;
+output      [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] icache_data7_ctrl_out;
+output       [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] icache_tag0_ctrl_out;
+`endif
+`ifdef NDS_IO_ICACHE1_CTRL_IN
+input         [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] icache_tag1_ctrl_in;
+`endif
+`ifdef NDS_IO_ICACHE1_CTRL_OUT
+output       [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] icache_tag1_ctrl_out;
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_IN
+input         [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] icache_tag2_ctrl_in;
+input         [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] icache_tag3_ctrl_in;
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_OUT
+output       [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] icache_tag2_ctrl_out;
+output       [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] icache_tag3_ctrl_out;
+`endif
+`ifdef NDS_IO_ILM_RAM0_CTRL_IN
+input                [`NDS_ILM_RAM_CTRL_IN_WIDTH-1:0] ilm0_ctrl_in;
+`endif
+`ifdef NDS_IO_ILM_RAM0_CTRL_OUT
+output              [`NDS_ILM_RAM_CTRL_OUT_WIDTH-1:0] ilm0_ctrl_out;
+`endif
+`ifdef NDS_IO_ILM_RAM1_CTRL_IN
+input                [`NDS_ILM_RAM_CTRL_IN_WIDTH-1:0] ilm1_ctrl_in;
+`endif
+`ifdef NDS_IO_ILM_RAM1_CTRL_OUT
+output              [`NDS_ILM_RAM_CTRL_OUT_WIDTH-1:0] ilm1_ctrl_out;
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+input               [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] stlb0_ctrl_in;
+input               [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] stlb1_ctrl_in;
+input               [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] stlb2_ctrl_in;
+input               [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] stlb3_ctrl_in;
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+output             [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] stlb0_ctrl_out;
+output             [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] stlb1_ctrl_out;
+output             [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] stlb2_ctrl_out;
+output             [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] stlb3_ctrl_out;
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+input          [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] stlb_data0_ctrl_in;
+input          [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] stlb_data1_ctrl_in;
+input          [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] stlb_data2_ctrl_in;
+input          [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] stlb_data3_ctrl_in;
+input           [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] stlb_tag0_ctrl_in;
+input           [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] stlb_tag1_ctrl_in;
+input           [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] stlb_tag2_ctrl_in;
+input           [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] stlb_tag3_ctrl_in;
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+output        [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] stlb_data0_ctrl_out;
+output        [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] stlb_data1_ctrl_out;
+output        [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] stlb_data2_ctrl_out;
+output        [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] stlb_data3_ctrl_out;
+output         [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] stlb_tag0_ctrl_out;
+output         [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] stlb_tag1_ctrl_out;
+output         [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] stlb_tag2_ctrl_out;
+output         [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] stlb_tag3_ctrl_out;
+`endif
+input                                          [63:0] hart_id;
+input                                                 core_clk;
+input                                                 core_reset_n;
+input                                                 test_mode;
+input                                                 scan_enable;
+output                                                core_wfi_mode;
+input                              [(`NDS_VALEN)-1:0] reset_vector;
+input                                                 nmi;
+input                                                 meip;
+output                                                meiack;
+input                                           [9:0] meiid;
+input                                                 mtip;
+input                                                 msip;
+
+`ifdef NDS_IO_ILM_RAM0
+wire                 [`NDS_ILM_RAM_CTRL_IN_WIDTH-1:0] int_ilm0_ctrl_in;
+wire                               [(ILM_RAM_AW-1):0] ilm0_addr;
+wire                             [(ILM_RAM_BWEW-1):0] ilm0_byte_we;
+wire                                                  ilm0_cs;
+wire                                            [1:0] ilm0_user;
+wire                               [(ILM_RAM_DW-1):0] ilm0_wdata;
+wire                                                  ilm0_we;
+wire                               [(ILM_RAM_DW-1):0] ilm0_rdata;
+wire                [`NDS_ILM_RAM_CTRL_OUT_WIDTH-1:0] int_ilm0_ctrl_out;
+`endif
+`ifdef NDS_IO_ILM_RAM1
+wire                 [`NDS_ILM_RAM_CTRL_IN_WIDTH-1:0] int_ilm1_ctrl_in;
+wire                               [(ILM_RAM_AW-1):0] ilm1_addr;
+wire                             [(ILM_RAM_BWEW-1):0] ilm1_byte_we;
+wire                                                  ilm1_cs;
+wire                                            [1:0] ilm1_user;
+wire                               [(ILM_RAM_DW-1):0] ilm1_wdata;
+wire                                                  ilm1_we;
+wire                               [(ILM_RAM_DW-1):0] ilm1_rdata;
+wire                [`NDS_ILM_RAM_CTRL_OUT_WIDTH-1:0] int_ilm1_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM0
+wire                 [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] int_dlm_ctrl_in;
+wire                               [(DLM_RAM_AW-1):0] dlm_addr;
+wire                             [(DLM_RAM_BWEW-1):0] dlm_byte_we;
+wire                                                  dlm_cs;
+wire                                            [1:0] dlm_user;
+wire                               [(DLM_RAM_DW-1):0] dlm_wdata;
+wire                                                  dlm_we;
+wire                               [(DLM_RAM_DW-1):0] dlm_rdata;
+wire                [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] int_dlm_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM1
+wire                 [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] int_dlm1_ctrl_in;
+wire                               [(DLM_RAM_AW-1):0] dlm1_addr;
+wire                             [(DLM_RAM_BWEW-1):0] dlm1_byte_we;
+wire                                                  dlm1_cs;
+wire                                            [1:0] dlm1_user;
+wire                               [(DLM_RAM_DW-1):0] dlm1_wdata;
+wire                                                  dlm1_we;
+wire                               [(DLM_RAM_DW-1):0] dlm1_rdata;
+wire                [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] int_dlm1_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM2
+wire                 [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] int_dlm2_ctrl_in;
+wire                               [(DLM_RAM_AW-1):0] dlm2_addr;
+wire                             [(DLM_RAM_BWEW-1):0] dlm2_byte_we;
+wire                                                  dlm2_cs;
+wire                                            [1:0] dlm2_user;
+wire                               [(DLM_RAM_DW-1):0] dlm2_wdata;
+wire                                                  dlm2_we;
+wire                               [(DLM_RAM_DW-1):0] dlm2_rdata;
+wire                [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] int_dlm2_ctrl_out;
+`endif
+`ifdef NDS_IO_DLM_RAM3
+wire                 [`NDS_DLM_RAM_CTRL_IN_WIDTH-1:0] int_dlm3_ctrl_in;
+wire                               [(DLM_RAM_AW-1):0] dlm3_addr;
+wire                             [(DLM_RAM_BWEW-1):0] dlm3_byte_we;
+wire                                                  dlm3_cs;
+wire                                            [1:0] dlm3_user;
+wire                               [(DLM_RAM_DW-1):0] dlm3_wdata;
+wire                                                  dlm3_we;
+wire                               [(DLM_RAM_DW-1):0] dlm3_rdata;
+wire                [`NDS_DLM_RAM_CTRL_OUT_WIDTH-1:0] int_dlm3_ctrl_out;
+`endif
+`ifdef NDS_IO_BTB_RAM
+wire                 [`NDS_BTB_RAM_CTRL_IN_WIDTH-1:0] int_btb0_ctrl_in;
+wire                 [`NDS_BTB_RAM_CTRL_IN_WIDTH-1:0] int_btb1_ctrl_in;
+wire                  [(`NDS_BTB_RAM_ADDR_WIDTH)-1:0] btb0_addr;
+wire                                                  btb0_cs;
+wire                  [(`NDS_BTB_RAM_DATA_WIDTH)-1:0] btb0_wdata;
+wire                                                  btb0_we;
+wire                  [(`NDS_BTB_RAM_ADDR_WIDTH)-1:0] btb1_addr;
+wire                                                  btb1_cs;
+wire                  [(`NDS_BTB_RAM_DATA_WIDTH)-1:0] btb1_wdata;
+wire                                                  btb1_we;
+wire                  [(`NDS_BTB_RAM_DATA_WIDTH)-1:0] btb0_rdata;
+wire                [`NDS_BTB_RAM_CTRL_OUT_WIDTH-1:0] int_btb0_ctrl_out;
+wire                  [(`NDS_BTB_RAM_DATA_WIDTH)-1:0] btb1_rdata;
+wire                [`NDS_BTB_RAM_CTRL_OUT_WIDTH-1:0] int_btb1_ctrl_out;
+`endif
+`ifdef NDS_IO_ICACHE0
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data0_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data1_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data2_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data3_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data4_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data5_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data6_ctrl_in;
+wire         [`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_icache_data7_ctrl_in;
+wire          [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_icache_tag0_ctrl_in;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data0_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data1_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data2_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data3_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data4_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data5_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data6_ctrl_out;
+wire        [`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_icache_data7_ctrl_out;
+wire         [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_icache_tag0_ctrl_out;
+wire                                                  icache_data0_cs;
+wire                                                  icache_data0_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data0_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data0_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data0_rdata;
+wire                                                  icache_tag0_cs;
+wire                                                  icache_tag0_we;
+wire                        [(ICACHE_TAG_RAM_AW-1):0] icache_tag0_addr;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag0_wdata;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag0_rdata;
+wire                                                  icache_data1_cs;
+wire                                                  icache_data1_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data1_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data1_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data1_rdata;
+wire                                                  icache_data2_cs;
+wire                                                  icache_data2_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data2_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data2_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data2_rdata;
+wire                                                  icache_data3_cs;
+wire                                                  icache_data3_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data3_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data3_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data3_rdata;
+wire                                                  icache_data4_cs;
+wire                                                  icache_data4_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data4_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data4_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data4_rdata;
+wire                                                  icache_data5_cs;
+wire                                                  icache_data5_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data5_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data5_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data5_rdata;
+wire                                                  icache_data6_cs;
+wire                                                  icache_data6_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data6_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data6_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data6_rdata;
+wire                                                  icache_data7_cs;
+wire                                                  icache_data7_we;
+wire                       [(ICACHE_DATA_RAM_AW-1):0] icache_data7_addr;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data7_wdata;
+wire                       [(ICACHE_DATA_RAM_DW-1):0] icache_data7_rdata;
+`endif
+`ifdef NDS_IO_ICACHE1
+wire          [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_icache_tag1_ctrl_in;
+wire         [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_icache_tag1_ctrl_out;
+wire                                                  icache_tag1_cs;
+wire                                                  icache_tag1_we;
+wire                        [(ICACHE_TAG_RAM_AW-1):0] icache_tag1_addr;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag1_wdata;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag1_rdata;
+`endif
+`ifdef NDS_IO_ICACHE2
+wire          [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_icache_tag2_ctrl_in;
+wire          [`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_icache_tag3_ctrl_in;
+wire         [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_icache_tag2_ctrl_out;
+wire         [`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_icache_tag3_ctrl_out;
+wire                                                  icache_tag2_cs;
+wire                                                  icache_tag2_we;
+wire                        [(ICACHE_TAG_RAM_AW-1):0] icache_tag2_addr;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag2_wdata;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag2_rdata;
+wire                                                  icache_tag3_cs;
+wire                                                  icache_tag3_we;
+wire                        [(ICACHE_TAG_RAM_AW-1):0] icache_tag3_addr;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag3_wdata;
+wire                        [(ICACHE_TAG_RAM_DW-1):0] icache_tag3_rdata;
+`endif
+`ifdef NDS_IO_DCACHE0
+wire         [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_dcache_data0_ctrl_in;
+wire         [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_dcache_data1_ctrl_in;
+wire         [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_dcache_data2_ctrl_in;
+wire         [`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH-1:0] int_dcache_data3_ctrl_in;
+wire          [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_dcache_tag0_ctrl_in;
+wire                     [(DCACHE_DATA_RAM_BWEW-1):0] dcache_data0_byte_we;
+wire                     [(DCACHE_DATA_RAM_BWEW-1):0] dcache_data1_byte_we;
+wire                     [(DCACHE_DATA_RAM_BWEW-1):0] dcache_data2_byte_we;
+wire                     [(DCACHE_DATA_RAM_BWEW-1):0] dcache_data3_byte_we;
+wire        [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_data0_ctrl_out;
+wire        [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_data1_ctrl_out;
+wire        [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_data2_ctrl_out;
+wire        [`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_data3_ctrl_out;
+wire         [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_tag0_ctrl_out;
+wire                                                  dcache_data0_cs;
+wire                                                  dcache_data0_we;
+wire                       [(DCACHE_DATA_RAM_AW-1):0] dcache_data0_addr;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data0_wdata;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data0_rdata;
+wire                                                  dcache_tag0_cs;
+wire                                                  dcache_tag0_we;
+wire                        [(DCACHE_TAG_RAM_AW-1):0] dcache_tag0_addr;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag0_wdata;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag0_rdata;
+wire                                                  dcache_data1_cs;
+wire                                                  dcache_data1_we;
+wire                       [(DCACHE_DATA_RAM_AW-1):0] dcache_data1_addr;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data1_wdata;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data1_rdata;
+wire                                                  dcache_data2_cs;
+wire                                                  dcache_data2_we;
+wire                       [(DCACHE_DATA_RAM_AW-1):0] dcache_data2_addr;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data2_wdata;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data2_rdata;
+wire                                                  dcache_data3_cs;
+wire                                                  dcache_data3_we;
+wire                       [(DCACHE_DATA_RAM_AW-1):0] dcache_data3_addr;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data3_wdata;
+wire                       [(DCACHE_DATA_RAM_DW-1):0] dcache_data3_rdata;
+`endif
+`ifdef NDS_IO_DCACHE1
+wire          [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_dcache_tag1_ctrl_in;
+wire         [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_tag1_ctrl_out;
+wire                                                  dcache_tag1_cs;
+wire                                                  dcache_tag1_we;
+wire                        [(DCACHE_TAG_RAM_AW-1):0] dcache_tag1_addr;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag1_wdata;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag1_rdata;
+`endif
+`ifdef NDS_IO_DCACHE2
+wire          [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_dcache_tag2_ctrl_in;
+wire          [`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH-1:0] int_dcache_tag3_ctrl_in;
+wire         [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_tag2_ctrl_out;
+wire         [`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_dcache_tag3_ctrl_out;
+wire                                                  dcache_tag2_cs;
+wire                                                  dcache_tag2_we;
+wire                        [(DCACHE_TAG_RAM_AW-1):0] dcache_tag2_addr;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag2_wdata;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag2_rdata;
+wire                                                  dcache_tag3_cs;
+wire                                                  dcache_tag3_we;
+wire                        [(DCACHE_TAG_RAM_AW-1):0] dcache_tag3_addr;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag3_wdata;
+wire                        [(DCACHE_TAG_RAM_DW-1):0] dcache_tag3_rdata;
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC
+wire                [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] int_stlb0_ctrl_in;
+wire                [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] int_stlb1_ctrl_in;
+wire                [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] int_stlb2_ctrl_in;
+wire                [`NDS_STLB_RAM_CTRL_IN_WIDTH-1:0] int_stlb3_ctrl_in;
+wire                              [(STLB_RAM_AW-1):0] stlb0_addr;
+wire                                                  stlb0_cs;
+wire                              [(STLB_RAM_DW-1):0] stlb0_wdata;
+wire                                                  stlb0_we;
+wire                              [(STLB_RAM_AW-1):0] stlb1_addr;
+wire                                                  stlb1_cs;
+wire                              [(STLB_RAM_DW-1):0] stlb1_wdata;
+wire                                                  stlb1_we;
+wire                              [(STLB_RAM_AW-1):0] stlb2_addr;
+wire                                                  stlb2_cs;
+wire                              [(STLB_RAM_DW-1):0] stlb2_wdata;
+wire                                                  stlb2_we;
+wire                              [(STLB_RAM_AW-1):0] stlb3_addr;
+wire                                                  stlb3_cs;
+wire                              [(STLB_RAM_DW-1):0] stlb3_wdata;
+wire                                                  stlb3_we;
+wire               [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] int_stlb0_ctrl_out;
+wire                              [(STLB_RAM_DW-1):0] stlb0_rdata;
+wire               [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] int_stlb1_ctrl_out;
+wire                              [(STLB_RAM_DW-1):0] stlb1_rdata;
+wire               [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] int_stlb2_ctrl_out;
+wire                              [(STLB_RAM_DW-1):0] stlb2_rdata;
+wire               [`NDS_STLB_RAM_CTRL_OUT_WIDTH-1:0] int_stlb3_ctrl_out;
+wire                              [(STLB_RAM_DW-1):0] stlb3_rdata;
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC
+wire           [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] int_stlb_data0_ctrl_in;
+wire           [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] int_stlb_data1_ctrl_in;
+wire           [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] int_stlb_data2_ctrl_in;
+wire           [`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH-1:0] int_stlb_data3_ctrl_in;
+wire            [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] int_stlb_tag0_ctrl_in;
+wire            [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] int_stlb_tag1_ctrl_in;
+wire            [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] int_stlb_tag2_ctrl_in;
+wire            [`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH-1:0] int_stlb_tag3_ctrl_in;
+wire                              [(STLB_RAM_AW-1):0] stlb_data0_addr;
+wire                                                  stlb_data0_cs;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data0_wdata;
+wire                                                  stlb_data0_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_data1_addr;
+wire                                                  stlb_data1_cs;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data1_wdata;
+wire                                                  stlb_data1_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_data2_addr;
+wire                                                  stlb_data2_cs;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data2_wdata;
+wire                                                  stlb_data2_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_data3_addr;
+wire                                                  stlb_data3_cs;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data3_wdata;
+wire                                                  stlb_data3_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_tag0_addr;
+wire                                                  stlb_tag0_cs;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag0_wdata;
+wire                                                  stlb_tag0_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_tag1_addr;
+wire                                                  stlb_tag1_cs;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag1_wdata;
+wire                                                  stlb_tag1_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_tag2_addr;
+wire                                                  stlb_tag2_cs;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag2_wdata;
+wire                                                  stlb_tag2_we;
+wire                              [(STLB_RAM_AW-1):0] stlb_tag3_addr;
+wire                                                  stlb_tag3_cs;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag3_wdata;
+wire                                                  stlb_tag3_we;
+wire          [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_data0_ctrl_out;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data0_rdata;
+wire          [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_data1_ctrl_out;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data1_rdata;
+wire          [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_data2_ctrl_out;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data2_rdata;
+wire          [`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_data3_ctrl_out;
+wire                         [(STLB_DATA_RAM_DW-1):0] stlb_data3_rdata;
+wire           [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_tag0_ctrl_out;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag0_rdata;
+wire           [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_tag1_ctrl_out;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag1_rdata;
+wire           [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_tag2_ctrl_out;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag2_rdata;
+wire           [`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH-1:0] int_stlb_tag3_ctrl_out;
+wire                          [(STLB_TAG_RAM_DW-1):0] stlb_tag3_rdata;
+`endif
+`ifdef NDS_IO_ACE
+wire                                           [31:7] ace_cmd_inst;
+wire                             [((`NDS_VALEN)-1):0] ace_cmd_pc;
+wire                              [((`NDS_XLEN)-1):0] ace_cmd_rs1;
+wire                              [((`NDS_XLEN)-1):0] ace_cmd_rs2;
+wire                              [((`NDS_XLEN)-1):0] ace_cmd_rs3;
+wire                              [((`NDS_XLEN)-1):0] ace_cmd_rs4;
+wire                                                  ace_cmd_valid;
+wire                                                  ace_interrupt;
+wire                                                  ace_sync_req;
+wire                                           [31:0] ace_sync_type;
+wire                                                  ace_xrf_rd1_ready;
+wire                                                  ace_xrf_rd2_ready;
+wire                                           [31:0] nds_unused_ace_cmd_beat;
+wire                              [((`NDS_XLEN)-1):0] nds_unused_ace_cmd_hartid;
+wire                                            [1:0] nds_unused_ace_cmd_priv;
+wire                              [((`NDS_XLEN)-1):0] nds_unused_ace_cmd_vl;
+wire                              [((`NDS_XLEN)-1):0] nds_unused_ace_cmd_vtype;
+wire                                                  ace_acr_dirty_set;
+wire                                                  ace_cmd_ready;
+wire                                                  ace_error;
+wire                                                  ace_standby_ready;
+wire                                                  ace_sync_ack;
+wire                                                  ace_sync_ack_status;
+wire                              [((`NDS_XLEN)-1):0] ace_xrf_rd1_data;
+wire                                            [4:0] ace_xrf_rd1_index;
+wire                                                  ace_xrf_rd1_status;
+wire                                                  ace_xrf_rd1_valid;
+wire                              [((`NDS_XLEN)-1):0] ace_xrf_rd2_data;
+wire                                            [4:0] ace_xrf_rd2_index;
+wire                                                  ace_xrf_rd2_status;
+wire                                                  ace_xrf_rd2_valid;
+`endif
+wire                                                  dcache_clk;
+wire                                                  dlm_clk;
+wire                                                  ilm_clk;
+
+`ifdef NDS_IO_LM
+assign ilm_clk = lm_clk;
+assign dlm_clk = lm_clk;
+`else
+assign ilm_clk = 1'b0;
+assign dlm_clk = 1'b0;
+`endif
+`ifdef NDS_IO_ILM_RAM0
+`else
+	wire	nds_unused_ilm_clk = ilm_clk;
+`endif
+`ifdef NDS_IO_DLM_RAM0
+`else
+	wire	nds_unused_dlm_clk = dlm_clk;
+`endif
+`ifdef NDS_IO_ILM_RAM0
+	wire	[1:0]	nds_unused_ilm0_user = ilm0_user;
+`endif
+`ifdef NDS_IO_ILM_RAM0
+	`ifdef NDS_IO_ILM_RAM_ECC
+		wire	[(ILM_RAM_BWEW-1):0]	nds_unused_ilm0_byte_we = ilm0_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_ILM_RAM1
+	wire	[1:0]	nds_unused_ilm1_user = ilm1_user;
+`endif
+`ifdef NDS_IO_ILM_RAM1
+	`ifdef NDS_IO_ILM_RAM_ECC
+		wire	[(ILM_RAM_BWEW-1):0]	nds_unused_ilm1_byte_we = ilm1_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM0
+	wire	[1:0]	nds_unused_dlm_user = dlm_user;
+`endif
+`ifdef NDS_IO_DLM_RAM0
+	`ifdef NDS_IO_DLM_RAM_ECC
+		wire	[(DLM_RAM_BWEW-1):0]	nds_unused_dlm_byte_we = dlm_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM1
+	wire	[1:0]	nds_unused_dlm1_user = dlm1_user;
+`endif
+`ifdef NDS_IO_DLM_RAM1
+	`ifdef NDS_IO_DLM_RAM_ECC
+		wire	[(DLM_RAM_BWEW-1):0]	nds_unused_dlm1_byte_we = dlm1_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM2
+	wire	[1:0]	nds_unused_dlm2_user = dlm2_user;
+`endif
+`ifdef NDS_IO_DLM_RAM2
+	`ifdef NDS_IO_DLM_RAM_ECC
+		wire	[(DLM_RAM_BWEW-1):0]	nds_unused_dlm2_byte_we = dlm2_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM3
+	wire	[1:0]	nds_unused_dlm3_user = dlm3_user;
+`endif
+`ifdef NDS_IO_DLM_RAM3
+	`ifdef NDS_IO_DLM_RAM_ECC
+		wire	[(DLM_RAM_BWEW-1):0]	nds_unused_dlm3_byte_we = dlm3_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0
+`else
+	wire	nds_unused_dcache_clk = dcache_clk;
+`endif
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE_RAM_ECC
+		wire	[(DCACHE_DATA_RAM_BWEW-1):0]	nds_unused_dcache_data0_byte_we = dcache_data0_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE_RAM_ECC
+		wire	[(DCACHE_DATA_RAM_BWEW-1):0]	nds_unused_dcache_data1_byte_we = dcache_data1_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE_RAM_ECC
+		wire	[(DCACHE_DATA_RAM_BWEW-1):0]	nds_unused_dcache_data2_byte_we = dcache_data2_byte_we;
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE_RAM_ECC
+		wire	[(DCACHE_DATA_RAM_BWEW-1):0]	nds_unused_dcache_data3_byte_we = dcache_data3_byte_we;
+	`endif
+`endif
+assign dcache_clk = core_clk;
+
+
+
+`ifdef NDS_IO_BTB_RAM
+	`ifdef NDS_IO_BTB_RAM_CTRL_IN
+		assign int_btb0_ctrl_in = btb0_ctrl_in;
+	`else
+		assign int_btb0_ctrl_in = {`NDS_BTB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_OUT
+assign btb0_ctrl_out = int_btb0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_BTB_RAM
+wire nds_unused_btb0_ctrl_out = |{int_btb0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_BTB_RAM
+	`ifdef NDS_IO_BTB_RAM_CTRL_IN
+		assign int_btb1_ctrl_in = btb1_ctrl_in;
+	`else
+		assign int_btb1_ctrl_in = {`NDS_BTB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_BTB_RAM_CTRL_OUT
+assign btb1_ctrl_out = int_btb1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_BTB_RAM
+wire nds_unused_btb1_ctrl_out = |{int_btb1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE0_CTRL_IN
+		assign int_dcache_data0_ctrl_in = dcache_data0_ctrl_in;
+	`else
+		assign int_dcache_data0_ctrl_in = {`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+assign dcache_data0_ctrl_out = int_dcache_data0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE0
+wire nds_unused_dcache_data0_ctrl_out = |{int_dcache_data0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE0_CTRL_IN
+		assign int_dcache_data1_ctrl_in = dcache_data1_ctrl_in;
+	`else
+		assign int_dcache_data1_ctrl_in = {`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+assign dcache_data1_ctrl_out = int_dcache_data1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE0
+wire nds_unused_dcache_data1_ctrl_out = |{int_dcache_data1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE0_CTRL_IN
+		assign int_dcache_data2_ctrl_in = dcache_data2_ctrl_in;
+	`else
+		assign int_dcache_data2_ctrl_in = {`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+assign dcache_data2_ctrl_out = int_dcache_data2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE0
+wire nds_unused_dcache_data2_ctrl_out = |{int_dcache_data2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE0_CTRL_IN
+		assign int_dcache_data3_ctrl_in = dcache_data3_ctrl_in;
+	`else
+		assign int_dcache_data3_ctrl_in = {`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+assign dcache_data3_ctrl_out = int_dcache_data3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE0
+wire nds_unused_dcache_data3_ctrl_out = |{int_dcache_data3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE0
+	`ifdef NDS_IO_DCACHE0_CTRL_IN
+		assign int_dcache_tag0_ctrl_in = dcache_tag0_ctrl_in;
+	`else
+		assign int_dcache_tag0_ctrl_in = {`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE0_CTRL_OUT
+assign dcache_tag0_ctrl_out = int_dcache_tag0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE0
+wire nds_unused_dcache_tag0_ctrl_out = |{int_dcache_tag0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE1
+	`ifdef NDS_IO_DCACHE1_CTRL_IN
+		assign int_dcache_tag1_ctrl_in = dcache_tag1_ctrl_in;
+	`else
+		assign int_dcache_tag1_ctrl_in = {`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE1_CTRL_OUT
+assign dcache_tag1_ctrl_out = int_dcache_tag1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE1
+wire nds_unused_dcache_tag1_ctrl_out = |{int_dcache_tag1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE2
+	`ifdef NDS_IO_DCACHE2_CTRL_IN
+		assign int_dcache_tag2_ctrl_in = dcache_tag2_ctrl_in;
+	`else
+		assign int_dcache_tag2_ctrl_in = {`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_OUT
+assign dcache_tag2_ctrl_out = int_dcache_tag2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE2
+wire nds_unused_dcache_tag2_ctrl_out = |{int_dcache_tag2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DCACHE2
+	`ifdef NDS_IO_DCACHE2_CTRL_IN
+		assign int_dcache_tag3_ctrl_in = dcache_tag3_ctrl_in;
+	`else
+		assign int_dcache_tag3_ctrl_in = {`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DCACHE2_CTRL_OUT
+assign dcache_tag3_ctrl_out = int_dcache_tag3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DCACHE2
+wire nds_unused_dcache_tag3_ctrl_out = |{int_dcache_tag3_ctrl_out};
+`endif
+
+
+
+`ifdef NDS_IO_DLM_RAM0
+	`ifdef NDS_IO_DLM_RAM0_CTRL_IN
+		assign int_dlm_ctrl_in = dlm_ctrl_in;
+	`else
+		assign int_dlm_ctrl_in = {`NDS_DLM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM0_CTRL_OUT
+assign dlm_ctrl_out = int_dlm_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DLM_RAM0
+wire nds_unused_dlm_ctrl_out = |{int_dlm_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DLM_RAM1
+	`ifdef NDS_IO_DLM_RAM1_CTRL_IN
+		assign int_dlm1_ctrl_in = dlm1_ctrl_in;
+	`else
+		assign int_dlm1_ctrl_in = {`NDS_DLM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM1_CTRL_OUT
+assign dlm1_ctrl_out = int_dlm1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DLM_RAM1
+wire nds_unused_dlm1_ctrl_out = |{int_dlm1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DLM_RAM2
+	`ifdef NDS_IO_DLM_RAM2_CTRL_IN
+		assign int_dlm2_ctrl_in = dlm2_ctrl_in;
+	`else
+		assign int_dlm2_ctrl_in = {`NDS_DLM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM2_CTRL_OUT
+assign dlm2_ctrl_out = int_dlm2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DLM_RAM2
+wire nds_unused_dlm2_ctrl_out = |{int_dlm2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_DLM_RAM3
+	`ifdef NDS_IO_DLM_RAM3_CTRL_IN
+		assign int_dlm3_ctrl_in = dlm3_ctrl_in;
+	`else
+		assign int_dlm3_ctrl_in = {`NDS_DLM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_DLM_RAM3_CTRL_OUT
+assign dlm3_ctrl_out = int_dlm3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_DLM_RAM3
+wire nds_unused_dlm3_ctrl_out = |{int_dlm3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data0_ctrl_in = icache_data0_ctrl_in;
+	`else
+		assign int_icache_data0_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data0_ctrl_out = int_icache_data0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data0_ctrl_out = |{int_icache_data0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data1_ctrl_in = icache_data1_ctrl_in;
+	`else
+		assign int_icache_data1_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data1_ctrl_out = int_icache_data1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data1_ctrl_out = |{int_icache_data1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data2_ctrl_in = icache_data2_ctrl_in;
+	`else
+		assign int_icache_data2_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data2_ctrl_out = int_icache_data2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data2_ctrl_out = |{int_icache_data2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data3_ctrl_in = icache_data3_ctrl_in;
+	`else
+		assign int_icache_data3_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data3_ctrl_out = int_icache_data3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data3_ctrl_out = |{int_icache_data3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data4_ctrl_in = icache_data4_ctrl_in;
+	`else
+		assign int_icache_data4_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data4_ctrl_out = int_icache_data4_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data4_ctrl_out = |{int_icache_data4_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data5_ctrl_in = icache_data5_ctrl_in;
+	`else
+		assign int_icache_data5_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data5_ctrl_out = int_icache_data5_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data5_ctrl_out = |{int_icache_data5_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data6_ctrl_in = icache_data6_ctrl_in;
+	`else
+		assign int_icache_data6_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data6_ctrl_out = int_icache_data6_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data6_ctrl_out = |{int_icache_data6_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_data7_ctrl_in = icache_data7_ctrl_in;
+	`else
+		assign int_icache_data7_ctrl_in = {`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_data7_ctrl_out = int_icache_data7_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_data7_ctrl_out = |{int_icache_data7_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE0
+	`ifdef NDS_IO_ICACHE0_CTRL_IN
+		assign int_icache_tag0_ctrl_in = icache_tag0_ctrl_in;
+	`else
+		assign int_icache_tag0_ctrl_in = {`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE0_CTRL_OUT
+assign icache_tag0_ctrl_out = int_icache_tag0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE0
+wire nds_unused_icache_tag0_ctrl_out = |{int_icache_tag0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE1
+	`ifdef NDS_IO_ICACHE1_CTRL_IN
+		assign int_icache_tag1_ctrl_in = icache_tag1_ctrl_in;
+	`else
+		assign int_icache_tag1_ctrl_in = {`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE1_CTRL_OUT
+assign icache_tag1_ctrl_out = int_icache_tag1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE1
+wire nds_unused_icache_tag1_ctrl_out = |{int_icache_tag1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE2
+	`ifdef NDS_IO_ICACHE2_CTRL_IN
+		assign int_icache_tag2_ctrl_in = icache_tag2_ctrl_in;
+	`else
+		assign int_icache_tag2_ctrl_in = {`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_OUT
+assign icache_tag2_ctrl_out = int_icache_tag2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE2
+wire nds_unused_icache_tag2_ctrl_out = |{int_icache_tag2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ICACHE2
+	`ifdef NDS_IO_ICACHE2_CTRL_IN
+		assign int_icache_tag3_ctrl_in = icache_tag3_ctrl_in;
+	`else
+		assign int_icache_tag3_ctrl_in = {`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ICACHE2_CTRL_OUT
+assign icache_tag3_ctrl_out = int_icache_tag3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ICACHE2
+wire nds_unused_icache_tag3_ctrl_out = |{int_icache_tag3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ILM_RAM0
+	`ifdef NDS_IO_ILM_RAM0_CTRL_IN
+		assign int_ilm0_ctrl_in = ilm0_ctrl_in;
+	`else
+		assign int_ilm0_ctrl_in = {`NDS_ILM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ILM_RAM0_CTRL_OUT
+assign ilm0_ctrl_out = int_ilm0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ILM_RAM0
+wire nds_unused_ilm0_ctrl_out = |{int_ilm0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_ILM_RAM1
+	`ifdef NDS_IO_ILM_RAM1_CTRL_IN
+		assign int_ilm1_ctrl_in = ilm1_ctrl_in;
+	`else
+		assign int_ilm1_ctrl_in = {`NDS_ILM_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_ILM_RAM1_CTRL_OUT
+assign ilm1_ctrl_out = int_ilm1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_ILM_RAM1
+wire nds_unused_ilm1_ctrl_out = |{int_ilm1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+	`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+		assign int_stlb0_ctrl_in = stlb0_ctrl_in;
+	`else
+		assign int_stlb0_ctrl_in = {`NDS_STLB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+assign stlb0_ctrl_out = int_stlb0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+wire nds_unused_stlb0_ctrl_out = |{int_stlb0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+	`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+		assign int_stlb1_ctrl_in = stlb1_ctrl_in;
+	`else
+		assign int_stlb1_ctrl_in = {`NDS_STLB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+assign stlb1_ctrl_out = int_stlb1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+wire nds_unused_stlb1_ctrl_out = |{int_stlb1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+	`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+		assign int_stlb2_ctrl_in = stlb2_ctrl_in;
+	`else
+		assign int_stlb2_ctrl_in = {`NDS_STLB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+assign stlb2_ctrl_out = int_stlb2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+wire nds_unused_stlb2_ctrl_out = |{int_stlb2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+	`ifdef NDS_IO_STLB_RAM_NECC_CTRL_IN
+		assign int_stlb3_ctrl_in = stlb3_ctrl_in;
+	`else
+		assign int_stlb3_ctrl_in = {`NDS_STLB_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC_CTRL_OUT
+assign stlb3_ctrl_out = int_stlb3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_NECC
+wire nds_unused_stlb3_ctrl_out = |{int_stlb3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_data0_ctrl_in = stlb_data0_ctrl_in;
+	`else
+		assign int_stlb_data0_ctrl_in = {`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_data0_ctrl_out = int_stlb_data0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_data0_ctrl_out = |{int_stlb_data0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_data1_ctrl_in = stlb_data1_ctrl_in;
+	`else
+		assign int_stlb_data1_ctrl_in = {`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_data1_ctrl_out = int_stlb_data1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_data1_ctrl_out = |{int_stlb_data1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_data2_ctrl_in = stlb_data2_ctrl_in;
+	`else
+		assign int_stlb_data2_ctrl_in = {`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_data2_ctrl_out = int_stlb_data2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_data2_ctrl_out = |{int_stlb_data2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_data3_ctrl_in = stlb_data3_ctrl_in;
+	`else
+		assign int_stlb_data3_ctrl_in = {`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_data3_ctrl_out = int_stlb_data3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_data3_ctrl_out = |{int_stlb_data3_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_tag0_ctrl_in = stlb_tag0_ctrl_in;
+	`else
+		assign int_stlb_tag0_ctrl_in = {`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_tag0_ctrl_out = int_stlb_tag0_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_tag0_ctrl_out = |{int_stlb_tag0_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_tag1_ctrl_in = stlb_tag1_ctrl_in;
+	`else
+		assign int_stlb_tag1_ctrl_in = {`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_tag1_ctrl_out = int_stlb_tag1_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_tag1_ctrl_out = |{int_stlb_tag1_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_tag2_ctrl_in = stlb_tag2_ctrl_in;
+	`else
+		assign int_stlb_tag2_ctrl_in = {`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_tag2_ctrl_out = int_stlb_tag2_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_tag2_ctrl_out = |{int_stlb_tag2_ctrl_out};
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+	`ifdef NDS_IO_STLB_RAM_ECC_CTRL_IN
+		assign int_stlb_tag3_ctrl_in = stlb_tag3_ctrl_in;
+	`else
+		assign int_stlb_tag3_ctrl_in = {`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH{1'b0}};
+	`endif
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC_CTRL_OUT
+assign stlb_tag3_ctrl_out = int_stlb_tag3_ctrl_out;
+`endif
+
+`ifdef NDS_IO_STLB_RAM_ECC
+wire nds_unused_stlb_tag3_ctrl_out = |{int_stlb_tag3_ctrl_out};
+`endif
+`ifdef NDS_ACE_SRAM0_SUPPORT
+wire ace_sram0_addr	= {(`NDS_ACE_SRAM0_ADDR_MSB+1){1'b0}};
+wire ace_sram0_cs	= 1'b0;
+wire ace_sram0_wdata	= {(`NDS_ACE_SRAM0_DATA_MSB+1){1'b0}};
+wire ace_sram0_we	= 1'b0;
+`endif
+`ifdef NDS_ACE_SRAM1_SUPPORT
+wire ace_sram1_addr	= {(`NDS_ACE_SRAM0_ADDR_MSB+1){1'b0}};
+wire ace_sram1_cs	= 1'b0;
+wire ace_sram1_wdata	= {(`NDS_ACE_SRAM0_DATA_MSB+1){1'b0}};
+wire ace_sram1_we	= 1'b0;
+`endif
+`ifdef NDS_ACE_SRAM2_SUPPORT
+wire ace_sram2_addr	= {(`NDS_ACE_SRAM0_ADDR_MSB+1){1'b0}};
+wire ace_sram2_cs	= 1'b0;
+wire ace_sram2_wdata	= {(`NDS_ACE_SRAM0_DATA_MSB+1){1'b0}};
+wire ace_sram2_we	= 1'b0;
+`endif
+
+a45_core #(
+	.ACE_SUPPORT_INT (ACE_SUPPORT_INT ),
+	.BFLOAT16_SUPPORT_INT(BFLOAT16_SUPPORT_INT),
+	.BIU_ADDR_WIDTH  (BIU_ADDR_WIDTH  ),
+	.BIU_ASYNC_SUPPORT(BIU_ASYNC_SUPPORT),
+	.BIU_DATA_WIDTH  (BIU_DATA_WIDTH  ),
+	.BIU_ID_WIDTH    (BIU_ID_WIDTH    ),
+	.BIU_PATH_X2_INT (BIU_PATH_X2_INT ),
+	.BRANCH_PREDICTION_INT(BRANCH_PREDICTION_INT),
+	.BTB_RAM_ADDR_WIDTH(`NDS_BTB_RAM_ADDR_WIDTH),
+	.BTB_RAM_DATA_WIDTH(`NDS_BTB_RAM_DATA_WIDTH),
+	.CACHE_LINE_SIZE (CACHE_LINE_SIZE ),
+	.CLUSTER_SUPPORT_INT(CLUSTER_SUPPORT_INT),
+	.CM_SUPPORT_INT  (CM_SUPPORT_INT  ),
+	.CODENSE_SUPPORT_INT(CODENSE_SUPPORT_INT),
+	.CORE_BRG_ASYNC  (CORE_BRG_ASYNC  ),
+	.CORE_BRG_REG    (CORE_BRG_REG    ),
+	.CORE_CLK_SYNC_STAGE(CORE_CLK_SYNC_STAGE),
+	.CPUID           (CPUID           ),
+	.DCACHE_DATA_RAM_AW(DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_BWEW(DCACHE_DATA_RAM_BWEW),
+	.DCACHE_DATA_RAM_DW(DCACHE_DATA_RAM_DW),
+	.DCACHE_ECC_TYPE_INT(DCACHE_ECC_TYPE_INT),
+	.DCACHE_LRU_INT  (DCACHE_LRU_INT  ),
+	.DCACHE_PREFETCH_SUPPORT_INT(DCACHE_PREFETCH_SUPPORT_INT),
+	.DCACHE_SIZE_KB  (DCACHE_SIZE_KB  ),
+	.DCACHE_TAG_RAM_AW(DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_DW(DCACHE_TAG_RAM_DW),
+	.DCACHE_WAY      (DCACHE_WAY      ),
+	.DCACHE_WPT_RAM_AW(DCACHE_WPT_RAM_AW),
+	.DCACHE_WPT_RAM_BWEW(DCACHE_WPT_RAM_BWEW),
+	.DCACHE_WPT_RAM_DW(DCACHE_WPT_RAM_DW),
+	.DEBUG_SUPPORT_INT(DEBUG_SUPPORT_INT),
+	.DEBUG_VEC       (DEBUG_VEC       ),
+	.DEVICE_REGION0_BASE(DEVICE_REGION0_BASE),
+	.DEVICE_REGION0_MASK(DEVICE_REGION0_MASK),
+	.DEVICE_REGION1_BASE(DEVICE_REGION1_BASE),
+	.DEVICE_REGION1_MASK(DEVICE_REGION1_MASK),
+	.DEVICE_REGION2_BASE(DEVICE_REGION2_BASE),
+	.DEVICE_REGION2_MASK(DEVICE_REGION2_MASK),
+	.DEVICE_REGION3_BASE(DEVICE_REGION3_BASE),
+	.DEVICE_REGION3_MASK(DEVICE_REGION3_MASK),
+	.DEVICE_REGION4_BASE(DEVICE_REGION4_BASE),
+	.DEVICE_REGION4_MASK(DEVICE_REGION4_MASK),
+	.DEVICE_REGION5_BASE(DEVICE_REGION5_BASE),
+	.DEVICE_REGION5_MASK(DEVICE_REGION5_MASK),
+	.DEVICE_REGION6_BASE(DEVICE_REGION6_BASE),
+	.DEVICE_REGION6_MASK(DEVICE_REGION6_MASK),
+	.DEVICE_REGION7_BASE(DEVICE_REGION7_BASE),
+	.DEVICE_REGION7_MASK(DEVICE_REGION7_MASK),
+	.DLM_BASE        (DLM_BASE        ),
+	.DLM_ECC_TYPE_INT(DLM_ECC_TYPE_INT),
+	.DLM_RAM_AW      (DLM_RAM_AW      ),
+	.DLM_RAM_BWEW    (DLM_RAM_BWEW    ),
+	.DLM_RAM_DW      (DLM_RAM_DW      ),
+	.DLM_SIZE_KB     (DLM_SIZE_KB     ),
+	.DLM_WAIT_CYCLE  (DLM_WAIT_CYCLE  ),
+	.DSP_SUPPORT_INT (DSP_SUPPORT_INT ),
+	.DTLB_ENTRIES    (DTLB_ENTRIES    ),
+	.FENCE_FLUSH_DCACHE_INT(FENCE_FLUSH_DCACHE_INT),
+	.FP16_SUPPORT_INT(FP16_SUPPORT_INT),
+	.FPU_TYPE_INT    (FPU_TYPE_INT    ),
+	.ICACHE_DATA_RAM_AW(ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_DW(ICACHE_DATA_RAM_DW),
+	.ICACHE_ECC_TYPE_INT(ICACHE_ECC_TYPE_INT),
+	.ICACHE_FIRST_WORD_FIRST_INT(ICACHE_FIRST_WORD_FIRST_INT),
+	.ICACHE_LRU_INT  (ICACHE_LRU_INT  ),
+	.ICACHE_SIZE_KB  (ICACHE_SIZE_KB  ),
+	.ICACHE_TAG_RAM_AW(ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_DW(ICACHE_TAG_RAM_DW),
+	.ICACHE_WAY      (ICACHE_WAY      ),
+	.ILM_BASE        (ILM_BASE        ),
+	.ILM_ECC_TYPE_INT(ILM_ECC_TYPE_INT),
+	.ILM_RAM_AW      (ILM_RAM_AW      ),
+	.ILM_RAM_BWEW    (ILM_RAM_BWEW    ),
+	.ILM_RAM_DW      (ILM_RAM_DW      ),
+	.ILM_SIZE_KB     (ILM_SIZE_KB     ),
+	.ILM_WAIT_CYCLE  (ILM_WAIT_CYCLE  ),
+	.IOCP_NUM        (IOCP_NUM        ),
+	.ISA_BASE_INT    (ISA_BASE_INT    ),
+	.ITLB_ENTRIES    (ITLB_ENTRIES    ),
+	.L2C_CACHE_SIZE_KB(L2C_CACHE_SIZE_KB),
+	.L2C_REG_BASE    (L2C_REG_BASE    ),
+	.L2_ADDR_WIDTH   (L2_ADDR_WIDTH   ),
+	.L2_CLK_SYNC_STAGE(L2_CLK_SYNC_STAGE),
+	.L2_DATA_WIDTH   (L2_DATA_WIDTH   ),
+	.L2_SOURCE_WIDTH (L2_SOURCE_WIDTH ),
+	.LM_ENABLE_CTRL_INT(LM_ENABLE_CTRL_INT),
+	.LM_INTERFACE_INT(LM_INTERFACE_INT),
+	.LOCALINT_HPMINT (LOCALINT_HPMINT ),
+	.LOCALINT_SBE    (LOCALINT_SBE    ),
+	.LOCALINT_SLPECC (LOCALINT_SLPECC ),
+	.MIMPID          (MIMPID          ),
+	.MMU_SCHEME_INT  (MMU_SCHEME_INT  ),
+	.MSHR_DEPTH      (MSHR_DEPTH      ),
+	.MULTIPLIER_INT  (MULTIPLIER_INT  ),
+	.NCORE_CLUSTER   (NCORE_CLUSTER   ),
+	.NUM_DLM_BANKS   (NUM_DLM_BANKS   ),
+	.NUM_PRIVILEGE_LEVELS(NUM_PRIVILEGE_LEVELS),
+	.NUM_TRIGGER     (NUM_TRIGGER     ),
+	.PALEN           (BIU_ADDR_WIDTH  ),
+	.PC_GPR_PROBING_SUPPORT_INT(PC_GPR_PROBING_SUPPORT_INT),
+	.PERFORMANCE_MONITOR_INT(PERFORMANCE_MONITOR_INT),
+	.PMA_ENTRIES     (PMA_ENTRIES     ),
+	.PMP_ENTRIES     (PMP_ENTRIES     ),
+	.PMP_GRANULARITY (PMP_GRANULARITY ),
+	.POWERBRAKE_SUPPORT_INT(POWERBRAKE_SUPPORT_INT),
+	.PUSHPOP_TYPE    (PUSHPOP_TYPE    ),
+	.RVA_SUPPORT_INT (RVA_SUPPORT_INT ),
+	.RVB_SUPPORT_INT (RVB_SUPPORT_INT ),
+	.RVC_SUPPORT_INT (RVC_SUPPORT_INT ),
+	.RVN_SUPPORT_INT (RVN_SUPPORT_INT ),
+	.RVV_SUPPORT_INT (RVV_SUPPORT_INT ),
+	.SLAVE_PORT_ASYNC_SUPPORT(SLAVE_PORT_ASYNC_SUPPORT),
+	.SLAVE_PORT_DATA_WIDTH(SLAVE_PORT_DATA_WIDTH),
+	.SLAVE_PORT_ID_WIDTH(SLAVE_PORT_ID_WIDTH),
+	.SLAVE_PORT_SOURCE_NUM(SLAVE_PORT_SOURCE_NUM),
+	.SLAVE_PORT_SUPPORT_INT(SLAVE_PORT_SUPPORT_INT),
+	.STACKSAFE_SUPPORT_INT(STACKSAFE_SUPPORT_INT),
+	.STLB_DATA_RAM_DW(STLB_DATA_RAM_DW),
+	.STLB_ECC_TYPE   (STLB_ECC_TYPE   ),
+	.STLB_ENTRIES    (STLB_ENTRIES    ),
+	.STLB_RAM_AW     (STLB_RAM_AW     ),
+	.STLB_RAM_DW     (STLB_RAM_DW     ),
+	.STLB_SP_ENTRIES (STLB_SP_ENTRIES ),
+	.STLB_TAG_RAM_DW (STLB_TAG_RAM_DW ),
+	.TL_SINK_WIDTH   (TL_SINK_WIDTH   ),
+	.TRACE_INTERFACE_INT(TRACE_INTERFACE_INT),
+	.UNALIGNED_ACCESS_INT(UNALIGNED_ACCESS_INT),
+	.VECTOR_PLIC_SUPPORT_INT(VECTOR_PLIC_SUPPORT_INT),
+	.VLEN            (VLEN            ),
+	.WPT_SUPPORT     (WPT_SUPPORT     ),
+	.WRITETHROUGH_REGION0_BASE(WRITETHROUGH_REGION0_BASE),
+	.WRITETHROUGH_REGION0_MASK(WRITETHROUGH_REGION0_MASK),
+	.WRITETHROUGH_REGION1_BASE(WRITETHROUGH_REGION1_BASE),
+	.WRITETHROUGH_REGION1_MASK(WRITETHROUGH_REGION1_MASK),
+	.WRITETHROUGH_REGION2_BASE(WRITETHROUGH_REGION2_BASE),
+	.WRITETHROUGH_REGION2_MASK(WRITETHROUGH_REGION2_MASK),
+	.WRITETHROUGH_REGION3_BASE(WRITETHROUGH_REGION3_BASE),
+	.WRITETHROUGH_REGION3_MASK(WRITETHROUGH_REGION3_MASK),
+	.WRITETHROUGH_REGION4_BASE(WRITETHROUGH_REGION4_BASE),
+	.WRITETHROUGH_REGION4_MASK(WRITETHROUGH_REGION4_MASK),
+	.WRITETHROUGH_REGION5_BASE(WRITETHROUGH_REGION5_BASE),
+	.WRITETHROUGH_REGION5_MASK(WRITETHROUGH_REGION5_MASK),
+	.WRITETHROUGH_REGION6_BASE(WRITETHROUGH_REGION6_BASE),
+	.WRITETHROUGH_REGION6_MASK(WRITETHROUGH_REGION6_MASK),
+	.WRITETHROUGH_REGION7_BASE(WRITETHROUGH_REGION7_BASE),
+	.WRITETHROUGH_REGION7_MASK(WRITETHROUGH_REGION7_MASK),
+	.WRITE_AROUND_SUPPORT_INT(WRITE_AROUND_SUPPORT_INT)
+) a45_core (
+`ifdef NDS_IO_LM
+	.lm_local_int           (lm_local_int             ),
+	.lm_clk                 (lm_clk                   ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC
+	.slv_clk_en             (slv_clk_en               ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC
+	.slv_clk                (slv_clk                  ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_SYNC_X2
+	.slv1_clk_en            (slv1_clk_en              ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_ASYNC_X2
+	.slv1_clk               (slv1_clk                 ),
+`endif
+`ifdef NDS_IO_BIU_AXI_ASYNC
+	.bus_clk                (bus_clk                  ),
+`endif
+`ifdef NDS_IO_BIU_AXI_SYNC
+	.bus_clk_en             (bus_clk_en               ),
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X2
+	.d_araddr               (d_araddr                 ),
+	.d_arburst              (d_arburst                ),
+	.d_arcache              (d_arcache                ),
+	.d_arid                 (d_arid                   ),
+	.d_arlen                (d_arlen                  ),
+	.d_arlock               (d_arlock                 ),
+	.d_arprot               (d_arprot                 ),
+	.d_arready              (d_arready                ),
+	.d_arsize               (d_arsize                 ),
+	.d_arvalid              (d_arvalid                ),
+	.d_awaddr               (d_awaddr                 ),
+	.d_awburst              (d_awburst                ),
+	.d_awcache              (d_awcache                ),
+	.d_awid                 (d_awid                   ),
+	.d_awlen                (d_awlen                  ),
+	.d_awlock               (d_awlock                 ),
+	.d_awprot               (d_awprot                 ),
+	.d_awready              (d_awready                ),
+	.d_awsize               (d_awsize                 ),
+	.d_awvalid              (d_awvalid                ),
+	.d_bid                  (d_bid                    ),
+	.d_bready               (d_bready                 ),
+	.d_bresp                (d_bresp                  ),
+	.d_bvalid               (d_bvalid                 ),
+	.d_rdata                (d_rdata                  ),
+	.d_rid                  (d_rid                    ),
+	.d_rlast                (d_rlast                  ),
+	.d_rready               (d_rready                 ),
+	.d_rresp                (d_rresp                  ),
+	.d_rvalid               (d_rvalid                 ),
+	.d_wdata                (d_wdata                  ),
+	.d_wlast                (d_wlast                  ),
+	.d_wready               (d_wready                 ),
+	.d_wstrb                (d_wstrb                  ),
+	.d_wvalid               (d_wvalid                 ),
+	.i_araddr               (i_araddr                 ),
+	.i_arburst              (i_arburst                ),
+	.i_arcache              (i_arcache                ),
+	.i_arid                 (i_arid                   ),
+	.i_arlen                (i_arlen                  ),
+	.i_arlock               (i_arlock                 ),
+	.i_arprot               (i_arprot                 ),
+	.i_arready              (i_arready                ),
+	.i_arsize               (i_arsize                 ),
+	.i_arvalid              (i_arvalid                ),
+	.i_awaddr               (i_awaddr                 ),
+	.i_awburst              (i_awburst                ),
+	.i_awcache              (i_awcache                ),
+	.i_awid                 (i_awid                   ),
+	.i_awlen                (i_awlen                  ),
+	.i_awlock               (i_awlock                 ),
+	.i_awprot               (i_awprot                 ),
+	.i_awready              (i_awready                ),
+	.i_awsize               (i_awsize                 ),
+	.i_awvalid              (i_awvalid                ),
+	.i_bid                  (i_bid                    ),
+	.i_bready               (i_bready                 ),
+	.i_bresp                (i_bresp                  ),
+	.i_bvalid               (i_bvalid                 ),
+	.i_rdata                (i_rdata                  ),
+	.i_rid                  (i_rid                    ),
+	.i_rlast                (i_rlast                  ),
+	.i_rready               (i_rready                 ),
+	.i_rresp                (i_rresp                  ),
+	.i_rvalid               (i_rvalid                 ),
+	.i_wdata                (i_wdata                  ),
+	.i_wlast                (i_wlast                  ),
+	.i_wready               (i_wready                 ),
+	.i_wstrb                (i_wstrb                  ),
+	.i_wvalid               (i_wvalid                 ),
+`endif
+`ifdef NDS_IO_BIU_AXI_COMMON_X1
+	.araddr                 (araddr                   ),
+	.arburst                (arburst                  ),
+	.arcache                (arcache                  ),
+	.arid                   (arid                     ),
+	.arlen                  (arlen                    ),
+	.arlock                 (arlock                   ),
+	.arprot                 (arprot                   ),
+	.arready                (arready                  ),
+	.arsize                 (arsize                   ),
+	.arvalid                (arvalid                  ),
+	.awaddr                 (awaddr                   ),
+	.awburst                (awburst                  ),
+	.awcache                (awcache                  ),
+	.awid                   (awid                     ),
+	.awlen                  (awlen                    ),
+	.awlock                 (awlock                   ),
+	.awprot                 (awprot                   ),
+	.awready                (awready                  ),
+	.awsize                 (awsize                   ),
+	.awvalid                (awvalid                  ),
+	.bid                    (bid                      ),
+	.bready                 (bready                   ),
+	.bresp                  (bresp                    ),
+	.bvalid                 (bvalid                   ),
+	.rdata                  (rdata                    ),
+	.rid                    (rid                      ),
+	.rlast                  (rlast                    ),
+	.rready                 (rready                   ),
+	.rresp                  (rresp                    ),
+	.rvalid                 (rvalid                   ),
+	.wdata                  (wdata                    ),
+	.wlast                  (wlast                    ),
+	.wready                 (wready                   ),
+	.wstrb                  (wstrb                    ),
+	.wvalid                 (wvalid                   ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_COMMON_X1
+	.slv_araddr             (slv_araddr               ),
+	.slv_arburst            (slv_arburst              ),
+	.slv_arcache            (slv_arcache              ),
+	.slv_arid               (slv_arid                 ),
+	.slv_arlen              (slv_arlen                ),
+	.slv_arlock             (slv_arlock               ),
+	.slv_arprot             (slv_arprot               ),
+	.slv_arready            (slv_arready              ),
+	.slv_arsize             (slv_arsize               ),
+	.slv_aruser             (slv_aruser               ),
+	.slv_arvalid            (slv_arvalid              ),
+	.slv_awaddr             (slv_awaddr               ),
+	.slv_awburst            (slv_awburst              ),
+	.slv_awcache            (slv_awcache              ),
+	.slv_awid               (slv_awid                 ),
+	.slv_awlen              (slv_awlen                ),
+	.slv_awlock             (slv_awlock               ),
+	.slv_awprot             (slv_awprot               ),
+	.slv_awready            (slv_awready              ),
+	.slv_awsize             (slv_awsize               ),
+	.slv_awuser             (slv_awuser               ),
+	.slv_awvalid            (slv_awvalid              ),
+	.slv_bid                (slv_bid                  ),
+	.slv_bready             (slv_bready               ),
+	.slv_bresp              (slv_bresp                ),
+	.slv_bvalid             (slv_bvalid               ),
+	.slv_rdata              (slv_rdata                ),
+	.slv_rid                (slv_rid                  ),
+	.slv_rlast              (slv_rlast                ),
+	.slv_rready             (slv_rready               ),
+	.slv_rresp              (slv_rresp                ),
+	.slv_rvalid             (slv_rvalid               ),
+	.slv_wdata              (slv_wdata                ),
+	.slv_wlast              (slv_wlast                ),
+	.slv_wready             (slv_wready               ),
+	.slv_wstrb              (slv_wstrb                ),
+	.slv_wvalid             (slv_wvalid               ),
+	.slv_reset_n            (slv_reset_n              ),
+`endif
+`ifdef NDS_IO_SLAVEPORT_COMMON_X2
+	.slv1_araddr            (slv1_araddr              ),
+	.slv1_arburst           (slv1_arburst             ),
+	.slv1_arcache           (slv1_arcache             ),
+	.slv1_arid              (slv1_arid                ),
+	.slv1_arlen             (slv1_arlen               ),
+	.slv1_arlock            (slv1_arlock              ),
+	.slv1_arprot            (slv1_arprot              ),
+	.slv1_arready           (slv1_arready             ),
+	.slv1_arsize            (slv1_arsize              ),
+	.slv1_aruser            (slv1_aruser              ),
+	.slv1_arvalid           (slv1_arvalid             ),
+	.slv1_awaddr            (slv1_awaddr              ),
+	.slv1_awburst           (slv1_awburst             ),
+	.slv1_awcache           (slv1_awcache             ),
+	.slv1_awid              (slv1_awid                ),
+	.slv1_awlen             (slv1_awlen               ),
+	.slv1_awlock            (slv1_awlock              ),
+	.slv1_awprot            (slv1_awprot              ),
+	.slv1_awready           (slv1_awready             ),
+	.slv1_awsize            (slv1_awsize              ),
+	.slv1_awuser            (slv1_awuser              ),
+	.slv1_awvalid           (slv1_awvalid             ),
+	.slv1_bid               (slv1_bid                 ),
+	.slv1_bready            (slv1_bready              ),
+	.slv1_bresp             (slv1_bresp               ),
+	.slv1_bvalid            (slv1_bvalid              ),
+	.slv1_rdata             (slv1_rdata               ),
+	.slv1_reset_n           (slv1_reset_n             ),
+	.slv1_rid               (slv1_rid                 ),
+	.slv1_rlast             (slv1_rlast               ),
+	.slv1_rready            (slv1_rready              ),
+	.slv1_rresp             (slv1_rresp               ),
+	.slv1_rvalid            (slv1_rvalid              ),
+	.slv1_wdata             (slv1_wdata               ),
+	.slv1_wlast             (slv1_wlast               ),
+	.slv1_wready            (slv1_wready              ),
+	.slv1_wstrb             (slv1_wstrb               ),
+	.slv1_wvalid            (slv1_wvalid              ),
+`endif
+`ifdef NDS_IO_LM_RESET
+	.lm_reset_n             (lm_reset_n               ),
+`endif
+`ifdef NDS_IO_ILM_TL_UL
+	.ilm_a_addr             (ilm_a_addr               ),
+	.ilm_a_data             (ilm_a_data               ),
+	.ilm_a_mask             (ilm_a_mask               ),
+	.ilm_a_opcode           (ilm_a_opcode             ),
+	.ilm_a_parity0          (ilm_a_parity0            ),
+	.ilm_a_parity1          (ilm_a_parity1            ),
+	.ilm_a_ready            (ilm_a_ready              ),
+	.ilm_a_size             (ilm_a_size               ),
+	.ilm_a_user             (ilm_a_user               ),
+	.ilm_a_valid            (ilm_a_valid              ),
+	.ilm_d_data             (ilm_d_data               ),
+	.ilm_d_denied           (ilm_d_denied             ),
+	.ilm_d_parity0          (ilm_d_parity0            ),
+	.ilm_d_parity1          (ilm_d_parity1            ),
+	.ilm_d_ready            (ilm_d_ready              ),
+	.ilm_d_valid            (ilm_d_valid              ),
+`endif
+`ifdef NDS_IO_ILM_RAM0
+	.ilm0_addr              (ilm0_addr                ),
+	.ilm0_byte_we           (ilm0_byte_we             ),
+	.ilm0_cs                (ilm0_cs                  ),
+	.ilm0_rdata             (ilm0_rdata               ),
+	.ilm0_user              (ilm0_user                ),
+	.ilm0_wdata             (ilm0_wdata               ),
+	.ilm0_we                (ilm0_we                  ),
+`endif
+`ifdef NDS_IO_ILM_RAM1
+	.ilm1_addr              (ilm1_addr                ),
+	.ilm1_byte_we           (ilm1_byte_we             ),
+	.ilm1_cs                (ilm1_cs                  ),
+	.ilm1_rdata             (ilm1_rdata               ),
+	.ilm1_user              (ilm1_user                ),
+	.ilm1_wdata             (ilm1_wdata               ),
+	.ilm1_we                (ilm1_we                  ),
+`endif
+`ifdef NDS_IO_DLM_TL_UL
+	.dlm_a_addr             (dlm_a_addr               ),
+	.dlm_a_data             (dlm_a_data               ),
+	.dlm_a_mask             (dlm_a_mask               ),
+	.dlm_a_opcode           (dlm_a_opcode             ),
+	.dlm_a_parity           (dlm_a_parity             ),
+	.dlm_a_ready            (dlm_a_ready              ),
+	.dlm_a_size             (dlm_a_size               ),
+	.dlm_a_user             (dlm_a_user               ),
+	.dlm_a_valid            (dlm_a_valid              ),
+	.dlm_d_data             (dlm_d_data               ),
+	.dlm_d_denied           (dlm_d_denied             ),
+	.dlm_d_parity           (dlm_d_parity             ),
+	.dlm_d_ready            (dlm_d_ready              ),
+	.dlm_d_valid            (dlm_d_valid              ),
+`endif
+`ifdef NDS_IO_DLM_RAM0
+	.dlm_addr               (dlm_addr                 ),
+	.dlm_byte_we            (dlm_byte_we              ),
+	.dlm_cs                 (dlm_cs                   ),
+	.dlm_rdata              (dlm_rdata                ),
+	.dlm_user               (dlm_user                 ),
+	.dlm_wdata              (dlm_wdata                ),
+	.dlm_we                 (dlm_we                   ),
+`endif
+`ifdef NDS_IO_DLM_RAM1
+	.dlm1_addr              (dlm1_addr                ),
+	.dlm1_byte_we           (dlm1_byte_we             ),
+	.dlm1_cs                (dlm1_cs                  ),
+	.dlm1_rdata             (dlm1_rdata               ),
+	.dlm1_user              (dlm1_user                ),
+	.dlm1_wdata             (dlm1_wdata               ),
+	.dlm1_we                (dlm1_we                  ),
+`endif
+`ifdef NDS_IO_DLM_RAM2
+	.dlm2_addr              (dlm2_addr                ),
+	.dlm2_byte_we           (dlm2_byte_we             ),
+	.dlm2_cs                (dlm2_cs                  ),
+	.dlm2_rdata             (dlm2_rdata               ),
+	.dlm2_user              (dlm2_user                ),
+	.dlm2_wdata             (dlm2_wdata               ),
+	.dlm2_we                (dlm2_we                  ),
+`endif
+`ifdef NDS_IO_DLM_RAM3
+	.dlm3_addr              (dlm3_addr                ),
+	.dlm3_byte_we           (dlm3_byte_we             ),
+	.dlm3_cs                (dlm3_cs                  ),
+	.dlm3_rdata             (dlm3_rdata               ),
+	.dlm3_user              (dlm3_user                ),
+	.dlm3_wdata             (dlm3_wdata               ),
+	.dlm3_we                (dlm3_we                  ),
+`endif
+`ifdef NDS_IO_BTB_RAM
+	.btb0_addr              (btb0_addr                ),
+	.btb0_cs                (btb0_cs                  ),
+	.btb0_rdata             (btb0_rdata               ),
+	.btb0_wdata             (btb0_wdata               ),
+	.btb0_we                (btb0_we                  ),
+	.btb1_addr              (btb1_addr                ),
+	.btb1_cs                (btb1_cs                  ),
+	.btb1_rdata             (btb1_rdata               ),
+	.btb1_wdata             (btb1_wdata               ),
+	.btb1_we                (btb1_we                  ),
+`endif
+`ifdef NDS_IO_ICACHE0
+	.icache_disable_init    (icache_disable_init      ),
+	.icache_data0_cs        (icache_data0_cs          ),
+	.icache_data0_we        (icache_data0_we          ),
+	.icache_data0_addr      (icache_data0_addr        ),
+	.icache_data0_wdata     (icache_data0_wdata       ),
+	.icache_data0_rdata     (icache_data0_rdata       ),
+	.icache_data1_cs        (icache_data1_cs          ),
+	.icache_data1_we        (icache_data1_we          ),
+	.icache_data1_addr      (icache_data1_addr        ),
+	.icache_data1_wdata     (icache_data1_wdata       ),
+	.icache_data1_rdata     (icache_data1_rdata       ),
+	.icache_data2_cs        (icache_data2_cs          ),
+	.icache_data2_we        (icache_data2_we          ),
+	.icache_data2_addr      (icache_data2_addr        ),
+	.icache_data2_wdata     (icache_data2_wdata       ),
+	.icache_data2_rdata     (icache_data2_rdata       ),
+	.icache_data3_cs        (icache_data3_cs          ),
+	.icache_data3_we        (icache_data3_we          ),
+	.icache_data3_addr      (icache_data3_addr        ),
+	.icache_data3_wdata     (icache_data3_wdata       ),
+	.icache_data3_rdata     (icache_data3_rdata       ),
+	.icache_data4_cs        (icache_data4_cs          ),
+	.icache_data4_we        (icache_data4_we          ),
+	.icache_data4_addr      (icache_data4_addr        ),
+	.icache_data4_wdata     (icache_data4_wdata       ),
+	.icache_data4_rdata     (icache_data4_rdata       ),
+	.icache_data5_cs        (icache_data5_cs          ),
+	.icache_data5_we        (icache_data5_we          ),
+	.icache_data5_addr      (icache_data5_addr        ),
+	.icache_data5_wdata     (icache_data5_wdata       ),
+	.icache_data5_rdata     (icache_data5_rdata       ),
+	.icache_data6_cs        (icache_data6_cs          ),
+	.icache_data6_we        (icache_data6_we          ),
+	.icache_data6_addr      (icache_data6_addr        ),
+	.icache_data6_wdata     (icache_data6_wdata       ),
+	.icache_data6_rdata     (icache_data6_rdata       ),
+	.icache_data7_cs        (icache_data7_cs          ),
+	.icache_data7_we        (icache_data7_we          ),
+	.icache_data7_addr      (icache_data7_addr        ),
+	.icache_data7_wdata     (icache_data7_wdata       ),
+	.icache_data7_rdata     (icache_data7_rdata       ),
+	.icache_tag0_cs         (icache_tag0_cs           ),
+	.icache_tag0_we         (icache_tag0_we           ),
+	.icache_tag0_addr       (icache_tag0_addr         ),
+	.icache_tag0_wdata      (icache_tag0_wdata        ),
+	.icache_tag0_rdata      (icache_tag0_rdata        ),
+`endif
+`ifdef NDS_IO_ICACHE1
+	.icache_tag1_cs         (icache_tag1_cs           ),
+	.icache_tag1_we         (icache_tag1_we           ),
+	.icache_tag1_addr       (icache_tag1_addr         ),
+	.icache_tag1_wdata      (icache_tag1_wdata        ),
+	.icache_tag1_rdata      (icache_tag1_rdata        ),
+`endif
+`ifdef NDS_IO_ICACHE2
+	.icache_tag2_cs         (icache_tag2_cs           ),
+	.icache_tag2_we         (icache_tag2_we           ),
+	.icache_tag2_addr       (icache_tag2_addr         ),
+	.icache_tag2_wdata      (icache_tag2_wdata        ),
+	.icache_tag2_rdata      (icache_tag2_rdata        ),
+	.icache_tag3_cs         (icache_tag3_cs           ),
+	.icache_tag3_we         (icache_tag3_we           ),
+	.icache_tag3_addr       (icache_tag3_addr         ),
+	.icache_tag3_wdata      (icache_tag3_wdata        ),
+	.icache_tag3_rdata      (icache_tag3_rdata        ),
+`endif
+`ifdef NDS_IO_DCACHE0
+	.dcache_disable_init    (dcache_disable_init      ),
+	.dcache_data0_cs        (dcache_data0_cs          ),
+	.dcache_data0_we        (dcache_data0_we          ),
+	.dcache_data0_byte_we   (dcache_data0_byte_we     ),
+	.dcache_data0_addr      (dcache_data0_addr        ),
+	.dcache_data0_wdata     (dcache_data0_wdata       ),
+	.dcache_data0_rdata     (dcache_data0_rdata       ),
+	.dcache_tag0_cs         (dcache_tag0_cs           ),
+	.dcache_tag0_we         (dcache_tag0_we           ),
+	.dcache_tag0_addr       (dcache_tag0_addr         ),
+	.dcache_tag0_wdata      (dcache_tag0_wdata        ),
+	.dcache_tag0_rdata      (dcache_tag0_rdata        ),
+	.dcache_data1_cs        (dcache_data1_cs          ),
+	.dcache_data1_we        (dcache_data1_we          ),
+	.dcache_data1_byte_we   (dcache_data1_byte_we     ),
+	.dcache_data1_addr      (dcache_data1_addr        ),
+	.dcache_data1_wdata     (dcache_data1_wdata       ),
+	.dcache_data1_rdata     (dcache_data1_rdata       ),
+	.dcache_data2_cs        (dcache_data2_cs          ),
+	.dcache_data2_we        (dcache_data2_we          ),
+	.dcache_data2_byte_we   (dcache_data2_byte_we     ),
+	.dcache_data2_addr      (dcache_data2_addr        ),
+	.dcache_data2_wdata     (dcache_data2_wdata       ),
+	.dcache_data2_rdata     (dcache_data2_rdata       ),
+	.dcache_data3_cs        (dcache_data3_cs          ),
+	.dcache_data3_we        (dcache_data3_we          ),
+	.dcache_data3_byte_we   (dcache_data3_byte_we     ),
+	.dcache_data3_addr      (dcache_data3_addr        ),
+	.dcache_data3_wdata     (dcache_data3_wdata       ),
+	.dcache_data3_rdata     (dcache_data3_rdata       ),
+`endif
+`ifdef NDS_IO_DCACHE1
+	.dcache_tag1_cs         (dcache_tag1_cs           ),
+	.dcache_tag1_we         (dcache_tag1_we           ),
+	.dcache_tag1_addr       (dcache_tag1_addr         ),
+	.dcache_tag1_wdata      (dcache_tag1_wdata        ),
+	.dcache_tag1_rdata      (dcache_tag1_rdata        ),
+`endif
+`ifdef NDS_IO_DCACHE2
+	.dcache_tag2_cs         (dcache_tag2_cs           ),
+	.dcache_tag2_we         (dcache_tag2_we           ),
+	.dcache_tag2_addr       (dcache_tag2_addr         ),
+	.dcache_tag2_wdata      (dcache_tag2_wdata        ),
+	.dcache_tag2_rdata      (dcache_tag2_rdata        ),
+	.dcache_tag3_cs         (dcache_tag3_cs           ),
+	.dcache_tag3_we         (dcache_tag3_we           ),
+	.dcache_tag3_addr       (dcache_tag3_addr         ),
+	.dcache_tag3_wdata      (dcache_tag3_wdata        ),
+	.dcache_tag3_rdata      (dcache_tag3_rdata        ),
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC
+	.stlb0_addr             (stlb0_addr               ),
+	.stlb0_cs               (stlb0_cs                 ),
+	.stlb0_rdata            (stlb0_rdata              ),
+	.stlb0_wdata            (stlb0_wdata              ),
+	.stlb0_we               (stlb0_we                 ),
+	.stlb1_addr             (stlb1_addr               ),
+	.stlb1_cs               (stlb1_cs                 ),
+	.stlb1_rdata            (stlb1_rdata              ),
+	.stlb1_wdata            (stlb1_wdata              ),
+	.stlb1_we               (stlb1_we                 ),
+	.stlb2_addr             (stlb2_addr               ),
+	.stlb2_cs               (stlb2_cs                 ),
+	.stlb2_rdata            (stlb2_rdata              ),
+	.stlb2_wdata            (stlb2_wdata              ),
+	.stlb2_we               (stlb2_we                 ),
+	.stlb3_addr             (stlb3_addr               ),
+	.stlb3_cs               (stlb3_cs                 ),
+	.stlb3_rdata            (stlb3_rdata              ),
+	.stlb3_wdata            (stlb3_wdata              ),
+	.stlb3_we               (stlb3_we                 ),
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC
+	.stlb_data0_addr        (stlb_data0_addr          ),
+	.stlb_data0_cs          (stlb_data0_cs            ),
+	.stlb_data0_rdata       (stlb_data0_rdata         ),
+	.stlb_data0_wdata       (stlb_data0_wdata         ),
+	.stlb_data0_we          (stlb_data0_we            ),
+	.stlb_data1_addr        (stlb_data1_addr          ),
+	.stlb_data1_cs          (stlb_data1_cs            ),
+	.stlb_data1_rdata       (stlb_data1_rdata         ),
+	.stlb_data1_wdata       (stlb_data1_wdata         ),
+	.stlb_data1_we          (stlb_data1_we            ),
+	.stlb_data2_addr        (stlb_data2_addr          ),
+	.stlb_data2_cs          (stlb_data2_cs            ),
+	.stlb_data2_rdata       (stlb_data2_rdata         ),
+	.stlb_data2_wdata       (stlb_data2_wdata         ),
+	.stlb_data2_we          (stlb_data2_we            ),
+	.stlb_data3_addr        (stlb_data3_addr          ),
+	.stlb_data3_cs          (stlb_data3_cs            ),
+	.stlb_data3_rdata       (stlb_data3_rdata         ),
+	.stlb_data3_wdata       (stlb_data3_wdata         ),
+	.stlb_data3_we          (stlb_data3_we            ),
+	.stlb_tag0_addr         (stlb_tag0_addr           ),
+	.stlb_tag0_cs           (stlb_tag0_cs             ),
+	.stlb_tag0_rdata        (stlb_tag0_rdata          ),
+	.stlb_tag0_wdata        (stlb_tag0_wdata          ),
+	.stlb_tag0_we           (stlb_tag0_we             ),
+	.stlb_tag1_addr         (stlb_tag1_addr           ),
+	.stlb_tag1_cs           (stlb_tag1_cs             ),
+	.stlb_tag1_rdata        (stlb_tag1_rdata          ),
+	.stlb_tag1_wdata        (stlb_tag1_wdata          ),
+	.stlb_tag1_we           (stlb_tag1_we             ),
+	.stlb_tag2_addr         (stlb_tag2_addr           ),
+	.stlb_tag2_cs           (stlb_tag2_cs             ),
+	.stlb_tag2_rdata        (stlb_tag2_rdata          ),
+	.stlb_tag2_wdata        (stlb_tag2_wdata          ),
+	.stlb_tag2_we           (stlb_tag2_we             ),
+	.stlb_tag3_addr         (stlb_tag3_addr           ),
+	.stlb_tag3_cs           (stlb_tag3_cs             ),
+	.stlb_tag3_rdata        (stlb_tag3_rdata          ),
+	.stlb_tag3_wdata        (stlb_tag3_wdata          ),
+	.stlb_tag3_we           (stlb_tag3_we             ),
+`endif
+`ifdef NDS_IO_ACE
+	.ace_acr_dirty_set      (ace_acr_dirty_set        ),
+	.ace_cmd_beat           (nds_unused_ace_cmd_beat  ),
+	.ace_cmd_hartid         (nds_unused_ace_cmd_hartid),
+	.ace_cmd_inst           (ace_cmd_inst             ),
+	.ace_cmd_pc             (ace_cmd_pc               ),
+	.ace_cmd_priv           (nds_unused_ace_cmd_priv  ),
+	.ace_cmd_ready          (ace_cmd_ready            ),
+	.ace_cmd_rs1            (ace_cmd_rs1              ),
+	.ace_cmd_rs2            (ace_cmd_rs2              ),
+	.ace_cmd_rs3            (ace_cmd_rs3              ),
+	.ace_cmd_rs4            (ace_cmd_rs4              ),
+	.ace_cmd_valid          (ace_cmd_valid            ),
+	.ace_cmd_vl             (nds_unused_ace_cmd_vl    ),
+	.ace_cmd_vtype          (nds_unused_ace_cmd_vtype ),
+	.ace_error              (ace_error                ),
+	.ace_interrupt          (ace_interrupt            ),
+	.ace_standby_ready      (ace_standby_ready        ),
+	.ace_sync_ack           (ace_sync_ack             ),
+	.ace_sync_ack_status    (ace_sync_ack_status      ),
+	.ace_sync_req           (ace_sync_req             ),
+	.ace_sync_type          (ace_sync_type            ),
+	.ace_xrf_rd1_data       (ace_xrf_rd1_data         ),
+	.ace_xrf_rd1_index      (ace_xrf_rd1_index        ),
+	.ace_xrf_rd1_ready      (ace_xrf_rd1_ready        ),
+	.ace_xrf_rd1_status     (ace_xrf_rd1_status       ),
+	.ace_xrf_rd1_valid      (ace_xrf_rd1_valid        ),
+	.ace_xrf_rd2_data       (ace_xrf_rd2_data         ),
+	.ace_xrf_rd2_index      (ace_xrf_rd2_index        ),
+	.ace_xrf_rd2_ready      (ace_xrf_rd2_ready        ),
+	.ace_xrf_rd2_status     (ace_xrf_rd2_status       ),
+	.ace_xrf_rd2_valid      (ace_xrf_rd2_valid        ),
+`endif
+`ifdef NDS_IO_PROBING
+	.core_current_pc        (core_current_pc          ),
+	.core_gpr_index         (core_gpr_index           ),
+	.core_selected_gpr_value(core_selected_gpr_value  ),
+`endif
+`ifdef NDS_IO_SEIP
+	.seip                   (seip                     ),
+	.seiack                 (seiack                   ),
+	.seiid                  (seiid                    ),
+`endif
+`ifdef NDS_IO_UEIP
+	.ueip                   (ueip                     ),
+	.ueiack                 (ueiack                   ),
+	.ueiid                  (ueiid                    ),
+`endif
+`ifdef NDS_IO_DEBUG
+	.debugint               (debugint                 ),
+	.resethaltreq           (resethaltreq             ),
+	.hart_unavail           (hart_unavail             ),
+	.hart_halted            (hart_halted              ),
+	.hart_under_reset       (hart_under_reset         ),
+	.stoptime               (stoptime                 ),
+`endif
+`ifdef NDS_IO_TRACE_INSTR_GEN1
+	.gen1_trace_enabled     (gen1_trace_enabled       ),
+	.gen1_trace_ivalid      (gen1_trace_ivalid        ),
+	.gen1_trace_iexception  (gen1_trace_iexception    ),
+	.gen1_trace_interrupt   (gen1_trace_interrupt     ),
+	.gen1_trace_cause       (gen1_trace_cause         ),
+	.gen1_trace_priv        (gen1_trace_priv          ),
+	.gen1_trace_tval        (gen1_trace_tval          ),
+	.gen1_trace_instr       (gen1_trace_instr         ),
+	.gen1_trace_iaddr       (gen1_trace_iaddr         ),
+`endif
+`ifdef NDS_IO_TRACE_INSTR
+	.trace_cause            (trace_cause              ),
+	.trace_enabled          (trace_enabled            ),
+	.trace_halted           (trace_halted             ),
+	.trace_iaddr            (trace_iaddr              ),
+	.trace_ilastsize        (trace_ilastsize          ),
+	.trace_iretire          (trace_iretire            ),
+	.trace_itype            (trace_itype              ),
+	.trace_priv             (trace_priv               ),
+	.trace_reset            (trace_reset              ),
+	.trace_trigger          (trace_trigger            ),
+	.trace_tval             (trace_tval               ),
+`endif
+	.hart_id                (hart_id                  ),
+	.core_clk               (core_clk                 ),
+	.core_reset_n           (core_reset_n             ),
+	.test_mode              (test_mode                ),
+	.scan_enable            (scan_enable              ),
+	.reset_vector           (reset_vector             ),
+	.core_wfi_mode          (core_wfi_mode            ),
+	.nmi                    (nmi                      ),
+	.meip                   (meip                     ),
+	.meiack                 (meiack                   ),
+	.meiid                  (meiid                    ),
+	.mtip                   (mtip                     ),
+	.msip                   (msip                     )
+);
+
+`ifdef NDS_IO_ILM_RAM0
+   `ifdef NDS_IO_ILM_RAM_ECC
+kv_ilm_ecc_ram #(
+	.ILM_RAM_AW      (`NDS_ILM_RAM_AW ),
+	.ILM_RAM_CTRL_IN_WIDTH(`NDS_ILM_RAM_CTRL_IN_WIDTH),
+	.ILM_RAM_CTRL_OUT_WIDTH(`NDS_ILM_RAM_CTRL_OUT_WIDTH),
+	.ILM_RAM_DW      (`NDS_ILM_RAM_DW )
+) u_ilm_ram0 (
+	.clk         (ilm_clk          ),
+	.ilm_cs      (ilm0_cs          ),
+	.ilm_we      (ilm0_we          ),
+	.ilm_addr    (ilm0_addr        ),
+	.ilm_wdata   (ilm0_wdata       ),
+	.ilm_rdata   (ilm0_rdata       ),
+	.ilm_ctrl_in (int_ilm0_ctrl_in ),
+	.ilm_ctrl_out(int_ilm0_ctrl_out)
+);
+
+   `else
+kv_ilm_ram #(
+	.ILM_RAM_AW      (`NDS_ILM_RAM_AW ),
+	.ILM_RAM_BWEW    (`NDS_ILM_RAM_BWEW),
+	.ILM_RAM_CTRL_IN_WIDTH(`NDS_ILM_RAM_CTRL_IN_WIDTH),
+	.ILM_RAM_CTRL_OUT_WIDTH(`NDS_ILM_RAM_CTRL_OUT_WIDTH),
+	.ILM_RAM_DW      (`NDS_ILM_RAM_DW )
+) u_ilm_ram0 (
+	.clk         (ilm_clk          ),
+	.ilm_cs      (ilm0_cs          ),
+	.ilm_we      (ilm0_we          ),
+	.ilm_addr    (ilm0_addr        ),
+	.ilm_byte_we (ilm0_byte_we     ),
+	.ilm_wdata   (ilm0_wdata       ),
+	.ilm_rdata   (ilm0_rdata       ),
+	.ilm_ctrl_in (int_ilm0_ctrl_in ),
+	.ilm_ctrl_out(int_ilm0_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_ILM_RAM1
+   `ifdef NDS_IO_ILM_RAM_ECC
+kv_ilm_ecc_ram #(
+	.ILM_RAM_AW      (`NDS_ILM_RAM_AW ),
+	.ILM_RAM_CTRL_IN_WIDTH(`NDS_ILM_RAM_CTRL_IN_WIDTH),
+	.ILM_RAM_CTRL_OUT_WIDTH(`NDS_ILM_RAM_CTRL_OUT_WIDTH),
+	.ILM_RAM_DW      (`NDS_ILM_RAM_DW )
+) u_ilm_ram1 (
+	.clk         (ilm_clk          ),
+	.ilm_cs      (ilm1_cs          ),
+	.ilm_we      (ilm1_we          ),
+	.ilm_addr    (ilm1_addr        ),
+	.ilm_wdata   (ilm1_wdata       ),
+	.ilm_rdata   (ilm1_rdata       ),
+	.ilm_ctrl_in (int_ilm1_ctrl_in ),
+	.ilm_ctrl_out(int_ilm1_ctrl_out)
+);
+
+   `else
+kv_ilm_ram #(
+	.ILM_RAM_AW      (`NDS_ILM_RAM_AW ),
+	.ILM_RAM_BWEW    (`NDS_ILM_RAM_BWEW),
+	.ILM_RAM_CTRL_IN_WIDTH(`NDS_ILM_RAM_CTRL_IN_WIDTH),
+	.ILM_RAM_CTRL_OUT_WIDTH(`NDS_ILM_RAM_CTRL_OUT_WIDTH),
+	.ILM_RAM_DW      (`NDS_ILM_RAM_DW )
+) u_ilm_ram1 (
+	.clk         (ilm_clk          ),
+	.ilm_cs      (ilm1_cs          ),
+	.ilm_we      (ilm1_we          ),
+	.ilm_addr    (ilm1_addr        ),
+	.ilm_byte_we (ilm1_byte_we     ),
+	.ilm_wdata   (ilm1_wdata       ),
+	.ilm_rdata   (ilm1_rdata       ),
+	.ilm_ctrl_in (int_ilm1_ctrl_in ),
+	.ilm_ctrl_out(int_ilm1_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DLM_RAM0
+   `ifdef NDS_IO_DLM_RAM_ECC
+kv_dlm_ecc_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram0 (
+	.clk         (dlm_clk         ),
+	.dlm_cs      (dlm_cs          ),
+	.dlm_we      (dlm_we          ),
+	.dlm_addr    (dlm_addr        ),
+	.dlm_wdata   (dlm_wdata       ),
+	.dlm_rdata   (dlm_rdata       ),
+	.dlm_ctrl_in (int_dlm_ctrl_in ),
+	.dlm_ctrl_out(int_dlm_ctrl_out)
+);
+
+   `else
+kv_dlm_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_BWEW    (`NDS_DLM_RAM_BWEW),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram0 (
+	.clk         (dlm_clk         ),
+	.dlm_cs      (dlm_cs          ),
+	.dlm_we      (dlm_we          ),
+	.dlm_byte_we (dlm_byte_we     ),
+	.dlm_addr    (dlm_addr        ),
+	.dlm_wdata   (dlm_wdata       ),
+	.dlm_rdata   (dlm_rdata       ),
+	.dlm_ctrl_in (int_dlm_ctrl_in ),
+	.dlm_ctrl_out(int_dlm_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DLM_RAM1
+   `ifdef NDS_IO_DLM_RAM_ECC
+kv_dlm_ecc_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram1 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm1_cs          ),
+	.dlm_we      (dlm1_we          ),
+	.dlm_addr    (dlm1_addr        ),
+	.dlm_wdata   (dlm1_wdata       ),
+	.dlm_rdata   (dlm1_rdata       ),
+	.dlm_ctrl_in (int_dlm1_ctrl_in ),
+	.dlm_ctrl_out(int_dlm1_ctrl_out)
+);
+
+   `else
+kv_dlm_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_BWEW    (`NDS_DLM_RAM_BWEW),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram1 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm1_cs          ),
+	.dlm_we      (dlm1_we          ),
+	.dlm_byte_we (dlm1_byte_we     ),
+	.dlm_addr    (dlm1_addr        ),
+	.dlm_wdata   (dlm1_wdata       ),
+	.dlm_rdata   (dlm1_rdata       ),
+	.dlm_ctrl_in (int_dlm1_ctrl_in ),
+	.dlm_ctrl_out(int_dlm1_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DLM_RAM2
+   `ifdef NDS_IO_DLM_RAM_ECC
+kv_dlm_ecc_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram2 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm2_cs          ),
+	.dlm_we      (dlm2_we          ),
+	.dlm_addr    (dlm2_addr        ),
+	.dlm_wdata   (dlm2_wdata       ),
+	.dlm_rdata   (dlm2_rdata       ),
+	.dlm_ctrl_in (int_dlm2_ctrl_in ),
+	.dlm_ctrl_out(int_dlm2_ctrl_out)
+);
+
+   `else
+kv_dlm_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_BWEW    (`NDS_DLM_RAM_BWEW),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram2 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm2_cs          ),
+	.dlm_we      (dlm2_we          ),
+	.dlm_byte_we (dlm2_byte_we     ),
+	.dlm_addr    (dlm2_addr        ),
+	.dlm_wdata   (dlm2_wdata       ),
+	.dlm_rdata   (dlm2_rdata       ),
+	.dlm_ctrl_in (int_dlm2_ctrl_in ),
+	.dlm_ctrl_out(int_dlm2_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DLM_RAM3
+   `ifdef NDS_IO_DLM_RAM_ECC
+kv_dlm_ecc_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram3 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm3_cs          ),
+	.dlm_we      (dlm3_we          ),
+	.dlm_addr    (dlm3_addr        ),
+	.dlm_wdata   (dlm3_wdata       ),
+	.dlm_rdata   (dlm3_rdata       ),
+	.dlm_ctrl_in (int_dlm3_ctrl_in ),
+	.dlm_ctrl_out(int_dlm3_ctrl_out)
+);
+
+   `else
+kv_dlm_ram #(
+	.DLM_RAM_AW      (`NDS_DLM_RAM_AW ),
+	.DLM_RAM_BWEW    (`NDS_DLM_RAM_BWEW),
+	.DLM_RAM_CTRL_IN_WIDTH(`NDS_DLM_RAM_CTRL_IN_WIDTH),
+	.DLM_RAM_CTRL_OUT_WIDTH(`NDS_DLM_RAM_CTRL_OUT_WIDTH),
+	.DLM_RAM_DW      (`NDS_DLM_RAM_DW )
+) u_dlm_ram3 (
+	.clk         (dlm_clk          ),
+	.dlm_cs      (dlm3_cs          ),
+	.dlm_we      (dlm3_we          ),
+	.dlm_byte_we (dlm3_byte_we     ),
+	.dlm_addr    (dlm3_addr        ),
+	.dlm_wdata   (dlm3_wdata       ),
+	.dlm_rdata   (dlm3_rdata       ),
+	.dlm_ctrl_in (int_dlm3_ctrl_in ),
+	.dlm_ctrl_out(int_dlm3_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_ACE
+ace #(
+	.VALEN           (VALEN           ),
+	.XLEN            (XLEN            )
+) u_ace (
+	.core_clk           (core_clk           ),
+	.core_reset_n       (core_reset_n       ),
+	.ace_cmd_valid      (ace_cmd_valid      ),
+	.ace_cmd_inst       (ace_cmd_inst       ),
+	.ace_cmd_pc         (ace_cmd_pc         ),
+	.ace_cmd_rs1        (ace_cmd_rs1        ),
+	.ace_cmd_rs2        (ace_cmd_rs2        ),
+	.ace_cmd_rs3        (ace_cmd_rs3        ),
+	.ace_cmd_rs4        (ace_cmd_rs4        ),
+	.ace_cmd_ready      (ace_cmd_ready      ),
+	.ace_acr_dirty_set  (ace_acr_dirty_set  ),
+	.ace_error          (ace_error          ),
+	.ace_standby_ready  (ace_standby_ready  ),
+	.ace_xrf_rd1_ready  (ace_xrf_rd1_ready  ),
+	.ace_xrf_rd1_valid  (ace_xrf_rd1_valid  ),
+	.ace_xrf_rd1_index  (ace_xrf_rd1_index  ),
+	.ace_xrf_rd1_data   (ace_xrf_rd1_data   ),
+	.ace_xrf_rd1_status (ace_xrf_rd1_status ),
+	.ace_xrf_rd2_ready  (ace_xrf_rd2_ready  ),
+	.ace_xrf_rd2_valid  (ace_xrf_rd2_valid  ),
+	.ace_xrf_rd2_index  (ace_xrf_rd2_index  ),
+	.ace_xrf_rd2_data   (ace_xrf_rd2_data   ),
+	.ace_xrf_rd2_status (ace_xrf_rd2_status ),
+	.ace_interrupt      (ace_interrupt      ),
+	.ace_sync_ack       (ace_sync_ack       ),
+	.ace_sync_ack_status(ace_sync_ack_status),
+	.ace_sync_req       (ace_sync_req       ),
+	.ace_sync_type      (ace_sync_type      )
+);
+
+`endif
+`ifdef NDS_IO_ICACHE0
+   `ifdef NDS_IO_ICACHE_RAM_NECC
+kv_icache_tag_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram0 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag0_cs          ),
+	.icache_tag_addr    (icache_tag0_addr        ),
+	.icache_tag_rdata   (icache_tag0_rdata       ),
+	.icache_tag_wdata   (icache_tag0_wdata       ),
+	.icache_tag_we      (icache_tag0_we          ),
+	.icache_tag_ctrl_in (int_icache_tag0_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag0_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_PAR
+kv_icache_tag_par_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram0 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag0_cs          ),
+	.icache_tag_addr    (icache_tag0_addr        ),
+	.icache_tag_rdata   (icache_tag0_rdata       ),
+	.icache_tag_wdata   (icache_tag0_wdata       ),
+	.icache_tag_we      (icache_tag0_we          ),
+	.icache_tag_ctrl_in (int_icache_tag0_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag0_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_ECC
+kv_icache_tag_ecc_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram0 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag0_cs          ),
+	.icache_tag_addr    (icache_tag0_addr        ),
+	.icache_tag_rdata   (icache_tag0_rdata       ),
+	.icache_tag_wdata   (icache_tag0_wdata       ),
+	.icache_tag_we      (icache_tag0_we          ),
+	.icache_tag_ctrl_in (int_icache_tag0_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag0_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_PAR
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram0 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data0_rdata       ),
+	.icache_data_wdata   (icache_data0_wdata       ),
+	.icache_data_cs      (icache_data0_cs          ),
+	.icache_data_we      (icache_data0_we          ),
+	.icache_data_addr    (icache_data0_addr        ),
+	.icache_data_ctrl_in (int_icache_data0_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data0_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram1 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data1_rdata       ),
+	.icache_data_wdata   (icache_data1_wdata       ),
+	.icache_data_cs      (icache_data1_cs          ),
+	.icache_data_we      (icache_data1_we          ),
+	.icache_data_addr    (icache_data1_addr        ),
+	.icache_data_ctrl_in (int_icache_data1_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data1_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram2 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data2_rdata       ),
+	.icache_data_wdata   (icache_data2_wdata       ),
+	.icache_data_cs      (icache_data2_cs          ),
+	.icache_data_we      (icache_data2_we          ),
+	.icache_data_addr    (icache_data2_addr        ),
+	.icache_data_ctrl_in (int_icache_data2_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data2_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram3 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data3_rdata       ),
+	.icache_data_wdata   (icache_data3_wdata       ),
+	.icache_data_cs      (icache_data3_cs          ),
+	.icache_data_we      (icache_data3_we          ),
+	.icache_data_addr    (icache_data3_addr        ),
+	.icache_data_ctrl_in (int_icache_data3_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data3_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram4 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data4_rdata       ),
+	.icache_data_wdata   (icache_data4_wdata       ),
+	.icache_data_cs      (icache_data4_cs          ),
+	.icache_data_we      (icache_data4_we          ),
+	.icache_data_addr    (icache_data4_addr        ),
+	.icache_data_ctrl_in (int_icache_data4_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data4_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram5 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data5_rdata       ),
+	.icache_data_wdata   (icache_data5_wdata       ),
+	.icache_data_cs      (icache_data5_cs          ),
+	.icache_data_we      (icache_data5_we          ),
+	.icache_data_addr    (icache_data5_addr        ),
+	.icache_data_ctrl_in (int_icache_data5_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data5_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram6 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data6_rdata       ),
+	.icache_data_wdata   (icache_data6_wdata       ),
+	.icache_data_cs      (icache_data6_cs          ),
+	.icache_data_we      (icache_data6_we          ),
+	.icache_data_addr    (icache_data6_addr        ),
+	.icache_data_ctrl_in (int_icache_data6_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data6_ctrl_out)
+);
+
+kv_icache_data_par_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram7 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data7_rdata       ),
+	.icache_data_wdata   (icache_data7_wdata       ),
+	.icache_data_cs      (icache_data7_cs          ),
+	.icache_data_we      (icache_data7_we          ),
+	.icache_data_addr    (icache_data7_addr        ),
+	.icache_data_ctrl_in (int_icache_data7_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data7_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_ECC
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram0 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data0_rdata       ),
+	.icache_data_wdata   (icache_data0_wdata       ),
+	.icache_data_cs      (icache_data0_cs          ),
+	.icache_data_we      (icache_data0_we          ),
+	.icache_data_addr    (icache_data0_addr        ),
+	.icache_data_ctrl_in (int_icache_data0_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data0_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram1 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data1_rdata       ),
+	.icache_data_wdata   (icache_data1_wdata       ),
+	.icache_data_cs      (icache_data1_cs          ),
+	.icache_data_we      (icache_data1_we          ),
+	.icache_data_addr    (icache_data1_addr        ),
+	.icache_data_ctrl_in (int_icache_data1_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data1_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram2 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data2_rdata       ),
+	.icache_data_wdata   (icache_data2_wdata       ),
+	.icache_data_cs      (icache_data2_cs          ),
+	.icache_data_we      (icache_data2_we          ),
+	.icache_data_addr    (icache_data2_addr        ),
+	.icache_data_ctrl_in (int_icache_data2_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data2_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram3 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data3_rdata       ),
+	.icache_data_wdata   (icache_data3_wdata       ),
+	.icache_data_cs      (icache_data3_cs          ),
+	.icache_data_we      (icache_data3_we          ),
+	.icache_data_addr    (icache_data3_addr        ),
+	.icache_data_ctrl_in (int_icache_data3_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data3_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram4 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data4_rdata       ),
+	.icache_data_wdata   (icache_data4_wdata       ),
+	.icache_data_cs      (icache_data4_cs          ),
+	.icache_data_we      (icache_data4_we          ),
+	.icache_data_addr    (icache_data4_addr        ),
+	.icache_data_ctrl_in (int_icache_data4_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data4_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram5 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data5_rdata       ),
+	.icache_data_wdata   (icache_data5_wdata       ),
+	.icache_data_cs      (icache_data5_cs          ),
+	.icache_data_we      (icache_data5_we          ),
+	.icache_data_addr    (icache_data5_addr        ),
+	.icache_data_ctrl_in (int_icache_data5_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data5_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram6 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data6_rdata       ),
+	.icache_data_wdata   (icache_data6_wdata       ),
+	.icache_data_cs      (icache_data6_cs          ),
+	.icache_data_we      (icache_data6_we          ),
+	.icache_data_addr    (icache_data6_addr        ),
+	.icache_data_ctrl_in (int_icache_data6_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data6_ctrl_out)
+);
+
+kv_icache_data_ecc_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram7 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data7_rdata       ),
+	.icache_data_wdata   (icache_data7_wdata       ),
+	.icache_data_cs      (icache_data7_cs          ),
+	.icache_data_we      (icache_data7_we          ),
+	.icache_data_addr    (icache_data7_addr        ),
+	.icache_data_ctrl_in (int_icache_data7_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data7_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_NECC
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram0 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data0_rdata       ),
+	.icache_data_wdata   (icache_data0_wdata       ),
+	.icache_data_cs      (icache_data0_cs          ),
+	.icache_data_we      (icache_data0_we          ),
+	.icache_data_addr    (icache_data0_addr        ),
+	.icache_data_ctrl_in (int_icache_data0_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data0_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram1 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data1_rdata       ),
+	.icache_data_wdata   (icache_data1_wdata       ),
+	.icache_data_cs      (icache_data1_cs          ),
+	.icache_data_we      (icache_data1_we          ),
+	.icache_data_addr    (icache_data1_addr        ),
+	.icache_data_ctrl_in (int_icache_data1_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data1_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram2 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data2_rdata       ),
+	.icache_data_wdata   (icache_data2_wdata       ),
+	.icache_data_cs      (icache_data2_cs          ),
+	.icache_data_we      (icache_data2_we          ),
+	.icache_data_addr    (icache_data2_addr        ),
+	.icache_data_ctrl_in (int_icache_data2_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data2_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram3 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data3_rdata       ),
+	.icache_data_wdata   (icache_data3_wdata       ),
+	.icache_data_cs      (icache_data3_cs          ),
+	.icache_data_we      (icache_data3_we          ),
+	.icache_data_addr    (icache_data3_addr        ),
+	.icache_data_ctrl_in (int_icache_data3_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data3_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram4 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data4_rdata       ),
+	.icache_data_wdata   (icache_data4_wdata       ),
+	.icache_data_cs      (icache_data4_cs          ),
+	.icache_data_we      (icache_data4_we          ),
+	.icache_data_addr    (icache_data4_addr        ),
+	.icache_data_ctrl_in (int_icache_data4_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data4_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram5 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data5_rdata       ),
+	.icache_data_wdata   (icache_data5_wdata       ),
+	.icache_data_cs      (icache_data5_cs          ),
+	.icache_data_we      (icache_data5_we          ),
+	.icache_data_addr    (icache_data5_addr        ),
+	.icache_data_ctrl_in (int_icache_data5_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data5_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram6 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data6_rdata       ),
+	.icache_data_wdata   (icache_data6_wdata       ),
+	.icache_data_cs      (icache_data6_cs          ),
+	.icache_data_we      (icache_data6_we          ),
+	.icache_data_addr    (icache_data6_addr        ),
+	.icache_data_ctrl_in (int_icache_data6_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data6_ctrl_out)
+);
+
+kv_icache_data_ram #(
+	.ICACHE_DATA_RAM_AW(`NDS_ICACHE_DATA_RAM_AW),
+	.ICACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.ICACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_DATA_RAM_DW(`NDS_ICACHE_DATA_RAM_DW)
+) u_icache_data_ram7 (
+	.clk                 (core_clk                 ),
+	.icache_data_rdata   (icache_data7_rdata       ),
+	.icache_data_wdata   (icache_data7_wdata       ),
+	.icache_data_cs      (icache_data7_cs          ),
+	.icache_data_we      (icache_data7_we          ),
+	.icache_data_addr    (icache_data7_addr        ),
+	.icache_data_ctrl_in (int_icache_data7_ctrl_in ),
+	.icache_data_ctrl_out(int_icache_data7_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_ICACHE1
+   `ifdef NDS_IO_ICACHE_RAM_PAR
+kv_icache_tag_par_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram1 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag1_cs          ),
+	.icache_tag_addr    (icache_tag1_addr        ),
+	.icache_tag_rdata   (icache_tag1_rdata       ),
+	.icache_tag_wdata   (icache_tag1_wdata       ),
+	.icache_tag_we      (icache_tag1_we          ),
+	.icache_tag_ctrl_in (int_icache_tag1_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag1_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_ECC
+kv_icache_tag_ecc_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram1 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag1_cs          ),
+	.icache_tag_addr    (icache_tag1_addr        ),
+	.icache_tag_rdata   (icache_tag1_rdata       ),
+	.icache_tag_wdata   (icache_tag1_wdata       ),
+	.icache_tag_we      (icache_tag1_we          ),
+	.icache_tag_ctrl_in (int_icache_tag1_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag1_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_NECC
+kv_icache_tag_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram1 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag1_cs          ),
+	.icache_tag_addr    (icache_tag1_addr        ),
+	.icache_tag_rdata   (icache_tag1_rdata       ),
+	.icache_tag_wdata   (icache_tag1_wdata       ),
+	.icache_tag_we      (icache_tag1_we          ),
+	.icache_tag_ctrl_in (int_icache_tag1_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag1_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_ICACHE2
+   `ifdef NDS_IO_ICACHE_RAM_PAR
+kv_icache_tag_par_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram2 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag2_cs          ),
+	.icache_tag_addr    (icache_tag2_addr        ),
+	.icache_tag_rdata   (icache_tag2_rdata       ),
+	.icache_tag_wdata   (icache_tag2_wdata       ),
+	.icache_tag_we      (icache_tag2_we          ),
+	.icache_tag_ctrl_in (int_icache_tag2_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag2_ctrl_out)
+);
+
+kv_icache_tag_par_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram3 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag3_cs          ),
+	.icache_tag_addr    (icache_tag3_addr        ),
+	.icache_tag_rdata   (icache_tag3_rdata       ),
+	.icache_tag_wdata   (icache_tag3_wdata       ),
+	.icache_tag_we      (icache_tag3_we          ),
+	.icache_tag_ctrl_in (int_icache_tag3_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag3_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_ECC
+kv_icache_tag_ecc_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram2 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag2_cs          ),
+	.icache_tag_addr    (icache_tag2_addr        ),
+	.icache_tag_rdata   (icache_tag2_rdata       ),
+	.icache_tag_wdata   (icache_tag2_wdata       ),
+	.icache_tag_we      (icache_tag2_we          ),
+	.icache_tag_ctrl_in (int_icache_tag2_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag2_ctrl_out)
+);
+
+kv_icache_tag_ecc_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram3 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag3_cs          ),
+	.icache_tag_addr    (icache_tag3_addr        ),
+	.icache_tag_rdata   (icache_tag3_rdata       ),
+	.icache_tag_wdata   (icache_tag3_wdata       ),
+	.icache_tag_we      (icache_tag3_we          ),
+	.icache_tag_ctrl_in (int_icache_tag3_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag3_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_ICACHE_RAM_NECC
+kv_icache_tag_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram2 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag2_cs          ),
+	.icache_tag_addr    (icache_tag2_addr        ),
+	.icache_tag_rdata   (icache_tag2_rdata       ),
+	.icache_tag_wdata   (icache_tag2_wdata       ),
+	.icache_tag_we      (icache_tag2_we          ),
+	.icache_tag_ctrl_in (int_icache_tag2_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag2_ctrl_out)
+);
+
+kv_icache_tag_ram #(
+	.ICACHE_TAG_RAM_AW(`NDS_ICACHE_TAG_RAM_AW),
+	.ICACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.ICACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_ICACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.ICACHE_TAG_RAM_DW(`NDS_ICACHE_TAG_RAM_DW)
+) u_icache_tag_ram3 (
+	.clk                (core_clk                ),
+	.icache_tag_cs      (icache_tag3_cs          ),
+	.icache_tag_addr    (icache_tag3_addr        ),
+	.icache_tag_rdata   (icache_tag3_rdata       ),
+	.icache_tag_wdata   (icache_tag3_wdata       ),
+	.icache_tag_we      (icache_tag3_we          ),
+	.icache_tag_ctrl_in (int_icache_tag3_ctrl_in ),
+	.icache_tag_ctrl_out(int_icache_tag3_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DCACHE0
+   `ifdef NDS_IO_DCACHE_RAM_ECC
+kv_dcache_tag_ecc_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram0 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag0_cs          ),
+	.dcache_tag_we      (dcache_tag0_we          ),
+	.dcache_tag_addr    (dcache_tag0_addr        ),
+	.dcache_tag_wdata   (dcache_tag0_wdata       ),
+	.dcache_tag_rdata   (dcache_tag0_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag0_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag0_ctrl_out)
+);
+
+kv_dcache_data_ecc_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram0 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data0_rdata       ),
+	.dcache_data_wdata   (dcache_data0_wdata       ),
+	.dcache_data_cs      (dcache_data0_cs          ),
+	.dcache_data_we      (dcache_data0_we          ),
+	.dcache_data_addr    (dcache_data0_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data0_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data0_ctrl_out)
+);
+
+kv_dcache_data_ecc_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram1 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data1_rdata       ),
+	.dcache_data_wdata   (dcache_data1_wdata       ),
+	.dcache_data_cs      (dcache_data1_cs          ),
+	.dcache_data_we      (dcache_data1_we          ),
+	.dcache_data_addr    (dcache_data1_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data1_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data1_ctrl_out)
+);
+
+kv_dcache_data_ecc_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram2 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data2_rdata       ),
+	.dcache_data_wdata   (dcache_data2_wdata       ),
+	.dcache_data_cs      (dcache_data2_cs          ),
+	.dcache_data_we      (dcache_data2_we          ),
+	.dcache_data_addr    (dcache_data2_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data2_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data2_ctrl_out)
+);
+
+kv_dcache_data_ecc_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram3 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data3_rdata       ),
+	.dcache_data_wdata   (dcache_data3_wdata       ),
+	.dcache_data_cs      (dcache_data3_cs          ),
+	.dcache_data_we      (dcache_data3_we          ),
+	.dcache_data_addr    (dcache_data3_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data3_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data3_ctrl_out)
+);
+
+   `else
+kv_dcache_tag_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram0 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag0_cs          ),
+	.dcache_tag_we      (dcache_tag0_we          ),
+	.dcache_tag_addr    (dcache_tag0_addr        ),
+	.dcache_tag_wdata   (dcache_tag0_wdata       ),
+	.dcache_tag_rdata   (dcache_tag0_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag0_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag0_ctrl_out)
+);
+
+kv_dcache_data_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_BWEW(`NDS_DCACHE_DATA_RAM_BWEW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram0 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data0_rdata       ),
+	.dcache_data_wdata   (dcache_data0_wdata       ),
+	.dcache_data_cs      (dcache_data0_cs          ),
+	.dcache_data_we      (dcache_data0_we          ),
+	.dcache_data_byte_we (dcache_data0_byte_we     ),
+	.dcache_data_addr    (dcache_data0_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data0_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data0_ctrl_out)
+);
+
+kv_dcache_data_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_BWEW(`NDS_DCACHE_DATA_RAM_BWEW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram1 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data1_rdata       ),
+	.dcache_data_wdata   (dcache_data1_wdata       ),
+	.dcache_data_cs      (dcache_data1_cs          ),
+	.dcache_data_we      (dcache_data1_we          ),
+	.dcache_data_byte_we (dcache_data1_byte_we     ),
+	.dcache_data_addr    (dcache_data1_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data1_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data1_ctrl_out)
+);
+
+kv_dcache_data_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_BWEW(`NDS_DCACHE_DATA_RAM_BWEW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram2 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data2_rdata       ),
+	.dcache_data_wdata   (dcache_data2_wdata       ),
+	.dcache_data_cs      (dcache_data2_cs          ),
+	.dcache_data_we      (dcache_data2_we          ),
+	.dcache_data_byte_we (dcache_data2_byte_we     ),
+	.dcache_data_addr    (dcache_data2_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data2_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data2_ctrl_out)
+);
+
+kv_dcache_data_ram #(
+	.DCACHE_DATA_RAM_AW(`NDS_DCACHE_DATA_RAM_AW),
+	.DCACHE_DATA_RAM_BWEW(`NDS_DCACHE_DATA_RAM_BWEW),
+	.DCACHE_DATA_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_IN_WIDTH),
+	.DCACHE_DATA_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_DATA_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_DATA_RAM_DW(`NDS_DCACHE_DATA_RAM_DW)
+) u_dcache_data_ram3 (
+	.clk                 (dcache_clk               ),
+	.dcache_data_rdata   (dcache_data3_rdata       ),
+	.dcache_data_wdata   (dcache_data3_wdata       ),
+	.dcache_data_cs      (dcache_data3_cs          ),
+	.dcache_data_we      (dcache_data3_we          ),
+	.dcache_data_byte_we (dcache_data3_byte_we     ),
+	.dcache_data_addr    (dcache_data3_addr        ),
+	.dcache_data_ctrl_in (int_dcache_data3_ctrl_in ),
+	.dcache_data_ctrl_out(int_dcache_data3_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DCACHE1
+   `ifdef NDS_IO_DCACHE_RAM_ECC
+kv_dcache_tag_ecc_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram1 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag1_cs          ),
+	.dcache_tag_we      (dcache_tag1_we          ),
+	.dcache_tag_addr    (dcache_tag1_addr        ),
+	.dcache_tag_wdata   (dcache_tag1_wdata       ),
+	.dcache_tag_rdata   (dcache_tag1_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag1_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag1_ctrl_out)
+);
+
+   `else
+kv_dcache_tag_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram1 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag1_cs          ),
+	.dcache_tag_we      (dcache_tag1_we          ),
+	.dcache_tag_addr    (dcache_tag1_addr        ),
+	.dcache_tag_wdata   (dcache_tag1_wdata       ),
+	.dcache_tag_rdata   (dcache_tag1_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag1_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag1_ctrl_out)
+);
+
+   `endif
+`endif
+`ifdef NDS_IO_DCACHE2
+   `ifdef NDS_IO_DCACHE_RAM_ECC
+kv_dcache_tag_ecc_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram2 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag2_cs          ),
+	.dcache_tag_we      (dcache_tag2_we          ),
+	.dcache_tag_addr    (dcache_tag2_addr        ),
+	.dcache_tag_wdata   (dcache_tag2_wdata       ),
+	.dcache_tag_rdata   (dcache_tag2_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag2_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag2_ctrl_out)
+);
+
+   `else
+kv_dcache_tag_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram2 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag2_cs          ),
+	.dcache_tag_we      (dcache_tag2_we          ),
+	.dcache_tag_addr    (dcache_tag2_addr        ),
+	.dcache_tag_wdata   (dcache_tag2_wdata       ),
+	.dcache_tag_rdata   (dcache_tag2_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag2_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag2_ctrl_out)
+);
+
+   `endif
+   `ifdef NDS_IO_DCACHE_RAM_ECC
+kv_dcache_tag_ecc_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram3 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag3_cs          ),
+	.dcache_tag_we      (dcache_tag3_we          ),
+	.dcache_tag_addr    (dcache_tag3_addr        ),
+	.dcache_tag_wdata   (dcache_tag3_wdata       ),
+	.dcache_tag_rdata   (dcache_tag3_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag3_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag3_ctrl_out)
+);
+
+   `else
+kv_dcache_tag_ram #(
+	.DCACHE_TAG_RAM_AW(`NDS_DCACHE_TAG_RAM_AW),
+	.DCACHE_TAG_RAM_CTRL_IN_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_IN_WIDTH),
+	.DCACHE_TAG_RAM_CTRL_OUT_WIDTH(`NDS_DCACHE_TAG_RAM_CTRL_OUT_WIDTH),
+	.DCACHE_TAG_RAM_DW(`NDS_DCACHE_TAG_RAM_DW)
+) u_dcache_tag_ram3 (
+	.clk                (dcache_clk              ),
+	.dcache_tag_cs      (dcache_tag3_cs          ),
+	.dcache_tag_we      (dcache_tag3_we          ),
+	.dcache_tag_addr    (dcache_tag3_addr        ),
+	.dcache_tag_wdata   (dcache_tag3_wdata       ),
+	.dcache_tag_rdata   (dcache_tag3_rdata       ),
+	.dcache_tag_ctrl_in (int_dcache_tag3_ctrl_in ),
+	.dcache_tag_ctrl_out(int_dcache_tag3_ctrl_out)
+);
+
+   `endif
+`endif
+
+`ifdef NDS_IO_BTB_RAM
+kv_btb_ram #(
+	.BTB_RAM_ADDR_WIDTH(`NDS_BTB_RAM_ADDR_WIDTH),
+	.BTB_RAM_CTRL_IN_WIDTH(`NDS_BTB_RAM_CTRL_IN_WIDTH),
+	.BTB_RAM_CTRL_OUT_WIDTH(`NDS_BTB_RAM_CTRL_OUT_WIDTH),
+	.BTB_RAM_DATA_WIDTH(`NDS_BTB_RAM_DATA_WIDTH)
+) u_btb_ram0 (
+	.clk         (core_clk         ),
+	.btb_addr    (btb0_addr        ),
+	.btb_cs      (btb0_cs          ),
+	.btb_we      (btb0_we          ),
+	.btb_wdata   (btb0_wdata       ),
+	.btb_rdata   (btb0_rdata       ),
+	.btb_ctrl_in (int_btb0_ctrl_in ),
+	.btb_ctrl_out(int_btb0_ctrl_out)
+);
+
+kv_btb_ram #(
+	.BTB_RAM_ADDR_WIDTH(`NDS_BTB_RAM_ADDR_WIDTH),
+	.BTB_RAM_CTRL_IN_WIDTH(`NDS_BTB_RAM_CTRL_IN_WIDTH),
+	.BTB_RAM_CTRL_OUT_WIDTH(`NDS_BTB_RAM_CTRL_OUT_WIDTH),
+	.BTB_RAM_DATA_WIDTH(`NDS_BTB_RAM_DATA_WIDTH)
+) u_btb_ram1 (
+	.clk         (core_clk         ),
+	.btb_addr    (btb1_addr        ),
+	.btb_cs      (btb1_cs          ),
+	.btb_we      (btb1_we          ),
+	.btb_wdata   (btb1_wdata       ),
+	.btb_rdata   (btb1_rdata       ),
+	.btb_ctrl_in (int_btb1_ctrl_in ),
+	.btb_ctrl_out(int_btb1_ctrl_out)
+);
+
+`endif
+`ifdef NDS_IO_STLB_RAM_NECC
+kv_stlb_ram #(
+	.STLB_RAM_AW     (`NDS_STLB_RAM_AW),
+	.STLB_RAM_CTRL_IN_WIDTH(`NDS_STLB_RAM_CTRL_IN_WIDTH),
+	.STLB_RAM_CTRL_OUT_WIDTH(`NDS_STLB_RAM_CTRL_OUT_WIDTH),
+	.STLB_RAM_DW     (`NDS_STLB_RAM_DW)
+) u_stlb_ram0 (
+	.clk          (core_clk          ),
+	.stlb_cs      (stlb0_cs          ),
+	.stlb_we      (stlb0_we          ),
+	.stlb_addr    (stlb0_addr        ),
+	.stlb_wdata   (stlb0_wdata       ),
+	.stlb_rdata   (stlb0_rdata       ),
+	.stlb_ctrl_in (int_stlb0_ctrl_in ),
+	.stlb_ctrl_out(int_stlb0_ctrl_out)
+);
+
+kv_stlb_ram #(
+	.STLB_RAM_AW     (`NDS_STLB_RAM_AW),
+	.STLB_RAM_CTRL_IN_WIDTH(`NDS_STLB_RAM_CTRL_IN_WIDTH),
+	.STLB_RAM_CTRL_OUT_WIDTH(`NDS_STLB_RAM_CTRL_OUT_WIDTH),
+	.STLB_RAM_DW     (`NDS_STLB_RAM_DW)
+) u_stlb_ram1 (
+	.clk          (core_clk          ),
+	.stlb_cs      (stlb1_cs          ),
+	.stlb_we      (stlb1_we          ),
+	.stlb_addr    (stlb1_addr        ),
+	.stlb_wdata   (stlb1_wdata       ),
+	.stlb_rdata   (stlb1_rdata       ),
+	.stlb_ctrl_in (int_stlb1_ctrl_in ),
+	.stlb_ctrl_out(int_stlb1_ctrl_out)
+);
+
+kv_stlb_ram #(
+	.STLB_RAM_AW     (`NDS_STLB_RAM_AW),
+	.STLB_RAM_CTRL_IN_WIDTH(`NDS_STLB_RAM_CTRL_IN_WIDTH),
+	.STLB_RAM_CTRL_OUT_WIDTH(`NDS_STLB_RAM_CTRL_OUT_WIDTH),
+	.STLB_RAM_DW     (`NDS_STLB_RAM_DW)
+) u_stlb_ram2 (
+	.clk          (core_clk          ),
+	.stlb_cs      (stlb2_cs          ),
+	.stlb_we      (stlb2_we          ),
+	.stlb_addr    (stlb2_addr        ),
+	.stlb_wdata   (stlb2_wdata       ),
+	.stlb_rdata   (stlb2_rdata       ),
+	.stlb_ctrl_in (int_stlb2_ctrl_in ),
+	.stlb_ctrl_out(int_stlb2_ctrl_out)
+);
+
+kv_stlb_ram #(
+	.STLB_RAM_AW     (`NDS_STLB_RAM_AW),
+	.STLB_RAM_CTRL_IN_WIDTH(`NDS_STLB_RAM_CTRL_IN_WIDTH),
+	.STLB_RAM_CTRL_OUT_WIDTH(`NDS_STLB_RAM_CTRL_OUT_WIDTH),
+	.STLB_RAM_DW     (`NDS_STLB_RAM_DW)
+) u_stlb_ram3 (
+	.clk          (core_clk          ),
+	.stlb_cs      (stlb3_cs          ),
+	.stlb_we      (stlb3_we          ),
+	.stlb_addr    (stlb3_addr        ),
+	.stlb_wdata   (stlb3_wdata       ),
+	.stlb_rdata   (stlb3_rdata       ),
+	.stlb_ctrl_in (int_stlb3_ctrl_in ),
+	.stlb_ctrl_out(int_stlb3_ctrl_out)
+);
+
+`endif
+`ifdef NDS_IO_STLB_RAM_ECC
+kv_stlb_tag_ecc_ram #(
+	.STLB_TAG_RAM_AW (`NDS_STLB_RAM_AW),
+	.STLB_TAG_RAM_CTRL_IN_WIDTH(`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH),
+	.STLB_TAG_RAM_CTRL_OUT_WIDTH(`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH),
+	.STLB_TAG_RAM_DW (`NDS_STLB_TAG_RAM_DW)
+) u_stlb_tag_ecc_ram0 (
+	.clk          (core_clk              ),
+	.stlb_cs      (stlb_tag0_cs          ),
+	.stlb_we      (stlb_tag0_we          ),
+	.stlb_addr    (stlb_tag0_addr        ),
+	.stlb_wdata   (stlb_tag0_wdata       ),
+	.stlb_rdata   (stlb_tag0_rdata       ),
+	.stlb_ctrl_in (int_stlb_tag0_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_tag0_ctrl_out)
+);
+
+kv_stlb_data_ecc_ram #(
+	.STLB_DATA_RAM_AW(`NDS_STLB_RAM_AW),
+	.STLB_DATA_RAM_CTRL_IN_WIDTH(`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH),
+	.STLB_DATA_RAM_CTRL_OUT_WIDTH(`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH),
+	.STLB_DATA_RAM_DW(`NDS_STLB_DATA_RAM_DW)
+) u_stlb_data_ecc_ram0 (
+	.clk          (core_clk               ),
+	.stlb_cs      (stlb_data0_cs          ),
+	.stlb_we      (stlb_data0_we          ),
+	.stlb_addr    (stlb_data0_addr        ),
+	.stlb_wdata   (stlb_data0_wdata       ),
+	.stlb_rdata   (stlb_data0_rdata       ),
+	.stlb_ctrl_in (int_stlb_data0_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_data0_ctrl_out)
+);
+
+kv_stlb_tag_ecc_ram #(
+	.STLB_TAG_RAM_AW (`NDS_STLB_RAM_AW),
+	.STLB_TAG_RAM_CTRL_IN_WIDTH(`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH),
+	.STLB_TAG_RAM_CTRL_OUT_WIDTH(`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH),
+	.STLB_TAG_RAM_DW (`NDS_STLB_TAG_RAM_DW)
+) u_stlb_tag_ecc_ram1 (
+	.clk          (core_clk              ),
+	.stlb_cs      (stlb_tag1_cs          ),
+	.stlb_we      (stlb_tag1_we          ),
+	.stlb_addr    (stlb_tag1_addr        ),
+	.stlb_wdata   (stlb_tag1_wdata       ),
+	.stlb_rdata   (stlb_tag1_rdata       ),
+	.stlb_ctrl_in (int_stlb_tag1_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_tag1_ctrl_out)
+);
+
+kv_stlb_data_ecc_ram #(
+	.STLB_DATA_RAM_AW(`NDS_STLB_RAM_AW),
+	.STLB_DATA_RAM_CTRL_IN_WIDTH(`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH),
+	.STLB_DATA_RAM_CTRL_OUT_WIDTH(`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH),
+	.STLB_DATA_RAM_DW(`NDS_STLB_DATA_RAM_DW)
+) u_stlb_data_ecc_ram1 (
+	.clk          (core_clk               ),
+	.stlb_cs      (stlb_data1_cs          ),
+	.stlb_we      (stlb_data1_we          ),
+	.stlb_addr    (stlb_data1_addr        ),
+	.stlb_wdata   (stlb_data1_wdata       ),
+	.stlb_rdata   (stlb_data1_rdata       ),
+	.stlb_ctrl_in (int_stlb_data1_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_data1_ctrl_out)
+);
+
+kv_stlb_tag_ecc_ram #(
+	.STLB_TAG_RAM_AW (`NDS_STLB_RAM_AW),
+	.STLB_TAG_RAM_CTRL_IN_WIDTH(`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH),
+	.STLB_TAG_RAM_CTRL_OUT_WIDTH(`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH),
+	.STLB_TAG_RAM_DW (`NDS_STLB_TAG_RAM_DW)
+) u_stlb_tag_ecc_ram2 (
+	.clk          (core_clk              ),
+	.stlb_cs      (stlb_tag2_cs          ),
+	.stlb_we      (stlb_tag2_we          ),
+	.stlb_addr    (stlb_tag2_addr        ),
+	.stlb_wdata   (stlb_tag2_wdata       ),
+	.stlb_rdata   (stlb_tag2_rdata       ),
+	.stlb_ctrl_in (int_stlb_tag2_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_tag2_ctrl_out)
+);
+
+kv_stlb_data_ecc_ram #(
+	.STLB_DATA_RAM_AW(`NDS_STLB_RAM_AW),
+	.STLB_DATA_RAM_CTRL_IN_WIDTH(`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH),
+	.STLB_DATA_RAM_CTRL_OUT_WIDTH(`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH),
+	.STLB_DATA_RAM_DW(`NDS_STLB_DATA_RAM_DW)
+) u_stlb_data_ecc_ram2 (
+	.clk          (core_clk               ),
+	.stlb_cs      (stlb_data2_cs          ),
+	.stlb_we      (stlb_data2_we          ),
+	.stlb_addr    (stlb_data2_addr        ),
+	.stlb_wdata   (stlb_data2_wdata       ),
+	.stlb_rdata   (stlb_data2_rdata       ),
+	.stlb_ctrl_in (int_stlb_data2_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_data2_ctrl_out)
+);
+
+kv_stlb_tag_ecc_ram #(
+	.STLB_TAG_RAM_AW (`NDS_STLB_RAM_AW),
+	.STLB_TAG_RAM_CTRL_IN_WIDTH(`NDS_STLB_TAG_RAM_CTRL_IN_WIDTH),
+	.STLB_TAG_RAM_CTRL_OUT_WIDTH(`NDS_STLB_TAG_RAM_CTRL_OUT_WIDTH),
+	.STLB_TAG_RAM_DW (`NDS_STLB_TAG_RAM_DW)
+) u_stlb_tag_ecc_ram3 (
+	.clk          (core_clk              ),
+	.stlb_cs      (stlb_tag3_cs          ),
+	.stlb_we      (stlb_tag3_we          ),
+	.stlb_addr    (stlb_tag3_addr        ),
+	.stlb_wdata   (stlb_tag3_wdata       ),
+	.stlb_rdata   (stlb_tag3_rdata       ),
+	.stlb_ctrl_in (int_stlb_tag3_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_tag3_ctrl_out)
+);
+
+kv_stlb_data_ecc_ram #(
+	.STLB_DATA_RAM_AW(`NDS_STLB_RAM_AW),
+	.STLB_DATA_RAM_CTRL_IN_WIDTH(`NDS_STLB_DATA_RAM_CTRL_IN_WIDTH),
+	.STLB_DATA_RAM_CTRL_OUT_WIDTH(`NDS_STLB_DATA_RAM_CTRL_OUT_WIDTH),
+	.STLB_DATA_RAM_DW(`NDS_STLB_DATA_RAM_DW)
+) u_stlb_data_ecc_ram3 (
+	.clk          (core_clk               ),
+	.stlb_cs      (stlb_data3_cs          ),
+	.stlb_we      (stlb_data3_we          ),
+	.stlb_addr    (stlb_data3_addr        ),
+	.stlb_wdata   (stlb_data3_wdata       ),
+	.stlb_rdata   (stlb_data3_rdata       ),
+	.stlb_ctrl_in (int_stlb_data3_ctrl_in ),
+	.stlb_ctrl_out(int_stlb_data3_ctrl_out)
+);
+
+`endif
+endmodule

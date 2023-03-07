@@ -1,0 +1,42 @@
+#!/bin/sh
+orig=$(pwd)
+
+if [ ! -d ./log ]; then
+	mkdir log
+fi
+
+if [ ! -d ./netlist ]; then
+	mkdir netlist
+fi
+
+if [ ! -d ./ddc ]; then
+	mkdir ddc
+fi
+
+if [ ! -d ./rpt ]; then
+	mkdir rpt
+fi
+
+if [ ! -d ./work ]; then
+	mkdir work
+fi
+
+rm -f log/*
+rm -f rpt/*
+rm -rf alib-52
+
+echo "Run Dhrystone"
+cd $NDS_HOME/andes_vip/patterns/samples/test_dhrystone_v5
+make clean
+make;make getdmips;make gensaif
+echo "Copy verilog.saif and pf_info.tcl to synthesis directory"
+cp verilog.saif pf_info.tcl $orig
+cd $orig
+
+cp ../top/hdl/config.inc ./
+echo "Copy config.inc here"
+dc_shell-t -wait 1440 -f ./script/n22_core.tcl < /dev/null | tee ./log/run_syn.log
+
+rm -rf synopsys*
+rm -rf dw*
+rm -f work/*

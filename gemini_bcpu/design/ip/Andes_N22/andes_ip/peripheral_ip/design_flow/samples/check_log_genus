@@ -1,0 +1,29 @@
+if [ -f "./log/genus.log.gz" ]; then
+	gzip -d */genus.log.gz
+fi
+
+# Ignored Warnings:
+# 	(LBR-9)     Library cell has no output pins defined.
+#       (LBR-101)   Unusable clock gating integrated cell.
+#       (TIM-11)    Possible timing problems have been detected in this design.
+#       (TUI-32)    This attribute will be obsolete in a next major release.
+#       (TUI-92)    Cannot set probability or toggle rate on a constant net.
+#       (TUI-224)   Specified shift values are equivalent to the default timing relationship.
+#       (VLOGPT-35) Ignoring delay specifier.
+#       (VLOGPT-652) Mixed elaboration Flow - Structural module read in replaces previously read module in default library with the same name.
+#       (CDFG-236)  Detected non-positive value for replication prefix.
+#       (CDFG-472)  Unreachable statements for case item.
+#       (CDFG-508)  Removing unused register. 
+#       (CDFG-818)  Using default parameter value for module elaboration.
+#       (LBR-38)    Libraries have inconsistent nominal operating conditions
+#       (POPT-502)  Total power has skewed contributions from leakage and dynamic power.
+#       (ENV_PA-36) In future releases setting max_leakage_power attribute will not enable leakage power optimization on its own.
+#       (MAP-136)   The Parallel Incremental Optimization failed.
+#       (CHNM-108)  Port names affected by change_names do not automatically get updated in written out SV wrapper module.
+#	(UTUI-137)  Some assigns are not removed.
+#       
+# Unwanted message:
+#       > puts "Error ..."
+#
+
+egrep 'blackbox|Error|combinational loop|Unconnect|Undriven|Cannot resolve|Warning' */genus.log | egrep -v "LBR-9\]|LBR-101\]|TIM-11\]|TUI-32\]|TUI-92\]|TUI-224\]|VLOGPT-35\]|VLOGPT-652\]|CDFG-236\]|CDFG-472\]|CDFG-508\]|CDFG-818\]|LBR-38\]|LBR-420\]|POPT-502\]|ENV_PA-36\]|MAP-136\]|CHNM-108\]|UTUI-137\]|pputs\s\"Error"

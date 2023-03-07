@@ -1,0 +1,9 @@
+
+`ifdef ATCWDT200_CONST_VH
+`else
+`define ATCWDT200_CONST_VH
+
+`define ATCWDT200_PRODUCT_ID		32'h03002004
+
+`endif
+

@@ -1,0 +1,33 @@
+`ifdef ATCBUSDEC200_CONST_VH
+`else
+`define ATCBUSDEC200_CONST_VH
+
+`define ATCBUSDEC200_PRODUCT_ID			32'h00032003
+
+`ifdef ATCBUSDEC200_ADDR_WIDTH_24
+`define	ATCBUSDEC200_ADDR_WIDTH			24
+`else
+`define	ATCBUSDEC200_ADDR_WIDTH			32
+`endif
+
+`ifdef ATCBUSDEC200_DATA_WIDTH_64
+`define ATCBUSDEC200_DATA_WIDTH                 64
+`else
+`ifdef ATCBUSDEC200_DATA_WIDTH_128
+`define ATCBUSDEC200_DATA_WIDTH                 128
+`else
+`ifdef ATCBUSDEC200_DATA_WIDTH_256
+`define ATCBUSDEC200_DATA_WIDTH                 256
+`else
+`define ATCBUSDEC200_DATA_WIDTH                 32
+`endif
+`endif
+`endif
+
+`ifdef ATCBUSDEC200_ADDR_WIDTH_24
+`define	ATCBUSDEC200_SLV0_SIZE			3
+`else
+`define	ATCBUSDEC200_SLV0_SIZE			1
+`endif
+
+`endif

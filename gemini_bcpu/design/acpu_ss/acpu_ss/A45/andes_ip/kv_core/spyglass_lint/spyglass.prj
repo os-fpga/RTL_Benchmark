@@ -1,0 +1,38 @@
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+#
+## Common Options Section
+set_option language_mode mixed
+set_option enableSV09 yes
+set_option projectwdir .
+set_option active_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+set_option top a45_core_top
+set_option report moresimple_filesort
+set_option overloadrules CMD_define02+severity=INFO
+set_option mthresh 8192
+
+
+## GOALS
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+current_goal lint/lint_rtl
+set_goal_option addrules {W122 W164a W164b W154 W241 W226 W486 STARC05-1.1.4.8 STARC05-1.2.1.1a STARC05-1.4.3.1a STARC05-2.10.3.1 STARC05-3.2.3.1 STARC-1.3.1.2 ReEntrantOutput-ML SignedUnsignedExpr-ML SynchReset-ML VarName NamedAssoc}
+set_goal_option ignorerules {SYNTH_93 SYNTH_77 W240 W528}
+set_goal_option addrules {NoGenLabel-ML}
+# This three are fatal error and tool doesn't allow them to be ignored.
+set_goal_option ignorerules {SYNTH_106}
+# Enables the W164a, W164b, W116, and W362 rules to report a violation for static expressions and non-static expressions that contain static expressions.
+# ps: static means constant
+set_parameter check_static_value yes
+set_parameter not_used_signal "*nds_unused_*"
+# For W415a we only check non-blocking code
+set_parameter checknonblocking yes
+# For W122, set simplesense to yes to report the signals that are read in an always construct and being set in blocking assignment statement but are not present in the sensitivity list.
+set_parameter simplesense yes
+# For NoGenLabel-ML, set to yes to report the generate blocks with duplicate labels. 
+set_parameter check_dup_label yes
+
+## Data Import Section
+read_file -type sourcelist flist
+read_file -type waiver spyglass.swl
+set_goal_option default_waiver_file spyglass.swl
+

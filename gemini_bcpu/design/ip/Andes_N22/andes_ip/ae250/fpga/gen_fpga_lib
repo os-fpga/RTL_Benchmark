@@ -1,0 +1,1314 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Cwd;
+use Getopt::Long;
+use File::Path;
+
+our $gen_mem = 0;
+our $gen_clk = 0;
+our $gen_ddr3 = 0;
+our $gen_ila = 0;
+
+our $part = "xc7k160tffg676-1";		# Default: ORCA
+our $part_alias;
+our $debug = 0;				# Debug mode
+our $timeout = 120;			# Minutes
+our $job_num_per_launch = 4;		# The job number for each launch_runs call
+
+our $mode_release = exists $ENV{"NDS_HOME"};
+
+our $platform = cwd(); $platform =~ s|.*/andes_ip/(\w+)/fpga.*|$1|;
+our $axi_platform = 0;
+
+if (!$mode_release) {
+	# In the engineering mode inside Andes, force to use the same version
+	# for generating IPs.
+	$ENV{TOOL_VERSIONS_CONFIG} = "xilinx/Vivado:v2013.4";
+}
+
+if ($platform ne "ae210" and $platform ne "ae250" and $platform ne "ae350") {
+	die "ERROR: The detected platform '$platform' is not ae210, ae250, or ae350!";
+}
+
+if ($platform eq "ae300" or $platform eq "ae350") {
+	$axi_platform = 1;
+}
+
+
+our @cf1_rams = qw(
+	ram65536x32
+	ram32768x32
+	ram16384x32
+	ram8192x39
+	ram8192x32
+	ram8192x8
+	ram4096x39
+	ram4096x32
+	ram2048x39
+	ram2048x32
+	ram2048x28
+	ram2048x23
+	ram2048x22
+	ram1024x39
+	ram1024x32
+	ram1024x28
+	ram1024x23
+	ram1024x22
+	ram512x32
+	ram512x28
+	ram512x23
+	ram512x22
+	ram256x28
+	ram256x23
+	ram256x22
+	ram128x60
+	ram128x42
+	ram128x38
+	ram128x28
+	ram128x23
+	ram128x22
+	ram64x62
+	ram32x90
+	ram32x62
+	ram65536x36_9b
+	ram8192x36_9b
+	ram4096x36_9b
+	ram2048x36_9b
+	ram1024x36_9b
+);
+
+# Note this memory list is a superset of both AE250 & AE350.
+our @orca_rams = qw(
+	ram131072x72
+	ram131072x64
+	ram131072x39
+	ram131072x32
+	ram65536x72
+	ram65536x64
+	ram65536x39
+	ram65536x32
+        ram32768x32
+	ram16384x72
+	ram8192x72
+	ram8192x64
+	ram8192x39
+	ram8192x32
+	ram8192x8
+	ram4608x12
+	ram4096x72
+	ram4096x64
+	ram4096x39
+	ram4096x32
+	ram4096x12
+	ram2048x72
+	ram2048x64
+	ram2048x39
+	ram2048x32
+	ram2048x28
+	ram2048x23
+	ram2048x22
+	ram1024x72
+	ram1024x64
+	ram1024x39
+	ram1024x32
+	ram1024x28
+	ram1024x23
+	ram1024x22
+	dpram1024x8
+	ram512x72
+	ram512x64
+	ram512x32
+	ram512x28
+	ram512x23
+	ram512x22
+	ram256x72
+	ram256x64
+	ram256x32
+	ram256x28
+	ram256x23
+	ram256x22
+	ram128x60
+	ram128x42
+	ram128x38
+	ram128x32
+	dpram128x32
+	ram128x28
+	ram128x23
+	ram128x22
+	ram64x62
+	ram32x32
+	ram32x62
+	ram32x52
+    ram32x90
+	ram32x96
+	ram65536x36_9b
+	ram8192x36_9b
+	ram4096x36_9b
+	ram2048x36_9b
+	ram1024x36_9b
+);
+
+our @common_ddr3s = qw(ddr3_controller);
+
+our %common_clocks = (
+	"mmcm1" => "
+		CONFIG.CLKOUT2_USED {true}
+		CONFIG.CLKOUT3_USED {true}
+		CONFIG.CLKOUT4_USED {true}
+		CONFIG.CLKOUT5_USED {true}
+		CONFIG.CLKOUT6_USED {true}
+		CONFIG.CLKOUT7_USED {true}
+		CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {60.000}
+		CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {30.000}
+		CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {40.000}
+		CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {20.000}
+		CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {20.000}
+		CONFIG.CLKOUT6_REQUESTED_OUT_FREQ {66.000}
+		CONFIG.CLKOUT7_REQUESTED_OUT_FREQ {10.000}",
+);
+
+our @common_ilas = qw(
+	ila4096_4x32b
+	ila16384_4x32b
+);
+
+$| = 1;		# Flush STDOUT.
+
+my $may_use_ddr3 = (scalar(@common_ddr3s) and ($platform eq "ae250" or $platform eq "ae350")) ? 1 :0;
+my $may_use_ila = (scalar(@common_ilas) and ($platform eq "ae250" or $platform eq "ae350")) ? 1 :0;
+
+our $result = GetOptions(
+	"d|debug"			=> \$debug,
+	"h|help"			=> sub { usage(0); },
+	"J|job_num_per_launch=i"	=> \$job_num_per_launch,
+	"part=s"			=> \$part,
+	"t|timeout=i"			=> \$timeout,
+);
+
+usage(1) unless ($result);
+
+if (scalar(@ARGV) == 0) {
+	@ARGV = qw(default);
+}
+
+# Generation type check
+foreach my $arg (@ARGV) {
+	$arg = lc($arg);
+	if ($arg eq "default") {
+		$gen_mem = 1;
+		$gen_clk = 1;
+		if ($may_use_ddr3) {
+			$gen_ddr3 = 1;
+		}
+		if ($may_use_ila and !$mode_release) {
+			# Andes internally uses ILA for debugging so generate it by default.
+			$gen_ila = 1;
+		}
+	} elsif ($arg eq "mem" or $arg eq "ram") {
+		$gen_mem = 1;
+	} elsif ($arg eq "clk" or $arg eq "clock") {
+		$gen_clk = 1;
+	} elsif ($arg eq "ddr" or $arg eq "ddr3") {
+		if ($may_use_ddr3) {
+			$gen_ddr3 = 1;
+		} else {
+			print STDERR "ERROR: Type 'ddr3' is not supported for platform '$platform'!\n";
+			exit(1);
+		}
+	} elsif ($arg eq "ila") {
+		if ($may_use_ila) {
+			$gen_ila = 1;
+		} else {
+			print STDERR "ERROR: Type 'ila' is not supported for platform '$platform'!\n";
+			exit(1);
+		}
+	} else {
+		usage(1);
+	}
+}
+
+($part, $part_alias) = check_part_number($part);
+
+if ($part_alias ne "orca" && $part_alias ne "orca_v2") {
+	# ddr3 is not applicable.
+	$gen_ddr3 = 0;
+}
+
+### Main function start ###
+
+# Create work directory and change into this directory.
+our $work_path = create_work_dir();
+
+# Check environment variable NDS_HOME.
+check_nds_home();
+
+# Set installed destination path.
+our $NDS_HOME = $ENV{NDS_HOME};
+our $install_path;
+# Users should prepare their own loader.
+our $eilm32_init_file = "$NDS_HOME/andes_ip/${platform}/fpga/loader/${platform}_loader.dat";
+our $eilm64_init_file = "$NDS_HOME/andes_ip/${platform}/fpga/loader/${platform}_loader_64b.dat";
+our $eilmosc_init_file = "$NDS_HOME/andes_ip/${platform}/fpga/loader/${platform}_loader_osc.dat";
+our $eilm128_init_file = "$NDS_HOME/andes_ip/${platform}/fpga/loader/${platform}_loader_128b.dat";
+our $mem_ip_path  = "$work_path/project_mem.srcs/sources_1/ip";
+our $clk_ip_path  = "$work_path/project_clk.srcs/sources_1/ip";
+our $ddr3_ip_path = "$work_path/project_ddr3.srcs/sources_1/ip";
+our $ila_ip_path  = "$work_path/project_ila.srcs/sources_1/ip";
+our $ddr3_dir     = $axi_platform ? "axi2ddr3" : "ddr3";
+
+# vendor_ip/micron_ip/models/ddr3/hdl/ is for the DDR3 simulation model which doesn't
+# depend on $axi_platform.
+our $ddr3_model_path = "$NDS_HOME/vendor_ip/micron_ip/models/ddr3/hdl";
+
+our $rams_ref;
+
+if ($part_alias eq "orca" || $part_alias eq "orca_v2") {
+	if ($part_alias eq "orca_v2") {
+	$install_path = "$NDS_HOME/vendor_ip/xilinx_ip/xc7k410tffg676-2";
+	} else {
+	$install_path = "$NDS_HOME/vendor_ip/xilinx_ip/xc7k";	# Legacy directory
+	}
+
+	$rams_ref = \@orca_rams;
+} elsif ($part_alias eq "cf1") {
+	$install_path = "$NDS_HOME/vendor_ip/xilinx_ip/$part";
+	# Currently CF1 only has this 32-bit configuration.
+
+	$rams_ref = \@cf1_rams;
+} else {
+	$install_path = "$NDS_HOME/vendor_ip/xilinx_ip/$part";
+	# Users should prepare their own loader.
+
+	$rams_ref = \@orca_rams;
+}
+
+if ($debug) {
+	print "Info: platform=$platform\n";
+	print "Info: install_path=$install_path\n";
+
+	# Only test 2 memories in the debug mode.
+	splice @$rams_ref, 2;
+}
+
+# Create the destination directory if it does not exist.
+check_dst_dir($install_path, $ddr3_model_path);
+
+print <<EOF;
+////////////////////////////////////////////////////////////////////////////
+// NOTE: Depending on the selected module types and computer performance, //
+//       the overal process may take more than one hour to complete!      //
+////////////////////////////////////////////////////////////////////////////
+EOF
+
+# Generate memory models.
+if ($gen_mem) {
+	# Generate mem.tcl for Vivado.
+	gen_mem_tcl($rams_ref);
+
+	# Execute Vivado to generate required memory model.
+	gen_modules("RAM", $rams_ref,
+		"$mem_ip_path/%s/%s_stub.v",
+		"$mem_ip_path/%s/sim/%s.v",
+		"$mem_ip_path/%s/%s.dcp",
+		"$mem_ip_path/%s/%s.xci");
+
+	# Unzip dcp file to edf file.
+	unzip($rams_ref);
+
+	# Add key word to sumulation file.
+	add_key_word($rams_ref);
+}
+
+# Generate clock modules.
+if ($gen_clk) {
+	# Generate clk.tcl for Vivado
+	gen_clk_tcl(\%common_clocks);
+
+	# Execute Vivado to generate required clk modules.
+	gen_modules("CLOCK", \%common_clocks,
+		"$clk_ip_path/%s/%s_clk_wiz.v",
+		"$clk_ip_path/%s/%s.dcp",
+		"$clk_ip_path/%s/%s.xci");
+
+	# Change the module name for clk modules.
+	rename_clk_module_name(\%common_clocks);
+}
+
+# Generate ddr3 modules.
+if ($gen_ddr3) {
+	# Generate ddr3_X.tcl for vivado.
+	gen_ddr3_tcl(\@common_ddr3s);
+
+	# Execute vivado to generate the required ddr3 controller.
+	gen_ddr3_1("DDR3-1", \@common_ddr3s, "$ddr3_ip_path/%s/%s.dcp");
+	gen_modules("DDR3-2", \@common_ddr3s, "$ddr3_ip_path/%s/%s.dcp");
+
+	# Change the signal name, module name, and add key word.
+	rename_add_ddr3(\@common_ddr3s);
+}
+
+# Generate ILA modules.
+if ($gen_ila) {
+	# Generate ila.tcl for vivado.
+	gen_ila_tcl(\@common_ilas);
+
+	# Execute Vivado to generate required ila modules.
+	gen_modules("ILA", \@common_ilas,
+		"$ila_ip_path/%s/%s_stub.v",
+		"$ila_ip_path/%s/%s.dcp",
+		"$ila_ip_path/%s/%s.xci");
+}
+
+# Install required models.
+install_files($rams_ref, \%common_clocks, \@common_ddr3s, \@common_ilas);
+
+exit(0);
+
+### Main function end ###
+
+
+
+
+# Sub functions
+
+sub usage {
+	my	$ddr3_line = "";
+	my	$ila_line = "";
+
+	if ($may_use_ddr3) {
+		$ddr3_line = "\n  ddr3:    Generate DDR3 modules and interface modules (only for ORCA)";
+	}
+
+	if ($may_use_ila) {
+		if ($mode_release) {
+			$ila_line = "\n  ila:     Generate ILA modules (NOT included by \"default\")";
+		} else {
+			$ila_line = "\n  ila:     Generate ILA modules";
+		}
+	}
+
+	print <<EOF;
+Usage of the $platform version:
+  gen_fpga_lib [options]
+
+options:
+  -h,--help                 Show this help message
+  -J,--job_num_per_launch=JOB_NUM
+                            Specify the job number for launch_runs
+  -p,--part=PART            Set the FPGA part number (default $part)
+  -t,--timeout=TIMEOUT      Set the timeout value in minute for each kind of
+                            module generation ($timeout minutes by default)
+  TYPE...                   Generation types
+
+TYPE should be one or more of the following:
+  clk:     Generate clock modules
+  mem:     Generate memory modules$ddr3_line$ila_line
+  default: Generate all above modules (the default)
+
+PART may be a complete Xilinx part number such as xc7k160tffg676-1. It can
+also be some predefined shorthand names as below:
+  xc7k160t:    Part number xc7k160tffg676-1
+  orca:        Part number xc7k160tffg676-1
+  xc7k410t:    Part number xc7k410tffg676-2
+  orca_v2:     Part number xc7k410tffg676-2
+  cf1:         Part number xc7a100tftg256-1
+
+EOF
+	exit(defined($_[0]) ? $_[0] : 0);
+}
+
+sub create_work_dir {
+	my $work_dir = "vivado_gen";
+	if (-e $work_dir) {
+		if (system("/bin/rm -rf $work_dir") != 0) {
+			printf STDERR "ERROR: Work directory '%s' can't be successfully removed!\n", $work_dir;
+			exit(1);
+		}
+	}
+	mkdir($work_dir);
+	chdir($work_dir);
+
+	# Return the absolute path of the working directory.
+	return cwd();
+}
+
+sub check_nds_home {
+	unless (exists $ENV{NDS_HOME}) {
+		printf STDERR "ERROR: Please set enviroment variable NDS_HOME!\n";
+		exit(1);
+	}
+	unless (-d $ENV{NDS_HOME}) {
+		printf STDERR "ERROR: NDS_HOME '%s' doesn't exist!\n", $ENV{NDS_HOME};
+		exit(1);
+	}
+}
+
+sub check_dst_dir {
+	my (@paths) = @_;
+	# The first one is the destination path for all modules. The rest are other
+	# paths used by other purposes.
+	my $dst_dir = $paths[0];
+	my %dirs = (
+		gen_mem => ["$dst_dir/mem"],
+		gen_clk => ["$dst_dir/clk"],
+		gen_ila => ["$dst_dir/ila"],
+		gen_ddr3 => ["$dst_dir/$ddr3_dir", "$dst_dir/$ddr3_dir/hdl"]
+	);
+
+	foreach my $path (@paths) {
+		mkpath $path unless (-e $path);
+	}
+
+	foreach my $key (keys %dirs) {
+		my $gen = ${$main::{$key}};	# Get $gen_XXX.
+		if ($gen) {	# Only when $gen_XXX is 1.
+			foreach my $d (@{$dirs{$key}}) {
+				mkdir($d) unless (-e $d);
+			}
+		}
+	}
+}
+
+sub write_launch_runs {
+	my ($fp, $modules_ref) = @_;
+	my $run_num_per_line = 8;
+
+	print $fp "\nlaunch_runs -jobs $job_num_per_launch \\\n";
+	for (my $i = 0; $i < scalar(@$modules_ref); $i += $run_num_per_line) {
+		my $j = $i + $run_num_per_line - 1;
+		$j = $#{$modules_ref} if $j >= $#{$modules_ref};
+		print $fp "\t";
+		print $fp " ${_}_synth_1" foreach (@{$modules_ref}[$i ... $j]);
+		print $fp (($j == $#{$modules_ref}) ? "\n" : " \\\n");
+	}
+}
+
+sub gen_mem_tcl {
+	my @rams = @{$_[0]};
+	my ($ram, $ram_type, $depth, $width);
+	my $eilm_init_file;
+	open(OUT, ">", "mem.tcl");
+	printf OUT "create_project project_mem . -part $part -force\n\n\n";
+	foreach $ram (@rams) {
+		if ($ram =~ /(\D+)(\d+)x(\d+)/) {
+			($ram_type, $depth, $width) = ($1, $2, $3);
+		}
+
+		printf OUT <<EOF;
+### $ram ###
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -module_name $ram
+EOF
+
+		if ($ram_type eq "eilm" or $ram_type eq "eilmosc") {
+			if ($ram_type eq "eilmosc") {
+				$eilm_init_file = $eilmosc_init_file;
+			}
+			elsif ($width eq "128") {
+				$eilm_init_file = $eilm128_init_file;
+			}
+			elsif ($width eq "64") {
+				$eilm_init_file = $eilm64_init_file;
+			}
+			else {
+				$eilm_init_file = $eilm32_init_file;
+			}
+
+			printf OUT <<EOF;
+set_property -dict [list \\
+	CONFIG.Use_Byte_Write_Enable {true} \\
+	CONFIG.Byte_Size {8} \\
+	CONFIG.Write_Depth_A {$depth} \\
+	CONFIG.Write_Width_A {$width} \\
+	CONFIG.Read_Width_A {$width} \\
+	CONFIG.Enable_A {Use_ENA_Pin} \\
+	CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \\
+	CONFIG.Load_Init_File {true} \\
+	CONFIG.Coe_File {$eilm_init_file}] \\
+	[get_ips $ram]
+generate_target {instantiation_template} [get_files $mem_ip_path/$ram/$ram.xci]
+# update_compile_order -fileset sources_1
+generate_target all [get_files $mem_ip_path/$ram/$ram.xci]
+create_ip_run [get_files -of_objects [get_fileset sources_1] $mem_ip_path/$ram/$ram.xci]
+
+EOF
+		} else {	# Normal RAM (Not EILM RAM)
+			if ($ram_type eq "dpram") {
+				$ram_type = "CONFIG.Memory_Type {True_Dual_Port_RAM}";
+			} else {
+				$ram_type = "";
+			}
+			if ($width % 8 == 0 and $width != 24) {
+				printf OUT <<EOF;
+set_property -dict [list $ram_type \\
+	CONFIG.Use_Byte_Write_Enable {true} \\
+	CONFIG.Byte_Size {8} \\
+	CONFIG.Write_Depth_A {$depth} \\
+	CONFIG.Write_Width_A {$width} \\
+	CONFIG.Read_Width_A {$width} \\
+	CONFIG.Enable_A {Use_ENA_Pin} \\
+	CONFIG.Register_PortA_Output_of_Memory_Primitives {false}] \\
+	[get_ips $ram]
+EOF
+			} else {
+				printf OUT <<EOF;
+set_property -dict [list $ram_type \\
+	CONFIG.Use_Byte_Write_Enable {false} \\
+	CONFIG.Write_Depth_A {$depth} \\
+	CONFIG.Write_Width_A {$width} \\
+	CONFIG.Read_Width_A {$width} \\
+	CONFIG.Enable_A {Use_ENA_Pin} \\
+	CONFIG.Register_PortA_Output_of_Memory_Primitives {false}] \\
+	[get_ips $ram]
+EOF
+			}
+			printf OUT "generate_target {Simulation} [get_files %s.xci]\n", $ram;
+			printf OUT "create_ip_run [get_files %s.xci]\n", $ram;
+		}
+	}
+
+	write_launch_runs(*OUT, \@rams);
+	close(OUT);
+}
+
+sub gen_clk_tcl {
+	my %clocks = %{$_[0]};
+	my @clks = keys %clocks;
+	open(OUT, ">", "clk.tcl");
+	printf OUT "create_project project_clk . -part $part -force\n\n\n";
+	foreach my $clk (@clks) {
+		my $pll_settings = $clocks{$clk};
+		# chomp() makes sure the last line doesn't contain the trailing
+		# newline so that the following replacement won't be performed
+		# there since $pll_settings has been used with "\\" below.
+		chomp($pll_settings);
+		$pll_settings =~ s/\s*\\?\s*\n/ \\\n/gs;
+
+		print OUT <<EOF;
+### $clk ###
+create_ip -name clk_wiz -vendor xilinx.com -library ip -module_name $clk
+set_property -dict [list \\
+	CONFIG.PRIM_SOURCE {No_buffer} \\
+	CONFIG.USE_FREQ_SYNTH {true} \\
+	CONFIG.PRIM_IN_FREQ {20.000} \\
+	$pll_settings \\
+	CONFIG.USE_LOCKED {false} \\
+	CONFIG.RESET_TYPE {ACTIVE_LOW}] \\
+	[get_ips $clk]
+set_property -dict [list \\
+	CONFIG.CLKOUT1_DRIVES {No_buffer} \\
+	CONFIG.CLKOUT2_DRIVES {No_buffer} \\
+	CONFIG.CLKOUT3_DRIVES {No_buffer} \\
+	CONFIG.CLKOUT4_DRIVES {No_buffer} \\
+	CONFIG.CLKOUT7_DRIVES {No_buffer}] \\
+	[get_ips $clk]
+create_ip_run [get_files $clk.xci]
+
+EOF
+	}
+
+	write_launch_runs(*OUT, \@clks);
+	close(OUT);
+}
+
+sub gen_ddr3_tcl {
+	my @ddr3s = @{$_[0]};
+	my $ddr3 = $ddr3s[0];
+
+	# Generate ddr3_1.tcl.
+	open(OUT, ">", "ddr3_1.tcl");
+	print OUT <<EOF;
+create_project project_ddr3 . -part $part -force
+set_property simulator_language Verilog [current_project]
+create_ip -name mig_7series -vendor xilinx.com -library ip -module_name $ddr3
+EOF
+	close(OUT);
+
+	# Generate ddr3_2.tcl
+	open(OUT, ">", "ddr3_2.tcl");
+	printf OUT <<EOF;
+open_project project_ddr3
+set_property -dict [list CONFIG.XML_INPUT_FILE {mig_a.prj} CONFIG.RESET_BOARD_INTERFACE {Custom} CONFIG.MIG_DONT_TOUCH_PARAM {Custom}] [get_ips $ddr3]
+generate_target {instantiation_template} [get_files $ddr3.xci]
+create_ip_run [get_files $ddr3.xci]
+launch_runs -jobs $job_num_per_launch ${ddr3}_synth_1
+
+EOF
+	close(OUT);
+}
+
+sub gen_ila_tcl {
+	my @ilas = @{$_[0]};
+	my ($ila, $depth, $probes, $width);
+	open(OUT, ">", "ila.tcl");
+	printf OUT "create_project project_ila . -part $part -force\n\n\n";
+	foreach $ila (@ilas) {
+		if ($ila =~ /ila(\d+)_(\d+)x(\d+)/) {
+			($depth, $probes, $width) = ($1, $2, $3);
+		}
+		print OUT <<EOF;
+### $ila ###
+create_ip -name ila -vendor xilinx.com -library ip -module_name $ila
+# Configs
+set_property -dict [list \\
+EOF
+
+		for (my $j = 0; $j < $probes; $j++) {
+			printf OUT "	CONFIG.C_PROBE%d_WIDTH {$width} \\\n", $j;
+		}
+		print OUT <<EOF;
+	CONFIG.C_DATA_DEPTH {$depth} \\
+	CONFIG.C_NUM_OF_PROBES {$probes} \\
+	CONFIG.C_ADV_TRIGGER {true}] \\
+	[get_ips $ila]
+generate_target {instantiation_template} [get_files $ila_ip_path/$ila/$ila.xci]
+generate_target all [get_files $ila_ip_path/$ila/$ila.xci]
+create_ip_run [get_files -of_objects [get_fileset sources_1] $ila_ip_path/$ila/$ila.xci]
+
+EOF
+	}
+
+	write_launch_runs(*OUT, \@ilas);
+	close(OUT);
+}
+
+sub add_key_word {
+	my @rams = @{$_[0]};
+	my $line;
+	my ($ram, $key_word, $key_word_file);
+	my ($file_path, $file_content, $key_word_line);
+
+	foreach $ram (@rams) {
+		$file_path = "$mem_ip_path/$ram/sim/$ram.v";
+		$file_content = "";
+		$key_word_line = 0;
+		$key_word = "/* synthesis syn_black_box */;\n";
+		open(IN, "<", $file_path);
+		while ($line = <IN>) {
+			if ($line =~ /module $ram \(/) {
+				$key_word_line = 1;
+			}
+			elsif ($key_word_line == 1) {
+				if ($line =~ /\)\;/) {
+					$line = ")\n$key_word";
+					$key_word_line = 0;
+				}
+			}
+			$file_content .= $line;
+		}
+		close(IN);
+		open(OUT, ">", $file_path);
+		printf OUT "%s", $file_content;
+		close(OUT);
+	}
+}
+
+sub unzip {
+	my @rams = @{$_[0]};
+	my ($ram, $file_path, $cmd);
+
+	foreach $ram (@rams) {
+		$file_path = "$mem_ip_path/$ram";
+		chdir($file_path);
+		$cmd = "unzip $ram.dcp $ram.edf";
+		if (system("$cmd >> $ram.log") != 0) {
+			printf STDERR "ERROR: Failed unzipping %s.dcp!", $ram;
+			exit(1);
+		}
+	}
+	chdir($work_path);
+}
+
+sub rename_clk_module_name {
+	my %clocks = %{$_[0]};
+	my ($line, $file_path, $file_content);
+
+	foreach my $clk (keys %clocks) {
+		$file_path = "$clk_ip_path/$clk/${clk}_clk_wiz.v";
+		$file_content = "";
+		open(IN, "<", $file_path);
+		while ($line = <IN>) {
+			$line =~ s/module \w+/module $clk/;
+			$file_content .= $line;
+		}
+		close(IN);
+		open(OUT, ">", $file_path);
+		printf OUT "%s", $file_content;
+		close(OUT);
+	}
+}
+
+sub install_files {
+	my (@rams) = @{$_[0]};
+	my %clocks = %{$_[1]};
+	my @ddr3s = @{$_[2]};
+	my @ilas = @{$_[3]};
+
+	my ($ram, $clk, $ddr3, $ila);
+	my ($src_file_v, $src_file_dcp, $src_file_xci, $src_file_xdc, $src_file_edf);
+	my ($dst_file_v, $dst_file_dcp, $dst_file_xci, $dst_file_xdc, $dst_file_edf);
+	my ($cmd_v);
+
+	if ($gen_mem) {
+		foreach $ram (@rams) {
+			$src_file_v   = "$mem_ip_path/$ram/sim/$ram.v";
+			$src_file_dcp = "$mem_ip_path/$ram/$ram.dcp";
+			$src_file_xci = "$mem_ip_path/$ram/$ram.xci";
+			$src_file_xdc = "$mem_ip_path/$ram/${ram}_ooc.xdc";
+			$src_file_edf = "$mem_ip_path/$ram/$ram.edf";
+
+			$dst_file_v   = "$install_path/mem/$ram.v";
+			$dst_file_dcp = "$install_path/mem/$ram.dcp";
+			$dst_file_xci = "$install_path/mem/$ram.xci";
+			$dst_file_xdc = "$install_path/mem/${ram}_ooc.xdc";
+			$dst_file_edf = "$install_path/mem/$ram.edf";
+
+			cp_file($src_file_v  , $dst_file_v  );
+			cp_file($src_file_dcp, $dst_file_dcp);
+			cp_file($src_file_xci, $dst_file_xci);
+			cp_file($src_file_xdc, $dst_file_xdc);
+			cp_file($src_file_edf, $dst_file_edf);
+
+			if ($ram =~ m/eilm/) {
+				cp_file("$mem_ip_path/$ram/$ram.mif", "$install_path/mem/$ram.mif");
+			}
+		}
+	}
+
+	if ($gen_clk) {
+		foreach my $clk (keys %clocks) {
+			$src_file_v   = "$clk_ip_path/$clk/${clk}_clk_wiz.v";
+			$src_file_dcp = "$clk_ip_path/$clk/$clk.dcp";
+			$src_file_xci = "$clk_ip_path/$clk/$clk.xci";
+			$src_file_xdc = "$clk_ip_path/$clk/${clk}_ooc.xdc";
+
+			$dst_file_v   = "$install_path/clk/$clk.v";
+			$dst_file_dcp = "$install_path/clk/$clk.dcp";
+			$dst_file_xci = "$install_path/clk/$clk.xci";
+			$dst_file_xdc = "$install_path/clk/${clk}_ooc.xdc";
+
+			cp_file($src_file_v  , $dst_file_v  );
+			cp_file($src_file_dcp, $dst_file_dcp);
+			cp_file($src_file_xci, $dst_file_xci);
+			cp_file($src_file_xdc, $dst_file_xdc);
+		}
+	}
+
+	if ($gen_ddr3) {
+		my $ddr3 = $ddr3s[0];
+		my @sub_dirs = qw(clocking controller ecc phy ui top);
+		my ($src_dir, $dst_dir);
+		foreach my $dir (@sub_dirs) {
+			if ($dir eq "top") {
+				$src_dir = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/ip_$dir";
+			} else {
+				$src_dir = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/$dir";
+			}
+			$dst_dir = "$install_path/$ddr3_dir/hdl/$dir";
+			mkdir($dst_dir) unless (-e $dst_dir);
+			$cmd_v = "/bin/cp -f $src_dir/*.v $dst_dir/";
+			if (system($cmd_v) != 0) {
+				printf STDERR "ERROR: Failed copying files %s/*.v to %s/\n!", $src_dir, $dst_dir;
+				exit(1);
+			}
+		}
+
+		my ($src_file_top, $src_file_stb, $src_file_prj, $dst_file_top, $dst_file_stb, $dst_file_prj);
+
+		$src_file_top = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/$ddr3.v";
+		$src_file_v   = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/${ddr3}_mig.v";
+		$src_file_stb = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/${ddr3}_stub.v";
+		$src_file_dcp = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3.dcp";
+		$src_file_xci = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3.xci";
+		$src_file_prj = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/mig_a.prj";
+		$src_file_xdc = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/constraints/${ddr3}_ooc.xdc";
+
+		$dst_file_top = "$install_path/$ddr3_dir/hdl/top/$ddr3.v";
+		$dst_file_v   = "$install_path/$ddr3_dir/hdl/top/${ddr3}_mig.v";
+		$dst_file_stb = "$install_path/$ddr3_dir/hdl/top/${ddr3}_stub.v";
+		$dst_file_dcp = "$install_path/$ddr3_dir/$ddr3.dcp";
+		$dst_file_xci = "$install_path/$ddr3_dir/$ddr3.xci";
+		$dst_file_prj = "$install_path/$ddr3_dir/mig_a.prj";
+		$dst_file_xdc = "$install_path/$ddr3_dir/${ddr3}_ooc.xdc";
+
+		cp_file($src_file_top, $dst_file_top);
+		cp_file($src_file_v  , $dst_file_v  );
+		cp_file($src_file_stb, $dst_file_stb);
+		cp_file($src_file_dcp, $dst_file_dcp);
+		cp_file($src_file_xci, $dst_file_xci);
+		cp_file($src_file_prj, $dst_file_prj);
+		cp_file($src_file_xdc, $dst_file_xdc);
+
+
+		# Copy the DDR3 model to $ddr3_model_path.
+		my $src_file_vh;
+
+		$src_file_v  = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/example_design/sim/ddr3_model.*v";
+		$src_file_vh = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/example_design/sim/ddr3_model_parameters.vh";
+
+		cp_file($src_file_v , $ddr3_model_path);
+		cp_file($src_file_vh, $ddr3_model_path);
+	}
+
+	if ($gen_ila) {
+		foreach $ila (@ilas) {
+			$src_file_v   = "$ila_ip_path/$ila/${ila}_stub.v";
+			$src_file_dcp = "$ila_ip_path/$ila/$ila.dcp";
+			$src_file_xci = "$ila_ip_path/$ila/$ila.xci";
+			$src_file_xdc = "$ila_ip_path/$ila/${ila}_ooc.xdc";
+
+			$dst_file_v   = "$install_path/ila/${ila}_stub.v";
+			$dst_file_dcp = "$install_path/ila/$ila.dcp";
+			$dst_file_xci = "$install_path/ila/$ila.xci";
+			$dst_file_xdc = "$install_path/ila/${ila}_ooc.xdc";
+
+			cp_file($src_file_v, $dst_file_v);
+			cp_file($src_file_dcp, $dst_file_dcp);
+			cp_file($src_file_xci, $dst_file_xci);
+			cp_file($src_file_xdc, $dst_file_xdc);
+		}
+	}
+}
+
+sub cp_file {
+	my ($src_file, $dst_file) = @_;
+	my $cmd = "/bin/cp -f $src_file $dst_file";
+
+	if (system($cmd) != 0) {
+		printf STDERR "ERROR: Failed copying file %s to %s!\n", $src_file, $dst_file;
+		exit(1);
+	}
+}
+
+sub check_part_number {
+	my ($given_part) = @_;
+	my ($part, $part_alias);
+
+	if ($given_part eq "xc7k160t" || $given_part eq "xc7k160tffg676-1" || $given_part eq "orca") {
+		$part = "xc7k160tffg676-1"; $part_alias = "orca";
+	} elsif ($given_part eq "xc7k410t" || $given_part eq "xc7k410tffg676-2" || $given_part eq "orca_v2") {
+		$part = "xc7k410tffg676-2"; $part_alias = "orca_v2";
+	} elsif ($given_part eq "100t" || $given_part eq "xc7a100tftg256-1" || $given_part eq "cf1") {
+		$part = "xc7a100tftg256-1"; $part_alias = "cf1";
+	} else {
+		$part = $given_part;	    $part_alias = $part;
+	}
+
+	return ($part, $part_alias);
+}
+
+sub get_timestamp {
+	my ($sec, $min, $hour, $mday, $mon, ) = localtime(time);
+
+	return sprintf("%02d/%02d %02d:%02d:%02d", $mon+1, $mday, $hour, $min, $sec);
+}
+
+sub run_module_generation {
+	my ($kind, $cmd, $log_file) = @_;
+	my $t = time;
+
+	printf <<EOF;
+////////////////////////
+$kind module generation
+////////////////////////
+// Command: $cmd
+EOF
+
+	printf "%s> Preparing...", get_timestamp();
+
+	if (system("$cmd > $log_file") != 0) {
+		printf STDERR "\nERROR: Failed generating %s modules. See %s for details. Please also check if the corresponding license is available.\n", $kind, $log_file;
+		exit(1);
+	} else {
+		print "\n";
+	}
+
+	return ($t, time);
+}
+
+sub wait_for_module_generation {
+	my ($kind, $mods_ref, @file_tmpls) = @_;
+	my ($mod_name, @files, $this_module_done);
+	my $first_done = 0;
+	my $t;
+
+	printf "%s> Waiting for %s module generations...", get_timestamp(), $kind;
+	while (@$mods_ref) {
+		for (my $i = $#{$mods_ref}; $i >= 0; --$i) {
+			$mod_name = $mods_ref->[$i];
+			@files = map { my $a = $_; $a =~ s/%s/$mod_name/eg; $a } @file_tmpls;
+			# Check if all related files have been generated for this module.
+			$this_module_done = 1;
+			foreach my $file (@files) {
+				if (! -e $file) {
+					$this_module_done = 0;
+					last;
+				}
+			}
+			if ($this_module_done) {
+				printf "\n%s> Module %s generation done (%d left)", get_timestamp(), $mods_ref->[$i], $#{$mods_ref};
+				splice(@$mods_ref, $i, 1);
+				alarm($timeout * 60);	# Re-start the timeout counter.
+				if ($first_done == 0) {		# Record the time of the first finished module.
+					$first_done = 1;
+					$t = time;
+				}
+			}
+		}
+		print "." if (scalar(@$mods_ref) != 0);
+		sleep 1;
+	}
+
+	printf "\n%s> All $kind modules are generated.\n", get_timestamp();
+	return ($t, time);
+}
+
+sub gen_time_tuple {
+	my $t = $_[0];
+	return ($t / 3600, ($t % 3600) / 60, $t % 60);
+}
+
+sub gen_modules {
+	my ($kind, $mods_ref, @file_tmpls) = @_;
+
+	my (@mods, $tcl_file, $log_file, $cmd);
+	my ($t0, $t1, $t2, $t3);
+
+	# Use legacy file names.
+	if ($kind eq "RAM") {
+		$tcl_file = "mem.tcl";
+		$log_file = "gen_mem.log";
+	} elsif ($kind eq "CLOCK") {
+		$tcl_file = "clk.tcl";
+		$log_file = "gen_clk.log";
+	} elsif ($kind eq "DDR3-2") {
+		$tcl_file = "ddr3_2.tcl";
+		$log_file = "gen_ddr3_2.tcl";
+	} elsif ($kind eq "ILA") {
+		$tcl_file = "ila.tcl";
+		$log_file = "gen_ila.log";
+
+		# v2016.2 has the ILA license.
+		$ENV{TOOL_VERSIONS_CONFIG} = "xilinx/Vivado:v2016.2";
+	} else {
+		exit(1);
+	}
+	$cmd = "vivado -mode batch -source $tcl_file";
+
+	# We shouldn't affect the original list/hash so lets use the copy.
+	if (ref($mods_ref) eq "HASH") {
+		@mods = keys(%$mods_ref);
+	} else {
+		@mods = @$mods_ref;
+	}
+
+	$SIG{ALRM} = sub {
+		printf STDERR "\n%s> ERROR: Timeout generating following %s modules:\n", get_timestamp(), $kind;
+		print "\t$_\n" foreach @mods;
+		exit(1);
+	};
+
+	alarm($timeout * 60);
+	($t0, $t1) = run_module_generation($kind, $cmd, $log_file);
+	($t2, $t3) = wait_for_module_generation($kind, \@mods, @file_tmpls);
+	alarm(0);
+	printf "Info: %02d:%02d:%02d time spent (%02d:%02d:%02d %02d:%02d:%02d %02d:%02d:%02d)\n", 
+		gen_time_tuple($t3-$t0), gen_time_tuple($t1-$t0), gen_time_tuple($t2-$t1),
+		gen_time_tuple($t3-$t2);
+}
+
+sub gen_ddr3_1 {
+	my ($kind, $mods_ref, @file_tmpls) = @_;
+
+	my (@mods, $tcl_file, $log_file, $cmd);
+	my ($src_file, $dst_file, $ddr3);
+
+	$tcl_file = "ddr3_1.tcl";
+	$log_file = "gen_ddr3_1.log";
+	$cmd = "vivado -mode batch -source $tcl_file";
+
+	@mods = @$mods_ref;
+	$ddr3 = $mods[0];
+
+	# Create project_ddr3.
+	printf <<EOF;
+////////////////////////
+$kind module generation
+////////////////////////
+// Command: $cmd
+EOF
+
+	printf "%s> Running...", get_timestamp();
+
+	$SIG{ALRM} = sub {
+		printf STDERR "\n%s> ERROR: Timeout generating following %s modules:\n", get_timestamp(), $kind;
+		print "\t$_\n" foreach @mods;
+		exit(1);
+	};
+
+	alarm($timeout * 60);
+	if (system("$cmd >> $log_file") != 0) {
+		printf STDERR "\nERROR: Failed generating %s modules. See %s for details. Please also check if the corresponding license is available.\n", $kind, $log_file;
+		exit(1);
+	} else {
+		print "done\n";
+	}
+	alarm(0);
+
+	# Create mig_a.prj.
+	open(OUT, ">", "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/mig_a.prj");
+	print OUT <<'EOF';
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- IMPORTANT: This is an internal file that has been generated by the MIG software. Any direct editing or changes made to this file may result in unpredictable behavior or data corruption. It is strongly advised that users do not edit the contents of this file. Re-run the MIG GUI with the required settings if any of the options provided below need to be altered. -->
+<Project NoOfControllers="1" >
+    <ModuleName>mt41j256m16</ModuleName>
+    <dci_inouts_inputs>1</dci_inouts_inputs>
+    <dci_inputs>1</dci_inputs>
+    <Debug_En>OFF</Debug_En>
+    <DataDepth_En>1024</DataDepth_En>
+    <LowPower_En>ON</LowPower_En>
+    <XADC_En>Enabled</XADC_En>
+EOF
+
+	my $target;
+	if ($part_alias eq "orca") {
+		print <<'EOF'
+    <TargetFPGA>xc7k160t-ffg676/-1</TargetFPGA>
+EOF
+	} else {	# orca2
+		print <<'EOF'
+    <TargetFPGA>xc7k410t-ffg676/-2</TargetFPGA>
+EOF
+	}
+
+	print OUT <<'EOF';
+    <Version>2.0</Version>
+    <SystemClock>Differential</SystemClock>
+    <ReferenceClock>Use System Clock</ReferenceClock>
+    <SysResetPolarity>ACTIVE LOW</SysResetPolarity>
+    <BankSelectionFlag>TRUE</BankSelectionFlag>
+    <InternalVref>0</InternalVref>
+    <dci_hr_inouts_inputs>OFF</dci_hr_inouts_inputs>
+    <dci_cascade>0</dci_cascade>
+    <FPGADevice>
+        <selected>7k/xc7k410t-ffg676</selected>
+    </FPGADevice>
+    <Controller number="0" >
+        <MemoryDevice>DDR3_SDRAM/Components/MT41J256m16XX-107</MemoryDevice>
+        <TimePeriod>2500</TimePeriod>
+        <VccAuxIO>1.8V</VccAuxIO>
+        <PHYRatio>4:1</PHYRatio>
+        <InputClkFreq>200</InputClkFreq>
+        <UIExtraClocks>0</UIExtraClocks>
+        <MMCMClkOut0> 1.000</MMCMClkOut0>
+        <MMCMClkOut1>1</MMCMClkOut1>
+        <MMCMClkOut2>1</MMCMClkOut2>
+        <MMCMClkOut3>1</MMCMClkOut3>
+        <MMCMClkOut4>1</MMCMClkOut4>
+        <DataWidth>32</DataWidth>
+        <DeepMemory>1</DeepMemory>
+        <DataMask>1</DataMask>
+        <ECC>Disabled</ECC>
+        <Ordering>Normal</Ordering>
+        <CustomPart>FALSE</CustomPart>
+        <NewPartName></NewPartName>
+        <RowAddress>15</RowAddress>
+        <ColAddress>10</ColAddress>
+        <BankAddress>3</BankAddress>
+        <MemoryVoltage>1.5V</MemoryVoltage>
+        <UserMemoryAddressMap>BANK_ROW_COLUMN</UserMemoryAddressMap>
+        <BankSelection>
+            <Bank T2="DQ[16-23]" T3="DQ[24-31]" name="32" T0="DQ[0-7]" T1="DQ[8-15]" />
+            <Bank T2="Address/Ctrl-2" name="33" T0="Address/Ctrl-0" T1="Address/Ctrl-1" />
+        </BankSelection>
+        <System_Clock>
+            <Pin PADName="AA10/AB10(CC_P/N)" Bank="33" name="sys_clk_p/n" />
+        </System_Clock>
+        <System_Control>
+            <Pin PADName="No connect" Bank="Select Bank" name="sys_rst" />
+            <Pin PADName="No connect" Bank="Select Bank" name="init_calib_complete" />
+            <Pin PADName="No connect" Bank="Select Bank" name="tg_compare_error" />
+        </System_Control>
+        <TimingParameters>
+            <Parameters twtr="7.5" trrd="5" trefi="7.8" tfaw="35" trtp="7.5" tcke="5" trfc="300" trp="13.91" tras="34" trcd="13.91" />
+        </TimingParameters>
+        <mrBurstLength name="Burst Length" >8 - Fixed</mrBurstLength>
+        <mrBurstType name="Read Burst Type and Length" >Sequential</mrBurstType>
+        <mrCasLatency name="CAS Latency" >6</mrCasLatency>
+        <mrMode name="Mode" >Normal</mrMode>
+        <mrDllReset name="DLL Reset" >No</mrDllReset>
+        <mrPdMode name="DLL control for precharge PD" >Slow Exit</mrPdMode>
+        <emrDllEnable name="DLL Enable" >Enable</emrDllEnable>
+        <emrOutputDriveStrength name="Output Driver Impedance Control" >RZQ/7</emrOutputDriveStrength>
+        <emrMirrorSelection name="Address Mirroring" >Disable</emrMirrorSelection>
+        <emrCSSelection name="Controller Chip Select Pin" >Enable</emrCSSelection>
+        <emrRTT name="RTT (nominal) - On Die Termination (ODT)" >RZQ/4</emrRTT>
+        <emrPosted name="Additive Latency (AL)" >0</emrPosted>
+        <emrOCD name="Write Leveling Enable" >Disabled</emrOCD>
+        <emrDQS name="TDQS enable" >Enabled</emrDQS>
+        <emrRDQS name="Qoff" >Output Buffer Enabled</emrRDQS>
+        <mr2PartialArraySelfRefresh name="Partial-Array Self Refresh" >Full Array</mr2PartialArraySelfRefresh>
+        <mr2CasWriteLatency name="CAS write latency" >5</mr2CasWriteLatency>
+        <mr2AutoSelfRefresh name="Auto Self Refresh" >Enabled</mr2AutoSelfRefresh>
+        <mr2SelfRefreshTempRange name="High Temparature Self Refresh Rate" >Normal</mr2SelfRefreshTempRange>
+        <mr2RTTWR name="RTT_WR - Dynamic On Die Termination (ODT)" >Dynamic ODT off</mr2RTTWR>
+EOF
+
+	if ($axi_platform) {
+		print OUT <<'EOF';
+        <PortInterface>AXI</PortInterface>
+        <AXIParameters>
+            <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>
+            <C0_S_AXI_ADDR_WIDTH>30</C0_S_AXI_ADDR_WIDTH>
+            <C0_S_AXI_DATA_WIDTH>64</C0_S_AXI_DATA_WIDTH>
+            <C0_S_AXI_ID_WIDTH>1</C0_S_AXI_ID_WIDTH>
+            <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>
+        </AXIParameters>
+    </Controller>
+
+</Project>
+EOF
+	} else {
+		print OUT <<'EOF';
+        <PortInterface>NATIVE</PortInterface>
+    </Controller>
+
+</Project>
+EOF
+	}
+	close OUT;
+}
+
+# rename_add_ddr3 is only used by the Synplify flow. However, now we only use
+# the Vivado flow.
+sub rename_add_ddr3 {
+	my ($mods_ref) = @_;
+	my $line;
+	my ($sub_dir, @sub_dirs, $file_path, $file_content, $cmd);
+	my $ddr3 = ${$mods_ref}[0];
+
+	# # Rename signal names for Synplify.
+	# $file_path = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/constraints/$ddr3.xdc";
+	# $file_content = "";
+	# open(IN, "<", $file_path);
+	# while ($line = <IN>) {
+	# 	$line =~ s/\bsys_clk\b/DDR3_SYSCLK/;
+	# 	$line =~ s/\bsys_clk_p\b/X_ddr3_sys_clk_p/;
+	# 	$line =~ s/\bsys_clk_n\b/X_ddr3_sys_clk_n/;
+	# 	$line =~ s/\{ddr3_(\w+)/\{X_ddr3_$1/;
+	# 	$file_content .= $line;
+	# }
+	# close(IN);
+	# open(OUT, ">", $file_path);
+	# printf OUT "%s", $file_content;
+	# close(OUT);
+
+	# Shorten verilog file names due to histroical reasons.
+	@sub_dirs = qw(clocking controller ecc phy ui ip_top);
+	foreach $sub_dir (@sub_dirs) {
+		$file_path = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/$sub_dir";
+		chdir($file_path);
+		my @v_files = <*.v>;
+		for (my $j = 0; $j < @v_files; $j++) {
+			$file_content = "";
+			my $file_v = $v_files[$j];
+			my $file_v_tmp = $file_v;
+			open(IN, "<", $file_v);
+			while ($line = <IN>) {
+				$line =~ s/mig_7series_v\d+_\d+_(\w+)/$1/;
+				$file_content .= $line;
+			}
+			close(IN);
+			open(OUT, ">", $file_v);
+			printf OUT "%s", $file_content;
+			close(OUT);
+			$file_v_tmp =~ s/mig_7series_v\d+_\d+_(\w+)/$1/;
+			$cmd = "/bin/mv -f $file_v $file_v_tmp";
+			if (system($cmd) != 0) {
+				printf STDERR "ERROR: Failed renaming file %s to %s!\n", $file_v, $file_v_tmp;
+				exit(1);
+			}
+		}
+	}
+	chdir($work_path);
+
+	# Shorten module names due to histroical reasons.
+	$file_path = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/${ddr3}_mig.v";
+	$file_content = "";
+	open(IN, "<", $file_path);
+	while ($line = <IN>) {
+		$line =~ s/mig_7series_v\d+_\d+_(\w+)/$1/;
+		$file_content .= $line;
+	}
+	close(IN);
+	open(OUT, ">", $file_path);
+	printf OUT "%s", $file_content;
+	close(OUT);
+
+	# Add key word to the top file.
+	$file_path = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/user_design/rtl/$ddr3.v";
+	$file_content = "";
+	my $key_word_line = 0;
+	my $key_word = "/* synthesis syn_black_box black_box_pad_pin=\"ddr3_dq[31:0],ddr3_dqs_n[3:0],ddr3_dqs_p[3:0],ddr3_addr[14:0],ddr3_ba[2:0],ddr3_ras_n,ddr3_cas_n,ddr3_we_n, ddr3_reset_n,ddr3_ck_p[0:0],ddr3_ck_n[0:0],ddr3_cke[0:0],ddr3_cs_n[0:0], ddr3_dm[3:0],ddr3_odt[0:0],sys_clk_p,sys_clk_n\" */;\n";
+	open(IN, "<", $file_path);
+	while ($line = <IN>) {
+		if($line =~ /module $ddr3/) {
+			$key_word_line = 1;
+		}
+		elsif ($key_word_line == 1) {
+			if ($line =~ /\)\;/) {
+				$line = ")\n$key_word";
+				$line .= "\nparameter SIMULATION = \"FALSE\" ;    // Andes added, to pass parameters for FAST simulation\n";
+				$line .= "parameter SIM_BYPASS_INIT_CAL = \"OFF\" ;    // Andes added, to pass parameters for FAST simulation\n\n";
+				$line .= "defparam u_ddr3_controller_mig.SIMULATION = SIMULATION;    // Andes added, to pass parameters for FAST simulation\n";
+				$line .= "defparam u_ddr3_controller_mig.SIM_BYPASS_INIT_CAL = SIM_BYPASS_INIT_CAL;    // Andes added, to pass parameters for FAST simulation\n\n";
+				$key_word_line = 0;
+			}
+		}
+		$file_content .= $line;
+	}
+	close(IN);
+	open(OUT, ">", $file_path);
+	printf OUT "%s", $file_content;
+	close(OUT);
+
+	# Process the DDR3 model to define MAX_MEM and set sparse memories.
+	$file_path  = (<$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/example_design/sim/ddr3_model.*v>)[0];
+	rename($file_path, "$file_path.org");
+	open(IN, "<", "$file_path.org");
+	open(OUT, ">", $file_path);
+	while ($line = <IN>) {
+		if ($line =~ m!(^//Memory Details|^`define x4Gb|^\`define sg107E|^\`define x16)!) {
+			next;	# Skip these lines.
+		} elsif ($line =~ m|^// model flags|) {
+			print OUT <<EOF;
+// 4MB is large so define MAX_MEM to reduce simulation time
+`define MAX_MEM
+
+EOF
+		}
+		# Use "." as the temporary directory.
+		$line =~ s!^(\s+tmp_model_dir = )"/tmp"!$1"."!;
+		# Declare main 2D arrays to be sparse.
+		$line =~ s!^(\s+reg)\s+(\[\S+\]\s+(?:memory|address)\b)!$1 /* sparse */ $2!;
+		print OUT $line;
+	}
+	close IN;
+	close OUT;
+	unlink "$file_path.org";
+
+	# Disable debug messages in the DDR3 model.
+	$file_path = "$work_path/project_ddr3.srcs/sources_1/ip/$ddr3/$ddr3/example_design/sim/ddr3_model_parameters.vh";
+	rename($file_path, "$file_path.org");
+	open(IN, "<", "$file_path.org");
+	open(OUT, ">", $file_path);
+	while ($line = <IN>) {
+		# Disable debug messages.
+		$line =~ s!^(\s*parameter\s+DEBUG\s+=\s*)1;!${1}0;!;
+		print OUT $line;
+	}
+	close IN;
+	close OUT;
+	unlink "$file_path.org";
+}
+

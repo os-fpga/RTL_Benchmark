@@ -1,0 +1,43 @@
+
+.PHONY: test rom clean cleanrom distclean guard-%
+
+vpath %.c ../src
+
+test: guard-NDS_HOME
+	@rm -f flist
+	@sed -e "s,\$$NDS_HOME,$$NDS_HOME," < $$NDS_HOME/flists/flist.in | grep -v "#" | sed -e "s,//*,/,g" > flist
+	$(SIMULATION_COMMAND) -f flist
+
+rom: guard-NDS_HOME guard-NDS_TOOLCHAIN NDSROM.dat ilm.dat
+
+ilm.dat:
+	touch ilm.dat
+
+NDSROM.dat: a.out
+	riscv-elf-aout2mem a.out  $@
+
+a.out: libtest.a $(OBJS)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+
+libtest.a: $(LIB_OBJS)
+	$(AR) $(ARFLAGS) $@ $^
+
+start.o: ../src/start.S
+	$(CC) $(CFLAGS) $< -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm -rf INCA_libs xcelium.d ucli.key simv.daidir csrc ncverilog.* verilog.*
+
+cleanrom:
+	rm -rf a.out *.dat NDSROM.list flist *.o libtest.a
+
+distclean: clean cleanrom
+
+guard-%:
+	@ if [ "${${*}}" = "" ]; then \
+		echo "Environment variable $* not set"; \
+		exit 1; \
+	fi

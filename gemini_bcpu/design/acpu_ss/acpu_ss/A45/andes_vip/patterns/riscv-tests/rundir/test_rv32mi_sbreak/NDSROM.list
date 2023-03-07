@@ -1,0 +1,131 @@
+
+a.out:     file format elf32-littleriscv
+
+
+Disassembly of section .text.init:
+
+00000000 <_RELAX_END_>:
+	...
+
+00000080 <_start>:
+  80:	0340006f          	jal	zero,b4 <reset_vector>
+
+00000084 <trap_vector>:
+  84:	00000f17          	auipc	t5,0x0
+  88:	130f0f13          	addi	t5,t5,304 # 1b4 <mtvec_handler>
+  8c:	000f0363          	beq	t5,zero,92 <trap_vector+0xe>
+  90:	8f02                	c.jr	t5
+  92:	34202f73          	csrrs	t5,mcause,zero
+  96:	000f5363          	bge	t5,zero,9c <handle_exception>
+  9a:	a009                	c.j	9c <handle_exception>
+
+0000009c <handle_exception>:
+  9c:	5391e193          	ori	gp,gp,1337
+
+000000a0 <fail_handler>:
+  a0:	0ff0000f          	fence	iorw,iorw
+  a4:	e00802b7          	lui	t0,0xe0080
+  a8:	01234337          	lui	t1,0x1234
+  ac:	56930313          	addi	t1,t1,1385 # 1234569 <begin_signature+0x1233569>
+  b0:	0062a023          	sw	t1,0(t0) # e0080000 <__start_addr+0x6007fff0>
+
+000000b4 <reset_vector>:
+  b4:	f1402573          	csrrs	a0,mhartid,zero
+  b8:	00051063          	bne	a0,zero,b8 <reset_vector+0x4>
+  bc:	00000297          	auipc	t0,0x0
+  c0:	01028293          	addi	t0,t0,16 # cc <reset_vector+0x18>
+  c4:	30529073          	csrrw	zero,mtvec,t0
+  c8:	18005073          	csrrwi	zero,satp,0
+  cc:	00000297          	auipc	t0,0x0
+  d0:	02028293          	addi	t0,t0,32 # ec <reset_vector+0x38>
+  d4:	30529073          	csrrw	zero,mtvec,t0
+  d8:	800002b7          	lui	t0,0x80000
+  dc:	fff28293          	addi	t0,t0,-1 # 7fffffff <__start_addr+0xffffffef>
+  e0:	3b029073          	csrrw	zero,pmpaddr0,t0
+  e4:	01f00293          	addi	t0,zero,31
+  e8:	3a029073          	csrrw	zero,pmpcfg0,t0
+  ec:	00000297          	auipc	t0,0x0
+  f0:	01828293          	addi	t0,t0,24 # 104 <reset_vector+0x50>
+  f4:	30529073          	csrrw	zero,mtvec,t0
+  f8:	30205073          	csrrwi	zero,medeleg,0
+  fc:	30305073          	csrrwi	zero,mideleg,0
+ 100:	30405073          	csrrwi	zero,mie,0
+ 104:	4181                	c.li	gp,0
+ 106:	00000297          	auipc	t0,0x0
+ 10a:	f7e28293          	addi	t0,t0,-130 # 84 <trap_vector>
+ 10e:	30529073          	csrrw	zero,mtvec,t0
+ 112:	30102573          	csrrs	a0,misa,zero
+ 116:	00055c63          	bge	a0,zero,12e <reset_vector+0x7a>
+ 11a:	0ff0000f          	fence	iorw,iorw
+ 11e:	e00802b7          	lui	t0,0xe0080
+ 122:	01234337          	lui	t1,0x1234
+ 126:	56830313          	addi	t1,t1,1384 # 1234568 <begin_signature+0x1233568>
+ 12a:	0062a023          	sw	t1,0(t0) # e0080000 <__start_addr+0x6007fff0>
+ 12e:	00000297          	auipc	t0,0x0
+ 132:	ed228293          	addi	t0,t0,-302 # 0 <_RELAX_END_>
+ 136:	00028e63          	beq	t0,zero,152 <reset_vector+0x9e>
+ 13a:	10529073          	csrrw	zero,stvec,t0
+ 13e:	0000b2b7          	lui	t0,0xb
+ 142:	10928293          	addi	t0,t0,265 # b109 <begin_signature+0xa109>
+ 146:	30229073          	csrrw	zero,medeleg,t0
+ 14a:	30202373          	csrrs	t1,medeleg,zero
+ 14e:	f46297e3          	bne	t0,t1,9c <handle_exception>
+ 152:	30005073          	csrrwi	zero,mstatus,0
+ 156:	00002537          	lui	a0,0x2
+ 15a:	80050513          	addi	a0,a0,-2048 # 1800 <begin_signature+0x800>
+ 15e:	30052073          	csrrs	zero,mstatus,a0
+ 162:	557d                	c.li	a0,-1
+ 164:	3b051073          	csrrw	zero,pmpaddr0,a0
+ 168:	3a0fd073          	csrrwi	zero,pmpcfg0,31
+ 16c:	00000297          	auipc	t0,0x0
+ 170:	01428293          	addi	t0,t0,20 # 180 <reset_vector+0xcc>
+ 174:	34129073          	csrrw	zero,mepc,t0
+ 178:	f1402573          	csrrs	a0,mhartid,zero
+ 17c:	30200073          	mret
+ 180:	4189                	c.li	gp,2
+
+00000182 <do_break>:
+ 182:	9002                	c.ebreak
+ 184:	0080006f          	jal	zero,18c <fail>
+ 188:	00301c63          	bne	zero,gp,1a0 <pass>
+
+0000018c <fail>:
+ 18c:	0ff0000f          	fence	iorw,iorw
+ 190:	e00802b7          	lui	t0,0xe0080
+ 194:	01234337          	lui	t1,0x1234
+ 198:	56930313          	addi	t1,t1,1385 # 1234569 <begin_signature+0x1233569>
+ 19c:	0062a023          	sw	t1,0(t0) # e0080000 <__start_addr+0x6007fff0>
+
+000001a0 <pass>:
+ 1a0:	0ff0000f          	fence	iorw,iorw
+ 1a4:	e00802b7          	lui	t0,0xe0080
+ 1a8:	01234337          	lui	t1,0x1234
+ 1ac:	56830313          	addi	t1,t1,1384 # 1234568 <begin_signature+0x1233568>
+ 1b0:	0062a023          	sw	t1,0(t0) # e0080000 <__start_addr+0x6007fff0>
+
+000001b4 <mtvec_handler>:
+ 1b4:	430d                	c.li	t1,3
+ 1b6:	342022f3          	csrrs	t0,mcause,zero
+ 1ba:	fc6299e3          	bne	t0,t1,18c <fail>
+ 1be:	00000317          	auipc	t1,0x0
+ 1c2:	fc430313          	addi	t1,t1,-60 # 182 <do_break>
+ 1c6:	341022f3          	csrrs	t0,mepc,zero
+ 1ca:	fc6291e3          	bne	t0,t1,18c <fail>
+ 1ce:	bfc9                	c.j	1a0 <pass>
+ 1d0:	0000                	c.unimp
+ 1d2:	0001                	c.addi	zero,0
+ 1d4:	00000013          	addi	zero,zero,0
+ 1d8:	00000013          	addi	zero,zero,0
+ 1dc:	00000013          	addi	zero,zero,0
+ 1e0:	00000013          	addi	zero,zero,0
+ 1e4:	00000013          	addi	zero,zero,0
+ 1e8:	00000013          	addi	zero,zero,0
+ 1ec:	00000013          	addi	zero,zero,0
+ 1f0:	00000013          	addi	zero,zero,0
+ 1f4:	00000013          	addi	zero,zero,0
+ 1f8:	00000013          	addi	zero,zero,0
+ 1fc:	00000013          	addi	zero,zero,0
+
+Contents of section .loader:
+ 80000000 97020000 83a20201 82920000 00000000  ................
+ 80000010 80000000 00000000                    ........        

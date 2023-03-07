@@ -1,0 +1,21 @@
+#!/bin/sh
+orig=$(pwd)
+
+if [ ! -d ./log ]; then
+	mkdir log
+fi
+
+rm -f log/*
+rm -f genus.cmd
+
+echo "Run Dhrystone"
+cd $NDS_HOME/andes_vip/patterns/samples/test_dhrystone_v5
+make clean
+make;make getdmips;make gentcf
+echo "Copy verilog.tcf and pf_info.tcl to synthesis directory"
+cp verilog.tcf pf_info.tcl $orig
+cd $orig
+
+cp ../top/hdl/config.inc ./
+echo "Copy config.inc here"
+genus -wait 1440 -f ./script_rc/n22_core.tcl -log ./log/genus.log $NDS_GENUS_ARG

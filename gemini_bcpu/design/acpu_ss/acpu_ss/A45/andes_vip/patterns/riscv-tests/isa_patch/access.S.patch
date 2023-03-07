@@ -1,0 +1,16 @@
+--- ../isa/rv64mi/access.S	2018-07-06 17:23:05.899880569 +0800
++++ access.S	2018-07-09 14:57:53.168005373 +0800
+@@ -15,10 +15,10 @@
+ 
+   .align 2
+ 
+-  # Flipping just the MSB should result in an illegal address for RV64.
++  # Select an illegal address for RV64.
+   la t2, fail
+-  li t0, 1 << (__riscv_xlen - 1)
+-  xor t0, t0, t2
++  li t0, 0xff000000
++  or t0, t0, t2
+ 
+   # jalr to an illegal address should commit (hence should write rd).
+   # after the pc is set to rs1, an access exception should be raised.

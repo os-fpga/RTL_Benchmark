@@ -1,0 +1,225 @@
+#!/usr/bin/perl
+use Data::Dumper;
+my $debug = 0;
+my $log_name;
+if (-e "SLVP0_trans.log") {
+    $log_name = "SLVP0_trans.log"
+} else {
+    die "Can't find file: SLVP0_trans.log";
+}
+
+my $latency_log = open_file("latency.log");
+
+my $log_in;
+open ($log_in, '<', $log_name ) or die "Can't open : $!";
+my @log_msg;
+my @rd_msg;
+my @wr_msg;
+my $test_num = 0;
+my $total_size = 0;
+
+while(<$log_in>) {
+        $current_line = $_;
+        if ($current_line =~ m/test:\s+(\d+)/) {
+            $test_num = $1;
+        } elsif ($current_line =~ m/total\s+size:\s+(\d+)/) {
+            $total_size = $1;
+        } elsif ($current_line =~ m/^.*nds_tb::.*$/) {
+            my $msg_ref = parse_info($current_line, $test_num, $total_size);
+            if (defined($msg_ref)) {
+                push(@log_msg,$msg_ref); 
+                push(@rd_msg,$msg_ref) if ($msg_ref->{'rw'} eq "READ"); 
+                push(@wr_msg,$msg_ref) if ($msg_ref->{'rw'} eq "WRITE"); 
+            }
+        }
+}
+
+if (!close($log_in)) {
+        print "$0:INFO: unable to close $log_name\n";
+}
+my $title_str = sprintf("|\ttest\t|\trw\t|\ttotal size\t|\ttxn size\t|\taxsize\t|\taxlen\t|\tburst\t|\tLM\t|\tlatency\t|\tseq\t|\n");
+my $pad_str = "";
+
+for (my $i=0 , $str_len = length $title_str, my @char = split('',$title_str); $i<$str_len; $i++) {
+    if ($char[$i] eq "\t") {
+        $pad_str .= "-" x 6;
+    } else {
+        $pad_str .= "-";
+    }
+    if ($i==($str_len-4)) {
+        $pad_str .= "---\n";
+        last;
+    }
+}
+
+my $seq = 0;
+my $send_bytes = 0;
+my $ilm_cnt = 0;
+my $dlm_cnt = 0;
+my $str = $pad_str.$title_str.$pad_str; 
+for (my $i; $i < int scalar(@rd_msg); $i++) {
+    if ($rd_msg[$i]->{'port'} == 0) {
+        $ilm_cnt++;
+    } else {
+        $dlm_cnt++;
+    }
+}
+for (my $i; $i < int scalar(@wr_msg); $i++) {
+    if ($wr_msg[$i]->{'port'} == 0) {
+        $ilm_cnt++;
+    } else {
+        $dlm_cnt++;
+    }
+}
+
+if ($ilm_cnt>0) {
+    print $latency_log $str;
+    for (my $i; $i < int scalar(@rd_msg); $i++) {
+        if ($rd_msg[$i]->{'port'} == 0) {
+            print_entry($rd_msg[$i], $latency_log);
+        }
+    }
+    print $latency_log "$pad_str\n";
+
+    print $latency_log $str;
+    for (my $i; $i < int scalar(@wr_msg); $i++) {
+        if ($wr_msg[$i]->{'port'} == 0) {
+            print_entry($wr_msg[$i], $latency_log);
+        }
+    }
+    print $latency_log "$pad_str\n";
+}
+
+if ($dlm_cnt>0) {
+    print $latency_log $str;
+    for (my $i; $i < int scalar(@rd_msg); $i++) {
+        if ($rd_msg[$i]->{'port'} == 1) {
+            print_entry($rd_msg[$i], $latency_log);
+        }
+    }
+    print $latency_log "$pad_str\n";
+
+    print $latency_log $str;
+    for (my $i; $i < int scalar(@wr_msg); $i++) {
+        if ($wr_msg[$i]->{'port'} == 1) {
+            print_entry($wr_msg[$i], $latency_log);
+        }
+    }
+    print $latency_log "$pad_str\n";
+}
+
+#$debug = 1;
+#print $latency_log Dumper(@log_msg) if ($debug);
+print $latency_log Dumper(@rd_msg) if ($debug);
+print $latency_log Dumper(@wr_msg) if ($debug);
+
+close $latency_log; 
+
+sub parse_info {
+    my ($str, $test, $total_sz) = @_;
+    my %msg = (
+        'time'  => -1,
+        'addr'    => -1,
+        'rw' => -1,
+        'burst'  =>  0,
+        'cache'  =>  0,
+        'prot'  => 0,
+        'size' => -1,
+        'len' => -1,
+        'id' => -1,
+        'used_cycles' => -1,
+        'port' => -1,
+        'test' => $test,
+        'total_sz' => $total_sz,
+    );
+    #832300.97 ns:nds_tb::  addr:'h200640   READ  burst:1  cache:'hf  prot:'h0  size:'h0  len:'h0  id:'h5  used_cycles:'d59  port:'d0
+
+    $msg{'time'} = "$1.$2 ns" if ($str =~ /^(\d+)\.(\d*)\sns/);
+    
+    if ($str =~ /addr:'h([0-9a-fA-F]+)/) {
+        $msg{'addr'} = $1;
+    }
+
+    if ($str =~ /(READ|WRITE)/) {
+        $msg{'rw'} = $1;
+    }
+
+    if ($str =~ m/burst:(\d)/) {
+        $msg{'burst'} = burst_dec($1);
+    }
+    
+    if ($str =~ /cache:'h([0-9a-fA-F]+)/) {
+        $msg{'cache'} = hex($1);
+    }
+    
+    if ($str =~ /prot:'h([0-9a-fA-F]+)/) {
+        $msg{'prot'} = hex($1);
+    }
+
+    if ($str =~ /size:'h([0-9a-fA-F]+)/) {
+        $msg{'size'} = hex($1);
+    }
+
+    if ($str =~ /len:'h([0-9a-fA-F]+)/) {
+        $msg{'len'} = hex($1);
+    }
+
+    if ($str =~ /id:'h([0-9a-fA-F]+)/) {
+        $msg{'id'} = hex($1);
+    }
+
+    if ($str =~ /used_cycles:'d(\d+)/) {
+        $msg{'used_cycles'} = $1;
+    }
+
+    if ($str =~ /port:'d(\d+)/) {
+        $msg{'port'} = $1;
+    }
+
+    return \%msg;
+}
+
+sub print_entry {
+    my ($msg_ref, $file) = @_;
+    my $port = ($msg_ref->{'port'})?"DLM":"ILM";
+    my $txn_size = (1 << $msg_ref->{'size'})*($msg_ref->{'len'} + 1);
+    my $str = sprintf("|\t%d\t|\t%s\t|\t%d\t\t|\t%d\t\t|\t%d\t|\t%d\t|\t%s\t|\t%s\t|\t%d\t|\t%d\t|\n", 
+        $msg_ref->{'test'}, $msg_ref->{'rw'}, $msg_ref->{'total_sz'}, $txn_size ,$msg_ref->{'size'}, $msg_ref->{'len'}, $msg_ref->{'burst'}, $port , $msg_ref->{'used_cycles'}, $seq);
+    #print $latency_log Dumper($msg_ref);
+    $send_bytes += $txn_size;
+    if ($send_bytes >= $msg_ref->{'total_sz'}) {
+        $seq = 0;
+        $send_bytes = 0;
+    } else {
+        $seq ++;
+    }
+    print $file $str;
+    return $txn_size;
+}
+
+sub burst_dec {
+    my ($burst) = @_;
+    my $type;
+    $type = "FIXED" if ($burst == 0);
+    $type = "INCR" if ($burst == 1);
+    $type = "WRAP" if ($burst == 2);
+    return $type;
+}
+
+sub dump_msg {
+    my ($pip_ref , $trc_ref) = @_;
+    print $cmp_log "\nDUMP::pip_msg:\n";
+    print $cmp_log Dumper($pip_ref);
+    print $cmp_log "\nDUMP::trc_msg:\n";
+    print $cmp_log Dumper($trc_ref);
+}
+
+sub open_file {
+    my ($file_name) = @_;
+    my $file_handler;
+    
+    `rm $file_name -f` if (-e "$file_name");
+    open my $file_handler, '>', "$file_name"  or die "Can't open : $!";
+    return $file_handler;
+}
+

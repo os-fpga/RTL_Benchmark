@@ -1,0 +1,34 @@
+.PHONY: rtl clean cleanrom distclean patch guard-%
+
+rtl: guard-NDS_HOME
+	@rm -f flist
+	@sed -e "s,\$$NDS_HOME,$$NDS_HOME," < $$NDS_HOME/flists/flist.in | grep -v "#" | sed -e "s,//*,/,g" > flist
+	$(SIMULATION_COMMAND) -f flist +notimingchecks
+
+rom: guard-NDS_HOME guard-NDS_TOOLCHAIN patch NDSROM.dat
+
+NDSROM.dat: a.out
+	riscv-elf-aout2mem a.out  $@
+
+a.out: test.o
+	$(LD) $(LDFLAGS) -o $@ $^
+
+test.o: test.S
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm -rf INCA_libs xcelium.d ucli.key simv.daidir csrc ncverilog.* verilog.*
+
+cleanrom:
+	rm -rf a.out *.dat NDSROM.list flist *.o
+
+distclean: clean cleanrom
+
+patch:
+	$$NDS_HOME/andes_vip/patterns/riscv-tests/isa_patch/patch.sh
+
+guard-%:
+	@ if [ "${${*}}" = "" ]; then \
+		echo "Environment variable $* not set"; \
+		exit 1; \
+	fi
