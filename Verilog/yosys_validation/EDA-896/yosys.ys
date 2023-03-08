@@ -1,0 +1,24 @@
+ 
+# Yosys synthesis script for asym_ram_sdp_wide_write
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-896/asym_ram_sdp_wide_write.sv
+verific -import asym_ram_sdp_wide_write
+
+
+# Technology mapping
+hierarchy -top asym_ram_sdp_wide_write
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -top asym_ram_sdp_wide_write -de -goal delay -carry no        -de_max_threads -1   
+
+write_verilog -noattr -nohex asym_ram_sdp_wide_write_post_synth.v
+#write_blif asym_ram_sdp_wide_write_post_synth.blif
+
+  
