@@ -1,0 +1,196 @@
+#!/bin/sh
+
+log_cmd=$@;
+log_start_time=`date '+%Y/%m/%d %H:%M:%S'`
+
+# step 0: set cfg/platform
+ # extract platform name
+platform=$(pwd |perl -pe "s/.*andes_ip\/(.*)\/fpga.*/\1/")
+platform_cfg=${platform}_config.vh
+platform_cfg_path=$NDS_HOME/andes_ip/${platform}/top/hdl/include
+dtrom_script=$NDS_HOME/andes_ip/scripts/gen_dtrom.pl
+dtrom_file="sample_dtrom.data"
+
+if [ -d $NDS_HOME/andes_ip/kv_core ]; then
+	core=kv
+else
+	core=vc
+fi
+
+mpcore_path=$NDS_HOME/andes_ip/${core}mp_core/top/hdl/config.inc
+if [ -f $mpcore_path ]; then
+   ip_dir=${core}mp_core
+else
+   ip_dir=${core}_core
+fi
+
+
+# step 1: setting board and part_name
+family_name=xc7k
+part=xc7k160t
+plusdefine=()
+
+ # Help message
+function usage() {
+        echo -e "This script calls vivado to synthesis and generate bitmap file."
+        echo -e "usage:"
+        echo -e "\tsyn_fpga_vivado [-b board_name] [-h]"
+        echo -e "Arguments:"
+        echo -e "\t[-b[oard] board_name]\t:  You can choose vcu118, xc7k or xc5v, default \"xc7k\""
+        echo -e "\t[-p[art]  part_number]\t: You can choose vcu118, xc7k160t or xc7k410t, default \"xc7k160t\""
+        echo -e "\t[-d[fine] plus_define]\t: You can add additional Vivado synthesis define to \"fpga_config.inc\""
+        echo -e "\t[-h[elp] ]\t\t: show help message"
+        if (( $use_run_cmd_lib )); then
+                show_run_cmd_help
+        fi
+}
+
+while [[ $# -gt 0 ]]; do
+        case "$1" in
+                -h|-help|--help)
+                        usage; exit 1 ;;
+                -b|-board|--board)
+                        family_name=$2; shift 2 ;;
+                -p|-part|--part)
+                        part=$2; shift 2 ;;
+                -d|-define|--define)
+                        plusdefine+=("$2"); shift 2 ;;
+                *)
+                        argv=("${argv[@]}" "$1"); shift ;;
+        esac
+done
+set -- "${argv[@]:0}" # overwrite command line argv
+
+if [ $family_name == "xc5v" ]; then
+	part_name=xc5vlx110-ff676-1
+	board=leopard
+else
+    if [ $part == "xc7k410t" ]; then
+        part_name=xc7k410t-ffg676-2
+        board=bigorca
+    elif [ $part == "vcu118" ]; then
+        part_name=xcvu9p-flga2104-2L-e
+        board=vcu118
+    else
+	    part_name=xc7k160t-ffg676-1
+	    board=orca
+    fi
+fi
+echo -e "part_name: $part_name"
+
+
+# step 2: generate rundir
+
+if [ -e fpga_${platform}_vivado ]; then
+	mv -f fpga_${platform}_vivado fpga_${platform}_vivado_`date +'%F_%H:%M'`
+	mkdir fpga_${platform}_vivado
+else
+	mkdir fpga_${platform}_vivado
+fi
+cd fpga_${platform}_vivado
+
+# step 3: link $platform_cfg, fpga_config.inc and config.inc 
+echo -e "\`define NDS_FPGA" > ./fpga_config.inc
+echo -e "\`define NDS_CORE_${core^^}" >> ./fpga_config.inc
+
+if [ $part == "vcu118" ]; then
+    echo -e "\`define NDS_DEVICE_XCVU9P" >> ./fpga_config.inc
+    echo -e "\`define NDS_BOARD_VCU118" >> ./fpga_config.inc
+else
+    echo -e "\`define NDS_BOARD_ORCA" >> ./fpga_config.inc
+fi
+
+if [ $part == "xc7k410t" ]; then
+    echo -e "\`define NDS_DEVICE_XC7K410T" >> ./fpga_config.inc
+fi
+
+for _plusdefine in ${plusdefine[@]}
+do
+	echo -e "\`define $_plusdefine" >> ./fpga_config.inc
+done
+
+if [ -e ../${platform}_config.vh ]; then
+        unlink ../${platform}_config.vh
+fi
+
+ln -s $NDS_HOME/andes_ip/${platform}/top/hdl/include/${platform}_config.vh ../${platform}_config.vh
+
+if [ -e ../config.inc ]; then
+        unlink ../config.inc
+fi
+
+ln -s $NDS_HOME/andes_ip/$ip_dir/top/hdl/config.inc ../config.inc
+ln -s ../$platform_cfg ./$platform_cfg
+ln -s ../config.inc ./config.inc
+
+if [ -e ../vivado_flow/flist_core.tcl ]; then
+	unlink ../vivado_flow/flist_core.tcl
+fi
+
+ln -s ../vivado_flow/flist/flist_${core}.tcl ../vivado_flow/flist_core.tcl
+
+if [ ! -e $platform_cfg ]; then
+	printf "ERROR: can't find $platform_cfg\n"
+	exit
+fi
+if [ ! -e fpga_config.inc ]; then
+	printf "ERROR: can't find fpga_config.inc\n"
+	exit
+fi
+if [ ! -e config.inc ]; then
+	printf "ERROR: can't find config.inc\n"
+	exit
+fi
+
+# step 3.1: generate DTROM
+if [ $platform == ae350 ]; then
+        $dtrom_script -ccfg config.inc -pcfg $platform_cfg
+        if [ -e  $dtrom_file ]; then
+                PLATFORM=`echo ${platform} | tr [:lower:] [:upper:]`
+                
+		# This option are enabled by configuration tool
+		#echo -e "\`define ${PLATFORM}_DTROM_SUPPORT 1" >> ./fpga_config.inc
+
+                dtrom_word_cnt=`cat $dtrom_file | wc -l `
+                dtrom_size=`expr $dtrom_word_cnt "*" 4`
+                if [ $dtrom_size -gt 8192 ]; then
+                        dtrom_size=`perl -e "use POSIX; print (1 << (ceil(log($dtrom_size)/log(2)) - 10))"`
+                        echo -e "\`define ${PLATFORM}_DTROM_SIZE_KB $dtrom_size" >> ./fpga_config.inc
+                fi
+        else
+                printf "WARNING: fail to generate DTROM\n"
+        fi
+fi
+
+# step 4: prepare vivado script
+ln -s ../vivado_flow/flist          flist
+ln -s ../vivado_flow/constraint     constraint
+ln -s ../vivado_flow/script         script
+ln -s ../vivado_flow/${platform}_vivado.tcl  ${platform}_vivado.tcl
+
+# step 5: run vivado
+vivado -mode batch -source ./${platform}_vivado.tcl
+
+log_end_time=`date '+%Y/%m/%d %H:%M:%S'`
+log_workdir=`pwd`
+log_title=`cat $NDS_HOME/config_tools/nds-softcore-config | grep "set\s\+product\s\+\S\+" | sed s,set[[:space:]]*product[[:space:]]*\",, | sed s,\",, `
+log_title+=`cat $NDS_HOME/config_tools/nds-softcore-config | grep "set\s\+subproduct\s\+\S\+" | sed s,set[[:space:]]*subproduct[[:space:]]*\,-, | sed s,\",, `
+log_model=`cat $NDS_HOME/config_tools/nds-softcore-config | grep "page_title\s\+Softcore\s\+\S\+\s\+Configure" | sed s,page_title[[:space:]]*Softcore[[:space:]]*,, | sed s,Configure,, | sed s,[[:space:]]*,, `
+
+if [ -e build_vivado.log ]; then
+	unlink build_vivado.log
+fi
+
+echo -e "$0 $log_cmd" >> build_vivado.log
+echo -e "@$log_start_time start" >> build_vivado.log
+echo -e "title: $log_title" >> build_vivado.log
+echo -e "model: $log_model" >> build_vivado.log
+echo -e "core: $ip_dir" >> build_vivado.log
+echo -e "platform: $platform" >> build_vivado.log
+echo -e "board: $board" >> build_vivado.log
+echo -e "workdir: $log_workdir" >> build_vivado.log
+if [ -e fpga_config.inc ]; then
+	cat fpga_config.inc | sed s,\`,, >> build_vivado.log
+fi
+echo -e "@$log_end_time end" >> build_vivado.log
+

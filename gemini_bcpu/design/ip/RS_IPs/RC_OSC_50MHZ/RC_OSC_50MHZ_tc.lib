@@ -1,0 +1,201 @@
+/*******************************************************************
+*                   LIBRARY :   RC_OSC_50MHZ     
+*                   Comment :   This library was created by RS
+*                   Update  :   version 0.1 on 09/06/2022
+*  module RC_OSC_50MHZ( O_OSC, VR12, VDD18, VSS18, CAL, IB_COP, PD,
+*  RSTB, VDDC, BGR, RSV );
+********************************************************************/
+library ( RC_OSC_50MHZ_tc ) {
+    technology (cmos) ;
+    delay_model : table_lookup ;
+    date        : "09/06/2022" ;
+    comment : "Copyright RS" ;
+    revision    : 0.1 ;
+    simulation  : true ;
+    nom_process : 1 ;
+    nom_temperature : 25;
+    nom_voltage : 0.8;
+    /* Define all power rails */
+    voltage_map(VDD18, 1.8);
+    voltage_map(VDDC, 0.8);
+    voltage_map(VSS18, 0);
+     operating_conditions  (tc)  {
+        process : 1 ;
+        temperature :  25  ;
+        voltage :  0.8  ;
+        tree_type : "balanced_tree" ;
+    }
+     default_operating_conditions :  tc  ;
+    capacitive_load_unit (1,pf) ;
+    voltage_unit : "1V" ;
+    current_unit : "1mA" ;
+    time_unit : "1ns" ;
+    pulling_resistance_unit : "1kohm"; 
+    define_cell_area (pad_drivers,pad_driver_sites) ;
+    define_cell_area(bond_pads,pad_slots) ;
+    library_features (report_delay_calculation);
+    default_leakage_power_density : 0.0;
+    default_fanout_load : 1;
+
+  type(bus8) {
+    base_type : array ;
+    data_type : bit ;
+    bit_width : 8 ;
+    bit_from : 7 ;
+    bit_to : 0 ;
+    downto : true ;
+  }
+  type(bus6) {
+    base_type : array ;
+    data_type : bit ;
+    bit_width : 6 ;
+    bit_from : 5 ;
+    bit_to : 0 ;
+    downto : true ;
+  }
+  type(bus4) {
+    base_type : array ;
+    data_type : bit ;
+    bit_width : 4 ;
+    bit_from : 3 ;
+    bit_to : 0 ;
+    downto : true ;
+  }
+  type(bus3) {
+    base_type : array ;
+    data_type : bit ;
+    bit_width : 3 ;
+    bit_from : 2 ;
+    bit_to : 0 ;
+    downto : true ;
+  }
+  type(bus2) {
+    base_type : array ;
+    data_type : bit ;
+    bit_width : 2 ;
+    bit_from : 1 ;
+    bit_to : 0 ;
+    downto : true ;
+  }
+
+
+wire_load("ZeroWireload") {
+resistance : 0.00001 ;
+capacitance : 1 ;
+area : 0
+slope : 0 ;
+fanout_length(1,0.0000)
+fanout_length(2,0.0000)
+fanout_length(3,0.0000)
+fanout_length(4,0.0000)
+fanout_length(5,0.0000)
+fanout_length(6,0.0000)
+fanout_length(7,0.0000)
+fanout_length(8,0.0000)
+fanout_length(9,0.0000)
+fanout_length(10,0.0000)
+fanout_length(11,0.0000)
+fanout_length(12,0.0000)
+fanout_length(13,0.0000)
+fanout_length(14,0.0000)
+fanout_length(15,0.0000)
+fanout_length(16,0.0000)
+fanout_length(17,0.0000)
+fanout_length(18,0.0000)
+fanout_length(19,0.0000)
+fanout_length(20,0.0000)
+}
+
+wire_load_selection(WireAreaForZero){
+wire_load_from_area(0, 113034, "ZeroWireload");
+}
+
+default_wire_load_selection : "WireAreaForZero";
+default_wire_load : "ZeroWireload";
+default_wire_load_mode : segmented;
+in_place_swap_mode : match_footprint ;
+                                   
+default_max_transition :      0.401700
+default_inout_pin_cap :       0.001
+default_input_pin_cap :       0.001
+default_output_pin_cap :      0.001
+
+slew_lower_threshold_pct_rise :  30.00
+slew_upper_threshold_pct_rise :  70.00
+slew_derate_from_library :  0.50
+input_threshold_pct_fall :  50.00
+output_threshold_pct_fall :  50.00
+input_threshold_pct_rise :  50.00
+output_threshold_pct_rise :  50.00
+slew_lower_threshold_pct_fall :  30.00
+slew_upper_threshold_pct_fall :  70.00
+
+        /* Added for DesignPower (Power Estimation). */
+        leakage_power_unit : 1nW;
+        default_cell_leakage_power : 0;
+
+
+/********************************************************************/
+cell (RC_OSC_50MHZ) {
+ area : 30000.0;  /* 200um*150um */
+/**Input *****************************************************/
+ pin(RSTB) {
+  direction : input ;
+  input_signal_level : VDDC ;
+      capacitance : 0.001 ;
+  }
+
+ pin(PD) {
+  direction : input ;
+  input_signal_level : VDDC ;
+      capacitance : 0.001 ;
+  }
+
+ bus(BGR) {
+      bus_type : bus3 ;
+      direction : input ;
+      capacitance : 0.001 ;
+    }
+ bus(IB_COP) {
+      bus_type : bus2 ;
+      direction : input ;
+      capacitance : 0.001 ;
+    }
+ bus(CAL) {
+      bus_type : bus6 ;
+      direction : input ;
+      capacitance : 0.001 ;
+    }
+
+/**InOut *****************************************************/
+
+ pg_pin(VDDC) {
+  voltage_name : VDDC ;
+  pg_type: primary_power;
+   }
+ pg_pin(VSS18) {
+  voltage_name : VSS18 ;
+  pg_type: primary_ground;
+   }
+ pg_pin(VDD18) {
+  voltage_name : VDD18 ;
+  pg_type: primary_power;
+   }
+
+ pin(VR12) {
+  direction : inout ;
+  input_signal_level : VDD18 ;
+  output_signal_level : VDD18 ;
+      capacitance : 1.1 ;
+   }
+
+/**Output *****************************************************/
+ pin(O_OSC) {
+  direction : output ;
+  output_signal_level : VDDC ;
+  max_capacitance : 0.04 ;
+  }
+} /* end of cell */  
+
+}   /* END of lib */
+
