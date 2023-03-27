@@ -1,0 +1,11 @@
+// test4*.v are testbench which used to verify
+
+1) RC_OSC_50MHZ.v
+vcs -sverilog RC_OSC_50MHZ.v test4_RC_OSC_50MHZ.v
+./simv
+
+2) phase_gen_4_8, phase_sel_1_8
+vcs -sverilog -v rs_t16n20p90cpdlvt_ana.v  phase_sel_1_8.v phase_gen_4_8.v test4_phase_gen_4_8_phase_4_8_sel_1_8.v
+
+3) delay_line_64tap
+vcs -sverilog delay_line_64tap.v test4_delay_line_64tap.v
