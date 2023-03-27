@@ -1,0 +1,23 @@
+ 
+# Yosys synthesis script for ram_true_dp_out_reg_1024x32
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1278/
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1278/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1278/ram_true_dp_out_reg_1024x32.sv
+verific -import ram_true_dp_out_reg_1024x32
+
+
+# Technology mapping
+hierarchy -top ram_true_dp_out_reg_1024x32
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v ram_true_dp_out_reg_1024x32_post_synth.v
