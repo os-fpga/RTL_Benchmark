@@ -10,7 +10,7 @@ reg [7:0] RAM [511:0];
 reg [7:0] dout;
 
 initial begin
-    $readmemh("/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1090/512x8/mem.init", RAM);
+    $readmemh("mem.init", RAM);
     end
 
 always @(posedge clk)
