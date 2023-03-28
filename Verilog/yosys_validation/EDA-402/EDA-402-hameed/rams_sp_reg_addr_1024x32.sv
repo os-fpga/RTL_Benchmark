@@ -11,7 +11,7 @@ reg [31:0] RAM [1023:0];
 reg [31:0] dout;
 
 initial begin
-    $readmemh("/nfs_scratch/scratch/FV/awais/Synthesis/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-402/EDA-402-hameed/mem1.mem", RAM);
+    $readmemh("mem1.mem", RAM);
     end
 
 always @(posedge clk)
