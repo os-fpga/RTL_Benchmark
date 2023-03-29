@@ -20,7 +20,7 @@ module co_sync_sp_write_first;
     end
 
     initial begin
-    {we, ra, wa, wd, cycle, i} = 0;
+    {we, re, wd,addr ,cycle, i} = 0;
  
 
     repeat (1) @ (negedge clk);
@@ -47,7 +47,7 @@ module co_sync_sp_write_first;
     //writes
     for (integer i=0; i<8; i=i+1)begin
         repeat (1) @ (negedge clk)
-        addr <= $urandom_range(0,7); re <=1; we <=1'b1; wd<= 'h25;
+        addr <= $urandom_range(0,7); re <=$random; we <=$random; wd<=$random;
         cycle = cycle +1;
        
         compare(cycle);
