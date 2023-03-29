@@ -7,9 +7,8 @@ input wire [9:0] addr;
 input wire [15:0] wd;
 output reg [15:0] rd;
 
-reg [15:0] mem [0:15];
+reg [15:0] mem [1023:0];
 
-initial rd = 16'hxxxx;
 
 always @(posedge clk) begin
     if (we)
