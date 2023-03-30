@@ -48,7 +48,7 @@ module co_sync_sp_srst_re;
      //random
     for (integer i=0; i<1024; i=i+1)begin
         repeat (1) @ (negedge clk)
-        we<=$random; re<=$random; ar<=$random; addr<=$random; wd<=$random;
+        we<=$random; re<=$random; sr<=$random; addr<=$random; wd<=$random;
         cycle = cycle +1;
         compare(cycle);
 
