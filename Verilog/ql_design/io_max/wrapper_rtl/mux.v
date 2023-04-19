@@ -17,9 +17,13 @@ module mux_128_2 (in,sel,out,select);
                 in_internal0  = in;
                 sel_internal0 = sel;
                 out_t = out_internal0;
+                in_internal1  =  0;
+                sel_internal1 = 0;
             end
             1'b1:
             begin
+                in_internal0  = 0;
+                sel_internal0 = 0;
                 in_internal1  =  in;
                 sel_internal1 = sel;
                 out_t = out_internal1;
