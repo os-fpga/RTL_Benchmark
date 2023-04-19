@@ -77,6 +77,7 @@ begin
    load_s <= '0';
    last_s <= '0';
    block_ready <= '0';
+   rst_cnt <= '0';
        		      
     case state is  
           when idle => 
