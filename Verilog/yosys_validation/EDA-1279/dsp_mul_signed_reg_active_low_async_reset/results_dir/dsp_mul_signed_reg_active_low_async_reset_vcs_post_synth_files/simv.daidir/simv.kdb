@@ -1,0 +1,22 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/rtl
+VCS_HOME=/nfs_cadtools/synopsys/vcs_all/S-2021.09-SP2
+VERDI_HOME=
+SystemC=FALSE
+UUM=FALSE
+KDB=TRUE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=dff dffn sdff sdffn dffnr dffe dffne sdffre sdffnre dffre dffnre latch latchn latchr latchnr fa_1bit TDP_BRAM18 BRAM2x18_TDP BRAM2x18_SDP _$_mem_v2_asymmetric RS_DSP_MULT RS_DSP_MULT_REGOUT RS_DSP_MULT_REGIN_REGOUT RS_DSP_MULTADD RS_DSP_MULTADD_REGIN RS_DSP_MULTADD_REGOUT RS_DSP_MULTADD_REGIN_REGOUT RS_DSP_MULTACC RS_DSP_MULTACC_REGIN RS_DSP_MULTACC_REGOUT RS_DSP_MULTACC_REGIN_REGOUT dsp_t1_20x18x64_cfg_ports co_sim_dsp_mul_signed_reg_active_low_async_reset 
+OPTION=-ssz -ssv -ssy 
+ELAB_OPTION=-ssz -ssv -ssy 
+ELAB=TRUE
+SIMV_WRAPPER=FALSE
+[vcs]
+RUN_ELABCOM=unset TURBO_LOG_DIR ;\rm -rf simv.daidir/elabcomLog ;/nfs_cadtools/synopsys/vcs_all/S-2021.09-SP2/linux64/bin/elabcom -logdir simv.daidir/elabcomLog  -simvdaidir simv.daidir  -lib simv.daidir/work  -saveLevel  -elab simv.daidir/kdb -simflow -simdir simv.daidir/kdb_libs -use_old_scope_tree -topfile simv.daidir/.elabcomTopFile -ssz -ssv -ssy  -Lf work +disable_message+C00380+C00381 +disable_message+C00388+C00389  >& /dev/null  && echo Success >& simv.daidir/.elabcomReport || echo Fail >& simv.daidir/.elabcomReport; \rm -rf simv.daidir/work.lib++ simv.daidir/kdb_libs/ 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a

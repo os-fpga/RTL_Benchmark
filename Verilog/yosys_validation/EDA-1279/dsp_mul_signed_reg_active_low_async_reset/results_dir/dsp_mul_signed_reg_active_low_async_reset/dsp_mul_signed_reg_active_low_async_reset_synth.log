@@ -1,0 +1,1268 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys-Verific 0.0.166
+ Yosys 0.18+10 (git sha1 3f07f9e91, gcc 11.2.0 -fPIC -Os)
+
+
+-- Executing script file `dsp_mul_signed_reg_active_low_async_reset.ys' --
+
+1. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file '/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis2/cell_sim_blackbox.v'
+
+2. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+
+3. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+
+4. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+
+5. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+
+6. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+
+7. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file '/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v'
+
+8. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Sep22_SW_Release, released at Fri Sep 30 20:01:32 2022.
+Adding Verilog module 'dsp_mul_signed_reg_active_low_async_reset' to elaboration queue.
+Running hier_tree::Elaborate().
+VERIFIC-INFO [VERI-1018] /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:1: compiling module 'dsp_mul_signed_reg_active_low_async_reset'
+VERIFIC-WARNING [VERI-1209] /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:28: expression size 64 truncated to fit in target size 38
+Importing module dsp_mul_signed_reg_active_low_async_reset.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+
+9.2. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+Removed 0 unused modules.
+
+10. Executing synth_rs pass: v0.4.143
+
+10.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+10.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\dff'.
+Generating RTLIL representation for module `\dffn'.
+Generating RTLIL representation for module `\sdff'.
+Generating RTLIL representation for module `\sdffn'.
+Generating RTLIL representation for module `\dffr'.
+Generating RTLIL representation for module `\dffnr'.
+Generating RTLIL representation for module `\dffe'.
+Generating RTLIL representation for module `\dffne'.
+Generating RTLIL representation for module `\sdffre'.
+Generating RTLIL representation for module `\sdffnre'.
+Generating RTLIL representation for module `\dffre'.
+Generating RTLIL representation for module `\dffnre'.
+Generating RTLIL representation for module `\latch'.
+Generating RTLIL representation for module `\latchn'.
+Generating RTLIL representation for module `\latchr'.
+Generating RTLIL representation for module `\latchnr'.
+Generating RTLIL representation for module `\fa_1bit'.
+Successfully finished Verilog frontend.
+
+10.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_sim.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_sim_cfg_ports'.
+Successfully finished Verilog frontend.
+
+10.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+10.5. Executing HIERARCHY pass (managing design hierarchy).
+
+10.5.1. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+
+10.5.2. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+Removed 0 unused modules.
+
+10.6. Executing PROC pass (convert processes to netlists).
+
+10.6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+10.6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+10.6.4. Executing PROC_INIT pass (extract init attributes).
+
+10.6.5. Executing PROC_ARST pass (detect async resets in processes).
+
+10.6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+10.6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+10.6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+10.6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+<suppressed ~6 debug messages>
+
+10.7. Executing DEMUXMAP pass.
+
+10.8. Executing FLATTEN pass (flatten design).
+
+10.9. Executing DEMUXMAP pass.
+
+10.10. Executing TRIBUF pass.
+
+10.11. Executing DEMINOUT pass (demote inout ports to input or output).
+
+10.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 1 unused cells and 9 unused wires.
+<suppressed ~8 debug messages>
+
+10.14. Executing CHECK pass (checking for obvious problems).
+Checking module dsp_mul_signed_reg_active_low_async_reset...
+Found and reported 0 problems.
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.16. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.20. Executing OPT_SHARE pass.
+
+10.21. Executing OPT_DFF pass (perform DFF optimizations).
+Changing const-value async load to async reset on $verific$out_reg$/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:25$20 ($aldff) from module dsp_mul_signed_reg_active_low_async_reset.
+Changing const-value async load to async reset on $verific$i2_reg$/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:19$17 ($aldff) from module dsp_mul_signed_reg_active_low_async_reset.
+Changing const-value async load to async reset on $verific$i1_reg$/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:19$16 ($aldff) from module dsp_mul_signed_reg_active_low_async_reset.
+
+10.22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.23. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.24. Executing FSM pass (extract and optimize FSM).
+
+10.24.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+10.24.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+10.24.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+10.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.24.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+10.24.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+10.24.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+10.24.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+10.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.30. Executing OPT_SHARE pass.
+
+10.31. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.34. Executing WREDUCE pass (reducing word size of cells).
+Removed top 26 bits (of 64) from FF cell dsp_mul_signed_reg_active_low_async_reset.$verific$out_reg$/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:25$20 ($adff).
+
+10.35. Executing PEEPOPT pass (run peephole optimizers).
+
+10.36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.37. Executing DEMUXMAP pass.
+
+10.38. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                 10
+   Number of wire bits:            282
+   Number of public wires:          10
+   Number of public wire bits:     282
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $adff                           3
+     $mul                            1
+
+10.39. Executing WREDUCE pass (reducing word size of cells).
+
+10.40. Executing RS_DSP_MACC pass.
+
+10.41. Executing TECHMAP pass (map to technology primitives).
+
+10.41.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+10.41.2. Continuing TECHMAP pass.
+Using template $paramod$9422d28735a06adf3573474c8d81de4046c874e0\_80_mul for cells of type $mul.
+No more expansions possible.
+<suppressed ~85 debug messages>
+
+10.42. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                 16
+   Number of wire bits:           1420
+   Number of public wires:          10
+   Number of public wire bits:     282
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $__RS_MUL20X18                  1
+     $adff                           3
+
+10.43. Executing TECHMAP pass (map to technology primitives).
+
+10.43.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Successfully finished Verilog frontend.
+
+10.43.2. Continuing TECHMAP pass.
+Using template $paramod$50d6d9928d23bb3938fed552b123b1c4ddf7615a\$__RS_MUL20X18 for cells of type $__RS_MUL20X18.
+No more expansions possible.
+<suppressed ~23 debug messages>
+
+10.44. Executing TECHMAP pass (map to technology primitives).
+
+10.44.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Successfully finished Verilog frontend.
+
+10.44.2. Continuing TECHMAP pass.
+Using template dsp_t1_20x18x64_cfg_ports for cells of type dsp_t1_20x18x64_cfg_ports.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+10.45. Executing rs_pack_dsp_regs pass.
+
+10.46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 2 unused cells and 28 unused wires.
+<suppressed ~11 debug messages>
+
+10.47. Executing RS_DSP_IO_REGS pass.
+
+10.48. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module dsp_mul_signed_reg_active_low_async_reset:
+  created 0 $alu and 0 $macc cells.
+
+10.49. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.50. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.51. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.52. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.53. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.54. Executing OPT_SHARE pass.
+
+10.55. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.56. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+10.57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.58. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $adff                           1
+     RS_DSP_MULT_REGIN               1
+
+10.59. Executing MEMORY pass.
+
+10.59.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+10.59.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+10.59.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+10.59.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+10.59.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+10.59.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.59.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.59.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+10.59.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.59.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.60. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $adff                           1
+     RS_DSP_MULT_REGIN               1
+
+10.61. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+10.62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.63. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+10.64. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+10.65. Executing Rs_BRAM_Split pass.
+
+10.66. Executing TECHMAP pass (map to technology primitives).
+
+10.66.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_map_new.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+10.66.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+10.67. Executing TECHMAP pass (map to technology primitives).
+
+10.67.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_final_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/brams_final_map_new.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+10.67.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+10.68. Executing PMUXTREE pass.
+
+10.69. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+10.70. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+10.71. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $adff                           1
+     RS_DSP_MULT_REGIN               1
+
+10.72. Executing TECHMAP pass (map to technology primitives).
+
+10.72.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+10.72.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+10.72.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adff.
+No more expansions possible.
+<suppressed ~72 debug messages>
+
+10.73. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_DFF_PN0_                     38
+     RS_DSP_MULT_REGIN               1
+
+10.74. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.76. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.77. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.78. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.79. Executing OPT_SHARE pass.
+
+10.80. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.81. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.82. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.83. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.84. Executing TECHMAP pass (map to technology primitives).
+
+10.84.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+10.84.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+10.85. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_DFF_PN0_                     38
+     RS_DSP_MULT_REGIN               1
+
+10.86. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+10.87. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                  8
+   Number of wire bits:            244
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_DFF_PN0_                     38
+     RS_DSP_MULT_REGIN               1
+
+10.88. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.90. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.91. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.92. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.93. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.94. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.95. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.96. Executing ABC pass (technology mapping using ABC).
+
+10.96.1. Summary of detected clock domains:
+  39 cells in clk=\clk, en={ }, arst=!\reset, srst={ }
+
+10.96.2. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\reset
+Extracted 38 gates and 76 wires to a netlist network with 38 inputs and 38 outputs.
+
+10.96.2.1. Executing ABC.
+
+10.97. Executing ABC pass (technology mapping using ABC).
+
+10.97.1. Summary of detected clock domains:
+  39 cells in clk=\clk, en={ }, arst=!\reset, srst={ }
+
+10.97.2. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\reset
+Extracted 38 gates and 76 wires to a netlist network with 38 inputs and 38 outputs.
+
+10.97.2.1. Executing ABC.
+
+10.98. Executing ABC pass (technology mapping using ABC).
+
+10.98.1. Summary of detected clock domains:
+  39 cells in clk=\clk, en={ }, arst=!\reset, srst={ }
+
+10.98.2. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\reset
+Extracted 38 gates and 76 wires to a netlist network with 38 inputs and 38 outputs.
+
+10.98.2.1. Executing ABC.
+
+10.99. Executing ABC pass (technology mapping using ABC).
+
+10.99.1. Summary of detected clock domains:
+  39 cells in clk=\clk, en={ }, arst=!\reset, srst={ }
+
+10.99.2. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\reset
+Extracted 38 gates and 76 wires to a netlist network with 38 inputs and 38 outputs.
+
+10.99.2.1. Executing ABC.
+
+10.100. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+10.101. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.102. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.103. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.104. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.105. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.106. Executing OPT_SHARE pass.
+
+10.107. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.108. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 0 unused cells and 494 unused wires.
+<suppressed ~1 debug messages>
+
+10.109. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.110. Executing BMUXMAP pass.
+
+10.111. Executing DEMUXMAP pass.
+
+10.112. Executing ABC pass (technology mapping using ABC).
+
+10.112.1. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+
+10.113. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.114. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.115. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.116. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.117. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.118. Executing OPT_SHARE pass.
+
+10.119. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.120. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.121. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.122. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+10.123. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                122
+   Number of wire bits:            358
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_DFF_PN0_                     38
+     RS_DSP_MULT_REGIN               1
+
+10.124. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+10.125. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                122
+   Number of wire bits:            358
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_DFF_PN0_                     38
+     RS_DSP_MULT_REGIN               1
+
+10.126. Executing TECHMAP pass (map to technology primitives).
+
+10.126.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+10.126.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PN0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PN0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_PN1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PN1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NN0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NN0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NN1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NN1N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+10.126.3. Continuing TECHMAP pass.
+Using template \$_DFF_PN0_ for cells of type $_DFF_PN0_.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~211 debug messages>
+
+10.127. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.128. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+10.129. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.130. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+<suppressed ~111 debug messages>
+Removed a total of 37 cells.
+
+10.131. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 0 unused cells and 189 unused wires.
+<suppressed ~1 debug messages>
+
+10.133. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.134. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.135. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.136. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.137. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.138. Executing OPT_SHARE pass.
+
+10.139. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.140. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+
+10.141. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.142. Executing ABC pass (technology mapping using ABC).
+
+10.142.1. Extracting gate netlist of module `\dsp_mul_signed_reg_active_low_async_reset' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 2 wires to a netlist network with 1 inputs and 1 outputs.
+
+10.142.1.1. Executing ABC.
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.05 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.07 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.08 sec. at Pass 2]{map}[3]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.06 sec. at Pass 3]{postMap}[6]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.09 sec. at Pass 4]{map}[18]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.14 sec. at Pass 5]{postMap}[36]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.00 sec. at Pass 6]{pushMap}[0]
+DE:   #PIs =   1  #Luts =     1  Max Lvl =   0  Avg Lvl =   0.00  [   0.00 sec. at Pass 7]{finalMap}[0]
+
+10.143. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+
+10.144. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.145. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \dsp_mul_signed_reg_active_low_async_reset..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.146. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \dsp_mul_signed_reg_active_low_async_reset.
+Performed a total of 0 changes.
+
+10.147. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dsp_mul_signed_reg_active_low_async_reset'.
+Removed a total of 0 cells.
+
+10.148. Executing OPT_SHARE pass.
+
+10.149. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.150. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+10.151. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dsp_mul_signed_reg_active_low_async_reset.
+MAX OPT ITERATION = 1
+
+10.152. Executing HIERARCHY pass (managing design hierarchy).
+
+10.152.1. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+
+10.152.2. Analyzing design hierarchy..
+Top module:  \dsp_mul_signed_reg_active_low_async_reset
+Removed 0 unused modules.
+
+10.153. Printing statistics.
+
+=== dsp_mul_signed_reg_active_low_async_reset ===
+
+   Number of wires:                123
+   Number of wire bits:            359
+   Number of public wires:           8
+   Number of public wire bits:     244
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 40
+     $lut                            1
+     RS_DSP_MULT_REGIN               1
+     dffr                           38
+
+10.154. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dsp_mul_signed_reg_active_low_async_reset..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+11. Executing Verilog backend.
+Dumping module `\dsp_mul_signed_reg_active_low_async_reset'.
+  renaming `$abc$469$lo22' to `_098_'.
+  renaming `$abc$469$lo30' to `_106_'.
+  renaming `$abc$354$lo23' to `_061_'.
+  renaming `$abc$354$lo22' to `_060_'.
+  renaming `$abc$354$lo24' to `_062_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$611' to `_141_'.
+  renaming `$abc$354$lo27' to `_065_'.
+  renaming `$abc$469$lo23' to `_099_'.
+  renaming `$abc$354$lo21' to `_059_'.
+  renaming `$abc$469$lo24' to `_100_'.
+  renaming `$abc$354$lo28' to `_066_'.
+  renaming `$abc$354$lo20' to `_058_'.
+  renaming `$verific$mult_19$/nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1279/dsp_mul_signed_reg_active_low_async_reset/results_dir/.././rtl/dsp_mul_signed_reg_active_low_async_reset.v:30$22' to `_154_'.
+  renaming `$abc$469$lo31' to `_107_'.
+  renaming `$abc$354$lo25' to `_063_'.
+  renaming `$abc$469$lo21' to `_097_'.
+  renaming `$abc$469$lo20' to `_096_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$610' to `_140_'.
+  renaming `$abc$469$lo29' to `_105_'.
+  renaming `$abc$354$lo34' to `_072_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$613' to `_143_'.
+  renaming `$abc$469$lo19' to `_095_'.
+  renaming `$abc$354$lo26' to `_064_'.
+  renaming `$abc$469$lo26' to `_102_'.
+  renaming `$abc$354$lo31' to `_069_'.
+  renaming `$abc$354$lo32' to `_070_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$595' to `_125_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$609' to `_139_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$590' to `_120_'.
+  renaming `$abc$354$lo30' to `_068_'.
+  renaming `$abc$354$lo33' to `_071_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$608' to `_138_'.
+  renaming `$abc$354$lo29' to `_067_'.
+  renaming `$abc$469$lo27' to `_103_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$593' to `_123_'.
+  renaming `$abc$354$lo36' to `_074_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$589' to `_119_'.
+  renaming `$abc$469$lo28' to `_104_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$592' to `_122_'.
+  renaming `$abc$354$lo37' to `_075_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$594' to `_124_'.
+  renaming `$abc$354$lo35' to `_073_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$607' to `_137_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$606' to `_136_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$591' to `_121_'.
+  renaming `$abc$469$lo25' to `_101_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$587' to `_117_'.
+  renaming `$abc$955$auto$blifparse.cc:515:parse_blif$956' to `_153_'.
+  renaming `$abc$955$techmap$techmap879$abc$584$auto$blifparse.cc:362:parse_blif$622.$logic_not$/nfs_eda_sw/softwares/Raptor/instl_dir/04_09_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis2/ffs_map.v:50$777_Y' to `_114_'.
+  renaming `$abc$354$lo19' to `_057_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$612' to `_142_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$588' to `_118_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$586' to `_116_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$585' to `_115_'.
+  renaming `$abc$469$lo32' to `_108_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$614' to `_144_'.
+  renaming `$abc$469$lo33' to `_109_'.
+  renaming `$abc$469$lo34' to `_110_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$615' to `_145_'.
+  renaming `$abc$469$lo35' to `_111_'.
+  renaming `$abc$469$lo36' to `_112_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$616' to `_146_'.
+  renaming `$abc$469$lo37' to `_113_'.
+  renaming `$abc$239$lo37' to `_037_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$621' to `_151_'.
+  renaming `$abc$239$lo36' to `_036_'.
+  renaming `$abc$239$lo35' to `_035_'.
+  renaming `$abc$239$lo34' to `_034_'.
+  renaming `$abc$239$lo33' to `_033_'.
+  renaming `$abc$239$lo32' to `_032_'.
+  renaming `$abc$239$lo31' to `_031_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$622' to `_152_'.
+  renaming `$abc$239$lo30' to `_030_'.
+  renaming `$abc$239$lo29' to `_029_'.
+  renaming `$abc$239$lo28' to `_028_'.
+  renaming `$abc$239$lo27' to `_027_'.
+  renaming `$abc$239$lo26' to `_026_'.
+  renaming `$abc$239$lo25' to `_025_'.
+  renaming `$abc$239$lo24' to `_024_'.
+  renaming `$abc$239$lo23' to `_023_'.
+  renaming `$abc$239$lo22' to `_022_'.
+  renaming `$abc$239$lo21' to `_021_'.
+  renaming `$abc$239$lo20' to `_020_'.
+  renaming `$abc$239$lo19' to `_019_'.
+  renaming `$abc$239$lo18' to `_018_'.
+  renaming `$abc$239$lo17' to `_017_'.
+  renaming `$abc$239$lo16' to `_016_'.
+  renaming `$abc$239$lo15' to `_015_'.
+  renaming `$abc$239$lo14' to `_014_'.
+  renaming `$abc$239$lo13' to `_013_'.
+  renaming `$abc$239$lo12' to `_012_'.
+  renaming `$abc$239$lo11' to `_011_'.
+  renaming `$abc$239$lo10' to `_010_'.
+  renaming `$abc$239$lo09' to `_009_'.
+  renaming `$abc$239$lo08' to `_008_'.
+  renaming `$abc$239$lo07' to `_007_'.
+  renaming `$abc$239$lo06' to `_006_'.
+  renaming `$abc$239$lo05' to `_005_'.
+  renaming `$abc$239$lo04' to `_004_'.
+  renaming `$abc$239$lo03' to `_003_'.
+  renaming `$abc$239$lo02' to `_002_'.
+  renaming `$abc$239$lo01' to `_001_'.
+  renaming `$abc$239$lo00' to `_000_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$602' to `_132_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$603' to `_133_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$604' to `_134_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$605' to `_135_'.
+  renaming `$abc$354$lo18' to `_056_'.
+  renaming `$abc$354$lo17' to `_055_'.
+  renaming `$abc$354$lo16' to `_054_'.
+  renaming `$abc$354$lo15' to `_053_'.
+  renaming `$abc$354$lo14' to `_052_'.
+  renaming `$abc$354$lo13' to `_051_'.
+  renaming `$abc$354$lo12' to `_050_'.
+  renaming `$abc$354$lo11' to `_049_'.
+  renaming `$abc$354$lo10' to `_048_'.
+  renaming `$abc$354$lo09' to `_047_'.
+  renaming `$abc$354$lo08' to `_046_'.
+  renaming `$abc$354$lo07' to `_045_'.
+  renaming `$abc$354$lo06' to `_044_'.
+  renaming `$abc$354$lo05' to `_043_'.
+  renaming `$abc$354$lo04' to `_042_'.
+  renaming `$abc$354$lo03' to `_041_'.
+  renaming `$abc$354$lo02' to `_040_'.
+  renaming `$abc$354$lo01' to `_039_'.
+  renaming `$abc$354$lo00' to `_038_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$620' to `_150_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$619' to `_149_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$618' to `_148_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$617' to `_147_'.
+  renaming `$abc$469$lo18' to `_094_'.
+  renaming `$abc$469$lo17' to `_093_'.
+  renaming `$abc$469$lo16' to `_092_'.
+  renaming `$abc$469$lo15' to `_091_'.
+  renaming `$abc$469$lo14' to `_090_'.
+  renaming `$abc$469$lo13' to `_089_'.
+  renaming `$abc$469$lo12' to `_088_'.
+  renaming `$abc$469$lo11' to `_087_'.
+  renaming `$abc$469$lo10' to `_086_'.
+  renaming `$abc$469$lo09' to `_085_'.
+  renaming `$abc$469$lo08' to `_084_'.
+  renaming `$abc$469$lo07' to `_083_'.
+  renaming `$abc$469$lo06' to `_082_'.
+  renaming `$abc$469$lo05' to `_081_'.
+  renaming `$abc$469$lo04' to `_080_'.
+  renaming `$abc$469$lo03' to `_079_'.
+  renaming `$abc$469$lo02' to `_078_'.
+  renaming `$abc$469$lo01' to `_077_'.
+  renaming `$abc$469$lo00' to `_076_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$596' to `_126_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$597' to `_127_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$598' to `_128_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$599' to `_129_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$600' to `_130_'.
+  renaming `$abc$584$auto$blifparse.cc:362:parse_blif$601' to `_131_'.
+
+12. Executing BLIF backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 79c70f19e2, CPU: user 0.43s system 0.05s, MEM: 43.39 MB peak
+Yosys 0.18+10 (git sha1 3f07f9e91, gcc 11.2.0 -fPIC -Os)
+Time spent: 93% 6x abc (6 sec), 3% 15x read_verilog (0 sec), ...
