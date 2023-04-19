@@ -1,6 +1,6 @@
  //`ifndef  EH2_DEF_SV
 //`define  EH2_DEF_SV
-
+`define RV_FPGA_OPTIMIZE
 package eh2_pkg;
 // performance monitor stuff
 typedef struct packed {

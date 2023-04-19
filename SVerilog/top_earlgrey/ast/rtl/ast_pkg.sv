@@ -8,7 +8,7 @@
 `ifdef __AST_PKG_SV
 `else
 `define __AST_PKG_SV
-
+`define SYNTHESIS
 package ast_pkg;
 
 // Alerts
