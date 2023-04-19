@@ -1453,6 +1453,8 @@ begin
 		 fi_ldz_r0 = 6'd48;
 	else if (fract_in[47:0]  == 48'b000000000000000000000000000000000000000000000000) 
 		 fi_ldz_r0 = 6'd48;
+	else 
+		 fi_ldz_r0 = 6'd0;
 end
 
 endmodule
@@ -1521,6 +1523,7 @@ begin
 		6'b101110: shift_out = shift_in >> 46;
 		6'b101111: shift_out = shift_in >> 47;	
 		6'b110000: shift_out = shift_in >> 48;
+		default:   shift_out = shift_in;
 		
 	endcase
 end
@@ -1593,7 +1596,7 @@ begin
 		6'b101110: shift_out = shift_in << 46;
 		6'b101111: shift_out = shift_in << 47;	
 		6'b110000: shift_out = shift_in << 48;
-		
+		default:   shift_out = shift_in;
 	endcase
 end
 

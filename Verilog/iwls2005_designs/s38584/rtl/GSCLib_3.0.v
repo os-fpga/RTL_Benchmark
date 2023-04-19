@@ -20,6 +20,7 @@
  * 
  */
 `timescale 1ns/10ps
+`define FPGA 
 `celldefine
 module ADDHX1 (A, B, CO, S);
 input  A ;
@@ -55,6 +56,7 @@ endmodule
 
 `timescale 1ns/10ps
 `celldefine
+`ifndef FPGA
 module mdff (out, in, clk, clr, set, NOTIFIER);
    output out;
    input  in, clk, clr, set, NOTIFIER;
@@ -66,6 +68,18 @@ module mdff (out, in, clk, clr, set, NOTIFIER);
        else
           out <= in;
 endmodule // udp_dff
+`else 
+module mdff (out, in, clk, clr, set, NOTIFIER);
+   output out;
+   input  in, clk, clr, set, NOTIFIER;
+   reg    out;
+
+   always @(posedge clk or posedge clr)
+       if (clr) out <= 0;
+       else if (set)  out <= in;
+         
+endmodule // udp_dff
+`endif
 `endcelldefine
 
 `timescale 1ns/10ps
