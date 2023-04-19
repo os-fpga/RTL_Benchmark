@@ -1,4 +1,4 @@
- module wav_inv #(
+module wav_inv #(
    parameter DWIDTH = 1
 ) (
    input  logic [DWIDTH-1:0] i_a,
@@ -55,9 +55,12 @@ module wav_latch #(
    //cadence script_begin
    //set_db -quiet [get_db insts */u_latch[*]] .preserve true
    //cadence script_end
-`else
+`elsif ASIC
    always_latch
       if (i_clk)
+         o_q <= i_d;
+`else
+   always @ (posedge i_clk)
          o_q <= i_d;
 `endif
 
