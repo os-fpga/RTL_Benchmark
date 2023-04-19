@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for dsp_add_shifted_input_to_the_mul_coeff0_output
+# Read source files
+read -vlog2k /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_shifted_input_to_the_mul_coeff0_output/ 
+verific -vlog-libdir /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_shifted_input_to_the_mul_coeff0_output/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_shifted_input_to_the_mul_coeff0_output/dsp_add_shifted_input_to_the_mul_coeff0_output.sv
+verific -import dsp_add_shifted_input_to_the_mul_coeff0_output
+
+
+# Technology mapping
+hierarchy -top dsp_add_shifted_input_to_the_mul_coeff0_output
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v dsp_add_shifted_input_to_the_mul_coeff0_output_post_synth.v
+write_blif dsp_add_shifted_input_to_the_mul_coeff0_output_post_synth.blif
+
+  
