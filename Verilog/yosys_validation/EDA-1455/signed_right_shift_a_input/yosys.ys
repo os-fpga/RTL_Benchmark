@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for signed_right_shift_a_input
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis3/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_right_shift_a_input/
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_right_shift_a_input/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_right_shift_a_input/signed_right_shift_a_input.sv
+verific -import signed_right_shift_a_input
+
+
+# Technology mapping
+hierarchy -top signed_right_shift_a_input
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis3 -de -goal delay     -max_device_dsp 154 -max_device_bram 154 -max_dsp 154 -max_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v signed_right_shift_a_input_post_synth.v
+write_blif signed_right_shift_a_input_post_synth.blif
+
+  
