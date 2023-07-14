@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for mul_and_reflect_input_B_as_registered_out
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/ 
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/mul_and_reflect_input_B_as_registered_out.sv
+verific -import mul_and_reflect_input_B_as_registered_out
+
+
+# Technology mapping
+hierarchy -top mul_and_reflect_input_B_as_registered_out
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v mul_and_reflect_input_B_as_registered_out_post_synth.v
+write_blif mul_and_reflect_input_B_as_registered_out_post_synth.blif
+
+  

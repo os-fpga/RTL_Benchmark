@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for simple_unsigned_4tap_fir
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/simple_unsigned_4tap_fir/ 
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/simple_unsigned_4tap_fir/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/simple_unsigned_4tap_fir/simple_unsigned_4tap_fir.sv
+verific -import simple_unsigned_4tap_fir
+
+
+# Technology mapping
+hierarchy -top simple_unsigned_4tap_fir
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v simple_unsigned_4tap_fir_post_synth.v
+write_blif simple_unsigned_4tap_fir_post_synth.blif
+
+  
