@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for dsp_multiplier_accum_with_add
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_multiplier_accum_with_add/ 
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_multiplier_accum_with_add/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_multiplier_accum_with_add/dsp_multiplier_accum_with_add.sv
+verific -import dsp_multiplier_accum_with_add
+
+
+# Technology mapping
+hierarchy -top dsp_multiplier_accum_with_add
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v dsp_multiplier_accum_with_add_post_synth.v
+write_blif dsp_multiplier_accum_with_add_post_synth.blif
+
+  

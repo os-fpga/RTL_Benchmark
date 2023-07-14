@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for reg_and_not_reg_input_mul_with_accum
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/reg_and_not_reg_input_mul_with_accum/ 
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/reg_and_not_reg_input_mul_with_accum/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/reg_and_not_reg_input_mul_with_accum/reg_and_not_reg_input_mul_with_accum.sv
+verific -import reg_and_not_reg_input_mul_with_accum
+
+
+# Technology mapping
+hierarchy -top reg_and_not_reg_input_mul_with_accum
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v reg_and_not_reg_input_mul_with_accum_post_synth.v
+write_blif reg_and_not_reg_input_mul_with_accum_post_synth.blif
+
+  

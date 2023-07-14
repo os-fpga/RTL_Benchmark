@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for add_shifted_input_to_the_mul_output
+# Read source files
+read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_shifted_input_to_the_mul_output/ 
+verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_shifted_input_to_the_mul_output/
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_shifted_input_to_the_mul_output/add_shifted_input_to_the_mul_output.sv
+verific -import add_shifted_input_to_the_mul_output
+
+
+# Technology mapping
+hierarchy -top add_shifted_input_to_the_mul_output
+
+
+
+plugin -i synth-rs
+
+synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v add_shifted_input_to_the_mul_output_post_synth.v
+write_blif add_shifted_input_to_the_mul_output_post_synth.blif
+
+  
