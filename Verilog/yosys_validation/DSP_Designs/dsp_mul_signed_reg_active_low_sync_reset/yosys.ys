@@ -1,7 +1,7 @@
  
 # Yosys synthesis script for dsp_mul_signed_reg_active_low_sync_reset
 # Read source files
-read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
 verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_active_low_sync_reset/
 verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_active_low_sync_reset/
 verific -vlog-libext .v

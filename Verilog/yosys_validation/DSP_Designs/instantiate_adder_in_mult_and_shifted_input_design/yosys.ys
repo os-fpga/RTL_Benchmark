@@ -1,7 +1,7 @@
  
 # Yosys synthesis script for instantiate_adder_in_mult_and_shifted_input_design
 # Read source files
-read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
 verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/instantiate_adder_in_mult_and_shifted_input_design/ 
 verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/instantiate_adder_in_mult_and_shifted_input_design/
 verific -vlog-libext .v
