@@ -1,7 +1,7 @@
  
 # Yosys synthesis script for input_to_adder_and_mul_A_input_wrt_feedback_i
 # Read source files
-read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
 verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/ 
 verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/
 verific -vlog-libext .v

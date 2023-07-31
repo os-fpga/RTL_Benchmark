@@ -1,7 +1,7 @@
  
 # Yosys synthesis script for dsp_z_o_wrt_out_select_i
 # Read source files
-read -vlog2k ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
 verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_z_o_wrt_out_select_i/ 
 verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_z_o_wrt_out_select_i/
 verific -vlog-libext .v
