@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for axi_ram
+# Read source files
+verific -sv2005 /nfs_eda_sw/softwares/Raptor/instl_dir/06_20_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+verific -vlog-incdir ../.././rtl ../.. /nfs_scratch/scratch/FV/ayyaz/Jira_Testcase/EDA-1587/results_dir/.././rtl 
+verific -vlog-libdir ../.././rtl 
+verific -vlog-libext .v
+verific -vlog-libext .sv
+verific -vlog-define 
+verific -vlog2k /nfs_scratch/scratch/FV/ayyaz/synthesis/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1587/axi_ram.sv
+verific -import axi_ram
+
+
+# Technology mapping
+hierarchy -top axi_ram
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal mixed   -no_iobuf  -max_device_dsp 154 -max_device_bram 154 -max_device_carry_length 528 -max_dsp 154 -max_bram 154 -max_carry_length 528     -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v axi_ram_post_synth.v
+
+
+  
