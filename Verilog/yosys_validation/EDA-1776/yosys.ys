@@ -19,4 +19,4 @@ plugin -i synth-rs
 
 synth_rs  -tech ${ARCHITECTURE}  -no_iobuf -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
 
-write_verilog -noexpr -nodec -v bytewrite_sp_ram_wf_block_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v

@@ -17,7 +17,7 @@ plugin -i synth-rs
 
 synth_rs -tech ${ARCHITECTURE} -top ram_pipeline -de -goal delay         -de_max_threads -1   
 
-write_verilog -noexpr -nodec -norename ram_pipeline_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_blif ram_pipeline_post_synth.blif
 
   

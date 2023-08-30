@@ -18,7 +18,7 @@ plugin -i synth-rs
 
 synth_rs  -tech ${ARCHITECTURE} -top aes_256_sr_top -de  -no_simplify
 
-write_verilog -noexpr -nodec -norename aes_256_sr_top_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_blif aes_256_sr_top_post_synth.blif
 
   

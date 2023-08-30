@@ -16,7 +16,7 @@ plugin -i synth-rs
 
 synth_rs  -tech ${ARCHITECTURE} -top sp_arst_reg -de -goal delay -carry no        -de_max_threads -1   
 
-write_verilog -noexpr -nodec -norename sp_arst_reg_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_blif sp_arst_reg_post_synth.blif
 
   

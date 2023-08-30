@@ -18,5 +18,5 @@ plugin -i synth-rs
 
 synth_rs  -tech ${ARCHITECTURE} -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
 
-write_verilog -noattr -nohex two_sdp_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 #write_blif two_sdp_post_synth.blif

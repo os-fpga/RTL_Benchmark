@@ -17,7 +17,7 @@ plugin -i synth-rs
 
 synth_rs  -tech ${ARCHITECTURE} -top ram_true_dp_dc_4096x36 -de -goal delay -carry no  -de_max_threads -1   
 
-write_verilog -noexpr -nodec -norename ram_true_dp_dc_4096x36_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_blif ram_true_dp_dc_4096x36_post_synth.blif
 
   
