@@ -15,9 +15,7 @@ hierarchy -top ram_simple_dp_sync_reg_read_4096x32
 
 plugin -i synth-rs
 
-synth_rs -tech ${ARCHITECTURE} -top ram_simple_dp_sync_reg_read_4096x32 -de -goal delay         -de_max_threads -1   
-
-write_verilog -noexpr -nodec ${TOP}_post_synth.v
+synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif ram_simple_dp_sync_reg_read_4096x32_post_synth.blif
 
-  
+  write_verilog -noexpr -nohex ${TOP}_post_synth.v

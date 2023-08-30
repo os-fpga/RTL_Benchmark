@@ -14,9 +14,8 @@ hierarchy -top async_read_sp
 
 plugin -i synth-rs
 
-synth_rs  -tech ${ARCHITECTURE} -top async_read_sp -de -goal delay -carry no        -de_max_threads -1   
-
-write_verilog -noexpr -nodec ${TOP}_post_synth.v
+synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif async_read_sp_post_synth.blif
 
   
+write_verilog -noexpr -nohex ${TOP}_post_synth.v
