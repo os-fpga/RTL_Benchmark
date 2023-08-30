@@ -4,7 +4,7 @@
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-869/ram_true_dp_dc_4096x36.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-869/ram_true_dp_dc_4096x36.sv
 verific -import ram_true_dp_dc_4096x36
 
 
@@ -15,7 +15,7 @@ hierarchy -top ram_true_dp_dc_4096x36
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis2 -top ram_true_dp_dc_4096x36 -de -goal delay -carry no  -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -top ram_true_dp_dc_4096x36 -de -goal delay -carry no  -de_max_threads -1   
 
 write_verilog -noexpr -nodec -norename ram_true_dp_dc_4096x36_post_synth.v
 write_blif ram_true_dp_dc_4096x36_post_synth.blif

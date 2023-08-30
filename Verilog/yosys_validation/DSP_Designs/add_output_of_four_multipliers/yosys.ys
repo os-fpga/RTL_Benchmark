@@ -1,13 +1,13 @@
  
 # Yosys synthesis script for add_output_of_four_multipliers
 # Read source files
-read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
-verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
-verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
+read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
+verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/add_output_of_four_multipliers.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/add_output_of_four_multipliers.sv
 verific -import add_output_of_four_multipliers
 
 
@@ -18,7 +18,7 @@ hierarchy -top add_output_of_four_multipliers
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
 
 write_verilog -noexpr -nodec -v add_output_of_four_multipliers_post_synth.v
 write_blif add_output_of_four_multipliers_post_synth.blif

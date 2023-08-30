@@ -4,7 +4,7 @@
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/bram_tests/async_read_sp/async_read_sp.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/async_read_sp/async_read_sp.sv
 verific -import async_read_sp
 
 
@@ -14,7 +14,7 @@ hierarchy -top async_read_sp
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis2 -top async_read_sp -de -goal delay -carry no        -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -top async_read_sp -de -goal delay -carry no        -de_max_threads -1   
 
 write_verilog -noexpr -nodec -norename async_read_sp_post_synth.v
 write_blif async_read_sp_post_synth.blif

@@ -1,13 +1,13 @@
  
 # Yosys synthesis script for dsp_mul_signed_reg_with_accum_output_is_reg
 # Read source files
-read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
-verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/ 
-verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/
+read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/ 
+verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/dsp_mul_signed_reg_with_accum_output_is_reg.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_with_accum_output_is_reg/dsp_mul_signed_reg_with_accum_output_is_reg.sv
 verific -import dsp_mul_signed_reg_with_accum_output_is_reg
 
 
@@ -18,7 +18,7 @@ hierarchy -top dsp_mul_signed_reg_with_accum_output_is_reg
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis2 -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -de -goal delay     -max_device_dsp 154 -max_device_bram 154    -de_max_threads -1   
 
 write_verilog -noexpr -nodec -v dsp_mul_signed_reg_with_accum_output_is_reg_post_synth.v
 write_blif dsp_mul_signed_reg_with_accum_output_is_reg_post_synth.blif

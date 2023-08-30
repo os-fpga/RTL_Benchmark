@@ -1,13 +1,13 @@
  
 # Yosys synthesis script for ram_true_dp_dc_8192x16
 # Read source files
-read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
-verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/
-verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/
+read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/
+verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/ram_true_dp_dc_8192x16.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1281/8192x16/ram_true_dp_dc_8192x16.sv
 verific -import ram_true_dp_dc_8192x16
 
 # Technology mapping
@@ -15,7 +15,7 @@ hierarchy -top ram_true_dp_dc_8192x16
 
 plugin -i synth-rs
 
-synth_rs -tech genesis2 -de -goal delay -max_device_dsp 154 -max_device_bram 154 -de_max_threads -1
+synth_rs -tech ${ARCHITECTURE} -de -goal delay -max_device_dsp 154 -max_device_bram 154 -de_max_threads -1
 
 write_verilog -noexpr -nohex -v ram_true_dp_dc_8192x16_post_synth.v
 write_blif ram_true_dp_dc_8192x16_post_synth.blif

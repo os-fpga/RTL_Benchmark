@@ -2,11 +2,11 @@
 echo on
 # Yosys synthesis script for dsp_regin
 # Read source files
-read -sv ./../../../../../yosys/install/share/yosys/rapidsilicon/genesis2/cell_sim_blackbox.v
+read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/CASTORIP-151/dsp_regin.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/CASTORIP-151/dsp_regin.sv
 verific -import dsp_regin
 
 
@@ -18,7 +18,7 @@ hierarchy -top dsp_regin
 plugin -i synth-rs
 logger -debug
 
-synth_rs  -tech genesis2 -top dsp_regin -de -goal delay -carry no -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -top dsp_regin -de -goal delay -carry no -de_max_threads -1   
 
 write_verilog -noexpr -nodec -norename dsp_regin_post_synth.v
 write_blif dsp_regin_post_synth.blif

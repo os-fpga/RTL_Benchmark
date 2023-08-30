@@ -4,7 +4,7 @@
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_arst_reg/sp_arst_reg.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_arst_reg/sp_arst_reg.sv
 verific -import sp_arst_reg
 
 
@@ -14,7 +14,7 @@ hierarchy -top sp_arst_reg
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis2 -top sp_arst_reg -de -goal delay -carry no        -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -top sp_arst_reg -de -goal delay -carry no        -de_max_threads -1   
 
 write_verilog -noexpr -nodec -norename sp_arst_reg_post_synth.v
 write_blif sp_arst_reg_post_synth.blif
