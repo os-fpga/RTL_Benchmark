@@ -20,7 +20,7 @@ logger -debug
 
 synth_rs  -tech ${ARCHITECTURE} -top dsp_regin -de -goal delay -carry no -de_max_threads -1   
 
-write_verilog -noexpr -nodec -norename dsp_regin_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_blif dsp_regin_post_synth.blif
 
   

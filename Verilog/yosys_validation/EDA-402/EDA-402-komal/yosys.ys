@@ -17,6 +17,6 @@ synth_rs -tech ${ARCHITECTURE} -top Log2highacc -de -goal delay -de_max_threads 
 
 # Clean and output blif
 write_blif Log2highacc_post_synth.blif
-write_verilog -noexpr -nodec -norename Log2highacc_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_edif Log2highacc_post_synth.edif
   
