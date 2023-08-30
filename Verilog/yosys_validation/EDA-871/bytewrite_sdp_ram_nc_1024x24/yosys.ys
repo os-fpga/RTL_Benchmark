@@ -18,9 +18,8 @@ hierarchy -top bytewrite_sdp_ram_nc_1024x24
 
 plugin -i synth-rs
 
-synth_rs  -tech ${ARCHITECTURE} -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
-
-write_verilog -noexpr -nodec ${TOP}_post_synth.v
+synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif bytewrite_sdp_ram_nc_post_synth.blif
 
   
+write_verilog -noexpr -nohex ${TOP}_post_synth.v

@@ -13,10 +13,8 @@ hierarchy -top Log2highacc
 
 plugin -i synth-rs
 
-synth_rs -tech ${ARCHITECTURE} -top Log2highacc -de -goal delay -de_max_threads -1   
-
-# Clean and output blif
+synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif Log2highacc_post_synth.blif
 write_verilog -noexpr -nodec ${TOP}_post_synth.v
 write_edif Log2highacc_post_synth.edif
-  
+  write_verilog -noexpr -nohex ${TOP}_post_synth.v
