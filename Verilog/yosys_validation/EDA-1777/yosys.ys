@@ -1,12 +1,12 @@
  
 # Yosys synthesis script for bytewrite_tdp_ram_wf
 # Read source files
-verific -vlog-incdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
-verific -vlog-libdir ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
+verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
+verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
 verific -vlog-libext .v
 verific -vlog-libext .sv
 verific -vlog-define 
-verific -vlog2k ./../../../../../RTL_Benchmark/Verilog/yosys_validation/EDA-1777/bytewrite_tdp_ram_wf.sv
+verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/bytewrite_tdp_ram_wf.sv
 verific -import bytewrite_tdp_ram_wf
 
 
@@ -17,6 +17,6 @@ hierarchy -top bytewrite_tdp_ram_wf
 
 plugin -i synth-rs
 
-synth_rs  -tech genesis3 -no_iobuf -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
+synth_rs  -tech ${ARCHITECTURE} -no_iobuf -de -goal delay     -max_device_dsp 154 -max_device_bram 154      -de_max_threads -1   
 
 write_verilog -noexpr -nodec -v bytewrite_tdp_ram_wf_post_synth.v
