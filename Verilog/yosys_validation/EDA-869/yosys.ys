@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for ram_true_dp_dc_4096x36
 # Read source files
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-869/ram_true_dp_dc_4096x36.sv
-verific -import ram_true_dp_dc_4096x36
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-869/ram_true_dp_dc_4096x36.sv
 
 
 # Technology mapping

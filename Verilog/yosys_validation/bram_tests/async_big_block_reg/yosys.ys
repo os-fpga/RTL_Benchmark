@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for async_big_block_reg
 # Read source files 
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/async_big_block_reg/async_big_block_reg.sv
-verific -import async_big_block_reg
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/async_big_block_reg/async_big_block_reg.sv
 
 
 # Technology mapping

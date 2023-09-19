@@ -1,13 +1,7 @@
  
 # Yosys synthesis script for bytewrite_tdp_ram_wf
 # Read source files
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/bytewrite_tdp_ram_wf.sv
-verific -import bytewrite_tdp_ram_wf
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1777/bytewrite_tdp_ram_wf.sv
 
 
 # Technology mapping

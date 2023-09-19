@@ -1,9 +1,7 @@
  
 # Yosys synthesis script for Log2highacc
 # Read source files
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-402/EDA-402-komal/Log2highacc.sv
-verific -import Log2highacc
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-402/EDA-402-komal/Log2highacc.sv
 
 
 # Technology mapping

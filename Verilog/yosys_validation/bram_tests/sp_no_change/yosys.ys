@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for sp_no_change
 # Read source files 
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_no_change/sp_no_change.sv
-verific -import sp_no_change
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_no_change/sp_no_change.sv
 
 
 # Technology mapping

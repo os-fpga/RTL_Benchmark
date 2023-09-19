@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for dsp_mul_signed_reg_output_is_not_reg
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_output_is_not_reg/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_output_is_not_reg/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_output_is_not_reg/dsp_mul_signed_reg_output_is_not_reg.sv
-verific -import dsp_mul_signed_reg_output_is_not_reg
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_mul_signed_reg_output_is_not_reg/dsp_mul_signed_reg_output_is_not_reg.sv
 
 
 # Technology mapping

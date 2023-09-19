@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for rams_sp_re_prio_we_rst_1024x32
 # Read source files
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-890/rams_sp_re_prio_we_rst_1024x32.sv
-verific -import rams_sp_re_prio_we_rst_1024x32
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-890/rams_sp_re_prio_we_rst_1024x32.sv
 
 
 # Technology mapping

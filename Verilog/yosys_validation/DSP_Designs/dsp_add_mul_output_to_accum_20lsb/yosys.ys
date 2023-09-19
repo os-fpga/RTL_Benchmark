@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for dsp_add_mul_output_to_accum_20lsb
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_mul_output_to_accum_20lsb/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_mul_output_to_accum_20lsb/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_mul_output_to_accum_20lsb/dsp_add_mul_output_to_accum_20lsb.sv
-verific -import dsp_add_mul_output_to_accum_20lsb
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/dsp_add_mul_output_to_accum_20lsb/dsp_add_mul_output_to_accum_20lsb.sv
 
 
 # Technology mapping

@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for input_to_adder_and_mul_A_input_wrt_feedback_i
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/input_to_adder_and_mul_A_input_wrt_feedback_i.sv
-verific -import input_to_adder_and_mul_A_input_wrt_feedback_i
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/input_to_adder_and_mul_A_input_wrt_feedback_i/input_to_adder_and_mul_A_input_wrt_feedback_i.sv
 
 
 # Technology mapping
