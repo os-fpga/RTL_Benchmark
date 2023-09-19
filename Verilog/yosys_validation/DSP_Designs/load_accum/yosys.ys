@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for load_accum
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/load_accum/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/load_accum/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/load_accum/load_accum.sv
-verific -import load_accum
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/load_accum/load_accum.sv
 
 
 # Technology mapping

@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for ram_true_reg_addr_dp_1024x8
 # Read source files
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-885/ram_true_reg_addr_dp_1024x8.sv
-verific -import ram_true_reg_addr_dp_1024x8
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-885/ram_true_reg_addr_dp_1024x8.sv
 
 
 # Technology mapping

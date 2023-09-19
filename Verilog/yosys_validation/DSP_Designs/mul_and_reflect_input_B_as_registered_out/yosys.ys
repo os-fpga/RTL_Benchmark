@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for mul_and_reflect_input_B_as_registered_out
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/mul_and_reflect_input_B_as_registered_out.sv
-verific -import mul_and_reflect_input_B_as_registered_out
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/mul_and_reflect_input_B_as_registered_out/mul_and_reflect_input_B_as_registered_out.sv
 
 
 # Technology mapping

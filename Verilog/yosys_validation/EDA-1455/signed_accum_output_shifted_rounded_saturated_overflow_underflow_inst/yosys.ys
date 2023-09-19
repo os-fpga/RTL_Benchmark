@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst.sv
-verific -import signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst/signed_accum_output_shifted_rounded_saturated_overflow_underflow_inst.sv
 
 
 # Technology mapping

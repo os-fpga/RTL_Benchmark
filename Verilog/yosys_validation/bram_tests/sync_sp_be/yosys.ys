@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for sync_sp_be
 # Read source files 
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sync_sp_be/sync_sp_be.sv
-verific -import sync_sp_be
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sync_sp_be/sync_sp_be.sv
 
 
 # Technology mapping

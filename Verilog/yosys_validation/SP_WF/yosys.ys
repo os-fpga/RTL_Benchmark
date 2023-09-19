@@ -1,13 +1,7 @@
  
 # Yosys synthesis script for rams_sp_wf_1024x7
 # Read source files
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/SP_WF/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/SP_WF/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/SP_WF/rams_sp_wf_1024x7.sv
-verific -import rams_sp_wf_1024x7
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/SP_WF/rams_sp_wf_1024x7.sv
 
 
 # Technology mapping

@@ -1,13 +1,7 @@
  
 # Yosys synthesis script for bytewrite_sp_ram_wf_block
 # Read source files
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1776/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1776/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1776/bytewrite_sp_ram_wf_block.sv
-verific -import bytewrite_sp_ram_wf_block
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1776/bytewrite_sp_ram_wf_block.sv
 
 
 # Technology mapping

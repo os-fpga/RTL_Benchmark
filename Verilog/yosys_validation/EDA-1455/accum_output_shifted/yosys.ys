@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for accum_output_shifted
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/accum_output_shifted/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/accum_output_shifted/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/accum_output_shifted/accum_output_shifted.sv
-verific -import accum_output_shifted
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-1455/accum_output_shifted/accum_output_shifted.sv
 
 # Technology mapping
 hierarchy -top accum_output_shifted

@@ -2,13 +2,7 @@
 # Yosys synthesis script for ram_simple_dp_sync_reg_read_1024x64
 # Read source files
 # read -vlog2k rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-891/ram_simple_dp_sync_reg_read_1024x64.sv
-verific -import ram_simple_dp_sync_reg_read_1024x64
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-891/ram_simple_dp_sync_reg_read_1024x64.sv
 
 
 # Technology mapping

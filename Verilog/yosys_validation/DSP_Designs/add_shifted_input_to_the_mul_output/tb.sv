@@ -11,7 +11,7 @@ module co_sim_add_shifted_input_to_the_mul_output;
 
 add_shifted_input_to_the_mul_output golden(.*);
 add_shifted_input_to_the_mul_output_post_synth netlist(.*, .P(P_netlist));
-
+// clk, reset, subtract_i, A, B, acc_fir, P
 //clock initialization
 initial begin
     clk = 1'b0;

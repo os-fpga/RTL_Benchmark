@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for ram_pipeline
 # Read source files
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-678/ram_pipeline.v
-verific -import ram_pipeline
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-678/ram_pipeline.v
 
 
 # Technology mapping

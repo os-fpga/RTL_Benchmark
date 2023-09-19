@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for add_output_of_four_multipliers
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/add_output_of_four_multipliers.sv
-verific -import add_output_of_four_multipliers
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/add_output_of_four_multipliers.sv
 
 
 # Technology mapping

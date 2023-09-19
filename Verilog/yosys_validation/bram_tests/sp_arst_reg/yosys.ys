@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for sp_arst_reg
 # Read source files 
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_arst_reg/sp_arst_reg.sv
-verific -import sp_arst_reg
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_arst_reg/sp_arst_reg.sv
 
 
 # Technology mapping

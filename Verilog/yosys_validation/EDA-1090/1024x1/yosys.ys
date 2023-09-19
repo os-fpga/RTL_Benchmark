@@ -1,12 +1,8 @@
  
 # Yosys synthesis script for rams_sp_reg_addr_readmem_1024x1
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
 verific -vlog2k /nfs_scratch/scratch/FV/awais/Synthesis/v1/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/EDA-1090/1024x1/rams_sp_reg_addr_readmem_1024x1.sv
-verific -import rams_sp_reg_addr_readmem_1024x1
 
 
 # Technology mapping

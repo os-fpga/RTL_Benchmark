@@ -1,11 +1,7 @@
  
 # Yosys synthesis script for sp_new_rdwr
 # Read source files 
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_new_rdwr/sp_new_rdwr.sv
-verific -import sp_new_rdwr
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/bram_tests/sp_new_rdwr/sp_new_rdwr.sv
 
 
 # Technology mapping

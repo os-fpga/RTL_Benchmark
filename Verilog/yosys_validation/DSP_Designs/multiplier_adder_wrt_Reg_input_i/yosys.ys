@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for multiplier_adder_wrt_Reg_input_i
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/multiplier_adder_wrt_Reg_input_i/ 
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/multiplier_adder_wrt_Reg_input_i/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/multiplier_adder_wrt_Reg_input_i/multiplier_adder_wrt_Reg_input_i.sv
-verific -import multiplier_adder_wrt_Reg_input_i
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/multiplier_adder_wrt_Reg_input_i/multiplier_adder_wrt_Reg_input_i.sv
 
 
 # Technology mapping

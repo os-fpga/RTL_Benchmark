@@ -1,14 +1,8 @@
  
 # Yosys synthesis script for bytewrite_sdp_ram_nc
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-871/bytewrite_sdp_ram_nc_1024x32/bytewrite_sdp_ram_nc_1024x32.sv
-verific -import bytewrite_sdp_ram_nc_1024x32
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/EDA-871/bytewrite_sdp_ram_nc_1024x32/bytewrite_sdp_ram_nc_1024x32.sv
 
 
 # Technology mapping
