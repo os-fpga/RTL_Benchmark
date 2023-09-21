@@ -1,0 +1,1998 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys-Verific 0.0.239
+ Yosys 0.18+10 (git sha1 57d4b00ff, gcc 11.2.0 -fPIC -Os)
+
+
+-- Executing script file `yosys.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v' to AST representation.
+Generating RTLIL representation for module `\latch_inference'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \latch_inference
+
+2.2. Analyzing design hierarchy..
+Top module:  \latch_inference
+Removed 0 unused modules.
+
+3. Executing synth_rs pass: v0.4.191
+
+3.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+3.2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\adder_carry'.
+Successfully finished Verilog frontend.
+
+3.3. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+3.4. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_sim_cfg_ports'.
+Successfully finished Verilog frontend.
+
+3.5. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v' to AST representation.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+3.6. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+3.7. Executing HIERARCHY pass (managing design hierarchy).
+
+3.7.1. Analyzing design hierarchy..
+Top module:  \latch_inference
+
+3.7.2. Analyzing design hierarchy..
+Top module:  \latch_inference
+Removed 0 unused modules.
+
+3.8. Executing PROC pass (convert processes to netlists).
+
+3.8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 1 assignment to connection.
+
+3.8.4. Executing PROC_INIT pass (extract init attributes).
+
+3.8.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\latch_inference.$proc$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:17$3'.
+
+3.8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\latch_inference.\sum' using process `\latch_inference.$proc$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:17$3'.
+  created $dff cell `$procdff$4' with positive edge clock.
+
+3.8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `latch_inference.$proc$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:17$3'.
+Cleaned up 0 empty switches.
+
+3.8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.9. Executing DEMUXMAP pass.
+
+3.10. Executing FLATTEN pass (flatten design).
+
+3.11. Executing DEMUXMAP pass.
+
+3.12. Executing TRIBUF pass.
+
+3.13. Executing TRIBUF pass.
+
+3.14. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+3.17. Executing CHECK pass (checking for obvious problems).
+Checking module latch_inference...
+Found and reported 0 problems.
+
+3.18. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 16
+   Number of wire bits:             62
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $add                            2
+     $dff                            1
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.20. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.21. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.22. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.23. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.24. Executing OPT_SHARE pass.
+
+3.25. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.27. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.28. Executing FSM pass (extract and optimize FSM).
+
+3.28.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+3.28.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.28.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.28.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.28.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.28.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.28.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.29. Executing WREDUCE pass (reducing word size of cells).
+
+3.30. Executing PEEPOPT pass (run peephole optimizers).
+
+3.31. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.34. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.35. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.37. Executing OPT_SHARE pass.
+
+3.38. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.39. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.42. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.43. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.44. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.46. Executing OPT_SHARE pass.
+
+3.47. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.48. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.49. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.50. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.52. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.53. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.54. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.55. Executing OPT_SHARE pass.
+
+3.56. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.57. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.58. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.59. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.60. Executing WREDUCE pass (reducing word size of cells).
+
+3.61. Executing PEEPOPT pass (run peephole optimizers).
+
+3.62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.63. Executing DEMUXMAP pass.
+
+3.64. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 16
+   Number of wire bits:             62
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $add                            2
+     $dff                            1
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.65. Executing Verilog backend.
+Dumping module `\latch_inference'.
+
+3.66. Executing RS_DSP_MULTADD pass.
+
+3.67. Executing Verilog backend.
+Dumping module `\latch_inference'.
+
+3.68. Executing WREDUCE pass (reducing word size of cells).
+
+3.69. Executing RS_DSP_MACC pass.
+In macc circuit
+Inside $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$1
+Mux Schematic = 0
+Neg Schematic = 0
+Mul Schematic = 0
+Inside $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$2
+Mux Schematic = 0
+Neg Schematic = 0
+Mul Schematic = 0
+
+3.70. Executing TECHMAP pass (map to technology primitives).
+
+3.70.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+3.70.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.71. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 16
+   Number of wire bits:             62
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $add                            2
+     $dff                            1
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.72. Executing TECHMAP pass (map to technology primitives).
+
+3.72.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Successfully finished Verilog frontend.
+
+3.72.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+3.73. Executing TECHMAP pass (map to technology primitives).
+
+3.73.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Successfully finished Verilog frontend.
+
+3.73.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+3.74. Executing rs_pack_dsp_regs pass.
+
+3.75. Executing RS_DSP_IO_REGS pass.
+
+3.76. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module latch_inference:
+  creating $macc model for $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$1 ($add).
+  creating $macc model for $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$2 ($add).
+  merging $macc model for $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$1 into $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$2.
+  creating $alu model for $macc $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$2.
+  creating $alu cell for $add$/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v:14$2: $auto$alumacc.cc:485:replace_alu$5
+  created 1 $alu and 0 $macc cells.
+
+3.77. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.78. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.79. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.80. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.81. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.82. Executing OPT_SHARE pass.
+
+3.83. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+3.85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.86. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.87. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.88. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.89. Executing OPT_SHARE pass.
+
+3.90. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.91. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.92. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 2
+
+3.93. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 17
+   Number of wire bits:             73
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $alu                            1
+     $dff                            1
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.94. Executing MEMORY pass.
+
+3.94.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.94.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.94.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.94.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.94.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.94.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.94.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.94.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.94.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.94.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.95. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 17
+   Number of wire bits:             73
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $alu                            1
+     $dff                            1
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.96. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+3.97. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.98. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.99. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.100. Executing Rs_BRAM_Split pass.
+
+3.101. Executing TECHMAP pass (map to technology primitives).
+
+3.101.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+3.101.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+3.102. Executing TECHMAP pass (map to technology primitives).
+
+3.102.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+3.102.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.103. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3.104. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.105. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.106. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.107. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.108. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.109. Executing OPT_SHARE pass.
+
+3.110. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=1, #solve=0, #remove=0, time=0.00 sec.]
+
+3.111. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.112. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.113. Executing PMUXTREE pass.
+
+3.114. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+3.115. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.116. Executing TECHMAP pass (map to technology primitives).
+
+3.116.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.116.2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+3.116.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~282 debug messages>
+
+3.117. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 68
+   Number of wire bits:           1398
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                109
+     $_AND_                         32
+     $_DFF_P_                       10
+     $_MUX_                         11
+     $_NOT_                         11
+     $_OR_                          16
+     $_XOR_                         23
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.118. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+<suppressed ~18 debug messages>
+
+3.119. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.120. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.121. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.122. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.123. Executing OPT_SHARE pass.
+
+3.124. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.125. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 10 unused cells and 25 unused wires.
+<suppressed ~11 debug messages>
+
+3.126. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.127. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.128. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.129. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.130. Executing OPT_SHARE pass.
+
+3.131. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.133. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 2
+
+3.134. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.135. Executing TECHMAP pass (map to technology primitives).
+
+3.135.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.135.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+3.136. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 43
+   Number of wire bits:            109
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 81
+     $_AND_                         30
+     $_DFF_P_                       10
+     $_OR_                          15
+     $_XOR_                         20
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.137. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.138. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.139. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.140. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.141. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.142. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.143. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.144. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.145. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.146. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.147. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.148. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.149. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.150. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.151. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.152. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.153. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.154. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.155. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.156. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.157. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.158. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.159. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.160. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.161. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.162. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 43
+   Number of wire bits:            109
+   Number of public wires:          15
+   Number of public wire bits:      51
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 81
+     $_AND_                         30
+     $_DFF_P_                       10
+     $_OR_                          15
+     $_XOR_                         20
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+   Number of Generic REGs:          10
+
+ABC-DFF iteration : 1
+
+3.163. Executing ABC pass (technology mapping using ABC).
+
+3.163.1. Summary of detected clock domains:
+  81 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.163.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 75 gates and 96 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.163.2.1. Executing ABC.
+
+3.164. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.165. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.166. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.167. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.168. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.169. Executing OPT_SHARE pass.
+
+3.170. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.171. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 71 unused wires.
+<suppressed ~2 debug messages>
+
+3.172. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+3.173. Executing ABC pass (technology mapping using ABC).
+
+3.173.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.173.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.173.2.1. Executing ABC.
+
+3.174. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.175. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.176. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.177. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.178. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.179. Executing OPT_SHARE pass.
+
+3.180. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.181. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.182. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+3.183. Executing ABC pass (technology mapping using ABC).
+
+3.183.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.183.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.183.2.1. Executing ABC.
+
+3.184. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.185. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.186. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.187. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.188. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.189. Executing OPT_SHARE pass.
+
+3.190. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.191. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.192. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+3.193. Executing ABC pass (technology mapping using ABC).
+
+3.193.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.193.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.193.2.1. Executing ABC.
+
+3.194. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.195. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.196. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.197. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.198. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.199. Executing OPT_SHARE pass.
+
+3.200. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.201. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.202. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.203. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+   Number of Generic REGs:          10
+
+ABC-DFF iteration : 1
+
+3.204. Executing ABC pass (technology mapping using ABC).
+
+3.204.1. Summary of detected clock domains:
+  81 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.204.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 75 gates and 96 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.204.2.1. Executing ABC.
+
+3.205. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.206. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.207. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 71 unused wires.
+<suppressed ~2 debug messages>
+
+3.208. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.209. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.210. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.211. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.212. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.213. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.214. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 2
+
+3.215. Executing ABC pass (technology mapping using ABC).
+
+3.215.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.215.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.215.2.1. Executing ABC.
+
+3.216. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.217. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.218. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.219. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.220. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.221. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.222. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.223. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.224. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.225. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 3
+
+3.226. Executing ABC pass (technology mapping using ABC).
+
+3.226.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.226.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.226.2.1. Executing ABC.
+
+3.227. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.228. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.229. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.230. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.231. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.232. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.233. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.234. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.235. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.236. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 4
+
+3.237. Executing ABC pass (technology mapping using ABC).
+
+3.237.1. Summary of detected clock domains:
+  67 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+3.237.2. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 61 gates and 82 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.237.2.1. Executing ABC.
+
+3.238. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.239. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.240. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 92 unused wires.
+<suppressed ~1 debug messages>
+
+3.241. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.242. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.243. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.244. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.245. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.246. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.247. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3.248. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+select CE dissolving strategy (tresh=0.920000)
+
+3.249. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.250. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.251. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.252. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.253. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.254. Executing OPT_SHARE pass.
+
+3.255. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.256. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.257. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.258. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.259. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.260. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.261. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.262. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.263. Executing OPT_SHARE pass.
+
+3.264. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.265. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.266. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.267. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.268. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.269. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.270. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.271. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.272. Executing OPT_SHARE pass.
+
+3.273. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.274. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.275. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.276. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.277. Executing BMUXMAP pass.
+
+3.278. Executing DEMUXMAP pass.
+
+3.279. Executing ABC pass (technology mapping using ABC).
+
+3.279.1. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Extracted 51 gates and 72 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.279.1.1. Executing ABC.
+DE:   #PIs =  21  #Luts =    15  Max Lvl =   5  Avg Lvl =   3.18  [   0.04 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.11 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.12 sec. at Pass 2]{map}[6]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.13 sec. at Pass 3]{postMap}[12]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.16 sec. at Pass 4]{map}[36]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.26 sec. at Pass 5]{postMap}[72]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.00 sec. at Pass 6]{pushMap}[0]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.00 sec. at Pass 7]{finalMap}[0]
+
+3.280. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.281. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.282. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.283. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.284. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.285. Executing OPT_SHARE pass.
+
+3.286. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.287. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 72 unused wires.
+<suppressed ~1 debug messages>
+
+3.288. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.289. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+3.290. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.291. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.292. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.293. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.294. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.295. Executing OPT_SHARE pass.
+
+3.296. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.297. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.298. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.299. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.300. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.301. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.302. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.303. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.304. Executing OPT_SHARE pass.
+
+3.305. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.306. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=10, #solve=0, #remove=0, time=0.00 sec.]
+
+3.307. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.308. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.309. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 32
+   Number of wire bits:             59
+   Number of public wires:          14
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $_DFF_P_                       10
+     $lut                           19
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.310. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.311. Executing RS_DFFSR_CONV pass.
+
+3.312. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 32
+   Number of wire bits:             59
+   Number of public wires:          14
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $_DFF_P_                       10
+     $lut                           19
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.313. Executing TECHMAP pass (map to technology primitives).
+
+3.313.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.313.2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+3.313.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+No more expansions possible.
+<suppressed ~149 debug messages>
+
+3.314. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+<suppressed ~377 debug messages>
+
+3.315. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+3.316. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.317. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+<suppressed ~471 debug messages>
+Removed a total of 157 cells.
+
+3.318. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+3.319. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 63 unused wires.
+<suppressed ~1 debug messages>
+
+3.320. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+<suppressed ~8 debug messages>
+
+3.321. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.322. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.323. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.324. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.325. Executing OPT_SHARE pass.
+
+3.326. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+3.327. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.328. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.329. Executing TECHMAP pass (map to technology primitives).
+
+3.329.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.329.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+3.330. Executing ABC pass (technology mapping using ABC).
+
+3.330.1. Extracting gate netlist of module `\latch_inference' to `<abc-temp-dir>/input.blif'..
+Extracted 135 gates and 158 wires to a netlist network with 21 inputs and 11 outputs.
+
+3.330.1.1. Executing ABC.
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.06 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.17 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.10 sec. at Pass 2]{map}[6]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.09 sec. at Pass 3]{postMap}[12]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.16 sec. at Pass 4]{map}[36]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.26 sec. at Pass 5]{postMap}[72]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.00 sec. at Pass 6]{pushMap}[0]
+DE:   #PIs =  21  #Luts =    19  Max Lvl =   3  Avg Lvl =   2.45  [   0.00 sec. at Pass 7]{finalMap}[0]
+
+3.331. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+3.332. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.333. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \latch_inference..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+3.334. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \latch_inference.
+Performed a total of 0 changes.
+
+3.335. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\latch_inference'.
+Removed a total of 0 cells.
+
+3.336. Executing OPT_SHARE pass.
+
+3.337. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+3.338. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+Removed 0 unused cells and 99 unused wires.
+<suppressed ~1 debug messages>
+
+3.339. Executing OPT_EXPR pass (perform const folding).
+Optimizing module latch_inference.
+
+RUN-OPT ITERATIONS DONE : 1
+
+3.340. Executing HIERARCHY pass (managing design hierarchy).
+
+3.340.1. Analyzing design hierarchy..
+Top module:  \latch_inference
+
+3.340.2. Analyzing design hierarchy..
+Top module:  \latch_inference
+Removed 0 unused modules.
+
+3.341. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \latch_inference..
+
+3.342. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 32
+   Number of wire bits:             59
+   Number of public wires:          14
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $lut                           19
+     DFFRE                          10
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+
+3.343. Executing TECHMAP pass (map to technology primitives).
+
+3.343.1. Executing Verilog-2005 frontend: /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v
+Parsing Verilog input from `/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/yosys/install/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.343.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~204 debug messages>
+
+3.344. Printing statistics.
+
+=== latch_inference ===
+
+   Number of wires:                 70
+   Number of wire bits:            169
+   Number of public wires:          14
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     DFFRE                          10
+     LATCH                           1
+     LATCHN                          1
+     LATCHNR                         1
+     LATCHNS                         1
+     LATCHR                          1
+     LATCHS                          1
+     LUT3                            4
+     LUT4                            2
+     LUT5                            7
+     LUT6                            6
+
+   Number of LUTs:                  19
+   Number of REGs:                  10
+
+4. Executing Verilog backend.
+Dumping module `\latch_inference'.
+
+End of script. Logfile hash: 2083183d2d, CPU: user 0.65s system 0.07s, MEM: 44.45 MB peak
+Yosys 0.18+10 (git sha1 57d4b00ff, gcc 11.2.0 -fPIC -Os)
+Time spent: 97% 10x abc (31 sec), 0% 21x read_verilog (0 sec), ...

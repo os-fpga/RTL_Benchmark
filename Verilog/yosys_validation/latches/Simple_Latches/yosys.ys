@@ -1,0 +1,32 @@
+#  
+# # Yosys synthesis script for multiplexer
+# # Read source files
+# read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/latches/multiplex_latch.sv
+# 
+# 
+# # Technology mapping
+# hierarchy -top multiplexer
+# 
+# 
+# 
+# plugin -i synth-rs
+# 
+# synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
+# write_verilog -noexpr -nohex ${TOP}_post_synth.valid_shiftl_chunk
+
+ 
+# Yosys synthesis script for multiplexer
+# Read source files
+read_verilog  -I/nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/ /nfs_scratch/scratch/FV/awais/Synthesis/yosys/yosys_verific_rs/RTL_Benchmark/Verilog/yosys_validation/latches/Simple_Latches/latch_inference.v
+
+
+# Technology mapping
+hierarchy -top latch_inference
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay -no_iobuf -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528 -de_max_threads -1
+write_verilog -noexpr -nohex latch_inference_post_synth.v
+
