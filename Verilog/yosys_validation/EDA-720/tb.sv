@@ -38,7 +38,11 @@ wire [31:0] read_data, read_data_net;
         clk = 1'b0;
         forever #10 clk = ~clk;
     end
-
+    initial begin
+        for(integer i = 0; i<256; i=i+1) begin 
+            golden.mem[i] ='b0;
+        end  
+    end
     initial begin
     {write_enable, byte_lane, read_enable, write_addr, read_addr, write_data, cycle, i} = 0;
 

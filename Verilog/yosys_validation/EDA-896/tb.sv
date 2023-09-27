@@ -13,7 +13,11 @@ wire [7:0] read_data, read_data_net;
 
     asym_ram_sdp_wide_write golden(.*);
     asym_ram_sdp_wide_write_post_synth netlist(.*, .read_data(read_data_net));
-
+    initial begin
+        for(integer i = 0; i<256; i=i+1) begin 
+            golden.mem[i] ='b0;
+        end  
+    end
 
      //clock//
     initial begin

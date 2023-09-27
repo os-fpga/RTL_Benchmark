@@ -11,7 +11,11 @@ module co_sim_ram_true_dp_rf_1024x32;
     ram_true_dp_rf_1024x32 golden(.*);
     ram_true_dp_rf_1024x32_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
 
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     always #10 clk = ~clk;
     initial begin
 

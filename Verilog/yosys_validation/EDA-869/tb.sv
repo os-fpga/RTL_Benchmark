@@ -13,7 +13,11 @@ module co_sim_ram_true_dp_dc_4096x36;
     ram_true_dp_dc_4096x36_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
 
 
-    
+    initial begin
+        for(integer i = 0; i<4096; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     //clock//
     initial begin
         clkA = 1'b0;

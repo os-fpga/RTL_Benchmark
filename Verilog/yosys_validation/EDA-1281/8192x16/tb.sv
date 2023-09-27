@@ -11,7 +11,11 @@ module co_sim_ram_true_dp_dc_8192x16;
     ram_true_dp_dc_8192x16 golden(.*);
     ram_true_dp_dc_8192x16_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
 
-
+    initial begin
+        for(integer i = 0; i<8192; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     
     //clock//
     initial begin
@@ -23,11 +27,7 @@ module co_sim_ram_true_dp_dc_8192x16;
         forever #5 clkB = ~clkB;
     end
 
-    initial begin
-        for (integer i = 0; i<4096 ;i++)begin
-            golden.ram[i] = 0;
-        end
-    end
+
     initial begin
         
     {weA,weB, addrA,addrB, dinA, dinB, cycle, i} = 0;

@@ -16,7 +16,11 @@ module co_sim_ram_pipeline;
     ram_pipeline golden(.*);
     ram_pipeline_post_synth netlist(.*, .res1(res1_net), .res2(res2_net));
 
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
     //clock//
     initial begin
         clk1 = 1'b0;
