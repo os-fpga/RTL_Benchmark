@@ -15,4 +15,4 @@ plugin -i synth-rs
 synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif dsp_add_mul_output_to_accum_20lsb_post_synth.blif
 
-  write_verilog -noexpr -nohex ${TOP}_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
