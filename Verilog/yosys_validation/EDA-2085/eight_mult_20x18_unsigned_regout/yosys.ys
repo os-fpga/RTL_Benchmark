@@ -1,0 +1,17 @@
+
+# Yosys synthesis script for eight_mult_20x18_unsigned_regout
+# Read source files
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/${RTL_PATH}/eight_mult_20x18_unsigned_regout.sv
+
+
+# Technology mapping
+hierarchy -top eight_mult_20x18_unsigned_regout
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
+
+write_verilog -noexpr -nohex ${TOP}_post_synth.v
