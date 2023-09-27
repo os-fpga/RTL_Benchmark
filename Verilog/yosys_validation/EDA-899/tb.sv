@@ -21,7 +21,11 @@ wire [WIDTHB-1:0] doB, doB_net;
 
     asym_ram_sdp_read_wider_dc golden(.*);
     asym_ram_sdp_read_wider_dc_post_synth netlist(.*, .doB(doB_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
 
      //clock//
     initial begin

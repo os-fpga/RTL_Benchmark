@@ -12,7 +12,11 @@ module co_sim_tdp_256x8;
     tdp_256x8 golden(.*);
     tdp_256x8_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
 
-
+    initial begin
+        for(integer i = 0; i<8; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     
     //clock//
     initial begin

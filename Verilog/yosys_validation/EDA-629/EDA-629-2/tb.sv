@@ -11,7 +11,11 @@ module co_sim_ram_simple_dp_sync_reg_read_4096x32;
 
     ram_simple_dp_sync_reg_read_4096x32 golden(.*);
     ram_simple_dp_sync_reg_read_4096x32_post_synth netlist(.*, .dout(dout_net));
-
+    initial begin
+        for(integer i = 0; i<4096; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
 
     always #10 clk = ~clk;
 

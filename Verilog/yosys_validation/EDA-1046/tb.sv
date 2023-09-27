@@ -45,7 +45,11 @@ wire [WIDTHB-1:0] doB, doB_net;
         .diA (diA ),    
         .doB(doB_net));
 
-
+        initial begin
+            for(integer i = 0; i<512; i=i+1) begin 
+                golden.RAM[i] ='b0;
+            end  
+        end
      //clock//
     initial begin
         clkA = 1'b0;

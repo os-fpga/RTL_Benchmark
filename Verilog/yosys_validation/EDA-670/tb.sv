@@ -19,7 +19,11 @@ module co_sim_bytewrite_sdp_ram_rf;
 
     bytewrite_sdp_ram_rf golden(.*);
     bytewrite_sdp_ram_rf_post_synth netlist(.*, .dout(dout_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
 
     always #10 clk = ~clk;
 
