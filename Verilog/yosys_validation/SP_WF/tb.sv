@@ -12,7 +12,11 @@ wire [31:0] dout,dout_net;
 
     rams_sp_wf_1024x7 golden(.*);
     rams_sp_wf_1024x7_post_synth netlist(.*, .dout(dout_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
 
     always #10 clk = ~clk;
 

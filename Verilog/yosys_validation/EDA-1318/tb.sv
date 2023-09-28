@@ -18,8 +18,7 @@ module two_sdp_tb;
   wire [15:0] dout1_net;
   wire [7:0] dout2_net;
 
-  two_sdp 
-  two_sdp_dut (
+  two_sdp  golden(
     .clk1 (clk1 ),
     .clk2 (clk2 ),
     .din1 (din1 ),
@@ -34,8 +33,7 @@ module two_sdp_tb;
     .we2  ( we2)
   );
 
-  two_sdp 
-  two_sdp_dut_post_synth (
+  two_sdp_post_synth Netlist(
     .clk1 (clk1 ),
     .clk2 (clk2 ),
     .din1 (din1 ),
@@ -50,6 +48,17 @@ module two_sdp_tb;
     .we2  ( we2)
   );
 
+  initial begin
+    for(integer i = 0; i<1024; i=i+1) begin 
+        golden.ram1[i] = 16'b0;
+    end  
+end
+
+initial begin
+    for(integer i = 0; i<2048; i=i+1) begin 
+        golden.ram2[i] = 8'b0;
+    end  
+end
   integer mismatch=0;
   reg [6:0]cycle, i;
   always
@@ -115,6 +124,11 @@ always
 end
     
     endtask
+
+    initial begin
+        $dumpfile("tb.vcd");
+        $dumpvars;
+    end
 
 endmodule
  

@@ -38,15 +38,20 @@ wire [31:0] read_data, read_data_net;
         clk = 1'b0;
         forever #10 clk = ~clk;
     end
-
+    initial begin
+        for(integer i = 0; i<256; i=i+1) begin 
+            golden.mem[i] ='b0;
+        end  
+    end
     initial begin
     {write_enable, byte_lane, read_enable, write_addr, read_addr, write_data, cycle, i} = 0;
 
-
+    read_enable=1;
+    repeat (1) @ (negedge clk)
     //write 
     for (integer i=0; i<1024; i=i+1)begin
         repeat (1) @ (negedge clk)
-        write_addr <= $urandom_range(0,127); read_addr <= $urandom_range(32,63); write_enable <=1'b1; byte_lane<= 2'b10; write_data<= $random;
+        write_addr <= $urandom_range(0,127); read_addr <= $urandom_range(32,63); write_enable <=1'b1;read_enable=0; byte_lane<= 2'b10; write_data<= $random;
         cycle = cycle +1;
    
         compare(cycle);

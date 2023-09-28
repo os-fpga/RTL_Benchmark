@@ -29,7 +29,11 @@ module co_sim_ram_true_dp_wf_1024x32;
     .dinA (dinA ),
     .dinB ( dinB ), .doutA(doutA_net), .doutB(doutB_net));
 
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     always #10 clk = ~clk;
 
     initial begin

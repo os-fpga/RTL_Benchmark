@@ -19,7 +19,11 @@ module co_sim_ram_true_dp_512x32;
     ram_true_dp_512x32 golden(.*);
     ram_true_dp_512x32_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
 
-
+    initial begin
+        for(integer i = 0; i<512; i=i+1) begin 
+            golden.BRAM[i] ='b0;
+        end  
+    end
     always #10 clk = ~clk;
 
     initial begin

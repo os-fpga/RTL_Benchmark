@@ -27,7 +27,11 @@ module co_sim_ram_simple_dp_sync_reg_read_1024x64;
         .write_addr  ( write_addr)
     );
 
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
     always #10 clk = ~clk;
 
     initial begin

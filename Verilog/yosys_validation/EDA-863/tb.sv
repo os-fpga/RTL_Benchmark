@@ -28,7 +28,11 @@ wire [31:0] read_data, read_data_net;
         .read_addr (read_addr ),
         .write_data (write_data ),   
     .read_data(read_data_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.mem[i] ='b0;
+        end  
+    end
 
      //clock//
     initial begin
@@ -38,12 +42,12 @@ wire [31:0] read_data, read_data_net;
 
     initial begin
     {write_enable, read_enable, write_addr, read_addr, write_data, cycle, i} = 0;
- 
+    read_enable=1;
 
     //write 
     for (integer i=0; i<5; i=i+1)begin
         repeat (1) @ (negedge clk)
-        write_addr <= i; write_enable <=1'b1; write_data<= $random;
+        write_addr <= i; write_enable <=1'b1; write_data<= $random;read_enable=0;
         cycle = cycle +1;
    
         compare(cycle);
