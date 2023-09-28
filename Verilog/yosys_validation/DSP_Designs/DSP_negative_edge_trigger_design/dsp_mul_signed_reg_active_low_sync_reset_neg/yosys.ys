@@ -1,24 +1,16 @@
- 
+
 # Yosys synthesis script for dsp_mul_signed_reg_active_low_sync_reset_neg
 # Read source files
-read -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-verific -vlog-incdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/DSP_negative_edge_trigger_design/dsp_mul_signed_reg_active_low_sync_reset_neg/
-verific -vlog-libdir ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/DSP_negative_edge_trigger_design/dsp_mul_signed_reg_active_low_sync_reset_neg/
-verific -vlog-libext .v
-verific -vlog-libext .sv
-verific -vlog-define 
-verific -vlog2k ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/DSP_negative_edge_trigger_design/dsp_mul_signed_reg_active_low_sync_reset_neg/dsp_mul_signed_reg_active_low_sync_reset_neg.sv
-verific -import dsp_mul_signed_reg_active_low_sync_reset_neg
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/${RTL_PATH}/dsp_mul_signed_reg_active_low_sync_reset_neg.sv
 
 
 # Technology mapping
 hierarchy -top dsp_mul_signed_reg_active_low_sync_reset_neg
-
-
 
 plugin -i synth-rs
 
 synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
 write_blif dsp_mul_signed_reg_active_low_sync_reset_neg_post_synth.blif
 
-write_verilog -noexpr -nohex ${TOP}_post_synth.v
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
