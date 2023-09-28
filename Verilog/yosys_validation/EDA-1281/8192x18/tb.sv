@@ -10,7 +10,11 @@ module co_sim_ram_true_dp_dc_8192x18;
 
     ram_true_dp_dc_8192x18 golden(.*);
     ram_true_dp_dc_8192x18_post_synth netlist(.*, .doutA(doutA_net), .doutB(doutB_net));
-
+    initial begin
+        for(integer i = 0; i<8192; i=i+1) begin 
+            golden.ram[i] ='b0;
+        end  
+    end
 
     
     //clock//

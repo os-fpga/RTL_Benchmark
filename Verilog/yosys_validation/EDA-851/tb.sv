@@ -39,7 +39,11 @@ module co_sim_ram_pipeline_block;
       .we  ( we)
     );
   
-
+    initial begin
+        for(integer i = 0; i<513; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
     //clock//
     initial begin
         clk1 = 1'b0;

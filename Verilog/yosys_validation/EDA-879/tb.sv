@@ -13,7 +13,11 @@ module co_sim_rams_sp_wf_rst_en_1024x16;
 
     rams_sp_wf_rst_en_1024x16 golden(.*);
     rams_sp_wf_rst_en_1024x16_post_synth netlist(.*, .dout(dout_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
 
     always #10 clk = ~clk;
 
@@ -46,7 +50,7 @@ module co_sim_rams_sp_wf_rst_en_1024x16;
     end
 
      //random
-    for (integer i=0; i<1024; i=i+1)begin
+    for (integer i=0; i<100000; i=i+1)begin
         repeat (1) @ (negedge clk)
         we<=$random; en<=$random; rst<=$random; addr<=$random; di<=$random;
         cycle = cycle +1;

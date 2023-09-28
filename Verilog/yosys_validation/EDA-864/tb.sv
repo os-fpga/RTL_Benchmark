@@ -11,18 +11,22 @@ module co_sim_rams_sp_re_we_rf_1024x32;
 
     rams_sp_re_we_rf_1024x32 golden(.*);
     rams_sp_re_we_rf_1024x32_post_synth netlist(.*, .dout(dout_net));
-
+    initial begin
+        for(integer i = 0; i<1024; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
 
     always #10 clk = ~clk;
 
     initial begin
-    {clk, we, re, addr ,di, cycle, i} = 0;
-
+    {clk, we, addr ,di, cycle, i} = 0;
+        re=1;
     for(integer i = 0; i<1024; i=i+1) begin 
         golden.RAM[i] ='b0;
     end    
 
-    // repeat (1) @ (negedge clk);
+    repeat (1) @ (negedge clk);
 
     //write and simulatnously reads from registered address
     for (integer i=0; i<1024; i=i+1)begin

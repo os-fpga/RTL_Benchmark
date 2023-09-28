@@ -14,10 +14,16 @@ module co_sim_rams_sp_re_prio_we_rst_512x16_block;
 
 
     always #10 clk = ~clk;
-
     initial begin
-    {clk,  we, re, addr ,di, cycle, i} = 0;
-    rst = 1;  
+    for(integer i = 0; i<512; i=i+1) begin 
+        golden.RAM[i] ='b0;
+    end  
+    end
+    initial begin
+    {clk,  we, addr ,di, cycle, i} = 0;
+    rst = 0;
+    re=1;  
+    repeat (1) @ (negedge clk);
     compare(cycle);
     for (integer i=0; i<3; i=i+1)begin
        repeat (1) @ (negedge clk);
