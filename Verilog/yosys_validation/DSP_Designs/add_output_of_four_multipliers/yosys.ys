@@ -2,7 +2,7 @@
 # Yosys synthesis script for add_output_of_four_multipliers
 # Read source files
 read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
-read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/add_output_of_four_multipliers.sv
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/${RTL_PATH}/add_output_of_four_multipliers.sv
 
 
 # Technology mapping
