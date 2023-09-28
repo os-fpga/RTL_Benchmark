@@ -38,8 +38,8 @@ wire [WIDTHB-1:0] doB, doB_net;
     end
 
     initial begin
-    {enaA, enaB, weA, addrA, addrB, diA, cycle, i} = 0;
-
+    {enaA, weA, addrA, addrB, diA, cycle, i} = 0;
+    enaB = 1'b1;
     repeat (1) @ (negedge clkA);
     enaA = 1'b1;
     enaB = 1'b0;

@@ -20,8 +20,8 @@ module co_sim_rams_sp_reg_addr_1024x36;
     always #10 clk = ~clk;
 
     initial begin
-    {clk, we, addr ,di, cycle, i} = 0;
-
+    {clk, addr ,di, cycle, i} = 0;
+        we=1;
     
     // repeat (1) @ (negedge clk);
 
