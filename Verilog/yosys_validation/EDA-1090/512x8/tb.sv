@@ -15,6 +15,12 @@ module co_sim_rams_sp_reg_addr_readmem_512x8;
     always #10 clk = ~clk;
 
     initial begin
+        for(integer i = 0; i<13; i=i+1) begin 
+            golden.RAM[i] ='b0;
+        end  
+    end
+    
+    initial begin
     {clk, we, addr ,di, cycle, i} = 0;
 
     for (integer i=0; i<1024; i=i+1)begin
