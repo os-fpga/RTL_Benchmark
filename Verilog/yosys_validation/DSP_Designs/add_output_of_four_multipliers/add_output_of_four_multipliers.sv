@@ -3,7 +3,7 @@
 // Function    : A behavorial model with 4 multipliers, designed to test the 
 //               functionality of DSP block.
 //-----------------------------------------------------
-`include "./../../../../../RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/add_output_of_four_multipliers/mult_unsigned.sv"
+
 module add_output_of_four_multipliers
   #(
     parameter INPUT_WIDTH = 14,
