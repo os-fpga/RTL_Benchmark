@@ -24,8 +24,8 @@ wire [DATA_W-1:0] W_array  [0:NO_ROUNDS-1];   //array of round keys to form W ou
 
 wire [1279:0] w_temp;
 
-KeyExpantion (.clk(clk),.reset(reset),.valid_in(valid_in),.cipher_key(cipher_key),.W(w_temp),.valid_out(valid_out) );
-mux_16x1 (.in0(w_temp[79:0]),. in1(w_temp[159:80]),. in2(w_temp[239:160]),. in3(w_temp[319:240]),. in4(w_temp[399:320]),. in5(w_temp[479:400]),. in6(w_temp[559:480]),. in7(w_temp[639:560]),.in8(w_temp[719:640]),. in9(w_temp[799:720]),. in10(w_temp[879:800]),. in11(w_temp[959:880]),. in12(w_temp[1039:960]),. in13(w_temp[1119:1040]),. in14(w_temp[1199:1120]),. in15(w_temp[1279:1200]),.sel(sel_mux_w),.out(w));
+KeyExpantion #() ke(.clk(clk),.reset(reset),.valid_in(valid_in),.cipher_key(cipher_key),.W(w_temp),.valid_out(valid_out) );
+mux_16x1 mux(.in0(w_temp[79:0]),. in1(w_temp[159:80]),. in2(w_temp[239:160]),. in3(w_temp[319:240]),. in4(w_temp[399:320]),. in5(w_temp[479:400]),. in6(w_temp[559:480]),. in7(w_temp[639:560]),.in8(w_temp[719:640]),. in9(w_temp[799:720]),. in10(w_temp[879:800]),. in11(w_temp[959:880]),. in12(w_temp[1039:960]),. in13(w_temp[1119:1040]),. in14(w_temp[1199:1120]),. in15(w_temp[1279:1200]),.sel(sel_mux_w),.out(w));
                     
 endmodule
 
