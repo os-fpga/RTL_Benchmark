@@ -12,7 +12,7 @@ hierarchy -top ram_true_dp_dc_8192x18
 
 plugin -i synth-rs
 
-synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}
+synth_rs -tech ${SYNTH_SETTING}
 write_blif ram_true_dp_dc_8192x18_post_synth.blif
 
 write_verilog -noexpr -nodec ${TOP}_post_synth.v
