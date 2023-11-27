@@ -35,15 +35,15 @@ def replace_write_verilog(file_path):
     with open(file_path, 'w') as file:
         for line in lines:
             if "synth_rs " in line:
-                file.write("synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}\n")
+                file.write("synth_rs -tech ${SYNTH_SETTING}\n")
             else:
                 file.write(line)
 
 def main():
     input_file = "path_list.txt"  # File containing list of file paths line by line
 
-    search_pattern = r"verific -vlog2k \${ROOT_PATH}"
-    replace_pattern = "read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}"
+    search_pattern = r"synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}"
+    replace_pattern = "synth_rs -tech ${SYNTH_SETTING}"
 
     with open(input_file, 'r') as file:
         file_paths = file.readlines()
@@ -58,14 +58,14 @@ def main():
         #     remove_lines_with_expression(file_path, "verific -import")
         # except:
         #     pass
-        # try:
-        #     replace_write_verilog(file_path)
-        # except:
-        #     pass
         try:
-            replace_pattern_in_file(file_path, search_pattern, replace_pattern)
+            replace_write_verilog(file_path)
         except:
             pass
+        # try:
+        #     replace_pattern_in_file(file_path, search_pattern, replace_pattern)
+        # except:
+        #     pass
 
 if __name__ == "__main__":
     main()
