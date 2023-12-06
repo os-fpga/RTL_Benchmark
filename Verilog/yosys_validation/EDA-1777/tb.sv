@@ -80,7 +80,7 @@ module co_sim_bytewrite_tdp_ram_wf;
     initial begin
     {rsta,rstb} = 2'b11;
     {ena, wea, addra, dina, enb, web, addrb, dinb, cycle, i} = 0;
-   
+    {enb,ena} = 2'b11;
 
     repeat (10) @ (negedge clka);
     {rsta,rstb} = 2'b00;
