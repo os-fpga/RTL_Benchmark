@@ -18,7 +18,7 @@ module co_sim_rams_sp_reg_addr_readmem_1024x1;
     {clk, we, addr ,di, cycle, i} = 0;
 
     for (integer i=0; i<1024; i=i+1)begin
-        repeat (1) @ (posedge clk)
+        repeat (1) @ (negedge clk)
         addr <= i; we <=0;
         cycle = cycle +1;
       
@@ -32,7 +32,7 @@ module co_sim_rams_sp_reg_addr_readmem_1024x1;
         $display("%0d comparison(s) mismatched\nSimulation Failed", mismatch);
     
 
-    repeat (10) @(posedge clk); $finish;
+    repeat (10) @(negedge clk); $finish;
     end
 
     task compare(input integer cycle);
