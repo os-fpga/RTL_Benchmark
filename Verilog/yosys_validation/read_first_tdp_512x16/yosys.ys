@@ -1,0 +1,18 @@
+ 
+# Yosys synthesis script for ram_true_dp_rf_512x16
+# Read source files
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/read_first_tdp_512x16/ram_true_dp_rf_512x16.sv
+
+
+# Technology mapping
+hierarchy -top ram_true_dp_rf_512x16
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_blif ram_simple_dp_synch_rf_1024x32_post_synth.blif
+
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
