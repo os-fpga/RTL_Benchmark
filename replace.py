@@ -42,9 +42,11 @@ def replace_write_verilog(file_path):
 def main():
     input_file = "path_list.txt"  # File containing list of file paths line by line
 
-    search_pattern = r"synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}"
-    replace_pattern = "synth_rs -tech ${SYNTH_SETTING}"
+    # search_pattern = r"synth_rs -tech ${ARCHITECTURE} ${SYNTH_SETTING}"
+    # replace_pattern = "synth_rs -tech ${SYNTH_SETTING}"
 
+    search_pattern = r"RTL_Benchmark/Verilog/yosys_validation/DSP_Designs/DSP_Designs"
+    replace_pattern = "RTL_Benchmark/Verilog/yosys_validation/DSP_Designs"
     with open(input_file, 'r') as file:
         file_paths = file.readlines()
 
@@ -58,14 +60,14 @@ def main():
         #     remove_lines_with_expression(file_path, "verific -import")
         # except:
         #     pass
-        try:
-            replace_write_verilog(file_path)
-        except:
-            pass
         # try:
-        #     replace_pattern_in_file(file_path, search_pattern, replace_pattern)
+        #     replace_write_verilog(file_path)
         # except:
         #     pass
+        # try:
+        replace_pattern_in_file(file_path, search_pattern, replace_pattern)
+        # except:
+            # pass
 
 if __name__ == "__main__":
     main()
