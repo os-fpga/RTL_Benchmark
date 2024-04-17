@@ -1,0 +1,15 @@
+ 
+# Yosys synthesis script for rams_sp_wf_1024x7
+# Read source files
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite//SP_WF/rams_sp_wf_1024x7.sv
+
+
+# Technology mapping
+hierarchy -top rams_sp_wf_1024x7
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_verilog -noexpr -nodec ${TOP}_post_synth.v

@@ -1,0 +1,18 @@
+ 
+# Yosys synthesis script for rams_sp_reg_addr_readmem_1024x18
+# Read source files
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite/EDA-2414/EDA-2414-rams_sp_reg_addr_readmem_1024x18/rams_sp_reg_addr_readmem_1024x18.sv
+
+
+# Technology mapping
+hierarchy -top rams_sp_reg_addr_readmem_1024x18
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+# write_blif rams_sp_reg_addr_readmem_1024x18.blif
+
+write_verilog -noexpr -nodec ${TOP}_post_synth.v

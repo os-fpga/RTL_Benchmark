@@ -1,0 +1,17 @@
+ 
+# Yosys synthesis script for sp_no_change
+# Read source files 
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite/bram_tests/sp_no_change/sp_no_change.sv
+
+
+# Technology mapping
+hierarchy -top sp_no_change
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_blif sp_no_change_post_synth.blif
+
+  
+write_verilog -noexpr -nodec ${TOP}_post_synth.v

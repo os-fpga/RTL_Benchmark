@@ -1,0 +1,16 @@
+ 
+# Yosys synthesis script for ram_true_dp_out_reg_1024x32
+# Read source files
+read_verilog -sv ${ROOT_PATH}/yosys/install/share/yosys/rapidsilicon/${ARCHITECTURE}/cell_sim_blackbox.v
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite/EDA-1278/ram_true_dp_out_reg_1024x32.sv
+
+
+# Technology mapping
+hierarchy -top ram_true_dp_out_reg_1024x32
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_verilog -noexpr -nodec ${TOP}_post_synth.v

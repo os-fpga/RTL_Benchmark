@@ -1,0 +1,17 @@
+ 
+# Yosys synthesis script for sync_sp_srst_re
+# Read source files 
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite/bram_tests/sync_sp_srst_re/sync_sp_srst_re.sv
+
+
+# Technology mapping
+hierarchy -top sync_sp_srst_re
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_blif sync_sp_srst_re_post_synth.blif
+
+  
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
