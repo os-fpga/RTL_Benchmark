@@ -1,0 +1,15 @@
+ 
+# Yosys synthesis script for ram_simple_dp_sync_reg_read_2048x64
+# Read source files
+read_verilog  -I${ROOT_PATH}/${RTL_PATH} ${ROOT_PATH}/RTL_Benchmark/Verilog/yosys_validation/Bram_Design_suite/EDA-2755/ram_simple_dp_sync_reg_read_2048x64/ram_simple_dp_sync_reg_read_2048x64.sv
+
+
+# Technology mapping
+hierarchy -top ram_simple_dp_sync_reg_read_2048x64
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech ${SYNTH_SETTING}
+write_verilog -noexpr -nodec ${TOP}_post_synth.v
